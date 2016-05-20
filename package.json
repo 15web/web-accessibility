@@ -1,13 +1,13 @@
 {
-  "name": "accessebility web components",
-  "description": "Front-end framework for veloping accessebility projects on the web.",
+  "name": "web-accessibility",
+  "description": "Frontend framework for developing accessebility projects on the web.",
   "version": "0.0.1",
-  "homepage": "http://karavaev-evgeniy.github.io",
+  "homepage": "http://15web.github.io/web-accessibility/",
   "author": "Studio 15",
   "style": "dist/accessebility.min.css",
   "repository": {
     "type": "git",
-    "url": "http://karavaev-evgeniy.github.io.git"
+    "url": "https://github.com/15web/web-accessibility.git"
   },
   "license": "MIT",
   "devDependencies": {
