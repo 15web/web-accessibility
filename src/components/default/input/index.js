@@ -1,3 +1,3 @@
-import './input.scss';
+'use strict';
 
-console.log('Input loaded');
+import './input.scss';
