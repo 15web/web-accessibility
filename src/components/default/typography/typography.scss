@@ -1,0 +1,127 @@
+.typography {
+    margin-bottom: 36px;
+    overflow: auto;
+
+    a {
+        &[href] {
+            color: #0000cc;
+
+            &:hover, &:focus, &:active {
+                background: #ffa;
+                color: #BF1722;
+            }
+        }
+        &.disabled {
+            color: #333333;
+            cursor: not-allowed;
+        }
+    }
+
+    h1 {
+        font-size: 2em;
+        line-height: 1.25em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        line-height: 1.25em;
+    }
+
+    h3 {
+        font-size: 1.25em;
+        font-weight: bold;
+        line-height: 1.375em;
+    }
+
+    h4 {
+        font-size: 1em;
+        line-height: 1.375em;
+        color: #000;
+    }
+
+    h1, h2, h3, h4 {
+        margin: 1.25em 0 1em;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    p {
+        margin-bottom: 1em;
+    }
+
+    ul, ol {
+        margin-bottom: 1.25em;
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        ul, ol {
+            margin: 0.5em 0 0.75em 20px;
+        }
+    }
+
+    ul > li {
+        list-style: disc inside;
+    }
+
+    ol > li {
+        list-style: decimal inside;
+    }
+
+    table {
+        border-collapse: collapse;
+
+        line-height: 1.375em;
+
+        th {
+            padding: 6px;
+            border: 1px solid white;
+            background-color: #000;
+            color: #fff;
+        }
+
+        td {
+            padding: 6px;
+            border: 1px solid #000;
+        }
+    }
+}
+
+// ==========================================================================
+// Theme black
+// ==========================================================================
+
+.application[data-color="black"] {
+    .typography {
+        a {
+            &[href] {
+                color: #969691;
+                &:hover, &:focus, &:active {
+                    background: #d8edff;
+                    color: #BF1722;
+                }
+                &.disabled {
+                    color: #cbcbcb;
+                }
+            }
+        }
+        h4 {
+            color: white;
+        }
+        table {
+            th {
+                border: 1px solid black;
+                background-color: white;
+                color: black;
+            }
+
+            td {
+                border: 1px solid white;
+            }
+
+        }
+    }
+}

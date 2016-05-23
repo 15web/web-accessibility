@@ -1,0 +1,33 @@
+// ==========================================================================
+// control-panel
+// ==========================================================================
+@import "../../config";
+$main-color: #ccc;
+.control-panel {
+
+    font-size: 18px;
+
+    background: $main-color;
+    color: $second-color;
+
+    z-index: 999;
+
+    &__wrapper {
+        padding: 10px 20px;
+    }
+}
+
+// ==========================================================================
+// Theme black
+// ==========================================================================
+
+.application[data-color="black"] {
+    $main-color: white;
+    $second-color: invert($second-color);
+    .control-panel {
+        background: $main-color;
+        color: $second-color;
+
+    }
+
+}

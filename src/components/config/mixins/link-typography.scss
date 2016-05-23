@@ -1,0 +1,28 @@
+@mixin link-typography($inverse) {
+
+    @if $inverse {
+        &[href] {
+            color: #969691;
+            &:hover, &:focus, &:active {
+                background: #d8edff;
+                color: #BF1722;
+            }
+            &.disabled {
+                color: #cbcbcb;
+            }
+        }
+    } @else {
+        &[href] {
+            color: #0000cc;
+
+            &:hover, &:focus, &:active {
+                background: #ffa;
+                color: #BF1722;
+            }
+        }
+        &.disabled {
+            color: #333333;
+            cursor: not-allowed;
+        }
+    }
+}

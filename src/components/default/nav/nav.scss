@@ -2,17 +2,12 @@
 // nav
 // ==========================================================================
 
-//@import "../../config";
-$main-color: black;
-$second-color: white;
+@import "../../config";
+
 .nav {
 
-    //@include clearfix();
-    &:after {
-        content: '';
-        display: table;
-        clear: both;
-    }
+    @include clearfix();
+
 
     li {
         float: left;

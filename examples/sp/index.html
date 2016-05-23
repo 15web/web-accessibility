@@ -8,26 +8,61 @@
 </head>
 <body class="application container">
 
-
+<div class="control-panel" aria-hidden="true">
+    <div class="control-panel__wrapper row">
+        <div class="col-xs-4">
+            Размер шрифта:
+            <select class="control-panel__select-text select">
+                <option value="small">
+                    Маленький
+                </option>
+                <option value="normal">
+                    Средний
+                </option>
+                <option value="large">
+                    Большой
+                </option>
+            </select>
+        </div>
+        <div class="col-xs-4">
+            Цвет сайта:
+            <select class="control-panel__select-color select">
+                <option value="white">
+                    Белый
+                </option>
+                <option value="black">
+                    Черный
+                </option>
+            </select>
+        </div>
+        <div class="col-xs-4">
+            Изображения:
+            <select class="control-panel__select-image select">
+                <option value="visible" >
+                    Включены
+                </option>
+                <option value="hidden">
+                    Выключены
+                </option>
+            </select>
+        </div>
+    </div>
+</div>
 
 <div>
     <header class="header" role="banner">
-        <div class="row">
-            <div class="col-xs-6">
-                31 марта 2016
-            </div>
-
-            <a class="col-xs-6 header__site-version" href="#">
-                Обычная версия сайта
-            </a>
+        <div class="pull-left">
+            31 марта 2016
         </div>
-
-
+        <a class="header__site-version pull-right" href="#">
+            Обычная версия сайта
+        </a>
         <h1>
-            Администрация Малиновского сельского поселения </h1>
-
-        <h2>
-            Муниципальное образование </h2>
+            Администрация Малиновского сельского поселения
+        </h1>
+        <h4>
+            Муниципальное образование
+        </h4>
 
         <nav class="nav" aria-label="горизонтальная навигация">
             <ul>
@@ -66,7 +101,6 @@
             </ul>
         </nav>
 
-
         <form class="row" action="" role="search">
             <div class="col-xs-12">
                 <label for="search" class="hidden">Поиск по сайту</label>
@@ -79,27 +113,27 @@
 
         </form>
 
-
     </header>
 
     <main class="col-xs-12 main" role="main">
         <div>
-            <div class="greeting">
-                <div class="greeting__person">
-                    <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=400%C3%97400&w=400&h=400" alt="Глава" style="width: 200px; height: 240px;">
-                    <p>Петр Павлович</p>
-                    <p>Глава района</p>
+            <div class="greeting media">
+                <div class="media__left">
+                    <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97240&w=200&h=240" alt="Глава"
+                         style="width: 200px; height: 240px;">
+                    <p class="media__text">Петр Павлович</p>
+                    <p class="media__text">Глава района</p>
                 </div>
-                <div class="greeting__content typography">
-                    <p>Открытость и доступность информации — одно из важных условий развития успешного общества. Мы
+                <div class="media__body typography">
+                    <p class="media__text">Открытость и доступность информации — одно из важных условий развития успешного общества. Мы
                         делаем всё, чтобы работа администрации поселения была понятной и открытой. Надеемся, что
                         посещение нашего сайта станет для Вас полезным, мы сможем обменяться мнениями по наиболее важным
                         вопросам и вести конструктивный диалог.</p>
-                    <p>Открытость и доступность информации — одно из важных условий развития успешного общества. Мы
+                    <p class="media__text">Открытость и доступность информации — одно из важных условий развития успешного общества. Мы
                         делаем всё, чтобы работа администрации поселения была понятной и открытой. Надеемся, что
                         посещение нашего сайта станет для Вас полезным, мы сможем обменяться мнениями по наиболее важным
                         вопросам и вести конструктивный диалог.</p>
-                    <p>Открытость и доступность информации — одно из важных условий развития успешного общества. Мы
+                    <p class="media__text">Открытость и доступность информации — одно из важных условий развития успешного общества. Мы
                         делаем всё, чтобы работа администрации поселения была понятной и открытой. Надеемся, что
                         посещение нашего сайта станет для Вас полезным, мы сможем обменяться мнениями по наиболее важным
                         вопросам и вести конструктивный диалог.</p>
@@ -107,20 +141,42 @@
             </div>
 
             <div class="content-block">
-                <h2 class="panel-heading">Новости</h2>
+                <h2 class="panel-heading content-header">Новости</h2>
                 <div class="media">
                     <div class="media__left">
                         <a href="#">
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=400%C3%97400&w=400&h=400">
+                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=400%C3%97400&w=200&h=200"
+                                 width="200" height="200" alt="Картинка">
                         </a>
                     </div>
                     <div class="media__body">
-                        <h2 class="media__title">
+                        <h3 class="media__title">
                             <a href="#">15 сентября 2015 года вводится в действие Кодекс административного
                                 судопроизводства Российской Федерации
                             </a>
-                        </h2>
-                        <div class="media__date">15 марта 2016</div>
+                        </h3>
+                        <p>15 марта 2016</p>
+                        <p class="media__text">Кодекс административного судопроизводства РФ регулирует порядок
+                            осуществления административного судопроизводства при рассмотрении и разрешении Верховным
+                            Судом РФ, судами общей юрисдикции административных дел о защите нарушенных или оспариваемых
+                            прав</p>
+                        <a href="#">Читать полностью</a>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="media__left">
+                        <a href="#">
+                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=400%C3%97400&w=200&h=200"
+                                 width="200" height="200" alt="Картинка">
+                        </a>
+                    </div>
+                    <div class="media__body">
+                        <h3 class="media__title">
+                            <a href="#">15 сентября 2015 года вводится в действие Кодекс административного
+                                судопроизводства Российской Федерации
+                            </a>
+                        </h3>
+                        <p>15 марта 2016</p>
                         <p class="media__text">Кодекс административного судопроизводства РФ регулирует порядок
                             осуществления административного судопроизводства при рассмотрении и разрешении Верховным
                             Судом РФ, судами общей юрисдикции административных дел о защите нарушенных или оспариваемых
@@ -129,43 +185,46 @@
                     </div>
                 </div>
 
-                <div class="media">
-                    <div class="media__left">
-                        <a href="#">
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=400%C3%97400&w=400&h=400">
-                        </a>
-                    </div>
-                    <div class="media__body">
-                        <h2 class="media__title h2">
-                            <a href="#">Результаты обобщения работы прокуратуры района по итогам первого полугодия 2015
-                                года
-                            </a>
-                        </h2>
-                        <div class="media__date">15 марта 2016</div>
-                        <p class="media__text">Общие сведения о состоянии преступности, работе правоохранительных и
-                            судебных органов. В первом полугодии 2015 года состояние преступности характеризуется
-                            следующими основными тенденциями</p>
-                        <a href="#">Читать полностью</a>
-                    </div>
-                </div>
 
                 <a href="/news.html">Показать все новости</a>
             </div>
             <div class="content-block">
-                <h2 class="ui-heading">Еще контент</h2>
+                <h2 class="panel-heading content-header">Новости</h2>
                 <div class="media">
                     <div class="media__left">
                         <a href="#">
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=400%C3%97400&w=400&h=400">
+                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=400%C3%97400&w=200&h=200"
+                                 width="200" height="200" alt="Картинка">
                         </a>
                     </div>
                     <div class="media__body">
-                        <h2 class="media__title">
+                        <h3 class="media__title">
                             <a href="#">15 сентября 2015 года вводится в действие Кодекс административного
                                 судопроизводства Российской Федерации
                             </a>
-                        </h2>
-                        <div class="media__date">15 марта 2016</div>
+                        </h3>
+                        <p>15 марта 2016</p>
+                        <p class="media__text">Кодекс административного судопроизводства РФ регулирует порядок
+                            осуществления административного судопроизводства при рассмотрении и разрешении Верховным
+                            Судом РФ, судами общей юрисдикции административных дел о защите нарушенных или оспариваемых
+                            прав</p>
+                        <a href="#">Читать полностью</a>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="media__left">
+                        <a href="#">
+                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=400%C3%97400&w=200&h=200"
+                                 width="200" height="200" alt="Картинка">
+                        </a>
+                    </div>
+                    <div class="media__body">
+                        <h3 class="media__title">
+                            <a href="#">15 сентября 2015 года вводится в действие Кодекс административного
+                                судопроизводства Российской Федерации
+                            </a>
+                        </h3>
+                        <p>15 марта 2016</p>
                         <p class="media__text">Кодекс административного судопроизводства РФ регулирует порядок
                             осуществления административного судопроизводства при рассмотрении и разрешении Верховным
                             Судом РФ, судами общей юрисдикции административных дел о защите нарушенных или оспариваемых
@@ -174,27 +233,8 @@
                     </div>
                 </div>
 
-                <div class="media">
-                    <div class="media__left">
-                        <a href="#">
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=400%C3%97400&w=400&h=400">
-                        </a>
-                    </div>
-                    <div class="media__body">
-                        <h2 class="media__title h2">
-                            <a href="#">Результаты обобщения работы прокуратуры района по итогам первого полугодия 2015
-                                года
-                            </a>
-                        </h2>
-                        <div class="media__date">15 марта 2016</div>
-                        <p class="media__text">Общие сведения о состоянии преступности, работе правоохранительных и
-                            судебных органов. В первом полугодии 2015 года состояние преступности характеризуется
-                            следующими основными тенденциями</p>
-                        <a href="#">Читать полностью</a>
-                    </div>
-                </div>
 
-                <a href="/news.html">Показать все</a>
+                <a href="/news.html">Показать все новости</a>
             </div>
 
 
@@ -203,7 +243,7 @@
 
     <footer class="footer" role="contentinfo">
     <p>Web-accessibility</p>
-    <p><a href="mailto:admin-tur@rambler.ru">admin@rambler.ru</a></p>
+    <a href="https://github.com/15web/web-accessibility">https://github.com/15web/web-accessibility</a>
 </footer>
 </div>
 
