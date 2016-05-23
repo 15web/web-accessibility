@@ -1,0 +1,41 @@
+.header {
+  position: relative;
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #000; }
+  .header__site-version {
+    display: inline-block;
+    padding-left: 45px;
+    background: svg-load(eye.svg, fill: #000) left center no-repeat;
+    background-color: white;
+    background-size: contain; }
+
+.main {
+  padding: 40px 0; }
+  .main .content-block {
+    margin-bottom: 30px; }
+  .main__pagination {
+    padding-top: 20px;
+    margin-top: 30px;
+    border-top: 1px solid #000; }
+
+.greeting {
+  margin-bottom: 30px; }
+  .greeting:after {
+    content: '';
+    display: table;
+    clear: both; }
+  .greeting__person {
+    float: left;
+    max-width: 200px;
+    margin-right: 20px; }
+    .greeting__person img {
+      display: block;
+      margin-bottom: 15px; }
+  .greeting__button {
+    width: 100%;
+    padding: 0 6px;
+    line-height: 30px; }
+  .greeting__content {
+    overflow: hidden; }

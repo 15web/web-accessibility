@@ -1,0 +1,29 @@
+
+
+.greeting {
+    margin-bottom: 30px;
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+    &__person {
+        float: left;
+        max-width: 200px;
+        margin-right: 20px;
+
+        img {
+            display: block;
+            margin-bottom: 15px;
+        }
+    }
+    &__button {
+        width:100%;
+        padding: 0 6px;
+        line-height: 30px;
+    }
+
+    &__content {
+        overflow: hidden;
+    }
+}

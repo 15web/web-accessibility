@@ -1,0 +1,75 @@
+// ==========================================================================
+// nav
+// ==========================================================================
+
+//@import "../../config";
+$main-color: black;
+$second-color: white;
+.nav {
+
+    //@include clearfix();
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    li {
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    a {
+        display: inline-block;
+        padding: 5px 10px;
+
+        font-weight: bold;
+        text-decoration: none;
+
+        border: 1px solid $main-color;
+        border-radius: 4px;
+
+        &:hover {
+            color: $second-color;
+            background: $main-color;
+        }
+    }
+
+    li.active > a {
+        color: $second-color;
+        background: $main-color;
+    }
+
+
+}
+
+// ==========================================================================
+// Theme black
+// ==========================================================================
+
+.application[data-color="black"] {
+    $main-color: invert($main-color);
+    $second-color: invert($second-color);
+    .nav {
+
+        a {
+
+
+            border: 1px solid $main-color;
+
+
+            &:hover {
+                color: $second-color;
+                background: $main-color;
+            }
+        }
+
+        li.active > a {
+            color: $second-color;
+            background: $main-color;
+        }
+
+    }
+
+}

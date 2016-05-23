@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Accessible template</title>
+    <link rel="stylesheet" href="assets/bundle.css">
+</head>
+<body class="application">
+
+{% include "partials/control-panel.twig" %}
+
+<div class="wrapper">
+    <header class="header">
+        <div class="header__date">
+            31 марта 2016
+        </div>
+
+        <a class="header__site-version" href="#">
+            Обычная версия сайта
+        </a>
+
+        <h1 class="header__title">
+            Администрация Малиновского сельского поселения </h1>
+
+        <div class="header__subtitle">
+            Муниципальное образование
+        </div>
+
+        <nav class="nav" aria-label="горизонтальная навигация">
+            <ul>
+                <li class="active">
+                    <a  href="faq.html" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">Вопрос-ответ</a>
+                </li>
+                <li >
+                    <a href="/index.html" title="Главная страница сайта">Главная</a>
+                </li>
+                <li>
+                    <a href="/components.html" title="наши компоненты">Компоненты</a>
+                </li>
+                <li>
+                    <a href="/content.html">Контент</a>
+                </li>
+                <li>
+                    <a href="/gallery.html">Галлерея</a>
+                </li>
+                <li>
+                    <a href="/gallery-inner.html">Галлерея-внутри</a>
+                </li>
+                <li>
+                    <a href="/news.html">Новости</a>
+                </li>
+                <li>
+                    <a href="/quize.html">Опрос</a>
+                </li>
+                <li>
+                    <a href="/search.html">Поиск</a>
+                </li>
+                <li>
+                    <a href="/npa.html">Список</a>
+                </li>
+            </ul>
+        </nav>
+
+        <form class="search-form" action="" role="search">
+            <label for="search" class="hidden">Поиск по сайту</label>
+            <input class="search-form__input input" id="search" type="text" >
+            <button class="search-form__submit button" type="submit" value="SUBMIT THIS FORM">
+                Найти
+            </button>
+        </form>
+
+
+    </header>
+
+    <main class="main">
+        <div class="main__sidebar">
+            <!-- navigation -->
+
+            <nav class="navigation" role="navigation">
+                <ul>
+                    <li class="navigation__item">
+                        <a class="navigation__link" href="#">Визитная карточка</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a class="navigation__link" href="#">Органы местного самоуправления</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a class="navigation__link current" href="#">Экономика и финансы</a>
+                        <ul class="navigation__subnav">
+                            <li class="navigation__item">
+                                <a class="navigation__link" href="#">Визитная карточка</a>
+                            </li>
+                            <li class="navigation__item">
+                                <a class="navigation__link" href="#">Органы местного самоуправления</a>
+                            </li>
+                            <li class="navigation__item">
+                                <a class="navigation__link" href="#">Экономика и финансы</a>
+                            </li>
+                            <li class="navigation__item">
+                                <a class="navigation__link" href="#">Социальная сфера</a>
+                                <ul class="navigation__subnav">
+                                    <li class="navigation__item">
+                                        <a class="navigation__link" href="#">Визитная карточка</a>
+                                    </li>
+                                    <li class="navigation__item">
+                                        <a class="navigation__link" href="#">Органы местного самоуправления</a>
+                                    </li>
+                                    <li class="navigation__item">
+                                        <a class="navigation__link" href="#">Экономика и финансы</a>
+                                    </li>
+                                    <li class="navigation__item">
+                                        <a class="navigation__link" href="#">Социальная сфера</a>
+                                    </li>
+                                    <li class="navigation__item">
+                                        <a class="navigation__link" href="#">Муниципальная сфера</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navigation__item">
+                                <a class="navigation__link" href="#">Муниципальная сфера</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="navigation__item">
+                        <a class="navigation__link" href="#">Социальная сфера</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a class="navigation__link" href="#">Муниципальная сфера</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a class="navigation__link" href="#">Муниципальная служба</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a class="navigation__link" href="#">Справочная информация</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a class="navigation__link" href="#">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- end navigation -->
+        </div>
+
+        <div class="main__content">
+            <!-- breadcrumbs -->
+            <nav class="ui-breadcrumbs" aria-label="хлебные крошки">
+                <ul>
+                    <li  class="ui-breadcrumbs__item"> <a href="/" title="Главная">Главная</a></li>
+                    <span class="ui-breadcrumbs__separator" aria-hidden="true"></span>
+                    <li class="ui-breadcrumbs__item"><a href="#" title="Нормативно">Нормативно-правовые акты</a></li>
+                    <span class="ui-breadcrumbs__separator" aria-hidden="true"></span>
+                    <li class="ui-breadcrumbs__item"><a href="#" title="Решения совета">Решения Совета</a></li>
+                    <span class="ui-breadcrumbs__separator" aria-hidden="true"></span>
+                    <li class="ui-breadcrumbs__item"><span>Решения 2015</span></li>
+                    <span class="ui-breadcrumbs__separator" aria-hidden="true"></span>
+                </ul>
+            </nav>
+            <!-- end breadcrumbs -->
+            <h2 class="ui-heading">Вопрос-ответ</h2>
+
+            <!-- faq -->
+            <div class="faq">
+
+                <form class="faq__form" action="">
+                    <div class="form__line">
+                        <sup>*</sup>
+                        — поля, обязательные для заполнения
+                    </div>
+                    <div class="form__line">
+                        <label class="form__label" for="name">Имя
+                            <sup>*</sup>
+                        </label>
+                        <input class="input" type="text" id="name" name="name"
+                               style="width: 360px;"/>
+                    </div>
+                    <div class="form__line ">
+                        <label class="form__label" for="secondName">Фамилия
+                            <sup>*</sup>
+                        </label>
+                        <input class="input" type="text" id="secondName" name="secondName"
+                               style="width: 360px;"/>
+                        <div class="form__error">Введите фамилию</div>
+                    </div>
+                    <div class="form__line">
+                        <label class="form__label" for="mail">Email
+                            <sup>*</sup>
+                        </label>
+                        <input class="input" type="text" id="mail" name="mail"
+                               style="width: 360px;"/>
+                    </div>
+                    <div class="form__line">
+                        <label class="form__label" for="question">Ваш вопрос
+                            <sup>*</sup>
+                        </label>
+                            <textarea class="form__textarea" id="question" name="question"
+                                      cols="" rows="5" style="width: 500px;"></textarea>
+                    </div>
+                    <button class="button" type="submit" title="задать вопрос">Задать вопрос</button>
+                </form>
+
+                <div class="faq__list">
+
+                    <div class="faq__item">
+                        <div class="faq__question">
+                            <div class="faq__title">Константинопольский Константин</div>
+                            <div class="faq__date">12 ноября 2015</div>
+                            <div class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+                                praesentium quasi veritatis!
+                            </div>
+                        </div>
+                        <div class="faq__answer">
+                            <div class="faq__title">Ответ</div>
+                            <div class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
+                                atque consectetur dicta dolores est magnam molestias natus, odio pariatur quas quibusdam
+                                quis quos, sunt unde voluptates. Eaque excepturi minus nemo. Corporis dicta facilis
+                                laudantium placeat quas?
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq__item">
+                        <div class="faq__question">
+                            <div class="faq__title">Константинопольский Константин</div>
+                            <div class="faq__date">12 ноября 2015</div>
+                            <div class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+                                praesentium quasi veritatis!
+                            </div>
+                        </div>
+                        <div class="faq__answer">
+                            <div class="faq__title">Ответ</div>
+                            <div class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
+                                atque consectetur dicta dolores est magnam molestias natus, odio pariatur quas quibusdam
+                                quis quos, sunt unde voluptates. Eaque excepturi minus nemo. Corporis dicta facilis
+                                laudantium placeat quas?
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq__item">
+                        <div class="faq__question">
+                            <div class="faq__title">Константинопольский Константин</div>
+                            <div class="faq__date">12 ноября 2015</div>
+                            <div class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+                                praesentium quasi veritatis!
+                            </div>
+                        </div>
+                        <div class="faq__answer">
+                            <div class="faq__title">Ответ</div>
+                            <div class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
+                                atque consectetur dicta dolores est magnam molestias natus, odio pariatur quas quibusdam
+                                quis quos, sunt unde voluptates. Eaque excepturi minus nemo. Corporis dicta facilis
+                                laudantium placeat quas?
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- end faq -->
+        </div>
+
+
+    </main>
+
+    {% include "partials/footer.twig" %}
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+<script src="assets/bundle.js"></script>
+</body>
+</html>

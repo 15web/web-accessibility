@@ -1,0 +1,68 @@
+// ==========================================================================
+// button
+// ==========================================================================
+
+.button {
+    min-height: 50px;
+    padding: 0 15px;
+
+    color: #fff;
+    font-weight: bold;
+    line-height: 40px;
+
+    background: #000;
+    border: none;
+
+    text-align: center;
+
+
+    a {
+        color: #fff;
+        background: #000;
+
+        text-decoration: none;
+    }
+
+    &:focus {
+        outline: 5px solid black;
+        color: black;
+        background: white;
+        a {
+            color: black;
+        }
+    }
+}
+
+.button-block {
+    display: block;
+    padding:0;
+
+}
+
+// ==========================================================================
+// Theme black
+// ==========================================================================
+
+.application[data-color="black"] {
+
+    .button {
+        color: #000;
+        background: #fff;
+
+        a {
+            color: #000;
+            background: #fff;
+        }
+
+        &:focus {
+            outline: 5px solid white;
+            color: white;
+            background: black;
+            a {
+                color: white;
+                background: #000;
+            }
+        }
+    }
+
+}

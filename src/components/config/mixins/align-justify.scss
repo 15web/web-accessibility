@@ -1,0 +1,16 @@
+@mixin align-justify() {
+    font-size: 1px; // 1px for Opera
+    line-height: 0;
+    text-align: justify;
+    //text-align-last: justify; проблемы в Chrome
+
+    &:after {
+        display: inline-block;
+        content: '';
+        width: 100%;
+        height: 0;
+
+        visibility: hidden;
+        overflow: hidden;
+    }
+}

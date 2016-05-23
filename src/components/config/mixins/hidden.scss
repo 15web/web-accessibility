@@ -1,0 +1,4 @@
+@mixin hidden() {
+    display: none !important;
+    visibility: hidden !important;
+}
