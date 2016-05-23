@@ -1,0 +1,80 @@
+.form {
+    $bg-color: white;
+    $text-color: black;
+    &__line {
+        margin-bottom: 15px;
+
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+            color: $text-color;
+            top: -.5em;
+        }
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: 1px;
+    }
+
+    &__textarea {
+        padding: 15px;
+        border: 2px solid $text-color;
+        font-size: 1em;
+
+        &:focus {
+            outline: 4px solid black;
+        }
+    }
+
+    &__error {
+        font-style: italic;
+    }
+}
+
+// @todo вынести?
+fieldset {
+    border: 1px solid black;
+    padding: 13px;
+
+    legend {
+        padding: 0.2em 0.5em;
+        border: 1px solid black;
+        color: black;
+        text-align: left;
+    }
+}
+
+.application[data-color="black"] {
+    .form {
+        $bg-color: black;
+        $text-color: white;
+        &__line {
+            sup {
+                color: $text-color;
+                top: -.5em;
+            }
+        }
+        &__textarea {
+            background-color: $bg-color;
+            border-color: $text-color;
+
+            &:focus {
+                outline: 4px solid white;
+            }
+        }
+    }
+
+    fieldset {
+        border: 1px solid white;
+
+
+        legend {
+            border: 1px solid white;
+            color: white;
+        }
+    }
+
+}

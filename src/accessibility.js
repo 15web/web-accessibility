@@ -13,6 +13,8 @@ import './components/default/media';
 import './components/default/typography';
 import './components/default/image-alt';
 import './components/default/select';
+import './components/default/breadcrumbs';
+import './components/default/form';
 
 
 console.log('Hello world!');

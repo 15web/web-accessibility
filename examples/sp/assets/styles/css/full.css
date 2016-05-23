@@ -7,7 +7,6 @@
   .header__site-version {
     display: inline-block;
     padding-left: 45px;
-    background: svg-load(eye.svg, fill: #000) left center no-repeat;
     background-color: white;
     background-size: contain; }
 
@@ -24,3 +23,22 @@
 
 .greeting {
   margin-bottom: 30px; }
+
+.faq {
+  margin-bottom: 36px; }
+  .faq__form {
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid black; }
+  .faq__item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid black; }
+  .faq__answer {
+    margin: 8px 0 0 30px; }
+
+.application[data-color="black"] .faq__form {
+  border-bottom: 1px solid white; }
+
+.application[data-color="black"] .faq__item {
+  border-bottom: 1px solid white; }
