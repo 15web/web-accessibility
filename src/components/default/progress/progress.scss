@@ -1,0 +1,45 @@
+.progress {
+    height: 0.8em;
+    position: relative;
+
+    &-val {
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        background-color: black;
+    }
+
+    &-counter {
+        margin-left: 0.3em;
+
+        position: absolute;
+        top: 0;
+        left: 100%;
+
+        color: black;
+        line-height: 0.8em;
+    }
+
+    &_big {
+        height: 20px;
+    }
+}
+
+// ==========================================================================
+// Theme black
+// ==========================================================================
+
+.application[data-color="black"] {
+    .progress {
+        &-val {
+            background-color: white;
+        }
+
+        &-counter {
+            color: white;
+        }
+    }
+}

@@ -16,6 +16,7 @@ import './components/default/select';
 import './components/default/breadcrumbs';
 import './components/default/form';
 import './components/default/pagination';
+import './components/default/progress';
 
 
 console.log('Hello world!');
