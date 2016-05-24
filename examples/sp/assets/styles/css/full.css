@@ -42,3 +42,17 @@
 
 .application[data-color="black"] .faq__item {
   border-bottom: 1px solid white; }
+
+.footer {
+  padding: 20px 0px;
+  border-top: 2px solid #000; }
+  .footer p {
+    margin-bottom: 1em; }
+
+.application[data-color="black"] .footer {
+  border-color: #fff; }
+
+.gallery__item {
+  margin-bottom: 30px; }
+  .gallery__item:last-child {
+    margin-bottom: 0px; }

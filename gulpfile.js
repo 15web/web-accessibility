@@ -25,7 +25,7 @@ gulp.task("sp", function () {
 
 gulp.task('default', ['html','sp', 'server'], function () {
 
-    gulp.watch('./examples/sp/twig/**/*.twig', ['html']);
+    gulp.watch('./examples/sp/twig/*.twig', ['html']);
     gulp.watch('./examples/sp/assets/styles/**/*.scss', ['sp']);
 
 });

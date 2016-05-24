@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Accessible template</title>
+    <link rel="stylesheet" href="/dist/accessibility.css">
+    <link rel="stylesheet" href="assets/styles/css/full.css">
+    <link rel="stylesheet" href="assets/libs/fancybox/jquery.fancybox.css">
+</head>
+<body class="application container">
+
+{% include "./partials/control-panel.twig" %}
+<div>
+    <header class="header" role="banner">
+        <div class="pull-left">
+            31 марта 2016
+        </div>
+        <a class="header__site-version pull-right" href="#">
+            Обычная версия сайта
+        </a>
+        <h1>
+            Администрация Малиновского сельского поселения </h1>
+        <h4>
+            Муниципальное образование </h4>
+
+        <nav class="nav" aria-label="горизонтальная навигация">
+            <ul>
+                <li>
+                    <a href="faq.html" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
+                        Вопрос-ответ
+                    </a>
+                </li>
+                <li>
+                    <a href="/index.html" title="Главная страница сайта">Главная</a>
+                </li>
+                <li>
+                    <a href="/components.html" title="наши компоненты">Компоненты</a>
+                </li>
+                <li>
+                    <a href="/content.html">Контент</a>
+                </li>
+                <li>
+                    <a href="/gallery.html">Галлерея</a>
+                </li>
+                <li class="active">
+                    <a href="/gallery-inner.html">Галлерея-внутри</a>
+                </li>
+                <li>
+                    <a href="/news.html">Новости</a>
+                </li>
+                <li>
+                    <a href="/quize.html">Опрос</a>
+                </li>
+                <li>
+                    <a href="/search.html">Поиск</a>
+                </li>
+                <li>
+                    <a href="/npa.html">Список</a>
+                </li>
+            </ul>
+        </nav>
+
+        <form class="row" action="" role="search">
+            <div class="col-xs-12">
+                <label for="search" class="hidden">Поиск по сайту</label>
+
+                <input class="input col-xs-10" id="search" type="text">
+                <button class="col-xs-2 button" type="submit" value="Отправка формы">
+                    Найти
+                </button>
+            </div>
+
+        </form>
+
+    </header>
+    <main class="main">
+
+        <div>
+            <!-- breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="хлебные крошки">
+                <ul>
+                    <li class="breadcrumbs__item">
+                        <a href="/">Главная</a>
+                    </li>
+                    <span class="breadcrumbs__separator" aria-hidden="true"></span>
+                    <li class="breadcrumbs__item">
+                        <a href="#" title="Официальная документация">Нормативно-правовые акты</a>
+                    </li>
+                    <span class="breadcrumbs__separator" aria-hidden="true"></span>
+                    <li class="breadcrumbs__item">
+                        <a href="#" title="От 2014 года">Решения Совета</a>
+                    </li>
+                    <span class="breadcrumbs__separator" aria-hidden="true"></span>
+                    <li class="breadcrumbs__item">
+                        <span>Решения 2015</span>
+                    </li>
+                    <span class="breadcrumbs__separator" aria-hidden="true"></span>
+                </ul>
+            </nav>
+            <!-- end breadcrumbs -->
+
+
+            <!-- gallery -->
+            <div class="gallery">
+                <div class="gallery__item">
+                    <a href="#"><h2>Галлерея 1</h2></a>
+                    <div class="row">
+                        <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=360%C3%97210&w=360&h=210"
+                                 width="360" height="210" alt="Картинка">
+                        </a>
+                        <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=360%C3%97210&w=360&h=210"
+                                 width="360" height="210" alt="Картинка">
+                        </a>
+                        <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=360%C3%97210&w=360&h=210"
+                                 width="360" height="210" alt="Картинка">
+                        </a>
+                    </div>
+                    <div class="row">
+                        <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=360%C3%97210&w=360&h=210"
+                                 width="360" height="210" alt="Картинка">
+                        </a>
+                        <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=360%C3%97210&w=360&h=210"
+                                 width="360" height="210" alt="Картинка">
+                        </a>
+                        <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=360%C3%97210&w=360&h=210"
+                                 width="360" height="210" alt="Картинка">
+                        </a>
+                    </div>
+                    <div class="row">
+                        <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=360%C3%97210&w=360&h=210"
+                                 width="360" height="210" alt="Картинка">
+                        </a>
+                        <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=360%C3%97210&w=360&h=210"
+                                 width="360" height="210" alt="Картинка">
+                        </a>
+                        <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=360%C3%97210&w=360&h=210"
+                                 width="360" height="210" alt="Картинка">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- end gallery -->
+
+
+        </div>
+
+
+    </main>
+
+    {% include "partials/footer.twig" %}
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+<script src="/dist/accessibility.js"></script>
+<script src="assets/libs/fancybox/jquery.fancybox.pack.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".fancybox").fancybox();
+    });
+</script>
+</body>
+</html>
