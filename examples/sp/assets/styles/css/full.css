@@ -65,3 +65,26 @@
   .npa__item:not(:last-child) {
     padding-bottom: 0.6em;
     border-bottom: 1px solid black; }
+
+.results {
+  margin-bottom: 36px; }
+  .results__heading {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black; }
+  .results__item {
+    margin-bottom: 20px;
+    padding: 0 0 15px 30px;
+    border-bottom: 1px solid black;
+    position: relative; }
+    .results__item-count {
+      font-size: 1.125em;
+      position: absolute;
+      top: 0;
+      left: 0; }
+
+.application[data-color="black"] .results__heading {
+  border-bottom-color: white; }
+
+.application[data-color="black"] .results__item {
+  border-bottom: 1px solid white; }

@@ -1,0 +1,45 @@
+.results {
+    $text-color:black;
+    margin-bottom: 36px;
+
+    &__heading {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $text-color;
+    }
+
+    &__item {
+        margin-bottom: 20px;
+        padding: 0 0 15px 30px;
+
+        border-bottom: 1px solid $text-color;
+
+        position: relative;
+
+        &-count {
+            font-size: 1.125em;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+    }
+}
+
+// ==========================================================================
+// Theme black
+// ==========================================================================
+
+.application[data-color="black"] {
+
+    .results {
+        $text-color:white;
+        &__heading {
+            border-bottom-color: $text-color;
+        }
+        &__item {
+            border-bottom: 1px solid $text-color;
+        }
+    }
+}
