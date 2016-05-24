@@ -34,7 +34,8 @@ gulp.task('default', ['html','sp', 'server'], function () {
 gulp.task('server', function () {
     browserSync.init({
         server: './',
-        open: true
+        open: true,
+        startPath: "/examples/sp/index.html"
     });
 
     gulp.watch('./examples/sp/**/*.*').on('change', browserSync.reload);

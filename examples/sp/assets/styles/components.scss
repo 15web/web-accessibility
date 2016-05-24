@@ -1,0 +1,23 @@
+.components {
+    h1 {
+        font-size: 32px;
+        margin: 30px 0;
+        border-bottom: 1px solid black;
+        padding-bottom: 5px;
+    }
+    &__row {
+        margin-bottom: 20px;
+    }
+}
+
+// ==========================================================================
+// Theme black
+// ==========================================================================
+
+.application[data-color="black"] {
+    .components {
+        h1 {
+            border-bottom: 1px solid white;
+        }
+    }
+}

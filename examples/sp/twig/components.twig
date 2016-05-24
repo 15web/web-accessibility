@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Accessible template</title>
+    <link rel="stylesheet" href="/dist/accessibility.css">
+    <link rel="stylesheet" href="assets/styles/css/full.css">
+</head>
+<body class="application container">
+
+{% include "./partials/control-panel.twig" %}
+
+
+<div class="components">
+    <h1>Горизонтальная навигация</h1>
+    <nav class="nav" aria-label="горизонтальная навигация">
+        <ul>
+            <li>
+                <a href="faq.html" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
+                    Вопрос-ответ
+                </a>
+            </li>
+            <li>
+                <a href="index.html" title="Главная страница сайта">Главная</a>
+            </li>
+            <li class="active">
+                <a href="components.html" title="наши компоненты">Компоненты</a>
+            </li>
+            <li>
+                <a href="content.html">Контент</a>
+            </li>
+            <li>
+                <a href="gallery.html">Галлерея</a>
+            </li>
+            <li>
+                <a href="gallery-inner.html">Галлерея-внутри</a>
+            </li>
+            <li>
+                <a href="news.html">Новости</a>
+            </li>
+            <li>
+                <a href="quize.html">Опрос</a>
+            </li>
+            <li>
+                <a href="search.html">Поиск</a>
+            </li>
+            <li>
+                <a href="npa.html">Список</a>
+            </li>
+        </ul>
+    </nav>
+    <h1>Хлебные крошки</h1>
+
+
+    <!-- breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="хлебные крошки">
+        <ul>
+            <li class="breadcrumbs__item">
+                <a href="/">Главная</a>
+            </li>
+            <span class="breadcrumbs__separator" aria-hidden="true"></span>
+            <li class="breadcrumbs__item">
+                <a href="#" title="Официальная документация">Нормативно-правовые акты</a>
+            </li>
+            <span class="breadcrumbs__separator" aria-hidden="true"></span>
+            <li class="breadcrumbs__item">
+                <a href="#" title="От 2014 года">Решения Совета</a>
+            </li>
+            <span class="breadcrumbs__separator" aria-hidden="true"></span>
+            <li class="breadcrumbs__item">
+                <span>Решения 2015</span>
+            </li>
+            <span class="breadcrumbs__separator" aria-hidden="true"></span>
+        </ul>
+    </nav>
+    <!-- end breadcrumbs -->
+
+    <h1>Форма</h1>
+    <form class="form" action="">
+        <div class="form__line"><p>input с label</p>
+            <label for="search" class="hidden">Поиск по сайту</label>
+            <input class="input" id="search" type="text">
+        </div>
+        <div class="form__line"><p>input с title</p>
+            <input class="input" id="search" title="Поиск по сайту" type="text">
+        </div>
+        <div class="form__line"><p>input с aria-label</p>
+            <input class="input" id="search" aria-label="Поиск по сайту" type="text">
+        </div>
+        <div class="form__line">
+            <p>textarea</p>
+            <textarea class="form__textarea" title="поле ввода текста большое"></textarea>
+        </div>
+        <div class="form__line">
+            <label for="select1"></label>
+            <select class="select" id="select1" name="select" title="выбирете цвет сайта">
+                <optgroup label="цвета">
+                    <option value="1" selected>
+                        белый
+                    </option>
+                    <option value="2">
+                        черный
+                    </option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="form__line">
+            <h1>Легенда, чекбокс, радио</h1>
+            <fieldset>
+                <legend>Легенда, чекбокс, радио</legend>
+                <div class="checkbox__field">
+                    <input id="checkbox1" type="checkbox" role="checkbox" name="toppings" value="ham"
+                           aria-checked="false" aria-labelledby="checkboxLabel" disabled>
+                    <label id="checkboxLabel" for="checkbox1">чекбокс1</label>
+                    <input id="checkbox2" type="checkbox" role="checkbox" name="toppings" value="ham"
+                           aria-checked="false" aria-labelledby="checkboxLabel">
+                    <label id="checkboxLabel" for="checkbox2">чекбокс2</label>
+                    <br>
+                    <br>
+                </div>
+
+
+                <div class="radio__field" role="radiogroup">
+                    <input id="radio1" type="radio" name="shipping" value="ground1">
+                    <label id="label1" for="radio1">Первый</label>
+
+                    <input id="radio2" type="radio" name="shipping" value="ground2" disabled>
+                    <label id="label2" for="radio2">Второй</label>
+
+                    <input id="radio3" type="radio" name="shipping" value="ground3">
+                    <label id="label3" for="radio3">Третий</label>
+                </div>
+            </fieldset>
+        </div>
+        <button class="button" type="submit" title="кнопка отправки формы">
+            Найти
+        </button>
+
+    </form>
+
+    <h1>Прогресс бар</h1>
+    <div class="components__row">
+        <h3>Обычный прогресс бар</h3>
+        <div class="progress">
+            <div class="progress-val" id="progressBar" style="width: 35%" role="progressbar" data-value="35"
+                 aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" tabindex="0">
+                <div class="progress-counter">35%</div>
+            </div>
+        </div>
+        <br>
+        <button class="button" onclick="run();">для теста</button>
+    </div>
+
+
+    <div class="components__row">
+        <h3>Большой прогресс бар</h3>
+        <div class="progress progress_big">
+            <div class="progress-val" style="width: 45%" role="progressbar" aria-valuenow="45" aria-valuemin="0"
+                 aria-valuemax="100" tabindex="0">
+                <div class="progress-counter">45%</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="components__row">
+        <h1>Пагинация</h1>
+        <ul class="pagination">
+            <li class="pagination__item pagination__item_active" rel="prev">
+                <a class="pagination__link" href="#">Назад</a>
+            </li>
+            <li class="pagination__item pagination__item">
+                <a class="pagination__link" href="#" title="Первая страница">1</a>
+            </li>
+            <li class="pagination__item">
+                <a class="pagination__link" href="#" title="вторая страница">2</a>
+            </li>
+            <li class="pagination__item">
+                <a class="pagination__link" href="#" title="третья страница">3</a>
+            </li>
+
+            <li class="pagination__item" rel="next">
+                <a class="pagination__link" href="#">Вперед</a>
+            </li>
+            <li class="pagination__item">
+                <a class="pagination__link" href="#">Последняя страница</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="components__row">
+        <h1>Уведомления</h1>
+        <div class="alert" role="alert">Звучит уведомление</div>
+    </div>
+    <div class="components__row">
+        <h1>Таблица с одним header</h1>
+        <div class="table typography">
+            <table>
+                <caption>Teddy bear collectors:</caption>
+                <tr>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">City</th>
+                </tr>
+                <tr>
+                    <td>Phoenix</td>
+                    <td>Imari</td>
+                    <td>Henry</td>
+                </tr>
+                <tr>
+                    <td>Zeki</td>
+                    <td>Rome</td>
+                    <td>Min</td>
+                </tr>
+                <tr>
+                    <td>Apirka</td>
+                    <td>Kelly</td>
+                    <td>Brynn</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="components__row">
+        <h1>Таблица с двумя header</h1>
+        <div class="table typography">
+            <table summary="В этой таблице описывается что закон такой-то введен тогда-то">
+                <thead>
+                <tr>
+                    <th scope="col">№ п/п</th>
+                    <th scope="col">№ постановления</th>
+                    <th scope="col">Дата принятия</th>
+                    <th scope="col">Наименование нормативного правового акта</th>
+                    <th scope="col">Наименование нормативного правового акта</th>
+                    <th scope="col">Публ. (офиц,вед. ЗДТО)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td scope="row">1</td>
+                    <td>1764</td>
+                    <td>30.01.2014</td>
+                    <td>О проекте закона Томской области «О внесении изменений в ЗаконТомской области «О
+                        предоставлении и изъятии земельных участков в Томской области»
+                    </td>
+                    <td>О проекте закона Томской области «О внесении изменений в ЗаконТомской области «О
+                        предоставлении и изъятии земельных участков в Томской области»
+                    </td>
+                    <td>№ 27 (203)</td>
+                </tr>
+                <tr>
+                    <td scope="row">1</td>
+                    <td>1764</td>
+                    <td>30.01.2014</td>
+                    <td>О проекте закона Томской области «О внесении изменений в ЗаконТомской области «О
+                        предоставлении и изъятии земельных участков в Томской области»
+                    </td>
+                    <td>О проекте закона Томской области «О внесении изменений в ЗаконТомской области «О
+                        предоставлении и изъятии земельных участков в Томской области»
+                    </td>
+                    <td>№ 27 (203)</td>
+                </tr>
+                <tr>
+                    <td scope="row">1</td>
+                    <td>1764</td>
+                    <td>30.01.2014</td>
+                    <td>О проекте закона Томской области «О внесении изменений в ЗаконТомской области «О
+                        предоставлении и изъятии земельных участков в Томской области»
+                    </td>
+                    <td>О проекте закона Томской области «О внесении изменений в ЗаконТомской области «О
+                        предоставлении и изъятии земельных участков в Томской области»
+                    </td>
+                    <td>№ 27 (203)</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="components__row">
+        <h1>Таблица с нерегулярным заголовком</h1>
+        <div class="table typography">
+            <table>
+                <col>
+                <colgroup span="2"></colgroup>
+                <colgroup span="2"></colgroup>
+                <tr>
+                    <td rowspan="2"></td>
+                    <th colspan="2" scope="colgroup">Mars</th>
+                    <th colspan="2" scope="colgroup">Venus</th>
+                </tr>
+                <tr>
+                    <th scope="col">Produced</th>
+                    <th scope="col">Sold</th>
+                    <th scope="col">Produced</th>
+                    <th scope="col">Sold</th>
+                </tr>
+                <tr>
+                    <th scope="row">Teddy Bears</th>
+                    <td>50,000</td>
+                    <td>30,000</td>
+                    <td>100,000</td>
+                    <td>80,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">Board Games</th>
+                    <td>10,000</td>
+                    <td>5,000</td>
+                    <td>12,000</td>
+                    <td>9,000</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="components__row">
+        <h1>Табы</h1>
+
+
+        <div class="tabs" id="tabpanel1">
+            <ul role="tablist" class="tabs__list tabs-list">
+                <li class="tabs-list__item active" id="tab1" aria-controls="panel1" aria-selected="true" role="tab"
+                    tabindex="0">
+                    Crust
+                </li>
+                <li class="tabs-list__item" id="tab2" aria-controls="panel2" role="tab" aria-selected="false"
+                    tabindex="-1">
+                    Veggies
+                </li>
+                <li class="tabs-list__item" id="tab3" aria-controls="panel3" role="tab" aria-selected="false"
+                    tabindex="-1">
+                    Carnivore
+                </li>
+                <li class="tabs-list__item" id="tab4" aria-controls="panel4" role="tab" aria-selected="false"
+                    tabindex="-1">
+                    Delivery
+                </li>
+            </ul>
+
+            <div id="panel1" aria-labelledby="tab1" role="tabpanel" class="tabs__inner">
+                <h3 id="crust-label">tab1 inner</h3>
+
+            </div>
+
+            <div id="panel2" aria-labelledby="tab2" role="tabpanel" class="tabs__inner">
+                <h3 id="veg-label">tab2 inner</h3>
+
+            </div>
+
+            <div id="panel3" aria-labelledby="tab3" role="tabpanel" class="tabs__inner">
+                <h3 id="meat-label">tab3 inner</h3>
+
+            </div>
+
+            <div id="panel4" aria-labelledby="tab4" role="tabpanel" class="tabs__inner">
+                <h3 id="delivery-label">tab4 inner</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="components__row">
+        <h1>Кнопка Show-Hide</h1>
+        <button id="button1" class="button" aria-controls="t1" value="показать">
+            Показать
+        </button>
+
+        <div id="t1" class="collapse" role="region" aria-labelledby="t1-label" tabindex="-1" aria-expanded="false">
+            Topic 1 is all about being Topic 1 and may or may not have anything to do with other topics.
+        </div>
+    </div>
+
+    <div class="components__row typography">
+        <h1>Типографика ссылки</h1>
+        <a href="#">Ссылка обычная</a>
+        <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Ссылка disabled</a>
+    </div>
+
+    <div class="components__row">
+        <h1>Thumbnail</h1>
+        <div class="row">
+            <div class="col-xs-3">
+                <div class="thumbnail">
+                    <img alt="img"  src="https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97200&w=250&h=200" width="250" height="200">
+                    <div class="caption"><h3>Thumbnail label</h3>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
+                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <button class="button">
+                            <a href="#">Button</a>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-3">
+                <a href="#" class="thumbnail">
+                    <img alt="img"
+                         src="https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97200&w=250&h=200" width="250" height="200">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="components__row">
+        <h1>Panels</h1>
+        <div class="panel">
+            <div class="panel-body"> Basic panel example</div>
+        </div>
+        <p>с заголовком</p>
+        <div class="panel">
+            <div class="panel-heading">Panel heading without title</div>
+            <div class="panel-body"> Panel content</div>
+        </div>
+        <p>с подвалом</p>
+        <div class="panel">
+            <div class="panel-body"> Panel content</div>
+            <div class="panel-footer">Panel footer</div>
+        </div>
+    </div>
+    <div class="components__row">
+        <h1>Label</h1>
+        <h2>Example heading
+            <span class="label">New</span>
+        </h2>
+    </div>
+    <div class="components__row">
+        <h1>Badge</h1>
+        <div>
+            <a href="#">Inbox<span class="badge">42</span></a>
+            <br>
+            <br>
+            <button class="button" type="button"> Messages
+                <span class="badge">4</span>
+            </button>
+        </div>
+    </div>
+
+
+</div>
+{% include "partials/footer.twig" %}
+
+<script type="text/javascript">
+    function run() {
+
+        var obj = document.getElementById('progressBar');
+
+        if (obj.getAttribute("data-value") < 100) {
+            obj.setAttribute("data-value", parseInt(obj.getAttribute("data-value")) + 5);
+            obj.setAttribute('aria-valuenow', obj.getAttribute("data-value"));
+            obj.style.width = obj.getAttribute("data-value") + "%";
+
+            obj.children[0].innerHTML = obj.style.width;
+        }
+        setTimeout('run();', 500);
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+<script src="/dist/accessibility.js"></script>
+</body>
+</html>

@@ -88,3 +88,15 @@
 
 .application[data-color="black"] .results__item {
   border-bottom: 1px solid white; }
+
+.components h1 {
+  font-size: 32px;
+  margin: 30px 0;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px; }
+
+.components__row {
+  margin-bottom: 20px; }
+
+.application[data-color="black"] .components h1 {
+  border-bottom: 1px solid white; }

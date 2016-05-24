@@ -1,0 +1,49 @@
+.thumbnail {
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #ffffff;
+    border: 3px solid black;
+}
+.thumbnail img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.thumbnail img,
+.thumbnail a img {
+    margin-left: auto;
+    margin-right: auto;
+}
+a.thumbnail:hover,
+a.thumbnail:focus,
+a.thumbnail.active {
+    border-color: #0000cc;
+}
+.thumbnail .caption {
+    padding: 9px;
+    color: black;
+}
+
+// ==========================================================================
+// Theme black
+// ==========================================================================
+
+.application[data-color="black"] {
+    .thumbnail {
+        background-color: black;
+        border: 3px solid white;
+    }
+
+
+    a.thumbnail:hover,
+    a.thumbnail:focus,
+    a.thumbnail.active {
+        border-color: yellow;
+    }
+    .thumbnail .caption {
+        color: white;
+    }
+
+}
