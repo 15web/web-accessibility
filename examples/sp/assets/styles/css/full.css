@@ -59,3 +59,9 @@
 
 .quize__row {
   margin-bottom: 30px; }
+
+.npa__item {
+  margin-bottom: 1.4em; }
+  .npa__item:not(:last-child) {
+    padding-bottom: 0.6em;
+    border-bottom: 1px solid black; }

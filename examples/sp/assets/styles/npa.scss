@@ -1,0 +1,10 @@
+.npa {
+
+    &__item {
+        margin-bottom: 1.4em;
+        &:not(:last-child) {
+            padding-bottom: 0.6em;
+            border-bottom: 1px solid black;
+        }
+    }
+}
