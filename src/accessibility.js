@@ -15,6 +15,7 @@ import './components/default/image-alt';
 import './components/default/select';
 import './components/default/breadcrumbs';
 import './components/default/form';
+import './components/default/pagination';
 
 
 console.log('Hello world!');

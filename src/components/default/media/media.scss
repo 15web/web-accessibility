@@ -2,7 +2,6 @@
 
 .media {
     @include clearfix();
-
     margin-bottom: 30px;
 
     &__left {
@@ -17,7 +16,6 @@
     &__title {
         margin-bottom: 2px;
     }
-
 
     &__text {
         font-size: 1em;
