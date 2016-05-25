@@ -4,6 +4,8 @@ const gulp = require('gulp');
 const gp = require('gulp-load-plugins')();
 const sass = require('gulp-sass');
 const debug = require('gulp-debug');
+const webpack = require('webpack');
+const gutil = require('gulp-util');
 const browserSync = require('browser-sync').create();
 
 // examples-sp only
@@ -21,11 +23,16 @@ gulp.task("sp", function () {
         .pipe(gulp.dest('./examples/sp/assets/styles/css'));
 });
 
-gulp.task('default', ['html','sp', 'server'], function () {
+gulp.task("webpack", function() {
+    var configFile = './webpack.config.js';
+    var configFileContent = require(configFile);
+    var finalConfig = Object.assign({}, configFileContent);
+    webpack(finalConfig);
+});
 
+gulp.task('default', ['webpack','html', 'sp', 'server'], function () {
     gulp.watch('./examples/sp/twig/**/*.twig', ['html']);
     gulp.watch('./examples/sp/assets/styles/**/*.scss', ['sp']);
-
 });
 
 gulp.task('server', function () {
@@ -34,6 +41,5 @@ gulp.task('server', function () {
         open: true,
         startPath: "/examples/sp/index.html"
     });
-
     gulp.watch('./examples/sp/**/*.*').on('change', browserSync.reload);
 });
