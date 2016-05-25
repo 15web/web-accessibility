@@ -23,14 +23,25 @@ gulp.task("sp", function () {
         .pipe(gulp.dest('./examples/sp/assets/styles/css'));
 });
 
-gulp.task("webpack", function() {
+gulp.task("webpack", function () {
     var configFile = './webpack.config.js';
     var configFileContent = require(configFile);
     var finalConfig = Object.assign({}, configFileContent);
-    webpack(finalConfig);
+    var webpackStatsConfig = {
+        colors: true, hash: false, version: false, timings: false, assets: true, chunks: false,
+        chunkModules: false, modules: false, children: false, cached: false, reasons: false,
+        source: false, errorDetails: false, chunkOrigins: false
+    };
+    webpack(finalConfig, function (err,stats) {
+        if(err) throw new gutil.PluginError("webpack", err);
+        var title = 'webpack' + ' compile #'+':\r\n';
+        gutil.log(title, stats.toString(webpackStatsConfig));
+
+
+    });
 });
 
-gulp.task('default', ['webpack','html', 'sp', 'server'], function () {
+gulp.task('default', ['webpack', 'html', 'sp', 'server'], function () {
     gulp.watch('./examples/sp/twig/**/*.twig', ['html']);
     gulp.watch('./examples/sp/assets/styles/**/*.scss', ['sp']);
 });
