@@ -25,7 +25,7 @@
         border: 1px solid $main-color;
         border-radius: 4px;
 
-        &:hover {
+        &:hover, &:focus {
             color: $second-color;
             background: $main-color;
         }
