@@ -21,15 +21,12 @@ gulp.task("sp", function () {
         .pipe(gulp.dest('./examples/sp/assets/styles/css'));
 });
 
-
-
 gulp.task('default', ['html','sp', 'server'], function () {
 
     gulp.watch('./examples/sp/twig/**/*.twig', ['html']);
     gulp.watch('./examples/sp/assets/styles/**/*.scss', ['sp']);
 
 });
-
 
 gulp.task('server', function () {
     browserSync.init({

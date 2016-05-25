@@ -12,16 +12,21 @@
 {% include "./partials/control-panel.twig" %}
 <div>
     <header class="header" role="banner">
-        <div class="pull-left">
-            31 марта 2016
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="pull-left">
+                    31 марта 2016
+                </div>
+                <a class="header__site-version pull-right" href="#">
+                    Обычная версия сайта
+                </a>
+            </div>
         </div>
-        <a class="header__site-version pull-right" href="#">
-            Обычная версия сайта
-        </a>
-        <h1>
+        <h1 class="h1">
             Доступный Сайт </h1>
-        <h4>
-            Шаблон доступного сайта</h4>
+        <div class="h3">
+            Шаблон доступного сайта
+        </div>
         <nav class="nav" aria-label="горизонтальная навигация">
             <ul>
                 <li>
@@ -44,9 +49,7 @@
                 <li>
                     <a href="gallery-inner.html">Галлерея-внутри</a>
                 </li>
-                <li>
-                    <a href="news.html">Новости</a>
-                </li>
+
                 <li>
                     <a href="quize.html">Опрос</a>
                 </li>
@@ -73,89 +76,95 @@
 
     </header>
     <main class="main" role="main">
-            <!-- breadcrumbs -->
-            <nav class="breadcrumbs" aria-label="хлебные крошки">
-                <ul>
-                    <li class="breadcrumbs__item">
-                        <a href="/">Главная</a>
-                    </li>
-                    <span class="breadcrumbs__separator" aria-hidden="true"></span>
-                    <li class="breadcrumbs__item">
-                        <a href="#" title="Официальная документация">Нормативно-правовые акты</a>
-                    </li>
-                    <span class="breadcrumbs__separator" aria-hidden="true"></span>
-                    <li class="breadcrumbs__item">
-                        <a href="#" title="От 2014 года">Решения Совета</a>
-                    </li>
-                    <span class="breadcrumbs__separator" aria-hidden="true"></span>
-                    <li class="breadcrumbs__item">
-                        <span>Решения 2015</span>
-                    </li>
-                    <span class="breadcrumbs__separator" aria-hidden="true"></span>
-                </ul>
-            </nav>
-            <!-- end breadcrumbs -->
+        <!-- breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="хлебные крошки">
+            <ul>
+                <li class="breadcrumbs__item">
+                    <a href="/">Главная</a>
+                </li>
+                <span class="breadcrumbs__separator" aria-hidden="true"></span>
+                <li class="breadcrumbs__item">
+                    <a href="#" title="Официальная документация">Нормативно-правовые акты</a>
+                </li>
+                <span class="breadcrumbs__separator" aria-hidden="true"></span>
+                <li class="breadcrumbs__item">
+                    <a href="#" title="От 2014 года">Решения Совета</a>
+                </li>
+                <span class="breadcrumbs__separator" aria-hidden="true"></span>
+                <li class="breadcrumbs__item">
+                    <span>Решения 2015</span>
+                </li>
+                <span class="breadcrumbs__separator" aria-hidden="true"></span>
+            </ul>
+        </nav>
+        <!-- end breadcrumbs -->
 
 
-            <!-- gallery -->
-            <div class="gallery">
-                <div class="gallery__item">
-                    <a href="#"><h2>Галлерея 1</h2></a>
-                    <div class="row">
-                        <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=360%C3%97210&w=360&h=210"
-                                 width="360" height="210" alt="Картинка">
-                        </a>
-                        <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=360%C3%97210&w=360&h=210"
-                                 width="360" height="210" alt="Картинка">
-                        </a>
-                        <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=360%C3%97210&w=360&h=210"
-                                 width="360" height="210" alt="Картинка">
-                        </a>
-                    </div>
+        <!-- gallery -->
+        <div class="gallery">
+            <div class="gallery__item">
+                <div class="h2">
+                    <a href="#">Галлерея 1</a>
                 </div>
-
-                <div class="gallery__item">
-                    <a href="#"><h2>Галлерея 2</h2></a>
-                    <div class="row">
-                        <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=360%C3%97210&w=360&h=210"
-                                 width="360" height="210" alt="Картинка">
-                        </a>
-                        <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=360%C3%97210&w=360&h=210"
-                                 width="360" height="210" alt="Картинка">
-                        </a>
-                        <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=360%C3%97210&w=360&h=210"
-                                 width="360" height="210" alt="Картинка">
-                        </a>
-                    </div>
+                <div class="row">
+                    <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97175&w=300&h=175"
+                              alt="Картинка">
+                    </a>
+                    <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97175&w=300&h=175"
+                              alt="Картинка">
+                    </a>
+                    <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97175&w=300&h=175"
+                              alt="Картинка">
+                    </a>
                 </div>
-
-                <div class="gallery__item">
-                    <a href="#"><h2>Галлерея 3</h2></a>
-                    <div class="row">
-                        <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=360%C3%97210&w=360&h=210"
-                                 width="360" height="210" alt="Картинка">
-                        </a>
-                        <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=360%C3%97210&w=360&h=210"
-                                 width="360" height="210" alt="Картинка">
-                        </a>
-                        <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=360%C3%97210&w=360&h=210"
-                                 width="360" height="210" alt="Картинка">
-                        </a>
-                    </div>
-                </div>
-
-
             </div>
-            <!-- end gallery -->
+
+            <div class="gallery__item">
+                <div class="h2">
+                    <a href="#">Галлерея 1</a>
+                </div>
+                <div class="row">
+                    <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97175&w=300&h=175"
+                              alt="Картинка">
+                    </a>
+                    <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97175&w=300&h=175"
+                              alt="Картинка">
+                    </a>
+                    <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97175&w=300&h=175"
+                              alt="Картинка">
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery__item">
+                <div class="h2">
+                    <a href="#">Галлерея 1</a>
+                </div>
+                <div class="row">
+                    <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97175&w=300&h=175"
+                              alt="Картинка">
+                    </a>
+                    <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97175&w=300&h=175"
+                              alt="Картинка">
+                    </a>
+                    <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97175&w=300&h=175"
+                              alt="Картинка">
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- end gallery -->
     </main>
 
     {% include "partials/footer.twig" %}

@@ -15,7 +15,7 @@
     box-sizing: border-box;
 
     &:focus {
-        outline: 4px solid black;
+        outline: 3px solid #0000cc;
     }
 }
 
@@ -32,7 +32,7 @@
         background: #000;
 
         &:focus {
-            outline: 4px solid white;
+            outline-color: #BF1722;
         }
     }
 

@@ -2,20 +2,6 @@
     margin-bottom: 36px;
     overflow: auto;
 
-    a {
-        &[href] {
-            color: #0000cc;
-
-            &:hover, &:focus, &:active {
-                background: #ffa;
-                color: #BF1722;
-            }
-        }
-        &.disabled {
-            color: #333333;
-            cursor: not-allowed;
-        }
-    }
 
     h1 {
         font-size: 2em;
@@ -90,24 +76,54 @@
     }
 }
 
+.h1 {
+    font-size: 2em;
+    line-height: 1.1;
+    font-weight: bold;
+}
+
+.h2 {
+    font-size: 1.6em;
+    line-height: 1.1;
+    font-weight: bold;
+}
+
+.h3 {
+    font-size: 1.33em;
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+.h4 {
+    font-size: 1em;
+    line-height: 1.1;
+    font-weight: bold;
+}
+
+.h5 {
+    font-size: 0.8em;
+    line-height: 1.1;
+    font-weight: bold;
+}
+
+small {
+    font-size: 65%;
+}
+
+q {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 1em;
+    border-left: 5px solid black;
+}
+
+
 // ==========================================================================
 // Theme black
 // ==========================================================================
 
 .application[data-color="black"] {
     .typography {
-        a {
-            &[href] {
-                color: #969691;
-                &:hover, &:focus, &:active {
-                    background: #d8edff;
-                    color: #BF1722;
-                }
-                &.disabled {
-                    color: #cbcbcb;
-                }
-            }
-        }
         h4 {
             color: white;
         }

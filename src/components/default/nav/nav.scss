@@ -20,20 +20,16 @@
         padding: 5px 10px;
 
         font-weight: bold;
-        text-decoration: none;
+        text-decoration: none !important;
 
         border: 1px solid $main-color;
         border-radius: 4px;
-
-        &:hover, &:focus {
-            color: $second-color;
-            background: $main-color;
-        }
+        outline: none !important;
     }
 
     li.active > a {
-        color: $second-color;
-        background: $main-color;
+        background: #ffa;
+        color: #BF1722;
     }
 
 
@@ -47,22 +43,12 @@
     $main-color: invert($main-color);
     $second-color: invert($second-color);
     .nav {
-
-        a {
-
-
-            border: 1px solid $main-color;
-
-
-            &:hover {
-                color: $second-color;
-                background: $main-color;
-            }
-        }
-
         li.active > a {
-            color: $second-color;
-            background: $main-color;
+            background: #d8edff;
+            color: #BF1722;
+        }
+        a {
+            border: 1px solid $main-color;
         }
 
     }

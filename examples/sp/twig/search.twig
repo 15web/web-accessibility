@@ -11,16 +11,21 @@
 {% include "./partials/control-panel.twig" %}
 <div>
     <header class="header" role="banner">
-        <div class="pull-left">
-            31 марта 2016
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="pull-left">
+                    31 марта 2016
+                </div>
+                <a class="header__site-version pull-right" href="#">
+                    Обычная версия сайта
+                </a>
+            </div>
         </div>
-        <a class="header__site-version pull-right" href="#">
-            Обычная версия сайта
-        </a>
-        <h1>
+        <h1 class="h1">
             Доступный Сайт </h1>
-        <h4>
-            Шаблон доступного сайта</h4>
+        <div class="h3">
+            Шаблон доступного сайта
+        </div>
 
         <nav class="nav" aria-label="горизонтальная навигация">
             <ul>
@@ -45,9 +50,6 @@
                     <a href="gallery-inner.html">Галлерея-внутри</a>
                 </li>
                 <li>
-                    <a href="news.html">Новости</a>
-                </li>
-                <li >
                     <a href="quize.html">Опрос</a>
                 </li>
                 <li class="active">
@@ -77,64 +79,86 @@
         <!-- results -->
         <div class="results">
 
-            <div class="results__heading">
-                <b>Новости</b>
+            <div class="panel-heading content-header">
+                <div class="h3">Новости</div>
                 <div>Найдено 200 материалов:</div>
             </div>
 
-            <div class="results__item">
-                <div class="results__item-count">1.</div>
-                <div>
-                    <a href="#">В отрасли культуры состоялось заседание комиссии</a>
+            <div class="media">
+                <div class="media__left">1.</div>
+                <div class="media__body">
+                    <a class="media__text" href="#">В отрасли культуры состоялось заседание комиссии</a>
+                    <p class="media__text">29 августа на площади Староювалинского дома культуры состоялся
+                        <strong>конкурс</strong>
+                    </p>
                 </div>
-                <p>29 августа на площади Староювалинского дома культуры состоялся <strong>конкурс</strong></p>
             </div>
-            <div class="results__item">
-                <div class="results__item-count">2.</div>
-                <div>
-                    <a href="#">В отрасли культуры состоялось заседание комиссии</a>
+
+            <div class="media">
+                <div class="media__left">1.</div>
+                <div class="media__body">
+                    <a class="media__text" href="#">В отрасли культуры состоялось заседание комиссии</a>
+                    <p class="media__text">29 августа на площади Староювалинского дома культуры состоялся
+                        <strong>конкурс</strong>
+                    </p>
                 </div>
-                <p>29 августа на площади Староювалинского дома культуры состоялся <strong>конкурс</strong></p>
             </div>
 
-            <div class="results__item">
-                <div class="results__item-count">3.</div>
-                <div>
-                    <a href="#">В отрасли культуры состоялось заседание комиссии</a>
+            <div class="media">
+                <div class="media__left">1.</div>
+                <div class="media__body">
+                    <a class="media__text" href="#">В отрасли культуры состоялось заседание комиссии</a>
+                    <p class="media__text">29 августа на площади Староювалинского дома культуры состоялся
+                        <strong>конкурс</strong>
+                    </p>
                 </div>
-                <p>29 августа на площади Староювалинского дома культуры состоялся <strong>конкурс</strong></p>
             </div>
 
-            <div class="results__item">
-                <div class="results__item-count">4.</div>
-                <div>
-                    <a href="#">В отрасли культуры состоялось заседание комиссии</a>
+            <div class="media">
+                <div class="media__left">1.</div>
+                <div class="media__body">
+                    <a class="media__text" href="#">В отрасли культуры состоялось заседание комиссии</a>
+                    <p class="media__text">29 августа на площади Староювалинского дома культуры состоялся
+                        <strong>конкурс</strong>
+                    </p>
                 </div>
-                <p>29 августа на площади Староювалинского дома культуры состоялся <strong>конкурс</strong></p>
             </div>
 
-
-
-            <div class="results__heading">
-                <b>Анонсы</b>
-                <div>Найдено 22 материалов:</div>
-            </div>
-
-            <div class="results__item">
-                <div class="results__item-count">1.</div>
-                <div>
-                    <a href="#">В отрасли культуры состоялось заседание комиссии</a>
+            <div class="media">
+                <div class="media__left">1.</div>
+                <div class="media__body">
+                    <a class="media__text" href="#">В отрасли культуры состоялось заседание комиссии</a>
+                    <p class="media__text">29 августа на площади Староювалинского дома культуры состоялся
+                        <strong>конкурс</strong>
+                    </p>
                 </div>
-                <p>29 августа на площади Староювалинского дома культуры состоялся <strong>конкурс</strong></p>
             </div>
 
-            <div class="results__item">
-                <div class="results__item-count">2.</div>
-                <div>
-                    <a href="#"><strong>Всероссийский конкурс</strong> "Лучшее муниципальное образование"</a>
-                </div>
-                <p>Всероссийский <strong>конкурс</strong> «Лучшее муниципальное образование». Задачей конкурса является формирование положительного восприятия реформы </p>
+            <div class="panel-heading content-header">
+                <div class="h3">Статьи</div>
+                <div>Найдено 20 материалов:</div>
             </div>
+
+            <div class="media">
+                <div class="media__left">1.</div>
+                <div class="media__body">
+                    <a class="media__text" href="#">В отрасли культуры состоялось заседание комиссии</a>
+                    <p class="media__text">29 августа на площади Староювалинского дома культуры состоялся
+                        <strong>конкурс</strong>
+                    </p>
+                </div>
+            </div>
+
+            <div class="media">
+                <div class="media__left">1.</div>
+                <div class="media__body">
+                    <a class="media__text" href="#">В отрасли культуры состоялось заседание комиссии</a>
+                    <p class="media__text">29 августа на площади Староювалинского дома культуры состоялся
+                        <strong>конкурс</strong>
+                    </p>
+                </div>
+            </div>
+
 
         </div>
         <!-- end results -->

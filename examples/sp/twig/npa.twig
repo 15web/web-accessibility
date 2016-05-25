@@ -9,172 +9,191 @@
 <body class="application container">
 
 {% include "./partials/control-panel.twig" %}
-<div>
-    <header class="header" role="banner">
-        <div class="pull-left">
-            31 марта 2016
+
+<header class="header" role="banner">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="pull-left">
+                31 марта 2016
+            </div>
+            <a class="header__site-version pull-right" href="#">
+                Обычная версия сайта
+            </a>
         </div>
-        <a class="header__site-version pull-right" href="#">
-            Обычная версия сайта
-        </a>
-        <h1>
-            Доступный Сайт </h1>
-        <h4>
-            Шаблон доступного сайта</h4>
+    </div>
+    <h1 class="h1">
+        Доступный Сайт </h1>
+    <div class="h3">
+        Шаблон доступного сайта
+    </div>
 
-        <nav class="nav" aria-label="горизонтальная навигация">
-            <ul>
-                <li>
-                    <a href="faq.html" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
-                        Вопрос-ответ
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html" title="Главная страница сайта">Главная</a>
-                </li>
-                <li>
-                    <a href="components.html" title="наши компоненты">Компоненты</a>
-                </li>
-                <li>
-                    <a href="content.html">Контент</a>
-                </li>
-                <li>
-                    <a href="gallery.html">Галлерея</a>
-                </li>
-                <li>
-                    <a href="gallery-inner.html">Галлерея-внутри</a>
-                </li>
-                <li>
-                    <a href="news.html">Новости</a>
-                </li>
-                <li >
-                    <a href="quize.html">Опрос</a>
-                </li>
-                <li>
-                    <a href="search.html">Поиск</a>
-                </li>
-                <li class="active">
-                    <a href="npa.html">Список</a>
-                </li>
-            </ul>
-        </nav>
-
-        <form class="row" action="" role="search">
-            <div class="col-xs-12">
-                <label for="search" class="hidden">Поиск по сайту</label>
-
-                <input class="input col-xs-10" id="search" type="text">
-                <button class="col-xs-2 button" type="submit" value="Отправка формы">
-                    Найти
-                </button>
-            </div>
-
-        </form>
-
-    </header>
-
-    <main class="main" role="main">
-
-
-
-        <!-- breadcrumbs -->
-        <nav class="breadcrumbs" aria-label="хлебные крошки">
-            <ul>
-                <li class="breadcrumbs__item">
-                    <a href="/">Главная</a>
-                </li>
-                <span class="breadcrumbs__separator" aria-hidden="true"></span>
-                <li class="breadcrumbs__item">
-                    <a href="#" title="Официальная документация">Нормативно-правовые акты</a>
-                </li>
-                <span class="breadcrumbs__separator" aria-hidden="true"></span>
-                <li class="breadcrumbs__item">
-                    <a href="#" title="От 2014 года">Решения Совета</a>
-                </li>
-                <span class="breadcrumbs__separator" aria-hidden="true"></span>
-                <li class="breadcrumbs__item">
-                    <span>Решения 2015</span>
-                </li>
-                <span class="breadcrumbs__separator" aria-hidden="true"></span>
-            </ul>
-        </nav>
-        <!-- end breadcrumbs -->
-
-
-            <h2 class="panel-heading content-header">Решения 2015</h2>
-
-            <!-- npa -->
-            <div class="npa">
-
-                <div class="npa__item">
-                    <h5>Номер: 106 (действует)</h5>
-                    <small>10 ноября 2015</small>
-                    <p>
-                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloremque doloribus laboriosam nobis odit quo reiciendis rerum? Amet dignissimos eum optio pariatur quam quis, recusandae repellat ut veniam veritatis voluptatibus.</a>
-                    </p>
-                </div>
-                <div class="npa__item">
-                    <h5>Номер: 106 (действует)</h5>
-                    <small>10 ноября 2015</small>
-                    <p>
-                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloremque doloribus laboriosam nobis odit quo reiciendis rerum? Amet dignissimos eum optio pariatur quam quis, recusandae repellat ut veniam veritatis voluptatibus.</a>
-                    </p>
-                </div>
-                <div class="npa__item">
-                    <h5>Номер: 106 (действует)</h5>
-                    <small>10 ноября 2015</small>
-                    <p>
-                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloremque doloribus laboriosam nobis odit quo reiciendis rerum? Amet dignissimos eum optio pariatur quam quis, recusandae repellat ut veniam veritatis voluptatibus.</a>
-                    </p>
-                </div>
-                <div class="npa__item">
-                    <h5>Номер: 106 (действует)</h5>
-                    <small>10 ноября 2015</small>
-                    <p>
-                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloremque doloribus laboriosam nobis odit quo reiciendis rerum? Amet dignissimos eum optio pariatur quam quis, recusandae repellat ut veniam veritatis voluptatibus.</a>
-                    </p>
-                </div>
-                <div class="npa__item">
-                    <h5>Номер: 106 (действует)</h5>
-                    <small>10 ноября 2015</small>
-                    <p>
-                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloremque doloribus laboriosam nobis odit quo reiciendis rerum? Amet dignissimos eum optio pariatur quam quis, recusandae repellat ut veniam veritatis voluptatibus.</a>
-                    </p>
-                </div>
-
-
-
-            </div>
-            <!-- end npa -->
-
-            <!-- paging -->
-        <ul class="main__pagination pagination">
-            <li class="pagination__item pagination__item_active" rel="prev">
-                <a class="pagination__link" href="#">Назад</a>
+    <nav class="nav" aria-label="горизонтальная навигация">
+        <ul>
+            <li>
+                <a href="faq.html" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
+                    Вопрос-ответ
+                </a>
             </li>
-            <li class="pagination__item pagination__item">
-                <a class="pagination__link" href="#" title="Первая страница">1</a>
+            <li>
+                <a href="index.html" title="Главная страница сайта">Главная</a>
             </li>
-            <li class="pagination__item">
-                <a class="pagination__link" href="#" title="вторая страница">2</a>
+            <li>
+                <a href="components.html" title="наши компоненты">Компоненты</a>
             </li>
-            <li class="pagination__item">
-                <a class="pagination__link" href="#" title="третья страница">3</a>
+            <li>
+                <a href="content.html">Контент</a>
             </li>
-
-            <li class="pagination__item" rel="next">
-                <a class="pagination__link" href="#">Вперед</a>
+            <li>
+                <a href="gallery.html">Галлерея</a>
             </li>
-            <li class="pagination__item">
-                <a class="pagination__link" href="#">Последняя страница</a>
+            <li>
+                <a href="gallery-inner.html">Галлерея-внутри</a>
+            </li>
+            <li>
+                <a href="quize.html">Опрос</a>
+            </li>
+            <li>
+                <a href="search.html">Поиск</a>
+            </li>
+            <li class="active">
+                <a href="npa.html">Список</a>
             </li>
         </ul>
-            <!-- end paging -->
+    </nav>
 
-    </main>
+    <form class="row" action="" role="search">
+        <div class="col-xs-12">
+            <label for="search" class="hidden">Поиск по сайту</label>
 
-    {% include "partials/footer.twig" %}
-</div>
+            <input class="input col-xs-10" id="search" type="text">
+            <button class="col-xs-2 button" type="submit" value="Отправка формы">
+                Найти
+            </button>
+        </div>
+
+    </form>
+
+</header>
+
+<main class="main" role="main">
+
+
+    <!-- breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="хлебные крошки">
+        <ul>
+            <li class="breadcrumbs__item">
+                <a href="/">Главная</a>
+            </li>
+            <span class="breadcrumbs__separator" aria-hidden="true"></span>
+            <li class="breadcrumbs__item">
+                <a href="#" title="Официальная документация">Нормативно-правовые акты</a>
+            </li>
+            <span class="breadcrumbs__separator" aria-hidden="true"></span>
+            <li class="breadcrumbs__item">
+                <a href="#" title="От 2014 года">Решения Совета</a>
+            </li>
+            <span class="breadcrumbs__separator" aria-hidden="true"></span>
+            <li class="breadcrumbs__item">
+                <span>Решения 2015</span>
+            </li>
+            <span class="breadcrumbs__separator" aria-hidden="true"></span>
+        </ul>
+    </nav>
+    <!-- end breadcrumbs -->
+
+
+    <h2 class="panel-heading content-header h2">Решения 2015</h2>
+
+    <div class="media">
+        <div class="media__title">Номер: 106 (действует)</div>
+        <div class="media__text">
+            <small>10 ноября 2015</small>
+        </div>
+        <div class="media__text">
+            <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloremque doloribus
+                laboriosam nobis odit quo reiciendis rerum? Amet dignissimos eum optio pariatur quam quis, recusandae
+                repellat ut veniam veritatis voluptatibus.
+            </a>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media__title">Номер: 106 (действует)</div>
+        <div class="media__text">
+            <small>10 ноября 2015</small>
+        </div>
+        <div class="media__text">
+            <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloremque doloribus
+                laboriosam nobis odit quo reiciendis rerum? Amet dignissimos eum optio pariatur quam quis, recusandae
+                repellat ut veniam veritatis voluptatibus.
+            </a>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media__title">Номер: 106 (действует)</div>
+        <div class="media__text">
+            <small>10 ноября 2015</small>
+        </div>
+        <div class="media__text">
+            <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloremque doloribus
+                laboriosam nobis odit quo reiciendis rerum? Amet dignissimos eum optio pariatur quam quis, recusandae
+                repellat ut veniam veritatis voluptatibus.
+            </a>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media__title">Номер: 106 (действует)</div>
+        <div class="media__text">
+            <small>10 ноября 2015</small>
+        </div>
+        <div class="media__text">
+            <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloremque doloribus
+                laboriosam nobis odit quo reiciendis rerum? Amet dignissimos eum optio pariatur quam quis, recusandae
+                repellat ut veniam veritatis voluptatibus.
+            </a>
+        </div>
+    </div>
+    <div class="media">
+        <div class="media__title">Номер: 106 (действует)</div>
+        <div class="media__text">
+            <small>10 ноября 2015</small>
+        </div>
+        <div class="media__text">
+            <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloremque doloribus
+                laboriosam nobis odit quo reiciendis rerum? Amet dignissimos eum optio pariatur quam quis, recusandae
+                repellat ut veniam veritatis voluptatibus.
+            </a>
+        </div>
+    </div>
+
+
+    <!-- paging -->
+    <ul class="main__pagination pagination">
+        <li class="pagination__item pagination__item_active" rel="prev">
+            <a class="pagination__link" href="#">Назад</a>
+        </li>
+        <li class="pagination__item pagination__item">
+            <a class="pagination__link" href="#" title="Первая страница">1</a>
+        </li>
+        <li class="pagination__item">
+            <a class="pagination__link" href="#" title="вторая страница">2</a>
+        </li>
+        <li class="pagination__item">
+            <a class="pagination__link" href="#" title="третья страница">3</a>
+        </li>
+
+        <li class="pagination__item" rel="next">
+            <a class="pagination__link" href="#">Вперед</a>
+        </li>
+        <li class="pagination__item">
+            <a class="pagination__link" href="#">Последняя страница</a>
+        </li>
+    </ul>
+    <!-- end paging -->
+
+</main>
+
+{% include "partials/footer.twig" %}
+
 
 <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
 <script src="/dist/accessibility.js"></script>

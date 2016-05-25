@@ -31,10 +31,13 @@
         border: 1px solid #000;
         border-radius: 4px;
 
-        &:hover,
+        &:focus,&:hover {
+            outline: none !important;
+        }
+
         .pagination__item_active & {
-            color: #fff;
-            background: black;
+            color: #BF1722 !important;
+            background: #ffa;
         }
     }
 }
@@ -53,10 +56,9 @@
         border-color: #fff;
     }
 
-    .pagination__link:hover,
     .pagination__item_active .pagination__link {
-        color: #000;
-        background: #fff;
+        background: #d8edff;
+        color: #BF1722;
     }
 
 }

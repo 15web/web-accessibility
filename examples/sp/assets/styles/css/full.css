@@ -4,13 +4,17 @@
   padding-top: 20px;
   padding-bottom: 20px;
   border-bottom: 2px solid #000; }
+  .header .h1 {
+    margin: 0.6em 0 0.5em; }
+  .header .h3 {
+    margin-bottom: 1em; }
   .header__site-version {
     display: inline-block;
-    padding-left: 45px;
-    background-color: white;
     background-size: contain; }
 
 .main {
+  width: 960px;
+  margin: 0 auto;
   padding: 40px 0; }
   .main .content-block {
     margin-bottom: 30px; }
@@ -52,6 +56,12 @@
 .application[data-color="black"] .footer {
   border-color: #fff; }
 
+.gallery .h2 {
+  margin-bottom: 0.5em; }
+
+.gallery img {
+  max-width: 100%; }
+
 .gallery__item {
   margin-bottom: 30px; }
   .gallery__item:last-child {
@@ -59,35 +69,6 @@
 
 .quize__row {
   margin-bottom: 30px; }
-
-.npa__item {
-  margin-bottom: 1.4em; }
-  .npa__item:not(:last-child) {
-    padding-bottom: 0.6em;
-    border-bottom: 1px solid black; }
-
-.results {
-  margin-bottom: 36px; }
-  .results__heading {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid black; }
-  .results__item {
-    margin-bottom: 20px;
-    padding: 0 0 15px 30px;
-    border-bottom: 1px solid black;
-    position: relative; }
-    .results__item-count {
-      font-size: 1.125em;
-      position: absolute;
-      top: 0;
-      left: 0; }
-
-.application[data-color="black"] .results__heading {
-  border-bottom-color: white; }
-
-.application[data-color="black"] .results__item {
-  border-bottom: 1px solid white; }
 
 .components h1 {
   font-size: 32px;
