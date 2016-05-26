@@ -26,11 +26,3 @@ import './components/default/thumbnail';
 import './components/default/label';
 import './components/default/badge';
 
-import {hideShow} from './components/default/collapse';
-import {tabpanel} from './components/default/tabs';
-// TODO как в бустрапе активировать с помощью data
-
-$(document).ready(function () {
-    var panel1 = new tabpanel("tabpanel1", false); //табы
-    var hs1 = new hideShow('button1'); //кнопка скрыть показать
-});
