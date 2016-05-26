@@ -1,3 +1,6 @@
+.components h1:first-child {
+    margin-top: 0;
+}
 .components h1 {
     font-size: 32px;
     margin: 30px 0;

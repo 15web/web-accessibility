@@ -1,0 +1,55 @@
+.page-header {
+  padding: 20px 0px 20px;
+}
+.container {
+  position: relative;
+}
+.project-name {
+  font-size: 64px;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+.control-panel.fixed {
+  position: fixed;
+  top:0px;
+  width: 1140px;
+}
+
+.sidebar {
+  float: left;
+  width:230px;
+  margin-right: 30px;
+}
+.main {
+  padding: 40px 0px;
+}
+.main:before, .main:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.main__sidebar {
+  position: relative;
+  float: left;
+  width: 20%;
+}
+
+.main__sidebar .nav.fixed {
+  position: fixed;
+  top:65px;
+  width: 228px;
+}
+
+.main__sidebar .nav {
+
+}
+.main__sidebar .nav li{
+  display: block;
+  width: 200px;
+}
+.main__content {
+  float: right;
+  width: 80%;
+  margin: 0 auto;
+}
