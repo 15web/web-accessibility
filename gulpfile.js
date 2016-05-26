@@ -12,12 +12,15 @@ const cssnano = require('gulp-cssnano');
 
 const browserSync = require('browser-sync').create();
 
+var DEBUG = false;
+
 // examples-sp only
 
 gulp.task('html', function () {
     gulp.src('./examples/sp/twig/*.twig')
         .pipe(gp.cached('html'))
         .pipe(gp.twig())
+        .on('error', console.log)
         .pipe(gulp.dest('./examples/sp/'))
 });
 
@@ -41,7 +44,9 @@ gulp.task('styles', function () {
         .pipe(gulp.dest('./dist'));
 });
 
-gulp.task("webpack", function () {
+gulp.task("webpack", function (callback) {
+
+    var flag = true;
     var configFile = './webpack.config.js';
     var configFileContent = require(configFile);
     var finalConfig = Object.assign({}, configFileContent);
@@ -55,6 +60,10 @@ gulp.task("webpack", function () {
         var title = 'webpack' + ' compile #'+':\r\n';
         gutil.log(title, stats.toString(webpackStatsConfig));
 
+        if (flag) {
+            callback();
+            flag = false;
+        }
 
     });
 });
@@ -72,8 +81,9 @@ gulp.task('production', ['webpack', 'html', 'sp','styles','scripts','server'], f
 gulp.task('server', function () {
     browserSync.init({
         server: './',
-        open: true,
+        open: false,
         startPath: "/examples/sp/index.html"
     });
-    gulp.watch('./examples/sp/**/*.*').on('change', browserSync.reload);
+    gulp.watch('./dist/**/*').on('change', browserSync.reload);
+    gulp.watch('./examples/sp/*.html').on('change', browserSync.reload);
 });
