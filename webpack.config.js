@@ -5,11 +5,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
-        accessibility: './src/accessibility'
+        "accessibility": './src/accessibility'
     },
     output: {
         path: './dist/',
-        filename: 'accessibility.js',
+        filename: "[name].js",
         library: '[name]'
     },
     watch: true,
@@ -17,6 +17,7 @@ module.exports = {
     module: {
         loaders: [{
             test: /\.js$/,
+            exclude: /node_modules/,
             loader: 'babel',
             query: {
                 presets: ['es2015']
