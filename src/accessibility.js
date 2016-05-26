@@ -27,5 +27,7 @@ import './components/default/label';
 import './components/default/badge';
 
 import {hideShow} from './components/default/collapse';
-import {tabpanel} from './components/default/tabs';
+import tabpanel from './components/default/tabs';
 
+exports.tabpanel = tabpanel;
+exports.hideShow = hideShow;

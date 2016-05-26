@@ -23,7 +23,7 @@ function keyCodes() {
 }
 
 
-export function tabpanel(id, accordian) {
+export default function tabpanel(id, accordian) {
 
 
     this.panel_id = id;

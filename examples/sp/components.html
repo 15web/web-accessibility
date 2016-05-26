@@ -496,7 +496,15 @@
     }
 </script>
 
+
 <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
 <script src="/dist/accessibility.js"></script>
+<script>
+    console.log(accessibility.tabpanel);
+    $(document).ready(function () {
+        var panel1 = new accessibility.tabpanel("tabpanel1", false); //табы
+        var hs1 = new accessibility.hideShow('button1'); //кнопка скрыть показать
+    });
+</script>
 </body>
 </html>
