@@ -13,23 +13,30 @@
         float: left;
         margin-right: 10px;
         margin-bottom: 10px;
-    }
-
-    a {
-        display: inline-block;
-        padding: 5px 10px;
-
-        font-weight: bold;
-        text-decoration: none !important;
-
-        border: 1px solid $main-color;
         border-radius: 4px;
-        outline: none !important;
+        a {
+            display: inline-block;
+            padding: 5px 10px;
+
+            font-weight: bold;
+            text-decoration: none !important;
+
+            border: 1px solid $main-color;
+            border-radius: 4px;
+
+            &:focus, &:hover {
+                outline: none !important;
+                box-shadow: 0px 0px  0 3px #ffa;
+            }
+        }
     }
 
-    li.active > a {
-        background: #ffa;
-        color: #BF1722;
+
+    li.active {
+        & > a {
+            background: #ffa;
+            color: #BF1722;
+        }
     }
 
 
@@ -49,6 +56,9 @@
         }
         a {
             border: 1px solid $main-color;
+            &:focus, &:hover {
+                box-shadow: 0 0 0 3px #ffa;
+            }
         }
 
     }

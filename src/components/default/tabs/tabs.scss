@@ -22,6 +22,10 @@
             border: 1px solid #000;
             border-radius: 4px;
             cursor: pointer;
+            &:focus, &:hover {
+                outline: none !important;
+                box-shadow: 0 0 0 3px #ffa;
+            }
             &[aria-selected='true'] {
                 background: black;
                 color: white;

@@ -25,7 +25,7 @@
         font-size: 1em;
 
         &:focus {
-            outline: 4px solid black;
+            outline: 3px solid #0000cc;
         }
     }
 
@@ -62,7 +62,7 @@ fieldset {
             border-color: $text-color;
 
             &:focus {
-                outline: 4px solid white;
+                outline-color: #BF1722;
             }
         }
     }

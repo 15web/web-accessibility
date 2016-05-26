@@ -33,6 +33,9 @@
 
         &:focus,&:hover {
             outline: none !important;
+            &:focus, &:hover {
+                box-shadow: 0 0 0 3px #ffa;
+            }
         }
 
         .pagination__item_active & {
