@@ -26,3 +26,6 @@ import './components/default/thumbnail';
 import './components/default/label';
 import './components/default/badge';
 
+import {hideShow} from './components/default/collapse';
+import {tabpanel} from './components/default/tabs';
+
