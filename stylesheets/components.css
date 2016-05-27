@@ -1,16 +1,27 @@
-.components h1:first-child {
+.components .components__header:first-child {
     margin-top: 0;
 }
-.components h1 {
+.components .components__header {
+    display: block;
     font-size: 32px;
     margin: 30px 0;
     border-bottom: 1px solid black;
     padding-bottom: 5px;
 }
+.components .components__descr {
+    color: #999999;
+    font-weight:bold;
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
 .components__row {
     margin-bottom: 20px;
 }
 
-.application[data-color="black"] .components h1 {
+.application[data-color="black"] .components__header {
     border-bottom: 1px solid white;
+}
+.application[data-color="black"] .components__descr {
+    color: #99FF66;
 }

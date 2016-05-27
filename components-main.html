@@ -74,9 +74,9 @@
 </div>
 <main class="components main">
     <div class="main__content">
-        <span class="components-header" id="form">Форма</span>
+        <span class="components__header" id="form">Форма</span>
         <form class="form" action="">
-            <div class="form__line"><p>input с скрытым label</p>
+            <div class="form__line"><p class="components__descr">input с скрытым label</p>
                 <label for="search1" class="hidden label">Поиск по сайту</label>
                 <input class="input" id="search1" type="text">
                 <pre>
@@ -86,7 +86,7 @@
                     </code>
                 </pre>
             </div>
-            <div class="form__line"><p>input с label</p>
+            <div class="form__line"><p class="components__descr">input с label</p>
                 <label for="search2" class="label">Поиск по сайту</label>
                 <input class="input" id="search2" type="text">
                 <pre>
@@ -95,14 +95,14 @@
                         <input class="input" id="search2" type="text">
                     </code>
                 </pre>
-                <p>Дополнительные способы верстки input</p>
+                <p class="components__descr">Дополнительные способы верстки input</p>
                 <button id="showInputs" class="button" aria-controls="showInputsInner" value="показать">
                     Показать
                 </button>
 
                 <div id="showInputsInner" class="collapse" role="region" aria-labelledby="showInputs-label"
                      tabindex="-1" aria-expanded="false">
-                    <div class="form__line"><p>input с title</p>
+                    <div class="form__line"><p class="components__descr">input с title</p>
                         <input class="input" id="search3" title="Поиск по сайту" type="text">
                 <pre>
                     <code class="language-markup convert">
@@ -110,7 +110,7 @@
                     </code>
                 </pre>
                     </div>
-                    <div class="form__line"><p>input с aria-label</p>
+                    <div class="form__line"><p class="components__descr">input с aria-label</p>
                         <input class="input" id="search4" aria-label="Поиск по сайту" type="text">
                     <pre>
                         <code class="language-markup convert">
@@ -123,7 +123,7 @@
 
 
             <div class="form__line">
-                <p>textarea</p>
+                <p class="components__descr">textarea</p>
                 <textarea class="textarea" title="поле ввода текста"></textarea>
                     <pre>
                         <code class="language-markup convert">
@@ -132,7 +132,7 @@
                     </pre>
             </div>
             <div class="form__line">
-                <p>select</p>
+                <p class="components__descr">select</p>
                 <select class="select" name="select" title="выбирете параметры">
                     <optgroup label="цвета">
                         <option value="1" selected>
@@ -196,7 +196,7 @@
                 </pre>
             </div>
             <div class="form__line">
-                <p>Чекбокс</p>
+                <p class="components__descr">Чекбокс</p>
                 <div class="checkbox__field" role="group">
                     <input id="checkbox1" type="checkbox" role="checkbox" name="checkbox1" value="чекбокс1"
                            aria-checked="false" aria-labelledby="checkboxLabel" disabled>
@@ -225,7 +225,7 @@
                 </pre>
             </div>
             <div class="form__line">
-                <p>Радио</p>
+                <p class="components__descr">Радио</p>
                 <div class="radio__field" role="radiogroup">
                     <input id="radio1" type="radio" name="one" value="Первый">
                     <label id="label1" for="radio1">Первый (default)</label>
@@ -254,7 +254,7 @@
             </div>
 
             <div class="form__line">
-                <p>Кнопка отправки формы</p>
+                <p class="components__descr">Кнопка отправки формы</p>
                 <button class="button" type="submit" title="кнопка отправки формы">
                     Найти
                 </button>
@@ -268,19 +268,281 @@
             </div>
         </form>
 
-        <div class="components__row typography">
-            <span class="components-header" id="typography">Типографика</span>
-            <p>Заголовки</p>
-            <span class="components-header">Зоголовок</span>
-            <h2></h2>
-            <h3></h3>
-            <h4></h4>
-            <h5></h5>
+        <div class="components__row">
+            <span class="components__header" id="typography">Типографика общая</span>
+            <p class="components__descr">Application</p>
+            <div>Класс Application применяется в body. Стандартный размер шрифта 18px, высота строки 1.25em. При переключении в режим маленького шрифта - 14px, большого - 22px</div>
+                <p class="components__descr">
+                Заголовки            </p>
+            <div class="h1">Заголовок h1</div>
+            <div class="h2">Заголовок h2</div>
+            <div class="h3">Заголовок h3</div>
+            <div class="h4">Заголовок h4</div>
+            <div class="h5">Заголовок h5</div>
+            <pre>
+                <code class="language-markup convert">
+                    <div class="h1">Заголовок h1</div>
+                    <div class="h2">Заголовок h2</div>
+                    <div class="h3">Заголовок h3</div>
+                    <div class="h4">Заголовок h4</div>
+                    <div class="h5">Заголовок h5</div>
+                </code>
+            </pre>
+            <p class="components__descr">Ссылки</p>
             <a href="#">Ссылка обычная</a>
             <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Ссылка disabled</a>
+            <pre>
+                <code class="language-markup convert">
+                    <a href="#">Ссылка обычная</a>
+                    <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Ссылка disabled</a>
+                </code>
+            </pre>
+            <p class="components__descr">Цитаты</p><br>
+                <q>Цитата</q>
+            <pre>
+                <code class="language-markup convert">
+                    <q>Цитата</q>
+                </code>
+            </pre>
+            <p class="components__descr">Маленький текст</p>
+            <small>Маленький текст</small>
+            <pre>
+                <code class="language-markup convert">
+                   <small>Маленький текст</small>
+                </code>
+            </pre>
         </div>
 
-        <span class="components-header" id="horizontalNav">Горизонтальная навигация</span>
+        <div class="comnents__row typography">
+            <span class="components__header" id="typography">Типографика class="typography"</span>
+            <p class="components__descr">
+                Заголовки (используются страндартные теги, заголовки имеют отступы)
+            <h1 class="h1">Заголовок h1</h1>
+            <h2 class="h2">Заголовок h2</h2>
+            <h3 class="h3">Заголовок h3</h3>
+            <h4 class="h4">Заголовок h4</h4>
+            <h5 class="h5">Заголовок h5</h5>
+            <pre>
+                <code class="language-markup convert">
+                    <div class="typography">
+                        <h1 class="h1">Заголовок h1</h1>
+                        <h2 class="h2">Заголовок h2</h2>
+                        <h3 class="h3">Заголовок h3</h3>
+                        <h4 class="h4">Заголовок h4</h4>
+                        <h5 class="h5">Заголовок h5</h5>
+                    </div>
+                </code>
+            </pre>
+            </p>
+
+            <p class="components__descr">Таблица с одним заголовком</p>
+            <table>
+                <caption>Подпись к таблице:</caption>
+                <tr>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">City</th>
+                </tr>
+                <tr>
+                    <td>Phoenix</td>
+                    <td>Imari</td>
+                    <td>Henry</td>
+                </tr>
+                <tr>
+                    <td>Zeki</td>
+                    <td>Rome</td>
+                    <td>Min</td>
+                </tr>
+                <tr>
+                    <td>Apirka</td>
+                    <td>Kelly</td>
+                    <td>Brynn</td>
+                </tr>
+            </table>
+            <pre>
+                <code class="language-markup">
+                    &ltdiv class="typography"&gt
+                        &lttable&gt
+                            &ltcaption&gtПодпись к таблице:&lt/caption&gt
+                            &lttr&gt
+                                &ltth scope="col"&gtLast Name&lt/th&gt
+                                &ltth scope="col"&gtFirst Name&lt/th&gt
+                                &ltth scope="col"&gtCity&lt/th&gt
+                            &lt/tr&gt
+                            &lttr&gt
+                                &lttd&gtPhoenix&lt/td&gt
+                                &lttd&gtImari&lt/td&gt
+                                &lttd&gtHenry&lt/td&gt
+                            &lt/tr&gt
+                            &lttr&gt
+                                &lttd&gtZeki&lt/td&gt
+                                &lttd&gtRome&lt/td&gt
+                                &lttd&gtMin&lt/td&gt
+                            &lt/tr&gt
+                            &lttr&gt
+                                &lttd&gtApirka&lt/td&gt
+                                &lttd&gtKelly&lt/td&gt
+                                &lttd&gtBrynn&lt/td&gt
+                            &lt/tr&gt
+                        &lt/table&gt
+                    &lt/div&gt
+                </code>
+            </pre>
+            <p class="components__descr">Таблица с двумя заголовками</p>
+            <table>
+                <caption>Delivery slots:</caption>
+                <tr>
+                    <td></td>
+                    <th scope="col">Monday</th>
+                    <th scope="col">Tuesday</th>
+                    <th scope="col">Wednesday</th>
+                    <th scope="col">Thursday</th>
+                    <th scope="col">Friday</th>
+                </tr>
+                <tr>
+                    <th scope="row">09:00 - 11:00</th>
+                    <td>Closed</td>
+                    <td>Open</td>
+                    <td>Open</td>
+                    <td>Closed</td>
+                    <td>Closed</td>
+                </tr>
+                <tr>
+                    <th scope="row">11:00 - 13:00</th>
+                    <td>Open</td>
+                    <td>Open</td>
+                    <td>Closed</td>
+                    <td>Closed</td>
+                    <td>Closed</td>
+                </tr>
+            </table>
+            <pre>
+                <code class="language-markup">
+                    &ltdiv class="typography"&gt
+                         &lttable&gt
+                            &ltcaption&gtDelivery slots:&lt/caption&gt
+                            &lttr&gt
+                                &lttd&gt&lt/td&gt
+                                &ltth scope="col"&gtMonday&lt/th&gt
+                                &ltth scope="col"&gtTuesday&lt/th&gt
+                                &ltth scope="col"&gtWednesday&lt/th&gt
+                                &ltth scope="col"&gtThursday&lt/th&gt
+                                &ltth scope="col"&gtFriday&lt/th&gt
+                            &lt/tr&gt
+                            &lttr&gt
+                                &ltth scope="row"&gt09:00 - 11:00&lt/th&gt
+                                &lttd&gtClosed&lt/td&gt
+                                &lttd&gtOpen&lt/td&gt
+                                &lttd&gtOpen&lt/td&gt
+                                &lttd&gtClosed&lt/td&gt
+                                &lttd&gtClosed&lt/td&gt
+                            &lt/tr&gt
+                            &lttr&gt
+                                &ltth scope="row"&gt11:00 - 13:00&lt/th&gt
+                                &lttd&gtOpen&lt/td&gt
+                                &lttd&gtOpen&lt/td&gt
+                                &lttd&gtClosed&lt/td&gt
+                                &lttd&gtClosed&lt/td&gt
+                                &lttd&gtClosed&lt/td&gt
+                            &lt/tr&gt
+                        &lt/table&gt
+                    &lt/div&gt
+                </code>
+            </pre>
+            <p class="components__descr">Таблица с неравномерными заголовками</p>
+            <table>
+                <caption>Планеты:</caption>
+                <col>
+                <colgroup span="2"></colgroup>
+                <colgroup span="2"></colgroup>
+                <tr>
+                    <td rowspan="2"></td>
+                    <th colspan="2" scope="colgroup">Mars</th>
+                    <th colspan="2" scope="colgroup">Venus</th>
+                </tr>
+                <tr>
+                    <th scope="col">Produced</th>
+                    <th scope="col">Sold</th>
+                    <th scope="col">Produced</th>
+                    <th scope="col">Sold</th>
+                </tr>
+                <tr>
+                    <th scope="row">Teddy Bears</th>
+                    <td>50,000</td>
+                    <td>30,000</td>
+                    <td>100,000</td>
+                    <td>80,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">Board Games</th>
+                    <td>10,000</td>
+                    <td>5,000</td>
+                    <td>12,000</td>
+                    <td>9,000</td>
+                </tr>
+            </table>
+             <pre>
+                <code class="language-markup">
+                    &ltdiv class="typography"&gt
+                         &lttable&gt
+                            &ltcaption&gtПланеты:&lt/caption&gt
+                            &ltcol&gt
+                            &ltcolgroup span="2"&gt&lt/colgroup&gt
+                            &ltcolgroup span="2"&gt&lt/colgroup&gt
+                            &lttr&gt
+                                &lttd rowspan="2"&gt&lt/td&gt
+                                &ltth colspan="2" scope="colgroup"&gtMars&lt/th&gt
+                                &ltth colspan="2" scope="colgroup"&gtVenus&lt/th&gt
+                            &lt/tr&gt
+                            &lttr&gt
+                                &ltth scope="col"&gtProduced&lt/th&gt
+                                &ltth scope="col"&gtSold&lt/th&gt
+                                &ltth scope="col"&gtProduced&lt/th&gt
+                                &ltth scope="col"&gtSold&lt/th&gt
+                            &lt/tr&gt
+                            &lttr&gt
+                                &ltth scope="row"&gtTeddy Bears&lt/th&gt
+                                &lttd&gt50,000&lt/td&gt
+                                &lttd&gt30,000&lt/td&gt
+                                &lttd&gt100,000&lt/td&gt
+                                &lttd&gt80,000&lt/td&gt
+                            &lt/tr&gt
+                            &lttr&gt
+                                &ltth scope="row"&gtBoard Games&lt/th&gt
+                                &lttd&gt10,000&lt/td&gt
+                                &lttd&gt5,000&lt/td&gt
+                                &lttd&gt12,000&lt/td&gt
+                                &lttd&gt9,000&lt/td&gt
+                            &lt/tr&gt
+                        &lt/table&gt
+                    &lt/div&gt
+                </code>
+            </pre>
+            <p class="components__descr">Списки</p>
+            <ul>
+                <li>текст</li>
+                <li>текст
+                    <ul>
+                        <li>текст2</li>
+                        <li>текст2</li>
+                    </ul>
+                </li>
+                <li>текст</li>
+            </ul>
+            <ol>
+                <li>текст</li>
+                <li>текст
+                    <ol>
+                        <li>текст2</li>
+                        <li>текст2</li>
+                    </ol>
+                </li>
+                <li>текст</li>
+            </ol>
+        </div>
+
+
+        <span class="components__header" id="horizontalNav">Горизонтальная навигация</span>
         <pre>
             <code class="language-markup">
                 &lt;nav class="nav" role="navigation" aria-label="горизонтальная навигация"&gt;
@@ -340,7 +602,7 @@
 
             </ul>
         </nav>
-        <span class="components-header" id="breadCrumbs">Хлебные крошки</span>
+        <span class="components__header" id="breadCrumbs">Хлебные крошки</span>
 
         <!-- breadcrumbs -->
         <nav class="breadcrumbs" aria-label="хлебные крошки">
@@ -365,7 +627,7 @@
         </nav>
         <!-- end breadcrumbs -->
 
-        <span class="components-header" id="progressBar">Прогресс бар</span>
+        <span class="components__header" id="progressBar">Прогресс бар</span>
         <div class="components__row">
             <h3>Обычный прогресс бар</h3>
             <div class="progress">
@@ -391,7 +653,7 @@
 
 
         <div class="components__row">
-            <span class="components-header" id="pagination">Пагинация</span>
+            <span class="components__header" id="pagination">Пагинация</span>
             <ul class="pagination">
                 <li class="pagination__item pagination__item_active" rel="prev">
                     <a class="pagination__link" href="#">Назад</a>
@@ -416,129 +678,12 @@
         </div>
 
         <div class="components__row">
-            <span class="components-header" id="alert">Уведомления</span>
+            <span class="components__header" id="alert">Уведомления</span>
             <div class="alert" role="alert">Звучит уведомление</div>
         </div>
+
         <div class="components__row">
-            <span class="components-header" id="tables">Таблица с одним заголовком</span>
-            <div class="table typography">
-                <table>
-                    <caption>Teddy bear collectors:</caption>
-                    <tr>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">First Name</th>
-                        <th scope="col">City</th>
-                    </tr>
-                    <tr>
-                        <td>Phoenix</td>
-                        <td>Imari</td>
-                        <td>Henry</td>
-                    </tr>
-                    <tr>
-                        <td>Zeki</td>
-                        <td>Rome</td>
-                        <td>Min</td>
-                    </tr>
-                    <tr>
-                        <td>Apirka</td>
-                        <td>Kelly</td>
-                        <td>Brynn</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div class="components__row">
-            <span class="components-header">Таблица с двумя заголовками</span>
-            <div class="table typography">
-                <table summary="В этой таблице описывается что закон такой-то введен тогда-то">
-                    <thead>
-                    <tr>
-                        <th scope="col">№</th>
-                        <th scope="col">№ постановления</th>
-                        <th scope="col">Дата принятия</th>
-                        <th scope="col">Наименование нормативного правового акта</th>
-                        <th scope="col">Наименование нормативного правового акта</th>
-                        <th scope="col">Публ. (офиц,вед. ЗДТО)</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td scope="row">1</td>
-                        <td>1764</td>
-                        <td>30.01.2014</td>
-                        <td>О проекте закона Томской области «О внесении изменений в ЗаконТомской области «О
-                            предоставлении и изъятии земельных участков в Томской области»
-                        </td>
-                        <td>О проекте закона Томской области «О внесении изменений в ЗаконТомской области «О
-                            предоставлении и изъятии земельных участков в Томской области»
-                        </td>
-                        <td>№ 27 (203)</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">1</td>
-                        <td>1764</td>
-                        <td>30.01.2014</td>
-                        <td>О проекте закона Томской области «О внесении изменений в ЗаконТомской области «О
-                            предоставлении и изъятии земельных участков в Томской области»
-                        </td>
-                        <td>О проекте закона Томской области «О внесении изменений в ЗаконТомской области «О
-                            предоставлении и изъятии земельных участков в Томской области»
-                        </td>
-                        <td>№ 27 (203)</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">1</td>
-                        <td>1764</td>
-                        <td>30.01.2014</td>
-                        <td>О проекте закона Томской области «О внесении изменений в ЗаконТомской области «О
-                            предоставлении и изъятии земельных участков в Томской области»
-                        </td>
-                        <td>О проекте закона Томской области «О внесении изменений в ЗаконТомской области «О
-                            предоставлении и изъятии земельных участков в Томской области»
-                        </td>
-                        <td>№ 27 (203)</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="components__row">
-            <span class="components-header">Таблица с нерегулярным заголовком</span>
-            <div class="table typography">
-                <table>
-                    <col>
-                    <colgroup span="2"></colgroup>
-                    <colgroup span="2"></colgroup>
-                    <tr>
-                        <td rowspan="2"></td>
-                        <th colspan="2" scope="colgroup">Mars</th>
-                        <th colspan="2" scope="colgroup">Venus</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Produced</th>
-                        <th scope="col">Sold</th>
-                        <th scope="col">Produced</th>
-                        <th scope="col">Sold</th>
-                    </tr>
-                    <tr>
-                        <th scope="row">Teddy Bears</th>
-                        <td>50,000</td>
-                        <td>30,000</td>
-                        <td>100,000</td>
-                        <td>80,000</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Board Games</th>
-                        <td>10,000</td>
-                        <td>5,000</td>
-                        <td>12,000</td>
-                        <td>9,000</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div class="components__row">
-            <span class="components-header" id="tabs">Табы</span>
+            <span class="components__header" id="tabs">Табы</span>
             <div class="tabs" id="tabpanel1">
                 <ul role="tablist" class="tabs__list tabs-list">
                     <li class="tabs-list__item active" id="tab1" aria-controls="panel1" aria-selected="true" role="tab"
@@ -582,7 +727,7 @@
         </div>
 
         <div class="components__row">
-            <span class="components-header" id="collapse">Кнопка Show-Hide</span>
+            <span class="components__header" id="collapse">Кнопка Show-Hide</span>
             <button id="button1" class="button" aria-controls="t1" value="показать">
                 Показать
             </button>
@@ -593,7 +738,7 @@
         </div>
 
         <div class="components__row">
-            <span class="components-header" id="thumbnail">Thumbnail</span>
+            <span class="components__header" id="thumbnail">Thumbnail</span>
             <div class="row">
                 <div class="col-xs-4">
                     <div class="thumbnail">
@@ -620,29 +765,29 @@
         </div>
 
         <div class="components__row">
-            <span class="components-header">Panels</span>
+            <span class="components__header">Panels</span>
             <div class="panel">
                 <div class="panel-body"> Basic panel example</div>
             </div>
-            <p>с заголовком</p>
+            <p class="components__descr">с заголовком</p>
             <div class="panel">
                 <div class="panel-heading">Panel heading without title</div>
                 <div class="panel-body"> Panel content</div>
             </div>
-            <p>с подвалом</p>
+            <p class="components__descr">с подвалом</p>
             <div class="panel">
                 <div class="panel-body"> Panel content</div>
                 <div class="panel-footer">Panel footer</div>
             </div>
         </div>
         <div class="components__row">
-            <span class="components-header">Label</span>
+            <span class="components__header">Label</span>
             <h2>Example heading
                 <span class="label">New</span>
             </h2>
         </div>
         <div class="components__row">
-            <span class="components-header">Badge</span>
+            <span class="components__header">Badge</span>
             <div>
                 <a href="#">Inbox
                     <span class="badge">42</span>
