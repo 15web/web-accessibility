@@ -5,31 +5,36 @@
 
     h1 {
         font-size: 2em;
-        line-height: 1.25em;
+        line-height: 1.1;
         font-weight: bold;
     }
 
     h2 {
-        font-size: 1.5em;
-        line-height: 1.25em;
+        font-size: 1.6em;
+        line-height: 1.1;
         font-weight: bold;
     }
 
     h3 {
-        font-size: 1.25em;
+        font-size: 1.33em;
         font-weight: bold;
-        line-height: 1.375em;
+        line-height: 1.1;
     }
 
     h4 {
         font-size: 1em;
-        line-height: 1.375em;
-        color: #000;
+        line-height: 1.1;
+        font-weight: bold;
+    }
+
+    h5 {
+        font-size: 0.8em;
+        line-height: 1.1;
         font-weight: bold;
     }
 
 
-    h1, h2, h3, h4 {
+    h1, h2, h3, h4, h5 {
         margin: 1.25em 0 1em;
     }
 
