@@ -1,7 +1,7 @@
 $(document).ready(function () {
     var panel1 = new accessibility.tabpanel("tabpanel1", false); //табы
     var hs1 = new accessibility.hideShow('button1'); //кнопка скрыть показать
-
+    var hs2 = new accessibility.hideShow('showInputs');
     // прилипающее меню
     var stickyMenu = $('.main__sidebar nav');
     var stickyControl = $('.control-panel');
