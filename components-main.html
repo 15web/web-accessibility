@@ -74,7 +74,7 @@
 </div>
 <main class="components main">
     <div class="main__content">
-        <h1 id="form">Форма</h1>
+        <span class="components-header" id="form">Форма</span>
         <form class="form" action="">
             <div class="form__line"><p>input с скрытым label</p>
                 <label for="search1" class="hidden label">Поиск по сайту</label>
@@ -100,7 +100,8 @@
                     Показать
                 </button>
 
-                <div id="showInputsInner" class="collapse" role="region" aria-labelledby="showInputs-label" tabindex="-1" aria-expanded="false">
+                <div id="showInputsInner" class="collapse" role="region" aria-labelledby="showInputs-label"
+                     tabindex="-1" aria-expanded="false">
                     <div class="form__line"><p>input с title</p>
                         <input class="input" id="search3" title="Поиск по сайту" type="text">
                 <pre>
@@ -201,7 +202,7 @@
                            aria-checked="false" aria-labelledby="checkboxLabel" disabled>
                     <label id="checkboxLabel" for="checkbox1">чекбокс1 (disabled)</label>
                     <input id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2"
-                          aria-labelledby="checkboxLabel">
+                           aria-labelledby="checkboxLabel">
                     <label id="checkboxLabel" for="checkbox2">чекбокс2 (default)</label>
                     <input id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2"
                            aria-labelledby="checkboxLabel" checked>
@@ -268,12 +269,18 @@
         </form>
 
         <div class="components__row typography">
-            <h1 id="typography">Типографика</h1>
+            <span class="components-header" id="typography">Типографика</span>
+            <p>Заголовки</p>
+            <span class="components-header">Зоголовок</span>
+            <h2></h2>
+            <h3></h3>
+            <h4></h4>
+            <h5></h5>
             <a href="#">Ссылка обычная</a>
             <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Ссылка disabled</a>
         </div>
 
-        <h1 id="horizontalNav">Горизонтальная навигация</h1>
+        <span class="components-header" id="horizontalNav">Горизонтальная навигация</span>
         <pre>
             <code class="language-markup">
                 &lt;nav class="nav" role="navigation" aria-label="горизонтальная навигация"&gt;
@@ -333,7 +340,7 @@
 
             </ul>
         </nav>
-        <h1 id="breadCrumbs">Хлебные крошки</h1>
+        <span class="components-header" id="breadCrumbs">Хлебные крошки</span>
 
         <!-- breadcrumbs -->
         <nav class="breadcrumbs" aria-label="хлебные крошки">
@@ -358,7 +365,7 @@
         </nav>
         <!-- end breadcrumbs -->
 
-        <h1 id="progressBar">Прогресс бар</h1>
+        <span class="components-header" id="progressBar">Прогресс бар</span>
         <div class="components__row">
             <h3>Обычный прогресс бар</h3>
             <div class="progress">
@@ -384,7 +391,7 @@
 
 
         <div class="components__row">
-            <h1 id="pagination">Пагинация</h1>
+            <span class="components-header" id="pagination">Пагинация</span>
             <ul class="pagination">
                 <li class="pagination__item pagination__item_active" rel="prev">
                     <a class="pagination__link" href="#">Назад</a>
@@ -409,11 +416,11 @@
         </div>
 
         <div class="components__row">
-            <h1 id="alert">Уведомления</h1>
+            <span class="components-header" id="alert">Уведомления</span>
             <div class="alert" role="alert">Звучит уведомление</div>
         </div>
         <div class="components__row">
-            <h1 id="tables">Таблица с одним заголовком</h1>
+            <span class="components-header" id="tables">Таблица с одним заголовком</span>
             <div class="table typography">
                 <table>
                     <caption>Teddy bear collectors:</caption>
@@ -441,7 +448,7 @@
             </div>
         </div>
         <div class="components__row">
-            <h1>Таблица с двумя заголовками</h1>
+            <span class="components-header">Таблица с двумя заголовками</span>
             <div class="table typography">
                 <table summary="В этой таблице описывается что закон такой-то введен тогда-то">
                     <thead>
@@ -496,7 +503,7 @@
             </div>
         </div>
         <div class="components__row">
-            <h1>Таблица с нерегулярным заголовком</h1>
+            <span class="components-header">Таблица с нерегулярным заголовком</span>
             <div class="table typography">
                 <table>
                     <col>
@@ -531,7 +538,7 @@
             </div>
         </div>
         <div class="components__row">
-            <h1 id="tabs">Табы</h1>
+            <span class="components-header" id="tabs">Табы</span>
             <div class="tabs" id="tabpanel1">
                 <ul role="tablist" class="tabs__list tabs-list">
                     <li class="tabs-list__item active" id="tab1" aria-controls="panel1" aria-selected="true" role="tab"
@@ -575,7 +582,7 @@
         </div>
 
         <div class="components__row">
-            <h1 id="collapse">Кнопка Show-Hide</h1>
+            <span class="components-header" id="collapse">Кнопка Show-Hide</span>
             <button id="button1" class="button" aria-controls="t1" value="показать">
                 Показать
             </button>
@@ -586,7 +593,7 @@
         </div>
 
         <div class="components__row">
-            <h1 id="thumbnail">Thumbnail</h1>
+            <span class="components-header" id="thumbnail">Thumbnail</span>
             <div class="row">
                 <div class="col-xs-4">
                     <div class="thumbnail">
@@ -613,7 +620,7 @@
         </div>
 
         <div class="components__row">
-            <h1>Panels</h1>
+            <span class="components-header">Panels</span>
             <div class="panel">
                 <div class="panel-body"> Basic panel example</div>
             </div>
@@ -629,13 +636,13 @@
             </div>
         </div>
         <div class="components__row">
-            <h1>Label</h1>
+            <span class="components-header">Label</span>
             <h2>Example heading
                 <span class="label">New</span>
             </h2>
         </div>
         <div class="components__row">
-            <h1>Badge</h1>
+            <span class="components-header">Badge</span>
             <div>
                 <a href="#">Inbox
                     <span class="badge">42</span>
