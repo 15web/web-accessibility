@@ -98,10 +98,113 @@
 
             <pre>
                 <code class="language-markup convert">
-
+                    <div class="media">
+                        <div class="media__left">
+                            <img src="" alt="Изображение">
+                            <p class="media__text">Подпись</p>
+                        </div>
+                        <div class="media__body">
+                            <p class="media__text">Текст, описание</p>
+                        </div>
+                    </div>
                 </code>
             </pre>
         </div>
+
+        <div class="components__row">
+            <span class="components__header" id="pagination">Пагинация</span>
+            <ul class="pagination" aria-label="Ссылки на другие страницы">
+                <li class="pagination__item pagination__item_active" rel="prev">
+                    <a class="pagination__link" href="#">Назад</a>
+                </li>
+                <li class="pagination__item pagination__item">
+                    <a class="pagination__link" href="#" title="Первая страница">1</a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__link" href="#" title="вторая страница">2</a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__link" href="#" title="третья страница">3</a>
+                </li>
+
+                <li class="pagination__item" rel="next">
+                    <a class="pagination__link" href="#">Вперед</a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__link" href="#">Последняя страница</a>
+                </li>
+            </ul>
+            <pre>
+                <code class="language-markup convert">
+                    <ul class="pagination" role="navigation" aria-label="Ссылки на другие страницы">
+                        <li class="pagination__item pagination__item_active" rel="prev">
+                            <a class="pagination__link" href="#">Назад</a>
+                        </li>
+                        <li class="pagination__item pagination__item">
+                            <a class="pagination__link" href="#" title="Первая страница">1</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a class="pagination__link" href="#" title="вторая страница">2</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a class="pagination__link" href="#" title="третья страница">3</a>
+                        </li>
+
+                        <li class="pagination__item" rel="next">
+                            <a class="pagination__link" href="#">Вперед</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a class="pagination__link" href="#">Последняя страница</a>
+                        </li>
+                    </ul>
+                </code>
+            </pre>
+        </div>
+
+        <div class="components__row">
+            <span class="components__header" id="tabs">Табы</span>
+            <div class="tabs" id="tabpanel1">
+                <ul role="tablist" class="tabs__list tabs-list">
+                    <li class="tabs-list__item active" id="tab1" aria-controls="panel1" aria-selected="true" role="tab"
+                        tabindex="0">
+                        Crust
+                    </li>
+                    <li class="tabs-list__item" id="tab2" aria-controls="panel2" role="tab" aria-selected="false"
+                        tabindex="-1">
+                        Veggies
+                    </li>
+                    <li class="tabs-list__item" id="tab3" aria-controls="panel3" role="tab" aria-selected="false"
+                        tabindex="-1">
+                        Carnivore
+                    </li>
+                    <li class="tabs-list__item" id="tab4" aria-controls="panel4" role="tab" aria-selected="false"
+                        tabindex="-1">
+                        Delivery
+                    </li>
+                </ul>
+
+                <div id="panel1" aria-labelledby="tab1" role="tabpanel" class="tabs__inner">
+                    <h3 id="crust-label">tab1 inner</h3>
+
+                </div>
+
+                <div id="panel2" aria-labelledby="tab2" role="tabpanel" class="tabs__inner">
+                    <h3 id="veg-label">tab2 inner</h3>
+
+                </div>
+
+                <div id="panel3" aria-labelledby="tab3" role="tabpanel" class="tabs__inner">
+                    <h3 id="meat-label">tab3 inner</h3>
+
+                </div>
+
+                <div id="panel4" aria-labelledby="tab4" role="tabpanel" class="tabs__inner">
+                    <h3 id="delivery-label">tab4 inner</h3>
+                </div>
+            </div>
+
+        </div>
+
         <span class="components__header" id="horizontalNav">Горизонтальная навигация</span>
         <pre>
             <code class="language-markup">
@@ -211,76 +314,6 @@
             </div>
         </div>
 
-
-        <div class="components__row">
-            <span class="components__header" id="pagination">Пагинация</span>
-            <ul class="pagination">
-                <li class="pagination__item pagination__item_active" rel="prev">
-                    <a class="pagination__link" href="#">Назад</a>
-                </li>
-                <li class="pagination__item pagination__item">
-                    <a class="pagination__link" href="#" title="Первая страница">1</a>
-                </li>
-                <li class="pagination__item">
-                    <a class="pagination__link" href="#" title="вторая страница">2</a>
-                </li>
-                <li class="pagination__item">
-                    <a class="pagination__link" href="#" title="третья страница">3</a>
-                </li>
-
-                <li class="pagination__item" rel="next">
-                    <a class="pagination__link" href="#">Вперед</a>
-                </li>
-                <li class="pagination__item">
-                    <a class="pagination__link" href="#">Последняя страница</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="components__row">
-            <span class="components__header" id="tabs">Табы</span>
-            <div class="tabs" id="tabpanel1">
-                <ul role="tablist" class="tabs__list tabs-list">
-                    <li class="tabs-list__item active" id="tab1" aria-controls="panel1" aria-selected="true" role="tab"
-                        tabindex="0">
-                        Crust
-                    </li>
-                    <li class="tabs-list__item" id="tab2" aria-controls="panel2" role="tab" aria-selected="false"
-                        tabindex="-1">
-                        Veggies
-                    </li>
-                    <li class="tabs-list__item" id="tab3" aria-controls="panel3" role="tab" aria-selected="false"
-                        tabindex="-1">
-                        Carnivore
-                    </li>
-                    <li class="tabs-list__item" id="tab4" aria-controls="panel4" role="tab" aria-selected="false"
-                        tabindex="-1">
-                        Delivery
-                    </li>
-                </ul>
-
-                <div id="panel1" aria-labelledby="tab1" role="tabpanel" class="tabs__inner">
-                    <h3 id="crust-label">tab1 inner</h3>
-
-                </div>
-
-                <div id="panel2" aria-labelledby="tab2" role="tabpanel" class="tabs__inner">
-                    <h3 id="veg-label">tab2 inner</h3>
-
-                </div>
-
-                <div id="panel3" aria-labelledby="tab3" role="tabpanel" class="tabs__inner">
-                    <h3 id="meat-label">tab3 inner</h3>
-
-                </div>
-
-                <div id="panel4" aria-labelledby="tab4" role="tabpanel" class="tabs__inner">
-                    <h3 id="delivery-label">tab4 inner</h3>
-                </div>
-            </div>
-
-        </div>
-
         <div class="components__row">
             <span class="components__header" id="collapse">Кнопка Show-Hide</span>
             <button id="button1" class="button" aria-controls="t1" value="показать">
@@ -365,6 +398,12 @@
                     <a href="#media" title="Медиа-объект">Медиа-объект</a>
                 </li>
                 <li>
+                    <a href="#pagination" title="Пагинация">Пагинация</a>
+                </li>
+                <li>
+                    <a href="#tabs" title="Табы">Табы</a>
+                </li>
+                <li>
                     <a href="#horizontalNav" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
                         Горизонтальная навигация
                     </a>
@@ -375,16 +414,12 @@
                 <li>
                     <a href="#progressBar" title="Прогресс бар">Прогресс бар</a>
                 </li>
-                <li>
-                    <a href="#pagination" title="Пагинация">Пагинация</a>
-                </li>
+
 
                 <li>
                     <a href="#tables" title="Таблицы">Таблицы</a>
                 </li>
-                <li>
-                    <a href="#tabs" title="Табы">Табы</a>
-                </li>
+
                 <li>
                     <a href="#collapse" title="Кнопка Show-Hide">Кнопка Show-Hide</a>
                 </li>
