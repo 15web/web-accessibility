@@ -10,6 +10,12 @@ function checkboxEventHandler(t) {
         if(t[i].disabled) {
             t[i].setAttribute('aria-disabled', 'true');
         }
+        if(t[i].checked) {
+            t[i].setAttribute('aria-checked', 'true');
+        }
+        else if (!t[i].checked) {
+            t[i].setAttribute('aria-checked', 'false');
+        }
     }
 }
 

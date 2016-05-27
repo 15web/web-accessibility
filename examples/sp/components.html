@@ -151,10 +151,10 @@
                 <legend>Легенда, чекбокс, радио</legend>
                 <div class="checkbox__field">
                     <input id="checkbox1" type="checkbox" role="checkbox" name="toppings" value="ham"
-                           aria-checked="false" aria-labelledby="checkboxLabel" disabled>
+                           aria-labelledby="checkboxLabel" disabled>
                     <label id="checkboxLabel" for="checkbox1">чекбокс1</label>
                     <input id="checkbox2" type="checkbox" role="checkbox" name="toppings" value="ham"
-                           aria-checked="false" aria-labelledby="checkboxLabel">
+                           aria-labelledby="checkboxLabel">
                     <label id="checkboxLabel" for="checkbox2">чекбокс2</label>
                     <br>
                     <br>
@@ -504,7 +504,6 @@
 <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
 <script src="/dist/accessibility.js"></script>
 <script>
-    console.log(accessibility.tabpanel);
     $(document).ready(function () {
         var panel1 = new accessibility.tabpanel("tabpanel1", false); //табы
         var hs1 = new accessibility.hideShow('button1'); //кнопка скрыть показать
