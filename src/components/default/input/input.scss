@@ -13,6 +13,10 @@
     border: 2px solid #000;
 
     box-sizing: border-box;
+    
+    &_block {
+        display: block;
+    }
 
     &:focus {
         outline: 3px solid #0000cc;

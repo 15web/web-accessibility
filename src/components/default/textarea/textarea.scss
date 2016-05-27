@@ -1,0 +1,28 @@
+textarea, .textarea {
+    $bg-color: white;
+    $text-color: black;
+    padding: 15px;
+    border: 2px solid $text-color;
+    font-size: 1em;
+    
+    &_block {
+        display: block;
+    }
+
+    &:focus {
+        outline: 3px solid #0000cc;
+    }
+}
+
+.application[data-color="black"] {
+    $bg-color: black;
+    $text-color: white;
+    textarea, .textarea {
+        background-color: $bg-color;
+        border-color: $text-color;
+
+        &:focus {
+            outline-color: #BF1722;
+        }
+    }
+}
