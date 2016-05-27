@@ -80,7 +80,7 @@
                 <label for="search1" class="hidden label">Поиск по сайту</label>
                 <input class="input" id="search1" type="text">
                 <pre>
-                    <code class="language-markup">
+                    <code class="language-markup convert">
                         <label for="search1" class="hidden label">Поиск по сайту</label>
                         <input class="input" id="search1" type="text">
                     </code>
@@ -90,7 +90,7 @@
                 <label for="search2" class="label">Поиск по сайту</label>
                 <input class="input" id="search2" type="text">
                 <pre>
-                    <code class="language-markup">
+                    <code class="language-markup convert">
                         <label for="search2" class="label">Поиск по сайту</label>
                         <input class="input" id="search2" type="text">
                     </code>
@@ -99,7 +99,7 @@
             <div class="form__line"><p>input с title</p>
                 <input class="input" id="search3" title="Поиск по сайту" type="text">
                 <pre>
-                    <code class="language-markup">
+                    <code class="language-markup convert">
                         <input class="input" id="search3" title="Поиск по сайту" type="text">
                     </code>
                 </pre>
@@ -107,7 +107,7 @@
             <div class="form__line"><p>input с aria-label</p>
                 <input class="input" id="search4" aria-label="Поиск по сайту" type="text">
                     <pre>
-                        <code class="language-markup">
+                        <code class="language-markup convert">
                              <input class="input" id="search4" aria-label="Поиск по сайту" type="text">
                         </code>
                     </pre>
@@ -116,7 +116,7 @@
                 <p>textarea</p>
                 <textarea class="textarea" title="поле ввода текста"></textarea>
                     <pre>
-                        <code class="language-markup">
+                        <code class="language-markup convert">
                              <textarea class="textarea" title="поле ввода текста"></textarea>
                         </code>
                     </pre>
@@ -142,7 +142,7 @@
                     </optgroup>
                 </select>
                 <pre>
-                    <code class="language-markup">
+                    <code class="language-markup convert">
                          <select class="select" name="select" title="выбирете параметры">
                             <optgroup label="цвета">
                                 <option value="1" selected>
@@ -167,55 +167,75 @@
 
             <div class="form__line">
                 <fieldset>
-                    <legend>Легенда, чекбокс, радио</legend>
-                    <div class="checkbox__field" role="group">
-                        <input id="checkbox1" type="checkbox" role="checkbox" name="checkbox1" value="чекбокс1"
-                               aria-checked="false" aria-labelledby="checkboxLabel" disabled>
-                        <label id="checkboxLabel" for="checkbox1">чекбокс1</label>
-                        <input id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2"
-                               aria-checked="false" aria-labelledby="checkboxLabel">
-                        <label id="checkboxLabel" for="checkbox2">чекбокс2</label>
-                        <br>
-                        <br>
-                    </div>
-
-                    <div class="radio__field" role="radiogroup">
-                        <input id="radio1" type="radio" name="first" value="Первый">
-                        <label id="label1" for="radio1">Первый</label>
-
-                        <input id="radio2" type="radio" name="second" value="Второй" disabled>
-                        <label id="label2" for="radio2">Второй</label>
-
-                        <input id="radio3" type="radio" name="third" value="Третий">
-                        <label id="label3" for="radio3">Третий</label>
-                    </div>
+                    <legend>Fieldset with legend</legend>
+                    <ul>
+                        <li>Текст</li>
+                        <li>Текст</li>
+                        <li>Текст</li>
+                    </ul>
                 </fieldset>
                 <pre>
-                    <code class="language-markup">
-                          <fieldset>
-                    <legend>Легенда, чекбокс, радио</legend>
-                    <div role="group">
-                        <input id="checkbox1" type="checkbox" role="checkbox" name="checkbox1" value="чекбокс1"
-                               aria-checked="false" aria-labelledby="checkboxLabel" disabled>
-                        <label id="checkboxLabel" for="checkbox1">чекбокс1</label>
-                        <input id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2"
-                               aria-checked="false" aria-labelledby="checkboxLabel">
-                        <label id="checkboxLabel" for="checkbox2">чекбокс2</label>
-                    </div>
-
-                    <div role="radiogroup">
-                        <input id="radio1" type="radio" name="first" value="Первый">
-                        <label id="label1" for="radio1">Первый</label>
-
-                        <input id="radio2" type="radio" name="second" value="Второй" disabled>
-                        <label id="label2" for="radio2">Второй</label>
-
-                        <input id="radio3" type="radio" name="third" value="Третий">
-                        <label id="label3" for="radio3">Третий</label>
-                    </div>
-                </fieldset>
+                    <code class="language-markup convert">
+                        <fieldset>
+                            <legend>Fieldset with legend</legend>
+                                ...
+                                ...
+                                ...
+                        </fieldset>
                     </code>
                 </pre>
+            </div>
+            <div class="form__line">
+                <p>Чекбокс</p>
+                <div class="checkbox__field" role="group">
+                    <input id="checkbox1" type="checkbox" role="checkbox" name="checkbox1" value="чекбокс1"
+                           aria-checked="false" aria-labelledby="checkboxLabel" disabled>
+                    <label id="checkboxLabel" for="checkbox1">чекбокс1</label>
+                    <input id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2"
+                           aria-checked="false" aria-labelledby="checkboxLabel">
+                    <label id="checkboxLabel" for="checkbox2">чекбокс2</label>
+                </div>
+                <pre>
+                    <code class="language-markup">
+                        &ltdiv role="group"&gt
+                            &ltinput id="checkbox1" type="checkbox" role="checkbox" name="checkbox1"
+                                   value="чекбокс1" aria-checked="false" aria-labelledby="checkboxLabel"
+                                   disabled&gt
+                            &ltlabel id="checkboxLabel" for="checkbox1"&gtчекбокс1&lt/label&gt
+                            &ltinput id="checkbox2" type="checkbox" role="checkbox" name="checkbox2"
+                                   value="чекбокс2" aria-checked="false" aria-labelledby="checkboxLabel"&gt
+                            &ltlabel id="checkboxLabel" for="checkbox2"&gtчекбокс2&lt/label&gt
+                        &lt/div&gt
+                    </code>
+                </pre>
+            </div>
+            <div class="form__line">
+                <p>Радио</p>
+                <div class="radio__field" role="radiogroup">
+                    <input id="radio1" type="radio" name="first" value="Первый">
+                    <label id="label1" for="radio1">Первый</label>
+
+                    <input id="radio2" type="radio" name="second" value="Второй" disabled>
+                    <label id="label2" for="radio2">Второй</label>
+
+                    <input id="radio3" type="radio" name="third" value="Третий">
+                    <label id="label3" for="radio3">Третий</label>
+                </div>
+                <pre>
+                    <code class="language-markup">
+                        &ltdiv role="radiogroup"&gt
+                            &ltinput id="radio1" type="radio" name="first" value="Первый"&gt
+                            &ltlabel id="label1" for="radio1"&gtПервый&lt/label&gt
+        
+                            &ltinput id="radio2" type="radio" name="second" value="Второй" disabled&gt
+                            &ltlabel id="label2" for="radio2"&gtВторой&lt/label&gt
+        
+                            &ltinput id="radio3" type="radio" name="third" value="Третий"&gt
+                            &ltlabel id="label3" for="radio3"&gtТретий&lt/label&gt
+                        &lt/div&gt
+                    </code>
+                </pre>
+
             </div>
             <button class="button" type="submit" title="кнопка отправки формы">
                 Найти
@@ -659,8 +679,9 @@
 </footer>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+<script src="prism.js"></script>
 <script src="dist/accessibility.js"></script>
 <script src="main.js"></script>
-<script src="prism.js"></script>
+
 </body>
 </html>

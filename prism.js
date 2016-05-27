@@ -19,7 +19,7 @@ escapeHTML = function(string) {
     });
 };
 // Find Prism code snippet and escape markup
-$('.language-markup').each(function() {
+$('.language-markup.convert').each(function() {
     var codeHtml = $(this).html();
     codeHtml = escapeHTML(codeHtml);
     $(this).html(codeHtml);
