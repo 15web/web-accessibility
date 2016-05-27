@@ -70,7 +70,7 @@
 .quize__row {
   margin-bottom: 30px; }
 
-.components h1 {
+.components__header {
   font-size: 32px;
   margin: 30px 0;
   border-bottom: 1px solid black;
@@ -79,5 +79,5 @@
 .components__row {
   margin-bottom: 20px; }
 
-.application[data-color="black"] .components h1 {
+.application[data-color="black"] .components__header {
   border-bottom: 1px solid white; }

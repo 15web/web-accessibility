@@ -1,5 +1,5 @@
 .components {
-    h1 {
+    &__header {
         font-size: 32px;
         margin: 30px 0;
         border-bottom: 1px solid black;
@@ -16,7 +16,7 @@
 
 .application[data-color="black"] {
     .components {
-        h1 {
+        &__header {
             border-bottom: 1px solid white;
         }
     }
