@@ -41,6 +41,12 @@
     p {
         margin-bottom: 1em;
     }
+    q {
+        padding: 10px 20px;
+        margin: 0 0 20px;
+        font-size: 1em;
+        border-left: 5px solid black;
+    }
 
     ul, ol {
         margin-bottom: 1.25em;
@@ -115,12 +121,7 @@ small {
     font-size: 65%;
 }
 
-q {
-    padding: 10px 20px;
-    margin: 0 0 20px;
-    font-size: 1em;
-    border-left: 5px solid black;
-}
+
 
 
 // ==========================================================================
