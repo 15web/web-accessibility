@@ -190,35 +190,40 @@
                 <div class="checkbox__field" role="group">
                     <input id="checkbox1" type="checkbox" role="checkbox" name="checkbox1" value="чекбокс1"
                            aria-checked="false" aria-labelledby="checkboxLabel" disabled>
-                    <label id="checkboxLabel" for="checkbox1">чекбокс1</label>
+                    <label id="checkboxLabel" for="checkbox1">чекбокс1 (disabled)</label>
                     <input id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2"
-                           aria-checked="false" aria-labelledby="checkboxLabel">
-                    <label id="checkboxLabel" for="checkbox2">чекбокс2</label>
+                          aria-labelledby="checkboxLabel">
+                    <label id="checkboxLabel" for="checkbox2">чекбокс2 (default)</label>
+                    <input id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2"
+                           aria-labelledby="checkboxLabel" checked>
+                    <label id="checkboxLabel" for="checkbox2">чекбокс3 (checked)</label>
                 </div>
                 <pre>
                     <code class="language-markup">
                         &ltdiv role="group"&gt
-                            &ltinput id="checkbox1" type="checkbox" role="checkbox" name="checkbox1"
-                                   value="чекбокс1" aria-checked="false" aria-labelledby="checkboxLabel"
-                                   disabled&gt
-                            &ltlabel id="checkboxLabel" for="checkbox1"&gtчекбокс1&lt/label&gt
-                            &ltinput id="checkbox2" type="checkbox" role="checkbox" name="checkbox2"
-                                   value="чекбокс2" aria-checked="false" aria-labelledby="checkboxLabel"&gt
-                            &ltlabel id="checkboxLabel" for="checkbox2"&gtчекбокс2&lt/label&gt
-                        &lt/div&gt
+                            &ltinput id="checkbox1" type="checkbox" role="checkbox" name="checkbox1" value="чекбокс1"
+                                   aria-checked="false" aria-labelledby="checkboxLabel" disabled&gt
+                            &ltlabel id="checkboxLabel" for="checkbox1"&gtчекбокс1 (disabled)&lt/label&gt
+                            &ltinput id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2"
+                                   aria-labelledby="checkboxLabel"&gt
+                            &ltlabel id="checkboxLabel" for="checkbox2"&gtчекбокс2 (default)&lt/label&gt
+                            &ltinput id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2"
+                                   aria-labelledby="checkboxLabel" checked&gt
+                            &ltlabel id="checkboxLabel" for="checkbox2"&gtчекбокс3 (checked)&lt/label&gt
+                        &lt/div&gt   
                     </code>
                 </pre>
             </div>
             <div class="form__line">
                 <p>Радио</p>
                 <div class="radio__field" role="radiogroup">
-                    <input id="radio1" type="radio" name="first" value="Первый">
+                    <input id="radio1" type="radio" name="one" value="Первый">
                     <label id="label1" for="radio1">Первый</label>
 
-                    <input id="radio2" type="radio" name="second" value="Второй" disabled>
+                    <input id="radio2" type="radio" name="one" value="Второй" disabled>
                     <label id="label2" for="radio2">Второй</label>
 
-                    <input id="radio3" type="radio" name="third" value="Третий">
+                    <input id="radio3" type="radio" name="one" value="Третий" checked>
                     <label id="label3" for="radio3">Третий</label>
                 </div>
                 <pre>
