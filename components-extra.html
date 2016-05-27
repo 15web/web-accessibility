@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <title>Web-accessibility by 15web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="dist/accessibility.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/components.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/prism.css" media="screen">
+</head>
+<body class="application container">
+<header class="page-header">
+    <h1 class="project-name">Web-accessibility</h1>
+    <h2 class="project-tagline"></h2>
+    <nav class="nav" aria-label="горизонтальная навигация">
+        <ul>
+            <li>
+                <a href="#">View on GitHub</a>
+            </li>
+            <li>
+                <a href="components-main.html">Основные компоненты</a>
+            </li>
+            <li class="active">
+                <a href="components-extra.html">Дополнительные компоненты</a>
+            </li>
+            <li>
+                <a href="#">Шаблон</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<div class="control-panel" aria-hidden="true">
+    <div class="control-panel__wrapper row">
+        <div class="col-xs-4">
+            Размер шрифта:
+            <select class="control-panel__select-text select">
+                <option value="small">
+                    Маленький
+                </option>
+                <option value="normal">
+                    Средний
+                </option>
+                <option value="large">
+                    Большой
+                </option>
+            </select>
+        </div>
+        <div class="col-xs-4">
+            Цвет сайта:
+            <select class="control-panel__select-color select">
+                <option value="white">
+                    Белый
+                </option>
+                <option value="black">
+                    Черный
+                </option>
+            </select>
+        </div>
+        <div class="col-xs-4">
+            Изображения:
+            <select class="control-panel__select-image select">
+                <option value="visible">
+                    Включены
+                </option>
+                <option value="hidden">
+                    Выключены
+                </option>
+            </select>
+        </div>
+    </div>
+</div>
+<main class="components main">
+    <div class="main__content">
+        <div class="components__row">
+            <span class="components__header" id="alert">Уведомления</span>
+            <div class="alert" role="alert">Звучит уведомление</div>
+            <pre>
+                <code class="language-markup convert">
+                     <div class="alert" role="alert">Звучит уведомление</div>
+                </code>
+            </pre>
+        </div>
+        <div class="components__row">
+            <span class="components__header" id="media">Медиа-объект</span>
+                <div class="media">
+                    <div class="media__left">
+                        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97240&w=200&h=240" alt="Изображение"
+                             style="width: 200px; height: 240px;">
+                        <p class="media__text">Подпись</p>
+                    </div>
+                    <div class="media__body">
+                        <p class="media__text">Текст, описание</p>
+                        <p class="media__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem beatae delectus distinctio dolores eligendi exercitationem minima natus officiis quia quos rem, repudiandae sapiente unde voluptas! Aliquam obcaecati reprehenderit tenetur?</p>
+                    </div>
+                </div>
+
+            <pre>
+                <code class="language-markup convert">
+
+                </code>
+            </pre>
+        </div>
+        <span class="components__header" id="horizontalNav">Горизонтальная навигация</span>
+        <pre>
+            <code class="language-markup">
+                &lt;nav class="nav" role="navigation" aria-label="горизонтальная навигация"&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;
+                            &lt;a href="#" title="Главная"&gt;
+                                Пункт1
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href="#" title="Страница с обозначениями"&gt;
+                                Пункт2
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href="#" title="Отызывы"&gt;
+                                Пункт3
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        ...
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            </code>
+        </pre>
+        <nav class="nav" role="navigation" aria-label="горизонтальная навигация">
+            <ul>
+                <li>
+                    <a href="#" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
+                        Пункт1
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
+                        Пункт2
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
+                        Пункт3
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
+                        Пункт4
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
+                        Пункт5
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
+                        Пункт6
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+        <span class="components__header" id="breadCrumbs">Хлебные крошки</span>
+
+        <!-- breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="хлебные крошки">
+            <ul>
+                <li class="breadcrumbs__item">
+                    <a href="/">Главная</a>
+                </li>
+                <span class="breadcrumbs__separator" aria-hidden="true"></span>
+                <li class="breadcrumbs__item">
+                    <a href="#" title="Официальная документация">Нормативно-правовые акты</a>
+                </li>
+                <span class="breadcrumbs__separator" aria-hidden="true"></span>
+                <li class="breadcrumbs__item">
+                    <a href="#" title="От 2014 года">Решения Совета</a>
+                </li>
+                <span class="breadcrumbs__separator" aria-hidden="true"></span>
+                <li class="breadcrumbs__item">
+                    <span>Решения 2015</span>
+                </li>
+                <span class="breadcrumbs__separator" aria-hidden="true"></span>
+            </ul>
+        </nav>
+        <!-- end breadcrumbs -->
+
+        <span class="components__header" id="progressBar">Прогресс бар</span>
+        <div class="components__row">
+            <h3>Обычный прогресс бар</h3>
+            <div class="progress">
+                <div class="progress-val" id="progressTest" style="width: 35%" role="progressbar" data-value="35"
+                     aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" tabindex="0">
+                    <div class="progress-counter">35%</div>
+                </div>
+            </div>
+            <br>
+            <button id="progressTestBtn" class="button">для теста</button>
+        </div>
+
+
+        <div class="components__row">
+            <h3>Большой прогресс бар</h3>
+            <div class="progress progress_big">
+                <div class="progress-val" style="width: 45%" role="progressbar" aria-valuenow="45" aria-valuemin="0"
+                     aria-valuemax="100" tabindex="0">
+                    <div class="progress-counter">45%</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="components__row">
+            <span class="components__header" id="pagination">Пагинация</span>
+            <ul class="pagination">
+                <li class="pagination__item pagination__item_active" rel="prev">
+                    <a class="pagination__link" href="#">Назад</a>
+                </li>
+                <li class="pagination__item pagination__item">
+                    <a class="pagination__link" href="#" title="Первая страница">1</a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__link" href="#" title="вторая страница">2</a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__link" href="#" title="третья страница">3</a>
+                </li>
+
+                <li class="pagination__item" rel="next">
+                    <a class="pagination__link" href="#">Вперед</a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__link" href="#">Последняя страница</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="components__row">
+            <span class="components__header" id="tabs">Табы</span>
+            <div class="tabs" id="tabpanel1">
+                <ul role="tablist" class="tabs__list tabs-list">
+                    <li class="tabs-list__item active" id="tab1" aria-controls="panel1" aria-selected="true" role="tab"
+                        tabindex="0">
+                        Crust
+                    </li>
+                    <li class="tabs-list__item" id="tab2" aria-controls="panel2" role="tab" aria-selected="false"
+                        tabindex="-1">
+                        Veggies
+                    </li>
+                    <li class="tabs-list__item" id="tab3" aria-controls="panel3" role="tab" aria-selected="false"
+                        tabindex="-1">
+                        Carnivore
+                    </li>
+                    <li class="tabs-list__item" id="tab4" aria-controls="panel4" role="tab" aria-selected="false"
+                        tabindex="-1">
+                        Delivery
+                    </li>
+                </ul>
+
+                <div id="panel1" aria-labelledby="tab1" role="tabpanel" class="tabs__inner">
+                    <h3 id="crust-label">tab1 inner</h3>
+
+                </div>
+
+                <div id="panel2" aria-labelledby="tab2" role="tabpanel" class="tabs__inner">
+                    <h3 id="veg-label">tab2 inner</h3>
+
+                </div>
+
+                <div id="panel3" aria-labelledby="tab3" role="tabpanel" class="tabs__inner">
+                    <h3 id="meat-label">tab3 inner</h3>
+
+                </div>
+
+                <div id="panel4" aria-labelledby="tab4" role="tabpanel" class="tabs__inner">
+                    <h3 id="delivery-label">tab4 inner</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="components__row">
+            <span class="components__header" id="collapse">Кнопка Show-Hide</span>
+            <button id="button1" class="button" aria-controls="t1" value="показать">
+                Показать
+            </button>
+
+            <div id="t1" class="collapse" role="region" aria-labelledby="t1-label" tabindex="-1" aria-expanded="false">
+                Topic 1 is all about being Topic 1 and may or may not have anything to do with other topics.
+            </div>
+        </div>
+
+        <div class="components__row">
+            <span class="components__header" id="thumbnail">Thumbnail</span>
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="thumbnail">
+                        <img alt="img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=320%C3%97320&w=320&h=320"
+                             width="320" height="320">
+                        <div class="caption"><h3>Thumbnail label</h3>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
+                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <button class="button">
+                                <a href="#">Button</a>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-3">
+                    <a href="#" class="thumbnail">
+                        <img alt="img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97200&w=250&h=200"
+                             width="250" height="200">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="components__row">
+            <span class="components__header">Panels</span>
+            <div class="panel">
+                <div class="panel-body"> Basic panel example</div>
+            </div>
+            <p class="components__descr">с заголовком</p>
+            <div class="panel">
+                <div class="panel-heading">Panel heading without title</div>
+                <div class="panel-body"> Panel content</div>
+            </div>
+            <p class="components__descr">с подвалом</p>
+            <div class="panel">
+                <div class="panel-body"> Panel content</div>
+                <div class="panel-footer">Panel footer</div>
+            </div>
+        </div>
+        <div class="components__row">
+            <span class="components__header">Label</span>
+            <h2>Example heading
+                <span class="label">New</span>
+            </h2>
+        </div>
+        <div class="components__row">
+            <span class="components__header">Badge</span>
+            <div>
+                <a href="#">Inbox
+                    <span class="badge">42</span>
+                </a>
+                <br>
+                <br>
+                <button class="button" type="button"> Messages
+                    <span class="badge">4</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="main__sidebar">
+        <nav class="nav" aria-label="Вертикальная навигация">
+            <ul>
+                <li>
+                    <a href="#alert" title="Уведомления">Уведомления</a>
+                </li>
+                <li>
+                    <a href="#media" title="Медиа-объект">Медиа-объект</a>
+                </li>
+                <li>
+                    <a href="#horizontalNav" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
+                        Горизонтальная навигация
+                    </a>
+                </li>
+                <li>
+                    <a href="#breadCrumbs" title="Хлебные крошки">Хлебные крошки</a>
+                </li>
+                <li>
+                    <a href="#progressBar" title="Прогресс бар">Прогресс бар</a>
+                </li>
+                <li>
+                    <a href="#pagination" title="Пагинация">Пагинация</a>
+                </li>
+
+                <li>
+                    <a href="#tables" title="Таблицы">Таблицы</a>
+                </li>
+                <li>
+                    <a href="#tabs" title="Табы">Табы</a>
+                </li>
+                <li>
+                    <a href="#collapse" title="Кнопка Show-Hide">Кнопка Show-Hide</a>
+                </li>
+
+                <li>
+                    <a href="#thumbnail" title="Thumbnail">Thumbnail</a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+
+</main>
+
+<footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/15web/web-accessibility">Web-accessibility</a> is maintained by <a
+                href="https://github.com/15web">15web</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a
+                href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a
+                href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+</footer>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+<script src="prism.js"></script>
+<script src="dist/accessibility.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
