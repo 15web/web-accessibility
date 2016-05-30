@@ -46,7 +46,8 @@
   width: 200px;
 }
 .main__sidebar .nav li a{
-  padding:0px 10px;
+  padding:5px 10px;
+  font-size: 1.3em;
 }
 .main__content {
   float: right;

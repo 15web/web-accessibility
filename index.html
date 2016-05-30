@@ -19,7 +19,7 @@
                 <a href="https://github.com/15web/web-accessibility">View on GitHub</a>
             </li>
             <li class="active">
-                <a href="/web-accessibility/">Основные компоненты</a>
+                <a href="./">Основные компоненты</a>
             </li>
             <li>
                 <a href="additional.html">Дополнительные компоненты</a>
@@ -333,7 +333,7 @@
             <p class="components__descr">Если из текста ссылки не ясно куда она ведет или ее заменяет изображение, нужно использовать aria-label, чтобы позволить скрин-ридеру озвучить подробное описание
                 <a href="#" aria-label="Прочитайте больше новостей">[больше]</a>
             </p>
-            <p class="components__descr">Если ссылка недоступна используйте aria-disabled="true", а также tabindex="-1" - если не хотите чтобы пользователь мог сфокусироваться на ней с помощью клавиатуры
+            <p class="components__descr">Если ссылка недоступна используйте aria-disabled="true", а также tabindex="-1" чтобы отключить возможность сфокусироваться на ней с помощью клавиатуры
                 <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Ссылка disabled</a>
             </p>
 
@@ -356,7 +356,9 @@
             <div class="typography">
                 <span class="components__header">Типографика class="typography"</span>
                 <p class="components__title">
-                    Заголовки (используются страндартные теги, заголовки имеют отступы)
+                    Заголовки
+                </p>
+                <p class="components__descr">используются страндартные теги, заголовки имеют отступы</p>
                 <h1 class="h1">Заголовок h1</h1>
                 <h2 class="h2">Заголовок h2</h2>
                 <h3 class="h3">Заголовок h3</h3>
@@ -373,9 +375,9 @@
                         </div>
                     </code>
                 </pre>
-                </p>
 
                 <p class="components__title">Таблица с одним заголовком</p>
+                <p class="components__descr">Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце</p>
                 <table>
                     <caption>Подпись к таблице:</caption>
                     <tr>
@@ -429,6 +431,9 @@
                     </code>
                 </pre>
                 <p class="components__title">Таблица с двумя заголовками</p>
+                <p class="components__descr">Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце</p>
+                <p class="components__descr">Атрибут scope с значением row связывает каждую ячейку в столбце с заголовками с данными в строке</p>
+
                 <table>
                     <caption>Delivery slots:</caption>
                     <tr>
@@ -490,6 +495,9 @@
                     </code>
                 </pre>
                 <p class="components__title">Таблица с неравномерными заголовками</p>
+                <p class="components__descr">Атрибут scope"colgroup" связывает ячейки с заголовками первого уровня со всей группой столбцов</p>
+                <p class="components__descr">Заголовки второго уровня связываются только с соответсвующими колонками с помощью атрибута scope="col"</p>
+
                 <table>
                     <caption>Планеты:</caption>
                     <col>
@@ -593,7 +601,7 @@
 
         <div class="components__row" id="images">
             <span class="components__header">Изображения</span>
-            <p class="components__title">Картинкам добавляется слой, который отображается при отключении изображений</p>
+            <p class="components__descr">Картинкам добавляется слой, который отображается при отключении изображений. Текстовое отображение обеспечивается за счет атрибута alt</p>
             <div class="row">
                 <div class="col-xs-5">
                     <img alt="img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=320%C3%97320&w=320&h=320"
