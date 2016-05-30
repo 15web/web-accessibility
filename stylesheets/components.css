@@ -4,17 +4,29 @@
 .components .components__header {
     display: block;
     font-size: 32px;
-    margin: 30px 0;
+    margin: 20px 0 10px;
     border-bottom: 1px solid black;
     padding-bottom: 5px;
+    line-height: 1.1;
 }
-.components .components__descr {
-    color: #999999;
+.components .components__title {
+    color: #7b7b7b;
     font-weight:bold;
     font-size: 1.2em;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
+
+.components .components__descr_head {
+    padding: 5px;
+    margin: 0 0 10px;
+    border: 1px dotted #868c90;
+}
+
+.components .components__descr {
+    margin: 0 0 10px;
+}
+
 .components__row {
     margin-bottom: 20px;
 }
@@ -22,6 +34,6 @@
 .application[data-color="black"] .components__header {
     border-bottom: 1px solid white;
 }
-.application[data-color="black"] .components__descr {
+.application[data-color="black"] .components__title {
     color: #99FF66;
 }

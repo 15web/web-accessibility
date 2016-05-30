@@ -75,44 +75,56 @@
     <div class="main__content">
         <div class="components__row" id="form">
             <span class="components__header">Форма</span>
+            <p class="components__descr_head">Каждый элемент формы должен должен иметь label или в особых случаях
+                WAI-ARIA или title</p>
             <form class="form" action="">
-                <div class="form__line"><p class="components__descr">input с скрытым label</p>
-                    <label for="search1" class="hidden label">Поиск по сайту</label>
-                    <input class="input" id="search1" type="text">
-                        <pre>
-                            <code class="language-markup convert">
-                                <label for="search1" class="hidden label">Поиск по сайту</label>
-                                <input class="input" id="search1" type="text">
-                            </code>
-                        </pre>
-                </div>
-                <div class="form__line"><p class="components__descr">input с label</p>
+                <div class="form__line"><p class="components__title">input с label</p>
+                    <p class="components__descr">Когда это представляется возможным, используйте label, чтобы связать
+                        текст с элементом формы</p>
                     <label for="search2" class="label">Поиск по сайту</label>
                     <input class="input" id="search2" type="text">
-                        <pre>
+                        <pre aria-hidden="true">
                             <code class="language-markup convert">
                                 <label for="search2" class="label">Поиск по сайту</label>
                                 <input class="input" id="search2" type="text">
                             </code>
                         </pre>
-                    <p class="components__descr">Дополнительные способы верстки input</p>
+
+                </div>
+                <div class="form__line">
+                    <p class="components__title">input с скрытым label</p>
+                    <p class="components__descr">В некоторых случаях назначение элемента визуально ясно из контекста, в
+                        этом случае label может быть скрыт, однако нужно позаботиться о других формах представления
+                        информации для таких устройств как скрин-ридеры.</p>
+
+                    <label for="search1" class="hidden label">Поиск по сайту</label>
+                    <input class="input" id="search1" type="text">
+                        <pre aria-hidden="true">
+                            <code class="language-markup convert">
+                                <label for="search1" class="hidden label">Поиск по сайту</label>
+                                <input class="input" id="search1" type="text">
+                            </code>
+                        </pre>
+                    <p class="components__title">Дополнительные способы верстки input</p>
                     <button id="showInputs" class="button" aria-controls="showInputsInner" value="показать">
                         Показать
                     </button>
+                </div>
 
+                <div class="form__line">
                     <div id="showInputsInner" class="collapse" role="region" aria-labelledby="showInputs-label"
                          tabindex="-1" aria-expanded="false">
-                        <div class="form__line"><p class="components__descr">input с title</p>
+                        <div class="form__line"><p class="components__title">input с title</p>
                             <input class="input" id="search3" title="Поиск по сайту" type="text">
-                        <pre>
+                        <pre aria-hidden="true">
                             <code class="language-markup convert">
                                 <input class="input" id="search3" title="Поиск по сайту" type="text">
                             </code>
                         </pre>
                         </div>
-                        <div class="form__line"><p class="components__descr">input с aria-label</p>
+                        <div class="form__line"><p class="components__title">input с aria-label</p>
                             <input class="input" id="search4" aria-label="Поиск по сайту" type="text">
-                            <pre>
+                            <pre aria-hidden="true">
                                 <code class="language-markup convert">
                                      <input class="input" id="search4" aria-label="Поиск по сайту" type="text">
                                 </code>
@@ -123,16 +135,16 @@
 
 
                 <div class="form__line">
-                    <p class="components__descr">textarea</p>
+                    <p class="components__title">textarea</p>
                     <textarea class="textarea" title="поле ввода текста"></textarea>
-                            <pre>
+                            <pre aria-hidden="true">
                                 <code class="language-markup convert">
                                      <textarea class="textarea" title="поле ввода текста"></textarea>
                                 </code>
                             </pre>
                 </div>
                 <div class="form__line">
-                    <p class="components__descr">select</p>
+                    <p class="components__title">select</p>
                     <select class="select" name="select" title="выбирете параметры">
                         <optgroup label="цвета">
                             <option value="1" selected>
@@ -151,7 +163,7 @@
                             </option>
                         </optgroup>
                     </select>
-                        <pre>
+                        <pre aria-hidden="true">
                             <code class="language-markup convert">
                                  <select class="select" name="select" title="выбирете параметры">
                                     <optgroup label="цвета">
@@ -184,7 +196,7 @@
                             <li>Текст</li>
                         </ul>
                     </fieldset>
-                        <pre>
+                        <pre aria-hidden="true">
                             <code class="language-markup convert">
                                 <fieldset>
                                     <legend>Fieldset with legend</legend>
@@ -196,7 +208,7 @@
                         </pre>
                 </div>
                 <div class="form__line">
-                    <p class="components__descr">Чекбокс</p>
+                    <p class="components__title">Чекбокс</p>
                     <div class="checkbox__field" role="group">
                         <input id="checkbox1" type="checkbox" role="checkbox" name="checkbox1" value="чекбокс1"
                                aria-checked="false" aria-labelledby="checkboxLabel" disabled>
@@ -208,7 +220,7 @@
                                aria-labelledby="checkboxLabel" checked>
                         <label id="checkboxLabel" for="checkbox2">чекбокс3 (checked)</label>
                     </div>
-                        <pre>
+                        <pre aria-hidden="true">
                             <code class="language-markup">
                                 &ltdiv role="group"&gt
                                     &ltinput id="checkbox1" type="checkbox" role="checkbox" name="checkbox1" value="чекбокс1"
@@ -225,7 +237,7 @@
                         </pre>
                 </div>
                 <div class="form__line">
-                    <p class="components__descr">Радио</p>
+                    <p class="components__title">Радио</p>
                     <div class="radio__field" role="radiogroup">
                         <input id="radio1" type="radio" name="one" value="Первый">
                         <label id="label1" for="radio1">Первый (default)</label>
@@ -236,7 +248,7 @@
                         <input id="radio3" type="radio" name="one" value="Третий" checked>
                         <label id="label3" for="radio3">Третий (checked)</label>
                     </div>
-                        <pre>
+                        <pre aria-hidden="true">
                             <code class="language-markup">
                                 &ltdiv role="radiogroup"&gt
                                     &ltinput id="radio1" type="radio" name="first" value="Первый"&gt
@@ -254,11 +266,11 @@
                 </div>
 
                 <div class="form__line">
-                    <p class="components__descr">Кнопка отправки формы</p>
+                    <p class="components__title">Кнопка отправки формы</p>
                     <button class="button" type="submit" title="кнопка отправки формы">
                         Найти
                     </button>
-                        <pre>
+                        <pre aria-hidden="true">
                             <code class="language-markup convert">
                                 <button class="button" type="submit" title="кнопка отправки формы">
                                     Найти
@@ -270,19 +282,19 @@
         </div>
 
         <div class="components__row" id="typography">
-            <span class="components__header" >Типографика общая</span>
-            <p class="components__descr">Application</p>
+            <span class="components__header">Типографика общая</span>
+            <p class="components__title">Application</p>
             <div>Класс Application применяется в body. Стандартный размер шрифта 18px, высота строки 1.25em. При
                 переключении в режим маленького шрифта - 14px, большого - 22px
             </div>
-            <p class="components__descr">
+            <p class="components__title">
                 Заголовки </p>
             <div class="h1">Заголовок h1</div>
             <div class="h2">Заголовок h2</div>
             <div class="h3">Заголовок h3</div>
             <div class="h4">Заголовок h4</div>
             <div class="h5">Заголовок h5</div>
-            <pre>
+            <pre aria-hidden="true">
                 <code class="language-markup convert">
                     <div class="h1">Заголовок h1</div>
                     <div class="h2">Заголовок h2</div>
@@ -291,18 +303,18 @@
                     <div class="h5">Заголовок h5</div>
                 </code>
             </pre>
-            <p class="components__descr">Ссылки</p>
+            <p class="components__title">Ссылки</p>
             <a href="#">Ссылка обычная</a>
             <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Ссылка disabled</a>
-            <pre>
+            <pre aria-hidden="true">
                 <code class="language-markup convert">
                     <a href="#">Ссылка обычная</a>
                     <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Ссылка disabled</a>
                 </code>
             </pre>
-            <p class="components__descr">Маленький текст</p>
+            <p class="components__title">Маленький текст</p>
             <small>Маленький текст</small>
-            <pre>
+            <pre aria-hidden="true">
                 <code class="language-markup convert">
                    <small>Маленький текст</small>
                 </code>
@@ -310,14 +322,14 @@
 
             <div class="typography">
                 <span class="components__header">Типографика class="typography"</span>
-                <p class="components__descr">
+                <p class="components__title">
                     Заголовки (используются страндартные теги, заголовки имеют отступы)
                 <h1 class="h1">Заголовок h1</h1>
                 <h2 class="h2">Заголовок h2</h2>
                 <h3 class="h3">Заголовок h3</h3>
                 <h4 class="h4">Заголовок h4</h4>
                 <h5 class="h5">Заголовок h5</h5>
-                <pre>
+                <pre aria-hidden="true">
                     <code class="language-markup convert">
                         <div class="typography">
                             <h1 class="h1">Заголовок h1</h1>
@@ -330,7 +342,7 @@
                 </pre>
                 </p>
 
-                <p class="components__descr">Таблица с одним заголовком</p>
+                <p class="components__title">Таблица с одним заголовком</p>
                 <table>
                     <caption>Подпись к таблице:</caption>
                     <tr>
@@ -354,7 +366,7 @@
                         <td>Brynn</td>
                     </tr>
                 </table>
-                <pre>
+                <pre aria-hidden="true">
                     <code class="language-markup">
                         &ltdiv class="typography"&gt
                             &lttable&gt
@@ -383,7 +395,7 @@
                         &lt/div&gt
                     </code>
                 </pre>
-                <p class="components__descr">Таблица с двумя заголовками</p>
+                <p class="components__title">Таблица с двумя заголовками</p>
                 <table>
                     <caption>Delivery slots:</caption>
                     <tr>
@@ -411,7 +423,7 @@
                         <td>Closed</td>
                     </tr>
                 </table>
-                <pre>
+                <pre aria-hidden="true">
                     <code class="language-markup">
                         &ltdiv class="typography"&gt
                              &lttable&gt
@@ -444,7 +456,7 @@
                         &lt/div&gt
                     </code>
                 </pre>
-                <p class="components__descr">Таблица с неравномерными заголовками</p>
+                <p class="components__title">Таблица с неравномерными заголовками</p>
                 <table>
                     <caption>Планеты:</caption>
                     <col>
@@ -476,7 +488,7 @@
                         <td>9,000</td>
                     </tr>
                 </table>
-                 <pre>
+                 <pre aria-hidden="true">
                     <code class="language-markup">
                         &ltdiv class="typography"&gt
                              &lttable&gt
@@ -513,16 +525,16 @@
                         &lt/div&gt
                     </code>
                 </pre>
-                <p class="components__descr">Цитаты</p>
+                <p class="components__title">Цитаты</p>
                 <br>
                 <q>Цитата</q>
-                <pre>
+                <pre aria-hidden="true">
                     <code class="language-markup convert">
                         <q>Цитата</q>
                     </code>
                 </pre>
 
-                <p class="components__descr">Списки</p>
+                <p class="components__title">Списки</p>
                 <ul>
                     <li>текст</li>
                     <li>текст
@@ -547,8 +559,8 @@
         </div>
 
         <div class="components__row" id="images">
-            <span class="components__header" >Изображения</span>
-            <p class="components__descr">Картинкам добавляется слой, который отображается при отключении изображений</p>
+            <span class="components__header">Изображения</span>
+            <p class="components__title">Картинкам добавляется слой, который отображается при отключении изображений</p>
             <div class="row">
                 <div class="col-xs-5">
                     <img alt="img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=320%C3%97320&w=320&h=320"
@@ -558,8 +570,8 @@
         </div>
 
         <div class="components__row" id="grid">
-            <span class="components__header" >Сетка</span>
-            <p class="components__descr">В проекте используется сетка bootstrap фиксированной ширины</p>
+            <span class="components__header">Сетка</span>
+            <p class="components__title">В проекте используется сетка bootstrap фиксированной ширины</p>
             <a href="http://getbootstrap.com/css/#grid">http://getbootstrap.com/css/#grid</a>
         </div>
     </div>
