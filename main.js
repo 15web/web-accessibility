@@ -49,16 +49,14 @@ $(document).ready(function () {
     });
 
     // Прокручивание кликом по ссылке
-    stickyMenuLinks.click(function (e) {
+    stickyMenuLinks.on('click',function (e) {
         e.preventDefault();
-        stickyMenuLinks.removeClass('active');
-        $(this).addClass('active');
-        var distanceTopToSection = $($(this).attr('href')).offset().top - 70;
+        var distanceTopToSection = $($(this).attr('href')).offset().top - 79;
         $('body, html').animate({scrollTop: distanceTopToSection}, 'slow');
     });
-
-
-
+    stickyMenuLinks.on('mousedown', function (e) {
+        return false;
+    });
 
     //Test Progressbar
     var run = function() {
