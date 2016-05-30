@@ -37,3 +37,7 @@
 .application[data-color="black"] .components__title {
     color: #99FF66;
 }
+
+.components__collapse-inner {
+    padding:10px;
+}

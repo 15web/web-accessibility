@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Web-accessibility by 15web</title>
@@ -78,7 +78,7 @@
             <p class="components__descr_head">Каждый элемент формы должен должен иметь label или в особых случаях
                 WAI-ARIA или title</p>
             <form class="form" action="">
-                <div class="form__line"><p class="components__title">input с label</p>
+                <div class="form__line"><p class="components__title">Input с label</p>
                     <p class="components__descr">Когда это представляется возможным, используйте label, чтобы связать
                         текст с элементом формы</p>
                     <label for="search2" class="label">Поиск по сайту</label>
@@ -92,7 +92,7 @@
 
                 </div>
                 <div class="form__line">
-                    <p class="components__title">input с скрытым label</p>
+                    <p class="components__title">Input с скрытым label</p>
                     <p class="components__descr">В некоторых случаях назначение элемента визуально ясно из контекста, в
                         этом случае label может быть скрыт, однако нужно позаботиться о других формах представления
                         информации для таких устройств как скрин-ридеры.</p>
@@ -105,7 +105,7 @@
                                 <input class="input" id="search1" type="text" name="search">
                             </code>
                         </pre>
-                    <p class="components__title">Дополнительные способы верстки input</p>
+                    <p class="components__title">Дополнительные способы верстки элемента input</p>
                     <button id="showInputs" class="button" aria-controls="showInputsInner" value="показать">
                         Показать
                     </button>
@@ -114,15 +114,22 @@
                 <div class="form__line">
                     <div id="showInputsInner" class="collapse" role="region" aria-labelledby="showInputs-label"
                          tabindex="-1" aria-expanded="false">
-                        <div class="form__line"><p class="components__title">input с title</p>
+                        <div class="components__collapse-inner">
+                            <p class="components__descr components__descr_head">Подробную информацию вы можете найти
+                                здесь:
+                                <a href="https://www.w3.org/WAI/tutorials/forms/labels/">
+                                    https://www.w3.org/WAI/tutorials/forms/labels/
+                                </a>
+                            </p>
+                            <p class="components__title">Input с title</p>
                             <input class="input" id="search3" title="Поиск по сайту" type="text">
                         <pre aria-hidden="true">
                             <code class="language-markup convert">
                                 <input class="input" id="search3" title="Поиск по сайту" type="text">
                             </code>
                         </pre>
-                        </div>
-                        <div class="form__line"><p class="components__title">input с aria-label</p>
+
+                            <p class="components__title">Input с aria-label</p>
                             <input class="input" id="search4" aria-label="Поиск по сайту" type="text">
                             <pre aria-hidden="true">
                                 <code class="language-markup convert">
@@ -135,22 +142,32 @@
 
 
                 <div class="form__line">
-                    <p class="components__title">textarea</p>
-                    <textarea class="textarea" title="поле ввода текста"></textarea>
+                    <p class="components__title">Textarea</p>
+                    <label for="textarea" class="label">Поле ввода текста</label>
+                    <textarea class="textarea textarea_block" id="textarea"></textarea>
                             <pre aria-hidden="true">
                                 <code class="language-markup convert">
-                                     <textarea class="textarea" title="поле ввода текста"></textarea>
+                                        <label for="textarea1" class="label">Поле ввода текста</label>
+                                        <textarea class="textarea" id="textarea1"></textarea>
                                 </code>
                             </pre>
                 </div>
                 <div class="form__line">
-                    <p class="components__title">select</p>
-                    <select class="select" name="select" title="выбирете параметры">
+                    <p class="components__title">Select</p>
+                    <p class="components__descr">Для группировки опций в элементе select используйте optgroup.<br>
+                        <small>Aria-disabled используется для обозначения disabled элемента (см.
+                            <a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled">
+                                https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled
+                            </a>)
+                        </small>
+
+                    </p>
+                    <select class="select" name="select" title="выберите параметры">
                         <optgroup label="цвета">
                             <option value="1" selected>
                                 белый
                             </option>
-                            <option value="2">
+                            <option value="2" disabled aria-disabled="true">
                                 черный
                             </option>
                         </optgroup>
@@ -164,30 +181,32 @@
                         </optgroup>
                     </select>
                         <pre aria-hidden="true">
-                            <code class="language-markup convert">
-                                 <select class="select" name="select" title="выбирете параметры">
-                                    <optgroup label="цвета">
-                                        <option value="1" selected>
+                            <code class="language-markup">
+                                 &ltselect class="select" name="select" title="выберите параметры"&gt
+                                    &ltoptgroup label="цвета"&gt
+                                        &ltoption value="1"&gt
                                             белый
-                                        </option>
-                                        <option value="2">
+                                        &lt/option&gt
+                                        &ltoption value="2" disabled aria-disabled="true"&gt
                                             черный
-                                        </option>
-                                    </optgroup>
-                                     <optgroup label="размер">
-                                        <option value="1" selected>
+                                        &lt/option&gt
+                                    &lt/optgroup&gt
+                                     &ltoptgroup label="размер"&gt
+                                        &ltoption value="1"&gt
                                             большой
-                                        </option>
-                                        <option value="2">
+                                        &lt/option&gt
+                                        &ltoption value="2"&gt
                                             маленький
-                                        </option>
-                                    </optgroup>
-                                </select>
+                                        &lt/option&gt
+                                    &lt/optgroup&gt
+                                &lt/select&gt
                             </code>
                         </pre>
                 </div>
 
                 <div class="form__line">
+                    <p class="components__title">Fieldset</p>
+                    <p class="components__descr">Элемент fieldset предназначен для группирования элементов формы. Такая группировка облегчает работу с формами, содержащими большое число данных</p>
                     <fieldset>
                         <legend>Fieldset with legend</legend>
                         <ul>
@@ -209,28 +228,29 @@
                 </div>
                 <div class="form__line">
                     <p class="components__title">Чекбокс</p>
+                    <p class="components__descr">
+                        Элемент checkbox должен иметь role="checkbox", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние чекбокса. Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.
+                    </p>
                     <div class="checkbox__field" role="group">
                         <input id="checkbox1" type="checkbox" role="checkbox" name="checkbox1" value="чекбокс1"
-                               aria-checked="false" aria-labelledby="checkboxLabel" disabled>
+                               disabled>
                         <label id="checkboxLabel" for="checkbox1">чекбокс1 (disabled)</label>
-                        <input id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2"
-                               aria-labelledby="checkboxLabel">
+                        <input id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2">
                         <label id="checkboxLabel" for="checkbox2">чекбокс2 (default)</label>
-                        <input id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2"
-                               aria-labelledby="checkboxLabel" checked>
+                        <input id="checkbox2" type="checkbox" role="checkbox" name="checkbox3" value="чекбокс3" checked>
                         <label id="checkboxLabel" for="checkbox2">чекбокс3 (checked)</label>
                     </div>
                         <pre aria-hidden="true">
                             <code class="language-markup">
                                 &ltdiv role="group"&gt
-                                    &ltinput id="checkbox1" type="checkbox" role="checkbox" name="checkbox1" value="чекбокс1"
-                                           aria-checked="false" aria-labelledby="checkboxLabel" disabled&gt
+                                    &ltinput id="checkbox1" type="checkbox" role="checkbox"
+                                           name="checkbox1" value="чекбокс1" disabled&gt
                                     &ltlabel id="checkboxLabel" for="checkbox1"&gtчекбокс1 (disabled)&lt/label&gt
-                                    &ltinput id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2"
-                                           aria-labelledby="checkboxLabel"&gt
+                                    &ltinput id="checkbox2" type="checkbox" role="checkbox"
+                                           name="checkbox2" value="чекбокс2"&gt
                                     &ltlabel id="checkboxLabel" for="checkbox2"&gtчекбокс2 (default)&lt/label&gt
-                                    &ltinput id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2"
-                                           aria-labelledby="checkboxLabel" checked&gt
+                                    &ltinput id="checkbox2" type="checkbox" role="checkbox"
+                                           name="checkbox3" value="чекбокс2" checked&gt
                                     &ltlabel id="checkboxLabel" for="checkbox2"&gtчекбокс3 (checked)&lt/label&gt
                                 &lt/div&gt
                             </code>
@@ -238,26 +258,29 @@
                 </div>
                 <div class="form__line">
                     <p class="components__title">Радио</p>
+                    <p class="components__descr">
+                        Элементы radio должны быть обернуты в div с role="radiogroup" и иметь атрибут role="radio", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние. Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.
+                    </p>
                     <div class="radio__field" role="radiogroup">
-                        <input id="radio1" type="radio" name="one" value="Первый">
+                        <input id="radio1" type="radio" role="radio" name="one" value="Первый">
                         <label id="label1" for="radio1">Первый (default)</label>
 
-                        <input id="radio2" type="radio" name="one" value="Второй" disabled>
+                        <input id="radio2" type="radio" role="radio" name="one" value="Второй" disabled>
                         <label id="label2" for="radio2">Второй (disabled)</label>
 
-                        <input id="radio3" type="radio" name="one" value="Третий" checked>
+                        <input id="radio3" type="radio" role="radio" name="one" value="Третий" checked>
                         <label id="label3" for="radio3">Третий (checked)</label>
                     </div>
                         <pre aria-hidden="true">
                             <code class="language-markup">
                                 &ltdiv role="radiogroup"&gt
-                                    &ltinput id="radio1" type="radio" name="first" value="Первый"&gt
+                                    &ltinput id="radio1" type="radio" role="radio" name="first" value="Первый"&gt
                                     &ltlabel id="label1" for="radio1"&gtПервый&lt/label&gt
 
-                                    &ltinput id="radio2" type="radio" name="second" value="Второй" disabled&gt
+                                    &ltinput id="radio2" type="radio" role="radio" name="second" value="Второй" disabled&gt
                                     &ltlabel id="label2" for="radio2"&gtВторой&lt/label&gt
 
-                                    &ltinput id="radio3" type="radio" name="third" value="Третий" checked&gt
+                                    &ltinput id="radio3" type="radio" role="radio" name="third" value="Третий" checked&gt
                                     &ltlabel id="label3" for="radio3"&gtТретий&lt/label&gt
                                 &lt/div&gt
                             </code>
