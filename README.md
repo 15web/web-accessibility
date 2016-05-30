@@ -19,7 +19,7 @@
 ___
 
 
-[**Основные компоненты**](https://github.com/15web/web-accessibility/components/default.html) &nbsp;&nbsp;&nbsp; [**Дополнительные компоненты**](https://github.com/15web/web-accessibility/components/additional.html) &nbsp;&nbsp;&nbsp; [**Примеры шаблонов**](https://github.com/15web/web-accessibility/examples)
+[**Основные компоненты**](http://15web.github.io/web-accessibility/) &nbsp;&nbsp;&nbsp; [**Дополнительные компоненты**](http://15web.github.io/web-accessibility/additional.html) &nbsp;&nbsp;&nbsp; [**Пример шаблона**](http://15web.github.io/web-accessibility/examples/sp/)
 
 ___
 
@@ -63,4 +63,4 @@ dist/
 ## Copyright and license
 
 Copyright © 2016 [Studio 15](http://15web.ru)
-Code released under [the MIT license](https://github.com/twbs/bootstrap/blob/master/LICENSE). Docs released under [Creative Commons](https://github.com/twbs/bootstrap/blob/master/docs/LICENSE).
+Code released under [the MIT license](https://github.com/twbs/bootstrap/blob/master/LICENSE).
