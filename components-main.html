@@ -75,8 +75,10 @@
     <div class="main__content">
         <div class="components__row" id="form">
             <span class="components__header">Форма</span>
-            <p class="components__descr_head">Каждый элемент формы должен должен иметь label или в особых случаях
-                WAI-ARIA или title</p>
+            <p class="components__descr_head">
+                Каждый элемент формы должен должен иметь label или в особых случаях
+                WAI-ARIA или title.<br>
+            </p>
             <form class="form" action="">
                 <div class="form__line"><p class="components__title">Input с label</p>
                     <p class="components__descr">Когда это представляется возможным, используйте label, чтобы связать
@@ -117,7 +119,7 @@
                         <div class="components__collapse-inner">
                             <p class="components__descr components__descr_head">Подробную информацию вы можете найти
                                 здесь:
-                                <a href="https://www.w3.org/WAI/tutorials/forms/labels/">
+                                <a target="_blank" href="https://www.w3.org/WAI/tutorials/forms/labels/">
                                     https://www.w3.org/WAI/tutorials/forms/labels/
                                 </a>
                             </p>
@@ -155,11 +157,11 @@
                 <div class="form__line">
                     <p class="components__title">Select</p>
                     <p class="components__descr">Для группировки опций в элементе select используйте optgroup.<br>
-                        <small>Aria-disabled используется для обозначения disabled элемента (см.
+                        Aria-disabled используется для обозначения disabled элемента (см.
                             <a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled">
                                 https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled
                             </a>)
-                        </small>
+
 
                     </p>
                     <select class="select" name="select" title="выберите параметры">
@@ -328,11 +330,19 @@
             </pre>
             <p class="components__title">Ссылки</p>
             <a href="#">Ссылка обычная</a>
-            <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Ссылка disabled</a>
+            <p class="components__descr">Если из текста ссылки не ясно куда она ведет или ее заменяет изображение, нужно использовать aria-label, чтобы позволить скрин-ридеру озвучить подробное описание
+                <a href="#" aria-label="Прочитайте больше новостей">[больше]</a>
+            </p>
+            <p class="components__descr">Если ссылка недоступна используйте aria-disabled="true", а также tabindex="-1" - если не хотите чтобы пользователь мог сфокусироваться на ней с помощью клавиатуры
+                <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Ссылка disabled</a>
+            </p>
+
             <pre aria-hidden="true">
                 <code class="language-markup convert">
                     <a href="#">Ссылка обычная</a>
+                    <a href="#" aria-label="Прочитайте больше новостей">[больше]</a>
                     <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Ссылка disabled</a>
+
                 </code>
             </pre>
             <p class="components__title">Маленький текст</p>
