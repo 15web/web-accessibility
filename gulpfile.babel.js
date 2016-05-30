@@ -50,7 +50,7 @@ const AUTOPREFIXER_BROWSERS = [
 gulp.task('sp:twig', function () {
 
     gulp.src(SETTINGS.path.example.sp + '/twig/*.twig')
-        .pipe(cached('html'))
+        // .pipe(cached('html'))
         .pipe(twig().on('error', console.log))
         .pipe(gulp.dest(SETTINGS.path.example.sp))
 
