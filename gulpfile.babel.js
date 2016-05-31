@@ -163,13 +163,13 @@ gulp.task("webpack", function (callback) {
 // BUILD
 // ==========================================================================
 
-gulp.task('dist', function() {
+gulp.task('default', function() {
 
     // Development
     if (DEBUG) {
         runSequence(
             'webpack',
-            'server'
+            'docs'
         );
     }
 

@@ -11,9 +11,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "dev": "gulp build",
-    "prod": "gulp build --release",
-    "docs": "gulp docs"
+    "dev": "gulp",
+    "prod": "gulp --release"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
