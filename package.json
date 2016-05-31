@@ -13,7 +13,7 @@
   "scripts": {
     "dev": "gulp build",
     "prod": "gulp build --release",
-    "examples": "gulp examples"
+    "docs": "gulp docs"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",

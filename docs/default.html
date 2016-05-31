@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Web-accessibility by 15web</title>
@@ -19,7 +19,7 @@
                 <a href="https://github.com/15web/web-accessibility">View on GitHub</a>
             </li>
             <li class="active">
-                <a href="./">Основные компоненты</a>
+                <a href="default.html">Основные компоненты</a>
             </li>
             <li>
                 <a href="additional.html">Дополнительные компоненты</a>
@@ -34,8 +34,8 @@
 <div class="control-panel">
     <div class="control-panel__wrapper row">
         <div class="col-xs-4">
-            Размер шрифта:
-            <select class="control-panel__select-text select">
+            <label for="fontSize">Размер шрифта:</label>
+            <select id="fontSize" class="control-panel__select-text select">
                 <option value="small">
                     Маленький
                 </option>
@@ -48,8 +48,8 @@
             </select>
         </div>
         <div class="col-xs-4">
-            Цвет сайта:
-            <select class="control-panel__select-color select">
+            <label for="siteColor">Цвет сайта:</label>
+            <select id="siteColor" class="control-panel__select-color select">
                 <option value="white">
                     Белый
                 </option>
@@ -59,8 +59,8 @@
             </select>
         </div>
         <div class="col-xs-4">
-            Изображения:
-            <select class="control-panel__select-image select">
+            <label for="siteImages">Изображения:</label>
+            <select id="siteImages" class="control-panel__select-image select">
                 <option value="visible">
                     Включены
                 </option>

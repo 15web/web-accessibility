@@ -24,6 +24,7 @@ const DEBUG = !process.argv.includes('--release');
 
 const SETTINGS = {
     path: {
+        docs: './docs',
         example: {
             sp: './docs/examples/sp'
         },
@@ -184,41 +185,24 @@ gulp.task('dist', function() {
 });
 
 // ==========================================================================
-// BUILD EXAMPLES
+// BUILD DOCS
 // ==========================================================================
 
-gulp.task('examples', function() {
+gulp.task('docs', function() {
 
     browserSync.create().init({
         server: './',
         open: false,
-        startPath: SETTINGS.path.example.sp + "/index.html"
+        startPath: SETTINGS.path.docs + "/default.html"
     });
 
     gulp.watch(SETTINGS.path.example.sp + '/twig/**/*.twig', ['sp:twig']);
-    
-    // @TODO: Рефакторинг.
     gulp.watch(SETTINGS.path.example.sp + '/assets/styles/**/*.scss', ['sp:sass']);
-
-    gulp.watch(SETTINGS.path.dist + '/**/*').on('change', browserSync.reload);
-    gulp.watch(SETTINGS.path.example.sp + '/*.html').on('change', browserSync.reload);
-
-});
-
-// ==========================================================================
-// Сервер для работы с компонентами
-// ==========================================================================
-
-
-gulp.task('server', function() {
-
-    browserSync.create().init({
-        server: './',
-        open: false,
-        startPath: "/index.html"
-    });
-    gulp.watch('/*.html').on('change', browserSync.reload);
-    gulp.watch('/main.js').on('change', browserSync.reload);
-    gulp.watch('/stylesheets/**/*.*').on('change', browserSync.reload);
     
+    gulp.watch(SETTINGS.path.dist + '/**/*').on('change', browserSync.reload);
+    //reload только для собранных файлов - css,html,js
+    gulp.watch(SETTINGS.path.docs + '/**/*.js').on('change', browserSync.reload);
+    gulp.watch(SETTINGS.path.docs + '/**/*.css').on('change', browserSync.reload);
+    gulp.watch(SETTINGS.path.docs + '/**/*.html').on('change', browserSync.reload);
+
 });
