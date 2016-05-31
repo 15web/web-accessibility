@@ -176,14 +176,14 @@
             <p class="components__descr">
                 Списку табов указывается атрибут role="tabs", а элементам списка атрибут role="tab"
             </p>
-            <p class="components__descr">В атрибут aria-controls указывается id панели, к которой привязана вкладка</p>
+            <p class="components__descr">Скрипт инициализируется на элементе с классом "tabs", а атрибут aria-controls следует указать id панели, к которой привязана вкладка</p>
             <p class="components__descr">
                 Выбраному табу указывается aria-selected="true" и tabindex="0", остальным присваевается значение false и tabindex="-1"
             </p>
             <p class="components__descr">
                 Скрипт автоматически изменяет атрибуты aria-selected и tabindex в зависимости от выбранной вкладки
             </p>
-            <div class="tabs" id="tabpanel1" data-tabs="true">
+            <div class="tabs" id="tabpanel1">
                 <ul role="tablist" class="tabs__list tabs-list">
                     <li class="tabs-list__item active" id="tab11" aria-controls="panel11" aria-selected="true" role="tab"
                         tabindex="0">
@@ -429,16 +429,17 @@
                 Для того, чтобы пользователь мог услышать изменение, при раскрытии панели используется aria-expanded
             </p>
             <p class="components__descr">Скрипт автоматически изменяет атрибут и фокусируется на раскрытой области</p>
+            <p>Для использования добавьте кнопке класс collapse-button, и укажите в атрибуте aria-controls id элемента для управления</p>
             <p class="components__descr">tabindex используется для корректной работы скрипта</p>
-            <button id="idForScript" class="button" aria-controls="elemToControl" value="показать">
+            <button class="button collapse-button" aria-controls="elemToCtrl" value="показать">
                 Показать
             </button>
-            <div id="elemToControl" class="collapse" tabindex="-1" aria-expanded="false">
+            <div id="elemToCtrl" class="collapse" tabindex="-1" aria-expanded="false">
                 Topic 1 is all about being Topic 1 and may or may not have anything to do with other topics.
             </div>
             <pre>
                 <code class="language-markup convert">
-                    <button id="idForScript" class="button" aria-controls="elemToControl" value="показать">
+                    <button class="button collapse-button" aria-controls="elemToControl" value="показать">
                         Показать
                     </button>
                     <div id="elemToControl" class="collapse" tabindex="-1" aria-expanded="false">

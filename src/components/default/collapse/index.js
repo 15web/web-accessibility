@@ -2,12 +2,16 @@
 
 import './collapse.scss';
 
+export function collapseInit() {
+    var collapses = document.querySelectorAll('.collapse-button');
+    [].forEach.call(collapses,function (collapse) {
+        var collapse = new hideShow(collapse);
+    });
+}
 
-export function hideShow(id) {
-
-    this.$id = $('#' + id);
-    this.$region = $('#' + this.$id.attr('aria-controls'));
-
+function hideShow(target) {
+    this.target = target;
+    this.region = document.querySelector('#' + this.target.getAttribute('aria-controls'));
     this.keys = {
         enter: 13,
         space: 32
@@ -15,20 +19,15 @@ export function hideShow(id) {
 
     this.toggleSpeed = 100;
 
-
     this.bindHandlers();
 
 }
 
 
 hideShow.prototype.bindHandlers = function () {
-
     var thisObj = this;
-
-    this.$id.click(function (e) {
-
+    this.target.addEventListener('click', function (e) {
         thisObj.toggleRegion();
-
         e.stopPropagation();
         return false;
     });
@@ -36,34 +35,16 @@ hideShow.prototype.bindHandlers = function () {
 
 
 hideShow.prototype.toggleRegion = function () {
-
-    var thisObj = this;
-
-
-    this.$region.slideToggle(this.toggleSpeed, function () {
-
-        if ($(this).attr('aria-expanded') == 'false') {
-
-
-            $(this).attr('aria-expanded', 'true');
-
-
-            $(this).focus();
-
-
-            thisObj.$id.find('span').html('Hide');
-
+    var thisObj = this.region;
+    console.log(thisObj);
+    this.region.classList.toggle('collapse');
+        if (thisObj.getAttribute('aria-expanded') == 'false') {
+            thisObj.setAttribute('aria-expanded', 'true');
+            thisObj.focus();
         }
         else {
-
-
-            $(this).attr('aria-expanded', 'false');
-
-
-            thisObj.$id.find('span').html('Show');
+            thisObj.setAttribute('aria-expanded', 'false');
         }
-    });
-
 };
 
 
