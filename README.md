@@ -18,7 +18,7 @@
 ___
 
 
-[**Основные компоненты**](http://15web.github.io/web-accessibility/) &nbsp;&nbsp;&nbsp; [**Дополнительные компоненты**](http://15web.github.io/web-accessibility/additional.html) &nbsp;&nbsp;&nbsp; [**Пример шаблона**](http://15web.github.io/web-accessibility/examples/sp/)
+[**Основные компоненты**](http://15web.github.io/web-accessibility/docs/default.html) &nbsp;&nbsp;&nbsp; [**Дополнительные компоненты**](http://15web.github.io/web-accessibility/docs/additional.html) &nbsp;&nbsp;&nbsp; [**Пример шаблона**](http://15web.github.io/web-accessibility/docs/examples/sp/)
 
 ___
 
