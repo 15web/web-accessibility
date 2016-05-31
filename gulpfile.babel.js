@@ -167,7 +167,8 @@ gulp.task('build', function() {
     // Development
     if (DEBUG) {
         runSequence(
-            'webpack'
+            'webpack',
+            'server'
         );
     }
 
@@ -200,4 +201,21 @@ gulp.task('examples', function() {
     gulp.watch(SETTINGS.path.build + '/**/*').on('change', browserSync.reload);
     gulp.watch(SETTINGS.path.example.sp + '/*.html').on('change', browserSync.reload);
 
+});
+
+// ==========================================================================
+// Сервер для работы с компонентами
+// ==========================================================================
+
+
+gulp.task('server', function() {
+
+    browserSync.create().init({
+        server: './',
+        open: false,
+        startPath: "/index.html"
+    });
+    gulp.watch('/*.html').on('change', browserSync.reload);
+    gulp.watch('/main.js').on('change', browserSync.reload);
+    gulp.watch('/stylesheets/**/*.*').on('change', browserSync.reload);
 });
