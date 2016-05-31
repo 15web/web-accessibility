@@ -17,19 +17,15 @@
 
 
     a {
-        color: #fff;
-        background: #000;
+        color: #fff !important;
+        background: #000 !important;
 
-        text-decoration: none;
+        text-decoration: none !important;
+        outline: none !important;
     }
 
-    &:focus {
-        outline: 5px solid black;
-        color: black;
-        background: white;
-        a {
-            color: black;
-        }
+    &:focus,&:hover {
+        outline: 3px solid #0000cc;
     }
 }
 
@@ -50,18 +46,15 @@
         background: #fff;
 
         a {
-            color: #000;
-            background: #fff;
+            color: #000 !important;
+            background: #fff !important;
+            &:focus,&:hover {
+                text-decoration: none;
+            }
         }
 
-        &:focus {
-            outline: 5px solid white;
-            color: white;
-            background: black;
-            a {
-                color: white;
-                background: #000;
-            }
+        &:focus,&:hover {
+            outline: 3px solid #BF1722;
         }
     }
 

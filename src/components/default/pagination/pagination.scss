@@ -1,0 +1,67 @@
+// ==========================================================================
+// pagination
+// ==========================================================================
+
+@import "../../config";
+
+.pagination {
+    @include clearfix();
+
+    display: block;
+
+
+    &__item {
+        float: left;
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: 5px 15px;
+
+        font-size: inherit;
+        line-height: 1.5em;
+        text-align: center;
+        text-decoration: none;
+
+        border: 1px solid #000;
+        border-radius: 4px;
+
+        &:focus,&:hover {
+            outline: none !important;
+            &:focus, &:hover {
+                box-shadow: 0 0 0 3px #ffa;
+            }
+        }
+
+        .pagination__item_active & {
+            color: #BF1722 !important;
+            background: #ffa;
+        }
+    }
+}
+
+// ==========================================================================
+// Theme black
+// ==========================================================================
+
+.application[data-color="black"] {
+
+    .pagination {
+        border-color: #fff;
+    }
+
+    .pagination__link {
+        border-color: #fff;
+    }
+
+    .pagination__item_active .pagination__link {
+        background: #d8edff;
+        color: #BF1722;
+    }
+
+}

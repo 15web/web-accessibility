@@ -1,6 +1,6 @@
 'use strict';
-import './components/default/reset';
 import './components/default/normalize';
+import './components/default/reset';
 import './components/default/input';
 import './components/default/grid';
 import './components/default/application';
@@ -15,6 +15,20 @@ import './components/default/image-alt';
 import './components/default/select';
 import './components/default/breadcrumbs';
 import './components/default/form';
+import './components/default/pagination';
+import './components/default/progress';
+import './components/default/radio';
+import './components/default/checkbox';
+import './components/default/alert';
+import './components/default/collapse';
+import './components/default/tabs';
+import './components/default/thumbnail';
+import './components/default/label';
+import './components/default/badge';
+import './components/default/textarea';
 
+import {hideShow} from './components/default/collapse';
+import tabpanel from './components/default/tabs';
 
-console.log('Hello world!');
+exports.tabpanel = tabpanel;
+exports.hideShow = hideShow;

@@ -14,21 +14,6 @@
         }
     }
 
-    &__label {
-        display: block;
-        margin-bottom: 1px;
-    }
-
-    &__textarea {
-        padding: 15px;
-        border: 2px solid $text-color;
-        font-size: 1em;
-
-        &:focus {
-            outline: 4px solid black;
-        }
-    }
-
     &__error {
         font-style: italic;
     }
@@ -55,14 +40,6 @@ fieldset {
             sup {
                 color: $text-color;
                 top: -.5em;
-            }
-        }
-        &__textarea {
-            background-color: $bg-color;
-            border-color: $text-color;
-
-            &:focus {
-                outline: 4px solid white;
             }
         }
     }

@@ -1,0 +1,10 @@
+
+[type="checkbox"] {
+    vertical-align: middle;
+    width: 1.5em;
+    height:1.5em;
+
+    &[disabled] {
+        cursor: not-allowed;
+    }
+}

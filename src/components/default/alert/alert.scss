@@ -1,0 +1,17 @@
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    background: black;
+    color: white;
+}
+
+// ==========================================================================
+// Theme black
+// ==========================================================================
+
+.application[data-color="black"] {
+    .alert {
+        background: white;
+        color: black;
+    }
+}

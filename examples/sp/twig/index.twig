@@ -1,8 +1,73 @@
+{% include "./partials/header.twig" %}
+<body class="application container">
 
-{% include 'partials/header.twig' %}
+{% include "./partials/control-panel.twig" %}
 
-    <main class="col-xs-12 main" role="main">
-        <div>
+<div>
+    <header class="header" role="banner">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="pull-left">
+                    31 марта 2016
+                </div>
+                <a class="header__site-version pull-right" href="#">
+                    Обычная версия сайта
+                </a>
+            </div>
+        </div>
+        <div class="h1">
+            Современное сельское поселение
+        </div>
+        <div class="h3">
+            официальный сайт муниципального образования
+        </div>
+
+        <nav class="nav" aria-label="горизонтальная навигация">
+            <ul>
+                <li class="active">
+                    <a href="index.html" title="Главная страница сайта">Главная</a>
+                </li>
+                <li>
+                    <a href="faq.html" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
+                        Вопрос-ответ
+                    </a>
+                </li>
+                <li>
+                    <a href="content.html">Контент</a>
+                </li>
+                <li>
+                    <a href="gallery.html">Галлерея</a>
+                </li>
+                <li>
+                    <a href="gallery-inner.html">Галлерея-внутри</a>
+                </li>
+                <li>
+                    <a href="quize.html">Опрос</a>
+                </li>
+                <li>
+                    <a href="search.html">Поиск</a>
+                </li>
+                <li>
+                    <a href="npa.html">Список</a>
+                </li>
+            </ul>
+        </nav>
+
+        <form class="row" action="" role="search">
+            <div class="col-xs-12">
+                <label for="search" class="hidden">Поиск по сайту</label>
+
+                <input class="input col-xs-10" id="search" type="text">
+                <button class="col-xs-2 button" type="submit" value="Отправка формы">
+                    Найти
+                </button>
+            </div>
+
+        </form>
+
+    </header>
+
+    <main class="main" role="main">
             <div class="greeting media">
                 <div class="media__left">
                     <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97240&w=200&h=240" alt="Глава"
@@ -10,7 +75,7 @@
                     <p class="media__text">Петр Павлович</p>
                     <p class="media__text">Глава района</p>
                 </div>
-                <div class="media__body typography">
+                <div class="media__body">
                     <p class="media__text">Открытость и доступность информации — одно из важных условий развития успешного общества. Мы
                         делаем всё, чтобы работа администрации поселения была понятной и открытой. Надеемся, что
                         посещение нашего сайта станет для Вас полезным, мы сможем обменяться мнениями по наиболее важным
@@ -27,7 +92,7 @@
             </div>
 
             <div class="content-block">
-                <h2 class="panel-heading content-header">Новости</h2>
+                <h2 class="panel-heading content-header h2">Новости</h2>
                 <div class="media">
                     <div class="media__left">
                         <a href="#">
@@ -41,7 +106,8 @@
                                 судопроизводства Российской Федерации
                             </a>
                         </h3>
-                        <p>15 марта 2016</p>
+                        <p>
+                            <small>15 марта 2016</small></p>
                         <p class="media__text">Кодекс административного судопроизводства РФ регулирует порядок
                             осуществления административного судопроизводства при рассмотрении и разрешении Верховным
                             Судом РФ, судами общей юрисдикции административных дел о защите нарушенных или оспариваемых
@@ -62,7 +128,8 @@
                                 судопроизводства Российской Федерации
                             </a>
                         </h3>
-                        <p>15 марта 2016</p>
+                        <p>
+                            <small>15 марта 2016</small></p>
                         <p class="media__text">Кодекс административного судопроизводства РФ регулирует порядок
                             осуществления административного судопроизводства при рассмотрении и разрешении Верховным
                             Судом РФ, судами общей юрисдикции административных дел о защите нарушенных или оспариваемых
@@ -71,11 +138,10 @@
                     </div>
                 </div>
 
-
-                <a href="/news.html">Показать все новости</a>
+                <a href="#">Показать все новости</a>
             </div>
             <div class="content-block">
-                <h2 class="panel-heading content-header">Новости</h2>
+                <h2 class="panel-heading content-header h2">Новости</h2>
                 <div class="media">
                     <div class="media__left">
                         <a href="#">
@@ -89,7 +155,8 @@
                                 судопроизводства Российской Федерации
                             </a>
                         </h3>
-                        <p>15 марта 2016</p>
+                        <p>
+                            <small>15 марта 2016</small></p>
                         <p class="media__text">Кодекс административного судопроизводства РФ регулирует порядок
                             осуществления административного судопроизводства при рассмотрении и разрешении Верховным
                             Судом РФ, судами общей юрисдикции административных дел о защите нарушенных или оспариваемых
@@ -110,7 +177,8 @@
                                 судопроизводства Российской Федерации
                             </a>
                         </h3>
-                        <p>15 марта 2016</p>
+                        <p>
+                            <small>15 марта 2016</small></p>
                         <p class="media__text">Кодекс административного судопроизводства РФ регулирует порядок
                             осуществления административного судопроизводства при рассмотрении и разрешении Верховным
                             Судом РФ, судами общей юрисдикции административных дел о защите нарушенных или оспариваемых
@@ -119,12 +187,11 @@
                     </div>
                 </div>
 
-
-                <a href="/news.html">Показать все новости</a>
+                <a href="#">Показать все новости</a>
             </div>
 
 
-        </div>
+
     </main>
 
     {% include "partials/footer.twig" %}

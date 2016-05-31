@@ -1,0 +1,27 @@
+.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 2px 8px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+    background-color: #777777;
+    border-radius: 10px;
+    text-decoration: none}
+.badge:empty {
+    display: none;
+}
+.button .badge {
+    position: relative;
+    top: -1px;
+}
+a.badge:hover,
+a.badge:focus {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
