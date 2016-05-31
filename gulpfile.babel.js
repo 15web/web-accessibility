@@ -25,10 +25,10 @@ const DEBUG = !process.argv.includes('--release');
 const SETTINGS = {
     path: {
         example: {
-            sp: './examples/sp'
+            sp: './docs/examples/sp'
         },
         default: './src',
-        build: './dist'
+        dist: './dist'
     }
 };
 
@@ -68,11 +68,11 @@ gulp.task("sp:sass", function () {
 // ==========================================================================
 
 gulp.task('scripts', function () {
-    return gulp.src(SETTINGS.path.build + '/accessibility.js')
+    return gulp.src(SETTINGS.path.dist + '/accessibility.js')
         .pipe(cached('scripts'))
         .pipe(uglify())
         .pipe(rename('accessibility.min.js'))
-        .pipe(gulp.dest(SETTINGS.path.build));
+        .pipe(gulp.dest(SETTINGS.path.dist));
 });
 
 // ==========================================================================
@@ -80,13 +80,13 @@ gulp.task('scripts', function () {
 // ==========================================================================
 
 gulp.task('styles', function () {
-    return gulp.src(SETTINGS.path.build + '/accessibility.css')
+    return gulp.src(SETTINGS.path.dist + '/accessibility.css')
         .pipe(cached('styles'))
         .pipe(csscomb())
-        .pipe(gulp.dest(SETTINGS.path.build))
+        .pipe(gulp.dest(SETTINGS.path.dist))
         .pipe(cssnano())
         .pipe(rename('accessibility.min.css'))
-        .pipe(gulp.dest(SETTINGS.path.build));
+        .pipe(gulp.dest(SETTINGS.path.dist));
 });
 
 // ==========================================================================
@@ -162,7 +162,7 @@ gulp.task("webpack", function (callback) {
 // BUILD
 // ==========================================================================
 
-gulp.task('build', function() {
+gulp.task('dist', function() {
 
     // Development
     if (DEBUG) {
@@ -196,9 +196,11 @@ gulp.task('examples', function() {
     });
 
     gulp.watch(SETTINGS.path.example.sp + '/twig/**/*.twig', ['sp:twig']);
+    
+    // @TODO: Рефакторинг.
     gulp.watch(SETTINGS.path.example.sp + '/assets/styles/**/*.scss', ['sp:sass']);
 
-    gulp.watch(SETTINGS.path.build + '/**/*').on('change', browserSync.reload);
+    gulp.watch(SETTINGS.path.dist + '/**/*').on('change', browserSync.reload);
     gulp.watch(SETTINGS.path.example.sp + '/*.html').on('change', browserSync.reload);
 
 });
@@ -218,4 +220,5 @@ gulp.task('server', function() {
     gulp.watch('/*.html').on('change', browserSync.reload);
     gulp.watch('/main.js').on('change', browserSync.reload);
     gulp.watch('/stylesheets/**/*.*').on('change', browserSync.reload);
+    
 });
