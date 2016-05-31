@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Web-accessibility by 15web</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="dist/accessibility.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/main.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/components.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/prism.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../dist/accessibility.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="assets/main.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="assets/components.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="assets/prism.css" media="screen">
 </head>
 <body class="application container">
 <header class="page-header">
@@ -19,7 +19,7 @@
                 <a href="https://github.com/15web/web-accessibility">View on GitHub</a>
             </li>
             <li class="active">
-                <a href="./">Основные компоненты</a>
+                <a href="default.html">Основные компоненты</a>
             </li>
             <li>
                 <a href="additional.html">Дополнительные компоненты</a>
@@ -34,8 +34,8 @@
 <div class="control-panel">
     <div class="control-panel__wrapper row">
         <div class="col-xs-4">
-            Размер шрифта:
-            <select class="control-panel__select-text select">
+            <label for="fontSize">Размер шрифта:</label>
+            <select id="fontSize" class="control-panel__select-text select">
                 <option value="small">
                     Маленький
                 </option>
@@ -48,8 +48,8 @@
             </select>
         </div>
         <div class="col-xs-4">
-            Цвет сайта:
-            <select class="control-panel__select-color select">
+            <label for="siteColor">Цвет сайта:</label>
+            <select id="siteColor" class="control-panel__select-color select">
                 <option value="white">
                     Белый
                 </option>
@@ -59,8 +59,8 @@
             </select>
         </div>
         <div class="col-xs-4">
-            Изображения:
-            <select class="control-panel__select-image select">
+            <label for="siteImages">Изображения:</label>
+            <select id="siteImages" class="control-panel__select-image select">
                 <option value="visible">
                     Включены
                 </option>
@@ -74,7 +74,7 @@
 <main class="components main">
     <div class="main__content">
         <div class="components__row" id="form">
-            <span class="components__header">Forms</span>
+            <span class="components__header">Форма</span>
             <p class="components__descr_head">
                 Каждый элемент формы должен должен иметь label или в особых случаях
                 WAI-ARIA или title.<br>
@@ -312,7 +312,7 @@
         </div>
 
         <div class="components__row" id="typography">
-            <span class="components__header">Typography</span>
+            <span class="components__header">Типографика общая</span>
             <p class="components__title">Application</p>
             <div>Класс Application применяется в body. Стандартный размер шрифта 18px, высота строки 1.25em. При
                 переключении в режим маленького шрифта - 14px, большого - 22px
@@ -359,7 +359,7 @@
             </pre>
 
             <div class="typography">
-                <span class="components__header">Typography class="typography"</span>
+                <span class="components__header">Типографика class="typography"</span>
                 <p class="components__title">
                     Заголовки
                 </p>
@@ -573,10 +573,10 @@
                 </pre>
                 <p class="components__title">Цитаты</p>
                 <br>
-                <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, blanditiis.</q>
+                <q>Цитата</q>
                 <pre aria-hidden="true">
                     <code class="language-markup convert">
-                        <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, blanditiis.</q>
+                        <q>Цитата</q>
                     </code>
                 </pre>
 
@@ -605,8 +605,8 @@
         </div>
 
         <div class="components__row" id="images">
-            <span class="components__header">Images</span>
-            <p class="components__descr">Изображениями добавляется враппер, который отображается при их отключении. Он содержит текст из атрибута alt.</p>
+            <span class="components__header">Изображения</span>
+            <p class="components__descr">Картинкам добавляется слой, который отображается при отключении изображений. Текстовое отображение обеспечивается за счет атрибута alt</p>
             <div class="row">
                 <div class="col-xs-5">
                     <img alt="img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=320%C3%97320&w=320&h=320"
@@ -616,8 +616,8 @@
         </div>
 
         <div class="components__row" id="grid">
-            <span class="components__header">Grid system</span>
-            <p class="components__title">Временно в проекте используется сетка bootstrap фиксированной ширины</p>
+            <span class="components__header">Сетка</span>
+            <p class="components__title">В проекте используется сетка bootstrap фиксированной ширины</p>
             <a href="http://getbootstrap.com/css/#grid">http://getbootstrap.com/css/#grid</a>
         </div>
     </div>
@@ -625,27 +625,30 @@
         <nav class="nav" aria-label="Вертикальная навигация">
             <ul>
                 <li>
-                    <a href="#form" title="forms">Forms</a>
+                    <a href="#form" title="Форма">Форма</a>
                 </li>
                 <li>
-                    <a href="#typography" title="typography">Typography</a>
+                    <a href="#typography" title="Типографика">Типографика</a>
                 </li>
                 <li>
-                    <a href="#images" title="images">Images</a>
+                    <a href="#images" title="Изображения">Изображения</a>
                 </li>
                 <li>
-                    <a href="#grid" title="grid system">Grid system</a>
+                    <a href="#grid" title="Сетка">Сетка</a>
                 </li>
+
             </ul>
         </nav>
     </div>
 
 </main>
 
+
+
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
-<script src="prism.js"></script>
-<script src="dist/accessibility.js"></script>
-<script src="main.js"></script>
+<script src="../dist/accessibility.js"></script>
+<script src="assets/prism.js"></script>
+<script src="assets/main.js"></script>
 
 </body>
 </html>
