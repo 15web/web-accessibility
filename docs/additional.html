@@ -11,22 +11,23 @@
     <link rel="stylesheet" type="text/css" href="assets/prism.css" media="screen">
 </head>
 <body class="application container">
+
 <header class="page-header">
-    <h1 class="project-name">Web-accessibility</h1>
+    <h1 class="project-name">Web Accessibility</h1>
     <h2 class="project-tagline"></h2>
-    <nav class="nav" aria-label="горизонтальная навигация">
+    <nav class="nav" aria-label="horizontal navigation">
         <ul>
             <li>
-                <a href="https://github.com/15web/web-accessibility" target="_blank">View on GitHub</a>
+                <a href="https://github.com/15web/web-accessibility">View on GitHub</a>
             </li>
             <li>
-                <a href="default.html">Основные компоненты</a>
+                <a href="default.html">Default components</a>
             </li>
             <li class="active">
-                <a href="additional.html">Дополнительные компоненты</a>
+                <a href="additional.html">Additional components</a>
             </li>
             <li>
-                <a href="examples/sp" target="_blank">Шаблон</a>
+                <a href="examples/sp">Template example</a>
             </li>
         </ul>
     </nav>
@@ -35,192 +36,208 @@
 <div class="control-panel">
     <div class="control-panel__wrapper row">
         <div class="col-xs-4">
-            <label for="fontSize">Размер шрифта:</label>
+            <label for="fontSize">Font size:</label>
             <select id="fontSize" class="control-panel__select-text select">
                 <option value="small">
-                    Маленький
+                    Small
                 </option>
                 <option value="normal">
-                    Средний
+                    Medium
                 </option>
                 <option value="large">
-                    Большой
+                    Large
                 </option>
             </select>
         </div>
         <div class="col-xs-4">
-            <label for="siteColor">Цвет сайта:</label>
+            <label for="siteColor">Color scheme:</label>
             <select id="siteColor" class="control-panel__select-color select">
                 <option value="white">
-                    Белый
+                    White
                 </option>
                 <option value="black">
-                    Черный
+                    Black
                 </option>
             </select>
         </div>
         <div class="col-xs-4">
-            <label for="siteImages">Изображения:</label>
+            <label for="siteImages">Images:</label>
             <select id="siteImages" class="control-panel__select-image select">
                 <option value="visible">
-                    Включены
+                    Enable
                 </option>
                 <option value="hidden">
-                    Выключены
+                    Disabled
                 </option>
             </select>
         </div>
     </div>
 </div>
+
 <main class="components main">
     <div class="main__content">
-        <div class="components__row" id="alert">
-            <span class="components__header">Уведомления</span>
+
+        <!-- @TODO: Перевести описание на английский. -->
+        <div id="alert" class="components__row">
+            <span class="components__header">
+                Alerts
+            </span>
             <p class="components__descr">
-                элемент с атрибутом role=”alert” прочитывается скрин-ридером, сразу как элемент появляется на странице
+                Элемент с атрибутом role=”alert” прочитывается скрин-ридером, сразу как элемент появляется на странице.
             </p>
-            <div class="alert" role="alert">Звучит уведомление</div>
+            <div class="alert" role="alert">Alert message</div>
             <pre>
                 <code class="language-markup convert">
-                     <div class="alert" role="alert">Звучит уведомление</div>
+                     <div class="alert" role="alert">
+                         ...
+                     </div>
                 </code>
             </pre>
         </div>
-        <div class="components__row" id="media">
-            <span class="components__header" >Медиа-объект</span>
-                <div class="media">
-                    <div class="media__left">
-                        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97240&w=200&h=240" alt="Изображение"
-                             style="width: 200px; height: 240px;">
-                        <p class="media__text">Подпись к изображению</p>
-                    </div>
-                    <div class="media__body">
-                        <p class="media__text">Текст, описание</p>
-                        <p class="media__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem beatae delectus distinctio dolores eligendi exercitationem minima natus officiis quia quos rem, repudiandae sapiente unde voluptas! Aliquam obcaecati reprehenderit tenetur?</p>
-                    </div>
-                </div>
 
+        <!-- @TODO: Изображеия в примерах кода не должны оборачиваться в image-alt. -->
+        <div id="media" class="components__row">
+            <span class="components__header" >
+                Media object
+            </span>
+            <div class="media">
+                <div class="media__left">
+                    <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97240&w=200&h=240" alt="image alt text" width="200" height="240">
+                    <p class="media__text">image title</p>
+                </div>
+                <div class="media__body">
+                    <p class="media__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem beatae delectus distinctio dolores eligendi exercitationem minima natus officiis quia quos rem, repudiandae sapiente unde voluptas! Aliquam obcaecati reprehenderit tenetur?</p>
+                </div>
+            </div>
             <pre>
                 <code class="language-markup convert">
                     <div class="media">
                         <div class="media__left">
                             <img src="" alt="Изображение">
-                            <p class="media__text">Подпись</p>
+                            <p class="media__text">
+                                ...
+                            </p>
                         </div>
                         <div class="media__body">
-                            <p class="media__text">Текст, описание</p>
+                            <p class="media__text">
+                                ...
+                            </p>
                         </div>
                     </div>
                 </code>
             </pre>
         </div>
 
-        <div class="components__row" id="pagination">
-            <span class="components__header">Пагинация</span>
+        <!-- @TODO: Перевести описание на английский. -->
+        <div id="pagination" class="components__row">
+            <span class="components__header">
+                Pagination
+            </span>
             <p class="components__descr">
-                Списку ссылок указывается aria-label с описанием и атрибут role="navigation"</p>
+                Списку ссылок указывается aria-label с описанием и атрибут role="navigation".
+            </p>
             <p class="components__descr">
-                Элемент назад и вперед имеют атрибуты rel=”prev”, rel=”next”.</p>
-            <p class="components__descr">Коротким ссылкам следует добавить описание в aria-label</p>
-
-
-            <ul class="pagination" role="navigation" aria-label="Ссылки на другие страницы">
+                Элемент назад и вперед имеют атрибуты rel=”prev”, rel=”next”.
+            </p>
+            <p class="components__descr">
+                Коротким ссылкам следует добавить описание в aria-label.
+            </p>
+            <ul class="pagination" role="navigation" aria-label="links to other pages">
                 <li class="pagination__item pagination__item_active" rel="prev">
-                    <a class="pagination__link" href="#">Назад</a>
+                    <a class="pagination__link" href="#">Prev</a>
                 </li>
                 <li class="pagination__item pagination__item">
-                    <a class="pagination__link" href="#" aria-label="Первая страница">1</a>
+                    <a class="pagination__link" href="#" aria-label="first page">1</a>
                 </li>
                 <li class="pagination__item">
-                    <a class="pagination__link" href="#" aria-label="вторая страница">2</a>
+                    <a class="pagination__link" href="#" aria-label="second page">2</a>
                 </li>
                 <li class="pagination__item">
-                    <a class="pagination__link" href="#" aria-label="третья страница">3</a>
+                    <a class="pagination__link" href="#" aria-label="third page">3</a>
                 </li>
 
                 <li class="pagination__item" rel="next">
-                    <a class="pagination__link" href="#">Вперед</a>
+                    <a class="pagination__link" href="#">Next</a>
                 </li>
                 <li class="pagination__item">
-                    <a class="pagination__link" href="#">Последняя страница</a>
+                    <a class="pagination__link" href="#">Last page</a>
                 </li>
             </ul>
             <pre>
                 <code class="language-markup convert">
-                    <ul class="pagination" role="navigation" aria-label="Ссылки на другие страницы">
+                    <ul class="pagination" role="navigation" aria-label="links to other pages">
                         <li class="pagination__item pagination__item_active" rel="prev">
-                            <a class="pagination__link" href="#">Назад</a>
+                            <a class="pagination__link" href="#">Prev</a>
                         </li>
                         <li class="pagination__item pagination__item">
-                            <a class="pagination__link" href="#" aria-label="Первая страница">1</a>
+                            <a class="pagination__link" href="#" aria-label="first page">1</a>
                         </li>
                         <li class="pagination__item">
-                            <a class="pagination__link" href="#" aria-label="вторая страница">2</a>
+                            <a class="pagination__link" href="#" aria-label="second page">2</a>
                         </li>
                         <li class="pagination__item">
-                            <a class="pagination__link" href="#" aria-label="третья страница">3</a>
+                            <a class="pagination__link" href="#" aria-label="third page">3</a>
                         </li>
 
                         <li class="pagination__item" rel="next">
-                            <a class="pagination__link" href="#">Вперед</a>
+                            <a class="pagination__link" href="#">Next</a>
                         </li>
                         <li class="pagination__item">
-                            <a class="pagination__link" href="#">Последняя страница</a>
+                            <a class="pagination__link" href="#">Last page</a>
                         </li>
                     </ul>
                 </code>
             </pre>
         </div>
 
-        <div class="components__row"  id="tabs">
-            <span class="components__header">Табы</span>
+        <!-- @TODO: Перевести описание на английский. -->
+        <!-- @TODO: Табы работают не корректно. -->
+        <div id="tabs" class="components__row">
+            <span class="components__header">
+                Tabs
+            </span>
             <p class="components__descr">
-                Списку табов указывается атрибут role="tabs", а элементам списка атрибут role="tab"
-            </p>
-            <p class="components__descr">Скрипт инициализируется на элементе с классом "tabs", а атрибут aria-controls следует указать id панели, к которой привязана вкладка</p>
-            <p class="components__descr">
-                Выбраному табу указывается aria-selected="true" и tabindex="0", остальным присваевается значение false и tabindex="-1"
+                Списку табов указывается атрибут role="tabs", а элементам списка атрибут role="tab".
             </p>
             <p class="components__descr">
-                Скрипт автоматически изменяет атрибуты aria-selected и tabindex в зависимости от выбранной вкладки
+                Скрипт инициализируется на элементе с классом "tabs", а атрибут aria-controls следует указать id панели, к которой привязана вкладка.
             </p>
-            <div class="tabs" id="tabpanel1">
+            <p class="components__descr">
+                Выбраному табу указывается aria-selected="true" и tabindex="0", остальным присваевается значение false и tabindex="-1".
+            </p>
+            <p class="components__descr">
+                Скрипт автоматически изменяет атрибуты aria-selected и tabindex в зависимости от выбранной вкладки.
+            </p>
+            <div id="tabpanel1" class="tabs">
                 <ul role="tablist" class="tabs__list tabs-list">
-                    <li class="tabs-list__item active" id="tab11" aria-controls="panel11" aria-selected="true" role="tab"
-                        tabindex="0">
-                        Первый
+                    <li class="tabs-list__item active" id="tab11" aria-controls="panel11" aria-selected="true" role="tab" tabindex="0">
+                        One
                     </li>
-                    <li class="tabs-list__item" id="tab22" aria-controls="panel22" role="tab" aria-selected="false"
-                        tabindex="-1">
-                        Второй
+                    <li class="tabs-list__item" id="tab22" aria-controls="panel22" role="tab" aria-selected="false" tabindex="-1">
+                        Two
                     </li>
-                    <li class="tabs-list__item" id="tab33" aria-controls="panel33" role="tab" aria-selected="false"
-                        tabindex="-1">
-                        Третий
+                    <li class="tabs-list__item" id="tab33" aria-controls="panel33" role="tab" aria-selected="false" tabindex="-1">
+                        Three
                     </li>
-                    <li class="tabs-list__item" id="tab44" aria-controls="panel44" role="tab" aria-selected="false"
-                        tabindex="-1">
-                        Четвертый
+                    <li class="tabs-list__item" id="tab44" aria-controls="panel44" role="tab" aria-selected="false" tabindex="-1">
+                        Four
                     </li>
                 </ul>
 
                 <div id="panel11" aria-labelledby="tab11" role="tabpanel" class="tabs__inner">
-                    <h3>Панель 1</h3>
-
+                    <h3>Lorem.</h3>
                 </div>
 
                 <div id="panel22" aria-labelledby="tab22" role="tabpanel" class="tabs__inner">
-                    <h3>Панель 2</h3>
-
+                    <h3>Lorem ipsum.</h3>
                 </div>
 
                 <div id="panel33" aria-labelledby="tab33" role="tabpanel" class="tabs__inner">
-                    <h3>Панель 3</h3>
-
+                    <h3>Lorem ipsum dolor.</h3>
                 </div>
 
                 <div id="panel44" aria-labelledby="tab44" role="tabpanel" class="tabs__inner">
-                    <h3>Панель 4</h3>
+                    <h3>Lorem ipsum dolor sit.</h3>
                 </div>
             </div>
             <pre>
@@ -262,66 +279,54 @@
                 </code>
             </pre>
         </div>
-        <div class="components__row" id="horizontalNav">
-            <span class="components__header">Горизонтальная навигация</span>
+
+        <!-- @TODO: Перевести описание на английский. -->
+        <div id="horizontalNav" class="components__row">
+            <span class="components__header">
+                Nav
+            </span>
             <p class="components__descr">
                 Навигация выполняется с помощью тега nav, также указывается aria-label с описанием.
             </p>
             <p class="components__descr">
                 Желательное делать навигацию в виде списка. Из текста ссылок должно быть ясно куда они ведут
             </p>
-            <nav class="nav" role="navigation" aria-label="горизонтальная навигация">
+            <nav class="nav" role="navigation" aria-label="horizontal navigation">
                 <ul>
                     <li>
-                        <a href="#" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
-                            Пункт1
+                        <a href="#" title="company information">
+                            Item 1
                         </a>
                     </li>
                     <li>
-                        <a href="#" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
-                            Пункт2
+                        <a href="#" title="contacts information">
+                            Item 2
                         </a>
                     </li>
                     <li>
-                        <a href="#" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
-                            Пункт3
+                        <a href="#" title="documents example">
+                            Item 3
                         </a>
                     </li>
-                    <li>
-                        <a href="#" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
-                            Пункт4
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
-                            Пункт5
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
-                            Пункт6
-                        </a>
-                    </li>
-
                 </ul>
             </nav>
             <pre>
             <code class="language-markup">
-                &lt;nav class="nav" role="navigation" aria-label="горизонтальная навигация"&gt;
+                &lt;nav class="nav" role="navigation" aria-label="horizontal navigation"&gt;
                     &lt;ul&gt;
                         &lt;li&gt;
-                            &lt;a href="#" title="Главная"&gt;
-                                Пункт1
+                            &lt;a href="#" title="company information"&gt;
+                                Item 1
                             &lt;/a&gt;
                         &lt;/li&gt;
                         &lt;li&gt;
-                            &lt;a href="#" title="Страница с обозначениями"&gt;
-                                Пункт2
+                            &lt;a href="#" title="contacts information"&gt;
+                                Item 2
                             &lt;/a&gt;
                         &lt;/li&gt;
                         &lt;li&gt;
-                            &lt;a href="#" title="Отызывы"&gt;
-                                Пункт3
+                            &lt;a href="#" title="documents example"&gt;
+                                Item 3
                             &lt;/a&gt;
                         &lt;/li&gt;
                         ...
@@ -331,8 +336,9 @@
         </pre>
         </div>
 
-        <div class="components__row"id="breadCrumbs">
-            <span class="components__header">Хлебные крошки</span>
+        <!-- @TODO: Перевести описание на английский. -->
+        <div id="breadCrumbs" class="components__row">
+            <span class="components__header">Breadcrumbs</span>
             <p class="components__descr">
                 Хлебные крошки выполняются с помощью тега nav, также указывается aria-label с описанием.
             </p>
@@ -342,40 +348,32 @@
             <nav class="breadcrumbs" aria-label="хлебные крошки">
                 <ul>
                     <li class="breadcrumbs__item">
-                        <a href="#">Главная</a>
+                        <a href="#">Home</a>
                     </li>
                     <span class="breadcrumbs__separator" aria-hidden="true"></span>
                     <li class="breadcrumbs__item">
-                        <a href="#" title="Официальная документация">Законы</a>
+                        <a href="#" title="2014 year">Articles</a>
                     </li>
                     <span class="breadcrumbs__separator" aria-hidden="true"></span>
                     <li class="breadcrumbs__item">
-                        <a href="#" title="От 2014 года">Статьи</a>
-                    </li>
-                    <span class="breadcrumbs__separator" aria-hidden="true"></span>
-                    <li class="breadcrumbs__item">
-                        <span>Текст статьи №2</span>
+                        <span>Article</span>
                     </li>
                 </ul>
             </nav>
             <pre>
             <code class="language-markup convert">
-                <nav class="breadcrumbs" aria-label="Навигация по статьям">
+                <nav class="breadcrumbs" aria-label="Articles navigation">
                     <ul>
                         <li class="breadcrumbs__item">
-                            <a href="#">Главная</a>
+                            <a href="#">Home</a>
                         </li>
                         <span class="breadcrumbs__separator" aria-hidden="true"></span>
                         <li class="breadcrumbs__item">
-                            <a href="#" title="Официальная документация">Законы</a>
+                            <a href="#" title="2014 year">Articles</a>
                         </li>
                         <span class="breadcrumbs__separator" aria-hidden="true"></span>
                         <li class="breadcrumbs__item">
-                            <a href="#" title="От 2014 года">Статьи</a>
-                        </li>
-                        <span class="breadcrumbs__separator" aria-hidden="true"></span>
-                        <li class="breadcrumbs__item">
-                            <span>Текст статьи №2</span>
+                            <span>Article</span>
                         </li>
                         <span class="breadcrumbs__separator" aria-hidden="true"></span>
                     </ul>
@@ -384,10 +382,10 @@
         </pre>
         </div>
 
-
-
+        <!-- @TODO: Перевести описание на английский. -->
+        <!-- @TODO: Зачем на прогресс бар двух размеров? -->
         <div class="components__row" id="progressBar">
-            <span class="components__header" >Прогресс бар</span>
+            <span class="components__header" >Progress bar</span>
             <p class="components__descr">
                 Линия прогресса указывает, что пользователь совершил действие и приложение обрабатывает его запрос. Чтобы человек с ограниченными возможностями мог получить информацию о ходе операции используются специальные атрибуты.
             </p>
@@ -402,7 +400,7 @@
                 </div>
             </div>
             <br>
-            <button id="progressTestBtn" class="button">для теста</button>
+            <button id="progressTestBtn" class="button">Test</button>
 
             <h3>Большой прогресс бар</h3>
             <div class="progress progress_big">
@@ -424,32 +422,33 @@
             </pre>
         </div>
 
+        <!-- @TODO: Перевести описание на английский. -->
         <div class="components__row" id="collapse">
-            <span class="components__header" >Кнопка Show-Hide</span>
+            <span class="components__header" >Collapse</span>
             <p class="components__descr">
-                Для того, чтобы пользователь мог услышать изменение, при раскрытии панели используется aria-expanded
-            </p>
-            <p class="components__descr">Скрипт автоматически изменяет атрибут и фокусируется на раскрытой области</p>
-            <p>Для использования добавьте кнопке класс collapse-button, и укажите в атрибуте aria-controls id элемента для управления</p>
-            <p class="components__descr">tabindex используется для корректной работы скрипта</p>
+                Для того, чтобы пользователь мог услышать изменение, при раскрытии панели используется aria-expanded.</p>
+            <p class="components__descr">Скрипт автоматически изменяет атрибут и фокусируется на раскрытой области.</p>
+            <p>Для использования добавьте кнопке класс collapse-button, и укажите в атрибуте aria-controls id элемента для управления.</p>
+            <p class="components__descr">Tabindex используется для корректной работы скрипта.</p>
             <button class="button collapse-button" aria-controls="elemToCtrl" value="показать">
-                Показать
+                Collapse
             </button>
             <div id="elemToCtrl" class="collapse" tabindex="-1" aria-expanded="false">
-                Topic 1 is all about being Topic 1 and may or may not have anything to do with other topics.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos dolorem dolores enim et, facere magni qui quidem quod voluptatibus!
             </div>
             <pre>
                 <code class="language-markup convert">
-                    <button class="button collapse-button" aria-controls="elemToControl" value="показать">
-                        Показать
+                    <button class="button collapse-button" aria-controls="elemToControl" value="show">
+                        Collapse
                     </button>
                     <div id="elemToControl" class="collapse" tabindex="-1" aria-expanded="false">
-                        Topic 1 is all about being Topic 1 and may or may not have anything to do with other topics.
+                        ...
                     </div>
                 </code>
             </pre>
         </div>
 
+        <!-- @TODO: Изображение в примере кода не должно оборачиваться в image-alt. -->
         <div class="components__row" id="thumbnail">
             <span class="components__header">Thumbnail</span>
             <div class="row">
@@ -458,12 +457,10 @@
                         <img alt="img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=320%C3%97320&w=320&h=320"
                              width="320" height="320">
                         <div class="caption"><h3>Thumbnail label</h3>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                             <button class="button">
                                 <a href="#">Button</a>
                             </button>
-
                         </div>
                     </div>
                 </div>
@@ -471,19 +468,14 @@
             <pre>
                 <code class="language-markup convert">
                     <div class="thumbnail">
-                        <img alt="img" src="">
+                        <img alt="image alt text" src="..." width="..." height="...">
                         <div class="caption">
-                            <h3>Thumbnail label</h3>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <button class="button">
-                                <a href="#">Button</a>
-                            </button>
+                            ...
                         </div>
                     </div>
                 </code>
             </pre>
-            <p class="components__title">Thumbnail ссылкой</p>
+            <p class="components__title">Thumbnail link</p>
             <div class="row">
                 <div class="col-xs-3">
                     <a href="#" class="thumbnail">
@@ -495,7 +487,7 @@
             <pre>
                 <code class="language-markup convert">
                     <a href="#" class="thumbnail">
-                        <img alt="img" src="">
+                        <img alt="image alt text" src="..." width="..." height="...">
                     </a>
                 </code>
             </pre>
@@ -503,108 +495,124 @@
 
         <div class="components__row" id="panels">
             <span class="components__header" >Panels</span>
-            <p class="components__title">Обычная</p>
+            <p class="components__title">Default</p>
             <div class="panel">
-                <div class="panel-body"> Basic panel example</div>
+                <div class="panel-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, odit.
+                </div>
             </div>
             <pre>
                 <code class="language-markup convert">
                     <div class="panel">
-                        <div class="panel-body"> Basic panel example</div>
+                        <div class="panel-body">
+                            ...
+                        </div>
                     </div>
                 </code>
             </pre>
-            <p class="components__title">С заголовком</p>
+            <p class="components__title">With heading</p>
             <div class="panel">
-                <div class="panel-heading">Panel heading without title</div>
-                <div class="panel-body"> Panel content</div>
+                <div class="panel-heading">
+                    Heading
+                </div>
+                <div class="panel-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, sapiente.
+                </div>
             </div>
             <pre>
                 <code class="language-markup convert">
                     <div class="panel">
-                        <div class="panel-heading">Panel heading without title</div>
-                        <div class="panel-body"> Panel content</div>
+                        <div class="panel-heading">
+                            ...
+                        </div>
+                        <div class="panel-body">
+                            ...
+                        </div>
                     </div>
                 </code>
             </pre>
-            <p class="components__title">С подвалом</p>
+            <p class="components__title">With footer</p>
             <div class="panel">
-                <div class="panel-body"> Panel content</div>
-                <div class="panel-footer">Panel footer</div>
+                <div class="panel-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, incidunt!
+                </div>
+                <div class="panel-footer">Footer</div>
             </div>
             <pre>
                 <code class="language-markup convert">
                    <div class="panel">
-                        <div class="panel-body"> Panel content</div>
-                        <div class="panel-footer">Panel footer</div>
+                        <div class="panel-body">
+                            ...
+                        </div>
+                        <div class="panel-footer">
+                            ...
+                        </div>
                     </div>
                 </code>
             </pre>
         </div>
+
         <div class="components__row" id="badge">
             <span class="components__header">Label</span>
-            <h2>Example heading
-                <span class="label">New</span>
+            <h2>
+                Example heading <span class="label">New</span>
             </h2>
             <pre>
                 <code class="language-markup convert">
-                    <h2>Example heading
-                        <span class="label">New</span>
+                    <h2>
+                        Example heading <span class="label">New</span>
                     </h2>
                 </code>
             </pre>
         </div>
+
         <div class="components__row">
             <span class="components__header">Badge</span>
-            <div>
-                <a href="#">Inbox<span class="badge">42</span></a>
-                <pre>
-                    <code class="language-markup convert">
-                        <a href="#">Inbox<span class="badge">42</span></a>
-                    </code>
-                </pre>
-
-                <button class="button" type="button"> Messages
-                    <span class="badge">4</span>
-                </button>
-                <pre>
-                    <code class="language-markup convert">
-                        <button class="button" type="button"> Messages
-                            <span class="badge">4</span>
-                        </button>
-                    </code>
-                </pre>
-            </div>
+            <a href="#">Inbox<span class="badge">42</span></a>
+            <pre>
+                <code class="language-markup convert">
+                    <a href="#">Inbox<span class="badge">42</span></a>
+                </code>
+            </pre>
+            <button class="button" type="button"> Messages
+                <span class="badge">4</span>
+            </button>
+            <pre>
+                <code class="language-markup convert">
+                    <button class="button" type="button"> Messages
+                        <span class="badge">4</span>
+                    </button>
+                </code>
+            </pre>
         </div>
     </div>
+
     <div class="main__sidebar">
-        <nav class="nav" aria-label="Вертикальная навигация">
+        <nav class="nav" aria-label="vertical navigation">
             <ul>
                 <li>
-                    <a href="#alert" title="Уведомления">Уведомления</a>
+                    <a href="#alert" title="alerts">Alerts</a>
                 </li>
                 <li>
-                    <a href="#media" title="Медиа-объект">Медиа-объект</a>
+                    <a href="#media" title="media object">Media object</a>
                 </li>
                 <li>
-                    <a href="#pagination" title="Пагинация">Пагинация</a>
+                    <a href="#pagination" title="pagination">Pagination</a>
                 </li>
                 <li>
-                    <a href="#tabs" title="Табы">Табы</a>
+                    <a href="#tabs" title="tabs">Tabs</a>
                 </li>
                 <li>
-                    <a href="#horizontalNav" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
-                        Горизонтальная навигация
-                    </a>
+                    <a href="#horizontalNav" title="nav">Nav</a>
                 </li>
                 <li>
-                    <a href="#breadCrumbs" title="Хлебные крошки">Хлебные крошки</a>
+                    <a href="#breadCrumbs" title="breadcrumbs">Breadcrumbs</a>
                 </li>
                 <li>
-                    <a href="#progressBar" title="Прогресс бар">Прогресс бар</a>
+                    <a href="#progressBar" title="progress bar">Progress bar</a>
                 </li>
                 <li>
-                    <a href="#collapse" title="Кнопка Show-Hide">Кнопка Show-Hide</a>
+                    <a href="#collapse" title="collapse">Collapse</a>
                 </li>
                 <li>
                     <a href="#thumbnail" title="Thumbnail">Thumbnail</a>
@@ -615,16 +623,17 @@
                 <li>
                     <a href="#badge" title="badge">Badge</a>
                 </li>
-
             </ul>
         </nav>
     </div>
-
 </main>
 
+<!-- @TODO: Сделать нормальный футер. -->
 <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/15web/web-accessibility">Web-accessibility</a> Проект реализован командой <a
-                href="http://www.15web.ru/">Студия 15</a>.</span>
+    <span class="site-footer-owner">
+        <p><a href="https://github.com/15web/web-accessibility">Web-accessibility</a></p>
+        <p>Copyright © 2016 <a href="http://www.15web.ru/" target="_blank">Studio 15</a></p>
+    </span>
 </footer>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
