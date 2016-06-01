@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Web-accessibility by 15web</title>
+    <title>Web-accessibility</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" type="text/css" href="../dist/accessibility.css" media="screen">
     <link rel="stylesheet" type="text/css" href="assets/main.css" media="screen">
     <link rel="stylesheet" type="text/css" href="assets/components.css" media="screen">
     <link rel="stylesheet" type="text/css" href="assets/prism.css" media="screen">
 </head>
 <body class="application container">
+
 <header class="page-header">
-    <h1 class="project-name">Web-accessibility</h1>
+    <h1 class="project-name">Web Accessibility</h1>
     <h2 class="project-tagline"></h2>
-    <nav class="nav" aria-label="горизонтальная навигация">
+    <nav class="nav" aria-label="horizontal navigation">
         <ul>
             <li>
                 <a href="https://github.com/15web/web-accessibility">View on GitHub</a>
             </li>
             <li class="active">
-                <a href="default.html">Основные компоненты</a>
+                <a href="default.html">Default components</a>
             </li>
             <li>
-                <a href="additional.html">Дополнительные компоненты</a>
+                <a href="additional.html">Additional components</a>
             </li>
             <li>
-                <a href="examples/sp">Шаблон</a>
+                <a href="examples/sp">Template example</a>
             </li>
         </ul>
     </nav>
@@ -34,38 +36,38 @@
 <div class="control-panel">
     <div class="control-panel__wrapper row">
         <div class="col-xs-4">
-            <label for="fontSize">Размер шрифта:</label>
+            <label for="fontSize">Font size:</label>
             <select id="fontSize" class="control-panel__select-text select">
                 <option value="small">
-                    Маленький
+                    Small
                 </option>
                 <option value="normal">
-                    Средний
+                    Medium
                 </option>
                 <option value="large">
-                    Большой
+                    Large
                 </option>
             </select>
         </div>
         <div class="col-xs-4">
-            <label for="siteColor">Цвет сайта:</label>
+            <label for="siteColor">Color scheme:</label>
             <select id="siteColor" class="control-panel__select-color select">
                 <option value="white">
-                    Белый
+                    White
                 </option>
                 <option value="black">
-                    Черный
+                    Black
                 </option>
             </select>
         </div>
         <div class="col-xs-4">
-            <label for="siteImages">Изображения:</label>
+            <label for="siteImages">Images:</label>
             <select id="siteImages" class="control-panel__select-image select">
                 <option value="visible">
-                    Включены
+                    Enable
                 </option>
                 <option value="hidden">
-                    Выключены
+                    Disabled
                 </option>
             </select>
         </div>
@@ -74,63 +76,68 @@
 <main class="components main">
     <div class="main__content">
         <div class="components__row" id="form">
-            <span class="components__header">Форма</span>
+
+            <span class="components__header">Forms</span>
+
+            <!-- @TODO: Перевести описание на английский. -->
             <p class="components__descr_head">
                 Каждый элемент формы должен должен иметь label или в особых случаях
                 WAI-ARIA или title.<br>
             </p>
+
             <form class="form" action="">
-                <div class="form__line"><p class="components__title">Input с label</p>
-                    <p class="components__descr">Когда это представляется возможным, используйте label, чтобы связать
-                        текст с элементом формы</p>
-                    <label for="search2" class="label">Поиск по сайту</label>
+
+                <!-- @TODO: Перевести описание на английский. -->
+                <div class="form__line"><p class="components__title">Input with label</p>
+                    <p class="components__descr">Когда это представляется возможным, используйте label, чтобы связать текст с элементом формы.</p>
+                    <label for="search2" class="label">Search</label>
                     <input class="input" id="search2" type="text">
-                        <pre aria-hidden="true">
-                            <code class="language-markup convert">
-                                <label for="search2" class="label">Поиск по сайту</label>
-                                <input class="input" id="search2" type="text">
-                            </code>
-                        </pre>
-
+                    <pre aria-hidden="true">
+                        <code class="language-markup convert">
+                            <label for="search3" class="label">Search</label>
+                            <input class="input" id="search3" type="text">
+                        </code>
+                    </pre>
                 </div>
-                <div class="form__line">
-                    <p class="components__title">Input с скрытым label</p>
-                    <p class="components__descr">В некоторых случаях назначение элемента визуально ясно из контекста, в
-                        этом случае label может быть скрыт, однако нужно позаботиться о других формах представления
-                        информации для таких устройств как скрин-ридеры.</p>
 
-                    <label for="searchHidden" class="hiddenText label">Поиск по сайту</label>
+                <!-- @TODO: Перевести описание на английский. -->
+                <div class="form__line">
+                    <p class="components__title">Input with hidden label</p>
+                    <p class="components__descr">В некоторых случаях назначение элемента визуально ясно из контекста, в этом случае label может быть скрыт, однако нужно позаботиться о других формах представления информации для таких устройств как скрин-ридеры.</p>
+                    <label for="searchHidden" class="hiddenText label">Search</label>
                     <input class="input" id="searchHidden" type="text" name="search">
-                        <pre aria-hidden="true">
-                            <code class="language-markup convert">
-                                <label for="search1" class="hiddenText label">Поиск по сайту</label>
-                                <input class="input" id="search1" type="text" name="search">
-                            </code>
-                        </pre>
+                    <pre aria-hidden="true">
+                        <code class="language-markup convert">
+                            <label for="search1" class="hiddenText label">Search</label>
+                            <input class="input" id="search1" type="text" name="search">
+                        </code>
+                    </pre>
                     <p class="components__title">Дополнительные способы верстки элемента input</p>
+
+                    <!-- @TODO: Collapse не работает. -->
                     <button id="showInputs" class="button" aria-controls="showInputsInner" value="показать">
                         Показать
                     </button>
                 </div>
 
+                <!-- @TODO: Перевести описание на английский. -->
                 <div class="form__line">
                     <div id="showInputsInner" class="collapse" role="region" aria-labelledby="showInputs-label"
                          tabindex="-1" aria-expanded="false">
                         <div class="components__collapse-inner">
-                            <p class="components__descr components__descr_head">Подробную информацию вы можете найти
-                                здесь:
+                            <p class="components__descr components__descr_head">
+                                Подробную информацию вы можете найти здесь:
                                 <a target="_blank" href="https://www.w3.org/WAI/tutorials/forms/labels/">
                                     https://www.w3.org/WAI/tutorials/forms/labels/
                                 </a>
                             </p>
                             <p class="components__title">Input с title</p>
                             <input class="input" id="search3" title="Поиск по сайту" type="text">
-                        <pre aria-hidden="true">
-                            <code class="language-markup convert">
-                                <input class="input" id="search3" title="Поиск по сайту" type="text">
-                            </code>
-                        </pre>
-
+                            <pre aria-hidden="true">
+                                <code class="language-markup convert">
+                                    <input class="input" id="search3" title="Поиск по сайту" type="text">
+                                </code>
+                            </pre>
                             <p class="components__title">Input с aria-label</p>
                             <input class="input" id="search4" aria-label="Поиск по сайту" type="text">
                             <pre aria-hidden="true">
@@ -142,26 +149,28 @@
                     </div>
                 </div>
 
-
+                <!-- @TODO: Перевести описание на английский. -->
+                <!-- @TODO: Добавить информацию про особенности использования. -->
                 <div class="form__line">
                     <p class="components__title">Textarea</p>
-                    <label for="textarea" class="label">Поле ввода текста</label>
+                    <label for="textarea" class="label">Enter message</label>
                     <textarea class="textarea textarea_block" id="textarea"></textarea>
-                            <pre aria-hidden="true">
-                                <code class="language-markup convert">
-                                        <label for="textarea1" class="label">Поле ввода текста</label>
-                                        <textarea class="textarea" id="textarea1"></textarea>
-                                </code>
-                            </pre>
+                    <pre aria-hidden="true">
+                        <code class="language-markup convert">
+                                <label for="textarea1" class="label">Enter message</label>
+                                <textarea class="textarea" id="textarea1"></textarea>
+                        </code>
+                    </pre>
                 </div>
+
+                <!-- @TODO: Перевести описание на английский. -->
                 <div class="form__line">
                     <p class="components__title">Select</p>
-                    <p class="components__descr">Для группировки опций в элементе select используйте optgroup.
+                    <p class="components__descr">
+                        Для группировки опций в элементе select используйте optgroup.
                     </p>
-                    <p class="components__descr"> Aria-disabled используется для обозначения disabled элемента (см.
-                        <a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled">
-                            https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled
-                        </a>)
+                    <p class="components__descr">
+                        Aria-disabled используется для обозначения disabled элемента (см.<a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled">https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled</a>)
                     </p>
                     <select class="select" name="select" title="выберите параметры">
                         <optgroup label="цвета">
@@ -181,93 +190,85 @@
                             </option>
                         </optgroup>
                     </select>
-                        <pre aria-hidden="true">
-                            <code class="language-markup">
-                                 &ltselect class="select" name="select" title="выберите параметры"&gt
-                                    &ltoptgroup label="цвета"&gt
-                                        &ltoption value="1"&gt
-                                            белый
-                                        &lt/option&gt
-                                        &ltoption value="2" disabled aria-disabled="true"&gt
-                                            черный
-                                        &lt/option&gt
-                                    &lt/optgroup&gt
-                                     &ltoptgroup label="размер"&gt
-                                        &ltoption value="1"&gt
-                                            большой
-                                        &lt/option&gt
-                                        &ltoption value="2"&gt
-                                            маленький
-                                        &lt/option&gt
-                                    &lt/optgroup&gt
-                                &lt/select&gt
-                            </code>
-                        </pre>
+                    <pre aria-hidden="true">
+                        <code class="language-markup">
+                             &ltselect class="select" name="select" title="выберите параметры"&gt
+                                &ltoptgroup label="цвета"&gt
+                                    &ltoption value="1"&gt
+                                        белый
+                                    &lt/option&gt
+                                    &ltoption value="2" disabled aria-disabled="true"&gt
+                                        черный
+                                    &lt/option&gt
+                                &lt/optgroup&gt
+                                 &ltoptgroup label="размер"&gt
+                                    &ltoption value="1"&gt
+                                        большой
+                                    &lt/option&gt
+                                    &ltoption value="2"&gt
+                                        маленький
+                                    &lt/option&gt
+                                &lt/optgroup&gt
+                            &lt/select&gt
+                        </code>
+                    </pre>
                 </div>
 
+                <!-- @TODO: Перевести описание на английский. -->
+                <!-- @TODO: В описание должно быть не зачем нужен fieldset, а как его использовать. Если отличий нет, то так и сказать. -->
                 <div class="form__line">
                     <p class="components__title">Fieldset</p>
                     <p class="components__descr">Элемент fieldset предназначен для группирования элементов формы. Такая группировка облегчает работу с формами, содержащими большое число данных</p>
                     <fieldset>
                         <legend>Fieldset with legend</legend>
-                        <ul>
-                            <li>Текст</li>
-                            <li>Текст</li>
-                            <li>Текст</li>
-                        </ul>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ea fuga fugiat iure molestiae necessitatibus nostrum, perferendis qui quisquam sint?
                     </fieldset>
                         <pre aria-hidden="true">
                             <code class="language-markup convert">
                                 <fieldset>
                                     <legend>Fieldset with legend</legend>
                                         ...
-                                        ...
-                                        ...
                                 </fieldset>
                             </code>
                         </pre>
                 </div>
+
+                <!-- @TODO: Перевести описание на английский. -->
                 <div class="form__line">
-                    <p class="components__title">Чекбокс</p>
-                    <p class="components__descr">
-                        Элемент checkbox должен иметь role="checkbox", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние чекбокса.
-                    </p>
-                    <p class="components__descr">
-                        Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.
-                    </p>
+                    <p class="components__title">Checkbox</p>
+                    <p class="components__descr">Элемент checkbox должен иметь role="checkbox", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние чекбокса.</p>
+                    <p class="components__descr">Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.</p>
                     <div class="checkbox__field" role="group">
                         <input id="checkbox1" type="checkbox" role="checkbox" name="checkbox1" value="чекбокс1"
                                disabled>
-                        <label id="checkboxLabel" for="checkbox1">чекбокс1 (disabled)</label>
+                        <label id="checkboxLabel" for="checkbox1">Checkbox 1 (disabled)</label>
                         <input id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2">
-                        <label id="checkboxLabel" for="checkbox2">чекбокс2 (default)</label>
+                        <label id="checkboxLabel" for="checkbox2">Checkbox 2 (default)</label>
                         <input id="checkbox3" type="checkbox" role="checkbox" name="checkbox3" value="чекбокс3" checked>
-                        <label id="checkboxLabel" for="checkbox3">чекбокс3 (checked)</label>
+                        <label id="checkboxLabel" for="checkbox3">Checkbox 3 (checked)</label>
                     </div>
-                        <pre aria-hidden="true">
-                            <code class="language-markup">
-                                &ltdiv role="group"&gt
-                                    &ltinput id="checkbox1" type="checkbox" role="checkbox"
-                                           name="checkbox1" value="чекбокс1" disabled&gt
-                                    &ltlabel id="checkboxLabel" for="checkbox1"&gtчекбокс1 (disabled)&lt/label&gt
-                                    &ltinput id="checkbox2" type="checkbox" role="checkbox"
-                                           name="checkbox2" value="чекбокс2"&gt
-                                    &ltlabel id="checkboxLabel" for="checkbox2"&gtчекбокс2 (default)&lt/label&gt
-                                    &ltinput id="checkbox2" type="checkbox" role="checkbox"
-                                           name="checkbox3" value="чекбокс2" checked&gt
-                                    &ltlabel id="checkboxLabel" for="checkbox2"&gtчекбокс3 (checked)&lt/label&gt
-                                &lt/div&gt
-                            </code>
-                        </pre>
+                    <pre aria-hidden="true">
+                        <code class="language-markup">
+                            &ltdiv role="group"&gt
+                                &ltinput id="checkbox1" type="checkbox" role="checkbox"
+                                       name="checkbox1" value="чекбокс1" disabled&gt
+                                &ltlabel id="checkboxLabel" for="checkbox1"&gtCheckbox 1 (disabled)&lt/label&gt
+                                &ltinput id="checkbox2" type="checkbox" role="checkbox"
+                                       name="checkbox2" value="чекбокс2"&gt
+                                &ltlabel id="checkboxLabel" for="checkbox2"&gtCheckbox 2 (default)&lt/label&gt
+                                &ltinput id="checkbox2" type="checkbox" role="checkbox"
+                                       name="checkbox3" value="чекбокс2" checked&gt
+                                &ltlabel id="checkboxLabel" for="checkbox2"&gtCheckbox 3 (checked)&lt/label&gt
+                            &lt/div&gt
+                        </code>
+                    </pre>
                 </div>
+
+                <!-- @TODO: Перевести описание на английский. -->
                 <div class="form__line">
-                    <p class="components__title">Радио</p>
-                    <p class="components__descr">
-                        Элементы radio должны быть обернуты в div с role="radiogroup" и иметь атрибут role="radio", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние.
-                    </p>
-                    <p class="components__descr">
-                        Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.
-                    </p>
+                    <p class="components__title">Radio</p>
+                    <p class="components__descr">Элементы radio должны быть обернуты в div с role="radiogroup" и иметь атрибут role="radio", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние.</p>
+                    <p class="components__descr">Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.</p>
                     <div class="radio__field" role="radiogroup">
                         <input id="radio1" type="radio" role="radio" name="one" value="Первый">
                         <label id="label1" for="radio1">Первый (default)</label>
@@ -278,63 +279,67 @@
                         <input id="radio3" type="radio" role="radio" name="one" value="Третий" checked>
                         <label id="label3" for="radio3">Третий (checked)</label>
                     </div>
-                        <pre aria-hidden="true">
-                            <code class="language-markup">
-                                &ltdiv role="radiogroup"&gt
-                                    &ltinput id="radio1" type="radio" role="radio" name="first" value="Первый"&gt
-                                    &ltlabel id="label1" for="radio1"&gtПервый&lt/label&gt
+                    <pre aria-hidden="true">
+                        <code class="language-markup">
+                            &ltdiv role="radiogroup"&gt
+                                &ltinput id="radio1" type="radio" role="radio" name="first" value="Первый"&gt
+                                &ltlabel id="label1" for="radio1"&gtПервый&lt/label&gt
 
-                                    &ltinput id="radio2" type="radio" role="radio" name="second" value="Второй" disabled&gt
-                                    &ltlabel id="label2" for="radio2"&gtВторой&lt/label&gt
+                                &ltinput id="radio2" type="radio" role="radio" name="second" value="Второй" disabled&gt
+                                &ltlabel id="label2" for="radio2"&gtВторой&lt/label&gt
 
-                                    &ltinput id="radio3" type="radio" role="radio" name="third" value="Третий" checked&gt
-                                    &ltlabel id="label3" for="radio3"&gtТретий&lt/label&gt
-                                &lt/div&gt
-                            </code>
-                        </pre>
-
+                                &ltinput id="radio3" type="radio" role="radio" name="third" value="Третий" checked&gt
+                                &ltlabel id="label3" for="radio3"&gtТретий&lt/label&gt
+                            &lt/div&gt
+                        </code>
+                    </pre>
                 </div>
 
+                <!-- @TODO: Добавить описание компонента. -->
                 <div class="form__line">
-                    <p class="components__title">Кнопка отправки формы</p>
-                    <button class="button" type="submit" title="кнопка отправки формы">
-                        Найти
+                    <p class="components__title">Submit button</p>
+                    <button class="button" type="submit" title="submit button">
+                        Submit
                     </button>
-                        <pre aria-hidden="true">
-                            <code class="language-markup convert">
-                                <button class="button" type="submit" title="кнопка отправки формы">
-                                    Найти
-                                </button>
-                            </code>
-                        </pre>
+                    <pre aria-hidden="true">
+                        <code class="language-markup convert">
+                            <button class="button" type="submit" title="submit button">
+                                Submit
+                            </button>
+                        </code>
+                    </pre>
                 </div>
             </form>
         </div>
 
+        <!-- @TODO: Перевести описание на английский. -->
         <div class="components__row" id="typography">
-            <span class="components__header">Типографика общая</span>
+            <span class="components__header">Typography</span>
             <p class="components__title">Application</p>
-            <div>Класс Application применяется в body. Стандартный размер шрифта 18px, высота строки 1.25em. При
-                переключении в режим маленького шрифта - 14px, большого - 22px
-            </div>
+            <p class="components__descr">
+                Класс Application применяется в body. Стандартный размер шрифта 18px, высота строки 1.25em. При переключении в режим маленького шрифта - 14px, большого - 22px.
+            </p>
             <p class="components__title">
-                Заголовки </p>
-            <div class="h1">Заголовок h1</div>
-            <div class="h2">Заголовок h2</div>
-            <div class="h3">Заголовок h3</div>
-            <div class="h4">Заголовок h4</div>
-            <div class="h5">Заголовок h5</div>
+                Headings
+            </p>
+            <div class="h1">Heading h1</div>
+            <div class="h2">Heading h2</div>
+            <div class="h3">Heading h3</div>
+            <div class="h4">Heading h4</div>
+            <div class="h5">Heading h5</div>
             <pre aria-hidden="true">
                 <code class="language-markup convert">
-                    <div class="h1">Заголовок h1</div>
-                    <div class="h2">Заголовок h2</div>
-                    <div class="h3">Заголовок h3</div>
-                    <div class="h4">Заголовок h4</div>
-                    <div class="h5">Заголовок h5</div>
+                    <div class="h1">Heading h1</div>
+                    <div class="h2">Heading h2</div>
+                    <div class="h3">Heading h3</div>
+                    <div class="h4">Heading h4</div>
+                    <div class="h5">Heading h5</div>
                 </code>
             </pre>
-            <p class="components__title">Ссылки</p>
-            <a href="#">Ссылка обычная</a>
+
+            <!-- @TODO: Перевести описание на английский. -->
+            <p class="components__title">Links</p>
+            <a href="#">Default link</a>
             <p class="components__descr">Если из текста ссылки не ясно куда она ведет или ее заменяет изображение, нужно использовать aria-label, чтобы позволить скрин-ридеру озвучить подробное описание
                 <a href="#" aria-label="Прочитайте больше новостей">[больше]</a>
             </p>
@@ -344,43 +349,45 @@
 
             <pre aria-hidden="true">
                 <code class="language-markup convert">
-                    <a href="#">Ссылка обычная</a>
-                    <a href="#" aria-label="Прочитайте больше новостей">[больше]</a>
-                    <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Ссылка disabled</a>
-
+                    <a href="#">Default link</a>
+                    <a href="#" aria-label="Show more news">More</a>
+                    <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Disabled link</a>
                 </code>
             </pre>
-            <p class="components__title">Маленький текст</p>
-            <small>Маленький текст</small>
+
+            <p class="components__title">Small text</p>
+            <small>Small text</small>
             <pre aria-hidden="true">
                 <code class="language-markup convert">
-                   <small>Маленький текст</small>
+                   <small>Small text</small>
                 </code>
             </pre>
 
+            <!-- @TODO: Перевести описание на английский. -->
             <div class="typography">
-                <span class="components__header">Типографика class="typography"</span>
+                <span class="components__header">Typography class="typography"</span>
                 <p class="components__title">
-                    Заголовки
+                    Headings
                 </p>
-                <p class="components__descr">используются страндартные теги, заголовки имеют отступы</p>
-                <h1 class="h1">Заголовок h1</h1>
-                <h2 class="h2">Заголовок h2</h2>
-                <h3 class="h3">Заголовок h3</h3>
-                <h4 class="h4">Заголовок h4</h4>
-                <h5 class="h5">Заголовок h5</h5>
+                <p class="components__descr">Используются страндартные теги, заголовки имеют отступы.</p>
+                <h1 class="h1">Heading h1</h1>
+                <h2 class="h2">Heading h2</h2>
+                <h3 class="h3">Heading h3</h3>
+                <h4 class="h4">Heading h4</h4>
+                <h5 class="h5">Heading h5</h5>
                 <pre aria-hidden="true">
                     <code class="language-markup convert">
                         <div class="typography">
-                            <h1 class="h1">Заголовок h1</h1>
-                            <h2 class="h2">Заголовок h2</h2>
-                            <h3 class="h3">Заголовок h3</h3>
-                            <h4 class="h4">Заголовок h4</h4>
-                            <h5 class="h5">Заголовок h5</h5>
+                            <h1 class="h1">Heading h1</h1>
+                            <h2 class="h2">Heading h2</h2>
+                            <h3 class="h3">Heading h3</h3>
+                            <h4 class="h4">Heading h4</h4>
+                            <h5 class="h5">Heading h5</h5>
                         </div>
                     </code>
                 </pre>
 
+                <!-- @TODO: Перевести описание на английский. -->
                 <p class="components__title">Таблица с одним заголовком</p>
                 <p class="components__descr">Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце</p>
                 <table>
@@ -435,6 +442,8 @@
                         &lt/div&gt
                     </code>
                 </pre>
+
+                <!-- @TODO: Перевести описание на английский. -->
                 <p class="components__title">Таблица с двумя заголовками</p>
                 <p class="components__descr">Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце</p>
                 <p class="components__descr">Атрибут scope с значением row связывает каждую ячейку в столбце с заголовками с данными в строке</p>
@@ -499,6 +508,8 @@
                         &lt/div&gt
                     </code>
                 </pre>
+
+                <!-- @TODO: Перевести описание на английский. -->
                 <p class="components__title">Таблица с неравномерными заголовками</p>
                 <p class="components__descr">Атрибут scope"colgroup" связывает ячейки с заголовками первого уровня со всей группой столбцов</p>
                 <p class="components__descr">Заголовки второго уровня связываются только с соответсвующими колонками с помощью атрибута scope="col"</p>
@@ -571,79 +582,106 @@
                         &lt/div&gt
                     </code>
                 </pre>
-                <p class="components__title">Цитаты</p>
+
+                <p class="components__title">Blockquotes</p>
                 <br>
-                <q>Цитата</q>
+                <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, corporis.</q>
                 <pre aria-hidden="true">
                     <code class="language-markup convert">
-                        <q>Цитата</q>
+                        <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, corporis.</q>
                     </code>
                 </pre>
 
-                <p class="components__title">Списки</p>
+                <p class="components__title">Lists</p>
                 <ul>
-                    <li>текст</li>
-                    <li>текст
+                    <li>Lorem ipsum.</li>
+                    <li>Lorem ipsum dolor sit.
                         <ul>
-                            <li>текст2</li>
-                            <li>текст2</li>
+                            <li>Lorem ipsum dolor.</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
                         </ul>
                     </li>
-                    <li>текст</li>
+                    <li>Lorem ipsum dolor.</li>
                 </ul>
                 <ol>
-                    <li>текст</li>
-                    <li>текст
-                        <ol>
-                            <li>текст2</li>
-                            <li>текст2</li>
-                        </ol>
+                    <li>Lorem ipsum.</li>
+                    <li>Lorem ipsum dolor sit.
+                        <ul>
+                            <li>Lorem ipsum dolor.</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                        </ul>
                     </li>
-                    <li>текст</li>
+                    <li>Lorem ipsum dolor.</li>
                 </ol>
+                <pre aria-hidden="true">
+                    <code class="language-markup convert">
+                        <ul>
+                            <li>...</li>
+                        </ul>
+                    </code>
+                </pre>
+                <pre aria-hidden="true">
+                    <code class="language-markup convert">
+                        <ol>
+                            <li>...</li>
+                        </ol>
+                    </code>
+                </pre>
             </div>
         </div>
 
+        <!-- @TODO: Пример кода до оборачивания враппером и после. -->
+        <!-- @TODO: Изображения в примерах кода не должны оборачиваться враппером. -->
+        <!-- @TODO: Перевести описание на английский. -->
         <div class="components__row" id="images">
-            <span class="components__header">Изображения</span>
-            <p class="components__descr">Картинкам добавляется слой, который отображается при отключении изображений. Текстовое отображение обеспечивается за счет атрибута alt</p>
+            <span class="components__header">Images</span>
+            <p class="components__descr">Все изображения автоматически оборачиваются враппером class="image-alt", который отображает текст атрибута alt при скрытии всех изображений в панели управления.</p>
             <div class="row">
                 <div class="col-xs-5">
-                    <img alt="img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=320%C3%97320&w=320&h=320"
-                         width="320" height="320">
+                    <img
+                        alt="Image alt text"
+                        src="https://placeholdit.imgix.net/~text?txtsize=33&txt=320%C3%97320&w=320&h=320"
+                        width="320"
+                        height="320"
+                    >
                 </div>
             </div>
+            <pre aria-hidden="true">
+                <code class="language-markup convert">
+                    <img src="..." alt="Image alt text" width="320" height="320"/>
+                </code>
+            </pre>
         </div>
 
+        <!-- @TODO: Перевести описание на английский. -->
         <div class="components__row" id="grid">
-            <span class="components__header">Сетка</span>
-            <p class="components__title">В проекте используется сетка bootstrap фиксированной ширины</p>
+            <span class="components__header">
+                Grid system
+            </span>
+            <p class="components__descr">Временно в проекте используется сетка bootstrap фиксированной ширины.</p>
             <a href="http://getbootstrap.com/css/#grid">http://getbootstrap.com/css/#grid</a>
         </div>
     </div>
+
     <div class="main__sidebar">
-        <nav class="nav" aria-label="Вертикальная навигация">
+        <nav class="nav" aria-label="vertical navigation">
             <ul>
                 <li>
-                    <a href="#form" title="Форма">Форма</a>
+                    <a href="#form" title="forms">Forms</a>
                 </li>
                 <li>
-                    <a href="#typography" title="Типографика">Типографика</a>
+                    <a href="#typography" title="typography">Typography</a>
                 </li>
                 <li>
-                    <a href="#images" title="Изображения">Изображения</a>
+                    <a href="#images" title="images">Images</a>
                 </li>
                 <li>
-                    <a href="#grid" title="Сетка">Сетка</a>
+                    <a href="#grid" title="grid system">Grid system</a>
                 </li>
-
             </ul>
         </nav>
     </div>
-
 </main>
-
-
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
 <script src="../dist/accessibility.js"></script>
