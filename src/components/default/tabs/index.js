@@ -22,133 +22,85 @@ function keyCodes() {
 
 }
 
-
-export default function tabpanel(id, accordian) {
-
-
-    this.panel_id = id;
-    this.accordian = accordian;
-    this.$panel = $('#' + id);
+export function tabsInit() {
+    var tabs = document.querySelectorAll('.tabs');
+    [].forEach.call(tabs,function (tab) {
+        var panel = new tabpanel(tab);
+    });
+}
+function tabpanel(tab) {
+    this.panel = tab;
     this.keys = new keyCodes();
-    this.$tabs = this.$panel.find('.tabs-list__item');
-    this.$panels = this.$panel.children('.tabs__inner');
-
-
+    this.tabs = tab.querySelectorAll('.tabs-list__item');
+    this.panels = tab.querySelectorAll('.tabs__inner');
     this.bindHandlers();
-
-
     this.init();
-
 }
 
-
 tabpanel.prototype.init = function () {
-    var $tab;
-
-
-    this.$panels.attr('aria-hidden', 'true');
-
-
-    $tab = this.$tabs.filter('[aria-selected="true"]');
-
-    if ($tab == undefined) {
-        $tab = this.$tabs.first();
+    var tab;
+    for (var i=0; i < this.panels.length; i++) {
+        this.panels[i].setAttribute('aria-hidden', 'true');
     }
 
+    tab = this.panel.querySelector('[aria-selected="true"]');
 
-    this.$panel.find('#' + $tab.attr('aria-controls')).attr('aria-hidden', 'false');
-
+    this.panel.querySelector('#' + tab.getAttribute('aria-controls')).setAttribute('aria-hidden', 'false');
 };
 
 
 tabpanel.prototype.switchTabs = function ($curTab, $newTab) {
+    $curTab.classList.remove('focus');
+
+    $curTab.setAttribute('tabindex', '-1');
+    $curTab.setAttribute('aria-selected', 'false');
 
 
-    $curTab.removeClass('focus');
+    $newTab.setAttribute('aria-selected', 'true');
+    // hide the current tab panel and set aria-hidden to true
+    this.panel.querySelector('#' + $curTab.getAttribute('aria-controls')).setAttribute('aria-hidden', 'true');
 
+    // show the new tab panel and set aria-hidden to false
+    this.panel.querySelector('#' + $newTab.getAttribute('aria-controls')).setAttribute('aria-hidden', 'false');
 
-    $curTab.attr('tabindex', '-1').attr('aria-selected', 'false');
-
-
-    $newTab.attr('aria-selected', 'true');
-
-
-    if (this.accordian == false) {
-
-        this.$panel.find('#' + $curTab.attr('aria-controls')).attr('aria-hidden', 'true');
-
-
-        this.$panel.find('#' + $newTab.attr('aria-controls')).attr('aria-hidden', 'false');
-    }
-
-
-    $newTab.attr('tabindex', '0');
-
+    $newTab.setAttribute('tabindex', '0');
 
     $newTab.focus();
 
 };
 
-
-tabpanel.prototype.togglePanel = function ($tab) {
-
-    var $panel = this.$panel.find('#' + $tab.attr('aria-controls'));
-
-    if ($panel.attr('aria-hidden') == 'true') {
-        $panel.slideDown(100);
-        $panel.attr('aria-hidden', 'false');
-    }
-    else {
-        $panel.slideUp(100);
-        $panel.attr('aria-hidden', 'true');
-    }
-};
 tabpanel.prototype.bindHandlers = function () {
 
     var thisObj = this;
+    for(var i=0; i< this.tabs.length; i++) {
+        this.tabs[i].addEventListener("keydown", function (e) {
+            return thisObj.handleTabKeyDown(this, e);
+        });
+        this.tabs[i].addEventListener('keypress', function (e) {
+            return thisObj.handleTabKeyPress(this, e);
+        });
+        this.tabs[i].addEventListener('click',function (e) {
+            return thisObj.handleTabClick(this, e);
+        });
+        this.tabs[i].addEventListener('focus',function (e) {
+            return thisObj.handleTabFocus(this, e);
+        });
+        this.tabs[i].addEventListener('blur',function (e) {
+            return thisObj.handleTabBlur(this, e);
+        });
+        this.tabs[i].addEventListener('keydown',function (e) {
+            return thisObj.handlePanelKeyDown(this, e);
+        });
+        this.tabs[i].addEventListener('keypress',function (e) {
+            return thisObj.handlePanelKeyPress(this, e);
+        });
+    }
 
-
-    this.$tabs.keydown(function (e) {
-        return thisObj.handleTabKeyDown($(this), e);
-    });
-
-
-    this.$tabs.keypress(function (e) {
-        return thisObj.handleTabKeyPress($(this), e);
-    });
-
-
-    this.$tabs.click(function (e) {
-        return thisObj.handleTabClick($(this), e);
-    });
-
-
-    this.$tabs.focus(function (e) {
-        return thisObj.handleTabFocus($(this), e);
-    });
-
-
-    this.$tabs.blur(function (e) {
-        return thisObj.handleTabBlur($(this), e);
-    });
-
-
-    this.$panels.keydown(function (e) {
-        return thisObj.handlePanelKeyDown($(this), e);
-    });
-
-
-    this.$panels.keypress(function (e) {
-        return thisObj.handlePanelKeyPress($(this), e);
-    });
 
 };
-
-
-tabpanel.prototype.handleTabKeyDown = function ($tab, e) {
+tabpanel.prototype.handleTabKeyDown = function (tab, e) {
 
     if (e.altKey) {
-
         return true;
     }
 
@@ -156,45 +108,27 @@ tabpanel.prototype.handleTabKeyDown = function ($tab, e) {
         case this.keys.enter:
         case this.keys.space:
         {
-
-
-            if (this.accordian == true) {
-
-                this.togglePanel($tab);
-
-                e.stopPropagation();
-                return false;
-            }
-
             return true;
         }
         case this.keys.left:
         case this.keys.up:
         {
-
             var thisObj = this;
             var $prevTab;
             var $newTab;
-
             if (e.ctrlKey) {
-
-
             }
             else {
-                var curNdx = this.$tabs.index($tab);
-
+                var curNdx = Array.prototype.indexOf.call(this.tabs, tab);
                 if (curNdx == 0) {
-
-
-                    $newTab = this.$tabs.last();
+                    var index = this.tabs.length;
+                    $newTab = this.tabs[index-1];
                 }
                 else {
-
-                    $newTab = this.$tabs.eq(curNdx - 1);
+                    $newTab = this.tabs[curNdx - 1];
                 }
 
-
-                this.switchTabs($tab, $newTab);
+                this.switchTabs(tab, $newTab);
             }
 
             e.stopPropagation();
@@ -208,20 +142,15 @@ tabpanel.prototype.handleTabKeyDown = function ($tab, e) {
             var foundTab = false;
             var $newTab;
 
-            var curNdx = this.$tabs.index($tab);
+            var curNdx =  Array.prototype.indexOf.call(this.tabs, tab);
 
-            if (curNdx == this.$tabs.length - 1) {
-
-
-                $newTab = this.$tabs.first();
+            if (curNdx == this.tabs.length - 1) {
+                $newTab = this.tabs[0];
             }
             else {
-
-                $newTab = this.$tabs.eq(curNdx + 1);
+                $newTab = this.tabs[curNdx + 1];
             }
-
-
-            this.switchTabs($tab, $newTab);
+            this.switchTabs(tab, $newTab);
 
             e.stopPropagation();
             return false;
@@ -229,8 +158,7 @@ tabpanel.prototype.handleTabKeyDown = function ($tab, e) {
         case this.keys.home:
         {
 
-
-            this.switchTabs($tab, this.$tabs.first());
+            this.switchTabs(tab, this.tabs.first());
 
             e.stopPropagation();
             return false;
@@ -239,16 +167,14 @@ tabpanel.prototype.handleTabKeyDown = function ($tab, e) {
         {
 
 
-            this.switchTabs($tab, this.$tabs.last());
+            this.switchTabs(tab, this.tabs.last());
 
             e.stopPropagation();
             return false;
         }
     }
 };
-
-
-tabpanel.prototype.handleTabKeyPress = function ($tab, e) {
+tabpanel.prototype.handleTabKeyPress = function (tab, e) {
 
     if (e.altKey) {
 
@@ -285,57 +211,34 @@ tabpanel.prototype.handleTabKeyPress = function ($tab, e) {
     return true;
 
 };
+tabpanel.prototype.handleTabClick = function (tab, e) {
 
+    for (var i=0; i < this.panels.length; i++) {
+        this.panels[i].setAttribute('aria-hidden', 'true');
+    }
 
-tabpanel.prototype.handleTabClick = function ($tab, e) {
+    for (var i=0; i < this.tabs.length; i++) {
+        this.tabs[i].setAttribute('tabindex', '-1');
+    }
 
+    tab.setAttribute('aria-selected', 'true');
 
-    this.$panels.attr('aria-hidden', 'true');
-
-
-    this.$tabs.attr('tabindex', '-1').attr('aria-selected', 'false');
-
-
-    $tab.attr('aria-selected', 'true');
-
-
-    this.$panel.find('#' + $tab.attr('aria-controls')).attr('aria-hidden', 'false');
-
-
-    $tab.attr('tabindex', '0');
-
-
-    $tab.focus();
-
+    this.panel.querySelector('#' + tab.getAttribute('aria-controls')).setAttribute('aria-hidden', 'false');
+    tab.setAttribute('tabindex', '0');
+    tab.focus();
     return true;
 
 };
-
-
-tabpanel.prototype.handleTabFocus = function ($tab, e) {
-
-
-    $tab.addClass('focus');
-
+tabpanel.prototype.handleTabFocus = function (tab, e) {
+    tab.classList.add('focus');
     return true;
-
 };
-
-
-tabpanel.prototype.handleTabBlur = function ($tab, e) {
-
-
-    $tab.removeClass('focus');
-
+tabpanel.prototype.handleTabBlur = function (tab, e) {
+    tab.classList.remove('focus');
     return true;
-
 };
-
-
 tabpanel.prototype.handlePanelKeyDown = function ($elem, e) {
-
     if (e.altKey) {
-
         return true;
     }
 
@@ -353,12 +256,8 @@ tabpanel.prototype.handlePanelKeyDown = function ($elem, e) {
 
                 return true;
             }
-
-
-            var $tab = $('#' + $elem.attr('aria-labelledby'));
-
-
-            $tab.focus();
+            var tab = document.querySelector('#' + $elem.getAttribute('aria-labelledby'));
+            tab.focus();
 
             e.stopPropagation();
             return false;
@@ -374,22 +273,19 @@ tabpanel.prototype.handlePanelKeyDown = function ($elem, e) {
             }
 
 
-            var $tab = this.$tabs.filter('[aria-selected="true"]');
+            var tab = this.tabs.querySelector('[aria-selected="true"]');
 
-
-            var curNdx = this.$tabs.index($tab);
+            var curNdx = Array.prototype.indexOf.call(this.tabs, tab);
 
             if (curNdx == 0) {
-
-                $newTab = this.$tabs.last();
+                var index = this.tabs.length;
+                $newTab = this.tabs[index-1];
             }
             else {
-
-                $newTab = this.$tabs.eq(curNdx - 1);
+                $newTab = this.tabs[curNdx - 1];
             }
 
-
-            this.switchTabs($tab, $newTab);
+            this.switchTabs(tab, $newTab);
 
             e.stopPropagation();
             e.preventDefault();
@@ -406,22 +302,21 @@ tabpanel.prototype.handlePanelKeyDown = function ($elem, e) {
             }
 
 
-            var $tab = $('#' + $elem.attr('aria-labelledby'));
+            var tab = $('#' + $elem.attr('aria-labelledby'));
 
 
-            var curNdx = this.$tabs.index($tab);
+            var curNdx = Array.prototype.indexOf.call(this.tabs, tab);
 
-            if (curNdx == this.$tabs.length - 1) {
+            if (curNdx == this.tabs.length - 1) {
 
-                $newTab = this.$tabs.first();
+                $newTab = this.tabs[0];
             }
             else {
-
-                $newTab = this.$tabs.eq(curNdx + 1);
+                $newTab = this.tabs[curNdx + 1];
             }
 
 
-            this.switchTabs($tab, $newTab);
+            this.switchTabs(tab, $newTab);
 
             e.stopPropagation();
             e.preventDefault();
@@ -432,8 +327,6 @@ tabpanel.prototype.handlePanelKeyDown = function ($elem, e) {
     return true;
 
 };
-
-
 tabpanel.prototype.handlePanelKeyPress = function ($elem, e) {
 
     if (e.altKey) {
@@ -459,36 +352,3 @@ tabpanel.prototype.handlePanelKeyPress = function ($elem, e) {
     return true;
 
 };
-
-
-$.extend($.expr[':'], {
-    focusable: function (element) {
-        var nodeName = element.nodeName.toLowerCase();
-        var tabIndex = $(element).attr('tabindex');
-
-
-        if (($(element)[nodeName == 'area' ? 'parents' : 'closest'](':hidden').length) == true) {
-            return false;
-        }
-
-
-        if (!isNaN(tabIndex) && tabIndex < 0) {
-            return false;
-        }
-
-
-        if (/input|select|textarea|button|object/.test(nodeName) == true) {
-
-            return !element.disabled;
-        }
-
-
-        if ((nodeName == 'a' || nodeName == 'area') == true) {
-
-            return (element.href.length > 0);
-        }
-
-
-        return false;
-    }
-});

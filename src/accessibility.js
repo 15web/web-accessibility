@@ -27,8 +27,8 @@ import './components/default/label';
 import './components/default/badge';
 import './components/default/textarea';
 
-import {hideShow} from './components/default/collapse';
-import tabpanel from './components/default/tabs';
+import {collapseInit} from './components/default/collapse';
+import {tabsInit} from './components/default/tabs';
 
-exports.tabpanel = tabpanel;
-exports.hideShow = hideShow;
+collapseInit();
+tabsInit();
