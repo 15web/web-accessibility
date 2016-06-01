@@ -76,90 +76,90 @@
 
 <main class="components main">
     <div class="main__content">
-        <div class="components__row" id="form">
-
-            <span class="components__header">Forms</span>
+        <div id="form" class="components__row">
 
             <!-- @TODO: Перевести описание на английский. -->
-            <p class="components__descr_head">
-                Каждый элемент формы должен должен иметь label или в особых случаях
-                WAI-ARIA или title.<br>
+            <span class="components__header">
+                Forms
+            </span>
+
+            <p class="components__descr">
+                <a href="https://www.w3.org/WAI/tutorials/forms/" target="_blank">
+                    https://www.w3.org/WAI/tutorials/forms/
+                </a>
             </p>
+
+            <p class="components__descr">
+                Спецификация позволяет использовать 3 способа для индентификации элементов форм. WAI-ARIA, title атрибут или label. Мы остановились на варианте с label.
+            </p>
+
+            <!--<p class="components__descr">-->
+                <!--Каждый элемент формы должен должен иметь label или в особых случаях-->
+                <!--WAI-ARIA или title.<br>-->
+            <!--</p>-->
 
             <form class="form" action="">
 
                 <!-- @TODO: Перевести описание на английский. -->
-                <div class="form__line"><p class="components__title">Input with label</p>
-                    <p class="components__descr">Когда это представляется возможным, используйте label, чтобы связать текст с элементом формы.</p>
-                    <label for="search2" class="label">Search</label>
-                    <input class="input" id="search2" type="text">
+                <div class="form__line">
+                    <p class="components__title">
+                        Input with label
+                    </p>
+                    <!--<p class="components__descr">-->
+                        <!--Когда это представляется возможным, используйте label, чтобы связать текст с элементом формы.-->
+                    <!--</p>-->
+                    <label for="search_1" class="label">
+                        Search
+                    </label>
+                    <input id="search_1" class="input" type="text">
                     <pre aria-hidden="true">
                         <code class="language-markup convert">
-                            <label for="search3" class="label">Search</label>
-                            <input class="input" id="search3" type="text">
+                            <label for="search_2" class="label">
+                                Search
+                            </label>
+                            <input id="search_2" class="input" type="text">
                         </code>
                     </pre>
                 </div>
 
                 <!-- @TODO: Перевести описание на английский. -->
                 <div class="form__line">
-                    <p class="components__title">Input with hidden label</p>
-                    <p class="components__descr">В некоторых случаях назначение элемента визуально ясно из контекста, в этом случае label может быть скрыт, однако нужно позаботиться о других формах представления информации для таких устройств как скрин-ридеры.</p>
-                    <label for="searchHidden" class="hiddenText label">Search</label>
-                    <input class="input" id="searchHidden" type="text" name="search">
+                    <p class="components__title">
+                        Input with hidden label
+                    </p>
+                    <!--<p class="components__descr">-->
+                        <!--В некоторых случаях назначение элемента визуально ясно из контекста, в этом случае label может быть скрыт, однако нужно позаботиться о других формах представления информации для таких устройств как скрин-ридеры.-->
+                    <!--</p>-->
+                    <label for="search_hidden" class="hiddenText label">
+                        Search
+                    </label>
+                    <input id="search_hidden" class="input" type="text" name="search">
                     <pre aria-hidden="true">
                         <code class="language-markup convert">
-                            <label for="search1" class="hiddenText label">Search</label>
-                            <input class="input" id="search1" type="text" name="search">
+                            <label for="search_3" class="hiddenText label">
+                                Search
+                            </label>
+                            <input id="search_3" class="input" type="text" name="search">
                         </code>
                     </pre>
-                    <p class="components__title">Дополнительные способы верстки элемента input</p>
-
-                    <!-- @TODO: Collapse не работает. -->
-                    <button id="showInputs" class="button" aria-controls="showInputsInner" value="показать">
-                        Показать
-                    </button>
-                </div>
-
-                <!-- @TODO: Перевести описание на английский. -->
-                <div class="form__line">
-                    <div id="showInputsInner" class="collapse" role="region" aria-labelledby="showInputs-label"
-                         tabindex="-1" aria-expanded="false">
-                        <div class="components__collapse-inner">
-                            <p class="components__descr components__descr_head">
-                                Подробную информацию вы можете найти здесь:
-                                <a target="_blank" href="https://www.w3.org/WAI/tutorials/forms/labels/">
-                                    https://www.w3.org/WAI/tutorials/forms/labels/
-                                </a>
-                            </p>
-                            <p class="components__title">Input с title</p>
-                            <input class="input" id="search3" title="Поиск по сайту" type="text">
-                            <pre aria-hidden="true">
-                                <code class="language-markup convert">
-                                    <input class="input" id="search3" title="Поиск по сайту" type="text">
-                                </code>
-                            </pre>
-                            <p class="components__title">Input с aria-label</p>
-                            <input class="input" id="search4" aria-label="Поиск по сайту" type="text">
-                            <pre aria-hidden="true">
-                                <code class="language-markup convert">
-                                     <input class="input" id="search4" aria-label="Поиск по сайту" type="text">
-                                </code>
-                            </pre>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- @TODO: Перевести описание на английский. -->
                 <!-- @TODO: Добавить информацию про особенности использования. -->
                 <div class="form__line">
-                    <p class="components__title">Textarea</p>
-                    <label for="textarea" class="label">Enter message</label>
-                    <textarea class="textarea textarea_block" id="textarea"></textarea>
+                    <p class="components__title">
+                        Textarea
+                    </p>
+                    <label for="textarea" class="label">
+                        Message
+                    </label>
+                    <textarea id="textarea" class="textarea textarea_block"></textarea>
                     <pre aria-hidden="true">
                         <code class="language-markup convert">
-                                <label for="textarea1" class="label">Enter message</label>
-                                <textarea class="textarea" id="textarea1"></textarea>
+                                <label for="message" class="label">
+                                    Message
+                                </label>
+                                <textarea id="message" class="textarea"></textarea>
                         </code>
                     </pre>
                 </div>
@@ -215,38 +215,64 @@
                     </pre>
                 </div>
 
-                <!-- @TODO: Перевести описание на английский. -->
-                <!-- @TODO: В описание должно быть не зачем нужен fieldset, а как его использовать. Если отличий нет, то так и сказать. -->
                 <div class="form__line">
-                    <p class="components__title">Fieldset</p>
-                    <p class="components__descr">Элемент fieldset предназначен для группирования элементов формы. Такая группировка облегчает работу с формами, содержащими большое число данных</p>
+                    <p class="components__title">
+                        Fieldset
+                    </p>
+                    <p class="components__descr">
+                        <a href="https://www.w3.org/WAI/tutorials/forms/grouping/" target="_blank">
+                            https://www.w3.org/WAI/tutorials/forms/grouping/
+                        </a>
+                    </p>
                     <fieldset>
-                        <legend>Fieldset with legend</legend>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ea fuga fugiat iure molestiae necessitatibus nostrum, perferendis qui quisquam sint?
+                        <legend>Output format</legend>
+                        <div>
+                            <input id="txt" type="radio" name="format" value="txt" checked>
+                            <label for="txt">Text file</label>
+                        </div>
+                        <div>
+                            <input id="csv" type="radio" name="format" value="csv">
+                            <label for="csv">CSV file</label>
+                        </div>
+                        <div>
+                            <input id="html" type="radio" name="format" value="html">
+                            <label for="csv">HTML file</label>
+                        </div>
                     </fieldset>
-                        <pre aria-hidden="true">
-                            <code class="language-markup convert">
-                                <fieldset>
-                                    <legend>Fieldset with legend</legend>
-                                        ...
-                                </fieldset>
-                            </code>
-                        </pre>
+                    <pre aria-hidden="true">
+                        <code class="language-markup convert">
+                            <fieldset>
+                                <legend>Output format</legend>
+                                    ...
+                            </fieldset>
+                        </code>
+                    </pre>
                 </div>
 
                 <!-- @TODO: Перевести описание на английский. -->
                 <div class="form__line">
-                    <p class="components__title">Checkbox</p>
-                    <p class="components__descr">Элемент checkbox должен иметь role="checkbox", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние чекбокса.</p>
-                    <p class="components__descr">Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.</p>
+                    <p class="components__title">
+                        Checkbox
+                    </p>
+                    <p class="components__descr">
+                        Элемент checkbox должен иметь role="checkbox", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние чекбокса.
+                    </p>
+                    <p class="components__descr">
+                        Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.
+                    </p>
                     <div class="checkbox__field" role="group">
-                        <input id="checkbox1" type="checkbox" role="checkbox" name="checkbox1" value="чекбокс1"
-                               disabled>
-                        <label id="checkboxLabel" for="checkbox1">Checkbox 1 (disabled)</label>
+                        <input id="checkbox1" type="checkbox" role="checkbox" name="checkbox1" value="чекбокс1" disabled>
+                        <label id="checkboxLabel" for="checkbox1">
+                            Checkbox 1 (disabled)
+                        </label>
                         <input id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2">
-                        <label id="checkboxLabel" for="checkbox2">Checkbox 2 (default)</label>
+                        <label id="checkboxLabel" for="checkbox2">
+                            Checkbox 2 (default)
+                        </label>
                         <input id="checkbox3" type="checkbox" role="checkbox" name="checkbox3" value="чекбокс3" checked>
-                        <label id="checkboxLabel" for="checkbox3">Checkbox 3 (checked)</label>
+                        <label id="checkboxLabel" for="checkbox3">
+                            Checkbox 3 (checked)
+                        </label>
                     </div>
                     <pre aria-hidden="true">
                         <code class="language-markup">
@@ -316,18 +342,23 @@
         <!-- @TODO: Перевести описание на английский. -->
         <div class="components__row" id="typography">
             <span class="components__header">Typography</span>
-            <p class="components__title">Application</p>
+
+            <p class="components__title">
+                Application
+            </p>
             <p class="components__descr">
                 Класс Application применяется в body. Стандартный размер шрифта 18px, высота строки 1.25em. При переключении в режим маленького шрифта - 14px, большого - 22px.
             </p>
             <p class="components__title">
                 Headings
             </p>
+
             <div class="h1">Heading h1</div>
             <div class="h2">Heading h2</div>
             <div class="h3">Heading h3</div>
             <div class="h4">Heading h4</div>
             <div class="h5">Heading h5</div>
+
             <pre aria-hidden="true">
                 <code class="language-markup convert">
                     <div class="h1">Heading h1</div>
@@ -389,8 +420,15 @@
                 </pre>
 
                 <!-- @TODO: Перевести описание на английский. -->
-                <p class="components__title">Таблица с одним заголовком</p>
-                <p class="components__descr">Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце</p>
+                <p class="components__title">
+                    Table with ambiguous data
+                </p>
+                <p>
+                    <a href="https://www.w3.org/WAI/tutorials/tables/one-header/">https://www.w3.org/WAI/tutorials/tables/one-header/</a>
+                </p>
+                <p class="components__descr">
+                    Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце.
+                </p>
                 <table>
                     <caption>Подпись к таблице:</caption>
                     <tr>
@@ -634,32 +672,57 @@
         <!-- @TODO: Пример кода до оборачивания враппером и после. -->
         <!-- @TODO: Изображения в примерах кода не должны оборачиваться враппером. -->
         <!-- @TODO: Перевести описание на английский. -->
-        <div class="components__row" id="images">
-            <span class="components__header">Images</span>
-            <p class="components__descr">Все изображения автоматически оборачиваются враппером class="image-alt", который отображает текст атрибута alt при скрытии всех изображений в панели управления.</p>
-            <div class="row">
-                <div class="col-xs-5">
-                    <img
-                        alt="Image alt text"
-                        src="https://placeholdit.imgix.net/~text?txtsize=33&txt=320%C3%97320&w=320&h=320"
-                        width="320"
-                        height="320"
-                    >
-                </div>
-            </div>
+        <!-- @TODO: А как скрин-ридер будет читать скрытое изображение? img alt + span ? -->
+        <!-- @TODO: Нам не нужно оборачивать декоративные изображения. Нужно фильтровать либо по alt="", либо по role="presentation" -->
+        <div id="images" class="components__row">
+            <span class="components__header">
+                Images
+            </span>
+
+            <p class="components__descr">
+                <a href="#">https://www.w3.org/WAI/tutorials/images/</a>
+            </p>
+
+            <p class="components__descr">
+                Все изображения с помощью JavaScript оборачиваются блоком class="image-alt". Он существует для визуального отображения содержимого атрибута alt="image alt text" у скрытого через панель управления изображения.
+            </p>
+            <p class="components__descr">
+                <img alt="image alt text"
+                     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=320%C3%97320&w=320&h=320">
+            </p>
+
+            <p class="components__descr">
+                Before:
+            </p>
+
             <pre aria-hidden="true">
                 <code class="language-markup convert">
-                    <img src="..." alt="Image alt text" width="320" height="320"/>
+                    <img src="..." alt="image alt text" width="320" height="320"/>
+                </code>
+            </pre>
+
+            <p class="components__descr">
+                After JS wrapper:
+            </p>
+
+            <pre aria-hidden="true">
+                <code class="language-markup convert">
+                    <span class="image-alt image-alt_active" style="width: 320px; height: 320px;">
+                        <img alt="image alt text" src="..." style="visibility: hidden;">
+                        <span class="image-alt__text">image alt text</span>
+                    </span>
                 </code>
             </pre>
         </div>
 
         <!-- @TODO: Перевести описание на английский. -->
-        <div class="components__row" id="grid">
+        <div id="grid" class="components__row">
             <span class="components__header">
                 Grid system
             </span>
-            <p class="components__descr">Временно в проекте используется сетка bootstrap фиксированной ширины.</p>
+            <p class="components__descr">
+                Временно в проекте используется сетка bootstrap фиксированной ширины.
+            </p>
             <a href="http://getbootstrap.com/css/#grid">http://getbootstrap.com/css/#grid</a>
         </div>
     </div>
