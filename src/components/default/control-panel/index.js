@@ -83,11 +83,13 @@ class ControlPanel {
 
     wrapImageAlt() {
 
-        $('img').each(function() {
+        $('img').not('code img').each(function() {
 
-            var alt = $(this).attr('alt');
+            var alt = $(this).attr('alt'),
+                width = $(this).width(),
+                height = $(this).height();
 
-            $(this).wrap(`<span class="image-alt"/>`);
+            $(this).wrap(`<span class="image-alt" style="width: ${width}px; height: ${height}px;"/>`);
 
             if (alt != '') {
                 $(this).after(`<span class="image-alt__text">${alt}</span>`);
@@ -103,10 +105,10 @@ class ControlPanel {
 
         if (cookie.getCookie('app-image') == 'hidden') {
             $('.image-alt').addClass('image-alt_active');
-            $('img').css('visibility', 'hidden');
+            $('img').not('code img').css('visibility', 'hidden');
         } else {
             $('.image-alt').removeClass('image-alt_active');
-            $('img').css('visibility', 'visible');
+            $('img').not('code img').css('visibility', 'visible');
         }
 
     }
