@@ -1,6 +1,6 @@
 # Web Accessibility
 
-Библиотека компонентов интерфейса, реализованных с учетом стандартов доступности. Они помогут вам быстро разработать версию сайта для людей с ограниченными возможностями, не тратя огромное количество времени на изучение спецификаций. Достаточно лишь следовать рекомендациям и использовать уже подготовленные сниппеты кода.
+Interface Components Library, designed by accessibility standards. Create a version of the site for people with disabilities quickly and easily.
 
 ## Getting started
 
