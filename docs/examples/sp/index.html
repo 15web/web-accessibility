@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../../../dist/accessibility.css">
     <link rel="stylesheet" href="assets/styles/css/full.css">
 </head>
+
 <body class="application container">
 
 <div class="control-panel" aria-hidden="true">
@@ -49,205 +50,209 @@
     </div>
 </div>
 
-<div>
-    <header class="header" role="banner">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="pull-left">
-                    31 марта 2016
-                </div>
-                <a class="header__site-version pull-right" href="#">
-                    Обычная версия сайта
+<header class="header" role="banner">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="pull-left">
+                31 марта 2016
+            </div>
+            <a class="header__site-version pull-right" href="#">
+                Обычная версия сайта
+            </a>
+        </div>
+    </div>
+    <div class="h1">
+        Современное сельское поселение
+    </div>
+    <div class="h3">
+        официальный сайт муниципального образования
+    </div>
+
+    <nav class="nav" aria-label="горизонтальная навигация">
+        <ul>
+            <li class="active">
+                <a href="index.html" title="Главная страница сайта">Главная</a>
+            </li>
+            <li>
+                <a href="faq.html" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
+                    Вопрос-ответ
+                </a>
+            </li>
+            <li>
+                <a href="content.html">Контент</a>
+            </li>
+            <li>
+                <a href="gallery.html">Галлерея</a>
+            </li>
+            <li>
+                <a href="gallery-inner.html">Галлерея-внутри</a>
+            </li>
+            <li>
+                <a href="quize.html">Опрос</a>
+            </li>
+            <li>
+                <a href="search.html">Поиск</a>
+            </li>
+            <li>
+                <a href="npa.html">Список</a>
+            </li>
+        </ul>
+    </nav>
+
+    <form class="row" action="" role="search">
+        <div class="col-xs-12">
+            <label for="search" class="hidden">Поиск по сайту</label>
+
+            <input class="input col-xs-10" id="search" type="text">
+            <button class="col-xs-2 button" type="submit" value="Отправка формы">
+                Найти
+            </button>
+        </div>
+
+    </form>
+
+</header>
+
+<main class="main" role="main">
+    <div class="greeting media">
+        <div class="media__left">
+            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97240&w=200&h=240" alt="Глава"
+                 style="width: 200px; height: 240px;">
+            <p class="media__text">Петр Павлович</p>
+            <p class="media__text">Глава района</p>
+        </div>
+        <div class="media__body">
+            <p class="media__text">Открытость и доступность информации — одно из важных условий развития успешного
+                общества. Мы
+                делаем всё, чтобы работа администрации поселения была понятной и открытой. Надеемся, что
+                посещение нашего сайта станет для Вас полезным, мы сможем обменяться мнениями по наиболее важным
+                вопросам и вести конструктивный диалог.</p>
+            <p class="media__text">Открытость и доступность информации — одно из важных условий развития успешного
+                общества. Мы
+                делаем всё, чтобы работа администрации поселения была понятной и открытой. Надеемся, что
+                посещение нашего сайта станет для Вас полезным, мы сможем обменяться мнениями по наиболее важным
+                вопросам и вести конструктивный диалог.</p>
+            <p class="media__text">Открытость и доступность информации — одно из важных условий развития успешного
+                общества. Мы
+                делаем всё, чтобы работа администрации поселения была понятной и открытой. Надеемся, что
+                посещение нашего сайта станет для Вас полезным, мы сможем обменяться мнениями по наиболее важным
+                вопросам и вести конструктивный диалог.</p>
+        </div>
+    </div>
+
+    <div class="content-block">
+        <h2 class="panel-heading content-header h2">Новости</h2>
+        <div class="media">
+            <div class="media__left">
+                <a href="#">
+                    <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=400%C3%97400&w=200&h=200"
+                         width="200" height="200" alt="Картинка">
                 </a>
             </div>
-        </div>
-        <div class="h1">
-            Современное сельское поселение
-        </div>
-        <div class="h3">
-            официальный сайт муниципального образования
-        </div>
-
-        <nav class="nav" aria-label="горизонтальная навигация">
-            <ul>
-                <li class="active">
-                    <a href="index.html" title="Главная страница сайта">Главная</a>
-                </li>
-                <li>
-                    <a href="faq.html" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
-                        Вопрос-ответ
+            <div class="media__body">
+                <h3 class="media__title">
+                    <a href="#">15 сентября 2015 года вводится в действие Кодекс административного
+                        судопроизводства Российской Федерации
                     </a>
-                </li>
-                <li>
-                    <a href="content.html">Контент</a>
-                </li>
-                <li>
-                    <a href="gallery.html">Галлерея</a>
-                </li>
-                <li>
-                    <a href="gallery-inner.html">Галлерея-внутри</a>
-                </li>
-                <li>
-                    <a href="quize.html">Опрос</a>
-                </li>
-                <li>
-                    <a href="search.html">Поиск</a>
-                </li>
-                <li>
-                    <a href="npa.html">Список</a>
-                </li>
-            </ul>
-        </nav>
-
-        <form class="row" action="" role="search">
-            <div class="col-xs-12">
-                <label for="search" class="hidden">Поиск по сайту</label>
-
-                <input class="input col-xs-10" id="search" type="text">
-                <button class="col-xs-2 button" type="submit" value="Отправка формы">
-                    Найти
-                </button>
+                </h3>
+                <p>
+                    <small>15 марта 2016</small>
+                </p>
+                <p class="media__text">Кодекс административного судопроизводства РФ регулирует порядок
+                    осуществления административного судопроизводства при рассмотрении и разрешении Верховным
+                    Судом РФ, судами общей юрисдикции административных дел о защите нарушенных или оспариваемых
+                    прав</p>
+                <a href="#">Читать полностью</a>
             </div>
-
-        </form>
-
-    </header>
-
-    <main class="main" role="main">
-            <div class="greeting media">
-                <div class="media__left">
-                    <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97240&w=200&h=240" alt="Глава"
-                         style="width: 200px; height: 240px;">
-                    <p class="media__text">Петр Павлович</p>
-                    <p class="media__text">Глава района</p>
-                </div>
-                <div class="media__body">
-                    <p class="media__text">Открытость и доступность информации — одно из важных условий развития успешного общества. Мы
-                        делаем всё, чтобы работа администрации поселения была понятной и открытой. Надеемся, что
-                        посещение нашего сайта станет для Вас полезным, мы сможем обменяться мнениями по наиболее важным
-                        вопросам и вести конструктивный диалог.</p>
-                    <p class="media__text">Открытость и доступность информации — одно из важных условий развития успешного общества. Мы
-                        делаем всё, чтобы работа администрации поселения была понятной и открытой. Надеемся, что
-                        посещение нашего сайта станет для Вас полезным, мы сможем обменяться мнениями по наиболее важным
-                        вопросам и вести конструктивный диалог.</p>
-                    <p class="media__text">Открытость и доступность информации — одно из важных условий развития успешного общества. Мы
-                        делаем всё, чтобы работа администрации поселения была понятной и открытой. Надеемся, что
-                        посещение нашего сайта станет для Вас полезным, мы сможем обменяться мнениями по наиболее важным
-                        вопросам и вести конструктивный диалог.</p>
-                </div>
+        </div>
+        <div class="media">
+            <div class="media__left">
+                <a href="#">
+                    <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=400%C3%97400&w=200&h=200"
+                         width="200" height="200" alt="Картинка">
+                </a>
             </div>
-
-            <div class="content-block">
-                <h2 class="panel-heading content-header h2">Новости</h2>
-                <div class="media">
-                    <div class="media__left">
-                        <a href="#">
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=400%C3%97400&w=200&h=200"
-                                 width="200" height="200" alt="Картинка">
-                        </a>
-                    </div>
-                    <div class="media__body">
-                        <h3 class="media__title">
-                            <a href="#">15 сентября 2015 года вводится в действие Кодекс административного
-                                судопроизводства Российской Федерации
-                            </a>
-                        </h3>
-                        <p>
-                            <small>15 марта 2016</small></p>
-                        <p class="media__text">Кодекс административного судопроизводства РФ регулирует порядок
-                            осуществления административного судопроизводства при рассмотрении и разрешении Верховным
-                            Судом РФ, судами общей юрисдикции административных дел о защите нарушенных или оспариваемых
-                            прав</p>
-                        <a href="#">Читать полностью</a>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="media__left">
-                        <a href="#">
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=400%C3%97400&w=200&h=200"
-                                 width="200" height="200" alt="Картинка">
-                        </a>
-                    </div>
-                    <div class="media__body">
-                        <h3 class="media__title">
-                            <a href="#">15 сентября 2015 года вводится в действие Кодекс административного
-                                судопроизводства Российской Федерации
-                            </a>
-                        </h3>
-                        <p>
-                            <small>15 марта 2016</small></p>
-                        <p class="media__text">Кодекс административного судопроизводства РФ регулирует порядок
-                            осуществления административного судопроизводства при рассмотрении и разрешении Верховным
-                            Судом РФ, судами общей юрисдикции административных дел о защите нарушенных или оспариваемых
-                            прав</p>
-                        <a href="#">Читать полностью</a>
-                    </div>
-                </div>
-
-                <a href="#">Показать все новости</a>
+            <div class="media__body">
+                <h3 class="media__title">
+                    <a href="#">15 сентября 2015 года вводится в действие Кодекс административного
+                        судопроизводства Российской Федерации
+                    </a>
+                </h3>
+                <p>
+                    <small>15 марта 2016</small>
+                </p>
+                <p class="media__text">Кодекс административного судопроизводства РФ регулирует порядок
+                    осуществления административного судопроизводства при рассмотрении и разрешении Верховным
+                    Судом РФ, судами общей юрисдикции административных дел о защите нарушенных или оспариваемых
+                    прав</p>
+                <a href="#">Читать полностью</a>
             </div>
-            <div class="content-block">
-                <h2 class="panel-heading content-header h2">Новости</h2>
-                <div class="media">
-                    <div class="media__left">
-                        <a href="#">
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=400%C3%97400&w=200&h=200"
-                                 width="200" height="200" alt="Картинка">
-                        </a>
-                    </div>
-                    <div class="media__body">
-                        <h3 class="media__title">
-                            <a href="#">15 сентября 2015 года вводится в действие Кодекс административного
-                                судопроизводства Российской Федерации
-                            </a>
-                        </h3>
-                        <p>
-                            <small>15 марта 2016</small></p>
-                        <p class="media__text">Кодекс административного судопроизводства РФ регулирует порядок
-                            осуществления административного судопроизводства при рассмотрении и разрешении Верховным
-                            Судом РФ, судами общей юрисдикции административных дел о защите нарушенных или оспариваемых
-                            прав</p>
-                        <a href="#">Читать полностью</a>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="media__left">
-                        <a href="#">
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=400%C3%97400&w=200&h=200"
-                                 width="200" height="200" alt="Картинка">
-                        </a>
-                    </div>
-                    <div class="media__body">
-                        <h3 class="media__title">
-                            <a href="#">15 сентября 2015 года вводится в действие Кодекс административного
-                                судопроизводства Российской Федерации
-                            </a>
-                        </h3>
-                        <p>
-                            <small>15 марта 2016</small></p>
-                        <p class="media__text">Кодекс административного судопроизводства РФ регулирует порядок
-                            осуществления административного судопроизводства при рассмотрении и разрешении Верховным
-                            Судом РФ, судами общей юрисдикции административных дел о защите нарушенных или оспариваемых
-                            прав</p>
-                        <a href="#">Читать полностью</a>
-                    </div>
-                </div>
+        </div>
 
-                <a href="#">Показать все новости</a>
+        <a href="#">Показать все новости</a>
+    </div>
+    <div class="content-block">
+        <h2 class="panel-heading content-header h2">Новости</h2>
+        <div class="media">
+            <div class="media__left">
+                <a href="#">
+                    <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=400%C3%97400&w=200&h=200"
+                         width="200" height="200" alt="Картинка">
+                </a>
             </div>
+            <div class="media__body">
+                <h3 class="media__title">
+                    <a href="#">15 сентября 2015 года вводится в действие Кодекс административного
+                        судопроизводства Российской Федерации
+                    </a>
+                </h3>
+                <p>
+                    <small>15 марта 2016</small>
+                </p>
+                <p class="media__text">Кодекс административного судопроизводства РФ регулирует порядок
+                    осуществления административного судопроизводства при рассмотрении и разрешении Верховным
+                    Судом РФ, судами общей юрисдикции административных дел о защите нарушенных или оспариваемых
+                    прав</p>
+                <a href="#">Читать полностью</a>
+            </div>
+        </div>
+        <div class="media">
+            <div class="media__left">
+                <a href="#">
+                    <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=400%C3%97400&w=200&h=200"
+                         width="200" height="200" alt="Картинка">
+                </a>
+            </div>
+            <div class="media__body">
+                <h3 class="media__title">
+                    <a href="#">15 сентября 2015 года вводится в действие Кодекс административного
+                        судопроизводства Российской Федерации
+                    </a>
+                </h3>
+                <p>
+                    <small>15 марта 2016</small>
+                </p>
+                <p class="media__text">Кодекс административного судопроизводства РФ регулирует порядок
+                    осуществления административного судопроизводства при рассмотрении и разрешении Верховным
+                    Судом РФ, судами общей юрисдикции административных дел о защите нарушенных или оспариваемых
+                    прав</p>
+                <a href="#">Читать полностью</a>
+            </div>
+        </div>
+
+        <a href="#">Показать все новости</a>
+    </div>
 
 
+</main>
 
-    </main>
-
-    <footer class="footer" role="contentinfo">
+<footer class="footer" role="contentinfo">
     <p>© Администрация современного сельского поселения, 2016 г.</p>
 </footer>
 
-
-</div>
-
 <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
-<script src="/dist/accessibility.js"></script>
+<script src="../../../dist/accessibility.js"></script>
+
+
 </body>
 </html>
