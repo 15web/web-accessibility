@@ -1,6 +1,8 @@
 'use strict';
 
-import cookie from '../cookie';
+// @TODO: Рефакторинг компонента.
+
+import cookie from '../../utils/cookie';
 import './control-panel.scss';
 
 const COOKIE_PATH = {path: '/'};

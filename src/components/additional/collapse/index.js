@@ -1,5 +1,7 @@
 'use strict';
 
+// @TODO: Рефакторинг компонента.
+
 import './collapse.scss';
 
 export function collapseInit() {
@@ -46,6 +48,3 @@ hideShow.prototype.toggleRegion = function () {
             thisObj.setAttribute('aria-expanded', 'false');
         }
 };
-
-
-///////////////////////////////////////////////////////

@@ -1,9 +1,11 @@
 'use strict';
 
+// @TODO: Рефакторинг компонента.
+
 import './checkbox.scss';
+
 var checkbox = document.querySelectorAll('input[type=checkbox]');
 
-//@todo рефакторинг
 function checkboxEventHandler(t) {
     for (var i = 0; i < t.length; i++) {
         t[i].addEventListener("click", checkboxToggleAria);

@@ -76,6 +76,83 @@
 
 <main class="components main">
     <div class="main__content">
+
+        <!-- @TODO: Перевести описание на английский. -->
+        <div id="grid" class="components__row">
+            <div class="components__header">
+                Grid system
+            </div>
+            <p class="components__descr">
+                <a href="http://getbootstrap.com/css/#grid">
+                    http://getbootstrap.com/css/#grid
+                </a>
+            </p>
+            <p class="components__descr">
+                В проекте используется сетка bootstrap фиксированной ширины.
+            </p>
+
+            <!-- @TODO: Как быть с отступами сетки? -->
+            <div class="row show-grid">
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+            </div>
+            <div class="row show-grid">
+                <div class="col-md-8">.col-md-8</div>
+                <div class="col-md-4">.col-md-4</div>
+            </div>
+            <div class="row show-grid">
+                <div class="col-md-4">.col-md-4</div>
+                <div class="col-md-4">.col-md-4</div>
+                <div class="col-md-4">.col-md-4</div>
+            </div>
+            <div class="row show-grid">
+                <div class="col-md-6">.col-md-6</div>
+                <div class="col-md-6">.col-md-6</div>
+            </div>
+
+            <pre aria-hidden="true">
+                <code class="language-markup convert">
+                    <div class="row">
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                        <div class="col-md-1">.col-md-1</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">.col-md-8</div>
+                        <div class="col-md-4">.col-md-4</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">.col-md-4</div>
+                        <div class="col-md-4">.col-md-4</div>
+                        <div class="col-md-4">.col-md-4</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">.col-md-6</div>
+                        <div class="col-md-6">.col-md-6</div>
+                    </div>
+                </code>
+            </pre>
+        </div>
+
         <div id="form" class="components__row">
 
             <!-- @TODO: Перевести описание на английский. -->
@@ -715,21 +792,14 @@
             </pre>
         </div>
 
-        <!-- @TODO: Перевести описание на английский. -->
-        <div id="grid" class="components__row">
-            <span class="components__header">
-                Grid system
-            </span>
-            <p class="components__descr">
-                Временно в проекте используется сетка bootstrap фиксированной ширины.
-            </p>
-            <a href="http://getbootstrap.com/css/#grid">http://getbootstrap.com/css/#grid</a>
-        </div>
     </div>
 
     <div class="main__sidebar">
         <nav class="nav" aria-label="vertical navigation">
             <ul>
+                <li>
+                    <a href="#grid" title="grid system">Grid system</a>
+                </li>
                 <li>
                     <a href="#form" title="forms">Forms</a>
                 </li>
@@ -738,9 +808,6 @@
                 </li>
                 <li>
                     <a href="#images" title="images">Images</a>
-                </li>
-                <li>
-                    <a href="#grid" title="grid system">Grid system</a>
                 </li>
             </ul>
         </nav>

@@ -1,10 +1,8 @@
-/**
- * Created by HeadFire94Work on 12.05.2016.
- */
 'use strict';
 
+// @TODO: Рефакторинг компонента.
+
 import './radio.scss';
-//@todo рефакторинг
 
 var radio = document.querySelectorAll('input[type=radio]');
 

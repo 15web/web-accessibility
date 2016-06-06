@@ -1,63 +1,77 @@
 .page-header {
-  padding: 20px 0px 20px;
-}
-.container {
-  position: relative;
-}
-.project-name {
-  font-size: 64px;
-  line-height: 1;
-  margin-bottom: 15px;
-}
-.control-panel.fixed {
-  position: fixed;
-  top:0px;
-  width: 1140px;
+    padding: 20px 0px 20px;
 }
 
+.container {
+    position: relative;
+}
+
+.project-name {
+    font-size: 64px;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.control-panel.fixed {
+    position: fixed;
+    top: 0px;
+    width: 1140px;
+}
 
 .main {
-  padding: 40px 0px;
+    padding: 40px 0px;
 }
+
 .main:before, .main:after {
-  content: " ";
-  display: table;
-  clear: both;
+    content: " ";
+    display: table;
+    clear: both;
 }
 
 .main__sidebar {
-  position: relative;
-  float: left;
-  width: 20%;
+    position: relative;
+    float: left;
+    width: 20%;
 }
 
 .main__sidebar .nav.fixed {
-  position: fixed;
-  top:65px;
-  width: 228px;
+    position: fixed;
+    top: 65px;
+    width: 228px;
 }
 
 .main__sidebar .nav {
-  font-size: 0.8em;
+    font-size: 0.8em;
 }
 
-.main__sidebar .nav li{
-  display: block;
-  width: 200px;
+.main__sidebar .nav li {
+    display: block;
+    width: 200px;
 }
-.main__sidebar .nav li a{
-  padding:5px 10px;
-  font-size: 1.3em;
+
+.main__sidebar .nav li a {
+    padding: 5px 10px;
+    font-size: 1.3em;
 }
+
 .main__content {
-  float: right;
-  width: 80%;
-  margin: 0 auto;
+    float: right;
+    width: 80%;
+    margin: 0 auto;
 }
 
-.main__sidebar .nav li a.active{
-  background: #ffa;
-  color: #BF1722;
-  outline: none !important;
-  box-shadow: 0px 0px 0 3px #ffa;
+.main__sidebar .nav li a.active {
+    background: #ffa;
+    color: #BF1722;
+    outline: none !important;
+    box-shadow: 0px 0px 0 3px #ffa;
+}
+
+.show-grid [class^=col-] {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #eee;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid #ddd;
+    border: 1px solid rgba(86, 61, 124, .2);
 }

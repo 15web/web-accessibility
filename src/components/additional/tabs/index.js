@@ -1,7 +1,8 @@
 'use strict';
 
-import './tabs.scss';
+// @TODO: Рефакторинг компонента.
 
+import './tabs.scss';
 
 function keyCodes() {
 
@@ -24,7 +25,7 @@ function keyCodes() {
 
 export function tabsInit() {
     var tabs = document.querySelectorAll('.tabs');
-    [].forEach.call(tabs,function (tab) {
+    [].forEach.call(tabs, function (tab) {
         var panel = new tabpanel(tab);
     });
 }
@@ -39,7 +40,7 @@ function tabpanel(tab) {
 
 tabpanel.prototype.init = function () {
     var tab;
-    for (var i=0; i < this.panels.length; i++) {
+    for (var i = 0; i < this.panels.length; i++) {
         this.panels[i].setAttribute('aria-hidden', 'true');
     }
 
@@ -72,26 +73,26 @@ tabpanel.prototype.switchTabs = function ($curTab, $newTab) {
 tabpanel.prototype.bindHandlers = function () {
 
     var thisObj = this;
-    for(var i=0; i< this.tabs.length; i++) {
+    for (var i = 0; i < this.tabs.length; i++) {
         this.tabs[i].addEventListener("keydown", function (e) {
             return thisObj.handleTabKeyDown(this, e);
         });
         this.tabs[i].addEventListener('keypress', function (e) {
             return thisObj.handleTabKeyPress(this, e);
         });
-        this.tabs[i].addEventListener('click',function (e) {
+        this.tabs[i].addEventListener('click', function (e) {
             return thisObj.handleTabClick(this, e);
         });
-        this.tabs[i].addEventListener('focus',function (e) {
+        this.tabs[i].addEventListener('focus', function (e) {
             return thisObj.handleTabFocus(this, e);
         });
-        this.tabs[i].addEventListener('blur',function (e) {
+        this.tabs[i].addEventListener('blur', function (e) {
             return thisObj.handleTabBlur(this, e);
         });
-        this.tabs[i].addEventListener('keydown',function (e) {
+        this.tabs[i].addEventListener('keydown', function (e) {
             return thisObj.handlePanelKeyDown(this, e);
         });
-        this.tabs[i].addEventListener('keypress',function (e) {
+        this.tabs[i].addEventListener('keypress', function (e) {
             return thisObj.handlePanelKeyPress(this, e);
         });
     }
@@ -122,7 +123,7 @@ tabpanel.prototype.handleTabKeyDown = function (tab, e) {
                 var curNdx = Array.prototype.indexOf.call(this.tabs, tab);
                 if (curNdx == 0) {
                     var index = this.tabs.length;
-                    $newTab = this.tabs[index-1];
+                    $newTab = this.tabs[index - 1];
                 }
                 else {
                     $newTab = this.tabs[curNdx - 1];
@@ -142,7 +143,7 @@ tabpanel.prototype.handleTabKeyDown = function (tab, e) {
             var foundTab = false;
             var $newTab;
 
-            var curNdx =  Array.prototype.indexOf.call(this.tabs, tab);
+            var curNdx = Array.prototype.indexOf.call(this.tabs, tab);
 
             if (curNdx == this.tabs.length - 1) {
                 $newTab = this.tabs[0];
@@ -213,11 +214,11 @@ tabpanel.prototype.handleTabKeyPress = function (tab, e) {
 };
 tabpanel.prototype.handleTabClick = function (tab, e) {
 
-    for (var i=0; i < this.panels.length; i++) {
+    for (var i = 0; i < this.panels.length; i++) {
         this.panels[i].setAttribute('aria-hidden', 'true');
     }
 
-    for (var i=0; i < this.tabs.length; i++) {
+    for (var i = 0; i < this.tabs.length; i++) {
         this.tabs[i].setAttribute('tabindex', '-1');
     }
 
@@ -279,7 +280,7 @@ tabpanel.prototype.handlePanelKeyDown = function ($elem, e) {
 
             if (curNdx == 0) {
                 var index = this.tabs.length;
-                $newTab = this.tabs[index-1];
+                $newTab = this.tabs[index - 1];
             }
             else {
                 $newTab = this.tabs[curNdx - 1];
