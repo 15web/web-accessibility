@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Web-accessibility</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" type="text/css" href="../dist/accessibility.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="assets/main.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="assets/components.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="assets/prism.css" media="screen">
-</head>
+{% include "./partials/header.twig" %}
 
 <body class="application container">
 
@@ -629,18 +618,4 @@
     </div>
 </main>
 
-<!-- @TODO: Сделать нормальный футер. -->
-<footer class="site-footer">
-    <span class="site-footer-owner">
-        <p><a href="https://github.com/15web/web-accessibility">Web-accessibility</a></p>
-        <p>Copyright © 2016 <a href="http://www.15web.ru/" target="_blank">Studio 15</a></p>
-    </span>
-</footer>
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
-<script src="../dist/accessibility.js"></script>
-<script src="assets/prism.js"></script>
-<script src="assets/main.js"></script>
-
-</body>
-</html>
+{% include "./partials/footer.twig" %}
