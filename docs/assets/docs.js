@@ -1,34 +1,48 @@
 $(document).ready(function () {
 
-    // прилипающее меню
-    var stickyMenu = $('.main__sidebar nav');
-    var stickyControl = $('.control-panel');
-    var stickyOffset = stickyControl.offset().top;
-    function sticky() {
-        if ($(this).scrollTop() > stickyOffset) {
-            $(stickyMenu).addClass("fixed");
-            $(stickyControl).addClass("fixed");
-            $('.main').css({'padding': '95px 0px 40px'})
-        }
-        else {
-            $(stickyMenu).removeClass("fixed");
-            $(stickyControl).removeClass("fixed");
-            $('.main').css({'padding': '40px 0px'})
-        }
-    }
+// ==========================================================================
+// Initialization
+// ==========================================================================
+
+// ==========================================================================
+// Sticky nav & control-panel
+// ==========================================================================
+    
+    var stickyMenu = $('.docs-nav'),
+        stickyControl = $('.docs-control-panel'),
+        stickyOffset = stickyControl.offset().top;
+
     sticky();
+
     $(window).scroll(sticky);
 
+    function sticky() {
+        if ($(this).scrollTop() > stickyOffset) {
 
-    //навигация по компонентам
+            $(stickyMenu).addClass("docs-nav_fixed");
+            $(stickyControl).addClass("docs-control-panel_fixed");
+
+        } else {
+
+            $(stickyMenu).removeClass("docs-nav_fixed");
+            $(stickyControl).removeClass("docs-control-panel_fixed");
+
+        }
+    }
+
+// ==========================================================================
+// Components navigation
+// ==========================================================================
+
     var stickyMenuLinks = stickyMenu.find('a'); //все ссылки в меню
-
     var anchorElements= []; //все элементы с якорями
+
     for (var i=0; i < stickyMenuLinks.length; i++) {
         var child = stickyMenuLinks[i];
         var ahref = $(child).attr('href');
         anchorElements.push(ahref);
     }
+
     // Присваивание активного класса ссылке при прокручивании
     $(window).scroll( function() {
         var windowScrollTop = $(window).scrollTop();
@@ -50,11 +64,15 @@ $(document).ready(function () {
         var distanceTopToSection = $($(this).attr('href')).offset().top - 79;
         $('body, html').animate({scrollTop: distanceTopToSection}, 'slow');
     });
+
     stickyMenuLinks.on('mousedown', function (e) {
         return false;
     });
 
-    //Test Progressbar
+// ==========================================================================
+// Progress bar demo
+// ==========================================================================
+
     var run = function() {
         var obj = document.getElementById('progressTest');
         if (obj.getAttribute("data-value") < 100) {
@@ -64,7 +82,9 @@ $(document).ready(function () {
             obj.children[0].innerHTML = obj.style.width;
         }
     };
+
     $('#progressTestBtn').on('click', function() {
         run();
     });
+
 });

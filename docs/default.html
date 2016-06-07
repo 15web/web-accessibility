@@ -5,36 +5,46 @@
     <title>Web-accessibility</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    
     <link rel="stylesheet" type="text/css" href="../dist/accessibility.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="assets/main.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="assets/components.css" media="screen">
+
+    
     <link rel="stylesheet" type="text/css" href="assets/prism.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="assets/docs.css" media="screen">
 </head>
 
 <body class="application container">
 
-<header class="page-header">
-    <h1 class="project-name">Web Accessibility</h1>
-    <h2 class="project-tagline"></h2>
+<header class="docs-header">
+    <h1 class="docs-header__title">
+        Web Accessibility
+    </h1>
     <nav class="nav" aria-label="horizontal navigation">
         <ul>
-            <li>
-                <a href="https://github.com/15web/web-accessibility">View on GitHub</a>
+            <li class="nav__item">
+                <a class="nav__link" href="https://github.com/15web/web-accessibility">
+                    View on GitHub
+                </a>
             </li>
-            <li class="active">
-                <a href="default.html">Default components</a>
+            <li class="nav__item nav__item_active">
+                <a class="nav__link" href="default.html">
+                    Default components
+                </a>
             </li>
-            <li>
-                <a href="additional.html">Additional components</a>
+            <li class="nav__item">
+                <a class="nav__link" href="additional.html">
+                    Additional components
+                </a>
             </li>
-            <li>
-                <a href="examples/sp">Template example</a>
+            <li class="nav__item">
+                <a class="nav__link" href="examples/sp">
+                    Template example
+                </a>
             </li>
         </ul>
     </nav>
-</header>
 
-<div class="control-panel">
+    <div class="docs-control-panel control-panel">
     <div class="control-panel__wrapper row">
         <div class="col-xs-4">
             <label for="fontSize">Font size:</label>
@@ -74,25 +84,29 @@
         </div>
     </div>
 </div>
+</header>
 
-<main class="components main">
-    <div class="main__content">
+<main class="docs-main row">
+    <div class="col-md-10 pull-right">
 
-        <!-- @TODO: Перевести описание на английский. -->
-        <div id="grid" class="components__row">
-            <div class="components__header">
+        
+        <div id="grid" class="docs-component">
+
+            <div class="docs-component__header">
                 Grid system
             </div>
-            <p class="components__descr">
-                <a href="http://getbootstrap.com/css/#grid">
-                    http://getbootstrap.com/css/#grid
-                </a>
-            </p>
-            <p class="components__descr">
-                В проекте используется сетка bootstrap фиксированной ширины.
-            </p>
 
-            <!-- @TODO: Как быть с отступами сетки? -->
+            <div class="docs-component__description">
+                <p>
+                    <a href="http://getbootstrap.com/css/#grid">
+                        http://getbootstrap.com/css/#grid
+                    </a>
+                </p>
+
+                <p>В проекте используется сетка bootstrap фиксированной ширины.</p>
+            </div>
+
+            
             <div class="row show-grid">
                 <div class="col-md-1">.col-md-1</div>
                 <div class="col-md-1">.col-md-1</div>
@@ -154,38 +168,30 @@
             </pre>
         </div>
 
-        <div id="form" class="components__row">
+        <div id="form" class="docs-component">
 
-            <!-- @TODO: Перевести описание на английский. -->
-            <span class="components__header">
+            
+            <div class="docs-component__header">
                 Forms
-            </span>
+            </div>
 
-            <p class="components__descr">
-                <a href="https://www.w3.org/WAI/tutorials/forms/" target="_blank">
-                    https://www.w3.org/WAI/tutorials/forms/
-                </a>
-            </p>
+            <div class="docs-component__description">
+                <p>
+                    <a href="https://www.w3.org/WAI/tutorials/forms/" target="_blank">
+                        https://www.w3.org/WAI/tutorials/forms/
+                    </a>
+                </p>
 
-            <p class="components__descr">
-                Спецификация позволяет использовать 3 способа для индентификации элементов форм. WAI-ARIA, title атрибут или label. Мы остановились на варианте с label.
-            </p>
-
-            <!--<p class="components__descr">-->
-            <!--Каждый элемент формы должен должен иметь label или в особых случаях-->
-            <!--WAI-ARIA или title.<br>-->
-            <!--</p>-->
+                <p>Спецификация позволяет использовать 3 способа для индентификации элементов форм. WAI-ARIA, title атрибут или label. Мы остановились на варианте с label.</p>
+            </div>
 
             <form class="form" action="">
 
-                <!-- @TODO: Перевести описание на английский. -->
+                
                 <div class="form__line">
-                    <p class="components__title">
+                    <p class="docs-component__title">
                         Input with label
                     </p>
-                    <!--<p class="components__descr">-->
-                    <!--Когда это представляется возможным, используйте label, чтобы связать текст с элементом формы.-->
-                    <!--</p>-->
                     <label for="search_1" class="label">
                         Search
                     </label>
@@ -200,14 +206,11 @@
                     </pre>
                 </div>
 
-                <!-- @TODO: Перевести описание на английский. -->
+                
                 <div class="form__line">
-                    <p class="components__title">
+                    <p class="docs-component__title">
                         Input with hidden label
                     </p>
-                    <!--<p class="components__descr">-->
-                    <!--В некоторых случаях назначение элемента визуально ясно из контекста, в этом случае label может быть скрыт, однако нужно позаботиться о других формах представления информации для таких устройств как скрин-ридеры.-->
-                    <!--</p>-->
                     <label for="search_hidden" class="hiddenText label">
                         Search
                     </label>
@@ -222,10 +225,10 @@
                     </pre>
                 </div>
 
-                <!-- @TODO: Перевести описание на английский. -->
-                <!-- @TODO: Добавить информацию про особенности использования. -->
+                
+                
                 <div class="form__line">
-                    <p class="components__title">
+                    <p class="docs-component__title">
                         Textarea
                     </p>
                     <label for="textarea" class="label">
@@ -234,23 +237,25 @@
                     <textarea id="textarea" class="textarea textarea_block"></textarea>
                     <pre aria-hidden="true">
                         <code class="language-markup convert">
-                                <label for="message" class="label">
-                                    Message
-                                </label>
-                                <textarea id="message" class="textarea"></textarea>
+                            <label for="message" class="label">
+                                Message
+                            </label>
+                            <textarea id="message" class="textarea"></textarea>
                         </code>
                     </pre>
                 </div>
 
-                <!-- @TODO: Перевести описание на английский. -->
+                
                 <div class="form__line">
-                    <p class="components__title">Select</p>
-                    <p class="components__descr">
-                        Для группировки опций в элементе select используйте optgroup.
-                    </p>
-                    <p class="components__descr">
-                        Aria-disabled используется для обозначения disabled элемента (см.<a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled">https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled</a>)
-                    </p>
+                    <div class="docs-component__title">
+                        Select
+                    </div>
+
+                    <div class="docs-component__description">
+                        <p>Для группировки опций в элементе select используйте optgroup.</p>
+                        <p>Aria-disabled используется для обозначения disabled элемента (см.<a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled">https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled</a>)</p>
+                    </div>
+
                     <select class="select" name="select" title="выберите параметры">
                         <optgroup label="цвета">
                             <option value="1" selected>
@@ -294,14 +299,18 @@
                 </div>
 
                 <div class="form__line">
-                    <p class="components__title">
+                    <div class="docs-component__title">
                         Fieldset
-                    </p>
-                    <p class="components__descr">
-                        <a href="https://www.w3.org/WAI/tutorials/forms/grouping/" target="_blank">
-                            https://www.w3.org/WAI/tutorials/forms/grouping/
-                        </a>
-                    </p>
+                    </div>
+
+                    <div class="docs-component__description">
+                        <p>
+                            <a href="https://www.w3.org/WAI/tutorials/forms/grouping/" target="_blank">
+                                https://www.w3.org/WAI/tutorials/forms/grouping/
+                            </a>
+                        </p>
+                    </div>
+
                     <fieldset>
                         <legend>Output format</legend>
                         <div>
@@ -317,6 +326,7 @@
                             <label for="csv">HTML file</label>
                         </div>
                     </fieldset>
+
                     <pre aria-hidden="true">
                         <code class="language-markup convert">
                             <fieldset>
@@ -327,17 +337,18 @@
                     </pre>
                 </div>
 
-                <!-- @TODO: Перевести описание на английский. -->
+                
                 <div class="form__line">
-                    <p class="components__title">
+
+                    <div class="docs-component__title">
                         Checkbox
-                    </p>
-                    <p class="components__descr">
-                        Элемент checkbox должен иметь role="checkbox", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние чекбокса.
-                    </p>
-                    <p class="components__descr">
-                        Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.
-                    </p>
+                    </div>
+
+                    <div class="docs-component__description">
+                        <p>Элемент checkbox должен иметь role="checkbox", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние чекбокса.</p>
+                        <p>Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.</p>
+                    </div>
+
                     <div class="checkbox__field" role="group">
                         <input id="checkbox1" type="checkbox" role="checkbox" name="checkbox1" value="чекбокс1" disabled>
                         <label id="checkboxLabel" for="checkbox1">
@@ -369,11 +380,18 @@
                     </pre>
                 </div>
 
-                <!-- @TODO: Перевести описание на английский. -->
+                
                 <div class="form__line">
-                    <p class="components__title">Radio</p>
-                    <p class="components__descr">Элементы radio должны быть обернуты в div с role="radiogroup" и иметь атрибут role="radio", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние.</p>
-                    <p class="components__descr">Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.</p>
+
+                    <div class="docs-component__title">
+                        Radio
+                    </div>
+
+                    <div class="docs-component__description">
+                        <p>Элементы radio должны быть обернуты в div с role="radiogroup" и иметь атрибут role="radio", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние.</p>
+                        <p>Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.</p>
+                    </div>
+
                     <div class="radio__field" role="radiogroup">
                         <input id="radio1" type="radio" role="radio" name="one" value="Первый">
                         <label id="label1" for="radio1">Первый (default)</label>
@@ -384,6 +402,7 @@
                         <input id="radio3" type="radio" role="radio" name="one" value="Третий" checked>
                         <label id="label3" for="radio3">Третий (checked)</label>
                     </div>
+
                     <pre aria-hidden="true">
                         <code class="language-markup">
                             &ltdiv role="radiogroup"&gt
@@ -398,14 +417,19 @@
                             &lt/div&gt
                         </code>
                     </pre>
+
                 </div>
 
-                <!-- @TODO: Добавить описание компонента. -->
+                
                 <div class="form__line">
-                    <p class="components__title">Submit button</p>
+                    <div class="docs-component__title">
+                        Submit button
+                    </div>
+
                     <button class="button" type="submit" title="submit button">
                         Submit
                     </button>
+
                     <pre aria-hidden="true">
                         <code class="language-markup convert">
                             <button class="button" type="submit" title="submit button">
@@ -417,19 +441,23 @@
             </form>
         </div>
 
-        <!-- @TODO: Перевести описание на английский. -->
-        <div class="components__row" id="typography">
-            <span class="components__header">Typography</span>
+        
+        <div class="docs-component" id="typography">
+            <div class="docs-component__header">
+                Typography
+            </div>
 
-            <p class="components__title">
+            <div class="docs-component__title">
                 Application
-            </p>
-            <p class="components__descr">
-                Класс Application применяется в body. Стандартный размер шрифта 18px, высота строки 1.25em. При переключении в режим маленького шрифта - 14px, большого - 22px.
-            </p>
-            <p class="components__title">
+            </div>
+
+            <div class="docs-component__description">
+                <p>Класс Application применяется в body. Стандартный размер шрифта 18px, высота строки 1.25em. При переключении в режим маленького шрифта - 14px, большого - 22px.</p>
+            </div>
+
+            <div class="docs-component__title">
                 Headings
-            </p>
+            </div>
 
             <div class="h1">Heading h1</div>
             <div class="h2">Heading h2</div>
@@ -447,15 +475,17 @@
                 </code>
             </pre>
 
-            <!-- @TODO: Перевести описание на английский. -->
-            <p class="components__title">Links</p>
+            
+            <div class="docs-component__title">
+                Links
+            </div>
+
             <a href="#">Default link</a>
-            <p class="components__descr">Если из текста ссылки не ясно куда она ведет или ее заменяет изображение, нужно использовать aria-label, чтобы позволить скрин-ридеру озвучить подробное описание
-                <a href="#" aria-label="Прочитайте больше новостей">[больше]</a>
-            </p>
-            <p class="components__descr">Если ссылка недоступна используйте aria-disabled="true", а также tabindex="-1" чтобы отключить возможность сфокусироваться на ней с помощью клавиатуры
-                <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Ссылка disabled</a>
-            </p>
+
+            <div class="docs-component__description">
+                <p>Если из текста ссылки не ясно куда она ведет или ее заменяет изображение, нужно использовать aria-label, чтобы позволить скрин-ридеру озвучить подробное описание <a href="#" aria-label="Прочитайте больше новостей">[больше]</a></p>
+                <p>Если ссылка недоступна используйте aria-disabled="true", а также tabindex="-1" чтобы отключить возможность сфокусироваться на ней с помощью клавиатуры <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Ссылка disabled</a></p>
+            </div>
 
             <pre aria-hidden="true">
                 <code class="language-markup convert">
@@ -465,26 +495,38 @@
                 </code>
             </pre>
 
-            <p class="components__title">Small text</p>
+            <div class="docs-component__title">
+                Small text
+            </div>
+
             <small>Small text</small>
+
             <pre aria-hidden="true">
                 <code class="language-markup convert">
                    <small>Small text</small>
                 </code>
             </pre>
 
-            <!-- @TODO: Перевести описание на английский. -->
+            
             <div class="typography">
-                <span class="components__header">Typography class="typography"</span>
-                <p class="components__title">
+                <div class="docs-component__header">
+                    Typography class="typography"
+                </div>
+
+                <div class="docs-component__description">
+                    <p>Используются страндартные теги, заголовки имеют отступы.</p>
+                </div>
+
+                <div class="docs-component__title">
                     Headings
-                </p>
-                <p class="components__descr">Используются страндартные теги, заголовки имеют отступы.</p>
+                </div>
+
                 <h1 class="h1">Heading h1</h1>
                 <h2 class="h2">Heading h2</h2>
                 <h3 class="h3">Heading h3</h3>
                 <h4 class="h4">Heading h4</h4>
                 <h5 class="h5">Heading h5</h5>
+
                 <pre aria-hidden="true">
                     <code class="language-markup convert">
                         <div class="typography">
@@ -497,16 +539,16 @@
                     </code>
                 </pre>
 
-                <!-- @TODO: Перевести описание на английский. -->
-                <p class="components__title">
+                
+                <div class="docs-component__title">
                     Table with ambiguous data
-                </p>
-                <p>
-                    <a href="https://www.w3.org/WAI/tutorials/tables/one-header/">https://www.w3.org/WAI/tutorials/tables/one-header/</a>
-                </p>
-                <p class="components__descr">
-                    Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце.
-                </p>
+                </div>
+
+                <div class="docs-component__description">
+                    <p><a href="https://www.w3.org/WAI/tutorials/tables/one-header/">https://www.w3.org/WAI/tutorials/tables/one-header/</a></p>
+                    <p>Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце.</p>
+                </div>
+
                 <table>
                     <caption>Подпись к таблице:</caption>
                     <tr>
@@ -530,6 +572,7 @@
                         <td>Brynn</td>
                     </tr>
                 </table>
+
                 <pre aria-hidden="true">
                     <code class="language-markup">
                         &ltdiv class="typography"&gt
@@ -560,10 +603,15 @@
                     </code>
                 </pre>
 
-                <!-- @TODO: Перевести описание на английский. -->
-                <p class="components__title">Таблица с двумя заголовками</p>
-                <p class="components__descr">Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце</p>
-                <p class="components__descr">Атрибут scope с значением row связывает каждую ячейку в столбце с заголовками с данными в строке</p>
+                
+                <div class="docs-component__title">
+                    Таблица с двумя заголовками
+                </div>
+
+                <div class="docs-component__description">
+                    <p>Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце.</p>
+                    <p>Атрибут scope с значением row связывает каждую ячейку в столбце с заголовками с данными в строке.</p>
+                </div>
 
                 <table>
                     <caption>Delivery slots:</caption>
@@ -592,6 +640,7 @@
                         <td>Closed</td>
                     </tr>
                 </table>
+
                 <pre aria-hidden="true">
                     <code class="language-markup">
                         &ltdiv class="typography"&gt
@@ -626,10 +675,15 @@
                     </code>
                 </pre>
 
-                <!-- @TODO: Перевести описание на английский. -->
-                <p class="components__title">Таблица с неравномерными заголовками</p>
-                <p class="components__descr">Атрибут scope"colgroup" связывает ячейки с заголовками первого уровня со всей группой столбцов</p>
-                <p class="components__descr">Заголовки второго уровня связываются только с соответсвующими колонками с помощью атрибута scope="col"</p>
+                
+                <div class="docs-component__title">
+                    Таблица с неравномерными заголовками
+                </div>
+
+                <div class="docs-component__description">
+                    <p>Атрибут scope"colgroup" связывает ячейки с заголовками первого уровня со всей группой столбцов</p>
+                    <p>Заголовки второго уровня связываются только с соответсвующими колонками с помощью атрибута scope="col"</p>
+                </div>
 
                 <table>
                     <caption>Планеты:</caption>
@@ -662,6 +716,7 @@
                         <td>9,000</td>
                     </tr>
                 </table>
+
                  <pre aria-hidden="true">
                     <code class="language-markup">
                         &ltdiv class="typography"&gt
@@ -700,16 +755,24 @@
                     </code>
                 </pre>
 
-                <p class="components__title">Blockquotes</p>
+                <div class="docs-component__title">
+                    Blockquotes
+                </div>
+
                 <br>
+
                 <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, corporis.</q>
+
                 <pre aria-hidden="true">
                     <code class="language-markup convert">
                         <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, corporis.</q>
                     </code>
                 </pre>
 
-                <p class="components__title">Lists</p>
+                <div class="docs-component__title">
+                    Lists
+                </div>
+
                 <ul>
                     <li>Lorem ipsum.</li>
                     <li>Lorem ipsum dolor sit.
@@ -747,31 +810,31 @@
             </div>
         </div>
 
-        <!-- @TODO: Пример кода до оборачивания враппером и после. -->
-        <!-- @TODO: Изображения в примерах кода не должны оборачиваться враппером. -->
-        <!-- @TODO: Перевести описание на английский. -->
-        <!-- @TODO: А как скрин-ридер будет читать скрытое изображение? img alt + span ? -->
-        <!-- @TODO: Нам не нужно оборачивать декоративные изображения. Нужно фильтровать либо по alt="", либо по role="presentation" -->
-        <div id="images" class="components__row">
-            <span class="components__header">
+        
+        
+        
+        
+        
+        <div id="images" class="docs-component">
+            <div class="docs-component__header">
                 Images
-            </span>
+            </div>
 
-            <p class="components__descr">
-                <a href="#">https://www.w3.org/WAI/tutorials/images/</a>
-            </p>
-
-            <p class="components__descr">
-                Все изображения с помощью JavaScript оборачиваются блоком class="image-alt". Он существует для визуального отображения содержимого атрибута alt="image alt text" у скрытого через панель управления изображения.
-            </p>
-            <p class="components__descr">
-                <img alt="image alt text"
-                     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=320%C3%97320&w=320&h=320">
-            </p>
-
-            <p class="components__descr">
-                Before:
-            </p>
+            <div class="docs-component__description">
+                <p>
+                    <a href="#">https://www.w3.org/WAI/tutorials/images/</a>
+                </p>
+                <p>
+                    Все изображения с помощью JavaScript оборачиваются блоком class="image-alt". Он существует для визуального отображения содержимого атрибута alt="image alt text" у скрытого через панель управления изображения.
+                </p>
+                <p>
+                    <img alt="image alt text"
+                         src="https://placeholdit.imgix.net/~text?txtsize=33&txt=320%C3%97320&w=320&h=320">
+                </p>
+                <p>
+                    Before:
+                </p>
+            </div>
 
             <pre aria-hidden="true">
                 <code class="language-markup convert">
@@ -779,9 +842,9 @@
                 </code>
             </pre>
 
-            <p class="components__descr">
-                After JS wrapper:
-            </p>
+            <div class="docs-components__description">
+                <p>After JS wrapper:</p>
+            </div>
 
             <pre aria-hidden="true">
                 <code class="language-markup convert">
@@ -794,24 +857,33 @@
         </div>
 
     </div>
+    <div class="col-md-2 pull-left">
 
-    <div class="main__sidebar">
-        <nav class="nav" aria-label="vertical navigation">
+        <nav class="docs-nav nav nav_vertical" aria-label="vertical navigation">
             <ul>
-                <li>
-                    <a href="#grid" title="grid system">Grid system</a>
+                <li class="nav__item">
+                    <a class="nav__link" href="#grid" title="grid system">
+                        Grid system
+                    </a>
                 </li>
-                <li>
-                    <a href="#form" title="forms">Forms</a>
+                <li class="nav__item">
+                    <a class="nav__link" href="#form" title="forms">
+                        Forms
+                    </a>
                 </li>
-                <li>
-                    <a href="#typography" title="typography">Typography</a>
+                <li class="nav__item">
+                    <a class="nav__link" href="#typography" title="typography">
+                        Typography
+                    </a>
                 </li>
-                <li>
-                    <a href="#images" title="images">Images</a>
+                <li class="nav__item">
+                    <a class="nav__link" href="#images" title="images">
+                        Images
+                    </a>
                 </li>
             </ul>
         </nav>
+
     </div>
 </main>
 
@@ -823,10 +895,13 @@
     </span>
 </footer>
 
+
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
 <script src="../dist/accessibility.js"></script>
+
+
 <script src="assets/prism.js"></script>
-<script src="assets/main.js"></script>
+<script src="assets/docs.js"></script>
 
 </body>
 </html>

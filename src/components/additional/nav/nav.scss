@@ -5,41 +5,41 @@
 @import "../../config";
 
 .nav {
-
     @include clearfix();
 
-
-    li {
+    &__item {
         float: left;
-        margin-right: 10px;
-        margin-bottom: 10px;
+        margin: 0 10px 10px 0;
+
         border-radius: 4px;
-        a {
-            display: inline-block;
-            padding: 5px 10px;
 
-            font-weight: bold;
-            text-decoration: none !important;
-
-            border: 1px solid $main-color;
-            border-radius: 4px;
-
-            &:focus, &:hover {
-                outline: none !important;
-                box-shadow: 0px 0px  0 3px #ffa;
-            }
+        .nav_vertical & {
+            display: block;
+            float: none;
+            margin: 0 0 10px 0;
         }
     }
 
+    &__link {
+        display: inline-block;
+        padding: 5px 10px;
 
-    li.active {
-        & > a {
-            background: #ffa;
-            color: #BF1722;
+        font-weight: bold;
+        text-decoration: none !important;
+
+        border: 1px solid $main-color;
+        border-radius: 4px;
+
+        &:focus, &:hover {
+            outline: none !important;
+            box-shadow: 0 0 0 3px #ffa;
         }
     }
 
-
+    &__item_active > .nav__link {
+        background: #ffa;
+        color: #BF1722;
+    }
 }
 
 // ==========================================================================
@@ -47,15 +47,20 @@
 // ==========================================================================
 
 .application[data-color="black"] {
+
     $main-color: invert($main-color);
     $second-color: invert($second-color);
+
     .nav {
-        li.active > a {
+
+        &__item_active > .nav__link {
             background: #d8edff;
             color: #BF1722;
         }
-        a {
+
+        &__link {
             border: 1px solid $main-color;
+
             &:focus, &:hover {
                 box-shadow: 0 0 0 3px #ffa;
             }
