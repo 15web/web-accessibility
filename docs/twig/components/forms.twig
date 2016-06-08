@@ -1,0 +1,277 @@
+{# Forms #}
+{# @TODO: Перевести описание на английский. #}
+{# @TODO: Добавить информацию про особенности использования textarea. #}
+{# @TODO: Добавить описание компонента submit button. #}
+
+<div id="form" class="docs-component">
+
+    <div class="docs-component__header">
+        Forms
+    </div>
+
+    <div class="docs-component__description">
+        <p>
+            <a href="https://www.w3.org/WAI/tutorials/forms/" target="_blank">
+                https://www.w3.org/WAI/tutorials/forms/
+            </a>
+        </p>
+        <p>Спецификация позволяет использовать 3 способа для индентификации элементов форм. WAI-ARIA, title атрибут или label. Мы остановились на варианте с label.</p>
+    </div>
+
+    <form class="form" action="">
+
+        <div class="form__line">
+            <p class="docs-component__title">
+                Input with label
+            </p>
+
+            <label for="search_1" class="label">
+                Search
+            </label>
+
+            <input id="search_1" class="input" type="text">
+
+            <pre aria-hidden="true">
+                <code class="language-markup convert">
+                    <label for="search_2" class="label">
+                        Search
+                    </label>
+                    <input id="search_2" class="input" type="text">
+                </code>
+            </pre>
+        </div>
+
+        <div class="form__line">
+            <p class="docs-component__title">
+                Input with hidden label
+            </p>
+
+            <label for="search_hidden" class="hiddenText label">
+                Search
+            </label>
+
+            <input id="search_hidden" class="input" type="text" name="search">
+
+            <pre aria-hidden="true">
+                <code class="language-markup convert">
+                    <label for="search_3" class="hiddenText label">
+                        Search
+                    </label>
+                    <input id="search_3" class="input" type="text" name="search">
+                </code>
+            </pre>
+        </div>
+
+        <div class="form__line">
+            <p class="docs-component__title">
+                Textarea
+            </p>
+
+            <label for="textarea" class="label">
+                Message
+            </label>
+
+            <textarea id="textarea" class="textarea textarea_block"></textarea>
+
+            <pre aria-hidden="true">
+                <code class="language-markup convert">
+                    <label for="message" class="label">
+                        Message
+                    </label>
+                    <textarea id="message" class="textarea"></textarea>
+                </code>
+            </pre>
+        </div>
+
+        <div class="form__line">
+            <div class="docs-component__title">
+                Select
+            </div>
+
+            <div class="docs-component__description">
+                <p>Для группировки опций в элементе select используйте optgroup.</p>
+                <p>Aria-disabled используется для обозначения disabled элемента (см.<a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled">https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled</a>)</p>
+            </div>
+
+            <select class="select" name="select" title="выберите параметры">
+                <optgroup label="цвета">
+                    <option value="1" selected>
+                        белый
+                    </option>
+                    <option value="2" disabled aria-disabled="true">
+                        черный
+                    </option>
+                </optgroup>
+                <optgroup label="размер">
+                    <option value="1" selected>
+                        большой
+                    </option>
+                    <option value="2">
+                        маленький
+                    </option>
+                </optgroup>
+            </select>
+
+            <pre aria-hidden="true">
+                <code class="language-markup">
+                     &ltselect class="select" name="select" title="выберите параметры"&gt
+                        &ltoptgroup label="цвета"&gt
+                            &ltoption value="1"&gt
+                                белый
+                            &lt/option&gt
+                            &ltoption value="2" disabled aria-disabled="true"&gt
+                                черный
+                            &lt/option&gt
+                        &lt/optgroup&gt
+                         &ltoptgroup label="размер"&gt
+                            &ltoption value="1"&gt
+                                большой
+                            &lt/option&gt
+                            &ltoption value="2"&gt
+                                маленький
+                            &lt/option&gt
+                        &lt/optgroup&gt
+                    &lt/select&gt
+                </code>
+            </pre>
+        </div>
+
+        <div class="form__line">
+            <div class="docs-component__title">
+                Fieldset
+            </div>
+
+            <div class="docs-component__description">
+                <p>
+                    <a href="https://www.w3.org/WAI/tutorials/forms/grouping/" target="_blank">
+                        https://www.w3.org/WAI/tutorials/forms/grouping/
+                    </a>
+                </p>
+            </div>
+
+            <fieldset>
+                <legend>Output format</legend>
+                <div>
+                    <input id="txt" type="radio" name="format" value="txt" checked>
+                    <label for="txt">Text file</label>
+                </div>
+                <div>
+                    <input id="csv" type="radio" name="format" value="csv">
+                    <label for="csv">CSV file</label>
+                </div>
+                <div>
+                    <input id="html" type="radio" name="format" value="html">
+                    <label for="csv">HTML file</label>
+                </div>
+            </fieldset>
+
+            <pre aria-hidden="true">
+                <code class="language-markup convert">
+                    <fieldset>
+                        <legend>Output format</legend>
+                            ...
+                    </fieldset>
+                </code>
+            </pre>
+        </div>
+
+        <div class="form__line">
+
+            <div class="docs-component__title">
+                Checkbox
+            </div>
+
+            <div class="docs-component__description">
+                <p>Элемент checkbox должен иметь role="checkbox", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние чекбокса.</p>
+                <p>Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.</p>
+            </div>
+
+            <div class="checkbox__field" role="group">
+                <input id="checkbox1" type="checkbox" role="checkbox" name="checkbox1" value="чекбокс1" disabled>
+                <label id="checkboxLabel" for="checkbox1">
+                    Checkbox 1 (disabled)
+                </label>
+                <input id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2">
+                <label id="checkboxLabel" for="checkbox2">
+                    Checkbox 2 (default)
+                </label>
+                <input id="checkbox3" type="checkbox" role="checkbox" name="checkbox3" value="чекбокс3" checked>
+                <label id="checkboxLabel" for="checkbox3">
+                    Checkbox 3 (checked)
+                </label>
+            </div>
+
+            <pre aria-hidden="true">
+                <code class="language-markup">
+                    &ltdiv role="group"&gt
+                        &ltinput id="checkbox1" type="checkbox" role="checkbox"
+                               name="checkbox1" value="чекбокс1" disabled&gt
+                        &ltlabel id="checkboxLabel" for="checkbox1"&gtCheckbox 1 (disabled)&lt/label&gt
+                        &ltinput id="checkbox2" type="checkbox" role="checkbox"
+                               name="checkbox2" value="чекбокс2"&gt
+                        &ltlabel id="checkboxLabel" for="checkbox2"&gtCheckbox 2 (default)&lt/label&gt
+                        &ltinput id="checkbox2" type="checkbox" role="checkbox"
+                               name="checkbox3" value="чекбокс2" checked&gt
+                        &ltlabel id="checkboxLabel" for="checkbox2"&gtCheckbox 3 (checked)&lt/label&gt
+                    &lt/div&gt
+                </code>
+            </pre>
+        </div>
+
+        <div class="form__line">
+
+            <div class="docs-component__title">
+                Radio
+            </div>
+
+            <div class="docs-component__description">
+                <p>Элементы radio должны быть обернуты в div с role="radiogroup" и иметь атрибут role="radio", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние.</p>
+                <p>Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.</p>
+            </div>
+
+            <div class="radio__field" role="radiogroup">
+                <input id="radio1" type="radio" role="radio" name="one" value="Первый">
+                <label id="label1" for="radio1">Первый (default)</label>
+
+                <input id="radio2" type="radio" role="radio" name="one" value="Второй" disabled>
+                <label id="label2" for="radio2">Второй (disabled)</label>
+
+                <input id="radio3" type="radio" role="radio" name="one" value="Третий" checked>
+                <label id="label3" for="radio3">Третий (checked)</label>
+            </div>
+
+            <pre aria-hidden="true">
+                <code class="language-markup">
+                    &ltdiv role="radiogroup"&gt
+                        &ltinput id="radio1" type="radio" role="radio" name="first" value="Первый"&gt
+                        &ltlabel id="label1" for="radio1"&gtПервый&lt/label&gt
+
+                        &ltinput id="radio2" type="radio" role="radio" name="second" value="Второй" disabled&gt
+                        &ltlabel id="label2" for="radio2"&gtВторой&lt/label&gt
+
+                        &ltinput id="radio3" type="radio" role="radio" name="third" value="Третий" checked&gt
+                        &ltlabel id="label3" for="radio3"&gtТретий&lt/label&gt
+                    &lt/div&gt
+                </code>
+            </pre>
+        </div>
+
+        <div class="form__line">
+            <div class="docs-component__title">
+                Submit button
+            </div>
+
+            <button class="button" type="submit" title="submit button">
+                Submit
+            </button>
+
+            <pre aria-hidden="true">
+                <code class="language-markup convert">
+                    <button class="button" type="submit" title="submit button">
+                        Submit
+                    </button>
+                </code>
+            </pre>
+        </div>
+    </form>
+</div>

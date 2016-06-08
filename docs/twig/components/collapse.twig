@@ -1,0 +1,34 @@
+{# Collapse #}
+{# @TODO: Перевести описание на английский. #}
+
+<div id="collapse" class="docs-component">
+    <div class="docs-component__header">
+        Collapse
+    </div>
+
+    <div class="docs-component__description">
+        <p>Для того, чтобы пользователь мог услышать изменение, при раскрытии панели используется aria-expanded.</p>
+        <p>Скрипт автоматически изменяет атрибут и фокусируется на раскрытой области.</p>
+        <p>Для использования добавьте кнопке класс collapse-button, и укажите в атрибуте aria-controls id элемента для управления.</p>
+        <p>Tabindex используется для корректной работы скрипта.</p>
+    </div>
+
+    <button class="button collapse-button" aria-controls="elemToCtrl" value="показать">
+        Collapse
+    </button>
+
+    <div id="elemToCtrl" class="collapse" tabindex="-1" aria-expanded="false">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos dolorem dolores enim et, facere magni qui quidem quod voluptatibus!
+    </div>
+
+    <pre>
+        <code class="language-markup convert">
+            <button class="button collapse-button" aria-controls="elemToControl" value="show">
+                Collapse
+            </button>
+            <div id="elemToControl" class="collapse" tabindex="-1" aria-expanded="false">
+                ...
+            </div>
+        </code>
+    </pre>
+</div>

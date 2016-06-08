@@ -1,0 +1,63 @@
+{# Pagination #}
+{# @TODO: Перевести описание на английский. #}
+
+<div id="pagination" class="docs-component">
+
+    <div class="docs-component__header">
+        Pagination
+    </div>
+
+    <div class="docs-component__description">
+        <p>Списку ссылок указывается aria-label с описанием и атрибут role="navigation".</p>
+        <p>Элемент назад и вперед имеют атрибуты rel=”prev”, rel=”next”.</p>
+        <p>Коротким ссылкам следует добавить описание в aria-label.</p>
+    </div>
+
+    <ul class="pagination" role="navigation" aria-label="links to other pages">
+        <li class="pagination__item pagination__item_active" rel="prev">
+            <a class="pagination__link" href="#">Prev</a>
+        </li>
+        <li class="pagination__item pagination__item">
+            <a class="pagination__link" href="#" aria-label="first page">1</a>
+        </li>
+        <li class="pagination__item">
+            <a class="pagination__link" href="#" aria-label="second page">2</a>
+        </li>
+        <li class="pagination__item">
+            <a class="pagination__link" href="#" aria-label="third page">3</a>
+        </li>
+
+        <li class="pagination__item" rel="next">
+            <a class="pagination__link" href="#">Next</a>
+        </li>
+        <li class="pagination__item">
+            <a class="pagination__link" href="#">Last page</a>
+        </li>
+    </ul>
+
+    <pre>
+        <code class="language-markup convert">
+            <ul class="pagination" role="navigation" aria-label="links to other pages">
+                <li class="pagination__item pagination__item_active" rel="prev">
+                    <a class="pagination__link" href="#">Prev</a>
+                </li>
+                <li class="pagination__item pagination__item">
+                    <a class="pagination__link" href="#" aria-label="first page">1</a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__link" href="#" aria-label="second page">2</a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__link" href="#" aria-label="third page">3</a>
+                </li>
+
+                <li class="pagination__item" rel="next">
+                    <a class="pagination__link" href="#">Next</a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__link" href="#">Last page</a>
+                </li>
+            </ul>
+        </code>
+    </pre>
+</div>

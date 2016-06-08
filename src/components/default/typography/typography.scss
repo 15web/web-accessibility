@@ -2,7 +2,6 @@
     margin-bottom: 36px;
     overflow: auto;
 
-
     h1 {
         font-size: 2em;
         line-height: 1.1;
@@ -41,6 +40,7 @@
     p {
         margin-bottom: 1em;
     }
+
     q {
         display: block;
         padding: 10px 20px;
@@ -122,19 +122,20 @@ small {
     font-size: 65%;
 }
 
-
-
-
 // ==========================================================================
 // Theme black
 // ==========================================================================
 
 .application[data-color="black"] {
+
     .typography {
+
         h4 {
             color: white;
         }
+
         table {
+
             th {
                 border: 1px solid black;
                 background-color: white;
@@ -146,8 +147,10 @@ small {
             }
 
         }
+
         q {
             border-left: 5px solid white;
         }
     }
+
 }

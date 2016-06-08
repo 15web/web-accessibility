@@ -1,0 +1,41 @@
+{# Images #}
+{# @TODO: Пример кода до оборачивания враппером и после. #}
+{# @TODO: Изображения в примерах кода не должны оборачиваться враппером. #}
+{# @TODO: Перевести описание на английский. #}
+{# @TODO: А как скрин-ридер будет читать скрытое изображение? img alt + span ? #}
+{# @TODO: Нам не нужно оборачивать декоративные изображения. Нужно фильтровать либо по alt="", либо по role="presentation" #}
+
+<div id="images" class="docs-component">
+    <div class="docs-component__header">
+        Images
+    </div>
+
+    <div class="docs-component__description">
+        <p><a href="#">https://www.w3.org/WAI/tutorials/images/</a></p>
+        <p>Все изображения с помощью JavaScript оборачиваются блоком class="image-alt". Он существует для визуального отображения содержимого атрибута alt="image alt text" у скрытого через панель управления изображения.</p>
+        <p>
+            <img alt="image alt text"
+                 src="https://placeholdit.imgix.net/~text?txtsize=33&txt=320%C3%97320&w=320&h=320">
+        </p>
+        <p>Before:</p>
+    </div>
+
+    <pre aria-hidden="true">
+        <code class="language-markup convert">
+            <img src="..." alt="image alt text" width="320" height="320"/>
+        </code>
+    </pre>
+
+    <div class="docs-components__description">
+        <p>After JS wrapper:</p>
+    </div>
+
+    <pre aria-hidden="true">
+        <code class="language-markup convert">
+            <span class="image-alt image-alt_active" style="width: 320px; height: 320px;">
+                <img alt="image alt text" src="..." style="visibility: hidden;">
+                <span class="image-alt__text">image alt text</span>
+            </span>
+        </code>
+    </pre>
+</div>

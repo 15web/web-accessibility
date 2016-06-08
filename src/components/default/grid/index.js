@@ -1,1 +1,1 @@
-import './bootstrap.scss';
+import './grid.scss';

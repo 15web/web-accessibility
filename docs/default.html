@@ -19,6 +19,7 @@
     <h1 class="docs-header__title">
         Web Accessibility
     </h1>
+
     <nav class="nav" aria-label="horizontal navigation">
         <ul>
             <li class="nav__item">
@@ -90,771 +91,768 @@
     <div class="col-md-10 pull-right">
 
         
-        <div id="grid" class="docs-component">
 
-            <div class="docs-component__header">
-                Grid system
+<div id="grid" class="docs-component">
+
+    <div class="docs-component__header">
+        Grid system
+    </div>
+
+    <div class="docs-component__description">
+        <p>
+            <a href="http://getbootstrap.com/css/#grid">
+                http://getbootstrap.com/css/#grid
+            </a>
+        </p>
+        <p>The project uses grid Twitter Bootstrap.</p>
+    </div>
+
+    <div class="row show-grid">
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+    </div>
+    <div class="row show-grid">
+        <div class="col-md-8">.col-md-8</div>
+        <div class="col-md-4">.col-md-4</div>
+    </div>
+    <div class="row show-grid">
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-4">.col-md-4</div>
+    </div>
+    <div class="row show-grid">
+        <div class="col-md-6">.col-md-6</div>
+        <div class="col-md-6">.col-md-6</div>
+    </div>
+
+    <pre aria-hidden="true">
+        <code class="language-markup convert">
+            <div class="row">
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
+                <div class="col-md-1">.col-md-1</div>
             </div>
-
-            <div class="docs-component__description">
-                <p>
-                    <a href="http://getbootstrap.com/css/#grid">
-                        http://getbootstrap.com/css/#grid
-                    </a>
-                </p>
-
-                <p>В проекте используется сетка bootstrap фиксированной ширины.</p>
-            </div>
-
-            
-            <div class="row show-grid">
-                <div class="col-md-1">.col-md-1</div>
-                <div class="col-md-1">.col-md-1</div>
-                <div class="col-md-1">.col-md-1</div>
-                <div class="col-md-1">.col-md-1</div>
-                <div class="col-md-1">.col-md-1</div>
-                <div class="col-md-1">.col-md-1</div>
-                <div class="col-md-1">.col-md-1</div>
-                <div class="col-md-1">.col-md-1</div>
-                <div class="col-md-1">.col-md-1</div>
-                <div class="col-md-1">.col-md-1</div>
-                <div class="col-md-1">.col-md-1</div>
-                <div class="col-md-1">.col-md-1</div>
-            </div>
-            <div class="row show-grid">
+            <div class="row">
                 <div class="col-md-8">.col-md-8</div>
                 <div class="col-md-4">.col-md-4</div>
             </div>
-            <div class="row show-grid">
+            <div class="row">
                 <div class="col-md-4">.col-md-4</div>
                 <div class="col-md-4">.col-md-4</div>
                 <div class="col-md-4">.col-md-4</div>
             </div>
-            <div class="row show-grid">
+            <div class="row">
                 <div class="col-md-6">.col-md-6</div>
                 <div class="col-md-6">.col-md-6</div>
             </div>
+        </code>
+    </pre>
+</div>
+        
+
+
+
+
+<div id="form" class="docs-component">
+
+    <div class="docs-component__header">
+        Forms
+    </div>
+
+    <div class="docs-component__description">
+        <p>
+            <a href="https://www.w3.org/WAI/tutorials/forms/" target="_blank">
+                https://www.w3.org/WAI/tutorials/forms/
+            </a>
+        </p>
+        <p>Спецификация позволяет использовать 3 способа для индентификации элементов форм. WAI-ARIA, title атрибут или label. Мы остановились на варианте с label.</p>
+    </div>
+
+    <form class="form" action="">
+
+        <div class="form__line">
+            <p class="docs-component__title">
+                Input with label
+            </p>
+
+            <label for="search_1" class="label">
+                Search
+            </label>
+
+            <input id="search_1" class="input" type="text">
 
             <pre aria-hidden="true">
                 <code class="language-markup convert">
-                    <div class="row">
-                        <div class="col-md-1">.col-md-1</div>
-                        <div class="col-md-1">.col-md-1</div>
-                        <div class="col-md-1">.col-md-1</div>
-                        <div class="col-md-1">.col-md-1</div>
-                        <div class="col-md-1">.col-md-1</div>
-                        <div class="col-md-1">.col-md-1</div>
-                        <div class="col-md-1">.col-md-1</div>
-                        <div class="col-md-1">.col-md-1</div>
-                        <div class="col-md-1">.col-md-1</div>
-                        <div class="col-md-1">.col-md-1</div>
-                        <div class="col-md-1">.col-md-1</div>
-                        <div class="col-md-1">.col-md-1</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8">.col-md-8</div>
-                        <div class="col-md-4">.col-md-4</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">.col-md-4</div>
-                        <div class="col-md-4">.col-md-4</div>
-                        <div class="col-md-4">.col-md-4</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">.col-md-6</div>
-                        <div class="col-md-6">.col-md-6</div>
-                    </div>
+                    <label for="search_2" class="label">
+                        Search
+                    </label>
+                    <input id="search_2" class="input" type="text">
                 </code>
             </pre>
         </div>
 
-        <div id="form" class="docs-component">
+        <div class="form__line">
+            <p class="docs-component__title">
+                Input with hidden label
+            </p>
 
-            
-            <div class="docs-component__header">
-                Forms
+            <label for="search_hidden" class="hiddenText label">
+                Search
+            </label>
+
+            <input id="search_hidden" class="input" type="text" name="search">
+
+            <pre aria-hidden="true">
+                <code class="language-markup convert">
+                    <label for="search_3" class="hiddenText label">
+                        Search
+                    </label>
+                    <input id="search_3" class="input" type="text" name="search">
+                </code>
+            </pre>
+        </div>
+
+        <div class="form__line">
+            <p class="docs-component__title">
+                Textarea
+            </p>
+
+            <label for="textarea" class="label">
+                Message
+            </label>
+
+            <textarea id="textarea" class="textarea textarea_block"></textarea>
+
+            <pre aria-hidden="true">
+                <code class="language-markup convert">
+                    <label for="message" class="label">
+                        Message
+                    </label>
+                    <textarea id="message" class="textarea"></textarea>
+                </code>
+            </pre>
+        </div>
+
+        <div class="form__line">
+            <div class="docs-component__title">
+                Select
+            </div>
+
+            <div class="docs-component__description">
+                <p>Для группировки опций в элементе select используйте optgroup.</p>
+                <p>Aria-disabled используется для обозначения disabled элемента (см.<a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled">https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled</a>)</p>
+            </div>
+
+            <select class="select" name="select" title="выберите параметры">
+                <optgroup label="цвета">
+                    <option value="1" selected>
+                        белый
+                    </option>
+                    <option value="2" disabled aria-disabled="true">
+                        черный
+                    </option>
+                </optgroup>
+                <optgroup label="размер">
+                    <option value="1" selected>
+                        большой
+                    </option>
+                    <option value="2">
+                        маленький
+                    </option>
+                </optgroup>
+            </select>
+
+            <pre aria-hidden="true">
+                <code class="language-markup">
+                     &ltselect class="select" name="select" title="выберите параметры"&gt
+                        &ltoptgroup label="цвета"&gt
+                            &ltoption value="1"&gt
+                                белый
+                            &lt/option&gt
+                            &ltoption value="2" disabled aria-disabled="true"&gt
+                                черный
+                            &lt/option&gt
+                        &lt/optgroup&gt
+                         &ltoptgroup label="размер"&gt
+                            &ltoption value="1"&gt
+                                большой
+                            &lt/option&gt
+                            &ltoption value="2"&gt
+                                маленький
+                            &lt/option&gt
+                        &lt/optgroup&gt
+                    &lt/select&gt
+                </code>
+            </pre>
+        </div>
+
+        <div class="form__line">
+            <div class="docs-component__title">
+                Fieldset
             </div>
 
             <div class="docs-component__description">
                 <p>
-                    <a href="https://www.w3.org/WAI/tutorials/forms/" target="_blank">
-                        https://www.w3.org/WAI/tutorials/forms/
+                    <a href="https://www.w3.org/WAI/tutorials/forms/grouping/" target="_blank">
+                        https://www.w3.org/WAI/tutorials/forms/grouping/
                     </a>
                 </p>
-
-                <p>Спецификация позволяет использовать 3 способа для индентификации элементов форм. WAI-ARIA, title атрибут или label. Мы остановились на варианте с label.</p>
             </div>
 
-            <form class="form" action="">
-
-                
-                <div class="form__line">
-                    <p class="docs-component__title">
-                        Input with label
-                    </p>
-                    <label for="search_1" class="label">
-                        Search
-                    </label>
-                    <input id="search_1" class="input" type="text">
-                    <pre aria-hidden="true">
-                        <code class="language-markup convert">
-                            <label for="search_2" class="label">
-                                Search
-                            </label>
-                            <input id="search_2" class="input" type="text">
-                        </code>
-                    </pre>
+            <fieldset>
+                <legend>Output format</legend>
+                <div>
+                    <input id="txt" type="radio" name="format" value="txt" checked>
+                    <label for="txt">Text file</label>
                 </div>
-
-                
-                <div class="form__line">
-                    <p class="docs-component__title">
-                        Input with hidden label
-                    </p>
-                    <label for="search_hidden" class="hiddenText label">
-                        Search
-                    </label>
-                    <input id="search_hidden" class="input" type="text" name="search">
-                    <pre aria-hidden="true">
-                        <code class="language-markup convert">
-                            <label for="search_3" class="hiddenText label">
-                                Search
-                            </label>
-                            <input id="search_3" class="input" type="text" name="search">
-                        </code>
-                    </pre>
+                <div>
+                    <input id="csv" type="radio" name="format" value="csv">
+                    <label for="csv">CSV file</label>
                 </div>
-
-                
-                
-                <div class="form__line">
-                    <p class="docs-component__title">
-                        Textarea
-                    </p>
-                    <label for="textarea" class="label">
-                        Message
-                    </label>
-                    <textarea id="textarea" class="textarea textarea_block"></textarea>
-                    <pre aria-hidden="true">
-                        <code class="language-markup convert">
-                            <label for="message" class="label">
-                                Message
-                            </label>
-                            <textarea id="message" class="textarea"></textarea>
-                        </code>
-                    </pre>
+                <div>
+                    <input id="html" type="radio" name="format" value="html">
+                    <label for="csv">HTML file</label>
                 </div>
+            </fieldset>
 
-                
-                <div class="form__line">
-                    <div class="docs-component__title">
-                        Select
-                    </div>
-
-                    <div class="docs-component__description">
-                        <p>Для группировки опций в элементе select используйте optgroup.</p>
-                        <p>Aria-disabled используется для обозначения disabled элемента (см.<a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled">https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled</a>)</p>
-                    </div>
-
-                    <select class="select" name="select" title="выберите параметры">
-                        <optgroup label="цвета">
-                            <option value="1" selected>
-                                белый
-                            </option>
-                            <option value="2" disabled aria-disabled="true">
-                                черный
-                            </option>
-                        </optgroup>
-                        <optgroup label="размер">
-                            <option value="1" selected>
-                                большой
-                            </option>
-                            <option value="2">
-                                маленький
-                            </option>
-                        </optgroup>
-                    </select>
-                    <pre aria-hidden="true">
-                        <code class="language-markup">
-                             &ltselect class="select" name="select" title="выберите параметры"&gt
-                                &ltoptgroup label="цвета"&gt
-                                    &ltoption value="1"&gt
-                                        белый
-                                    &lt/option&gt
-                                    &ltoption value="2" disabled aria-disabled="true"&gt
-                                        черный
-                                    &lt/option&gt
-                                &lt/optgroup&gt
-                                 &ltoptgroup label="размер"&gt
-                                    &ltoption value="1"&gt
-                                        большой
-                                    &lt/option&gt
-                                    &ltoption value="2"&gt
-                                        маленький
-                                    &lt/option&gt
-                                &lt/optgroup&gt
-                            &lt/select&gt
-                        </code>
-                    </pre>
-                </div>
-
-                <div class="form__line">
-                    <div class="docs-component__title">
-                        Fieldset
-                    </div>
-
-                    <div class="docs-component__description">
-                        <p>
-                            <a href="https://www.w3.org/WAI/tutorials/forms/grouping/" target="_blank">
-                                https://www.w3.org/WAI/tutorials/forms/grouping/
-                            </a>
-                        </p>
-                    </div>
-
+            <pre aria-hidden="true">
+                <code class="language-markup convert">
                     <fieldset>
                         <legend>Output format</legend>
-                        <div>
-                            <input id="txt" type="radio" name="format" value="txt" checked>
-                            <label for="txt">Text file</label>
-                        </div>
-                        <div>
-                            <input id="csv" type="radio" name="format" value="csv">
-                            <label for="csv">CSV file</label>
-                        </div>
-                        <div>
-                            <input id="html" type="radio" name="format" value="html">
-                            <label for="csv">HTML file</label>
-                        </div>
+                            ...
                     </fieldset>
-
-                    <pre aria-hidden="true">
-                        <code class="language-markup convert">
-                            <fieldset>
-                                <legend>Output format</legend>
-                                    ...
-                            </fieldset>
-                        </code>
-                    </pre>
-                </div>
-
-                
-                <div class="form__line">
-
-                    <div class="docs-component__title">
-                        Checkbox
-                    </div>
-
-                    <div class="docs-component__description">
-                        <p>Элемент checkbox должен иметь role="checkbox", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние чекбокса.</p>
-                        <p>Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.</p>
-                    </div>
-
-                    <div class="checkbox__field" role="group">
-                        <input id="checkbox1" type="checkbox" role="checkbox" name="checkbox1" value="чекбокс1" disabled>
-                        <label id="checkboxLabel" for="checkbox1">
-                            Checkbox 1 (disabled)
-                        </label>
-                        <input id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2">
-                        <label id="checkboxLabel" for="checkbox2">
-                            Checkbox 2 (default)
-                        </label>
-                        <input id="checkbox3" type="checkbox" role="checkbox" name="checkbox3" value="чекбокс3" checked>
-                        <label id="checkboxLabel" for="checkbox3">
-                            Checkbox 3 (checked)
-                        </label>
-                    </div>
-                    <pre aria-hidden="true">
-                        <code class="language-markup">
-                            &ltdiv role="group"&gt
-                                &ltinput id="checkbox1" type="checkbox" role="checkbox"
-                                       name="checkbox1" value="чекбокс1" disabled&gt
-                                &ltlabel id="checkboxLabel" for="checkbox1"&gtCheckbox 1 (disabled)&lt/label&gt
-                                &ltinput id="checkbox2" type="checkbox" role="checkbox"
-                                       name="checkbox2" value="чекбокс2"&gt
-                                &ltlabel id="checkboxLabel" for="checkbox2"&gtCheckbox 2 (default)&lt/label&gt
-                                &ltinput id="checkbox2" type="checkbox" role="checkbox"
-                                       name="checkbox3" value="чекбокс2" checked&gt
-                                &ltlabel id="checkboxLabel" for="checkbox2"&gtCheckbox 3 (checked)&lt/label&gt
-                            &lt/div&gt
-                        </code>
-                    </pre>
-                </div>
-
-                
-                <div class="form__line">
-
-                    <div class="docs-component__title">
-                        Radio
-                    </div>
-
-                    <div class="docs-component__description">
-                        <p>Элементы radio должны быть обернуты в div с role="radiogroup" и иметь атрибут role="radio", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние.</p>
-                        <p>Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.</p>
-                    </div>
-
-                    <div class="radio__field" role="radiogroup">
-                        <input id="radio1" type="radio" role="radio" name="one" value="Первый">
-                        <label id="label1" for="radio1">Первый (default)</label>
-
-                        <input id="radio2" type="radio" role="radio" name="one" value="Второй" disabled>
-                        <label id="label2" for="radio2">Второй (disabled)</label>
-
-                        <input id="radio3" type="radio" role="radio" name="one" value="Третий" checked>
-                        <label id="label3" for="radio3">Третий (checked)</label>
-                    </div>
-
-                    <pre aria-hidden="true">
-                        <code class="language-markup">
-                            &ltdiv role="radiogroup"&gt
-                                &ltinput id="radio1" type="radio" role="radio" name="first" value="Первый"&gt
-                                &ltlabel id="label1" for="radio1"&gtПервый&lt/label&gt
-
-                                &ltinput id="radio2" type="radio" role="radio" name="second" value="Второй" disabled&gt
-                                &ltlabel id="label2" for="radio2"&gtВторой&lt/label&gt
-
-                                &ltinput id="radio3" type="radio" role="radio" name="third" value="Третий" checked&gt
-                                &ltlabel id="label3" for="radio3"&gtТретий&lt/label&gt
-                            &lt/div&gt
-                        </code>
-                    </pre>
-
-                </div>
-
-                
-                <div class="form__line">
-                    <div class="docs-component__title">
-                        Submit button
-                    </div>
-
-                    <button class="button" type="submit" title="submit button">
-                        Submit
-                    </button>
-
-                    <pre aria-hidden="true">
-                        <code class="language-markup convert">
-                            <button class="button" type="submit" title="submit button">
-                                Submit
-                            </button>
-                        </code>
-                    </pre>
-                </div>
-            </form>
+                </code>
+            </pre>
         </div>
 
-        
-        <div class="docs-component" id="typography">
-            <div class="docs-component__header">
-                Typography
-            </div>
+        <div class="form__line">
 
             <div class="docs-component__title">
-                Application
+                Checkbox
             </div>
 
             <div class="docs-component__description">
-                <p>Класс Application применяется в body. Стандартный размер шрифта 18px, высота строки 1.25em. При переключении в режим маленького шрифта - 14px, большого - 22px.</p>
+                <p>Элемент checkbox должен иметь role="checkbox", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние чекбокса.</p>
+                <p>Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.</p>
             </div>
+
+            <div class="checkbox__field" role="group">
+                <input id="checkbox1" type="checkbox" role="checkbox" name="checkbox1" value="чекбокс1" disabled>
+                <label id="checkboxLabel" for="checkbox1">
+                    Checkbox 1 (disabled)
+                </label>
+                <input id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2">
+                <label id="checkboxLabel" for="checkbox2">
+                    Checkbox 2 (default)
+                </label>
+                <input id="checkbox3" type="checkbox" role="checkbox" name="checkbox3" value="чекбокс3" checked>
+                <label id="checkboxLabel" for="checkbox3">
+                    Checkbox 3 (checked)
+                </label>
+            </div>
+
+            <pre aria-hidden="true">
+                <code class="language-markup">
+                    &ltdiv role="group"&gt
+                        &ltinput id="checkbox1" type="checkbox" role="checkbox"
+                               name="checkbox1" value="чекбокс1" disabled&gt
+                        &ltlabel id="checkboxLabel" for="checkbox1"&gtCheckbox 1 (disabled)&lt/label&gt
+                        &ltinput id="checkbox2" type="checkbox" role="checkbox"
+                               name="checkbox2" value="чекбокс2"&gt
+                        &ltlabel id="checkboxLabel" for="checkbox2"&gtCheckbox 2 (default)&lt/label&gt
+                        &ltinput id="checkbox2" type="checkbox" role="checkbox"
+                               name="checkbox3" value="чекбокс2" checked&gt
+                        &ltlabel id="checkboxLabel" for="checkbox2"&gtCheckbox 3 (checked)&lt/label&gt
+                    &lt/div&gt
+                </code>
+            </pre>
+        </div>
+
+        <div class="form__line">
 
             <div class="docs-component__title">
-                Headings
+                Radio
             </div>
 
+            <div class="docs-component__description">
+                <p>Элементы radio должны быть обернуты в div с role="radiogroup" и иметь атрибут role="radio", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние.</p>
+                <p>Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.</p>
+            </div>
+
+            <div class="radio__field" role="radiogroup">
+                <input id="radio1" type="radio" role="radio" name="one" value="Первый">
+                <label id="label1" for="radio1">Первый (default)</label>
+
+                <input id="radio2" type="radio" role="radio" name="one" value="Второй" disabled>
+                <label id="label2" for="radio2">Второй (disabled)</label>
+
+                <input id="radio3" type="radio" role="radio" name="one" value="Третий" checked>
+                <label id="label3" for="radio3">Третий (checked)</label>
+            </div>
+
+            <pre aria-hidden="true">
+                <code class="language-markup">
+                    &ltdiv role="radiogroup"&gt
+                        &ltinput id="radio1" type="radio" role="radio" name="first" value="Первый"&gt
+                        &ltlabel id="label1" for="radio1"&gtПервый&lt/label&gt
+
+                        &ltinput id="radio2" type="radio" role="radio" name="second" value="Второй" disabled&gt
+                        &ltlabel id="label2" for="radio2"&gtВторой&lt/label&gt
+
+                        &ltinput id="radio3" type="radio" role="radio" name="third" value="Третий" checked&gt
+                        &ltlabel id="label3" for="radio3"&gtТретий&lt/label&gt
+                    &lt/div&gt
+                </code>
+            </pre>
+        </div>
+
+        <div class="form__line">
+            <div class="docs-component__title">
+                Submit button
+            </div>
+
+            <button class="button" type="submit" title="submit button">
+                Submit
+            </button>
+
+            <pre aria-hidden="true">
+                <code class="language-markup convert">
+                    <button class="button" type="submit" title="submit button">
+                        Submit
+                    </button>
+                </code>
+            </pre>
+        </div>
+    </form>
+</div>
+        
+
+
+<div class="docs-component" id="typography">
+    <div class="docs-component__header">
+        Typography
+    </div>
+
+    <div class="docs-component__title">
+        Application
+    </div>
+
+    <div class="docs-component__description">
+        <p>Класс Application применяется в body. Стандартный размер шрифта 18px, высота строки 1.25em. При переключении в режим маленького шрифта - 14px, большого - 22px.</p>
+    </div>
+
+    <div class="docs-component__title">
+        Headings
+    </div>
+
+    <div class="h1">Heading h1</div>
+    <div class="h2">Heading h2</div>
+    <div class="h3">Heading h3</div>
+    <div class="h4">Heading h4</div>
+    <div class="h5">Heading h5</div>
+
+    <pre aria-hidden="true">
+        <code class="language-markup convert">
             <div class="h1">Heading h1</div>
             <div class="h2">Heading h2</div>
             <div class="h3">Heading h3</div>
             <div class="h4">Heading h4</div>
             <div class="h5">Heading h5</div>
+        </code>
+    </pre>
 
-            <pre aria-hidden="true">
-                <code class="language-markup convert">
-                    <div class="h1">Heading h1</div>
-                    <div class="h2">Heading h2</div>
-                    <div class="h3">Heading h3</div>
-                    <div class="h4">Heading h4</div>
-                    <div class="h5">Heading h5</div>
-                </code>
-            </pre>
+    <div class="docs-component__title">
+        Links
+    </div>
 
-            
-            <div class="docs-component__title">
-                Links
-            </div>
+    <a href="#">Default link</a>
 
+    <div class="docs-component__description">
+        <p>Если из текста ссылки не ясно куда она ведет или ее заменяет изображение, нужно использовать aria-label, чтобы позволить скрин-ридеру озвучить подробное описание <a href="#" aria-label="Прочитайте больше новостей">[больше]</a></p>
+        <p>Если ссылка недоступна используйте aria-disabled="true", а также tabindex="-1" чтобы отключить возможность сфокусироваться на ней с помощью клавиатуры <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Ссылка disabled</a></p>
+    </div>
+
+    <pre aria-hidden="true">
+        <code class="language-markup convert">
             <a href="#">Default link</a>
+            <a href="#" aria-label="Show more news">More</a>
+            <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Disabled link</a>
+        </code>
+    </pre>
 
-            <div class="docs-component__description">
-                <p>Если из текста ссылки не ясно куда она ведет или ее заменяет изображение, нужно использовать aria-label, чтобы позволить скрин-ридеру озвучить подробное описание <a href="#" aria-label="Прочитайте больше новостей">[больше]</a></p>
-                <p>Если ссылка недоступна используйте aria-disabled="true", а также tabindex="-1" чтобы отключить возможность сфокусироваться на ней с помощью клавиатуры <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Ссылка disabled</a></p>
-            </div>
+    <div class="docs-component__title">
+        Small text
+    </div>
 
-            <pre aria-hidden="true">
-                <code class="language-markup convert">
-                    <a href="#">Default link</a>
-                    <a href="#" aria-label="Show more news">More</a>
-                    <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Disabled link</a>
-                </code>
-            </pre>
+    <small>Small text</small>
 
-            <div class="docs-component__title">
-                Small text
-            </div>
+    <pre aria-hidden="true">
+        <code class="language-markup convert">
+           <small>Small text</small>
+        </code>
+    </pre>
 
-            <small>Small text</small>
+    <div class="typography">
+        <div class="docs-component__header">
+            Typography class="typography"
+        </div>
 
-            <pre aria-hidden="true">
-                <code class="language-markup convert">
-                   <small>Small text</small>
-                </code>
-            </pre>
+        <div class="docs-component__description">
+            <p>Используются страндартные теги, заголовки имеют отступы.</p>
+        </div>
 
-            
-            <div class="typography">
-                <div class="docs-component__header">
-                    Typography class="typography"
+        <div class="docs-component__title">
+            Headings
+        </div>
+
+        <h1 class="h1">Heading h1</h1>
+        <h2 class="h2">Heading h2</h2>
+        <h3 class="h3">Heading h3</h3>
+        <h4 class="h4">Heading h4</h4>
+        <h5 class="h5">Heading h5</h5>
+
+        <pre aria-hidden="true">
+            <code class="language-markup convert">
+                <div class="typography">
+                    <h1 class="h1">Heading h1</h1>
+                    <h2 class="h2">Heading h2</h2>
+                    <h3 class="h3">Heading h3</h3>
+                    <h4 class="h4">Heading h4</h4>
+                    <h5 class="h5">Heading h5</h5>
                 </div>
+            </code>
+        </pre>
 
-                <div class="docs-component__description">
-                    <p>Используются страндартные теги, заголовки имеют отступы.</p>
-                </div>
+        <div class="docs-component__title">
+            Table with ambiguous data
+        </div>
 
-                <div class="docs-component__title">
-                    Headings
-                </div>
+        <div class="docs-component__description">
+            <p><a href="https://www.w3.org/WAI/tutorials/tables/one-header/">https://www.w3.org/WAI/tutorials/tables/one-header/</a></p>
+            <p>Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце.</p>
+        </div>
 
-                <h1 class="h1">Heading h1</h1>
-                <h2 class="h2">Heading h2</h2>
-                <h3 class="h3">Heading h3</h3>
-                <h4 class="h4">Heading h4</h4>
-                <h5 class="h5">Heading h5</h5>
+        <table>
+            <caption>Подпись к таблице:</caption>
+            <tr>
+                <th scope="col">Last Name</th>
+                <th scope="col">First Name</th>
+                <th scope="col">City</th>
+            </tr>
+            <tr>
+                <td>Phoenix</td>
+                <td>Imari</td>
+                <td>Henry</td>
+            </tr>
+            <tr>
+                <td>Zeki</td>
+                <td>Rome</td>
+                <td>Min</td>
+            </tr>
+            <tr>
+                <td>Apirka</td>
+                <td>Kelly</td>
+                <td>Brynn</td>
+            </tr>
+        </table>
 
-                <pre aria-hidden="true">
-                    <code class="language-markup convert">
-                        <div class="typography">
-                            <h1 class="h1">Heading h1</h1>
-                            <h2 class="h2">Heading h2</h2>
-                            <h3 class="h3">Heading h3</h3>
-                            <h4 class="h4">Heading h4</h4>
-                            <h5 class="h5">Heading h5</h5>
-                        </div>
-                    </code>
-                </pre>
+        <pre aria-hidden="true">
+            <code class="language-markup">
+                &ltdiv class="typography"&gt
+                    &lttable&gt
+                        &ltcaption&gtПодпись к таблице:&lt/caption&gt
+                        &lttr&gt
+                            &ltth scope="col"&gtLast Name&lt/th&gt
+                            &ltth scope="col"&gtFirst Name&lt/th&gt
+                            &ltth scope="col"&gtCity&lt/th&gt
+                        &lt/tr&gt
+                        &lttr&gt
+                            &lttd&gtPhoenix&lt/td&gt
+                            &lttd&gtImari&lt/td&gt
+                            &lttd&gtHenry&lt/td&gt
+                        &lt/tr&gt
+                        &lttr&gt
+                            &lttd&gtZeki&lt/td&gt
+                            &lttd&gtRome&lt/td&gt
+                            &lttd&gtMin&lt/td&gt
+                        &lt/tr&gt
+                        &lttr&gt
+                            &lttd&gtApirka&lt/td&gt
+                            &lttd&gtKelly&lt/td&gt
+                            &lttd&gtBrynn&lt/td&gt
+                        &lt/tr&gt
+                    &lt/table&gt
+                &lt/div&gt
+            </code>
+        </pre>
 
-                
-                <div class="docs-component__title">
-                    Table with ambiguous data
-                </div>
+        <div class="docs-component__title">
+            Таблица с двумя заголовками
+        </div>
 
-                <div class="docs-component__description">
-                    <p><a href="https://www.w3.org/WAI/tutorials/tables/one-header/">https://www.w3.org/WAI/tutorials/tables/one-header/</a></p>
-                    <p>Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце.</p>
-                </div>
+        <div class="docs-component__description">
+            <p>Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце.</p>
+            <p>Атрибут scope с значением row связывает каждую ячейку в столбце с заголовками с данными в строке.</p>
+        </div>
 
-                <table>
-                    <caption>Подпись к таблице:</caption>
-                    <tr>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">First Name</th>
-                        <th scope="col">City</th>
-                    </tr>
-                    <tr>
-                        <td>Phoenix</td>
-                        <td>Imari</td>
-                        <td>Henry</td>
-                    </tr>
-                    <tr>
-                        <td>Zeki</td>
-                        <td>Rome</td>
-                        <td>Min</td>
-                    </tr>
-                    <tr>
-                        <td>Apirka</td>
-                        <td>Kelly</td>
-                        <td>Brynn</td>
-                    </tr>
-                </table>
+        <table>
+            <caption>Delivery slots:</caption>
+            <tr>
+                <td></td>
+                <th scope="col">Monday</th>
+                <th scope="col">Tuesday</th>
+                <th scope="col">Wednesday</th>
+                <th scope="col">Thursday</th>
+                <th scope="col">Friday</th>
+            </tr>
+            <tr>
+                <th scope="row">09:00 - 11:00</th>
+                <td>Closed</td>
+                <td>Open</td>
+                <td>Open</td>
+                <td>Closed</td>
+                <td>Closed</td>
+            </tr>
+            <tr>
+                <th scope="row">11:00 - 13:00</th>
+                <td>Open</td>
+                <td>Open</td>
+                <td>Closed</td>
+                <td>Closed</td>
+                <td>Closed</td>
+            </tr>
+        </table>
 
-                <pre aria-hidden="true">
-                    <code class="language-markup">
-                        &ltdiv class="typography"&gt
-                            &lttable&gt
-                                &ltcaption&gtПодпись к таблице:&lt/caption&gt
-                                &lttr&gt
-                                    &ltth scope="col"&gtLast Name&lt/th&gt
-                                    &ltth scope="col"&gtFirst Name&lt/th&gt
-                                    &ltth scope="col"&gtCity&lt/th&gt
-                                &lt/tr&gt
-                                &lttr&gt
-                                    &lttd&gtPhoenix&lt/td&gt
-                                    &lttd&gtImari&lt/td&gt
-                                    &lttd&gtHenry&lt/td&gt
-                                &lt/tr&gt
-                                &lttr&gt
-                                    &lttd&gtZeki&lt/td&gt
-                                    &lttd&gtRome&lt/td&gt
-                                    &lttd&gtMin&lt/td&gt
-                                &lt/tr&gt
-                                &lttr&gt
-                                    &lttd&gtApirka&lt/td&gt
-                                    &lttd&gtKelly&lt/td&gt
-                                    &lttd&gtBrynn&lt/td&gt
-                                &lt/tr&gt
-                            &lt/table&gt
-                        &lt/div&gt
-                    </code>
-                </pre>
+        <pre aria-hidden="true">
+            <code class="language-markup">
+                &ltdiv class="typography"&gt
+                     &lttable&gt
+                        &ltcaption&gtDelivery slots:&lt/caption&gt
+                        &lttr&gt
+                            &lttd&gt&lt/td&gt
+                            &ltth scope="col"&gtMonday&lt/th&gt
+                            &ltth scope="col"&gtTuesday&lt/th&gt
+                            &ltth scope="col"&gtWednesday&lt/th&gt
+                            &ltth scope="col"&gtThursday&lt/th&gt
+                            &ltth scope="col"&gtFriday&lt/th&gt
+                        &lt/tr&gt
+                        &lttr&gt
+                            &ltth scope="row"&gt09:00 - 11:00&lt/th&gt
+                            &lttd&gtClosed&lt/td&gt
+                            &lttd&gtOpen&lt/td&gt
+                            &lttd&gtOpen&lt/td&gt
+                            &lttd&gtClosed&lt/td&gt
+                            &lttd&gtClosed&lt/td&gt
+                        &lt/tr&gt
+                        &lttr&gt
+                            &ltth scope="row"&gt11:00 - 13:00&lt/th&gt
+                            &lttd&gtOpen&lt/td&gt
+                            &lttd&gtOpen&lt/td&gt
+                            &lttd&gtClosed&lt/td&gt
+                            &lttd&gtClosed&lt/td&gt
+                            &lttd&gtClosed&lt/td&gt
+                        &lt/tr&gt
+                    &lt/table&gt
+                &lt/div&gt
+            </code>
+        </pre>
 
-                
-                <div class="docs-component__title">
-                    Таблица с двумя заголовками
-                </div>
+        <div class="docs-component__title">
+            Таблица с неравномерными заголовками
+        </div>
 
-                <div class="docs-component__description">
-                    <p>Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце.</p>
-                    <p>Атрибут scope с значением row связывает каждую ячейку в столбце с заголовками с данными в строке.</p>
-                </div>
+        <div class="docs-component__description">
+            <p>Атрибут scope"colgroup" связывает ячейки с заголовками первого уровня со всей группой столбцов</p>
+            <p>Заголовки второго уровня связываются только с соответсвующими колонками с помощью атрибута scope="col"</p>
+        </div>
 
-                <table>
-                    <caption>Delivery slots:</caption>
-                    <tr>
-                        <td></td>
-                        <th scope="col">Monday</th>
-                        <th scope="col">Tuesday</th>
-                        <th scope="col">Wednesday</th>
-                        <th scope="col">Thursday</th>
-                        <th scope="col">Friday</th>
-                    </tr>
-                    <tr>
-                        <th scope="row">09:00 - 11:00</th>
-                        <td>Closed</td>
-                        <td>Open</td>
-                        <td>Open</td>
-                        <td>Closed</td>
-                        <td>Closed</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">11:00 - 13:00</th>
-                        <td>Open</td>
-                        <td>Open</td>
-                        <td>Closed</td>
-                        <td>Closed</td>
-                        <td>Closed</td>
-                    </tr>
-                </table>
+        <table>
+            <caption>Планеты:</caption>
+            <col>
+            <colgroup span="2"></colgroup>
+            <colgroup span="2"></colgroup>
+            <tr>
+                <td rowspan="2"></td>
+                <th colspan="2" scope="colgroup">Mars</th>
+                <th colspan="2" scope="colgroup">Venus</th>
+            </tr>
+            <tr>
+                <th scope="col">Produced</th>
+                <th scope="col">Sold</th>
+                <th scope="col">Produced</th>
+                <th scope="col">Sold</th>
+            </tr>
+            <tr>
+                <th scope="row">Teddy Bears</th>
+                <td>50,000</td>
+                <td>30,000</td>
+                <td>100,000</td>
+                <td>80,000</td>
+            </tr>
+            <tr>
+                <th scope="row">Board Games</th>
+                <td>10,000</td>
+                <td>5,000</td>
+                <td>12,000</td>
+                <td>9,000</td>
+            </tr>
+        </table>
 
-                <pre aria-hidden="true">
-                    <code class="language-markup">
-                        &ltdiv class="typography"&gt
-                             &lttable&gt
-                                &ltcaption&gtDelivery slots:&lt/caption&gt
-                                &lttr&gt
-                                    &lttd&gt&lt/td&gt
-                                    &ltth scope="col"&gtMonday&lt/th&gt
-                                    &ltth scope="col"&gtTuesday&lt/th&gt
-                                    &ltth scope="col"&gtWednesday&lt/th&gt
-                                    &ltth scope="col"&gtThursday&lt/th&gt
-                                    &ltth scope="col"&gtFriday&lt/th&gt
-                                &lt/tr&gt
-                                &lttr&gt
-                                    &ltth scope="row"&gt09:00 - 11:00&lt/th&gt
-                                    &lttd&gtClosed&lt/td&gt
-                                    &lttd&gtOpen&lt/td&gt
-                                    &lttd&gtOpen&lt/td&gt
-                                    &lttd&gtClosed&lt/td&gt
-                                    &lttd&gtClosed&lt/td&gt
-                                &lt/tr&gt
-                                &lttr&gt
-                                    &ltth scope="row"&gt11:00 - 13:00&lt/th&gt
-                                    &lttd&gtOpen&lt/td&gt
-                                    &lttd&gtOpen&lt/td&gt
-                                    &lttd&gtClosed&lt/td&gt
-                                    &lttd&gtClosed&lt/td&gt
-                                    &lttd&gtClosed&lt/td&gt
-                                &lt/tr&gt
-                            &lt/table&gt
-                        &lt/div&gt
-                    </code>
-                </pre>
+         <pre aria-hidden="true">
+            <code class="language-markup">
+                &ltdiv class="typography"&gt
+                     &lttable&gt
+                        &ltcaption&gtПланеты:&lt/caption&gt
+                        &ltcol&gt
+                        &ltcolgroup span="2"&gt&lt/colgroup&gt
+                        &ltcolgroup span="2"&gt&lt/colgroup&gt
+                        &lttr&gt
+                            &lttd rowspan="2"&gt&lt/td&gt
+                            &ltth colspan="2" scope="colgroup"&gtMars&lt/th&gt
+                            &ltth colspan="2" scope="colgroup"&gtVenus&lt/th&gt
+                        &lt/tr&gt
+                        &lttr&gt
+                            &ltth scope="col"&gtProduced&lt/th&gt
+                            &ltth scope="col"&gtSold&lt/th&gt
+                            &ltth scope="col"&gtProduced&lt/th&gt
+                            &ltth scope="col"&gtSold&lt/th&gt
+                        &lt/tr&gt
+                        &lttr&gt
+                            &ltth scope="row"&gtTeddy Bears&lt/th&gt
+                            &lttd&gt50,000&lt/td&gt
+                            &lttd&gt30,000&lt/td&gt
+                            &lttd&gt100,000&lt/td&gt
+                            &lttd&gt80,000&lt/td&gt
+                        &lt/tr&gt
+                        &lttr&gt
+                            &ltth scope="row"&gtBoard Games&lt/th&gt
+                            &lttd&gt10,000&lt/td&gt
+                            &lttd&gt5,000&lt/td&gt
+                            &lttd&gt12,000&lt/td&gt
+                            &lttd&gt9,000&lt/td&gt
+                        &lt/tr&gt
+                    &lt/table&gt
+                &lt/div&gt
+            </code>
+        </pre>
 
-                
-                <div class="docs-component__title">
-                    Таблица с неравномерными заголовками
-                </div>
+        <div class="docs-component__title">
+            Blockquotes
+        </div>
 
-                <div class="docs-component__description">
-                    <p>Атрибут scope"colgroup" связывает ячейки с заголовками первого уровня со всей группой столбцов</p>
-                    <p>Заголовки второго уровня связываются только с соответсвующими колонками с помощью атрибута scope="col"</p>
-                </div>
+        <br>
 
-                <table>
-                    <caption>Планеты:</caption>
-                    <col>
-                    <colgroup span="2"></colgroup>
-                    <colgroup span="2"></colgroup>
-                    <tr>
-                        <td rowspan="2"></td>
-                        <th colspan="2" scope="colgroup">Mars</th>
-                        <th colspan="2" scope="colgroup">Venus</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Produced</th>
-                        <th scope="col">Sold</th>
-                        <th scope="col">Produced</th>
-                        <th scope="col">Sold</th>
-                    </tr>
-                    <tr>
-                        <th scope="row">Teddy Bears</th>
-                        <td>50,000</td>
-                        <td>30,000</td>
-                        <td>100,000</td>
-                        <td>80,000</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Board Games</th>
-                        <td>10,000</td>
-                        <td>5,000</td>
-                        <td>12,000</td>
-                        <td>9,000</td>
-                    </tr>
-                </table>
+        <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, corporis.</q>
 
-                 <pre aria-hidden="true">
-                    <code class="language-markup">
-                        &ltdiv class="typography"&gt
-                             &lttable&gt
-                                &ltcaption&gtПланеты:&lt/caption&gt
-                                &ltcol&gt
-                                &ltcolgroup span="2"&gt&lt/colgroup&gt
-                                &ltcolgroup span="2"&gt&lt/colgroup&gt
-                                &lttr&gt
-                                    &lttd rowspan="2"&gt&lt/td&gt
-                                    &ltth colspan="2" scope="colgroup"&gtMars&lt/th&gt
-                                    &ltth colspan="2" scope="colgroup"&gtVenus&lt/th&gt
-                                &lt/tr&gt
-                                &lttr&gt
-                                    &ltth scope="col"&gtProduced&lt/th&gt
-                                    &ltth scope="col"&gtSold&lt/th&gt
-                                    &ltth scope="col"&gtProduced&lt/th&gt
-                                    &ltth scope="col"&gtSold&lt/th&gt
-                                &lt/tr&gt
-                                &lttr&gt
-                                    &ltth scope="row"&gtTeddy Bears&lt/th&gt
-                                    &lttd&gt50,000&lt/td&gt
-                                    &lttd&gt30,000&lt/td&gt
-                                    &lttd&gt100,000&lt/td&gt
-                                    &lttd&gt80,000&lt/td&gt
-                                &lt/tr&gt
-                                &lttr&gt
-                                    &ltth scope="row"&gtBoard Games&lt/th&gt
-                                    &lttd&gt10,000&lt/td&gt
-                                    &lttd&gt5,000&lt/td&gt
-                                    &lttd&gt12,000&lt/td&gt
-                                    &lttd&gt9,000&lt/td&gt
-                                &lt/tr&gt
-                            &lt/table&gt
-                        &lt/div&gt
-                    </code>
-                </pre>
-
-                <div class="docs-component__title">
-                    Blockquotes
-                </div>
-
-                <br>
-
+        <pre aria-hidden="true">
+            <code class="language-markup convert">
                 <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, corporis.</q>
+            </code>
+        </pre>
 
-                <pre aria-hidden="true">
-                    <code class="language-markup convert">
-                        <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, corporis.</q>
-                    </code>
-                </pre>
+        <div class="docs-component__title">
+            Lists
+        </div>
 
-                <div class="docs-component__title">
-                    Lists
-                </div>
-
+        <ul>
+            <li>Lorem ipsum.</li>
+            <li>Lorem ipsum dolor sit.
                 <ul>
-                    <li>Lorem ipsum.</li>
-                    <li>Lorem ipsum dolor sit.
-                        <ul>
-                            <li>Lorem ipsum dolor.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                        </ul>
-                    </li>
                     <li>Lorem ipsum dolor.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
                 </ul>
-                <ol>
-                    <li>Lorem ipsum.</li>
-                    <li>Lorem ipsum dolor sit.
-                        <ul>
-                            <li>Lorem ipsum dolor.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                        </ul>
-                    </li>
+            </li>
+            <li>Lorem ipsum dolor.</li>
+        </ul>
+
+        <ol>
+            <li>Lorem ipsum.</li>
+            <li>Lorem ipsum dolor sit.
+                <ul>
                     <li>Lorem ipsum dolor.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                </ul>
+            </li>
+            <li>Lorem ipsum dolor.</li>
+        </ol>
+
+        <pre aria-hidden="true">
+            <code class="language-markup convert">
+                <ul>
+                    <li>...</li>
+                </ul>
+            </code>
+        </pre>
+
+        <pre aria-hidden="true">
+            <code class="language-markup convert">
+                <ol>
+                    <li>...</li>
                 </ol>
-                <pre aria-hidden="true">
-                    <code class="language-markup convert">
-                        <ul>
-                            <li>...</li>
-                        </ul>
-                    </code>
-                </pre>
-                <pre aria-hidden="true">
-                    <code class="language-markup convert">
-                        <ol>
-                            <li>...</li>
-                        </ol>
-                    </code>
-                </pre>
-            </div>
-        </div>
-
+            </code>
+        </pre>
+    </div>
+</div>
         
         
         
         
         
-        <div id="images" class="docs-component">
-            <div class="docs-component__header">
-                Images
-            </div>
+        
 
-            <div class="docs-component__description">
-                <p>
-                    <a href="#">https://www.w3.org/WAI/tutorials/images/</a>
-                </p>
-                <p>
-                    Все изображения с помощью JavaScript оборачиваются блоком class="image-alt". Он существует для визуального отображения содержимого атрибута alt="image alt text" у скрытого через панель управления изображения.
-                </p>
-                <p>
-                    <img alt="image alt text"
-                         src="https://placeholdit.imgix.net/~text?txtsize=33&txt=320%C3%97320&w=320&h=320">
-                </p>
-                <p>
-                    Before:
-                </p>
-            </div>
+<div id="images" class="docs-component">
+    <div class="docs-component__header">
+        Images
+    </div>
 
-            <pre aria-hidden="true">
-                <code class="language-markup convert">
-                    <img src="..." alt="image alt text" width="320" height="320"/>
-                </code>
-            </pre>
+    <div class="docs-component__description">
+        <p><a href="#">https://www.w3.org/WAI/tutorials/images/</a></p>
+        <p>Все изображения с помощью JavaScript оборачиваются блоком class="image-alt". Он существует для визуального отображения содержимого атрибута alt="image alt text" у скрытого через панель управления изображения.</p>
+        <p>
+            <img alt="image alt text"
+                 src="https://placeholdit.imgix.net/~text?txtsize=33&txt=320%C3%97320&w=320&h=320">
+        </p>
+        <p>Before:</p>
+    </div>
 
-            <div class="docs-components__description">
-                <p>After JS wrapper:</p>
-            </div>
+    <pre aria-hidden="true">
+        <code class="language-markup convert">
+            <img src="..." alt="image alt text" width="320" height="320"/>
+        </code>
+    </pre>
 
-            <pre aria-hidden="true">
-                <code class="language-markup convert">
-                    <span class="image-alt image-alt_active" style="width: 320px; height: 320px;">
-                        <img alt="image alt text" src="..." style="visibility: hidden;">
-                        <span class="image-alt__text">image alt text</span>
-                    </span>
-                </code>
-            </pre>
-        </div>
+    <div class="docs-components__description">
+        <p>After JS wrapper:</p>
+    </div>
+
+    <pre aria-hidden="true">
+        <code class="language-markup convert">
+            <span class="image-alt image-alt_active" style="width: 320px; height: 320px;">
+                <img alt="image alt text" src="..." style="visibility: hidden;">
+                <span class="image-alt__text">image alt text</span>
+            </span>
+        </code>
+    </pre>
+</div>
 
     </div>
     <div class="col-md-2 pull-left">

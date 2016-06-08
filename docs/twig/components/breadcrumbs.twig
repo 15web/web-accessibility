@@ -1,0 +1,50 @@
+{# Breadcrumbs #}
+{# @TODO: Перевести описание на английский. #}
+
+<div id="breadCrumbs" class="docs-component">
+    <div class="docs-component__header">
+        Breadcrumbs
+    </div>
+
+    <div class="components__description">
+        <p>Хлебные крошки выполняются с помощью тега nav, также указывается aria-label с описанием.</p>
+        <p>В качестве разделителя между элементами списка вставляется span с атрибутом aria-hidden="true" для того, чтобы скрин-ридеры не прочитывали этот символ.</p>
+    </div>
+
+    <nav class="breadcrumbs" aria-label="хлебные крошки">
+        <ul>
+            <li class="breadcrumbs__item">
+                <a href="#">Home</a>
+            </li>
+            <span class="breadcrumbs__separator" aria-hidden="true"></span>
+            <li class="breadcrumbs__item">
+                <a href="#" title="2014 year">Articles</a>
+            </li>
+            <span class="breadcrumbs__separator" aria-hidden="true"></span>
+            <li class="breadcrumbs__item">
+                <span>Article</span>
+            </li>
+        </ul>
+    </nav>
+
+    <pre>
+        <code class="language-markup convert">
+            <nav class="breadcrumbs" aria-label="Articles navigation">
+                <ul>
+                    <li class="breadcrumbs__item">
+                        <a href="#">Home</a>
+                    </li>
+                    <span class="breadcrumbs__separator" aria-hidden="true"></span>
+                    <li class="breadcrumbs__item">
+                        <a href="#" title="2014 year">Articles</a>
+                    </li>
+                    <span class="breadcrumbs__separator" aria-hidden="true"></span>
+                    <li class="breadcrumbs__item">
+                        <span>Article</span>
+                    </li>
+                    <span class="breadcrumbs__separator" aria-hidden="true"></span>
+                </ul>
+            </nav>
+        </code>
+    </pre>
+</div>
