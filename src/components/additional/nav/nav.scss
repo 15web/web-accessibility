@@ -36,9 +36,10 @@
         }
     }
 
+    // @TODO: Избавиться от important.
     &__item_active > .nav__link {
         background: #ffa;
-        color: #BF1722;
+        color: #bf1722 !important;
     }
 
     // Theme black

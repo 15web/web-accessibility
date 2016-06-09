@@ -46,10 +46,10 @@
     </nav>
 
     <div class="docs-control-panel control-panel">
-    <div class="control-panel__wrapper row">
+    <div class="row">
         <div class="col-xs-4">
-            <label for="fontSize">Font size:</label>
-            <select id="fontSize" class="control-panel__select-text select">
+            <label for="font-size">Font size:</label>
+            <select id="font-size" class="control-panel__select-text select">
                 <option value="small">
                     Small
                 </option>
@@ -62,8 +62,8 @@
             </select>
         </div>
         <div class="col-xs-4">
-            <label for="siteColor">Color scheme:</label>
-            <select id="siteColor" class="control-panel__select-color select">
+            <label for="color-scheme">Color scheme:</label>
+            <select id="color-scheme" class="control-panel__select-color select">
                 <option value="white">
                     White
                 </option>
@@ -73,8 +73,8 @@
             </select>
         </div>
         <div class="col-xs-4">
-            <label for="siteImages">Images:</label>
-            <select id="siteImages" class="control-panel__select-image select">
+            <label for="images">Images:</label>
+            <select id="images" class="control-panel__select-image select">
                 <option value="visible">
                     Enable
                 </option>
@@ -129,7 +129,100 @@
 
     <div class="typography">
         <h2>Control Panel</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, impedit vitae. Ab architecto culpa dignissimos, doloremque dolores earum, eum facere fugit id iste laborum magnam minima odio pariatur perferendis quae quia reprehenderit repudiandae sit tenetur! A animi, eveniet fuga incidunt minus obcaecati omnis placeat quas sed! Ea nihil suscipit tenetur?</p>
+        <p>Панель управления служит для управления оформлением библиотеки. С ее помощью можно изменять размеры шрифтов, цветовые схемы компонентов и скрывать изображения.</p>
+    </div>
+
+    <div class="docs-example">
+        <div class="docs-example__view">
+
+            <div class="control-panel">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <label>Font size:</label>
+                        <select class="control-panel__select-text select" disabled>
+                            <option value="small">
+                                Small
+                            </option>
+                            <option value="normal">
+                                Medium
+                            </option>
+                            <option value="large">
+                                Large
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-xs-4">
+                        <label>Color scheme:</label>
+                        <select class="control-panel__select-color select" disabled>
+                            <option value="white">
+                                White
+                            </option>
+                            <option value="black">
+                                Black
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-xs-4">
+                        <label>Images:</label>
+                        <select class="control-panel__select-image select" disabled>
+                            <option value="visible">
+                                Enable
+                            </option>
+                            <option value="hidden">
+                                Disabled
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <pre class="docs-example__code" aria-hidden="true">
+            <code class="language-markup convert">
+
+                <div class="control-panel">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <label>Font size:</label>
+                            <select class="control-panel__select-text select">
+                                <option value="small">
+                                    Small
+                                </option>
+                                <option value="normal">
+                                    Medium
+                                </option>
+                                <option value="large">
+                                    Large
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-xs-4">
+                            <label>Color scheme:</label>
+                            <select class="control-panel__select-color select">
+                                <option value="white">
+                                    White
+                                </option>
+                                <option value="black">
+                                    Black
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-xs-4">
+                            <label>Images:</label>
+                            <select class="control-panel__select-image select">
+                                <option value="visible">
+                                    Enable
+                                </option>
+                                <option value="hidden">
+                                    Disabled
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </code>
+        </pre>
     </div>
 
 </div>

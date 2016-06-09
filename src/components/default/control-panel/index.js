@@ -85,19 +85,24 @@ class ControlPanel {
 
     wrapImageAlt() {
 
-        $('img').not('code img').each(function() {
+        $(document).ready(function() {
 
-            var alt = $(this).attr('alt'),
-                width = $(this).width(),
-                height = $(this).height();
+            $('img').not('code img').each(function() {
 
-            $(this).wrap(`<span class="image-alt" style="width: ${width}px; height: ${height}px;"/>`);
+                var alt = $(this).attr('alt'),
+                    width = $(this).width(),
+                    height = $(this).height();
 
-            if (alt != '') {
-                $(this).after(`<span class="image-alt__text">${alt}</span>`);
-            } else {
-                $(this).after('<span class="image-alt__text">Описание отсутствует</span>');
-            }
+                $(this).wrap(`<span class="image-alt" style="width: ${width}px; height: ${height}px;"/>`);
+
+                // @TODO: Нужна ли эта проверка? А проверять на role?
+                if (alt != '') {
+                    $(this).after(`<span class="image-alt__text">${alt}</span>`);
+                } else {
+                    $(this).after('<span class="image-alt__text">Описание отсутствует</span>');
+                }
+
+            });
 
         });
 

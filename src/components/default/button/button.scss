@@ -15,6 +15,14 @@
 
     text-align: center;
 
+    &:focus,&:hover {
+        outline: 3px solid #0000cc;
+    }
+
+    &_block {
+        display: block;
+        width: 100%;
+    }
 
     a {
         color: #fff !important;
@@ -22,10 +30,6 @@
 
         text-decoration: none !important;
         outline: none !important;
-    }
-
-    &:focus,&:hover {
-        outline: 3px solid #0000cc;
     }
 
     // Theme black
@@ -46,10 +50,4 @@
             outline: 3px solid #BF1722;
         }
     }
-}
-
-// @TODO: Не правильный класс.
-.button-block {
-    display: block;
-    padding:0;
 }

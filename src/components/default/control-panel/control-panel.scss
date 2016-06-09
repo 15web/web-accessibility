@@ -5,16 +5,14 @@
 @import "../../config";
 
 .control-panel {
+    padding: 10px 20px;
+
     font-size: 18px;
 
     color: #fff;
 
     background: #ccc;
     z-index: 999;
-
-    &__wrapper {
-        padding: 10px 20px;
-    }
 
     // Theme black
 
