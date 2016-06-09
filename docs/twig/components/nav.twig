@@ -1,58 +1,62 @@
 {# Nav #}
 {# @TODO: Перевести описание на английский. #}
+{# @TODO: Сделать пример кода без преобразования HTML символов. #}
 
 <div id="horizontalNav" class="docs-component">
-    <div class="docs-component__header">
-        Nav
-    </div>
 
-    <div class="docs-component__description">
+    <div class="typography">
+        <h2>Nav</h2>
         <p>Навигация выполняется с помощью тега nav, также указывается aria-label с описанием.</p>
         <p>Желательное делать навигацию в виде списка. Из текста ссылок должно быть ясно куда они ведут.</p>
     </div>
 
-    <nav class="nav" role="navigation" aria-label="horizontal navigation">
-        <ul>
-            <li>
-                <a href="#" title="company information">
-                    Item 1
-                </a>
-            </li>
-            <li>
-                <a href="#" title="contacts information">
-                    Item 2
-                </a>
-            </li>
-            <li>
-                <a href="#" title="documents example">
-                    Item 3
-                </a>
-            </li>
-        </ul>
-    </nav>
+    <div class="docs-example">
+        <div class="docs-example__view">
 
-    <pre>
-        <code class="language-markup">
-            &lt;nav class="nav" role="navigation" aria-label="horizontal navigation"&gt;
-                &lt;ul&gt;
-                    &lt;li&gt;
-                        &lt;a href="#" title="company information"&gt;
+            <nav class="nav" role="navigation" aria-label="horizontal navigation">
+                <ul>
+                    <li class="nav__item nav__item_active">
+                        <a class="nav__link" href="#" title="company information">
                             Item 1
-                        &lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li&gt;
-                        &lt;a href="#" title="contacts information"&gt;
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="#" title="contacts information">
                             Item 2
-                        &lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li&gt;
-                        &lt;a href="#" title="documents example"&gt;
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="#" title="documents example">
                             Item 3
-                        &lt;/a&gt;
-                    &lt;/li&gt;
-                    ...
-                &lt;/ul&gt;
-            &lt;/nav&gt;
-        </code>
-    </pre>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+        <pre class="docs-example__code">
+            <code class="language-markup">
+                &lt;nav class="nav" role="navigation" aria-label="horizontal navigation"&gt;
+                    &lt;ul&gt;
+                        &lt;li class="nav__item nav__item_active"&gt;
+                            &lt;a class="nav__link" href="#" title="company information"&gt;
+                                Item 1
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav__item"&gt;
+                            &lt;a class="nav__link" href="#" title="contacts information"&gt;
+                                Item 2
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav__item"&gt;
+                            &lt;a class="nav__link" href="#" title="documents example"&gt;
+                                Item 3
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        ...
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            </code>
+        </pre>
+    </div>
 </div>

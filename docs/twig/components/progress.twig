@@ -1,48 +1,45 @@
 {# Progress bar #}
 {# @TODO: Перевести описание на английский. #}
-{# @TODO: Зачем на прогресс бар двух размеров? #}
 
-<div id="progressBar" class="docs-component">
-    <div class="docs-component__header" >
-        Progress bar
-    </div>
+<div id="progressBar">
 
-    <div class="docs-component__description">
+    <div class="typography">
+        <h2>Progress bar</h2>
         <p>Линия прогресса указывает, что пользователь совершил действие и приложение обрабатывает его запрос. Чтобы человек с ограниченными возможностями мог получить информацию о ходе операции используются специальные атрибуты.</p>
         <p>role="progressbar" указывает скрин-ридеру, что это индикатор прогресса. aria-valuenow - текущее значение, aria-valuemin - минимальное, aria-valuemax - максимальное, tabindex - для того, чтобы можно было сфокусироваться на элементе.</p>
     </div>
 
-    <h3>Обычный прогресс бар</h3>
+    <div class="docs-example">
+        <div class="docs-example__view">
 
-    <div class="progress">
-        <div class="progress-val" id="progressTest" style="width: 35%" role="progressbar" data-value="35"
-             aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" tabindex="0">
-            <div class="progress-counter">35%</div>
+            <div class="progress">
+                <div class="progress__value"
+                     style="width: 35%"
+                     role="progressbar"
+                     data-value="35"
+                     aria-valuenow="35"
+                     aria-valuemin="0"
+                     aria-valuemax="100"
+                     tabindex="0">
+                    <div class="progress__counter">35%</div>
+                </div>
+            </div>
+
         </div>
-    </div>
-
-    <br>
-
-    <button id="progressTestBtn" class="button">Test</button>
-
-    <h3>Большой прогресс бар</h3>
-
-    <div class="progress progress_big">
-        <div class="progress-val" style="width: 45%" role="progressbar" aria-valuenow="45" aria-valuemin="0"
-             aria-valuemax="100" tabindex="0">
-            <div class="progress-counter">45%</div>
-        </div>
-    </div>
-
-    <pre>
-        <code class="language-markup">
-            &ltdiv class="progress progress_big"&gt
-                &ltdiv class="progress-val" style="width: 45%"
-                     role="progressbar" aria-valuenow="45" aria-valuemin="0"
-                     aria-valuemax="100" tabindex="0"&gt
-                    &ltdiv class="progress-counter"&gt45%&lt/div&gt
+        <pre class="docs-example__code">
+            <code class="language-markup">
+                &ltdiv class="progress"&gt
+                    &ltdiv class="progress__val"
+                         style="width: 45%"
+                         role="progressbar"
+                         aria-valuenow="45"
+                         aria-valuemin="0"
+                         aria-valuemax="100"
+                         tabindex="0"&gt
+                        &ltdiv class="progress__counter"&gt45%&lt/div&gt
+                    &lt/div&gt
                 &lt/div&gt
-            &lt/div&gt
-        </code>
-    </pre>
+            </code>
+        </pre>
+    </div>
 </div>

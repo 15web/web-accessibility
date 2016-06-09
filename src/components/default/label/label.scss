@@ -1,23 +1,32 @@
+// ==========================================================================
+// Label
+// @TODO: Проверить точность шрифтов и отступов. Откуда такие параметры?
+// ==========================================================================
+
 .label {
     display: inline;
     padding: .2em .6em .3em;
-    font-size: 75%;
-    font-weight: 700;
-    line-height: 1;
-    background: black;
+    margin-bottom: 1px;
+
     color: #fff;
+    font-size: 75%;
+    line-height: 1;
+    font-weight: 700;
     text-align: center;
     white-space: nowrap;
+
+    background: black;
+
     vertical-align: baseline;
-    margin-bottom: 1px;
 }
+
 // ==========================================================================
 // Theme black
 // ==========================================================================
 
 .application[data-color="black"] {
-.label {
-    background: white;
-    color: black;
-}
+    .label {
+        background: white;
+        color: black;
+    }
 }

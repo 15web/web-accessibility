@@ -1,46 +1,33 @@
+// ==========================================================================
+// Panels
+// ==========================================================================
 
 .panel {
     margin-bottom: 20px;
     background-color: #ffffff;
     border: 1px solid black;
-}
 
-.panel-body {
-    padding: 15px;
-}
+    .panel__heading {
+        padding: 10px 15px;
 
-.panel-heading {
-    padding: 10px 15px;
-    border-bottom: 1px solid transparent;
-    border-top-right-radius: 3px;
-    border-top-left-radius: 3px;
-    background-color: black;
-    color: white;
-    border-color: black;
-}
+        color: white;
 
-.panel-footer {
-    padding: 10px 15px;
-    background-color: black;
-    color: white;
-    border-top: 1px solid black;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-}
+        background-color: black;
+        border-color: black;
+    }
 
-.panel-title {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 16px;
-    color: inherit;
-}
+    .panel__body {
+        padding: 15px;
+    }
 
-.panel-title > a,
-.panel-title > small,
-.panel-title > .small,
-.panel-title > small > a,
-.panel-title > .small > a {
-    color: inherit;
+    .panel__footer {
+        padding: 10px 15px;
+
+        color: white;
+
+        background-color: black;
+        border-top: 1px solid black;
+    }
 }
 
 // ==========================================================================
@@ -48,22 +35,25 @@
 // ==========================================================================
 
 .application[data-color="black"] {
+
     .panel {
         background-color: black;
         border: 1px solid white;
-    }
-    .panel-body {
-    }
-    .panel-heading {
-        background-color: white;
-        color: black;
-        border-color: white;
-    }
-    .panel-footer {
-        background-color: white;
-        color: black;
-        border-top: 1px solid white;
 
+        .panel__heading {
+            color: black;
+
+            background-color: white;
+            border-color: white;
+        }
+
+        .panel__footer {
+            color: black;
+
+            border-top: 1px solid white;
+            background-color: white;
+        }
     }
+
 }
 

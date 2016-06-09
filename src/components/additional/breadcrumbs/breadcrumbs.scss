@@ -1,7 +1,12 @@
+// ==========================================================================
+// Breadcrumbs
+// ==========================================================================
+
 @import "../../config";
 
 .breadcrumbs {
     margin-bottom: 20px;
+
     font-size: 1.2em;
     line-height: 1.325em;
 
@@ -37,10 +42,10 @@
 // ==========================================================================
 
 .application[data-color="black"] {
-.breadcrumbs {
-    a {
-        @include link-typography(true);
+    .breadcrumbs {
+        a {
+            @include link-typography(true);
+        }
     }
-}
 }
 

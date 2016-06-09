@@ -1,9 +1,13 @@
+// ==========================================================================
+// Progress bar
+// ==========================================================================
+
 .progress {
     height: 0.8em;
     line-height: 0.8em;
     position: relative;
 
-    &-val {
+    &__value {
         height: 100%;
 
 
@@ -14,7 +18,7 @@
         background-color: black;
     }
 
-    &-counter {
+    &__counter {
         margin-left: 0.3em;
 
         position: absolute;
@@ -22,11 +26,6 @@
         left: 100%;
 
         color: black;
-    }
-
-    &_big {
-        height: 1.2em;
-        line-height: 1.2em;
     }
 }
 
@@ -36,11 +35,10 @@
 
 .application[data-color="black"] {
     .progress {
-        &-val {
+        &__val {
             background-color: white;
         }
-
-        &-counter {
+        &__counter {
             color: white;
         }
     }

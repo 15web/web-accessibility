@@ -1,31 +1,39 @@
+// ==========================================================================
+// Thumbnail
+// ==========================================================================
+
 .thumbnail {
     display: block;
     padding: 4px;
     margin-bottom: 20px;
+
+    color: black;
     line-height: 1.42857143;
     background-color: #ffffff;
+
     border: 3px solid black;
-}
-.thumbnail img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-.thumbnail img,
-.thumbnail a img {
-    margin-left: auto;
-    margin-right: auto;
-}
-a.thumbnail:hover,
-a.thumbnail:focus,
-a.thumbnail.active {
-    border-color: #0000cc;
-    outline: none !important;
-    background: inherit !important;
-}
-.thumbnail .caption {
-    padding: 9px;
-    color: black;
+
+    @at-root a#{&} {
+
+        &:hover, &:focus, &:active {
+            border-color: #0000cc;
+            outline: none !important;
+            background: inherit !important;
+        }
+
+    }
+
+    &__image {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        margin: 0 auto 0;
+    }
+
+    &__caption {
+        padding: 10px;
+    }
 }
 
 // ==========================================================================
@@ -33,19 +41,20 @@ a.thumbnail.active {
 // ==========================================================================
 
 .application[data-color="black"] {
+
     .thumbnail {
+        color: white;
+
         background-color: black;
         border: 3px solid white;
-    }
 
+        @at-root a#{&} {
 
-    a.thumbnail:hover,
-    a.thumbnail:focus,
-    a.thumbnail.active {
-        border-color: yellow;
-    }
-    .thumbnail .caption {
-        color: white;
+            &:hover, &:focus, &:active {
+                border-color: yellow;
+            }
+
+        }
     }
 
 }
