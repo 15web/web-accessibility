@@ -1,28 +1,36 @@
-textarea, .textarea {
-    $bg-color: white;
-    $text-color: black;
+.textarea {
+    display: block;
+    width: 100%;
     padding: 15px;
-    border: 2px solid $text-color;
+
     font-size: 1em;
-    
-    &_block {
-        display: block;
-    }
+
+    border: 2px solid #000;
+    resize: vertical;
 
     &:focus {
         outline: 3px solid #0000cc;
     }
+
+    // @TODO: Зачем тут этот модификатор?
+    //&_block {
+    //    display: block;
+    //}
 }
 
+// ==========================================================================
+// Theme black
+// ==========================================================================
+
 .application[data-color="black"] {
-    $bg-color: black;
-    $text-color: white;
-    textarea, .textarea {
-        background-color: $bg-color;
-        border-color: $text-color;
+
+    .textarea {
+        background-color: #000;
+        border-color: #fff;
 
         &:focus {
             outline-color: #BF1722;
         }
     }
+
 }

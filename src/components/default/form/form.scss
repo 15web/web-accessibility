@@ -1,3 +1,5 @@
+// @TODO: Зачем нам этот компонент?
+
 .form {
     $bg-color: white;
     $text-color: black;
@@ -19,20 +21,8 @@
     }
 }
 
-// @todo вынести?
-fieldset {
-    border: 1px solid black;
-    padding: 13px;
-
-    legend {
-        padding: 0.2em 0.5em;
-        border: 1px solid black;
-        color: black;
-        text-align: left;
-    }
-}
-
 .application[data-color="black"] {
+
     .form {
         $bg-color: black;
         $text-color: white;
@@ -41,16 +31,6 @@ fieldset {
                 color: $text-color;
                 top: -.5em;
             }
-        }
-    }
-
-    fieldset {
-        border: 1px solid white;
-
-
-        legend {
-            border: 1px solid white;
-            color: white;
         }
     }
 

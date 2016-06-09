@@ -68,14 +68,17 @@
     a {
         &[href] {
             color: #969691;
+
             &:visited {
                 color: #99FF66;
             }
+
             &:hover, &:focus, &:active {
-                outline-color: #d8edff;
-                background: #d8edff;
                 color: #BF1722;
+                background: #d8edff;
+                outline-color: #d8edff;
             }
+
             &.disabled {
                 color: #cbcbcb;
             }

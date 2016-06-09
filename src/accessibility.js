@@ -28,6 +28,7 @@ import './components/default/image-alt';
 
 // Form elements
 import './components/default/form';
+import './components/default/fieldset';
 import './components/default/label';
 import './components/default/textarea';
 import './components/default/radio';
