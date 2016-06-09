@@ -42,22 +42,19 @@
         z-index: -1;
         background: white;
     }
-}
 
-// ==========================================================================
-// Theme black
-// ==========================================================================
+    // Theme black
 
-.application[data-color="black"] {
+    body[data-color="black"] & {
 
+        &_active {
+            border-color: #fff;
+        }
 
-    .image-alt__text {
-        background: black;
-        color: white;
+        &__text {
+            background: black;
+            color: white;
+        }
+
     }
-
-    .image-alt_active {
-        border-color: #fff;
-    }
-
 }

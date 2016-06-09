@@ -11,9 +11,6 @@ import './components/utils/reset';
 // Default components
 // ==========================================================================
 
-// Application
-import './components/default/application';
-
 // Control panel
 import './components/default/control-panel';
 

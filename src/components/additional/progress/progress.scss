@@ -27,19 +27,16 @@
 
         color: black;
     }
-}
 
-// ==========================================================================
-// Theme black
-// ==========================================================================
+    body[data-color="black"] & {
 
-.application[data-color="black"] {
-    .progress {
-        &__val {
-            background-color: white;
+        &__value {
+            background-color: #fff;
         }
+
         &__counter {
             color: white;
         }
+
     }
 }

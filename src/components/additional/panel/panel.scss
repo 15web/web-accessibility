@@ -28,32 +28,26 @@
         background-color: black;
         border-top: 1px solid black;
     }
-}
 
-// ==========================================================================
-// Theme black
-// ==========================================================================
+    // Theme black
 
-.application[data-color="black"] {
-
-    .panel {
+    body[data-color="black"] & {
         background-color: black;
         border: 1px solid white;
 
-        .panel__heading {
+        &__heading {
             color: black;
 
             background-color: white;
             border-color: white;
         }
 
-        .panel__footer {
+        &__footer {
             color: black;
 
             border-top: 1px solid white;
             background-color: white;
         }
     }
-
 }
 

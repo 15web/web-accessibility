@@ -18,15 +18,11 @@
     background: black;
 
     vertical-align: baseline;
-}
 
-// ==========================================================================
-// Theme black
-// ==========================================================================
+    // Theme black
 
-.application[data-color="black"] {
-    .label {
-        background: white;
+    body[data-color="black"] & {
         color: black;
+        background: white;
     }
 }

@@ -14,15 +14,8 @@
 
         border: 1px solid black;
     }
-}
 
-// ==========================================================================
-// Theme black
-// ==========================================================================
-
-.application[data-color="black"] {
-
-    .fieldset {
+    body[data-color="black"] & {
         border: 1px solid white;
 
         &__legend {
@@ -30,5 +23,4 @@
             border: 1px solid white;
         }
     }
-
 }

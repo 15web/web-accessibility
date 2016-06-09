@@ -59,12 +59,29 @@ table, .typography table {
         color: #fff;
 
         background-color: #000;
-        border: 1px solid white;
+        border: 1px solid #fff;
     }
 
     td {
         padding: 6px;
         border: 1px solid #000;
+    }
+
+    // Theme black
+
+    body[data-color="black"] & {
+
+        th {
+            color: #000;
+
+            background-color: #fff;
+            border: 1px solid #000;
+        }
+
+        td {
+            border: 1px solid #fff;
+        }
+
     }
 }
 
@@ -90,7 +107,7 @@ table, .typography table {
 
         font-size: 1em;
 
-        border-left: 5px solid black;
+        border-left: 5px solid #000;
     }
 
     ul, ol {
@@ -111,6 +128,20 @@ table, .typography table {
 
     ol > li {
         list-style: decimal inside;
+    }
+
+    // Theme black
+
+    body[data-color="black"] & {
+
+        h4 {
+            color: #fff;
+        }
+
+        q {
+            border-left: 5px solid #000;
+        }
+
     }
 }
 
@@ -164,37 +195,4 @@ small, .small {
 
 .text-capitalize {
     text-transform: capitalize;
-}
-
-// ==========================================================================
-// Theme black
-// ==========================================================================
-
-.application[data-color="black"] {
-
-    .typography {
-
-        h4 {
-            color: white;
-        }
-
-        table {
-
-            th {
-                border: 1px solid black;
-                background-color: white;
-                color: black;
-            }
-
-            td {
-                border: 1px solid white;
-            }
-
-        }
-
-        q {
-            border-left: 5px solid white;
-        }
-    }
-
 }

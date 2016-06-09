@@ -12,7 +12,7 @@ class ControlPanel {
 
         var self = this;
 
-        self.app = $('.application');
+        self.app = $('body');
 
         self.textSelect = $('.control-panel__select-text');
         self.colorSelect = $('.control-panel__select-color');

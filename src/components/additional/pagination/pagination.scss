@@ -9,7 +9,6 @@
 
     display: block;
 
-
     &__item {
         float: left;
         margin-right: 10px;
@@ -43,25 +42,19 @@
             background: #ffa;
         }
     }
-}
 
-// ==========================================================================
-// Theme black
-// ==========================================================================
+    // Theme black
 
-.application[data-color="black"] {
-
-    .pagination {
+    body[data-color="black"] & {
         border-color: #fff;
-    }
 
-    .pagination__link {
-        border-color: #fff;
-    }
+        &__link {
+            border-color: #fff;
+        }
 
-    .pagination__item_active .pagination__link {
-        background: #d8edff;
-        color: #BF1722;
+        &__item_active &__link {
+            color: #BF1722;
+            background: #d8edff;
+        }
     }
-
 }

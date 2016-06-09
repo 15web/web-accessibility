@@ -34,15 +34,10 @@
     &__caption {
         padding: 10px;
     }
-}
 
-// ==========================================================================
-// Theme black
-// ==========================================================================
+    // Theme black
 
-.application[data-color="black"] {
-
-    .thumbnail {
+    body[data-color="black"] & {
         color: white;
 
         background-color: black;
@@ -56,5 +51,4 @@
 
         }
     }
-
 }

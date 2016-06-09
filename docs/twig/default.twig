@@ -1,6 +1,6 @@
 {% include "./partials/header.twig" %}
 
-<body class="application container">
+<body class="container">
 
 <header class="docs-header">
     <h1 class="docs-header__title">
@@ -41,6 +41,11 @@
         <nav class="docs-nav nav nav_vertical" aria-label="vertical navigation">
             <ul>
                 <li class="nav__item">
+                    <a class="nav__link" href="#control-panel" title="grid system">
+                        Control Panel
+                    </a>
+                </li>
+                <li class="nav__item">
                     <a class="nav__link" href="#grid" title="grid system">
                         Grid system
                     </a>
@@ -66,6 +71,7 @@
     </div>
     <div class="col-md-10 pull-right">
 
+        {% include "./components/control-panel.twig" %}
         {% include "./components/grid.twig" %}
         {% include "./components/forms.twig" %}
         {% include "./components/typography.twig" %}

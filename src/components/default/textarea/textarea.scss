@@ -16,19 +16,9 @@
         outline: 3px solid #0000cc;
     }
 
-    // @TODO: Зачем тут этот модификатор?
-    //&_block {
-    //    display: block;
-    //}
-}
+    // Theme black
 
-// ==========================================================================
-// Theme black
-// ==========================================================================
-
-.application[data-color="black"] {
-
-    .textarea {
+    body[data-color="black"] & {
         background-color: #000;
         border-color: #fff;
 
@@ -36,5 +26,4 @@
             outline-color: #BF1722;
         }
     }
-
 }

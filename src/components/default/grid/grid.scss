@@ -2,17 +2,6 @@
 // grid
 // ==========================================================================
 
-// @TODO: Вынести в настройки дефолтных тегов?
-
-* {
-    box-sizing: border-box;
-
-    &:before,
-    &:after {
-        box-sizing: border-box;
-    }
-}
-
 .container {
     margin-right: auto;
     margin-left: auto;

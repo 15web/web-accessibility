@@ -1,37 +1,40 @@
-// @TODO: Зачем нам этот компонент?
+// ==========================================================================
+// Form
+// @TODO: Зачем нужен этот компонент?
+// ==========================================================================
 
 .form {
-    $bg-color: white;
-    $text-color: black;
+
     &__line {
         margin-bottom: 15px;
 
         sup {
+            position: relative;
+
+            top: -.5em;
+
+            color: #000;
             font-size: 75%;
             line-height: 0;
-            position: relative;
+
             vertical-align: baseline;
-            color: $text-color;
-            top: -.5em;
         }
     }
 
     &__error {
         font-style: italic;
     }
-}
 
-.application[data-color="black"] {
+    // Theme black
 
-    .form {
-        $bg-color: black;
-        $text-color: white;
+    body[data-color="black"] & {
+
         &__line {
             sup {
-                color: $text-color;
+                color: #fff;
                 top: -.5em;
             }
         }
-    }
 
+    }
 }

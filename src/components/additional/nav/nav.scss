@@ -27,7 +27,7 @@
         font-weight: bold;
         text-decoration: none !important;
 
-        border: 1px solid $main-color;
+        border: 1px solid #000;
         border-radius: 4px;
 
         &:focus, &:hover {
@@ -40,18 +40,10 @@
         background: #ffa;
         color: #BF1722;
     }
-}
 
-// ==========================================================================
-// Theme black
-// ==========================================================================
+    // Theme black
 
-.application[data-color="black"] {
-
-    $main-color: invert($main-color);
-    $second-color: invert($second-color);
-
-    .nav {
+    body[data-color="black"] & {
 
         &__item_active > .nav__link {
             background: #d8edff;
@@ -59,7 +51,7 @@
         }
 
         &__link {
-            border: 1px solid $main-color;
+            border: 1px solid #fff;
 
             &:focus, &:hover {
                 box-shadow: 0 0 0 3px #ffa;
@@ -67,5 +59,4 @@
         }
 
     }
-
 }

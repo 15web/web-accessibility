@@ -27,21 +27,10 @@
     &:focus,&:hover {
         outline: 3px solid #0000cc;
     }
-}
 
-.button-block {
-    display: block;
-    padding:0;
+    // Theme black
 
-}
-
-// ==========================================================================
-// Theme black
-// ==========================================================================
-
-.application[data-color="black"] {
-
-    .button {
+    [data-color="black"] & {
         color: #000;
         background: #fff;
 
@@ -57,5 +46,10 @@
             outline: 3px solid #BF1722;
         }
     }
+}
 
+// @TODO: Не правильный класс.
+.button-block {
+    display: block;
+    padding:0;
 }

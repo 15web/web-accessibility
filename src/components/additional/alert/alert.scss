@@ -9,15 +9,9 @@
     color: white;
 
     background: black;
-}
 
-// ==========================================================================
-// Theme black
-// ==========================================================================
-
-.application[data-color="black"] {
-    .alert {
-        background: white;
+    body[data-color="black"] & {
         color: black;
+        background: white;
     }
 }

@@ -35,14 +35,8 @@
             line-height: 1.2em;
         }
     }
-}
 
-// ==========================================================================
-// Theme black
-// ==========================================================================
-
-.application[data-color="black"] {
-    .breadcrumbs {
+    body[data-color="black"] & {
         a {
             @include link-typography(true);
         }
