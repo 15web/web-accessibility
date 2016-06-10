@@ -1,0 +1,17 @@
+// ==========================================================================
+// Alert
+// ==========================================================================1
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+
+    color: white;
+
+    background: black;
+
+    body[data-color="black"] & {
+        color: black;
+        background: white;
+    }
+}

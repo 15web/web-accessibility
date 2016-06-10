@@ -1,0 +1,63 @@
+// ==========================================================================
+// Nav
+// ==========================================================================
+
+@import "../../config";
+
+.nav {
+    @include clearfix();
+
+    &__item {
+        float: left;
+        margin: 0 10px 10px 0;
+
+        border-radius: 4px;
+
+        .nav_vertical & {
+            display: block;
+            float: none;
+            margin: 0 0 10px 0;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        padding: 5px 10px;
+
+        font-weight: bold;
+        text-decoration: none !important;
+
+        border: 1px solid #000;
+        border-radius: 4px;
+
+        &:focus, &:hover {
+            outline: none !important;
+            box-shadow: 0 0 0 3px #ffa;
+        }
+    }
+
+    // @TODO: Избавиться от important.
+    &__item_active > .nav__link {
+        background: #ffa;
+        color: #bf1722 !important;
+    }
+
+    // Theme black
+
+    body[data-color="black"] & {
+
+        &__item_active > .nav__link {
+            background: #d8edff;
+            color: #BF1722;
+        }
+
+        &__link {
+            border: 1px solid #fff;
+
+            &:focus, &:hover {
+                box-shadow: 0 0 0 3px #ffa;
+            }
+        }
+
+    }
+}

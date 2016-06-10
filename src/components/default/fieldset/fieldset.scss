@@ -1,0 +1,26 @@
+// ==========================================================================
+// Fieldset
+// ==========================================================================
+
+.fieldset {
+    padding: 13px;
+    border: 1px solid black;
+
+    &__legend {
+        padding: 0.2em 0.5em;
+
+        color: black;
+        text-align: left;
+
+        border: 1px solid black;
+    }
+
+    body[data-color="black"] & {
+        border: 1px solid white;
+
+        &__legend {
+            color: white;
+            border: 1px solid white;
+        }
+    }
+}

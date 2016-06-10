@@ -1,33 +1,23 @@
 // ==========================================================================
 // control-panel
 // ==========================================================================
+
 @import "../../config";
-$main-color: #ccc;
+
 .control-panel {
+    padding: 10px 20px;
 
     font-size: 18px;
 
-    background: $main-color;
-    color: $second-color;
+    color: #fff;
 
+    background: #ccc;
     z-index: 999;
 
-    &__wrapper {
-        padding: 10px 20px;
+    // Theme black
+
+    body[data-color="black"] & {
+        color: #000;
+        background: #fff;
     }
-}
-
-// ==========================================================================
-// Theme black
-// ==========================================================================
-
-.application[data-color="black"] {
-    $main-color: white;
-    $second-color: invert($second-color);
-    .control-panel {
-        background: $main-color;
-        color: $second-color;
-
-    }
-
 }

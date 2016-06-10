@@ -48,6 +48,14 @@ const AUTOPREFIXER_BROWSERS = [
 // Examples
 // ==========================================================================
 
+gulp.task('docs:twig', () => {
+
+    gulp.src(SETTINGS.path.docs + '/twig/*.twig')
+        .pipe(twig().on('error', console.log))
+        .pipe(gulp.dest(SETTINGS.path.docs));
+
+});
+
 gulp.task('sp:twig', function () {
 
     gulp.src(SETTINGS.path.example.sp + '/twig/*.twig')
@@ -195,6 +203,8 @@ gulp.task('docs', function() {
         open: false,
         startPath: SETTINGS.path.docs + "/default.html"
     });
+
+    gulp.watch(SETTINGS.path.docs + '/twig/**/*.twig', ['docs:twig']);
 
     gulp.watch(SETTINGS.path.example.sp + '/twig/**/*.twig', ['sp:twig']);
     gulp.watch(SETTINGS.path.example.sp + '/assets/styles/**/*.scss', ['sp:sass']);

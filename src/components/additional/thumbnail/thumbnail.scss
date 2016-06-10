@@ -1,0 +1,54 @@
+// ==========================================================================
+// Thumbnail
+// ==========================================================================
+
+.thumbnail {
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+
+    color: black;
+    line-height: 1.42857143;
+    background-color: #ffffff;
+
+    border: 3px solid black;
+
+    @at-root a#{&} {
+
+        &:hover, &:focus, &:active {
+            border-color: #0000cc;
+            outline: none !important;
+            background: inherit !important;
+        }
+
+    }
+
+    &__image {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        margin: 0 auto 0;
+    }
+
+    &__caption {
+        padding: 10px;
+    }
+
+    // Theme black
+
+    body[data-color="black"] & {
+        color: white;
+
+        background-color: black;
+        border: 3px solid white;
+
+        @at-root a#{&} {
+
+            &:hover, &:focus, &:active {
+                border-color: yellow;
+            }
+
+        }
+    }
+}

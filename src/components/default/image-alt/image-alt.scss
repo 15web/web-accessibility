@@ -1,3 +1,7 @@
+// ==========================================================================
+// Images
+// ==========================================================================
+
 @import "../../config";
 
 .image-alt {
@@ -38,18 +42,19 @@
         z-index: -1;
         background: white;
     }
-}
 
-.application[data-color="black"] {
+    // Theme black
 
+    body[data-color="black"] & {
 
-    .image-alt__text {
-        background: black;
-        color: white;
+        &_active {
+            border-color: #fff;
+        }
+
+        &__text {
+            background: black;
+            color: white;
+        }
+
     }
-
-    .image-alt_active {
-        border-color: #fff;
-    }
-
 }

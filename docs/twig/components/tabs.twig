@@ -1,0 +1,92 @@
+{# Tabs #}
+{# @TODO: Перевести описание на английский. #}
+{# @TODO: Табы работают не корректно. #}
+{# @TODO: Сделать пример кода без преобразования HTML символов. #}
+
+<div id="tabs">
+
+    <div class="typography">
+        <h2>Tabs</h2>
+        <p>Списку табов указывается атрибут role="tabs", а элементам списка атрибут role="tab".</p>
+        <p>Скрипт инициализируется на элементе с классом "tabs", а атрибут aria-controls следует указать id панели, к которой привязана вкладка.</p>
+        <p>Выбраному табу указывается aria-selected="true" и tabindex="0", остальным присваевается значение false и tabindex="-1".</p>
+        <p>Скрипт автоматически изменяет атрибуты aria-selected и tabindex в зависимости от выбранной вкладки.</p>
+    </div>
+
+    <div class="docs-example">
+        <div class="docs-example__view">
+
+            <div id="tabpanel1" class="tabs">
+                <ul role="tablist" class="tabs__list tabs-list">
+                    <li class="tabs-list__item active" id="tab11" aria-controls="panel11" aria-selected="true" role="tab" tabindex="0">
+                        One
+                    </li>
+                    <li class="tabs-list__item" id="tab22" aria-controls="panel22" role="tab" aria-selected="false" tabindex="-1">
+                        Two
+                    </li>
+                    <li class="tabs-list__item" id="tab33" aria-controls="panel33" role="tab" aria-selected="false" tabindex="-1">
+                        Three
+                    </li>
+                    <li class="tabs-list__item" id="tab44" aria-controls="panel44" role="tab" aria-selected="false" tabindex="-1">
+                        Four
+                    </li>
+                </ul>
+
+                <div id="panel11" aria-labelledby="tab11" role="tabpanel" class="tabs__inner">
+                    <p>Lorem.</p>
+                </div>
+
+                <div id="panel22" aria-labelledby="tab22" role="tabpanel" class="tabs__inner">
+                    <p>Lorem ipsum.</p>
+                </div>
+
+                <div id="panel33" aria-labelledby="tab33" role="tabpanel" class="tabs__inner">
+                    <p>Lorem ipsum dolor.</p>
+                </div>
+
+                <div id="panel44" aria-labelledby="tab44" role="tabpanel" class="tabs__inner">
+                    <p>Lorem ipsum dolor sit.</p>
+                </div>
+            </div>
+
+        </div>
+        <pre class="docs-example__code">
+            <code class="language-markup convert">
+               &ltdiv class="tabs" id="tabpanel"&gt
+                    &ltul role="tablist" class="tabs__list tabs-list"&gt
+                        &ltli class="tabs-list__item active" id="tab1"
+                            aria-controls="panel1" aria-selected="true" role="tab"
+                            tabindex="0"&gt
+                            Первый
+                        &lt/li&gt
+                        &ltli class="tabs-list__item" id="tab2"
+                            aria-controls="panel2" role="tab" aria-selected="false"
+                            tabindex="-1"&gt
+                            Второй
+                        &lt/li&gt
+                        &ltli class="tabs-list__item" id="tab3"
+                            aria-controls="panel3" role="tab" aria-selected="false"
+                            tabindex="-1"&gt
+                            Третий
+                        &lt/li&gt
+                        ...
+                    &lt/ul&gt
+
+                    &ltdiv id="panel1" aria-labelledby="tab1" role="tabpanel"
+                         class="tabs__inner"&gt
+                        &lth3&gttab1 inner&lt/h3&gt
+                    &lt/div&gt
+                    &ltdiv id="panel2" aria-labelledby="tab2" role="tabpanel"
+                         class="tabs__inner"&gt
+                        &lth3&gttab2 inner&lt/h3&gt
+                    &lt/div&gt
+                    &ltdiv id="panel3" aria-labelledby="tab3" role="tabpanel"
+                         class="tabs__inner"&gt
+                        &lth3&gttab3 inner&lt/h3&gt
+                    &lt/div&gt
+                    ...
+                &lt/div&gt
+            </code>
+        </pre>
+    </div>
+</div>

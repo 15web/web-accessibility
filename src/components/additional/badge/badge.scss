@@ -1,0 +1,42 @@
+// ==========================================================================
+// Badge
+// ==========================================================================
+
+.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 2px 8px;
+
+    color: #ffffff;
+    font-size: 0.8em;
+    line-height: 1;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+
+    background-color: #777777;
+    border-radius: 10px;
+
+    vertical-align: middle;
+
+    @at-root a#{&} {
+
+        &:hover, &:focus {
+            color: #ffffff;
+            text-decoration: none;
+
+            cursor: pointer;
+        }
+
+    }
+
+    &:empty {
+        display: none;
+    }
+
+    .button & {
+        position: relative;
+        top: -1px;
+    }
+}

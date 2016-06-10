@@ -1,0 +1,42 @@
+// ==========================================================================
+// Progress bar
+// ==========================================================================
+
+.progress {
+    height: 0.8em;
+    line-height: 0.8em;
+    position: relative;
+
+    &__value {
+        height: 100%;
+
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        background-color: black;
+    }
+
+    &__counter {
+        margin-left: 0.3em;
+
+        position: absolute;
+        top: 0;
+        left: 100%;
+
+        color: black;
+    }
+
+    body[data-color="black"] & {
+
+        &__value {
+            background-color: #fff;
+        }
+
+        &__counter {
+            color: white;
+        }
+
+    }
+}

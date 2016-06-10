@@ -1,0 +1,63 @@
+// ==========================================================================
+// Tabs
+// ==========================================================================
+
+.tabs {
+
+    &__inner {
+        display: block;
+        margin: 0;
+        padding: 10px;
+        border: 1px solid black;
+        &[aria-hidden='true'] {
+            display: none;
+        }
+    }
+
+    // @TODO: Не правильный класс.
+    .tabs-list {
+        margin-bottom: 10px;
+
+        &__item {
+            display: inline-block;
+            padding: 5px 10px;
+
+            font-weight: bold;
+            text-decoration: none;
+
+            border: 1px solid #000;
+            border-radius: 4px;
+
+            cursor: pointer;
+
+            &:focus, &:hover {
+                outline: none !important;
+                box-shadow: 0 0 0 3px #ffa;
+            }
+
+            &[aria-selected='true'] {
+                background: black;
+                color: white;
+            }
+        }
+    }
+
+    body[data-color="black"] & {
+
+        &__inner {
+            border: 1px solid white;
+        }
+
+        .tabs-list {
+            &__item {
+                border: 1px solid white;
+
+                &[aria-selected='true'] {
+                    background: white;
+                    color: black;
+                }
+            }
+        }
+
+    }
+}

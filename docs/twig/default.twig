@@ -1,0 +1,83 @@
+{% include "./partials/header.twig" %}
+
+<body class="container">
+
+<header class="docs-header">
+    <h1 class="docs-header__title">
+        Web Accessibility
+    </h1>
+
+    <nav class="nav" aria-label="horizontal navigation">
+        <ul>
+            <li class="nav__item">
+                <a class="nav__link" href="https://github.com/15web/web-accessibility">
+                    View on GitHub
+                </a>
+            </li>
+            <li class="nav__item nav__item_active">
+                <a class="nav__link" href="default.html">
+                    Default components
+                </a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link" href="additional.html">
+                    Additional components
+                </a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link" href="examples/sp">
+                    Template example
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    {% include "./partials/control-panel.twig" %}
+</header>
+
+<main class="docs-main row">
+    <div class="col-md-2 pull-left">
+
+        <nav class="docs-nav nav nav_vertical" aria-label="vertical navigation">
+            <ul>
+                <li class="nav__item">
+                    <a class="nav__link" href="#control-panel" title="grid system">
+                        Control panel
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#grid" title="grid system">
+                        Grid system
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#form" title="forms">
+                        Forms
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#typography" title="typography">
+                        Typography
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#images" title="images">
+                        Images
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+    <div class="col-md-10 pull-right">
+
+        {% include "./components/control-panel.twig" %}
+        {% include "./components/grid.twig" %}
+        {% include "./components/forms.twig" %}
+        {% include "./components/typography.twig" %}
+        {% include "./components/images.twig" %}
+
+    </div>
+</main>
+
+{% include "./partials/footer.twig" %}

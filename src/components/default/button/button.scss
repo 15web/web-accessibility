@@ -1,5 +1,5 @@
 // ==========================================================================
-// button
+// Button
 // ==========================================================================
 
 .button {
@@ -15,6 +15,14 @@
 
     text-align: center;
 
+    &:focus,&:hover {
+        outline: 3px solid #0000cc;
+    }
+
+    &_block {
+        display: block;
+        width: 100%;
+    }
 
     a {
         color: #fff !important;
@@ -24,24 +32,9 @@
         outline: none !important;
     }
 
-    &:focus,&:hover {
-        outline: 3px solid #0000cc;
-    }
-}
+    // Theme black
 
-.button-block {
-    display: block;
-    padding:0;
-
-}
-
-// ==========================================================================
-// Theme black
-// ==========================================================================
-
-.application[data-color="black"] {
-
-    .button {
+    [data-color="black"] & {
         color: #000;
         background: #fff;
 
@@ -57,5 +50,4 @@
             outline: 3px solid #BF1722;
         }
     }
-
 }

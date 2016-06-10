@@ -1,0 +1,45 @@
+// ==========================================================================
+// Breadcrumbs
+// ==========================================================================
+
+@import "../../config";
+
+.breadcrumbs {
+    margin-bottom: 20px;
+
+    font-size: 1.2em;
+    line-height: 1.325em;
+
+    a {
+        @include link-typography(false);
+    }
+
+    &__item {
+        display: inline;
+
+        position: relative;
+
+        &:first-child {
+            padding-left: 0;
+
+            &:before {
+                display: none;
+            }
+        }
+    }
+
+    &__separator {
+        &:after {
+            content: "/";
+            vertical-align: bottom;
+            line-height: 1.2em;
+        }
+    }
+
+    body[data-color="black"] & {
+        a {
+            @include link-typography(true);
+        }
+    }
+}
+

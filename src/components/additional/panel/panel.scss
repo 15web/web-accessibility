@@ -1,0 +1,53 @@
+// ==========================================================================
+// Panels
+// ==========================================================================
+
+.panel {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border: 1px solid black;
+
+    .panel__heading {
+        padding: 10px 15px;
+
+        color: white;
+
+        background-color: black;
+        border-color: black;
+    }
+
+    .panel__body {
+        padding: 15px;
+    }
+
+    .panel__footer {
+        padding: 10px 15px;
+
+        color: white;
+
+        background-color: black;
+        border-top: 1px solid black;
+    }
+
+    // Theme black
+
+    body[data-color="black"] & {
+        background-color: black;
+        border: 1px solid white;
+
+        &__heading {
+            color: black;
+
+            background-color: white;
+            border-color: white;
+        }
+
+        &__footer {
+            color: black;
+
+            border-top: 1px solid white;
+            background-color: white;
+        }
+    }
+}
+

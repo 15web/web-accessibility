@@ -1,0 +1,33 @@
+// ==========================================================================
+// Media
+// ==========================================================================
+
+@import "../../config";
+
+.media {
+    @include clearfix();
+
+    margin-bottom: 30px;
+
+    &__left {
+        float: left;
+        margin-right: 20px;
+    }
+
+    &__body {
+        overflow: hidden;
+    }
+
+    &__title {
+        margin-bottom: 2px;
+        font-size: 1.3em;
+        line-height: 1.375em;
+    }
+
+    &__text {
+        font-size: 1em;
+        line-height: 1.4em;
+        margin-bottom: 3px;
+    }
+
+}

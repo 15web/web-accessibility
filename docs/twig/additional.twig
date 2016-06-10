@@ -1,0 +1,118 @@
+{% include "./partials/header.twig" %}
+
+<body class="container">
+
+<header class="docs-header">
+    <h1 class="docs-header__title">
+        Web Accessibility
+    </h1>
+    <nav class="nav" aria-label="horizontal navigation">
+        <ul>
+            <li class="nav__item">
+                <a class="nav__link" href="https://github.com/15web/web-accessibility">
+                    View on GitHub
+                </a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link" href="default.html">
+                    Default components
+                </a>
+            </li>
+            <li class="nav__item nav__item_active">
+                <a class="nav__link" href="additional.html">
+                    Additional components
+                </a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link" href="examples/sp">
+                    Template example
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    {% include "./partials/control-panel.twig" %}
+</header>
+
+<main class="docs-main row">
+    <div class="col-md-2 pull-left">
+
+        <nav class="docs-nav nav nav_vertical" aria-label="vertical navigation">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="#alert" title="alerts">
+                        Alerts
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#media" title="media object">
+                        Media object
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#pagination" title="pagination">
+                        Pagination
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#tabs" title="tabs">
+                        Tabs
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#horizontalNav" title="nav">
+                        Nav
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#breadCrumbs" title="breadcrumbs">
+                        Breadcrumbs
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#progressBar" title="progress bar">
+                        Progress bar
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#collapse" title="collapse">
+                        Collapse
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#thumbnail" title="Thumbnail">
+                        Thumbnail
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#panels" title="panels">
+                        Panels
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#badge" title="badge">
+                        Badge
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+    <div class="col-md-10 pull-right">
+
+        {% include "./components/alerts.twig" %}
+        {% include "./components/media.twig" %}
+        {% include "./components/pagination.twig" %}
+        {% include "./components/tabs.twig" %}
+        {% include "./components/nav.twig" %}
+        {% include "./components/breadcrumbs.twig" %}
+        {% include "./components/progress.twig" %}
+        {% include "./components/collapse.twig" %}
+        {% include "./components/thumbnail.twig" %}
+        {% include "./components/panels.twig" %}
+        {% include "./components/badge.twig" %}
+
+    </div>
+</main>
+
+{% include "./partials/footer.twig" %}
