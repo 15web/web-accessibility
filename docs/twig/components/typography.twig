@@ -1,0 +1,406 @@
+{# Typography #}
+{# @TODO: Перевести описание на английский. #}
+
+<div id="typography" class="docs-component">
+
+    <div class="typography">
+        <h2>Typography</h2>
+        <p>Оформление типографики на дефолтных тегах сброшено, используя reset.css. Но оно работает внутри компонента .typography. В этот компонент следует помещать содержимое редакторов контента.</p>
+        <h3>Headings</h3>
+        <p>Вне блока .typography стили заголовков можно использовать через специальные классы. В отличие от заголовков, внутри .typography у них сброшены отступы.</p>
+    </div>
+
+    <div class="docs-example">
+        <div class="docs-example__view">
+
+            <div class="h1">Heading h1</div>
+            <div class="h2">Heading h2</div>
+            <div class="h3">Heading h3</div>
+            <div class="h4">Heading h4</div>
+            <div class="h5">Heading h5</div>
+            <div class="h6">Heading h6</div>
+
+        </div>
+
+        <pre class="docs-example__code" aria-hidden="true">
+            <code class="language-markup convert">
+                <div class="h1">Heading h1</div>
+                <div class="h2">Heading h2</div>
+                <div class="h3">Heading h3</div>
+                <div class="h4">Heading h4</div>
+                <div class="h5">Heading h5</div>
+                <div class="h6">Heading h5</div>
+            </code>
+        </pre>
+
+        <pre class="docs-example__code" aria-hidden="true">
+            <code class="language-markup convert">
+                <div class="typography">
+                    <h1>Heading h1</h1>
+                    <h2>Heading h2</h2>
+                    <h3>Heading h3</h3>
+                    <h4>Heading h4</h4>
+                    <h5>Heading h5</h5>
+                    <h6>Heading h6</h6>
+                </div>
+            </code>
+        </pre>
+    </div>
+
+    <div class="typography">
+        <h3>Links</h3>
+        <p>Если из текста ссылки не ясно куда она ведет или ее заменяет изображение, нужно использовать aria-label, чтобы позволить скрин-ридеру озвучить подробное описание.</p>
+        <p>Если ссылка недоступна используйте aria-disabled="true", а также tabindex="-1" чтобы отключить возможность сфокусироваться на ней с помощью клавиатуры.</p>
+    </div>
+
+    <div class="docs-example">
+        <div class="docs-example__view">
+            <p><a href="#">Default link</a></p>
+            <p><a href="#" aria-label="Show more news">More</a></p>
+            <p><a href="#" class="disabled" aria-disabled="true" tabindex="-1">Disabled link</a></p>
+        </div>
+
+        <pre class="docs-example__code" aria-hidden="true">
+            <code class="language-markup convert">
+                <a href="#">Default link</a>
+                <a href="#" aria-label="Show more news">More</a>
+                <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Disabled link</a>
+            </code>
+        </pre>
+    </div>
+
+    <div class="typography">
+        <h3>Inline text elements</h3>
+        <p>Работают все основные теги для оформления текста.</p>
+    </div>
+
+    <div class="docs-example">
+        <div class="docs-example__view">
+            <p><small>Lorem ipsum dolor sit amet.</small></p>
+            <p><del>Lorem ipsum dolor sit amet.</del></p>
+            <p><s>Lorem ipsum dolor sit amet.</s></p>
+            <p><mark>Lorem ipsum dolor sit amet.</mark></p>
+            <p><ins>Lorem ipsum dolor sit amet.</ins></p>
+            <p><u>Lorem ipsum dolor sit amet.</u></p>
+            <p><strong>Lorem ipsum dolor sit amet.</strong></p>
+            <p><b>Lorem ipsum dolor sit amet.</b></p>
+            <p><em>Lorem ipsum dolor sit amet.</em></p>
+        </div>
+
+        <pre class="docs-example__code" aria-hidden="true">
+            <code class="language-markup convert">
+                <small>Lorem ipsum dolor sit amet.</small>
+                <del>Lorem ipsum dolor sit amet.</del>
+                <s>Lorem ipsum dolor sit amet.</s>
+                <mark>Lorem ipsum dolor sit amet.</mark>
+                <ins>Lorem ipsum dolor sit amet.</ins>
+                <u>Lorem ipsum dolor sit amet.</u>
+                <strong>Lorem ipsum dolor sit amet.</strong>
+                <em>Lorem ipsum dolor sit amet.</em>
+            </code>
+        </pre>
+    </div>
+
+    <div class="typography">
+        <h3>Alignment classes</h3>
+    </div>
+
+    <div class="docs-example">
+        <div class="docs-example__view">
+            <p class="text-left">Left aligned text.</p>
+            <p class="text-center">Center aligned text.</p>
+            <p class="text-right">Right aligned text.</p>
+            <p class="text-justify">Justified text.</p>
+            <p class="text-nowrap">No wrap text.</p>
+        </div>
+
+        <pre class="docs-example__code" aria-hidden="true">
+            <code class="language-markup convert">
+                <p class="text-left">Left aligned text.</p>
+                <p class="text-center">Center aligned text.</p>
+                <p class="text-right">Right aligned text.</p>
+                <p class="text-justify">Justified text.</p>
+                <p class="text-nowrap">No wrap text.</p>
+            </code>
+        </pre>
+    </div>
+
+    <div class="typography">
+        <h3>Table with ambiguous data</h3>
+        <p><a href="https://www.w3.org/WAI/tutorials/tables/one-header/">https://www.w3.org/WAI/tutorials/tables/one-header/</a></p>
+        <p>Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце.</p>
+    </div>
+
+    <div class="docs-example">
+        <div class="docs-example__view">
+
+            <table class="table">
+                <caption>Подпись к таблице:</caption>
+                <tr>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">City</th>
+                </tr>
+                <tr>
+                    <td>Phoenix</td>
+                    <td>Imari</td>
+                    <td>Henry</td>
+                </tr>
+                <tr>
+                    <td>Zeki</td>
+                    <td>Rome</td>
+                    <td>Min</td>
+                </tr>
+                <tr>
+                    <td>Apirka</td>
+                    <td>Kelly</td>
+                    <td>Brynn</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <pre class="docs-example__code" aria-hidden="true">
+            <code class="language-markup">
+                &lttable class="table"&gt
+                    &ltcaption&gtПодпись к таблице:&lt/caption&gt
+                    &lttr&gt
+                        &ltth scope="col"&gtLast Name&lt/th&gt
+                        &ltth scope="col"&gtFirst Name&lt/th&gt
+                        &ltth scope="col"&gtCity&lt/th&gt
+                    &lt/tr&gt
+                    &lttr&gt
+                        &lttd&gtPhoenix&lt/td&gt
+                        &lttd&gtImari&lt/td&gt
+                        &lttd&gtHenry&lt/td&gt
+                    &lt/tr&gt
+                    &lttr&gt
+                        &lttd&gtZeki&lt/td&gt
+                        &lttd&gtRome&lt/td&gt
+                        &lttd&gtMin&lt/td&gt
+                    &lt/tr&gt
+                    &lttr&gt
+                        &lttd&gtApirka&lt/td&gt
+                        &lttd&gtKelly&lt/td&gt
+                        &lttd&gtBrynn&lt/td&gt
+                    &lt/tr&gt
+                &lt/table&gt
+            </code>
+        </pre>
+    </div>
+
+    <div class="typography">
+        <h3>Таблица с двумя заголовками</h3>
+        <p>Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце.</p>
+        <p>Атрибут scope с значением row связывает каждую ячейку в столбце с заголовками с данными в строке.</p>
+    </div>
+
+    <div class="docs-example">
+        <div class="docs-example__view">
+
+            <table class="table">
+                <caption>Delivery slots:</caption>
+                <tr>
+                    <td></td>
+                    <th scope="col">Monday</th>
+                    <th scope="col">Tuesday</th>
+                    <th scope="col">Wednesday</th>
+                    <th scope="col">Thursday</th>
+                    <th scope="col">Friday</th>
+                </tr>
+                <tr>
+                    <th scope="row">09:00 - 11:00</th>
+                    <td>Closed</td>
+                    <td>Open</td>
+                    <td>Open</td>
+                    <td>Closed</td>
+                    <td>Closed</td>
+                </tr>
+                <tr>
+                    <th scope="row">11:00 - 13:00</th>
+                    <td>Open</td>
+                    <td>Open</td>
+                    <td>Closed</td>
+                    <td>Closed</td>
+                    <td>Closed</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <pre class="docs-example__code" aria-hidden="true">
+            <code class="language-markup">
+                 &lttable class="table"&gt
+                    &ltcaption&gtDelivery slots:&lt/caption&gt
+                    &lttr&gt
+                        &lttd&gt&lt/td&gt
+                        &ltth scope="col"&gtMonday&lt/th&gt
+                        &ltth scope="col"&gtTuesday&lt/th&gt
+                        &ltth scope="col"&gtWednesday&lt/th&gt
+                        &ltth scope="col"&gtThursday&lt/th&gt
+                        &ltth scope="col"&gtFriday&lt/th&gt
+                    &lt/tr&gt
+                    &lttr&gt
+                        &ltth scope="row"&gt09:00 - 11:00&lt/th&gt
+                        &lttd&gtClosed&lt/td&gt
+                        &lttd&gtOpen&lt/td&gt
+                        &lttd&gtOpen&lt/td&gt
+                        &lttd&gtClosed&lt/td&gt
+                        &lttd&gtClosed&lt/td&gt
+                    &lt/tr&gt
+                    &lttr&gt
+                        &ltth scope="row"&gt11:00 - 13:00&lt/th&gt
+                        &lttd&gtOpen&lt/td&gt
+                        &lttd&gtOpen&lt/td&gt
+                        &lttd&gtClosed&lt/td&gt
+                        &lttd&gtClosed&lt/td&gt
+                        &lttd&gtClosed&lt/td&gt
+                    &lt/tr&gt
+                &lt/table&gt
+            </code>
+        </pre>
+    </div>
+
+    <div class="typography">
+        <h3>Таблица с неравномерными заголовками</h3>
+        <p>Атрибут scope"colgroup" связывает ячейки с заголовками первого уровня со всей группой столбцов</p>
+        <p>Заголовки второго уровня связываются только с соответсвующими колонками с помощью атрибута scope="col"</p>
+    </div>
+
+    <div class="docs-example">
+        <div class="docs-example__view">
+
+            <table class="table">
+                <caption>Планеты:</caption>
+                <col>
+                <colgroup span="2"></colgroup>
+                <colgroup span="2"></colgroup>
+                <tr>
+                    <td rowspan="2"></td>
+                    <th colspan="2" scope="colgroup">Mars</th>
+                    <th colspan="2" scope="colgroup">Venus</th>
+                </tr>
+                <tr>
+                    <th scope="col">Produced</th>
+                    <th scope="col">Sold</th>
+                    <th scope="col">Produced</th>
+                    <th scope="col">Sold</th>
+                </tr>
+                <tr>
+                    <th scope="row">Teddy Bears</th>
+                    <td>50,000</td>
+                    <td>30,000</td>
+                    <td>100,000</td>
+                    <td>80,000</td>
+                </tr>
+                <tr>
+                    <th scope="row">Board Games</th>
+                    <td>10,000</td>
+                    <td>5,000</td>
+                    <td>12,000</td>
+                    <td>9,000</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <pre aria-hidden="true">
+            <code class="language-markup">
+                 &lttable class="table"&gt
+                    &ltcaption&gtПланеты:&lt/caption&gt
+                    &ltcol&gt
+                    &ltcolgroup span="2"&gt&lt/colgroup&gt
+                    &ltcolgroup span="2"&gt&lt/colgroup&gt
+                    &lttr&gt
+                        &lttd rowspan="2"&gt&lt/td&gt
+                        &ltth colspan="2" scope="colgroup"&gtMars&lt/th&gt
+                        &ltth colspan="2" scope="colgroup"&gtVenus&lt/th&gt
+                    &lt/tr&gt
+                    &lttr&gt
+                        &ltth scope="col"&gtProduced&lt/th&gt
+                        &ltth scope="col"&gtSold&lt/th&gt
+                        &ltth scope="col"&gtProduced&lt/th&gt
+                        &ltth scope="col"&gtSold&lt/th&gt
+                    &lt/tr&gt
+                    &lttr&gt
+                        &ltth scope="row"&gtTeddy Bears&lt/th&gt
+                        &lttd&gt50,000&lt/td&gt
+                        &lttd&gt30,000&lt/td&gt
+                        &lttd&gt100,000&lt/td&gt
+                        &lttd&gt80,000&lt/td&gt
+                    &lt/tr&gt
+                    &lttr&gt
+                        &ltth scope="row"&gtBoard Games&lt/th&gt
+                        &lttd&gt10,000&lt/td&gt
+                        &lttd&gt5,000&lt/td&gt
+                        &lttd&gt12,000&lt/td&gt
+                        &lttd&gt9,000&lt/td&gt
+                    &lt/tr&gt
+                &lt/table&gt
+            </code>
+        </pre>
+    </div>
+
+    <div class="typography">
+        <h3>Blockquotes</h3>
+    </div>
+
+    <div class="docs-example">
+        <div class="docs-example__view">
+            <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, corporis.</q>
+        </div>
+        <pre class="docs-example__code" aria-hidden="true">
+            <code class="language-markup convert">
+                <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, corporis.</q>
+            </code>
+        </pre>
+    </div>
+
+    <div class="typography">
+        <h3>Lists</h3>
+    </div>
+
+    <div class="docs-example">
+        <div class="docs-example__view typography">
+
+            <ul>
+                <li>Lorem ipsum.</li>
+                <li>Lorem ipsum dolor sit.
+                    <ul>
+                        <li>Lorem ipsum dolor.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                    </ul>
+                </li>
+                <li>Lorem ipsum dolor.</li>
+            </ul>
+
+            <ol>
+                <li>Lorem ipsum.</li>
+                <li>Lorem ipsum dolor sit.
+                    <ul>
+                        <li>Lorem ipsum dolor.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                    </ul>
+                </li>
+                <li>Lorem ipsum dolor.</li>
+            </ol>
+
+        </div>
+
+        <pre class="docs-example__code" aria-hidden="true">
+            <code class="language-markup convert">
+                <ul>
+                    <li>...</li>
+                </ul>
+            </code>
+        </pre>
+
+        <pre class="docs-example__code" aria-hidden="true">
+            <code class="language-markup convert">
+                <ol>
+                    <li>...</li>
+                </ol>
+            </code>
+        </pre>
+    </div>
+</div>

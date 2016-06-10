@@ -1,42 +1,35 @@
 .faq {
-
-    $border-color: black;
-    $text-color: black;
     margin-bottom: 36px;
 
     &__form {
         padding-bottom: 20px;
         margin-bottom: 30px;
 
-        border-bottom: 1px solid  $border-color;
+        border-bottom: 1px solid  #000;
     }
 
     &__item {
         margin-bottom: 20px;
         padding-bottom: 15px;
 
-        border-bottom: 1px solid  $border-color;
+        border-bottom: 1px solid  #000;
     }
 
     &__answer {
         margin: 8px 0 0 30px;
     }
-}
 
-// ==========================================================================
-// Theme black
-// ==========================================================================
+    // Theme black
 
-.application[data-color="black"] {
-    .faq {
-        $border-color: white;
-        $text-color: white;
+    body[data-color="black"] & {
+
         &__form {
-           border-bottom: 1px solid  $border-color;
+            border-bottom: 1px solid  #fff;
         }
 
         &__item {
-            border-bottom: 1px solid  $border-color;
+            border-bottom: 1px solid  #fff;
         }
+
     }
 }

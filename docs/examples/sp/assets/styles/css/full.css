@@ -52,9 +52,8 @@
   border-top: 2px solid #000; }
   .footer p {
     margin-bottom: 1em; }
-
-.application[data-color="black"] .footer {
-  border-color: #fff; }
+  body[data-color="black"] .footer {
+    border-color: #fff; }
 
 .gallery .h2 {
   margin-bottom: 0.5em; }
