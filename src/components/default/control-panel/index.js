@@ -89,18 +89,25 @@ class ControlPanel {
 
             $('img').not('code img').each(function() {
 
-                var alt = $(this).attr('alt'),
-                    width = $(this).width(),
-                    height = $(this).height();
+                $(this).load(function() {
 
-                $(this).wrap(`<span class="image-alt" style="width: ${width}px; height: ${height}px;"/>`);
+                    var alt = $(this).attr('alt'),
+                        width = $(this).width(),
+                        height = $(this).height();
 
-                // @TODO: Нужна ли эта проверка? А проверять на role?
-                if (alt != '') {
-                    $(this).after(`<span class="image-alt__text">${alt}</span>`);
-                } else {
-                    $(this).after('<span class="image-alt__text">Описание отсутствует</span>');
-                }
+                    console.log(width);
+                    console.log(height);
+
+                    $(this).wrap(`<span class="image-alt" style="width: ${width}px; height: ${height}px;"/>`);
+
+                    // @TODO: Нужна ли эта проверка? А проверять на role?
+                    if (alt != '') {
+                        $(this).after(`<span class="image-alt__text">${alt}</span>`);
+                    } else {
+                        $(this).after('<span class="image-alt__text">Описание отсутствует</span>');
+                    }
+
+                });
 
             });
 
