@@ -3,7 +3,7 @@
 Interface Components Library, designed by accessibility standards. Create a version of the site for people with disabilities quickly and easily.
 
 **Attention!**
-The stable version will be released before June 30.
+The stable version of the library under development.
 
 ## Getting started
 
