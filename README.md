@@ -58,6 +58,6 @@ dist/
 Copyright © 2016 [Studio 15](http://15web.ru)
 Code released under [the MIT license](https://github.com/twbs/bootstrap/blob/master/LICENSE).
 
-We use BrowserStack for cross browser testing.
+We use [BrowserStack](https://www.browserstack.com/) for cross browser testing.
 
-![alt tag](https://github.com/15web/web-accessibility/raw/master/browserstack_logo.png)
+![BrowserStack](https://github.com/15web/web-accessibility/raw/master/browserstack_logo.png)
