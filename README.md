@@ -57,3 +57,5 @@ dist/
 
 Copyright © 2016 [Studio 15](http://15web.ru)
 Code released under [the MIT license](https://github.com/twbs/bootstrap/blob/master/LICENSE).
+
+![alt tag](https://github.com/15web/web-accessibility/browserstack_logo.svg)
