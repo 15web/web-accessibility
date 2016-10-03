@@ -8,46 +8,104 @@
 </head>
 <body class="application container">
 
-<div class="control-panel" aria-hidden="true">
-    <div class="control-panel__wrapper row">
-        <div class="col-xs-4">
-            Размер шрифта:
-            <select class="control-panel__select-text select">
-                <option value="small">
-                    Маленький
-                </option>
-                <option value="normal">
-                    Средний
-                </option>
-                <option value="large">
-                    Большой
-                </option>
-            </select>
-        </div>
-        <div class="col-xs-4">
-            Цвет сайта:
-            <select class="control-panel__select-color select">
-                <option value="white">
-                    Белый
-                </option>
-                <option value="black">
-                    Черный
-                </option>
-            </select>
-        </div>
-        <div class="col-xs-4">
-            Изображения:
-            <select class="control-panel__select-image select">
-                <option value="visible" >
-                    Включены
-                </option>
-                <option value="hidden">
-                    Выключены
-                </option>
-            </select>
-        </div>
-    </div>
-</div>
+<nav class="js-control-panel control-panel">
+    <ol>
+        <li>
+            <h2><a href="http://www.w3.org/TR/WCAG/#perceivable">Размер шрифта</a></h2>
+            <div class="cols-4">
+                <p class="control-panel__title">Выберите нужный размер шрифта</p>
+                <ol>
+                    <li class="control-panel__dropdown-group">
+                        <h3><a href="#" data-fontsize="super" class="js-control-changer">1. Очень большой</a></h3>
+                        <p>200% от среднего</p>
+                    </li>
+                    <li class="control-panel__dropdown-group">
+                        <h3><a href="#" data-fontsize="large" class="js-control-changer">2. Большой</a></h3>
+                        <p>150% от среднего</p>
+                    </li>
+                    <li class="control-panel__dropdown-group">
+                        <h3><a href="#" data-fontsize="normal" class="js-control-changer">3. Средний</a></h3>
+                        <p>100%</p>
+                    </li>
+                    <li class="control-panel__dropdown-group">
+                        <h3><a href="#" data-fontsize="small" class="js-control-changer">4. Маленький</a></h3>
+                        <p>70% от среднего</p>
+                    </li>
+                </ol>
+            </div>
+        </li>
+        <li>
+            <h2><a href="http://www.w3.org/TR/WCAG/#perceivable">Кернинг</a></h2>
+            <div class="cols-3">
+                <p class="control-panel__title">Выберите интервал между буквами</p>
+                <ol>
+                    <li class="control-panel__dropdown-group">
+                        <h3><a href="#" data-kerning="large" class="js-control-changer">1. Большой</a></h3>
+                        <p>120% от среднего</p>
+                    </li>
+                    <li class="control-panel__dropdown-group">
+                        <h3><a href="#" data-kerning="normal" class="js-control-changer">2. Средний</a></h3>
+                        <p>100%</p>
+                    </li>
+                    <li class="control-panel__dropdown-group">
+                        <h3><a href="#" data-kerning="small" class="js-control-changer">3. Маленький</a></h3>
+                        <p>80% от среднего</p>
+                    </li>
+                </ol>
+            </div>
+        </li>
+        <li>
+            <h2><a href="#">Цвет сайта</a></h2>
+            <div class="cols-4">
+                <p class="control-panel__title">Выберете цветовую схему, комфортную для вашего зрения</p>
+                <ol>
+                    <li class="control-panel__dropdown-group">
+                        <h3><a href="#" class="js-control-changer" data-color="normal">1. Белый фон</a></h3>
+                        <p>Черно-белая схема с белым фоном и черным текстом</p>
+                    </li>
+                    <li class="control-panel__dropdown-group">
+                        <h3><a href="#" class="js-control-changer" data-color="black">2. Черный фон</a></h3>
+                        <p>Черно-белая схема с черным фоном и белым текстом</p>
+                    </li>
+                    <li class="control-panel__dropdown-group">
+                        <h3><a href="#" class="js-control-changer" data-color="yellow">3. Желтый фон</a></h3>
+                        <p>Схема с желтым фоном и черным текстом</p>
+                    </li>
+                    <li class="control-panel__dropdown-group">
+                        <h3><a href="#" class="js-control-changer" data-color="blue">4. Голубой фон</a></h3>
+                        <p>Схема с голубым фоном и черным текстом</p>
+                    </li>
+                </ol>
+            </div>
+        </li>
+        <li>
+            <h2><a href="#">Изображения</a></h2>
+            <div class="cols-3">
+                <p class="control-panel__title">Выберете отображать или нет изображения на сайте</p>
+                <ol>
+                    <li class="control-panel__dropdown-group">
+                        <h3><a href="#" class="js-control-changer" data-images="normal">1. Включить</a></h3>
+                        <p>Обычное отображение</p>
+                    </li>
+                    <li class="control-panel__dropdown-group">
+                        <h3><a href="#" class="js-control-changer" data-images="hidden">2. Выключить</a></h3>
+                        <p>Изображения будут отключены</p>
+                    </li>
+                </ol>
+            </div>
+        </li>
+        <li>
+            <h2><a href="#">Сброс</a></h2>
+            <div class="cols-2">
+                <ol>
+                    <li class="control-panel__dropdown-group">
+                        <h3><a href="#" id="js-control-reset">Сброс настроек на стандартные</a></h3>
+                    </li>
+                </ol>
+            </div>
+        </li>
+    </ol>
+</nav>
 <div>
     <header class="header" role="banner">
         <div class="row">
