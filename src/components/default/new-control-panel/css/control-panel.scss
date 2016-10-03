@@ -1,4 +1,4 @@
-.accessible-megamenu {
+.control-panel {
     font-size: 20px;
     position: relative;
     display: block;
@@ -22,7 +22,7 @@
         padding: 0;
         line-height: inherit;
     }
-    &-top-nav-item {
+    &__nav-item {
         position: relative;
         display: block;
         box-sizing: border-box;
@@ -41,7 +41,7 @@
         outline: 2px solid rgba(34, 95, 215, 0.3);
         -moz-outline-radius: 3px;
     }
-    &-top-nav-item {
+    &__nav-item {
         a[aria-haspopup] {
             position: relative;
             display: block;
@@ -93,7 +93,7 @@
     &__title {
         margin-bottom: 5px;
     }
-    &-panel {
+    &__dropdown {
         position: absolute;
         display: block;
         left: -1px;

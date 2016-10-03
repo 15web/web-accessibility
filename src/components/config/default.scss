@@ -55,6 +55,11 @@ body {
         color: #000;
         background: #fff999;
     }
+
+    html[data-color="blue"] & {
+        color: #000;
+        background-color: #c9f6fd;
+    }
 }
 
 a {
