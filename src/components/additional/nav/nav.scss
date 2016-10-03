@@ -44,7 +44,7 @@
 
     // Theme black
 
-    body[data-color="black"] & {
+    html[data-color="black"] & {
 
         &__item_active > .nav__link {
             background: #d8edff;

@@ -37,7 +37,7 @@
 
     // Theme black
 
-    body[data-color="black"] & {
+    html[data-color="black"] & {
         color: white;
 
         background-color: black;

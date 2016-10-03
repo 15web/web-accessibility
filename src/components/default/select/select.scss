@@ -13,7 +13,7 @@
         outline: 3px solid #0000cc;
     }
 
-    body[data-color="black"] & {
+    html[data-color="black"] & {
         color: #fff;
 
         border-color: #fff;

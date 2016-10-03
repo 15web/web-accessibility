@@ -11,7 +11,7 @@
         margin-bottom: 1em;
     }
 
-    body[data-color="black"] & {
+    html[data-color="black"] & {
         border-color: #fff;
     }
 }

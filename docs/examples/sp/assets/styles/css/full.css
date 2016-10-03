@@ -33,26 +33,24 @@
   .faq__form {
     padding-bottom: 20px;
     margin-bottom: 30px;
-    border-bottom: 1px solid black; }
+    border-bottom: 1px solid  #000; }
   .faq__item {
     margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 1px solid black; }
+    border-bottom: 1px solid  #000; }
   .faq__answer {
     margin: 8px 0 0 30px; }
-
-.application[data-color="black"] .faq__form {
-  border-bottom: 1px solid white; }
-
-.application[data-color="black"] .faq__item {
-  border-bottom: 1px solid white; }
+  html[data-color="black"] .faq__form {
+    border-bottom: 1px solid  #fff; }
+  html[data-color="black"] .faq__item {
+    border-bottom: 1px solid  #fff; }
 
 .footer {
   padding: 20px 0px;
   border-top: 2px solid #000; }
   .footer p {
     margin-bottom: 1em; }
-  body[data-color="black"] .footer {
+  html[data-color="black"] .footer {
     border-color: #fff; }
 
 .gallery .h2 {
@@ -78,5 +76,5 @@
 .components__row {
   margin-bottom: 20px; }
 
-.application[data-color="black"] .components__header {
+html[data-color="black"] .components__header {
   border-bottom: 1px solid white; }

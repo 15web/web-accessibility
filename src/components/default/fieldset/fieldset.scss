@@ -15,7 +15,7 @@
         border: 1px solid black;
     }
 
-    body[data-color="black"] & {
+    html[data-color="black"] & {
         border: 1px solid white;
 
         &__legend {

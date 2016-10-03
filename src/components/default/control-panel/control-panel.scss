@@ -16,7 +16,7 @@
 
     // Theme black
 
-    body[data-color="black"] & {
+    html[data-color="black"] & {
         color: #000;
         background: #fff;
     }

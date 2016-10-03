@@ -36,7 +36,7 @@
         }
     }
 
-    body[data-color="black"] & {
+    html[data-color="black"] & {
         a {
             @include link-typography(true);
         }

@@ -69,7 +69,7 @@ table, .typography table {
 
     // Theme black
 
-    body[data-color="black"] & {
+    html[data-color="black"] & {
 
         th {
             color: #000;
@@ -132,7 +132,7 @@ table, .typography table {
 
     // Theme black
 
-    body[data-color="black"] & {
+    html[data-color="black"] & {
 
         h4 {
             color: #fff;

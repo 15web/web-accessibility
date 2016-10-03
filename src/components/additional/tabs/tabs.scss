@@ -42,7 +42,7 @@
         }
     }
 
-    body[data-color="black"] & {
+    html[data-color="black"] & {
 
         &__inner {
             border: 1px solid white;

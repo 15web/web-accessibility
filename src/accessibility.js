@@ -13,15 +13,13 @@ import './components/utils/reset';
 
 // Control panel
 import './components/default/control-panel';
+import './components/default/menu';
 
 // Grid systems
 import './components/default/grid';
 
 // Typography
 import './components/default/typography';
-
-// Images
-import './components/default/image-alt';
 
 // Form elements
 import './components/default/form';

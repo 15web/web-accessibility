@@ -28,7 +28,7 @@
         color: black;
     }
 
-    body[data-color="black"] & {
+    html[data-color="black"] & {
 
         &__value {
             background-color: #fff;

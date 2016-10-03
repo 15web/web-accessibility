@@ -7,30 +7,53 @@
     }
 }
 
-body {
+html {
+    $default-fontsize: 18;
+
+    font-size: $default-fontsize*1px;
     color: #000;
-    font-size:18px;
     line-height: 1.25em;
     font-family: Arial, sans-serif;
 
+
+    //font-size
+    &[data-fontsize="small"] {
+        font-size: $default-fontsize*0.7*1px;
+    }
+    &[data-fontsize="large"] {
+        font-size: $default-fontsize*1.5px;
+    }
+    &[data-fontsize="super"] {
+        font-size: $default-fontsize*2px;
+    }
+
+    //kerning
+    &[data-kerning="small"] {
+        letter-spacing: -0.05em;
+    }
+    &[data-kerning="large"] {
+        letter-spacing: 0.05em;
+    }
+    
+    &[data-images="hidden"] {
+        img {
+            visibility: hidden;
+        }
+    }
+}
+
+body {
     background: white;
     transition: opacity 0.15s ease-in-out;
 
-    &[data-text="small"] {
-        font-size: 14px;
-    }
-
-    &[data-text="normal"] {
-        font-size: 18px;
-    }
-
-    &[data-text="large"] {
-        font-size: 22px;
-    }
-
-    &[data-color="black"] {
+    html[data-color="black"] &{
         color: #fff;
         background: #000;
+    }
+
+    html[data-color="yellow"] &{
+        color: #000;
+        background: #fff999;
     }
 }
 
@@ -58,7 +81,7 @@ a {
 
     // Theme black
 
-    body[data-color="black"] & {
+    html[data-color="black"] & {
 
         &[href] {
             color: #969691;

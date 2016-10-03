@@ -21,7 +21,7 @@
 
     // Theme black
 
-    body[data-color="black"] & {
+    html[data-color="black"] & {
 
         &__form {
             border-bottom: 1px solid  #fff;

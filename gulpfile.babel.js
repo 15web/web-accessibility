@@ -116,7 +116,7 @@ gulp.task("webpack", function (callback) {
             library: '[name]'
         },
         watch: DEBUG,
-        devtool: 'cheap-inline-module-source-map',
+        devtool: 'source-map',
         module: {
             loaders: [{
                 test: /\.js$/,

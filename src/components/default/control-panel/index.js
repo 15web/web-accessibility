@@ -1,138 +1,76 @@
 'use strict';
-
-// @TODO: Рефакторинг компонента.
-
 import cookie from '../../utils/cookie';
-import './control-panel.scss';
 
 const COOKIE_PATH = {path: '/'};
 
 class ControlPanel {
     constructor() {
-
         var self = this;
+        self.app = $('html');
+        self.changer = $('.js-control-changer');
+        self.reset = $('#js-control-reset');
 
-        self.app = $('body');
-
-        self.textSelect = $('.control-panel__select-text');
-        self.colorSelect = $('.control-panel__select-color');
-        self.imageSelect = $('.control-panel__select-image');
-
-        !cookie.getCookie('app-text') ? cookie.setCookie('app-text', 'normal', COOKIE_PATH) : false;
-        !cookie.getCookie('app-color') ? cookie.setCookie('app-color', 'white', COOKIE_PATH) : false;
-        !cookie.getCookie('app-image') ? cookie.setCookie('app-image', 'visible', COOKIE_PATH) : false;
-
+        self.getAttrNames();
+        self.setDefaultCookies();
         self.setApplicationStyles();
-        self.wrapImageAlt();
-        self.toggleImage();
-
-        self.handleTextChange();
-        self.handleColorChange();
-        self.handleImageChange();
-
-        self.app.addClass('application_show');
-
+        self.handleChangerClick();
+        self.handleReset();
     }
 
-    handleTextChange() {
-
-        var self = this;
-
-        self.textSelect.val(cookie.getCookie('app-text'));
-
-        self.textSelect.on('change', function() {
-
-            cookie.setCookie('app-text', $(this).val(), COOKIE_PATH);
-            self.setApplicationStyles();
-
-        });
-
-    }
-
-    handleColorChange() {
-
-        var self = this;
-
-        self.colorSelect.val(cookie.getCookie('app-color'));
-
-        self.colorSelect.on('change', function() {
-
-            cookie.setCookie('app-color', $(this).val(), COOKIE_PATH);
-            self.setApplicationStyles();
-
-        });
-
-    }
-
-    handleImageChange() {
-
-        var self = this;
-
-        self.imageSelect.val(cookie.getCookie('app-image'));
-
-        self.imageSelect.on('change', function() {
-
-            cookie.setCookie('app-image', $(this).val(), COOKIE_PATH);
-            self.setApplicationStyles();
-
-            self.toggleImage();
-
-        });
-
-
-
-    }
-
-    wrapImageAlt() {
-
-        $(document).ready(function() {
-
-            $('img').not('code img').each(function() {
-
-                $(this).load(function() {
-
-                    var alt = $(this).attr('alt'),
-                        width = $(this).width(),
-                        height = $(this).height();
-
-                    console.log(width);
-                    console.log(height);
-
-                    $(this).wrap(`<span class="image-alt" style="width: ${width}px; height: ${height}px;"/>`);
-
-                    // @TODO: Нужна ли эта проверка? А проверять на role?
-                    if (alt != '') {
-                        $(this).after(`<span class="image-alt__text">${alt}</span>`);
-                    } else {
-                        $(this).after('<span class="image-alt__text">Описание отсутствует</span>');
-                    }
-
-                });
-
-            });
-
-        });
-
-    }
-
-    toggleImage() {
-
-        if (cookie.getCookie('app-image') == 'hidden') {
-            $('.image-alt').addClass('image-alt_active');
-            $('img').not('code img').css('visibility', 'hidden');
-        } else {
-            $('.image-alt').removeClass('image-alt_active');
-            $('img').not('code img').css('visibility', 'visible');
+    /**
+     * дефолтные значения записываются в куки, если те пусты.
+     * проходимся по списку из названий дата-атрибутов, и записываем соответсвующие названия кук
+     */
+    setDefaultCookies() {
+        for(var i=0;i<this.attrNames.length; i++) {
+            !cookie.getCookie('app-'+this.attrNames[i]) ? cookie.setCookie('app-'+this.attrNames[i], 'normal', COOKIE_PATH) : false;
         }
 
     }
 
+    /**
+     * записываем в массив все названия дата-атрибутов переключателей
+     */
+    getAttrNames() {
+        var self = this;
+        self.attrNames = [];
+        $('.js-control-changer').each(function (index,elem) {
+            var attrName = Object.keys($(elem).data())[0];
+           if (self.attrNames.indexOf(attrName) == -1 && attrName) {
+               self.attrNames.push(attrName);
+           }
+        });
+    }
+
+    handleChangerClick() {
+        var self = this;
+        self.changer.on('click', function (e) {
+            e.preventDefault();
+            var data = $(e.target).data();
+            var dataName = Object.keys(data)[0]; //получаем ключ название дата атрибута
+            var dataValue = data[dataName]; //получаем значение дата атрибута
+            cookie.setCookie('app-'+dataName, dataValue, COOKIE_PATH);
+            self.setApplicationStyles();
+        })
+    }
+
+    /**
+     * проходимся по списку из названий дата-атрибутов, и ставим такие же в куки и дата-атрибуты html
+     */
     setApplicationStyles() {
+        for(var i=0;i<this.attrNames.length; i++) {
+            this.app.attr('data-'+this.attrNames[i], cookie.getCookie('app-'+this.attrNames[i]));
+        }
+    }
 
-        this.app.attr('data-text', cookie.getCookie('app-text'));
-        this.app.attr('data-color', cookie.getCookie('app-color'));
-        this.app.attr('data-image', cookie.getCookie('app-image'));
-
+    handleReset() {
+        this.reset.on('click', (e)=> {
+            e.preventDefault();
+            for(var i=0;i<this.attrNames.length; i++) {
+                cookie.setCookie('app-'+this.attrNames[i], 'normal', COOKIE_PATH);
+                this.setApplicationStyles();
+            }
+        })
     }
 }
 

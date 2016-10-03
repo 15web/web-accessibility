@@ -45,7 +45,7 @@
 
     // Theme black
 
-    body[data-color="black"] & {
+    html[data-color="black"] & {
         border-color: #fff;
 
         &__link {

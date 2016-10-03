@@ -10,7 +10,7 @@
 
     background: black;
 
-    body[data-color="black"] & {
+    html[data-color="black"] & {
         color: black;
         background: white;
     }
