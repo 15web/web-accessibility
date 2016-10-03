@@ -57,49 +57,49 @@ var accessibility =
 	
 	__webpack_require__(9);
 	
-	__webpack_require__(13);
+	__webpack_require__(14);
 	
-	__webpack_require__(16);
+	__webpack_require__(17);
 	
-	__webpack_require__(19);
+	__webpack_require__(20);
 	
-	__webpack_require__(22);
+	__webpack_require__(23);
 	
-	__webpack_require__(25);
+	__webpack_require__(26);
 	
-	__webpack_require__(28);
+	__webpack_require__(29);
 	
-	__webpack_require__(31);
+	__webpack_require__(32);
 	
-	__webpack_require__(34);
+	__webpack_require__(35);
 	
-	__webpack_require__(37);
+	__webpack_require__(38);
 	
-	__webpack_require__(40);
+	__webpack_require__(41);
 	
-	__webpack_require__(43);
+	__webpack_require__(44);
 	
-	__webpack_require__(46);
+	__webpack_require__(47);
 	
-	__webpack_require__(49);
+	__webpack_require__(50);
 	
-	__webpack_require__(52);
+	__webpack_require__(53);
 	
-	var _tabs = __webpack_require__(55);
+	var _tabs = __webpack_require__(56);
 	
-	__webpack_require__(58);
+	__webpack_require__(59);
 	
-	__webpack_require__(61);
+	__webpack_require__(62);
 	
-	__webpack_require__(64);
+	__webpack_require__(65);
 	
-	var _collapse = __webpack_require__(67);
+	var _collapse = __webpack_require__(68);
 	
-	__webpack_require__(70);
+	__webpack_require__(71);
 	
-	__webpack_require__(73);
+	__webpack_require__(74);
 	
-	__webpack_require__(76);
+	__webpack_require__(77);
 	
 	// ==========================================================================
 	// Initialization @TODO: Можно обойтись?
@@ -205,9 +205,9 @@ var accessibility =
 	
 	__webpack_require__(10);
 	
-	__webpack_require__(80);
+	__webpack_require__(11);
 	
-	var _cookie = __webpack_require__(79);
+	var _cookie = __webpack_require__(13);
 	
 	var _cookie2 = _interopRequireDefault(_cookie);
 	
@@ -1342,106 +1342,201 @@ var accessibility =
 	})(jQuery, window, document);
 
 /***/ },
-/* 11 */,
+/* 11 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
 /* 12 */,
 /* 13 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	'use strict';
 	
-	__webpack_require__(14);
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var Cookie = function () {
+	    function Cookie() {
+	        _classCallCheck(this, Cookie);
+	    }
+	
+	    _createClass(Cookie, [{
+	        key: 'getCookie',
+	
+	
+	        /**
+	         * Возвращает cookie с именем name, если есть, если нет, то undefined
+	         * @param name - имя cookie
+	         * @returns {*}
+	         */
+	        value: function getCookie(name) {
+	            var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+	            return matches ? decodeURIComponent(matches[1]) : undefined;
+	        }
+	
+	        /**
+	         * Устанавливает cookie с именем name и значением value
+	         * @param name - имя cookie
+	         * @param value - значение cookie
+	         * @param options - объект с свойствами cookie (expires, path, domain, secure)
+	         */
+	
+	    }, {
+	        key: 'setCookie',
+	        value: function setCookie(name, value, options) {
+	            options = options || {};
+	
+	            var expires = options.expires;
+	
+	            if (typeof expires == "number" && expires) {
+	                var d = new Date();
+	                d.setTime(d.getTime() + expires * 1000);
+	                expires = options.expires = d;
+	            }
+	            if (expires && expires.toUTCString) {
+	                options.expires = expires.toUTCString();
+	            }
+	
+	            value = encodeURIComponent(value);
+	
+	            var updatedCookie = name + "=" + value;
+	
+	            for (var propName in options) {
+	                updatedCookie += "; " + propName;
+	                var propValue = options[propName];
+	                if (propValue !== true) {
+	                    updatedCookie += "=" + propValue;
+	                }
+	            }
+	
+	            document.cookie = updatedCookie;
+	        }
+	
+	        /**
+	         * Удаляет cookie с именем name
+	         * @param name - имя cookie
+	         */
+	
+	    }, {
+	        key: 'deleteCookie',
+	        value: function deleteCookie(name) {
+	            this.setCookie(name, "", {
+	                expires: -1
+	            });
+	        }
+	    }]);
+	
+	    return Cookie;
+	}();
+	
+	exports.default = new Cookie();
 
 /***/ },
 /* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(15);
+
+/***/ },
+/* 15 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 15 */,
-/* 16 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	__webpack_require__(17);
-
-/***/ },
+/* 16 */,
 /* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(18);
+
+/***/ },
+/* 18 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 18 */,
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	__webpack_require__(20);
-
-/***/ },
+/* 19 */,
 /* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(21);
+
+/***/ },
+/* 21 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 21 */,
-/* 22 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	__webpack_require__(23);
-
-/***/ },
+/* 22 */,
 /* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(24);
+
+/***/ },
+/* 24 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 24 */,
-/* 25 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	__webpack_require__(26);
-
-/***/ },
+/* 25 */,
 /* 26 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 27 */,
-/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	__webpack_require__(29);
+	__webpack_require__(27);
 
 /***/ },
-/* 29 */
+/* 27 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 30 */,
-/* 31 */
+/* 28 */,
+/* 29 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(30);
+
+/***/ },
+/* 30 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 31 */,
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	// @TODO: Рефакторинг компонента.
 	
-	__webpack_require__(32);
+	__webpack_require__(33);
 	
 	var radio = document.querySelectorAll('input[type=radio]');
 	
@@ -1473,21 +1568,21 @@ var accessibility =
 	radioEventHandler(radio);
 
 /***/ },
-/* 32 */
+/* 33 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 33 */,
-/* 34 */
+/* 34 */,
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	// @TODO: Рефакторинг компонента.
 	
-	__webpack_require__(35);
+	__webpack_require__(36);
 	
 	var checkbox = document.querySelectorAll('input[type=checkbox]');
 	
@@ -1517,104 +1612,104 @@ var accessibility =
 	checkboxEventHandler(checkbox);
 
 /***/ },
-/* 35 */
+/* 36 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 36 */,
-/* 37 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	__webpack_require__(38);
-
-/***/ },
+/* 37 */,
 /* 38 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(39);
+
+/***/ },
+/* 39 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 39 */,
-/* 40 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	__webpack_require__(41);
-
-/***/ },
+/* 40 */,
 /* 41 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(42);
+
+/***/ },
+/* 42 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 42 */,
-/* 43 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	__webpack_require__(44);
-
-/***/ },
+/* 43 */,
 /* 44 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(45);
+
+/***/ },
+/* 45 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 45 */,
-/* 46 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	__webpack_require__(47);
-
-/***/ },
+/* 46 */,
 /* 47 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(48);
+
+/***/ },
+/* 48 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 48 */,
-/* 49 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	__webpack_require__(50);
-
-/***/ },
+/* 49 */,
 /* 50 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 51 */,
-/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	__webpack_require__(53);
+	__webpack_require__(51);
 
 /***/ },
-/* 53 */
+/* 51 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 54 */,
-/* 55 */
+/* 52 */,
+/* 53 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(54);
+
+/***/ },
+/* 54 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 55 */,
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1626,7 +1721,7 @@ var accessibility =
 	});
 	exports.tabsInit = tabsInit;
 	
-	__webpack_require__(56);
+	__webpack_require__(57);
 	
 	function keyCodes() {
 	
@@ -1955,59 +2050,59 @@ var accessibility =
 	};
 
 /***/ },
-/* 56 */
+/* 57 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 57 */,
-/* 58 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	__webpack_require__(59);
-
-/***/ },
+/* 58 */,
 /* 59 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(60);
+
+/***/ },
+/* 60 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 60 */,
-/* 61 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	__webpack_require__(62);
-
-/***/ },
+/* 61 */,
 /* 62 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 63 */,
-/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	__webpack_require__(65);
+	__webpack_require__(63);
 
 /***/ },
-/* 65 */
+/* 63 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 66 */,
-/* 67 */
+/* 64 */,
+/* 65 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(66);
+
+/***/ },
+/* 66 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 67 */,
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2019,7 +2114,7 @@ var accessibility =
 	});
 	exports.collapseInit = collapseInit;
 	
-	__webpack_require__(68);
+	__webpack_require__(69);
 	
 	function collapseInit() {
 	    var collapses = document.querySelectorAll('.collapse-button');
@@ -2063,149 +2158,52 @@ var accessibility =
 	};
 
 /***/ },
-/* 68 */
+/* 69 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 69 */,
-/* 70 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	__webpack_require__(71);
-
-/***/ },
+/* 70 */,
 /* 71 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(72);
+
+/***/ },
+/* 72 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 72 */,
-/* 73 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	__webpack_require__(74);
-
-/***/ },
+/* 73 */,
 /* 74 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 75 */,
-/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	__webpack_require__(77);
+	__webpack_require__(75);
 
 /***/ },
-/* 77 */
+/* 75 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 78 */,
-/* 79 */
-/***/ function(module, exports) {
+/* 76 */,
+/* 77 */
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	var Cookie = function () {
-	    function Cookie() {
-	        _classCallCheck(this, Cookie);
-	    }
-	
-	    _createClass(Cookie, [{
-	        key: 'getCookie',
-	
-	
-	        /**
-	         * Возвращает cookie с именем name, если есть, если нет, то undefined
-	         * @param name - имя cookie
-	         * @returns {*}
-	         */
-	        value: function getCookie(name) {
-	            var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
-	            return matches ? decodeURIComponent(matches[1]) : undefined;
-	        }
-	
-	        /**
-	         * Устанавливает cookie с именем name и значением value
-	         * @param name - имя cookie
-	         * @param value - значение cookie
-	         * @param options - объект с свойствами cookie (expires, path, domain, secure)
-	         */
-	
-	    }, {
-	        key: 'setCookie',
-	        value: function setCookie(name, value, options) {
-	            options = options || {};
-	
-	            var expires = options.expires;
-	
-	            if (typeof expires == "number" && expires) {
-	                var d = new Date();
-	                d.setTime(d.getTime() + expires * 1000);
-	                expires = options.expires = d;
-	            }
-	            if (expires && expires.toUTCString) {
-	                options.expires = expires.toUTCString();
-	            }
-	
-	            value = encodeURIComponent(value);
-	
-	            var updatedCookie = name + "=" + value;
-	
-	            for (var propName in options) {
-	                updatedCookie += "; " + propName;
-	                var propValue = options[propName];
-	                if (propValue !== true) {
-	                    updatedCookie += "=" + propValue;
-	                }
-	            }
-	
-	            document.cookie = updatedCookie;
-	        }
-	
-	        /**
-	         * Удаляет cookie с именем name
-	         * @param name - имя cookie
-	         */
-	
-	    }, {
-	        key: 'deleteCookie',
-	        value: function deleteCookie(name) {
-	            this.setCookie(name, "", {
-	                expires: -1
-	            });
-	        }
-	    }]);
-	
-	    return Cookie;
-	}();
-	
-	exports.default = new Cookie();
+	__webpack_require__(78);
 
 /***/ },
-/* 80 */
+/* 78 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
