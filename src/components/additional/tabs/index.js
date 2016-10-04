@@ -23,12 +23,6 @@ function keyCodes() {
 
 }
 
-export function tabsInit() {
-    var tabs = document.querySelectorAll('.tabs');
-    [].forEach.call(tabs, function (tab) {
-        var panel = new tabpanel(tab);
-    });
-}
 function tabpanel(tab) {
     this.panel = tab;
     this.keys = new keyCodes();
@@ -48,11 +42,9 @@ tabpanel.prototype.init = function () {
 
     this.panel.querySelector('#' + tab.getAttribute('aria-controls')).setAttribute('aria-hidden', 'false');
 };
-
-
 tabpanel.prototype.switchTabs = function ($curTab, $newTab) {
     $curTab.classList.remove('focus');
-
+    console.log($curTab);
     $curTab.setAttribute('tabindex', '-1');
     $curTab.setAttribute('aria-selected', 'false');
 
@@ -220,8 +212,9 @@ tabpanel.prototype.handleTabClick = function (tab, e) {
 
     for (var i = 0; i < this.tabs.length; i++) {
         this.tabs[i].setAttribute('tabindex', '-1');
+        this.tabs[i].setAttribute('aria-selected', 'false');
     }
-
+    console.log(tab);
     tab.setAttribute('aria-selected', 'true');
 
     this.panel.querySelector('#' + tab.getAttribute('aria-controls')).setAttribute('aria-hidden', 'false');
@@ -353,3 +346,10 @@ tabpanel.prototype.handlePanelKeyPress = function ($elem, e) {
     return true;
 
 };
+
+$(document).ready(function () {
+    var tabs = document.querySelectorAll('.tabs');
+    [].forEach.call(tabs, function (tab) {
+        var panel = new tabpanel(tab);
+    });
+});

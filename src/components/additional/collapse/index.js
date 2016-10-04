@@ -4,13 +4,6 @@
 
 import './collapse.scss';
 
-export function collapseInit() {
-    var collapses = document.querySelectorAll('.collapse-button');
-    [].forEach.call(collapses,function (collapse) {
-        var collapse = new hideShow(collapse);
-    });
-}
-
 function hideShow(target) {
     this.target = target;
     this.region = document.querySelector('#' + this.target.getAttribute('aria-controls'));
@@ -24,8 +17,6 @@ function hideShow(target) {
     this.bindHandlers();
 
 }
-
-
 hideShow.prototype.bindHandlers = function () {
     var thisObj = this;
     this.target.addEventListener('click', function (e) {
@@ -34,8 +25,6 @@ hideShow.prototype.bindHandlers = function () {
         return false;
     });
 };
-
-
 hideShow.prototype.toggleRegion = function () {
     var thisObj = this.region;
     console.log(thisObj);
@@ -48,3 +37,10 @@ hideShow.prototype.toggleRegion = function () {
             thisObj.setAttribute('aria-expanded', 'false');
         }
 };
+
+$(document).ready(function () {
+    var collapses = document.querySelectorAll('.collapse-button');
+    [].forEach.call(collapses,function (collapse) {
+        var collapse = new hideShow(collapse);
+    });
+});

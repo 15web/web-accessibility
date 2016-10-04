@@ -46,7 +46,7 @@ import './components/additional/media';
 import './components/additional/pagination';
 
 // Tabs
-import {tabsInit} from './components/additional/tabs';
+import './components/additional/tabs';
 
 // Navigation
 import './components/additional/nav';
@@ -58,7 +58,7 @@ import './components/additional/breadcrumbs';
 import './components/additional/progress';
 
 // Collapse
-import {collapseInit} from './components/additional/collapse';
+import './components/additional/collapse';
 
 // Thumbnail
 import './components/additional/thumbnail';
@@ -68,10 +68,3 @@ import './components/additional/panel';
 
 // Badge
 import './components/additional/badge';
-
-// ==========================================================================
-// Initialization @TODO: Можно обойтись?
-// ==========================================================================
-
-collapseInit();
-tabsInit();
