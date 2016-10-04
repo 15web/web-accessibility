@@ -6,6 +6,25 @@
         margin-bottom: 30px;
 
         border-bottom: 1px solid  #000;
+
+        sup {
+            position: relative;
+
+            top: -.5em;
+
+            color: #000;
+            font-size: 75%;
+            line-height: 0;
+
+            vertical-align: baseline;
+
+            html[data-color="black"] & {
+                    sup {
+                        color: #fff;
+                        top: -.5em;
+                    }
+            }
+        }
     }
 
     &__item {

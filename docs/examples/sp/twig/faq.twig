@@ -1,6 +1,6 @@
 {% include "./partials/header.twig" %}
 
-<body class="container">
+<body class="container init">
 
 {% include "./partials/control-panel.twig" %}
 
@@ -101,30 +101,30 @@
     <div class="faq">
 
         <form class="faq__form" action="">
-            <div class="form__line">
+            <div class="form-group">
                 <sup>*</sup>
                 — поля, обязательные для заполнения
             </div>
-            <div class="form__line">
+            <div class="form-group">
                 <label class="label" for="name">Имя
                     <sup>*</sup>
                 </label>
                 <input class="input input_block" type="text" id="name" name="name" style="width: 360px;"/>
             </div>
-            <div class="form__line">
+            <div class="form-group">
                 <label class="label" for="secondName">Фамилия
                     <sup>*</sup>
                 </label>
                 <input class="input input_block" type="text" id="secondName" name="secondName" style="width: 360px;"/>
                 <div class="form__error">Введите фамилию</div>
             </div>
-            <div class="form__line">
+            <div class="form-group">
                 <label class="label" for="mail">Email
                     <sup>*</sup>
                 </label>
                 <input class="input input_block" type="text" id="mail" name="mail" style="width: 360px;"/>
             </div>
-            <div class="form__line">
+            <div class="form-group">
                 <label class="label" for="question">Ваш вопрос
                     <sup>*</sup>
                 </label>

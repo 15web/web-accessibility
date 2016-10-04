@@ -3,8 +3,7 @@
 // ==========================================================================
 
 .tabs {
-
-    &__inner {
+    &__panel {
         display: block;
         margin: 0;
         padding: 10px;
@@ -12,13 +11,16 @@
         &[aria-hidden='true'] {
             display: none;
         }
+
+        html[data-color="black"] & {
+            border: 1px solid white;
+        }
     }
 
-    // @TODO: Не правильный класс.
-    .tabs-list {
+    &__nav {
         margin-bottom: 10px;
 
-        &__item {
+        &-item {
             display: inline-block;
             padding: 5px 10px;
 
@@ -39,17 +41,8 @@
                 background: black;
                 color: white;
             }
-        }
-    }
 
-    html[data-color="black"] & {
-
-        &__inner {
-            border: 1px solid white;
-        }
-
-        .tabs-list {
-            &__item {
+            html[data-color="black"] & {
                 border: 1px solid white;
 
                 &[aria-selected='true'] {
@@ -58,6 +51,5 @@
                 }
             }
         }
-
     }
 }

@@ -26,8 +26,8 @@ function keyCodes() {
 function tabpanel(tab) {
     this.panel = tab;
     this.keys = new keyCodes();
-    this.tabs = tab.querySelectorAll('.tabs-list__item');
-    this.panels = tab.querySelectorAll('.tabs__inner');
+    this.tabs = tab.querySelectorAll('.tabs__nav-item');
+    this.panels = tab.querySelectorAll('.tabs__panel');
     this.bindHandlers();
     this.init();
 }

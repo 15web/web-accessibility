@@ -25,21 +25,32 @@
         padding: 5px 10px;
 
         font-weight: bold;
-        text-decoration: none !important;
 
+        text-decoration: none;
         border: 1px solid #000;
         border-radius: 4px;
 
+        &[href] {
+            text-decoration: none;
+        }
+
         &:focus, &:hover {
-            outline: none !important;
+            outline: none;
             box-shadow: 0 0 0 3px #ffa;
+            &[href] {
+                text-decoration: none;
+                outline: none;
+            }
         }
     }
 
-    // @TODO: Избавиться от important.
+
     &__item_active > .nav__link {
         background: #ffa;
-        color: #bf1722 !important;
+        color: #bf1722;
+        &[href] {
+            color: #bf1722;
+        }
     }
 
     // Theme black
@@ -49,6 +60,9 @@
         &__item_active > .nav__link {
             background: #d8edff;
             color: #BF1722;
+            &[href] {
+                color: #bf1722;
+            }
         }
 
         &__link {
@@ -58,6 +72,5 @@
                 box-shadow: 0 0 0 3px #ffa;
             }
         }
-
     }
 }

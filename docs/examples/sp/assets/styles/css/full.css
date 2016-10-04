@@ -34,6 +34,16 @@
     padding-bottom: 20px;
     margin-bottom: 30px;
     border-bottom: 1px solid  #000; }
+    .faq__form sup {
+      position: relative;
+      top: -.5em;
+      color: #000;
+      font-size: 75%;
+      line-height: 0;
+      vertical-align: baseline; }
+      html[data-color="black"] .faq__form sup sup {
+        color: #fff;
+        top: -.5em; }
   .faq__item {
     margin-bottom: 20px;
     padding-bottom: 15px;

@@ -6,10 +6,9 @@
 
 
 ## CSS
-- [ ] Убрать компонент form src/components/default/form/form.scss:5
-- [ ] исправить стили, избавиться от important src/components/additional/nav/nav.scss:6
-- [ ] Оформить по БЭМ src/components/additional/tabs/tabs.scss:16
-- [ ] 
+- [x] Убрать компонент form src/components/default/form/form.scss:5 - разобрал его на специфичные для шаблона и общее(form-group)
+- [x] исправить стили, избавиться от important src/components/additional/nav/nav.scss:6
+- [x] Оформить по БЭМ src/components/additional/tabs/tabs.scss:16
 
 
 ## Проблемы

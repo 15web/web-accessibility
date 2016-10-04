@@ -21,7 +21,7 @@ import './components/default/grid';
 import './components/default/typography';
 
 // Form elements
-import './components/default/form';
+import './components/default/form-group';
 import './components/default/fieldset';
 import './components/default/label';
 import './components/default/textarea';

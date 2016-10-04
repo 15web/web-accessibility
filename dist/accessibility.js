@@ -61,7 +61,7 @@ var accessibility =
 	
 	__webpack_require__(17);
 	
-	__webpack_require__(20);
+	__webpack_require__(194);
 	
 	__webpack_require__(23);
 	
@@ -1411,20 +1411,8 @@ var accessibility =
 
 /***/ },
 /* 19 */,
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	__webpack_require__(21);
-
-/***/ },
-/* 21 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
+/* 20 */,
+/* 21 */,
 /* 22 */,
 /* 23 */
 /***/ function(module, exports, __webpack_require__) {
@@ -1751,8 +1739,8 @@ var accessibility =
 	function tabpanel(tab) {
 	    this.panel = tab;
 	    this.keys = new keyCodes();
-	    this.tabs = tab.querySelectorAll('.tabs-list__item');
-	    this.panels = tab.querySelectorAll('.tabs__inner');
+	    this.tabs = tab.querySelectorAll('.tabs__nav-item');
+	    this.panels = tab.querySelectorAll('.tabs__panel');
 	    this.bindHandlers();
 	    this.init();
 	}
@@ -2155,7 +2143,6 @@ var accessibility =
 	                e.preventDefault();
 	                var target = e.target;
 	                var collapseDropdown = document.querySelector('#' + target.getAttribute('aria-controls'));
-	                console.log(collapseDropdown);
 	                _this2.toggleDropdown(collapseDropdown);
 	            });
 	        }
@@ -5913,6 +5900,20 @@ var accessibility =
 	
 	module.exports = basePropertyDeep;
 
+
+/***/ },
+/* 194 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(195);
+
+/***/ },
+/* 195 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);
