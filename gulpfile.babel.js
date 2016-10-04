@@ -123,6 +123,7 @@ gulp.task("webpack", function (callback) {
                 exclude: /node_modules/,
                 loader: 'babel',
                 query: {
+                    plugins: ["lodash"],
                     presets: ['es2015']
                 }
             }, {

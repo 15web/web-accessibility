@@ -1,35 +1,51 @@
 'use strict';
 
-// @TODO: Рефакторинг компонента.
-
+import _ from 'lodash';
 import './radio.scss';
 
-var radio = document.querySelectorAll('input[type=radio]');
-
-function radioToggleAria() {
-    //удаляем aria-checked у всех
-    var group = document.getElementsByName(this.getAttribute('name'));
-    for (var i = 0; i < group.length; i++) {
-        group[i].setAttribute('aria-checked', 'false');
+class Radio {
+    constructor() {
+        this.radio = document.querySelectorAll('input[type=radio]');
+        this.init();
     }
-    //ставим только выбраному
-    this.setAttribute("aria-checked", "true");
-    this.focus();
-}
 
-function radioEventHandler(t) {
-    for (var i = 0; i < t.length; i++) {
-        t[i].addEventListener("change", radioToggleAria);
-        if(t[i].disabled) {
-            t[i].setAttribute('aria-disabled', 'true');
+    setDefaultAria(item) {
+
+        if (item.disabled) {
+            item.setAttribute('aria-disabled', 'true');
         }
-        if(t[i].checked) {
-            t[i].setAttribute('aria-checked', 'true');
+        if (item.checked) {
+            item.setAttribute('aria-checked', 'true');
         }
-        else if (!t[i].checked) {
-            t[i].setAttribute('aria-checked', 'false');
+        else if (!item.checked) {
+            item.setAttribute('aria-checked', 'false');
         }
     }
+
+    init() {
+        _.each(this.radio, (item, index, collection) => {
+            this.setDefaultAria(item);
+            this.handleChange(item);
+        });
+    }
+
+    radioToggleAria(e) {
+        var target = e.target;
+        var radioGroup = document.getElementsByName(target.getAttribute('name'));
+        // delete aria for each in group
+        _.each(radioGroup, (item, index, collection) => {
+            item.setAttribute('aria-checked', 'false');
+        });
+
+        target.setAttribute('aria-checked', true);
+        target.focus();
+    }
+
+    handleChange(item) {
+        item.addEventListener('change', this.radioToggleAria)
+    }
 }
 
-radioEventHandler(radio);
+$(document).ready(function () {
+    new Radio();
+});

@@ -1,34 +1,45 @@
 'use strict';
-
-// @TODO: Рефакторинг компонента.
-
+import _ from 'lodash';
 import './checkbox.scss';
 
-var checkbox = document.querySelectorAll('input[type=checkbox]');
+class CheckBox {
+    constructor() {
+        this.checkboxes = document.querySelectorAll('input[type=checkbox]');
+        this.init();
+    }
 
-function checkboxEventHandler(t) {
-    for (var i = 0; i < t.length; i++) {
-        t[i].addEventListener("click", checkboxToggleAria);
-        if(t[i].disabled) {
-            t[i].setAttribute('aria-disabled', 'true');
+    setDefaultAria(item) {
+
+        if(item.disabled) {
+            item.setAttribute('aria-disabled', 'true');
         }
-        if(t[i].checked) {
-            t[i].setAttribute('aria-checked', 'true');
+        if(item.checked) {
+            item.setAttribute('aria-checked', 'true');
         }
-        else if (!t[i].checked) {
-            t[i].setAttribute('aria-checked', 'false');
+        else if (!item.checked) {
+            item.setAttribute('aria-checked', 'false');
         }
+    }
+
+    init() {
+        _.each(this.checkboxes, (item, index, collection) => {
+            this.setDefaultAria(item);
+            this.handleClick(item);
+        });
+    }
+
+    checkboxToggleAria(e) {
+        var target = e.target;
+        target.setAttribute("aria-checked", !JSON.parse(target.getAttribute("aria-checked")));
+        target.focus();
+    }
+
+    handleClick(item) {
+        item.addEventListener('click', this.checkboxToggleAria)
     }
 }
 
-function checkboxToggleAria() {
-    if (this.getAttribute("aria-checked") == "false") {
-        this.setAttribute("aria-checked", "true");
-    } else {
-        this.setAttribute("aria-checked", "false");
-    }
-    this.focus();
-}
-
-checkboxEventHandler(checkbox);
+$(document).ready(function () {
+    new CheckBox();
+});
 
