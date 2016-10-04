@@ -19,7 +19,6 @@ class Collapse{
             e.preventDefault();
             var target = e.target;
             var collapseDropdown = document.querySelector('#' + target.getAttribute('aria-controls'));
-            console.log(collapseDropdown);
             this.toggleDropdown(collapseDropdown);
         });
     }
