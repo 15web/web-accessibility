@@ -1,18 +1,19 @@
 {# Breadcrumbs #}
-{# @TODO: Перевести описание на английский. #}
 
 <div id="breadCrumbs">
 
     <div class="typography">
         <h2>Breadcrumbs</h2>
-        <p>Хлебные крошки выполняются с помощью тега nav, также указывается aria-label с описанием.</p>
-        <p>В качестве разделителя между элементами списка вставляется span с атрибутом aria-hidden="true" для того, чтобы скрин-ридеры не прочитывали этот символ.</p>
+        <p>A breadcrumb navigation is usually positioned near the top of the page. As a navigational region, the <code>&lt;nav&gt;</code> element can be used, with an landmark role of <code>navigation</code> and a label “You are here:”.</p>
+        <p>As divider you can use <code>&lt;span&gt;</code> with aria-hidden="true" in order to screen readers skip this element </p>
+        {#<p>Хлебные крошки выполняются с помощью тега nav, также указывается aria-label с описанием.</p>#}
+        {#<p>В качестве разделителя между элементами списка вставляется span с атрибутом aria-hidden="true" для того, чтобы скрин-ридеры не прочитывали этот символ.</p>#}
     </div>
 
     <div class="docs-example">
         <div class="docs-example__view">
 
-            <nav class="breadcrumbs" aria-label="хлебные крошки">
+            <nav class="breadcrumbs" aria-label="You are here:">
                 <ul>
                     <li class="breadcrumbs__item">
                         <a href="#">Home</a>

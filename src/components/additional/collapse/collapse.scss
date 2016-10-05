@@ -3,5 +3,15 @@
 // ==========================================================================
 
 .collapse {
-    display: none;
+    &__panel {
+        margin-top: 10px;
+        
+        &_hidden {
+            display: none;
+        }
+    }
+
+    &__button {
+
+    }
 }

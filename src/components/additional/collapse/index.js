@@ -5,7 +5,7 @@ import './collapse.scss';
 
 class Collapse{
     constructor() {
-        this.collapseButtons = document.querySelectorAll('.collapse-button');
+        this.collapseButtons = document.querySelectorAll('.collapse__button');
         this.init();
     }
     init() {
@@ -24,7 +24,7 @@ class Collapse{
     }
 
     toggleDropdown(collapseDropdown) {
-        collapseDropdown.classList.toggle('collapse');
+        collapseDropdown.classList.toggle('collapse__panel_hidden');
         if (collapseDropdown.getAttribute('aria-expanded') == 'false') {
             collapseDropdown.setAttribute('aria-expanded', 'true');
             collapseDropdown.focus();

@@ -1,7 +1,4 @@
 {# Forms #}
-{# @TODO: Перевести описание на английский. #}
-{# @TODO: Добавить информацию про особенности использования textarea. #}
-{# @TODO: Добавить описание компонента submit button. #}
 
 <div id="form">
 
@@ -12,7 +9,10 @@
                 https://www.w3.org/WAI/tutorials/forms/
             </a>
         </p>
-        <p>Спецификация позволяет использовать 3 способа для индентификации элементов форм. WAI-ARIA, title атрибут или label. Мы остановились на варианте с label.</p>
+
+        <p>You can use 3 mechanisms to identify each form control: label element, WAI-ARIA or title attribute</p>
+        <p>We decided to use label element in 2 different ways</p>
+        {#<p>Спецификация позволяет использовать 3 способа для индентификации элементов форм. WAI-ARIA, title атрибут или label. Мы остановились на варианте с label.</p>#}
         <h3>Input with label</h3>
     </div>
 
@@ -36,11 +36,12 @@
 
     <div class="typography">
         <h3>Input with hidden label</h3>
+        <p> The label element is provided to identify a form control within the code, but it is visually hidden to avoid redundancy for users who can derive the purpose from the visual cues.</p>
     </div>
 
     <div class="docs-example">
         <div class="docs-example__view">
-            <label for="search_hidden" class="hiddenText label">
+            <label for="search_hidden" class="label hidden">
                 Search
             </label>
 
@@ -49,7 +50,7 @@
 
         <pre class="docs-example__code" aria-hidden="true">
             <code class="language-markup convert">
-                <label for="search_3" class="hiddenText label">
+                  <label for="search_3" class="label hidden">
                     Search
                 </label>
                 <input id="search_3" class="input" type="text" name="search">
@@ -59,6 +60,7 @@
 
     <div class="typography">
         <h3>Textarea</h3>
+        <p>Textarea should have descriptive label</p>
     </div>
 
     <div class="docs-example">
@@ -81,8 +83,11 @@
 
     <div class="typography">
         <h3>Select</h3>
-        <p>Для группировки опций в элементе select используйте optgroup.</p>
-        <p>Aria-disabled используется для обозначения disabled элемента (см.<a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled">https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled</a>)</p>
+        <p>To improve the accessibility of this list even further, we could add optgroup, to group the options.</p>
+        <p>You can use aria-disabled to identify disabled elements</p>
+        {#<p>Для группировки опций в элементе select используйте optgroup.</p>#}
+        {#<p>Aria-disabled используется для обозначения disabled элемента (см.<a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled">https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled</a>)#}
+        {#</p>#}
     </div>
 
     <div class="docs-example">
@@ -90,18 +95,18 @@
             <select class="select" name="select" title="выберите параметры">
                 <optgroup label="цвета">
                     <option value="1" selected>
-                        белый
+                        white
                     </option>
                     <option value="2" disabled aria-disabled="true">
-                        черный
+                        black
                     </option>
                 </optgroup>
                 <optgroup label="размер">
                     <option value="1" selected>
-                        большой
+                        large
                     </option>
                     <option value="2">
-                        маленький
+                        small
                     </option>
                 </optgroup>
             </select>
@@ -133,11 +138,7 @@
 
     <div class="typography">
         <h3>Fieldset</h3>
-        <p>
-            <a href="https://www.w3.org/WAI/tutorials/forms/grouping/" target="_blank">
-                https://www.w3.org/WAI/tutorials/forms/grouping/
-            </a>
-        </p>
+        <p>The <code>&lt;fieldset&gt;</code> element provides a container for related form controls, and the <code>&lt;legend&gt;</code> element acts like a heading to identify the group.</p>
     </div>
 
     <div class="docs-example">
@@ -171,8 +172,9 @@
 
     <div class="typography">
         <h3>Checkbox</h3>
-        <p>Элемент checkbox должен иметь role="checkbox", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние чекбокса.</p>
-        <p>Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.</p>
+        <p>Checkbox should have role="checkbox", and dynamically changes aria-checked and aria-disabled attributes </p>
+        {#<p>Элемент checkbox должен иметь role="checkbox", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние чекбокса.</p>#}
+        {#<p>Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.</p>#}
     </div>
 
     <div class="docs-example">
@@ -212,34 +214,35 @@
 
     <div class="typography">
         <h3>Radio</h3>
-        <p>Элементы radio должны быть обернуты в div с role="radiogroup" и иметь атрибут role="radio", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние.</p>
-        <p>Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.</p>
+        <p>Radio elements should be wrapped in div with role="radiogroup", have role="radio" and dynamically changes aria-checked and aria-disabled attributes </p>
+        {#<p>Элементы radio должны быть обернуты в div с role="radiogroup" и иметь атрибут role="radio", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние.</p>#}
+        {#<p>Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.</p>#}
     </div>
 
     <div class="docs-example">
         <div class="docs-example__view">
             <div class="radio__field" role="radiogroup">
-                <input id="radio1" type="radio" role="radio" name="one" value="Первый">
-                <label id="label1" for="radio1">Первый (default)</label>
+                <input id="radio1" type="radio" role="radio" name="group1" value="First">
+                <label id="label1" for="radio1">First (default)</label>
 
-                <input id="radio2" type="radio" role="radio" name="one" value="Второй" disabled>
-                <label id="label2" for="radio2">Второй (disabled)</label>
+                <input id="radio2" type="radio" role="radio" name="group1" value="Second" disabled>
+                <label id="label2" for="radio2">Second (disabled)</label>
 
-                <input id="radio3" type="radio" role="radio" name="one" value="Третий" checked>
-                <label id="label3" for="radio3">Третий (checked)</label>
+                <input id="radio3" type="radio" role="radio" name="group1" value="Third" checked>
+                <label id="label3" for="radio3">Third (checked)</label>
             </div>
         </div>
 
         <pre class="docs-example__code" aria-hidden="true">
             <code class="language-markup">
                 &ltdiv role="radiogroup"&gt
-                    &ltinput id="radio1" type="radio" role="radio" name="first" value="Первый"&gt
+                    &ltinput id="radio1" type="radio" role="radio" name="group1" value="First"&gt
                     &ltlabel id="label1" for="radio1"&gtПервый&lt/label&gt
 
-                    &ltinput id="radio2" type="radio" role="radio" name="second" value="Второй" disabled&gt
+                    &ltinput id="radio2" type="radio" role="radio" name="group1" value="Second" disabled&gt
                     &ltlabel id="label2" for="radio2"&gtВторой&lt/label&gt
 
-                    &ltinput id="radio3" type="radio" role="radio" name="third" value="Третий" checked&gt
+                    &ltinput id="radio3" type="radio" role="radio" name="group1" value="Third" checked&gt
                     &ltlabel id="label3" for="radio3"&gtТретий&lt/label&gt
                 &lt/div&gt
             </code>
@@ -248,20 +251,17 @@
 
     <div class="typography">
         <h3>Submit button</h3>
+        <p>For form buttons (submit and reset input elements and button elements), no additional accessibility information is required. The value attribute for input buttons and the nested text for button elements will be read by screen readers when the button is accessed. These must never be left empty.</p>
     </div>
 
     <div class="docs-example">
         <div class="docs-example__view">
-            <button class="button" type="submit" title="submit button">
-                Submit
-            </button>
+            <input class="button" type="submit" value="submit button">
         </div>
 
         <pre class="docs-example__code" aria-hidden="true">
             <code class="language-markup convert">
-                <button class="button" type="submit" title="submit button">
-                    Submit
-                </button>
+                <input class="button" type="submit" value="submit button">
             </code>
         </pre>
     </div>

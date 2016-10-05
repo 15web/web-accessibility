@@ -5,20 +5,34 @@
 
     <div class="typography">
         <h2>Typography</h2>
-        <p>Оформление типографики на дефолтных тегах сброшено, используя reset.css. Но оно работает внутри компонента .typography. В этот компонент следует помещать содержимое редакторов контента.</p>
+        <p>We use reset.css in our project. All content should wrapped in "typography" class</p>
+        {#<p>Оформление типографики на дефолтных тегах сброшено, используя reset.css. Но оно работает внутри компонента .typography. В этот компонент следует помещать содержимое редакторов контента.</p>#}
         <h3>Headings</h3>
-        <p>Вне блока .typography стили заголовков можно использовать через специальные классы. В отличие от заголовков, внутри .typography у них сброшены отступы.</p>
+        <p>Outside "typography" class, you can use special classes for headings, but unlike in "typography" they havn't indents</p>
+        {#<p>Вне блока .typography стили заголовков можно использовать через специальные классы. В отличие от заголовков, внутри .typography у них сброшены отступы.</p>#}
     </div>
 
     <div class="docs-example">
         <div class="docs-example__view">
 
-            <div class="h1">Heading h1</div>
-            <div class="h2">Heading h2</div>
-            <div class="h3">Heading h3</div>
-            <div class="h4">Heading h4</div>
-            <div class="h5">Heading h5</div>
-            <div class="h6">Heading h6</div>
+            <div class="col-xs-6">
+                <div class="h1">Heading h1</div>
+                <div class="h2">Heading h2</div>
+                <div class="h3">Heading h3</div>
+                <div class="h4">Heading h4</div>
+                <div class="h5">Heading h5</div>
+                <div class="h6">Heading h6</div>
+            </div>
+
+            <div class="typography col-xs-6">
+                <span>In "typography"</span>
+                <h1>Heading h1</h1>
+                <h2>Heading h2</h2>
+                <h3>Heading h3</h3>
+                <h4>Heading h4</h4>
+                <h5>Heading h5</h5>
+                <h6>Heading h6</h6>
+            </div>
 
         </div>
 
@@ -49,21 +63,29 @@
 
     <div class="typography">
         <h3>Links</h3>
-        <p>Если из текста ссылки не ясно куда она ведет или ее заменяет изображение, нужно использовать aria-label, чтобы позволить скрин-ридеру озвучить подробное описание.</p>
-        <p>Если ссылка недоступна используйте aria-disabled="true", а также tabindex="-1" чтобы отключить возможность сфокусироваться на ней с помощью клавиатуры.</p>
+        <p>Providing a descriptive aria-label lets a user distinguish the link from links in the Web page that lead to other destinations and helps the user determine whether to follow the link if there is no opportunity (for example due to design) to add this text to link</p>
+        <p>If it's disabled link use aria-disabled="true" and also tabindex="-1" to disabled focus on link</p>
+        {#<p>Если из текста ссылки не ясно куда она ведет или ее заменяет изображение, нужно использовать aria-label, чтобы позволить скрин-ридеру озвучить подробное описание.</p>#}
+        {#<p>Если ссылка недоступна используйте aria-disabled="true", а также tabindex="-1" чтобы отключить возможность сфокусироваться на ней с помощью клавиатуры.</p>#}
     </div>
 
     <div class="docs-example">
         <div class="docs-example__view">
-            <p><a href="#">Default link</a></p>
-            <p><a href="#" aria-label="Show more news">More</a></p>
-            <p><a href="#" class="disabled" aria-disabled="true" tabindex="-1">Disabled link</a></p>
+            <p>
+                <a href="#">Default link</a>
+            </p>
+            <p>
+                <a href="#" aria-label="Show more news about cats">More</a>
+            </p>
+            <p>
+                <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Disabled link</a>
+            </p>
         </div>
 
         <pre class="docs-example__code" aria-hidden="true">
             <code class="language-markup convert">
                 <a href="#">Default link</a>
-                <a href="#" aria-label="Show more news">More</a>
+                <a href="#" aria-label="Show more news about cats">More</a>
                 <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Disabled link</a>
             </code>
         </pre>
@@ -71,16 +93,25 @@
 
     <div class="typography">
         <h3>Inline text elements</h3>
-        <p>Работают все основные теги для оформления текста.</p>
+        <p>Here is most useful tags to text decoration</p>
+        {#<p>Работают все основные теги для оформления текста.</p>#}
     </div>
 
     <div class="docs-example">
         <div class="docs-example__view">
-            <p><small>Lorem ipsum dolor sit amet.</small></p>
-            <p><del>Lorem ipsum dolor sit amet.</del></p>
+            <p>
+                <small>Lorem ipsum dolor sit amet.</small>
+            </p>
+            <p>
+                <del>Lorem ipsum dolor sit amet.</del>
+            </p>
             <p><s>Lorem ipsum dolor sit amet.</s></p>
-            <p><mark>Lorem ipsum dolor sit amet.</mark></p>
-            <p><ins>Lorem ipsum dolor sit amet.</ins></p>
+            <p>
+                <mark>Lorem ipsum dolor sit amet.</mark>
+            </p>
+            <p>
+                <ins>Lorem ipsum dolor sit amet.</ins>
+            </p>
             <p><u>Lorem ipsum dolor sit amet.</u></p>
             <p><strong>Lorem ipsum dolor sit amet.</strong></p>
             <p><b>Lorem ipsum dolor sit amet.</b></p>
@@ -105,13 +136,13 @@
         <h3>Alignment classes</h3>
     </div>
 
-    <div class="docs-example">
+    <div class="docs-example typography">
         <div class="docs-example__view">
-            <p class="text-left">Left aligned text.</p>
-            <p class="text-center">Center aligned text.</p>
-            <p class="text-right">Right aligned text.</p>
-            <p class="text-justify">Justified text.</p>
-            <p class="text-nowrap">No wrap text.</p>
+            <p class="text-left"><strong>Left aligned text.</strong></p>
+            <p class="text-center"><strong>Center aligned text.</strong></p>
+            <p class="text-right"><strong>Right aligned text.</strong></p>
+            <p class="text-justify"><strong>Justified text</strong>. Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorememememe ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+            <p class="text-nowrap" style="overflow: scroll;"><strong>No wrap text.</strong>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorememememe ipsum dolor sit  Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorememememe ipsum dolor sit </p>
         </div>
 
         <pre class="docs-example__code" aria-hidden="true">
@@ -126,16 +157,19 @@
     </div>
 
     <div class="typography">
-        <h3>Table with ambiguous data</h3>
-        <p><a href="https://www.w3.org/WAI/tutorials/tables/one-header/">https://www.w3.org/WAI/tutorials/tables/one-header/</a></p>
-        <p>Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце.</p>
+        <h3><a href="https://www.w3.org/WAI/tutorials/tables/one-header/">Table with ambiguous data</a></h3>
+        <p>
+
+        </p>
+        <p>The scope attribute with the value col defines the direction of the header cells, and associates them with the corresponding data cells</p>
+        {#<p>Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце.</p>#}
     </div>
 
     <div class="docs-example">
         <div class="docs-example__view">
 
             <table class="table">
-                <caption>Подпись к таблице:</caption>
+                <caption>Teddy bear collectors:</caption>
                 <tr>
                     <th scope="col">Last Name</th>
                     <th scope="col">First Name</th>
@@ -163,7 +197,7 @@
         <pre class="docs-example__code" aria-hidden="true">
             <code class="language-markup">
                 &lttable class="table"&gt
-                    &ltcaption&gtПодпись к таблице:&lt/caption&gt
+                    &ltcaption&gtTeddy bear collectors:&lt/caption&gt
                     &lttr&gt
                         &ltth scope="col"&gtLast Name&lt/th&gt
                         &ltth scope="col"&gtFirst Name&lt/th&gt
@@ -190,9 +224,8 @@
     </div>
 
     <div class="typography">
-        <h3>Таблица с двумя заголовками</h3>
-        <p>Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце.</p>
-        <p>Атрибут scope с значением row связывает каждую ячейку в столбце с заголовками с данными в строке.</p>
+        <h3><a href="https://www.w3.org/WAI/tutorials/tables/two-headers/">Tables with two headers</a></h3>
+        {#<h3>Таблица с двумя заголовками</h3>#}
     </div>
 
     <div class="docs-example">
@@ -262,9 +295,9 @@
     </div>
 
     <div class="typography">
-        <h3>Таблица с неравномерными заголовками</h3>
-        <p>Атрибут scope"colgroup" связывает ячейки с заголовками первого уровня со всей группой столбцов</p>
-        <p>Заголовки второго уровня связываются только с соответсвующими колонками с помощью атрибута scope="col"</p>
+        <h3><a href="https://www.w3.org/WAI/tutorials/tables/irregular/">Tables with irregular headers</a></h3>
+        {#<h3>Таблица с неравномерными заголовками</h3>#}
+        <p>A column group is defined using the <code>&lt;colgroup&gt;</code> element.</p>
     </div>
 
     <div class="docs-example">

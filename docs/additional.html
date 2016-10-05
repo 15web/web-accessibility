@@ -212,11 +212,11 @@
 
         
 
-
 <div id="alert">
     <div class="typography">
         <h2>Alerts</h2>
-        <p>Элемент с атрибутом role=”alert” прочитывается скрин-ридером, сразу как элемент появляется на странице.</p>
+        <p>Element that gives role="alert" causes the message to be immediately read by the screen reader</p>
+        
     </div>
 
     <div class="docs-example">
@@ -495,19 +495,20 @@
 </div>
         
 
-
 <div id="breadCrumbs">
 
     <div class="typography">
         <h2>Breadcrumbs</h2>
-        <p>Хлебные крошки выполняются с помощью тега nav, также указывается aria-label с описанием.</p>
-        <p>В качестве разделителя между элементами списка вставляется span с атрибутом aria-hidden="true" для того, чтобы скрин-ридеры не прочитывали этот символ.</p>
+        <p>A breadcrumb navigation is usually positioned near the top of the page. As a navigational region, the <code>&lt;nav&gt;</code> element can be used, with an landmark role of <code>navigation</code> and a label “You are here:”.</p>
+        <p>As divider you can use <code>&lt;span&gt;</code> with aria-hidden="true" in order to screen readers skip this element </p>
+        
+        
     </div>
 
     <div class="docs-example">
         <div class="docs-example__view">
 
-            <nav class="breadcrumbs" aria-label="хлебные крошки">
+            <nav class="breadcrumbs" aria-label="You are here:">
                 <ul>
                     <li class="breadcrumbs__item">
                         <a href="#">Home</a>
@@ -593,25 +594,26 @@
 </div>
         
 
-
 <div id="collapse">
 
     <div class="typography">
         <h2>Collapse</h2>
-        <p>Для того, чтобы пользователь мог услышать изменение, при раскрытии панели используется aria-expanded.</p>
-        <p>Скрипт автоматически изменяет атрибут и фокусируется на раскрытой области.</p>
-        <p>Для использования добавьте кнопке класс collapse-button, и укажите в атрибуте aria-controls id элемента для управления.</p>
-        <p>Tabindex используется для корректной работы скрипта.</p>
+        <p>Aria-expanded uses in order to inform user about changes</p>
+        <p>Script automatically changes this attribute and focus on panel</p>
+        <p>To use this, you should add class "collapse__button" to button and pass id of panel in aria-controls attribute, and use collapse__panel class on panel</p>
+        
+        
+        
     </div>
 
     <div class="docs-example">
         <div class="docs-example__view">
 
-            <button class="button collapse-button" aria-controls="elemToCtrl" value="показать">
+            <button class="button collapse__button" aria-controls="elemToCtrl" value="показать">
                 Collapse
             </button>
 
-            <div id="elemToCtrl" class="collapse" tabindex="-1" aria-expanded="false">
+            <div id="elemToCtrl" class="collapse__panel collapse__panel_hidden" aria-expanded="false">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos dolorem dolores enim et, facere magni qui quidem quod voluptatibus!
             </div>
 

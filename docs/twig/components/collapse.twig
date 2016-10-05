@@ -1,24 +1,25 @@
 {# Collapse #}
-{# @TODO: Перевести описание на английский. #}
 
 <div id="collapse">
 
     <div class="typography">
         <h2>Collapse</h2>
-        <p>Для того, чтобы пользователь мог услышать изменение, при раскрытии панели используется aria-expanded.</p>
-        <p>Скрипт автоматически изменяет атрибут и фокусируется на раскрытой области.</p>
-        <p>Для использования добавьте кнопке класс collapse-button, и укажите в атрибуте aria-controls id элемента для управления.</p>
-        <p>Tabindex используется для корректной работы скрипта.</p>
+        <p>Aria-expanded uses in order to inform user about changes</p>
+        <p>Script automatically changes this attribute and focus on panel</p>
+        <p>To use this, you should add class "collapse__button" to button and pass id of panel in aria-controls attribute, and use collapse__panel class on panel</p>
+        {#<p>Для того, чтобы пользователь мог услышать изменение, при раскрытии панели используется aria-expanded.</p>#}
+        {#<p>Скрипт автоматически изменяет атрибут и фокусируется на раскрытой области.</p>#}
+        {#<p>Для использования добавьте кнопке класс collapse-button, и укажите в атрибуте aria-controls id элемента для управления.</p>#}
     </div>
 
     <div class="docs-example">
         <div class="docs-example__view">
 
-            <button class="button collapse-button" aria-controls="elemToCtrl" value="показать">
+            <button class="button collapse__button" aria-controls="elemToCtrl" value="показать">
                 Collapse
             </button>
 
-            <div id="elemToCtrl" class="collapse" tabindex="-1" aria-expanded="false">
+            <div id="elemToCtrl" class="collapse__panel collapse__panel_hidden" aria-expanded="false">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos dolorem dolores enim et, facere magni qui quidem quod voluptatibus!
             </div>
 

@@ -17,15 +17,16 @@
 
 ## Документация
 - [ ] Перевести на англ 
-    - [ ] alerts
-    - [ ] breadcrumbs
-    - [ ] collapse
-    - [ ] forms
-    - [ ] forms
+    - [x] alerts
+    - [x] breadcrumbs
+    - [x] collapse
+    - [x] forms
     - [ ] nav
+    - [ ] control Panel
     - [ ] pagination
     - [ ] progressBar
+    - [ ] Images
     - [ ] Tabs
-    - [ ] Typography
-- [ ] Добавить информации по textarea
-- [ ] Добавить информации по submit button 
+    - [x] Typography
+- [x] Добавить информации по textarea
+- [x] Добавить информации по submit button 

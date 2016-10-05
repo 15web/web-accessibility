@@ -419,9 +419,6 @@
 </div>
         
 
-
-
-
 <div id="form">
 
     <div class="typography">
@@ -431,7 +428,10 @@
                 https://www.w3.org/WAI/tutorials/forms/
             </a>
         </p>
-        <p>Спецификация позволяет использовать 3 способа для индентификации элементов форм. WAI-ARIA, title атрибут или label. Мы остановились на варианте с label.</p>
+
+        <p>You can use 3 mechanisms to identify each form control: label element, WAI-ARIA or title attribute</p>
+        <p>We decided to use label element in 2 different ways</p>
+        
         <h3>Input with label</h3>
     </div>
 
@@ -455,11 +455,12 @@
 
     <div class="typography">
         <h3>Input with hidden label</h3>
+        <p> The label element is provided to identify a form control within the code, but it is visually hidden to avoid redundancy for users who can derive the purpose from the visual cues.</p>
     </div>
 
     <div class="docs-example">
         <div class="docs-example__view">
-            <label for="search_hidden" class="hiddenText label">
+            <label for="search_hidden" class="label hidden">
                 Search
             </label>
 
@@ -468,7 +469,7 @@
 
         <pre class="docs-example__code" aria-hidden="true">
             <code class="language-markup convert">
-                <label for="search_3" class="hiddenText label">
+                  <label for="search_3" class="label hidden">
                     Search
                 </label>
                 <input id="search_3" class="input" type="text" name="search">
@@ -478,6 +479,7 @@
 
     <div class="typography">
         <h3>Textarea</h3>
+        <p>Textarea should have descriptive label</p>
     </div>
 
     <div class="docs-example">
@@ -500,8 +502,11 @@
 
     <div class="typography">
         <h3>Select</h3>
-        <p>Для группировки опций в элементе select используйте optgroup.</p>
-        <p>Aria-disabled используется для обозначения disabled элемента (см.<a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled">https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled</a>)</p>
+        <p>To improve the accessibility of this list even further, we could add optgroup, to group the options.</p>
+        <p>You can use aria-disabled to identify disabled elements</p>
+        
+        
+        
     </div>
 
     <div class="docs-example">
@@ -509,18 +514,18 @@
             <select class="select" name="select" title="выберите параметры">
                 <optgroup label="цвета">
                     <option value="1" selected>
-                        белый
+                        white
                     </option>
                     <option value="2" disabled aria-disabled="true">
-                        черный
+                        black
                     </option>
                 </optgroup>
                 <optgroup label="размер">
                     <option value="1" selected>
-                        большой
+                        large
                     </option>
                     <option value="2">
-                        маленький
+                        small
                     </option>
                 </optgroup>
             </select>
@@ -552,11 +557,7 @@
 
     <div class="typography">
         <h3>Fieldset</h3>
-        <p>
-            <a href="https://www.w3.org/WAI/tutorials/forms/grouping/" target="_blank">
-                https://www.w3.org/WAI/tutorials/forms/grouping/
-            </a>
-        </p>
+        <p>The <code>&lt;fieldset&gt;</code> element provides a container for related form controls, and the <code>&lt;legend&gt;</code> element acts like a heading to identify the group.</p>
     </div>
 
     <div class="docs-example">
@@ -590,8 +591,9 @@
 
     <div class="typography">
         <h3>Checkbox</h3>
-        <p>Элемент checkbox должен иметь role="checkbox", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние чекбокса.</p>
-        <p>Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.</p>
+        <p>Checkbox should have role="checkbox", and dynamically changes aria-checked and aria-disabled attributes </p>
+        
+        
     </div>
 
     <div class="docs-example">
@@ -631,34 +633,35 @@
 
     <div class="typography">
         <h3>Radio</h3>
-        <p>Элементы radio должны быть обернуты в div с role="radiogroup" и иметь атрибут role="radio", а также динамически изменяющийся aria-checked и aria-disabled, которые обозначают состояние.</p>
-        <p>Вы можете использовать следующую разметку, а скрипт автоматически добавит нужные атрибуты.</p>
+        <p>Radio elements should be wrapped in div with role="radiogroup", have role="radio" and dynamically changes aria-checked and aria-disabled attributes </p>
+        
+        
     </div>
 
     <div class="docs-example">
         <div class="docs-example__view">
             <div class="radio__field" role="radiogroup">
-                <input id="radio1" type="radio" role="radio" name="one" value="Первый">
-                <label id="label1" for="radio1">Первый (default)</label>
+                <input id="radio1" type="radio" role="radio" name="group1" value="First">
+                <label id="label1" for="radio1">First (default)</label>
 
-                <input id="radio2" type="radio" role="radio" name="one" value="Второй" disabled>
-                <label id="label2" for="radio2">Второй (disabled)</label>
+                <input id="radio2" type="radio" role="radio" name="group1" value="Second" disabled>
+                <label id="label2" for="radio2">Second (disabled)</label>
 
-                <input id="radio3" type="radio" role="radio" name="one" value="Третий" checked>
-                <label id="label3" for="radio3">Третий (checked)</label>
+                <input id="radio3" type="radio" role="radio" name="group1" value="Third" checked>
+                <label id="label3" for="radio3">Third (checked)</label>
             </div>
         </div>
 
         <pre class="docs-example__code" aria-hidden="true">
             <code class="language-markup">
                 &ltdiv role="radiogroup"&gt
-                    &ltinput id="radio1" type="radio" role="radio" name="first" value="Первый"&gt
+                    &ltinput id="radio1" type="radio" role="radio" name="group1" value="First"&gt
                     &ltlabel id="label1" for="radio1"&gtПервый&lt/label&gt
 
-                    &ltinput id="radio2" type="radio" role="radio" name="second" value="Второй" disabled&gt
+                    &ltinput id="radio2" type="radio" role="radio" name="group1" value="Second" disabled&gt
                     &ltlabel id="label2" for="radio2"&gtВторой&lt/label&gt
 
-                    &ltinput id="radio3" type="radio" role="radio" name="third" value="Третий" checked&gt
+                    &ltinput id="radio3" type="radio" role="radio" name="group1" value="Third" checked&gt
                     &ltlabel id="label3" for="radio3"&gtТретий&lt/label&gt
                 &lt/div&gt
             </code>
@@ -667,20 +670,17 @@
 
     <div class="typography">
         <h3>Submit button</h3>
+        <p>For form buttons (submit and reset input elements and button elements), no additional accessibility information is required. The value attribute for input buttons and the nested text for button elements will be read by screen readers when the button is accessed. These must never be left empty.</p>
     </div>
 
     <div class="docs-example">
         <div class="docs-example__view">
-            <button class="button" type="submit" title="submit button">
-                Submit
-            </button>
+            <input class="button" type="submit" value="submit button">
         </div>
 
         <pre class="docs-example__code" aria-hidden="true">
             <code class="language-markup convert">
-                <button class="button" type="submit" title="submit button">
-                    Submit
-                </button>
+                <input class="button" type="submit" value="submit button">
             </code>
         </pre>
     </div>
@@ -692,20 +692,34 @@
 
     <div class="typography">
         <h2>Typography</h2>
-        <p>Оформление типографики на дефолтных тегах сброшено, используя reset.css. Но оно работает внутри компонента .typography. В этот компонент следует помещать содержимое редакторов контента.</p>
+        <p>We use reset.css in our project. All content should wrapped in "typography" class</p>
+        
         <h3>Headings</h3>
-        <p>Вне блока .typography стили заголовков можно использовать через специальные классы. В отличие от заголовков, внутри .typography у них сброшены отступы.</p>
+        <p>Outside "typography" class, you can use special classes for headings, but unlike in "typography" they havn't indents</p>
+        
     </div>
 
     <div class="docs-example">
         <div class="docs-example__view">
 
-            <div class="h1">Heading h1</div>
-            <div class="h2">Heading h2</div>
-            <div class="h3">Heading h3</div>
-            <div class="h4">Heading h4</div>
-            <div class="h5">Heading h5</div>
-            <div class="h6">Heading h6</div>
+            <div class="col-xs-6">
+                <div class="h1">Heading h1</div>
+                <div class="h2">Heading h2</div>
+                <div class="h3">Heading h3</div>
+                <div class="h4">Heading h4</div>
+                <div class="h5">Heading h5</div>
+                <div class="h6">Heading h6</div>
+            </div>
+
+            <div class="typography col-xs-6">
+                <span>In "typography"</span>
+                <h1>Heading h1</h1>
+                <h2>Heading h2</h2>
+                <h3>Heading h3</h3>
+                <h4>Heading h4</h4>
+                <h5>Heading h5</h5>
+                <h6>Heading h6</h6>
+            </div>
 
         </div>
 
@@ -736,21 +750,29 @@
 
     <div class="typography">
         <h3>Links</h3>
-        <p>Если из текста ссылки не ясно куда она ведет или ее заменяет изображение, нужно использовать aria-label, чтобы позволить скрин-ридеру озвучить подробное описание.</p>
-        <p>Если ссылка недоступна используйте aria-disabled="true", а также tabindex="-1" чтобы отключить возможность сфокусироваться на ней с помощью клавиатуры.</p>
+        <p>Providing a descriptive aria-label lets a user distinguish the link from links in the Web page that lead to other destinations and helps the user determine whether to follow the link if there is no opportunity (for example due to design) to add this text to link</p>
+        <p>If it's disabled link use aria-disabled="true" and also tabindex="-1" to disabled focus on link</p>
+        
+        
     </div>
 
     <div class="docs-example">
         <div class="docs-example__view">
-            <p><a href="#">Default link</a></p>
-            <p><a href="#" aria-label="Show more news">More</a></p>
-            <p><a href="#" class="disabled" aria-disabled="true" tabindex="-1">Disabled link</a></p>
+            <p>
+                <a href="#">Default link</a>
+            </p>
+            <p>
+                <a href="#" aria-label="Show more news about cats">More</a>
+            </p>
+            <p>
+                <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Disabled link</a>
+            </p>
         </div>
 
         <pre class="docs-example__code" aria-hidden="true">
             <code class="language-markup convert">
                 <a href="#">Default link</a>
-                <a href="#" aria-label="Show more news">More</a>
+                <a href="#" aria-label="Show more news about cats">More</a>
                 <a href="#" class="disabled" aria-disabled="true" tabindex="-1">Disabled link</a>
             </code>
         </pre>
@@ -758,16 +780,25 @@
 
     <div class="typography">
         <h3>Inline text elements</h3>
-        <p>Работают все основные теги для оформления текста.</p>
+        <p>Here is most useful tags to text decoration</p>
+        
     </div>
 
     <div class="docs-example">
         <div class="docs-example__view">
-            <p><small>Lorem ipsum dolor sit amet.</small></p>
-            <p><del>Lorem ipsum dolor sit amet.</del></p>
+            <p>
+                <small>Lorem ipsum dolor sit amet.</small>
+            </p>
+            <p>
+                <del>Lorem ipsum dolor sit amet.</del>
+            </p>
             <p><s>Lorem ipsum dolor sit amet.</s></p>
-            <p><mark>Lorem ipsum dolor sit amet.</mark></p>
-            <p><ins>Lorem ipsum dolor sit amet.</ins></p>
+            <p>
+                <mark>Lorem ipsum dolor sit amet.</mark>
+            </p>
+            <p>
+                <ins>Lorem ipsum dolor sit amet.</ins>
+            </p>
             <p><u>Lorem ipsum dolor sit amet.</u></p>
             <p><strong>Lorem ipsum dolor sit amet.</strong></p>
             <p><b>Lorem ipsum dolor sit amet.</b></p>
@@ -792,13 +823,13 @@
         <h3>Alignment classes</h3>
     </div>
 
-    <div class="docs-example">
+    <div class="docs-example typography">
         <div class="docs-example__view">
-            <p class="text-left">Left aligned text.</p>
-            <p class="text-center">Center aligned text.</p>
-            <p class="text-right">Right aligned text.</p>
-            <p class="text-justify">Justified text.</p>
-            <p class="text-nowrap">No wrap text.</p>
+            <p class="text-left"><strong>Left aligned text.</strong></p>
+            <p class="text-center"><strong>Center aligned text.</strong></p>
+            <p class="text-right"><strong>Right aligned text.</strong></p>
+            <p class="text-justify"><strong>Justified text</strong>. Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorememememe ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+            <p class="text-nowrap" style="overflow: scroll;"><strong>No wrap text.</strong>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorememememe ipsum dolor sit  Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorememememe ipsum dolor sit </p>
         </div>
 
         <pre class="docs-example__code" aria-hidden="true">
@@ -813,16 +844,19 @@
     </div>
 
     <div class="typography">
-        <h3>Table with ambiguous data</h3>
-        <p><a href="https://www.w3.org/WAI/tutorials/tables/one-header/">https://www.w3.org/WAI/tutorials/tables/one-header/</a></p>
-        <p>Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце.</p>
+        <h3><a href="https://www.w3.org/WAI/tutorials/tables/one-header/">Table with ambiguous data</a></h3>
+        <p>
+
+        </p>
+        <p>The scope attribute with the value col defines the direction of the header cells, and associates them with the corresponding data cells</p>
+        
     </div>
 
     <div class="docs-example">
         <div class="docs-example__view">
 
             <table class="table">
-                <caption>Подпись к таблице:</caption>
+                <caption>Teddy bear collectors:</caption>
                 <tr>
                     <th scope="col">Last Name</th>
                     <th scope="col">First Name</th>
@@ -850,7 +884,7 @@
         <pre class="docs-example__code" aria-hidden="true">
             <code class="language-markup">
                 &lttable class="table"&gt
-                    &ltcaption&gtПодпись к таблице:&lt/caption&gt
+                    &ltcaption&gtTeddy bear collectors:&lt/caption&gt
                     &lttr&gt
                         &ltth scope="col"&gtLast Name&lt/th&gt
                         &ltth scope="col"&gtFirst Name&lt/th&gt
@@ -877,9 +911,8 @@
     </div>
 
     <div class="typography">
-        <h3>Таблица с двумя заголовками</h3>
-        <p>Атрибут scope с значением col связывает каждую ячейку в строке с заголовками с данными в столбце.</p>
-        <p>Атрибут scope с значением row связывает каждую ячейку в столбце с заголовками с данными в строке.</p>
+        <h3><a href="https://www.w3.org/WAI/tutorials/tables/two-headers/">Tables with two headers</a></h3>
+        
     </div>
 
     <div class="docs-example">
@@ -949,9 +982,9 @@
     </div>
 
     <div class="typography">
-        <h3>Таблица с неравномерными заголовками</h3>
-        <p>Атрибут scope"colgroup" связывает ячейки с заголовками первого уровня со всей группой столбцов</p>
-        <p>Заголовки второго уровня связываются только с соответсвующими колонками с помощью атрибута scope="col"</p>
+        <h3><a href="https://www.w3.org/WAI/tutorials/tables/irregular/">Tables with irregular headers</a></h3>
+        
+        <p>A column group is defined using the <code>&lt;colgroup&gt;</code> element.</p>
     </div>
 
     <div class="docs-example">
@@ -1092,8 +1125,6 @@
     </div>
 </div>
         
-
-
 
 
 
