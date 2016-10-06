@@ -21,12 +21,12 @@
     - [x] breadcrumbs
     - [x] collapse
     - [x] forms
-    - [ ] nav
+    - [x] nav
     - [ ] control Panel
-    - [ ] pagination
-    - [ ] progressBar
+    - [x] pagination
+    - [x] progressBar
     - [ ] Images
-    - [ ] Tabs
+    - [x] Tabs
     - [x] Typography
 - [x] Добавить информации по textarea
 - [x] Добавить информации по submit button 

@@ -6,10 +6,14 @@
 
     <div class="typography">
         <h2>Tabs</h2>
-        <p>Списку табов указывается атрибут role="tabs", а элементам списка атрибут role="tab".</p>
-        <p>Скрипт инициализируется на элементе с классом "tabs", а атрибут aria-controls следует указать id панели, к которой привязана вкладка.</p>
-        <p>Выбраному табу указывается aria-selected="true" и tabindex="0", остальным присваевается значение false и tabindex="-1".</p>
-        <p>Скрипт автоматически изменяет атрибуты aria-selected и tabindex в зависимости от выбранной вкладки.</p>
+        <p>Tablist use role="tabs" and its elements has role="tab" attribute</p>
+        <p>Selected item should have aria-selected="true" property and tabindex="0", other aria-selected="false" and tabindex="-1"</p>
+        <p>Each panel should have aria-controls with id of panel</p>
+        <p>Script init on element with "tabs" class</p>
+        {#<p>Списку табов указывается атрибут role="tabs", а элементам списка атрибут role="tab".</p>#}
+        {#<p>Скрипт инициализируется на элементе с классом "tabs", а атрибут aria-controls следует указать id панели, к которой привязана вкладка.</p>#}
+        {#<p>Выбраному табу указывается aria-selected="true" и tabindex="0", остальным присваевается значение false и tabindex="-1".</p>#}
+        {#<p>Скрипт автоматически изменяет атрибуты aria-selected и tabindex в зависимости от выбранной вкладки.</p>#}
     </div>
 
     <div class="docs-example">

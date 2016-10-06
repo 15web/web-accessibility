@@ -282,9 +282,10 @@
 
     <div class="typography">
         <h2>Pagination</h2>
-        <p>Списку ссылок указывается aria-label с описанием и атрибут role="navigation".</p>
-        <p>Элемент назад и вперед имеют атрибуты rel=”prev”, rel=”next”.</p>
-        <p>Коротким ссылкам следует добавить описание в aria-label.</p>
+        <p>List of link use role "navigation" and aria-label that describes it</p>
+        <p>elements "prev" and "next" should have rel with values "prev" and "next"</p>
+        
+        
     </div>
 
     <div class="docs-example">
@@ -348,10 +349,14 @@
 
     <div class="typography">
         <h2>Tabs</h2>
-        <p>Списку табов указывается атрибут role="tabs", а элементам списка атрибут role="tab".</p>
-        <p>Скрипт инициализируется на элементе с классом "tabs", а атрибут aria-controls следует указать id панели, к которой привязана вкладка.</p>
-        <p>Выбраному табу указывается aria-selected="true" и tabindex="0", остальным присваевается значение false и tabindex="-1".</p>
-        <p>Скрипт автоматически изменяет атрибуты aria-selected и tabindex в зависимости от выбранной вкладки.</p>
+        <p>Tablist use role="tabs" and its elements has role="tab" attribute</p>
+        <p>Selected item should have aria-selected="true" property and tabindex="0", other aria-selected="false" and tabindex="-1"</p>
+        <p>Each panel should have aria-controls with id of panel</p>
+        <p>Script init on element with "tabs" class</p>
+        
+        
+        
+        
     </div>
 
     <div class="docs-example">
@@ -439,8 +444,10 @@
 
     <div class="typography">
         <h2>Nav</h2>
-        <p>Навигация выполняется с помощью тега nav, также указывается aria-label с описанием.</p>
-        <p>Желательное делать навигацию в виде списка. Из текста ссылок должно быть ясно куда они ведут.</p>
+        <p>If a navigation consists of more than a few links, using a list of links is the most effective way to convey the menu structure to users</p>
+        <p>To identify the menu you can add WAI-ARIA landmark role of navigation and to make it easier to find menu, it should be labeled according to their individual function with aria-label</p>
+        
+        
     </div>
 
     <div class="docs-example">
@@ -449,18 +456,18 @@
             <nav class="nav" role="navigation" aria-label="horizontal navigation">
                 <ul>
                     <li class="nav__item nav__item_active">
-                        <a class="nav__link" href="#" title="company information">
-                            Item 1
+                        <a class="nav__link" href="#">
+                            company information
                         </a>
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link" href="#" title="contacts information">
-                            Item 2
+                        <a class="nav__link" href="#">
+                           contacts information
                         </a>
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link" href="#" title="documents example">
-                            Item 3
+                        <a class="nav__link" href="#">
+                            documents example
                         </a>
                     </li>
                 </ul>
@@ -472,18 +479,18 @@
                 &lt;nav class="nav" role="navigation" aria-label="horizontal navigation"&gt;
                     &lt;ul&gt;
                         &lt;li class="nav__item nav__item_active"&gt;
-                            &lt;a class="nav__link" href="#" title="company information"&gt;
-                                Item 1
+                            &lt;a class="nav__link" href="#"&gt;
+                                company information
                             &lt;/a&gt;
                         &lt;/li&gt;
                         &lt;li class="nav__item"&gt;
-                            &lt;a class="nav__link" href="#" title="contacts information"&gt;
-                                Item 2
+                            &lt;a class="nav__link" href="#"&gt;
+                               contacts information
                             &lt;/a&gt;
                         &lt;/li&gt;
                         &lt;li class="nav__item"&gt;
-                            &lt;a class="nav__link" href="#" title="documents example"&gt;
-                                Item 3
+                            &lt;a class="nav__link" href="#"&gt;
+                                documents example
                             &lt;/a&gt;
                         &lt;/li&gt;
                         ...
@@ -549,14 +556,15 @@
 </div>
         
 
-
 <div id="progressBar">
 
     <div class="typography">
         <h2>Progress bar</h2>
-        <p>Линия прогресса указывает, что пользователь совершил действие и приложение обрабатывает его запрос. Чтобы человек с ограниченными возможностями мог получить информацию о ходе операции используются специальные атрибуты.</p>
-        <p>role="progressbar" указывает скрин-ридеру, что это индикатор прогресса. aria-valuenow - текущее значение, aria-valuemin - минимальное, aria-valuemax - максимальное, tabindex - для того, чтобы можно было сфокусироваться на элементе.</p>
-    </div>
+        <p>A progressbar indicates that the user's request has been received and the application is making progress toward completing the requested action</p>
+        <p>It should have role="progressbar" and aria attributes such as aria-valuenoe, aria-valuemin, aria-valuemax, tabindex - to focus on element </p>
+        
+        
+</div>
 
     <div class="docs-example">
         <div class="docs-example__view">
