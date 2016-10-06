@@ -1,0 +1,130 @@
+{% include "./partials/header-for-test.twig" %}
+
+{# Forms #}
+
+<div>
+    <div class="docs-example">
+        <div class="docs-example__view">
+            <label for="search_1" class="label">
+                Search
+            </label>
+            <input id="search_1" class="input" type="text">
+        </div>
+    </div>
+
+
+    <div class="docs-example">
+        <div class="docs-example__view">
+            <label for="search_hidden" class="label hidden">
+                Search
+            </label>
+
+            <input id="search_hidden" class="input" type="text" name="search">
+        </div>
+    </div>
+
+
+    <div class="docs-example">
+        <div class="docs-example__view">
+            <label for="textarea" class="label">
+                Message
+            </label>
+            <textarea id="textarea" class="textarea textarea_block"></textarea>
+        </div>
+
+    </div>
+
+
+    <div class="docs-example">
+        <div class="docs-example__view">
+            <select class="select" name="select" title="выберите параметры">
+                <optgroup label="цвета">
+                    <option value="1" selected>
+                        white
+                    </option>
+                    <option value="2" disabled aria-disabled="true">
+                        black
+                    </option>
+                </optgroup>
+                <optgroup label="размер">
+                    <option value="1" selected>
+                        large
+                    </option>
+                    <option value="2">
+                        small
+                    </option>
+                </optgroup>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="docs-example">
+        <div class="docs-example__view">
+            <fieldset class="fieldset">
+                <legend class="fieldset__legend">Output format</legend>
+                <div>
+                    <input id="txt" type="radio" name="format" value="txt" checked>
+                    <label for="txt">Text file</label>
+                </div>
+                <div>
+                    <input id="csv" type="radio" name="format" value="csv">
+                    <label for="csv">CSV file</label>
+                </div>
+                <div>
+                    <input id="html" type="radio" name="format" value="html">
+                    <label for="csv">HTML file</label>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+
+    <div class="docs-example">
+        <div class="docs-example__view">
+            <div class="checkbox__field" role="group">
+                <input id="checkbox1" type="checkbox" role="checkbox" name="checkbox1" value="чекбокс1" disabled>
+                <label id="checkboxLabel" for="checkbox1">
+                    Checkbox 1 (disabled)
+                </label>
+                <input id="checkbox2" type="checkbox" role="checkbox" name="checkbox2" value="чекбокс2">
+                <label id="checkboxLabel" for="checkbox2">
+                    Checkbox 2 (default)
+                </label>
+                <input id="checkbox3" type="checkbox" role="checkbox" name="checkbox3" value="чекбокс3" checked>
+                <label id="checkboxLabel" for="checkbox3">
+                    Checkbox 3 (checked)
+                </label>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="docs-example">
+        <div class="docs-example__view">
+            <div class="radio__field" role="radiogroup">
+                <input id="radio1" type="radio" role="radio" name="group1" value="First">
+                <label id="label1" for="radio1">First (default)</label>
+
+                <input id="radio3" type="radio" role="radio" name="group1" value="Third" checked>
+                <label id="label3" for="radio3">Third (checked)</label>
+
+                <input id="radio2" type="radio" role="radio" name="group1" value="Second" disabled>
+                <label id="label2" for="radio2">Second (disabled)</label>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="docs-example">
+        <div class="docs-example__view">
+            <input class="button" type="submit" value="submit button">
+        </div>
+    </div>
+</div>
+
+
+{% include "./partials/footer-for-test.twig" %}
