@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" type="text/css" href="../dist/accessibility.css" media="screen">
+    
+    <link rel="stylesheet" type="text/css" href="assets/prism.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="assets/docs.css" media="screen">
+</head>
+
+<div id="tabpanel1" class="tabs">
+    <ul role="tablist" class="tabs__nav ">
+        <li class="tabs__nav-item active" id="tab11" aria-controls="panel11" aria-selected="true" role="tab" tabindex="0">
+            One
+        </li>
+        <li class="tabs__nav-item" id="tab22" aria-controls="panel22" role="tab" aria-selected="false" tabindex="-1">
+            Two
+        </li>
+        <li class="tabs__nav-item" id="tab33" aria-controls="panel33" role="tab" aria-selected="false" tabindex="-1">
+            Three
+        </li>
+        <li class="tabs__nav-item" id="tab44" aria-controls="panel44" role="tab" aria-selected="false" tabindex="-1">
+            Four
+        </li>
+    </ul>
+
+    <div id="panel11" aria-labelledby="tab11" role="tabpanel" class="tabs__panel">
+        <p>Lorem.</p>
+    </div>
+
+    <div id="panel22" aria-labelledby="tab22" role="tabpanel" class="tabs__panel">
+        <p>Lorem ipsum.</p>
+    </div>
+
+    <div id="panel33" aria-labelledby="tab33" role="tabpanel" class="tabs__panel">
+        <p>Lorem ipsum dolor.</p>
+    </div>
+
+    <div id="panel44" aria-labelledby="tab44" role="tabpanel" class="tabs__panel">
+        <p>Lorem ipsum dolor sit.</p>
+    </div>
+</div>
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+<script src="../dist/accessibility.js"></script>
+
+
+<script src="assets/prism.js"></script>
+<script src="assets/docs.js"></script>
+
+</body>
+</html>

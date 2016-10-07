@@ -1,0 +1,10 @@
+{% include "./partials/header-for-test.twig" %}
+
+<h1>Кликните на кнопку и услышите сообщение</h1>
+<button class="button" onclick="document.getElementById('alert').style.display='block'">click on me</button>
+
+<div class="alert" id="alert" role="alert" style="display: none;">
+    Сообщение вызванное кнопкой
+</div>
+
+{% include "./partials/footer-for-test.twig" %}
