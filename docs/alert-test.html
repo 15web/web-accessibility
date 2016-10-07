@@ -11,26 +11,12 @@
     <link rel="stylesheet" type="text/css" href="assets/docs.css" media="screen">
 </head>
 
-<nav class="nav" role="navigation" aria-label="testing experimental nav">
-    <ul>
+<h1>Кликните на кнопку и услышите сообщение</h1>
+<button class="button" onclick="document.getElementById('alert').style.display='block'">click on me</button>
 
-        <li class="nav__item nav__item_active">
-            <a class="nav__link" href="#" title="company information">
-                Item 1
-            </a>
-        </li>
-        <li class="nav__item">
-            <a class="nav__link" href="#" title="contacts information">
-                Item 2
-            </a>
-        </li>
-        <li class="nav__item">
-            <a class="nav__link" href="#" title="documents example">
-                Item 3
-            </a>
-        </li>
-    </ul>
-</nav>
+<div class="alert" id="alert" role="alert" style="display: none;">
+    Сообщение вызванное кнопкой
+</div>
 
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
