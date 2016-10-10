@@ -50,6 +50,8 @@
     border-bottom: 1px solid  #000; }
   .faq__answer {
     margin: 8px 0 0 30px; }
+  .faq__question-time {
+    margin-bottom: 0.4em; }
   html[data-color="black"] .faq__form {
     border-bottom: 1px solid  #fff; }
   html[data-color="black"] .faq__item {

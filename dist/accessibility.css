@@ -1329,7 +1329,7 @@ strong, b {
   font-weight: bold; }
 
 small, .small {
-  font-size: 65%; }
+  font-size: 0.8em; }
 
 .text-left {
   text-align: left; }
@@ -2021,14 +2021,14 @@ video {
   margin-bottom: 20px;
   background-color: #ffffff;
   border: 1px solid black; }
-  .panel .panel__heading {
+  .panel__heading {
     padding: 10px 15px;
     color: white;
     background-color: black;
     border-color: black; }
-  .panel .panel__body {
+  .panel__body {
     padding: 15px; }
-  .panel .panel__footer {
+  .panel__footer {
     padding: 10px 15px;
     color: white;
     background-color: black;

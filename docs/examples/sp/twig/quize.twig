@@ -1,78 +1,37 @@
+
 {% include "./partials/header.twig" %}
-
-<body class="container init">
-
-{% include "./partials/control-panel.twig" %}
-
-<header class="header" role="banner">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="pull-left">
-                31 марта 2016
-            </div>
-            <a class="header__site-version pull-right" href="#">
-                Обычная версия сайта
+<link rel="stylesheet" href="assets/libs/fancybox/jquery.fancybox.css">
+<nav class="nav" aria-label="горизонтальная навигация">
+    <ul>
+        <li class="nav__item ">
+            <a class="nav__link" href="index.html" title="Главная страница сайта">
+                Главная
             </a>
-        </div>
-    </div>
-
-    <div class="h1">
-        Доступный Сайт
-    </div>
-
-    <div class="h3">
-        Шаблон доступного сайта
-    </div>
-
-    <nav class="nav" aria-label="горизонтальная навигация">
-        <ul>
-            <li class="nav__item">
-                <a class="nav__link" href="index.html" title="Главная страница сайта">
-                    Главная
-                </a>
-            </li>
-            <li class="nav__item">
-                <a class="nav__link" href="faq.html" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
-                    Вопрос-ответ
-                </a>
-            </li>
-            <li class="nav__item">
-                <a class="nav__link" href="content.html">
-                    Контент
-                </a>
-            </li>
-            <li class="nav__item">
-                <a class="nav__link" href="gallery.html">
-                    Галлерея
-                </a>
-            </li>
-            <li class="nav__item">
-                <a class="nav__link" href="gallery-inner.html">
-                    Галлерея-внутри
-                </a>
-            </li>
-            <li class="nav__item nav__item_active">
-                <a class="nav__link" href="quize.html">
-                    Опрос
-                </a>
-            </li>
-            <li class="nav__item">
-                <a class="nav__link" href="search.html">
-                    Поиск
-                </a>
-            </li>
-            <li class="nav__item">
-                <a class="nav__link" href="npa.html">
-                    Список
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    {% include "./partials/search-form.twig" %}
-
+        </li>
+        <li class="nav__item ">
+            <a class="nav__link" href="faq.html" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
+                Обратная связь
+            </a>
+        </li>
+        <li class="nav__item ">
+            <a class="nav__link" href="gallery.html">
+                Галлерея
+            </a>
+        </li>
+        <li class="nav__item ">
+            <a class="nav__link" href="search.html">
+                Поиск
+            </a>
+        </li>
+        <li class="nav__item nav__item_active">
+            <a class="nav__link" href="quize.html">
+                Опрос
+            </a>
+        </li>
+    </ul>
+</nav>
+{% include "./partials/search-form.twig" %}
 </header>
-
 <main class="main" role="main">
     <!-- breadcrumbs -->
     <nav class="breadcrumbs" aria-label="хлебные крошки">
@@ -82,17 +41,12 @@
             </li>
             <span class="breadcrumbs__separator" aria-hidden="true"></span>
             <li class="breadcrumbs__item">
-                <a href="#" title="Официальная документация">Нормативно-правовые акты</a>
+                <a href="#" title="Официальная документация">Опросы</a>
             </li>
             <span class="breadcrumbs__separator" aria-hidden="true"></span>
             <li class="breadcrumbs__item">
-                <a href="#" title="От 2014 года">Решения Совета</a>
+                <span>Транспортный маршрут</span>
             </li>
-            <span class="breadcrumbs__separator" aria-hidden="true"></span>
-            <li class="breadcrumbs__item">
-                <span>Решения 2015</span>
-            </li>
-            <span class="breadcrumbs__separator" aria-hidden="true"></span>
         </ul>
     </nav>
     <!-- end breadcrumbs -->
@@ -100,27 +54,27 @@
 
     <!-- quize -->
     <div class="quize typography">
-        <h3>lorem?</h3>
+        <h3>Какой трансопртный маршрут стоит убрать?</h3>
         <div class="quize__row">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit?</p>
+            <p>15 маршрут</p>
             <div class="progress">
-                <div class="progress__value" style="width: 35%" role="progressbar" aria-valuenow="35" aria-valuemin="0"
+                <div class="progress__value" style="width: 15%" role="progressbar" aria-valuenow="15" aria-valuemin="0"
                      aria-valuemax="100" tabindex="0">
-                    <div class="progress__counter">35%</div>
+                    <div class="progress__counter">15%</div>
                 </div>
             </div>
         </div>
         <div class="quize__row">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit?</p>
+            <p>21 маршрут</p>
             <div class="progress">
-                <div class="progress__value" style="width: 45%" role="progressbar" aria-valuenow="45" aria-valuemin="0"
+                <div class="progress__value" style="width: 30%" role="progressbar" aria-valuenow="30" aria-valuemin="0"
                      aria-valuemax="100" tabindex="0">
-                    <div class="progress__counter">45%</div>
+                    <div class="progress__counter">30%</div>
                 </div>
             </div>
         </div>
         <div class="quize__row">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit?</p>
+            <p>17 маршрут</p>
             <div class="progress">
                 <div class="progress__value" style="width: 55%" role="progressbar" aria-valuenow="55" aria-valuemin="0"
                      aria-valuemax="100" tabindex="0">

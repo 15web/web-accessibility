@@ -7,7 +7,7 @@
     background-color: #ffffff;
     border: 1px solid black;
 
-    .panel__heading {
+    &__heading {
         padding: 10px 15px;
 
         color: white;
@@ -16,11 +16,11 @@
         border-color: black;
     }
 
-    .panel__body {
+    &__body {
         padding: 15px;
     }
 
-    .panel__footer {
+    &__footer {
         padding: 10px 15px;
 
         color: white;

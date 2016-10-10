@@ -1,101 +1,40 @@
 {% include "./partials/header.twig" %}
 
-<body class="container init">
-
-{% include "./partials/control-panel.twig" %}
-
-<header class="header" role="banner">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="pull-left">
-                31 марта 2016
-            </div>
-            <a class="header__site-version pull-right" href="#">
-                Обычная версия сайта
+<nav class="nav" aria-label="горизонтальная навигация">
+    <ul>
+        <li class="nav__item ">
+            <a class="nav__link" href="index.html" title="Главная страница сайта">
+                Главная
             </a>
-        </div>
-    </div>
+        </li>
+        <li class="nav__item ">
+            <a class="nav__link" href="faq.html" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
+                Обратная связь
+            </a>
+        </li>
+        <li class="nav__item nav__item_active">
+            <a class="nav__link" href="gallery.html">
+                Галлерея
+            </a>
+        </li>
+        <li class="nav__item">
+            <a class="nav__link" href="search.html">
+                Поиск
+            </a>
+        </li>
+        <li class="nav__item">
+            <a class="nav__link" href="quize.html">
+                Опрос
+            </a>
+        </li>
+    </ul>
+</nav>
 
-    <div class="h1">
-        Доступный Сайт
-    </div>
-
-    <div class="h3">
-        Шаблон доступного сайта
-    </div>
-
-    <nav class="nav" aria-label="горизонтальная навигация">
-        <ul>
-            <li class="nav__item">
-                <a class="nav__link" href="index.html" title="Главная страница сайта">
-                    Главная
-                </a>
-            </li>
-            <li class="nav__item">
-                <a class="nav__link" href="faq.html" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
-                    Вопрос-ответ
-                </a>
-            </li>
-            <li class="nav__item">
-                <a class="nav__link" href="content.html">
-                    Контент
-                </a>
-            </li>
-            <li class="nav__item nav__item_active">
-                <a class="nav__link" href="gallery.html">
-                    Галлерея
-                </a>
-            </li>
-            <li class="nav__item">
-                <a class="nav__link" href="gallery-inner.html">
-                    Галлерея-внутри
-                </a>
-            </li>
-            <li class="nav__item">
-                <a class="nav__link" href="quize.html">
-                    Опрос
-                </a>
-            </li>
-            <li class="nav__item">
-                <a class="nav__link" href="search.html">
-                    Поиск
-                </a>
-            </li>
-            <li class="nav__item">
-                <a class="nav__link" href="npa.html">
-                    Список
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    {% include "./partials/search-form.twig" %}
+{% include "./partials/search-form.twig" %}
 
 </header>
-<main class="main" role="main">
-    <!-- breadcrumbs -->
-    <nav class="breadcrumbs" aria-label="хлебные крошки">
-        <ul>
-            <li class="breadcrumbs__item">
-                <a href="/">Главная</a>
-            </li>
-            <span class="breadcrumbs__separator" aria-hidden="true"></span>
-            <li class="breadcrumbs__item">
-                <a href="#" title="Официальная документация">Нормативно-правовые акты</a>
-            </li>
-            <span class="breadcrumbs__separator" aria-hidden="true"></span>
-            <li class="breadcrumbs__item">
-                <a href="#" title="От 2014 года">Решения Совета</a>
-            </li>
-            <span class="breadcrumbs__separator" aria-hidden="true"></span>
-            <li class="breadcrumbs__item">
-                <span>Решения 2015</span>
-            </li>
-            <span class="breadcrumbs__separator" aria-hidden="true"></span>
-        </ul>
-    </nav>
-    <!-- end breadcrumbs -->
 
+<main class="main" role="main">
 
     <!-- gallery -->
     <div class="gallery">
@@ -104,61 +43,39 @@
                 <a href="#">Галлерея 1</a>
             </div>
             <div class="row">
-                <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                <a class="col-xs-4 fancybox" rel="group" href="gallery-inner.html">
                     <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97175&w=300&h=175"
                          alt="Картинка">
                 </a>
-                <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                <a class="col-xs-4 fancybox" rel="group" href="gallery-inner.html">
                     <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97175&w=300&h=175"
                          alt="Картинка">
                 </a>
-                <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                <a class="col-xs-4 fancybox" rel="group" href="gallery-inner.html">
                     <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97175&w=300&h=175"
                          alt="Картинка">
                 </a>
             </div>
         </div>
-
         <div class="gallery__item">
             <div class="h2">
-                <a href="#">Галлерея 1</a>
+                <a href="#">Галлерея 2</a>
             </div>
             <div class="row">
-                <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                <a class="col-xs-4 fancybox" rel="group" href="gallery-inner.html">
                     <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97175&w=300&h=175"
                          alt="Картинка">
                 </a>
-                <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                <a class="col-xs-4 fancybox" rel="group" href="gallery-inner.html">
                     <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97175&w=300&h=175"
                          alt="Картинка">
                 </a>
-                <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
+                <a class="col-xs-4 fancybox" rel="group" href="gallery-inner.html">
                     <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97175&w=300&h=175"
                          alt="Картинка">
                 </a>
             </div>
         </div>
-
-        <div class="gallery__item">
-            <div class="h2">
-                <a href="#">Галлерея 1</a>
-            </div>
-            <div class="row">
-                <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
-                    <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97175&w=300&h=175"
-                         alt="Картинка">
-                </a>
-                <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
-                    <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97175&w=300&h=175"
-                         alt="Картинка">
-                </a>
-                <a class="col-xs-4 fancybox" rel="group" href="assets/images/photo-camera.png">
-                    <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97175&w=300&h=175"
-                         alt="Картинка">
-                </a>
-            </div>
-        </div>
-
 
     </div>
     <!-- end gallery -->
@@ -166,7 +83,7 @@
 
 {% include "partials/footer.twig" %}
 
-<script src="assets/libs/fancybox/jquery.fancybox.pack.js"></script>
+<script src="assets/libs/fancybox/jquery.fancybox.js"></script>
 <script>
     $(document).ready(function () {
         $(".fancybox").fancybox();

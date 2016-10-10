@@ -1,113 +1,60 @@
-{% include "./partials/header.twig" %}
-
-<body class="container init">
-
-{% include "./partials/control-panel.twig" %}
-
-<header class="header" role="banner">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="pull-left">
-                31 марта 2016
-            </div>
-            <a class="header__site-version pull-right" href="#">
-                Обычная версия сайта
+{% include './partials/header.twig' %}
+<nav class="nav" aria-label="горизонтальная навигация">
+    <ul>
+        <li class="nav__item nav__item_active">
+            <a class="nav__link" href="index.html" title="Главная страница сайта">
+                Главная
             </a>
-        </div>
-    </div>
-    <div class="h1">
-        Доступный Сайт
-    </div>
-    <div class="h3">
-        Шаблон доступного сайта
-    </div>
-
-    <nav class="nav" aria-label="горизонтальная навигация">
-        <ul>
-            <li class="nav__item">
-                <a class="nav__link" href="index.html" title="Главная страница сайта">
-                    Главная
-                </a>
-            </li>
-            <li class="nav__item">
-                <a class="nav__link" href="faq.html" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
-                    Вопрос-ответ
-                </a>
-            </li>
-            <li class="nav__item nav__item_active">
-                <a class="nav__link" href="content.html">
-                    Контент
-                </a>
-            </li>
-            <li class="nav__item">
-                <a class="nav__link" href="gallery.html">
-                    Галлерея
-                </a>
-            </li>
-            <li class="nav__item">
-                <a class="nav__link" href="gallery-inner.html">
-                    Галлерея-внутри
-                </a>
-            </li>
-            <li class="nav__item">
-                <a class="nav__link" href="quize.html">
-                    Опрос
-                </a>
-            </li>
-            <li class="nav__item">
-                <a class="nav__link" href="search.html">
-                    Поиск
-                </a>
-            </li>
-            <li class="nav__item">
-                <a class="nav__link" href="npa.html">
-                    Список
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    {% include "./partials/search-form.twig" %}
-
+        </li>
+        <li class="nav__item">
+            <a class="nav__link" href="faq.html" title="На этой страницу вы найдете ответы на частозадаваемые вопросы">
+                Обратная связь
+            </a>
+        </li>
+        <li class="nav__item">
+            <a class="nav__link" href="gallery.html">
+                Галлерея
+            </a>
+        </li>
+        <li class="nav__item">
+            <a class="nav__link" href="search.html">
+                Поиск
+            </a>
+        </li>
+        <li class="nav__item">
+            <a class="nav__link" href="quize.html">
+                Опрос
+            </a>
+        </li>
+    </ul>
+</nav>
+{% include "./partials/search-form.twig" %}
 </header>
 
 <main class="main" role="main">
 
     <article class="typography">
         <h2 class="panel-heading content-header">15 сентября 2015 года</h2>
-        <h1>Заголовок H1</h1>
-        <h2>Заголовок H2</h2>
-        <h3>Заголовок H3</h3>
-        <h4>Заголовок H4</h4>
-        <h5>Заголовок H5</h5>
-        <p>Lorem
-            <a href="">ipsum</a>
-            dolor sit amet,
-            <a href="">consectetur</a>
-            adipi elit. Amet cumque
-            <a href="" class="disabled">DISABLED</a>
-            eos ipsum laudantium natus nesciunt odio placeat soluta? Dicta dolorem earum esse laboriosam nam nihil
-            nostrum odit provident, quasi saepe!
+        <h1>Томичей предупреждают об ухудшении погодных условий</h1>
+        <p>Согласно прогнозу Томского ЦГСМ – филиала ФГБУ «Западно-Сибирское УГМС», в ближайшие сутки в Томске ожидаются осадки в виде мокрого снега, ветер северный 3-8 м/с, ночью местами порывы до 13 м/с. Температура ночью 0…-2°С, днем +2…+4°С. Осадки и данный температурный режим сохранится в ближайшие 2-3 дня.
         </p>
         <p>
             <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97240&w=200&h=240"
                  alt="изображение">
         </p>
+        <p>В связи с неблагоприятным прогнозом администрация города напоминает автолюбителям, что в целях безопасности необходимо заменить летние шины на зимние. В свою очередь, техника «Спецавтохозяйства» в выходные дни будет дежурить круглосуточно и, в случае обледенения проезжей части, начнет посыпку песко-соляной смесью. Тем не менее, участникам дорожного движения стоит соблюдать скоростной режим, дистанцию между транспортными средствами и другие требования правил дорожного движения. При неблагоприятных погодных условиях, машины с летними шинами эксплуатировать не рекомендуется.</p>
         <p>
             <q>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                "Просим жителей города быть внимательными" - сообщает глава МЧС
             </q>
         </p>
+
+
+
         <ul>
-            <li>Бюджет сельских поселений</li>
-            <li>«Межениновская средняя общеобразовательная школа»
-                <ul>
-                    <li>Бюджет сельских поселений</li>
-                    <li>«Межениновская средняя общеобразовательная школа»</li>
-                    <li>Муниципальное образование</li>
-                </ul>
-            </li>
-            <li>Муниципальное образование</li>
+            <li>Снежные заносы образуются в результате обильных снегопадов и сильных метелей. Из-за них может остановиться движение на автомобильных и железных дорогах, затрудняется работа коммунально-энергетического хозяйства и учреждений связи, нарушается нормальная жизнь сел и городов.</li>
+            <li>О возможности сильных снегопадов население предупреждается заблаговременно по всем средствам связи. На этот период ограничивают передвижение, особенно в сельской местности, создают дома запасы продуктов питания, воды и топлива, заготавливают корма и воду для животных.</li>
+            <li>Если снегопад застал вас в пути, необходимо остановить автомобиль, но не покидать машину, а тем более не пытаться пешком дойти до населенного пункта. Чтобы не оказаться погребенным под снегом, надо разгребать его, желательно вывесить яркую ткань-ориентир - для поисковой группы.</li>
         </ul>
 
         <ol>

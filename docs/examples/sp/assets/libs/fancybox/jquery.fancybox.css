@@ -113,8 +113,8 @@
 	width: 40%;
 	height: 100%;
 	cursor: pointer;
-	text-decoration: none;
-	background: transparent url('blank.gif'); /* helps IE */
+	text-decoration: none !important;
+	background: transparent url('blank.gif') !important; /* helps IE */
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	z-index: 8040;
 }
