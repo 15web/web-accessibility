@@ -12,7 +12,7 @@ import './components/utils/reset';
 // ==========================================================================
 
 // Control panel
-import './components/default/new-control-panel';
+import './components/default/control-panel';
 
 // Grid systems
 import './components/default/grid';

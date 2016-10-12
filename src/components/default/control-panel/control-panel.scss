@@ -1,0 +1,33 @@
+// ==========================================================================
+// control-panel
+// ==========================================================================
+
+.control-panel {
+    display: block;
+    width: 100%;
+
+    font-size: 18px;
+
+    border-bottom: 1px solid #000;
+    background: #ccc;
+
+    box-sizing: border-box;
+    z-index: 999;
+
+    &__wrapper {
+        max-width: 1200px;
+        min-width: 960px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+
+    &__col {
+        display: inline-block;
+        margin-right: 20px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
