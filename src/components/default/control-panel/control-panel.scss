@@ -24,10 +24,32 @@
 
     &__col {
         display: inline-block;
+        vertical-align: middle;
         margin-right: 20px;
 
         &:last-child {
             margin-right: 0;
         }
+    }
+
+    &__switcher {
+        display: inline-block;
+        vertical-align: middle;
+
+        &-btn {
+            width:40px;
+            height: 40px;
+        }
+
+        [data-increase="true"] {
+            background: #{'svg-load(plus.svg, fill: #000) center  no-repeat'};
+            background-size: 60%;
+        }
+        [data-increase="false"] {
+            background: #{'svg-load(minus.svg, fill: #000) center  no-repeat'};
+            background-size: 70%;
+        }
+
+
     }
 }

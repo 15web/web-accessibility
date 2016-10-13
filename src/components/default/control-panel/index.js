@@ -12,7 +12,6 @@ class ControlPanel {
 
         this.controlPanel = $('.control-panel');
         this.controls = this.controlPanel.find('[data-type]');
-        console.log(this.controls);
         this.handleControlClick();
         // self.app = $('.application');
         //
@@ -36,16 +35,16 @@ class ControlPanel {
     }
 
     setAppStyle(data) {
-        var curValue = parseInt(this.app.css(data.type));
-
         switch (data.type) {
+
             case 'font-size' : {
                 if(data.increase) {
                     this.app.css(data.type, '+=1px')
                 }
                 else {
-                    this.app.css(data.type, '-=10px')
+                    this.app.css(data.type, '-=1px')
                 }
+                break;
             }
             case 'letter-spacing' : {
                 if(data.increase) {
@@ -54,6 +53,7 @@ class ControlPanel {
                 else {
                     this.app.css(data.type, '-=0.025em')
                 }
+                break;
             }
 
             case 'img' : {
@@ -63,6 +63,7 @@ class ControlPanel {
                 else {
                     this.app.find('img').css('visibility','hidden');
                 }
+                break;
             }
         }
 
