@@ -2,13 +2,13 @@
 
 {# Control Panel #}
 <body>
-<div class="new-control-panel">
+<div class="new-control-panel ">
     <div class="new-control-panel__wrapper">
         <div class="new-control-panel__col">
            Размер шрифта
             <div class="new-control-panel__switcher">
                 <button class="new-control-panel__switcher-btn" data-type="font-size" data-increase="true" aria-label="увеличить размер шрифта"></button>
-                <button class="new-control-panel__switcher-btn" data-type="font-size" data-increase="false" aria-label="увеличить размер шрифта"></button>
+                <button class="new-control-panel__switcher-btn" data-type="font-size" data-increase="false" aria-label="уменьшить размер шрифта"></button>
             </div>
 
         </div>
@@ -21,10 +21,30 @@
         </div>
         <div class="new-control-panel__col">
            Изображения
-           <div class="new-control-panel__switcher">
-               <button class="new-control-panel__switcher-btn" data-type="img" data-view="true" aria-label="показать изображения"></button>
-               <button class="new-control-panel__switcher-btn" data-type="img" data-view="false" aria-label="скрыть изображения"></button>
+           <div class="new-control-panel__switcher new-control-panel__switcher_img">
+               <button class="new-control-panel__switcher-btn new-control-panel__switcher-btn_img-on" data-type="img" data-view="true" aria-label="показать изображения">ON</button>
+               <button class="new-control-panel__switcher-btn new-control-panel__switcher-btn_img-off" data-type="img" data-view="false" aria-label="скрыть изображения">OFF</button>
            </div>
+        </div>
+        <div class="new-control-panel__col">
+            Цвет
+            <div class="new-control-panel__switcher">
+                <button class="new-control-panel__switcher-btn new-control-panel__switcher-btn_color-white"  aria-label="Белый фон с черным шрифтом"></button>
+                <button class="new-control-panel__switcher-btn new-control-panel__switcher-btn_color-black"  aria-label="Черный фон с белым шрифтом"></button>
+                <button class="new-control-panel__switcher-btn new-control-panel__switcher-btn_color-yellow"  aria-label="Желтый цвет сайта с черным шрифтом"></button>
+                <button class="new-control-panel__switcher-btn new-control-panel__switcher-btn_color-blue"  aria-label="Голубой цвет сайта с черным шрифтом"></button>
+            </div>
+        </div>
+        <div class="new-control-panel__col">
+            Дополнительно
+            <div class="new-control-panel__switcher">
+                <button class="new-control-panel__switcher-btn new-control-panel__switcher-btn_extra-menu" id="dropdownBtn" aria-label="Раскрыть дополнительный список"></button>
+            </div>
+        </div>
+        <div class="new-control-panel__dropdown" id="dropdownMenu" tabindex="-1" aria-expanded="false">
+            <div class="new-control-panel__dropdown-item"><button>kek</button></div>
+            <div class="new-control-panel__dropdown-item"><a href="#">ссылка</a></div>
+            <div class="new-control-panel__dropdown-item">item1</div>
         </div>
     </div>
 </div>

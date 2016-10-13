@@ -12,7 +12,11 @@ class ControlPanel {
 
         this.controlPanel = $('.new-control-panel');
         this.controls = this.controlPanel.find('[data-type]');
+        this.dropdownBtn = this.controlPanel.find('#dropdownBtn');
+        this.dropdown = this.controlPanel.find('#dropdownMenu');
+        console.log(this.dropdown);
         this.handleControlClick();
+        this.handleDropdown();
         // self.app = $('.application');
         //
         // self.textSelect = $('.control-panel__select-text');
@@ -32,6 +36,30 @@ class ControlPanel {
             var data = $(e.target).data();
             this.setAppStyle(data);
         })
+    }
+    handleDropdown() {
+        this.setDefaultDropdown();
+        this.dropdownBtn.on('click' , (e)=> {
+            e.preventDefault();
+            if(this.dropdownBtn.attr('aria-expanded') == 'false') {
+                this.dropdownBtn.attr('aria-expanded', 'true');
+                this.controlPanel.addClass('new-control-panel_show-dropdown');
+                this.dropdown.attr('aria-hidden','false');
+                this.dropdown.attr('aria-expanded','true');
+            }
+            else {
+                this.dropdownBtn.attr('aria-expanded', 'false');
+                this.controlPanel.removeClass('new-control-panel_show-dropdown');
+                this.dropdown.attr('aria-hidden','true');
+                this.dropdown.attr('aria-expanded','false');
+            }
+        });
+    }
+    setDefaultDropdown() {
+        this.dropdownBtn.attr('aria-haspopup', 'true');
+        this.dropdownBtn.attr('aria-expanded', 'false');
+        this.dropdown.attr('aria-expanded','false');
+        this.dropdown.attr('aria-hidden','true');
     }
 
     setAppStyle(data) {

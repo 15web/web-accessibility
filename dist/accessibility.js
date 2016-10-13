@@ -167,7 +167,11 @@ var accessibility =
 	
 	        this.controlPanel = $('.new-control-panel');
 	        this.controls = this.controlPanel.find('[data-type]');
+	        this.dropdownBtn = this.controlPanel.find('#dropdownBtn');
+	        this.dropdown = this.controlPanel.find('#dropdownMenu');
+	        console.log(this.dropdown);
 	        this.handleControlClick();
+	        this.handleDropdown();
 	        // self.app = $('.application');
 	        //
 	        // self.textSelect = $('.control-panel__select-text');
@@ -190,6 +194,35 @@ var accessibility =
 	                var data = $(e.target).data();
 	                _this.setAppStyle(data);
 	            });
+	        }
+	    }, {
+	        key: 'handleDropdown',
+	        value: function handleDropdown() {
+	            var _this2 = this;
+	
+	            this.setDefaultDropdown();
+	            this.dropdownBtn.on('click', function (e) {
+	                e.preventDefault();
+	                if (_this2.dropdownBtn.attr('aria-expanded') == 'false') {
+	                    _this2.dropdownBtn.attr('aria-expanded', 'true');
+	                    _this2.controlPanel.addClass('new-control-panel_show-dropdown');
+	                    _this2.dropdown.attr('aria-hidden', 'false');
+	                    _this2.dropdown.attr('aria-expanded', 'true');
+	                } else {
+	                    _this2.dropdownBtn.attr('aria-expanded', 'false');
+	                    _this2.controlPanel.removeClass('new-control-panel_show-dropdown');
+	                    _this2.dropdown.attr('aria-hidden', 'true');
+	                    _this2.dropdown.attr('aria-expanded', 'false');
+	                }
+	            });
+	        }
+	    }, {
+	        key: 'setDefaultDropdown',
+	        value: function setDefaultDropdown() {
+	            this.dropdownBtn.attr('aria-haspopup', 'true');
+	            this.dropdownBtn.attr('aria-expanded', 'false');
+	            this.dropdown.attr('aria-expanded', 'false');
+	            this.dropdown.attr('aria-hidden', 'true');
 	        }
 	    }, {
 	        key: 'setAppStyle',

@@ -15,6 +15,7 @@
     z-index: 999;
 
     &__wrapper {
+        position: relative;
         max-width: 1200px;
         min-width: 960px;
         margin: 0 auto;
@@ -37,8 +38,47 @@
         vertical-align: middle;
 
         &-btn {
-            width:40px;
+            width: 40px;
             height: 40px;
+            background-color: transparent;
+            font-weight: bold;
+            cursor: pointer;
+
+            &_img-off {
+                text-indent: -2px;
+            }
+
+            &_color-white {
+                background: white;
+            }
+
+            &_color-black {
+                background: black;
+            }
+
+            &_color-yellow {
+                background: yellow;
+            }
+
+            &_color-blue {
+                background: blue;
+            }
+
+            &_extra-menu {
+                position: relative;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -3px;
+                    left: 50%;
+                    margin-left: -10px;
+                    width: 0;
+                    height: 0;
+                    border: 10px solid transparent;
+                    border-top: 10px solid green;
+                }
+            }
         }
 
         [data-increase="true"] {
@@ -50,6 +90,41 @@
             background-size: 70%;
         }
 
+        &_img {
+            font-size: 15px;
+        }
+
+    }
+
+    &__dropdown {
+        padding: 10px 20px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        display: none;
+        float: left;
+        margin: 2px 0 0;
+        font-size: 14px;
+        text-align: left;
+        list-style: none;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    }
+
+    &_show-dropdown {
+        .new-control-panel__dropdown {
+            display: block;
+        }
+        .new-control-panel__switcher-btn_extra-menu:before {
+            margin-top: -14px;
+            border: 10px solid transparent;
+            border-bottom: 10px solid green;
+        }
 
     }
 }
