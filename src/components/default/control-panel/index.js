@@ -10,7 +10,7 @@ class ControlPanel {
     constructor() {
         this.app = $('html');
 
-        this.controlPanel = $('.control-panel');
+        this.controlPanel = $('.new-control-panel');
         this.controls = this.controlPanel.find('[data-type]');
         this.handleControlClick();
         // self.app = $('.application');
