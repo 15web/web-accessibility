@@ -8,16 +8,16 @@ class ControlPanel {
     constructor() {
         var self = this;
         self.app = $('html');
-        self.changer = $('.js-control-changer');
+        // self.changer = $('.js-control-changer');
         self.controlPanel = $('.js-control-panel');
-        self.reset = $('#js-control-reset');
+        // self.reset = $('#js-control-reset');
 
         self.init();
-        self.getAttrNames();
-        self.setDefaultCookies();
-        self.setApplicationStyles();
-        self.handleChangerClick();
-        self.handleReset();
+        // self.getAttrNames();
+        // self.setDefaultCookies();
+        // self.setApplicationStyles();
+        // self.handleChangerClick();
+        // self.handleReset();
     }
 
     init(){
