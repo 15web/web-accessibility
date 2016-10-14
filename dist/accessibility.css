@@ -598,6 +598,8 @@ video {
     display: table; }
   .control-panel:after {
     clear: both; }
+  .control-panel__wrapper {
+    margin-bottom: 20px; }
   body.init .control-panel {
     opacity: 0; }
   .control-panel h2, .control-panel h3, .control-panel h4 {
@@ -607,7 +609,6 @@ video {
     padding: 0;
     line-height: inherit; }
   .control-panel__nav-item {
-    position: relative;
     display: block;
     box-sizing: border-box;
     list-style: none;
@@ -689,7 +690,7 @@ video {
       -webkit-transition: opacity 250ms ease, max-height 500ms ease, visibility 0s linear 0s, top 0s linear 0s;
       transition: opacity 250ms ease, max-height 500ms ease, visibility 0s linear 0s, top 0s linear 0s; }
   .control-panel__dropdown-group {
-    width: 22%;
+    width: 30%;
     display: inline-block;
     vertical-align: top;
     margin-right: 1em;
@@ -697,19 +698,30 @@ video {
     padding-left: 1em;
     border-left: 1px solid rgba(0, 0, 0, 0.3);
     box-shadow: inset 1px 0 0 #fff; }
-    .control-panel__dropdown-group:nth-child(4n+1) {
+    .control-panel__dropdown-group:nth-child(3n+1) {
       border-left: 0; }
     .control-panel__dropdown-group p {
       color: #454545;
       font-size: 0.9em;
       line-height: 1.1em; }
+    .control-panel__dropdown-group h3 {
+      border-bottom: 1px solid #ccc; }
     .control-panel__dropdown-group a {
       display: inline-block;
-      font-size: .92em;
       line-height: 1.2em;
       font-weight: bold;
       text-decoration: none;
       margin-bottom: 0.5em; }
+      .control-panel__dropdown-group a[href] {
+        text-decoration: none;
+        color: #454545; }
+        .control-panel__dropdown-group a[href]:visited, .control-panel__dropdown-group a[href]:hover, .control-panel__dropdown-group a[href]:focus {
+          color: #454545;
+          text-decoration: underline; }
+    .control-panel__dropdown-group > ol {
+      padding-left: 5px; }
+      .control-panel__dropdown-group > ol a {
+        font-size: 0.9em; }
     .control-panel__dropdown-group hr {
       border-width: 1px 0;
       border-style: solid;

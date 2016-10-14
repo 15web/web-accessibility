@@ -1,55 +1,812 @@
-{% include "./partials/header-for-test.twig" %}
-
-{# Control Panel #}
-<body>
-<div class="new-control-panel ">
-    <div class="new-control-panel__wrapper">
-        <div class="new-control-panel__col">
-           Размер шрифта
-            <div class="new-control-panel__switcher">
-                <button class="new-control-panel__switcher-btn" data-type="font-size" data-increase="true" aria-label="увеличить размер шрифта"></button>
-                <button class="new-control-panel__switcher-btn" data-type="font-size" data-increase="false" aria-label="уменьшить размер шрифта"></button>
-            </div>
-
-        </div>
-        <div class="new-control-panel__col">
-           Кернинг
-            <div class="new-control-panel__switcher">
-                <button class="new-control-panel__switcher-btn" data-type="letter-spacing" data-increase="true" aria-label="увеличить расстояеие между буквами"></button>
-                <button class="new-control-panel__switcher-btn" data-type="letter-spacing" data-increase="false" aria-label="уменьшить расстояеие между буквами"></button>
-            </div>
-        </div>
-        <div class="new-control-panel__col">
-           Изображения
-           <div class="new-control-panel__switcher new-control-panel__switcher_img">
-               <button class="new-control-panel__switcher-btn new-control-panel__switcher-btn_img-on" data-type="img" data-view="true" aria-label="показать изображения">ON</button>
-               <button class="new-control-panel__switcher-btn new-control-panel__switcher-btn_img-off" data-type="img" data-view="false" aria-label="скрыть изображения">OFF</button>
-           </div>
-        </div>
-        <div class="new-control-panel__col">
-            Цвет
-            <div class="new-control-panel__switcher">
-                <button class="new-control-panel__switcher-btn new-control-panel__switcher-btn_color-white"  aria-label="Белый фон с черным шрифтом"></button>
-                <button class="new-control-panel__switcher-btn new-control-panel__switcher-btn_color-black"  aria-label="Черный фон с белым шрифтом"></button>
-                <button class="new-control-panel__switcher-btn new-control-panel__switcher-btn_color-yellow"  aria-label="Желтый цвет сайта с черным шрифтом"></button>
-                <button class="new-control-panel__switcher-btn new-control-panel__switcher-btn_color-blue"  aria-label="Голубой цвет сайта с черным шрифтом"></button>
-            </div>
-        </div>
-        <div class="new-control-panel__col">
-            Дополнительно
-            <div class="new-control-panel__switcher">
-                <button class="new-control-panel__switcher-btn new-control-panel__switcher-btn_extra-menu" id="dropdownBtn" aria-label="Раскрыть дополнительный список"></button>
-            </div>
-        </div>
-        <div class="new-control-panel__dropdown" id="dropdownMenu" tabindex="-1" aria-expanded="false">
-            <div class="new-control-panel__dropdown-item"><button>kek</button></div>
-            <div class="new-control-panel__dropdown-item"><a href="#">ссылка</a></div>
-            <div class="new-control-panel__dropdown-item">item1</div>
-        </div>
-    </div>
-</div>
-
-<div>
-    <img src="/src/" alt="er">
-</div>
-{% include "./partials/footer-for-test.twig" %}
+<ul id="page-menu">
+    <li>
+        <a href="/about.html">Общие сведения</a>
+        <ul class="b-block" style="display: none;">
+            <li>
+                <a href="/history.html">История</a>
+            </li>
+            <li>
+                <a href="/map.html">Административно-территориальное деление</a>
+                <ul class="b-block" style="display: none;">
+                    <li>
+                        <a href="/anastas.html">Анастасьевское сельское поселение</a>
+                        <ul class="b-block" style="display: none;">
+                            <li>
+                                <a href="/spravka_anast.html">Справка о поселении</a>
+                            </li>
+                            <li>
+                                <a href="/socialnyjj_pasport_anastas.html">Социальный паспорт</a>
+                            </li>
+                            <li>
+                                <a href="/anastasjevka.html">Анастасьевка</a>
+                            </li>
+                            <li>
+                                <a href="/voronovka.html">Вороновка</a>
+                            </li>
+                            <li>
+                                <a href="/gingazovo.html">Гынгазово</a>
+                            </li>
+                            <li>
+                                <a href="/kuznetsovo.html">Кузнецово</a>
+                            </li>
+                            <li>
+                                <a href="/markelovo.html">Маркелово</a>
+                            </li>
+                            <li>
+                                <a href="/nikolaevka.html">Николаевка</a>
+                            </li>
+                            <li>
+                                <a href="/tatjanovka.html">Татьяновка</a>
+                            </li>
+                            <li>
+                                <a href="/tizirachevo.html">Тызырачево</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/batkat.html">Баткатское сельское поселение</a>
+                        <ul class="b-block" style="display: none;">
+                            <li>
+                                <a href="/spravka_batk.html">Справка о поселении</a>
+                            </li>
+                            <li>
+                                <a href="/vl_batk.html">Органы власти</a>
+                            </li>
+                            <li>
+                                <a href="/socialnyjj_pasport_batkat.html">Социальный паспорт</a>
+                            </li>
+                            <li>
+                                <a href="/Babarikino.html">Бабарыкино</a>
+                            </li>
+                            <li>
+                                <a href="/s_batkat.html">Баткат</a>
+                            </li>
+                            <li>
+                                <a href="/baturino.html">Батурино</a>
+                            </li>
+                            <li>
+                                <a href="/voznesenka.html">Вознесенка</a>
+                            </li>
+                            <li>
+                                <a href="/kaites.html">Кайтес</a>
+                            </li>
+                            <li>
+                                <a href="/kargala.html">Каргала</a>
+                            </li>
+                            <li>
+                                <a href="/malobabarikino.html">Малобабарыкино</a>
+                            </li>
+                            <li>
+                                <a href="/perelubka.html">Перелюбка</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/pobeda.html">Побединское сельское поселение</a>
+                        <ul class="b-block" style="display: none;">
+                            <li>
+                                <a href="/spravka_pobed.html">Справка о поселении</a>
+                            </li>
+                            <li>
+                                <a href="/vl_pobed.html">Органы власти</a>
+                            </li>
+                            <li>
+                                <a href="/socialnyjj_pasport_pobeda.html">Социальный паспорт</a>
+                            </li>
+                            <li>
+                                <a href="/kulmani.html">Кулманы</a>
+                            </li>
+                            <li>
+                                <a href="/oskino.html">Оськино</a>
+                            </li>
+                            <li>
+                                <a href="/s_pobeda.html">Победа</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/sevsp.html">Северное сельское поселение</a>
+                        <ul class="b-block" style="display: none;">
+                            <li>
+                                <a href="/socialnyjj_pasport_severnoe.html">Социальный паспорт</a>
+                            </li>
+                            <li>
+                                <a href="/sevinv.html">Инвестиционный паспорт</a>
+                            </li>
+                            <li>
+                                <a href="/balashovka.html">Балашовка</a>
+                            </li>
+                            <li>
+                                <a href="/gusevo.html">Гусево</a>
+                            </li>
+                            <li>
+                                <a href="/degtyarevka.html">Дягтерёвка</a>
+                            </li>
+                            <li>
+                                <a href="/zharkovka.html">Жарковка</a>
+                            </li>
+                            <li>
+                                <a href="/mihailovka.html">Михайловка</a>
+                            </li>
+                            <li>
+                                <a href="/monastirka.html">Монастырка</a>
+                            </li>
+                            <li>
+                                <a href="/novoiljinka.html">Новоильинка</a>
+                            </li>
+                            <li>
+                                <a href="/podoba.html">Подоба</a>
+                            </li>
+                            <li>
+                                <a href="/fedoraevka.html">Федораевка</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/trubachovo.html">Трубачевское сельское поселение</a>
+                        <ul class="b-block" style="display: none;">
+                            <li>
+                                <a href="/spravka_trub.html">Справка о поселении</a>
+                            </li>
+                            <li>
+                                <a href="/vl_trub.html">Органы власти</a>
+                            </li>
+                            <li>
+                                <a href="/socialnyjj_pasport_trubachevo.html">Социальный паспорт</a>
+                            </li>
+                            <li>
+                                <a href="/trinvest.html">Инвестиционный паспорт</a>
+                            </li>
+                            <li>
+                                <a href="/bushuevo.html">Бушуево</a>
+                            </li>
+                            <li>
+                                <a href="/malobragino.html">Малобрагино</a>
+                            </li>
+                            <li>
+                                <a href="/novonikolaevka.html">Новониколаевка</a>
+                            </li>
+                            <li>
+                                <a href="/novouspenka.html">Новоуспенка</a>
+                            </li>
+                            <li>
+                                <a href="/trubachevo.html">Трубачево</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/shegsp.html">Шегарское сельское поселение</a>
+                        <ul class="b-block" style="display: none;">
+                            <li>
+                                <a href="/spravka_sheg.html">Справка о поселении</a>
+                            </li>
+                            <li>
+                                <a href="/vl_sheg.html">Органы власти</a>
+                            </li>
+                            <li>
+                                <a href="/socialnyjj_pasport_shegsp.html">Социальный паспорт</a>
+                            </li>
+                            <li>
+                                <a href="/melnikovo.html">Мельниково</a>
+                            </li>
+                            <li>
+                                <a href="/nashekovo.html">Нащеково</a>
+                            </li>
+                            <li>
+                                <a href="/sheg_old.html">Старая Шегарка</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/news_sp.html">Новости поселений</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/admin_territory.html">Административно- территориальное деление</a>
+            </li>
+            <li>
+                <a href="/simvolika.html">Официальные символы</a>
+            </li>
+            <li>
+                <a href="/economy_social.html">Экономические и социальные показатели</a>
+            </li>
+            <li>
+                <a href="/nature.html">Природа</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="/administration.html">Органы власти</a>
+        <ul class="b-block" style="display: none;">
+            <li>
+                <a href="/administration.html">Администрация</a>
+                <ul class="b-block" style="display: none;">
+                    <li>
+                        <a href="/glava_r.html">Глава района</a>
+                    </li>
+                    <li>
+                        <a href="/deputy.html">Заместители Главы</a>
+                    </li>
+                    <li>
+                        <a href="/finance_department.html">Финансовый отдел</a>
+                    </li>
+                    <li>
+                        <a href="/economic_department.html">Экономический отдел</a>
+                    </li>
+                    <li>
+                        <a href="/control_department.html">Контрольный отдел</a>
+                    </li>
+                    <li>
+                        <a href="/department_calculation.html">Отдел учета</a>
+                    </li>
+                    <li>
+                        <a href="/department_construction.html">Отдел строительства и архитектура</a>
+                    </li>
+                    <li>
+                        <a href="/department_life_support.html">Отдел по безопасности</a>
+                    </li>
+                    <li>
+                        <a href="/legal_department.html">Юридический отдел</a>
+                    </li>
+                    <li>
+                        <a href="/department_dela.html">Управление делами</a>
+                    </li>
+                    <li>
+                        <a href="/archives.html">Муниципальный (районный) архив</a>
+                    </li>
+                    <li>
+                        <a href="/department_children.html">Отдел по защите прав детей</a>
+                    </li>
+                    <li>
+                        <a href="/department_culture.html">Отдел культуры, спорта, молодежной политики и туризма</a>
+                    </li>
+                    <li>
+                        <a href="/department_land.html">Отдел по вопросам землеустройства</a>
+                    </li>
+                    <li>
+                        <a href="/department_agriculture.html">Отдел сельского хозяйства</a>
+                    </li>
+                    <li>
+                        <a href="/pomoshnik.html">Помощник заместителя Главы по социальной работе</a>
+                    </li>
+                    <li>
+                        <a href="/mobilization.html">Главный специалист по мобилизации</a>
+                    </li>
+                    <li>
+                        <a href="/innovation.html">Ведущий специалист по проектно-инновационной деятельности</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/duma.html">Дума</a>
+                <ul class="b-block" style="display: none;">
+                    <li>
+                        <a href="/duma_3.html">Дума третьего созыва</a>
+                    </li>
+                    <li>
+                        <a href="/duma_4.html">Дума четвертого созыва</a>
+                    </li>
+                    <li>
+                        <a href="/predsedatel.html">Председатель</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/totals_election.html">Итоги выборов</a>
+            </li>
+            <li>
+                <a href="/management_commission.html">Административная комиссия</a>
+                <ul class="b-block" style="display: none;">
+                    <li>
+                        <a href="/about_management_commission .html">Об административной комиссии</a>
+                    </li>
+                    <li>
+                        <a href="/structure_management_commission.html">Структура</a>
+                    </li>
+                    <li>
+                        <a href="/legal_assistance.html">Правовая основа</a>
+                    </li>
+                    <li>
+                        <a href="/consideration_affairs.html">Рассмотрение дел</a>
+                    </li>
+                    <li>
+                        <a href="/orders_essentialelements.html">Порядок и реквизиты уплаты административного штрафа</a>
+                    </li>
+                    <li>
+                        <a href="/supplemental_information.html">Справочная информация</a>
+                    </li>
+                    <li>
+                        <a href="/reports_activitys.html">Отчёты о деятельности</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/duma_to.html">Государственная дума Томской области</a>
+                <ul class="b-block" style="display: none;">
+                    <li>
+                        <a href="/itogi_2008.html">Отчет о работе за 2008 год</a>
+                    </li>
+                    <li>
+                        <a href="/itogi_kirillova_2007.html">Отчет о работе за 2007 год</a>
+                    </li>
+                    <li>
+                        <a href="/grafik_priema_2009.html">График приема граждан на 2009 г.</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/report_chapter.html">Отчеты Главы района</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="/economy.html">Экономика и финансы</a>
+        <ul class="b-block" style="display: none;">
+            <li>
+                <a href="/budget.html">Бюджет</a>
+            </li>
+            <li>
+                <a href="/mun_cp.html">Муниципальные целевые программы</a>
+            </li>
+            <li>
+                <a href="/zhilje_2011.html">Жилье-2011</a>
+            </li>
+            <li>
+                <a href="/potreb.html">Потребительский рынок</a>
+            </li>
+            <li>
+                <a href="/agriculture.html">Агропромышленный комплекс</a>
+                <ul class="b-block" style="display: none;">
+                    <li>
+                        <a href="/otdel_skh.html">Отдел сельского хозяйства</a>
+                    </li>
+                    <li>
+                        <a href="/predprijatija_apk.html">Предприятия АПК</a>
+                    </li>
+                    <li>
+                        <a href="/podrazdel_skh.html">Курируемые подразделения</a>
+                        <ul class="b-block" style="display: none;">
+                            <li>
+                                <a href="/veterinar.html">Управление ветеринарии</a>
+                            </li>
+                            <li>
+                                <a href="/rosselhozcenter.html">Россельхозцентр</a>
+                            </li>
+                            <li>
+                                <a href="/nash_put.html">Кооператив «Наш путь»</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/itogi_skh.html">Итоги</a>
+                    </li>
+                    <li>
+                        <a href="/news_farm.html">Новости</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/small_business.html">Малый и средний бизнес</a>
+                <ul class="b-block" style="display: none;">
+                    <li>
+                        <a href="/index.php?id=546">Бизнес-старт</a>
+                    </li>
+                    <li>
+                        <a href="/index.php?id=506">Достижения конкурса "Первый шаг"</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/lpk.html">Личные подсобные хозяйства</a>
+            </li>
+            <li>
+                <a href="/zkh.html">Жилищно-коммунальное хозяйство</a>
+            </li>
+            <li>
+                <a href="/communication.html">Коммуникация и связь</a>
+            </li>
+            <li>
+                <a href="/analiz_eco.html">Анализ показателей</a>
+                <ul class="b-block" style="display: none;">
+                    <li>
+                        <a href="/analiz_2009.html">Анализ показателей за 2009 г.</a>
+                    </li>
+                    <li>
+                        <a href="/prognoz_economika_2010_2012.html">Анализ показателей за 2008 г.</a>
+                    </li>
+                    <li>
+                        <a href="/analyz_2007.html">Анализ показателей за 2007 г.</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/national_projects.html">Национальные проекты</a>
+                <ul class="b-block" style="display: none;">
+                    <li>
+                        <a href="/otchety_nac_proekty.html">Отчеты о реализации</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/invited_tender.html">Торги</a>
+                <ul class="b-block" style="display: none;">
+                    <li>
+                        <a href="/invited_tender.html">Объявленные торги</a>
+                    </li>
+                    <li>
+                        <a href="/finish_tender.html">Завершенные торги</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="/socialnaja_sfera_shegarskogo_rajjona.html">Социальная сфера</a>
+        <ul class="b-block" style="display: none;">
+            <li>
+                <a href="/education.html">Образование</a>
+                <ul class="b-block" style="display: none;">
+                    <li>
+                        <a href="/history_edu.html">История образования</a>
+                    </li>
+                    <li>
+                        <a href="/leaders_ou.html">Образовательные учреждения</a>
+                    </li>
+                    <li>
+                        <a href="/cdt.html">Центр детского творчества</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/health.html">Здравоохранение</a>
+            </li>
+            <li>
+                <a href="/culture.html">Культура</a>
+                <ul class="b-block" style="display: none;">
+                    <li>
+                        <a href="/direction.html">Руководство</a>
+                    </li>
+                    <li>
+                        <a href="/funkcii.html">Функции</a>
+                    </li>
+                    <li>
+                        <a href="/konkurs_kultur.html">Конкурсы и проекты</a>
+                    </li>
+                    <li>
+                        <a href="/crb.html">Централизованная библиотечная система</a>
+                    </li>
+                    <li>
+                        <a href="/museum.html">Краеведческий музей</a>
+                    </li>
+                    <li>
+                        <a href="/dshi.html">Детская школа искусств</a>
+                    </li>
+                    <li>
+                        <a href="/tourisme.html">Туризм</a>
+                    </li>
+                    <li>
+                        <a href="/foto_cultur.html">Фотогалерея</a>
+                    </li>
+                    <li>
+                        <a href="/news_culture.html">Новости</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/sport.html">Спорт</a>
+            </li>
+            <li>
+                <a href="/mol.html">Молодежная политика</a>
+                <ul class="b-block" style="display: none;">
+                    <li>
+                        <a href="/akt.html">Нормативно-правовые акты</a>
+                    </li>
+                    <li>
+                        <a href="/m_duma.html">Молодежная Дума</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/zaschita_detejj.html">Вопросы материнства и детства</a>
+                <ul class="b-block" style="display: none;">
+                    <li>
+                        <a href="/zaschita_detejj.html">Отдел по защите прав детей и вопросам семьи</a>
+                    </li>
+                    <li>
+                        <a href="/srcn_molchanovskijj_shegarskoe_otdelenie.html">ОГУ «СРЦН Молчановского района» Шегарское отделение</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/committee_under_age.html">Комиссия по делам несовершеннолетних</a>
+                <ul class="b-block" style="display: none;">
+                    <li>
+                        <a href="/normativnye_dokumenty_kdn.html">Нормативно-правовые документы</a>
+                    </li>
+                    <li>
+                        <a href="/sostav_komissii.html">Состав Комиссии</a>
+                    </li>
+                    <li>
+                        <a href="/plan_rabot_kdn.html">Планы Комиссии</a>
+                        <ul class="b-block" style="display: none;">
+                            <li>
+                                <a href="/plan_raboty_kdn_2009.html">План работы Комиссии на 2009 г.</a>
+                            </li>
+                            <li>
+                                <a href="/svodnyjj_plan_2009.html">Сводный план мероприятий на 2009 г.</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/informacija_kdn.html">Полезная информация</a>
+                    </li>
+                    <li>
+                        <a href="/otchety.html">Отчет о работе Комиссии</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/Social.html">Социальные учреждения</a>
+                <ul class="b-block" style="display: none;">
+                    <li>
+                        <a href="/social_support.html">Центр социальной поддержки</a>
+                        <ul class="b-block" style="display: none;">
+                            <li>
+                                <a href="/mery_socpodderzhki_2008.html">Реализация мер социальной поддержки населения в 2008 г.</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/pensfond.html">Пенсионный фонд</a>
+                    </li>
+                    <li>
+                        <a href="/vakansii.html">Центр занятости</a>
+                        <ul class="b-block" style="display: none;">
+                            <li>
+                                <a href="/info_rynok_truda_2008.html">Информация о состоянии рынка труда в 2008 году и показатели на 2009 год (оценка)</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/zags.html">ЗАГС</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/socpartnerstvo.html">Соцпартнерство</a>
+                <ul class="b-block" style="display: none;">
+                    <li>
+                        <a href="/trehstoronnjaja_komissija.html">Трехсторонняя комиссия</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/news_pension.html">Новости пенсионного фонда</a>
+            </li>
+            <li>
+                <a href="/soc_objekty.html">Социально важные объекты</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="/ovd.html">Безопасность</a>
+        <ul class="b-block" style="display: none;">
+            <li>
+                <a href="/ovd.html">Отдел внутренних дел</a>
+                <ul class="b-block" style="z-index: 101; display: none;">
+                    <li>
+                        <a href="/otdelenija.html">Административные участки Шегарского района</a>
+                    </li>
+                    <li>
+                        <a href="/info_ovd.html">Информация для населения</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/gibdd.html">ГИБДД</a>
+            </li>
+            <li>
+                <a href="/fighting_service.html">ГУ "13 пожарная часть ФПС"</a>
+            </li>
+            <li>
+                <a href="/fire_safety.html">Памятка о пожарной безопасности</a>
+            </li>
+            <li>
+                <a href="/shkola_bezopasnosti.html">Школа безопасности</a>
+                <ul class="b-block" style="display: none;">
+                    <li>
+                        <a href="/uslovija_biologicheskogo_zarazhenija.html">Возможное биологическое (бактериальное) заражение</a>
+                    </li>
+                    <li>
+                        <a href="/vozdushnaja_trevoga.html">Объявление воздушной тревоги</a>
+                    </li>
+                    <li>
+                        <a href="/zemljatresenija.html">Землетрясения</a>
+                    </li>
+                    <li>
+                        <a href="/navodnenie.html">Наводнения</a>
+                    </li>
+                    <li>
+                        <a href="/lesnye_pozhary.html">Лесные пожары</a>
+                    </li>
+                    <li>
+                        <a href="/snezhnye_zanosy.html">Снежные заносы</a>
+                    </li>
+                    <li>
+                        <a href="/gololed.html">Гололед</a>
+                    </li>
+                    <li>
+                        <a href="/na_ldu.html">Действия человека на льду</a>
+                    </li>
+                    <li>
+                        <a href="/urogany_buri.html">Ураганы, бури</a>
+                    </li>
+                    <li>
+                        <a href="/pochtovye_otpravlenija.html">Подозрительные вещества в почтовых отправлениях</a>
+                    </li>
+                    <li>
+                        <a href="/terrorizm.html">Угроза террористического характера</a>
+                    </li>
+                    <li>
+                        <a href="/avarii_so_vzryvom.html">Аварии со взрывом и разрушениями</a>
+                    </li>
+                    <li>
+                        <a href="/evakuacija.html">Эвакуация</a>
+                    </li>
+                    <li>
+                        <a href="/zalozhniki.html">Захват людей в заложники</a>
+                    </li>
+                    <li>
+                        <a href="/byt.html">Бытовые отравления, пожарная опасность и другие ситуации</a>
+                    </li>
+                    <li>
+                        <a href="/v_lesu.html">Если вы заблудились в лесу</a>
+                    </li>
+                    <li>
+                        <a href="/zhazhda.html">При жажде</a>
+                    </li>
+                    <li>
+                        <a href="/ozhogi_himiejj.html">Ожоги химическими веществами</a>
+                    </li>
+                    <li>
+                        <a href="/kriminalnaja_situacija.html">Криминальные ситуации</a>
+                    </li>
+                    <li>
+                        <a href="/napadenie_sobaki.html">При нападении собаки</a>
+                    </li>
+                    <li>
+                        <a href="/avarii_na_transporte.html">Аварии на автотранспорте</a>
+                    </li>
+                    <li>
+                        <a href="/pmp_pri_neschastnyh_sluchajah.html">Первая медицинская помощь при несчастных случаях</a>
+                    </li>
+                    <li>
+                        <a href="/sredstva_individualnojj_zaschity.html">Средства индивидуальной защиты</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="/energy_efficiency.html">Энергоэффективность и энергосбережение</a>
+        <ul class="b-block" style="display: none;">
+            <li>
+                <a href="/documents_regional.html">Региональная нормативная правовая база</a>
+            </li>
+            <li>
+                <a href="/documents_federal.html">Федеральная нормативная правовая база</a>
+            </li>
+            <li>
+                <a href="/formy_monitoringa.html">Формы мониторинга бюджетных учреждений</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="/arhiv.html">Муниципальный архив</a>
+    </li>
+    <li>
+        <a href="/adm_reforma.html">Административная реформа</a>
+        <ul class="b-block" style="display: none;">
+            <li>
+                <a href="/NPA.html">Нормативные правовые акты</a>
+            </li>
+            <li>
+                <a href="/infoobmen.html">Информационное взаимодействие</a>
+            </li>
+            <li>
+                <a href="/uslugi_el_forma.html">Перечень услуг, предоставляемых в электронном виде</a>
+            </li>
+            <li>
+                <a href="/adm_reglament.html">Административные регламенты</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="/munsluzba.html">Муниципальная служба</a>
+        <ul class="b-block" style="display: none;">
+            <li>
+                <a href="/vacansy_rajona.html">Вакансии района</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="/antikorr.html">Противодействие коррупции</a>
+    </li>
+    <li>
+        <a href="/announcements.html">Информационно- аналитические материалы</a>
+        <ul class="b-block" style="display: none;">
+            <li>
+                <a href="/announcements.html">Анонсы</a>
+            </li>
+            <li>
+                <a href="/news.html">Новости</a>
+            </li>
+            <li>
+                <a href="/publications.html">Публикации в СМИ</a>
+            </li>
+            <li>
+                <a href="/plangrafik.html">План-график мероприятий Администрации</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="/list_adm.html">Справочная информация</a>
+        <ul class="b-block">
+            <li>
+                <a href="/list_adm.html">Список работников администрации Шегарского района</a>
+            </li>
+            <li>
+                <a href="/index.php?id=542">Телефоны</a>
+            </li>
+            <li>
+                <a href="/resources.html">Интернет-ресурсы</a>
+            </li>
+            <li>
+                <a href="/edin_russia.html">Партии</a>
+                <ul class="b-block">
+                    <li>
+                        <a href="/edin_russia.html">Единая Россия</a>
+                        <ul class="b-block">
+                            <li>
+                                <a href="/kak_vstupit.html">Как вступить в партию</a>
+                            </li>
+                            <li>
+                                <a href="/ob_priemnaja.html">Общественная приемная</a>
+                            </li>
+                            <li>
+                                <a href="/itogi_edin_russia.html">Итоги</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/migratory_service.html">Миграционная служба</a>
+                <ul class="b-block">
+                    <li>
+                        <a href="/grazhdanstvo_rf_detjam.html">Оформление гражданства РФ детям</a>
+                    </li>
+                    <li>
+                        <a href="/migracionnyjj_uchet.html">Постановление на миграционный учет</a>
+                    </li>
+                    <li>
+                        <a href="/zarganpasport.html">Выдача загранпаспорта</a>
+                    </li>
+                    <li>
+                        <a href="/izmenenija.html">Изменение государственной пошлины</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/smi.html">СМИ</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="/acts.html">Нормативно-правовая база</a>
+    </li>
+    <li>
+        <a href="/reestrsubyektov.html">Реестр субъектов</a>
+    </li>
+</ul>
