@@ -12,7 +12,7 @@ import './components/utils/reset';
 // ==========================================================================
 
 // Control panel
-import './components/default/control-panel';
+import './components/default/accessibility-menu';
 import './components/default/adobe-control-panel';
 
 

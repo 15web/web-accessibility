@@ -1,22 +1,30 @@
 'use strict';
 
-import cookie from '../cookie';
-import './control-panel.scss';
-
-
-const COOKIE_PATH = {path: '/'};
+// import cookie from '../cookie';
+// const COOKIE_PATH = {path: '/'};
+import './accessibility-menu.scss';
 
 class ControlPanel {
     constructor() {
         this.app = $('html');
+        this.options = {
+            mainControls : {
+                1 : 'fontSize',
+                2 : 'letterSpacing',
+                3 : 'color',
+                4: 'img'
+            },
+            extraMenu : true,
+            containerId : 'accessibility-menu',
+            controlBtn : 'accessibility-menu__switcher-btn'
+        };
 
-        this.controlPanel = $('.new-control-panel');
-        this.controls = this.controlPanel.find('[data-type]');
-        this.dropdownBtn = this.controlPanel.find('#dropdownBtn');
-        this.dropdown = this.controlPanel.find('#dropdownMenu');
-        console.log(this.dropdown);
-        this.handleControlClick();
-        this.handleDropdown();
+        this.controlPanel = document.getElementById(this.options.containerId);
+        this.controls = document.querySelectorAll('accessibility-menu__switcher-btn');
+        // this.dropdownBtn = this.controlPanel.find('#dropdownBtn');
+        // this.dropdown = this.controlPanel.find('#dropdownMenu');
+        // this.handleControlClick();
+        // this.handleDropdown();
         // self.app = $('.application');
         //
         // self.textSelect = $('.control-panel__select-text');
@@ -27,6 +35,10 @@ class ControlPanel {
         // !cookie.getCookie('app-color') ? cookie.setCookie('app-color', 'white', COOKIE_PATH) : false;
         // !cookie.getCookie('app-image') ? cookie.setCookie('app-image', 'visible', COOKIE_PATH) : false;
 
+
+    }
+
+    init() {
 
     }
 

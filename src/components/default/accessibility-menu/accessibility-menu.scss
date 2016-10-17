@@ -2,7 +2,7 @@
 // control-panel
 // ==========================================================================
 
-.new-control-panel {
+.accessibility-menu {
     display: block;
     width: 100%;
 
@@ -117,10 +117,10 @@
     }
 
     &_show-dropdown {
-        .new-control-panel__dropdown {
+        .accessibility-menu__dropdown {
             display: block;
         }
-        .new-control-panel__switcher-btn_extra-menu:before {
+        .accessibility-menu__switcher-btn_extra-menu:before {
             margin-top: -14px;
             border: 10px solid transparent;
             border-bottom: 10px solid green;
