@@ -4,48 +4,68 @@
 <body>
 <div class="accessibility-menu " id="accessibility-menu">
 
-        <div class="accessibility-menu__col">
-           Размер шрифта
-            <div class="accessibility-menu__switcher">
-                <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_increase " data-increase="true" aria-label="увеличить размер шрифта"></button>
-                <button class="accessibility-menu__switcher-btn" data-increase="true"  aria-label="уменьшить размер шрифта"></button>
-            </div>
+       <div class="accessibility-menu__wrapper">
+           <div class="accessibility-menu__col">
+               Размер шрифта
+               <div class="accessibility-menu__switcher">
+                   <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_increase " aria-label="увеличить размер шрифта"></button>
+                   <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_decrease"  aria-label="уменьшить размер шрифта"></button>
+               </div>
 
-        </div>
-        <div class="accessibility-menu__col">
-           Кернинг
-            <div class="accessibility-menu__switcher">
-                <button class="accessibility-menu__switcher-btn" data-type="letter-spacing" data-increase="true" aria-label="увеличить расстояеие между буквами"></button>
-                <button class="accessibility-menu__switcher-btn" data-type="letter-spacing" data-increase="false" aria-label="уменьшить расстояеие между буквами"></button>
-            </div>
-        </div>
-        <div class="accessibility-menu__col">
-           Изображения
-           <div class="accessibility-menu__switcher accessibility-menu__switcher_img">
-               <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_img-on" data-type="img" data-view="true" aria-label="показать изображения">ON</button>
-               <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_img-off" data-type="img" data-view="false" aria-label="скрыть изображения">OFF</button>
            </div>
-        </div>
-        <div class="accessibility-menu__col">
-            Цвет
-            <div class="accessibility-menu__switcher">
-                <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_color-white"  aria-label="Белый фон с черным шрифтом"></button>
-                <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_color-black"  aria-label="Черный фон с белым шрифтом"></button>
-                <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_color-yellow"  aria-label="Желтый цвет сайта с черным шрифтом"></button>
-                <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_color-blue"  aria-label="Голубой цвет сайта с черным шрифтом"></button>
-            </div>
-        </div>
-        <div class="accessibility-menu__col">
-            Дополнительно
-            <div class="accessibility-menu__switcher">
-                <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_extra-menu" id="dropdownBtn" aria-label="Раскрыть дополнительный список"></button>
-            </div>
-        </div>
-        <div class="accessibility-menu__dropdown" id="dropdownMenu" tabindex="-1" aria-expanded="false">
-            <div class="accessibility-menu__dropdown-item"><button>kek</button></div>
-            <div class="accessibility-menu__dropdown-item"><a href="#">ссылка</a></div>
-            <div class="accessibility-menu__dropdown-item">item1</div>
-        </div>
+           <div class="accessibility-menu__col">
+               Кернинг
+               <div class="accessibility-menu__switcher">
+                   <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_increase"  aria-label="увеличить расстояеие между буквами"></button>
+                   <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_decrease"  aria-label="уменьшить расстояеие между буквами"></button>
+               </div>
+           </div>
+           <div class="accessibility-menu__col">
+               Изображения
+               <div class="accessibility-menu__switcher accessibility-menu__switcher_img">
+                   <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_img-on" data-type="img" data-view="true" aria-label="показать изображения">ON</button>
+                   <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_img-off" data-type="img" data-view="false" aria-label="скрыть изображения">OFF</button>
+               </div>
+           </div>
+           <div class="accessibility-menu__col">
+               Цвет
+               <div class="accessibility-menu__switcher">
+                   <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_color-white"  aria-label="Белый фон с черным шрифтом"></button>
+                   <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_color-black"  aria-label="Черный фон с белым шрифтом"></button>
+                   <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_color-yellow"  aria-label="Желтый цвет сайта с черным шрифтом"></button>
+                   <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_color-blue"  aria-label="Голубой цвет сайта с черным шрифтом"></button>
+               </div>
+           </div>
+           <div class="accessibility-menu__col">
+               Дополнительно
+               <div class="accessibility-menu__switcher">
+                   <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_extra-menu" id="dropdownBtn" aria-label="Раскрыть дополнительный список"></button>
+               </div>
+           </div>
+           <div class="accessibility-menu__dropdown" id="dropdownMenu" tabindex="-1" aria-expanded="false">
+               <div class="accessibility-menu__dropdown-item">
+                   Управление шрифтом
+                   <div class="accessibility-menu__switcher">
+                       <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_increase"  aria-label="Белый фон с черным шрифтом"></button>
+                       <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_decrease"  aria-label="Белый фон с черным шрифтом"></button>
+                   </div>
+               </div>
+               <div class="accessibility-menu__dropdown-item">
+                   Дополнительная информация
+                   <div class="accessibility-menu__switcher">
+                       <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_increase"  aria-label="Белый фон с черным шрифтом"></button>
+                       <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_decrease"  aria-label="Белый фон с черным шрифтом"></button>
+                   </div>
+               </div>
+               <div class="accessibility-menu__dropdown-item">
+                   Дополнительная информация
+                   <div class="accessibility-menu__switcher">
+                       <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_increase"  aria-label="Белый фон с черным шрифтом"></button>
+                       <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_decrease"  aria-label="Белый фон с черным шрифтом"></button>
+                   </div>
+               </div>
+           </div>
+       </div>
 
 </div>
 

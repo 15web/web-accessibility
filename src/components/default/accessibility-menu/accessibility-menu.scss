@@ -79,16 +79,18 @@
                     border-top: 10px solid green;
                 }
             }
+
+            &_increase {
+                background: #{'svg-load(plus.svg, fill: #000) center  no-repeat'};
+                background-size: 60%;
+            }
+            &_decrease {
+                background: #{'svg-load(minus.svg, fill: #000) center  no-repeat'};
+                background-size: 70%;
+            }
         }
 
-        [data-increase="true"] {
-            background: #{'svg-load(plus.svg, fill: #000) center  no-repeat'};
-            background-size: 60%;
-        }
-        [data-increase="false"] {
-            background: #{'svg-load(minus.svg, fill: #000) center  no-repeat'};
-            background-size: 70%;
-        }
+
 
         &_img {
             font-size: 15px;
@@ -114,6 +116,10 @@
         border: 1px solid #ccc;
         border-radius: 4px;
         box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+
+        &-item {
+            margin-bottom: 0.5em;
+        }
     }
 
     &_show-dropdown {
