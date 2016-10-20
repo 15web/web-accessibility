@@ -39,4 +39,7 @@ class ControlPanel {
     }
 }
 
-export default new ControlPanel();
+if(document.getElementById('accessibility-menu')) {
+    new ControlPanel();
+}
+export default ControlPanel;
