@@ -3,30 +3,61 @@
 // ==========================================================================
 
 .accessibility-menu {
+    position: relative;
     display: block;
     width: 100%;
 
     font-size: 18px;
 
-    border-bottom: 1px solid #000;
-    background: #ccc;
+    border-bottom: 1px solid rgba(#6b6b6b, 0.5);
+    background-color: #f7f7f7;
 
     box-sizing: border-box;
     z-index: 999;
 
     &__wrapper {
-        position: relative;
+
         max-width: 1200px;
-        min-width: 960px;
         margin: 0 auto;
         padding: 10px 20px;
         box-sizing: border-box;
     }
 
+    &__header {
+        @media (max-width: 1023px) {
+            padding: 0 20px;
+        }
+    }
+
     &__col {
         display: inline-block;
         vertical-align: middle;
-        margin-right: 20px;
+        padding: 0 20px 0 16px;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            border-right: 0;
+        }
+
+        @media (max-width: 1023px) {
+            padding: 10px 20px 10px 16px;
+            border-right: 1px solid rgba(#6b6b6b, 0.5);
+        }
+
+        &:nth-child(3) {
+            @media (max-width: 1023px) {
+                display: none;
+            }
+        }
+
+        &:nth-child(1), &:nth-child(2) {
+            @media (max-width: 767px) {
+                display: none;
+            }
+        }
 
         &:last-child {
             margin-right: 0;
@@ -37,65 +68,151 @@
         display: inline-block;
         vertical-align: middle;
 
-        &-btn {
-            width: 40px;
-            height: 40px;
-            background-color: transparent;
-            font-weight: bold;
-            cursor: pointer;
+        font-size: 0;
 
-            &_img-off {
-                text-indent: -2px;
-            }
-
-            &_color-white {
-                background: white;
-            }
-
-            &_color-black {
-                background: black;
-            }
-
-            &_color-yellow {
-                background: yellow;
-            }
-
-            &_color-blue {
-                background: blue;
-            }
-
-            &_extra-menu {
-                position: relative;
-                &:before {
-                    content: '';
-                    position: absolute;
-                    top: 50%;
-                    margin-top: -3px;
-                    left: 50%;
-                    margin-left: -10px;
-                    width: 0;
-                    height: 0;
-                    border: 10px solid transparent;
-                    border-top: 10px solid green;
-                }
-            }
-
-            &_increase {
-                background: #{'svg-load(plus.svg, fill: #000) center  no-repeat'};
-                background-size: 60%;
-            }
-            &_decrease {
-                background: #{'svg-load(minus.svg, fill: #000) center  no-repeat'};
-                background-size: 70%;
-            }
-        }
-
-
+        overflow: hidden;
+        border: 1px solid black;
+        border-radius: 3px;
 
         &_img {
             font-size: 15px;
         }
 
+        &_color {
+            overflow: visible;
+            border: 0;
+        }
+
+    }
+
+    &__switcher-btn {
+        padding: 0 10px;
+        height: 35px;
+
+        background-color: #fff;
+        cursor: pointer;
+
+        font-size: 18px;
+        border: 0;
+
+        &:not(:last-child) {
+            border-right: 1px solid black;
+        }
+
+        &_img-off {
+            text-indent: -2px;
+        }
+
+        &_color-white {
+            background: white;
+        }
+
+        &_color-black {
+            background: black;
+        }
+
+        &_color-yellow {
+            background: yellow;
+        }
+
+        &_color-blue {
+            background: blue;
+        }
+
+        &_increase {
+            font-weight: bold;
+            width: 31px;
+            height: 35px;
+            background: #{'#fff svg-load(plus.svg, fill: #000) center  no-repeat'};
+            background-size: 60%;
+        }
+        &_decrease {
+            font-weight: bold;
+            width: 31px;
+            height: 35px;
+            background: #{'#fff svg-load(minus.svg, fill: #000) center  no-repeat'};
+            background-size: 70%;
+        }
+
+        &_reset {
+
+            &:before {
+                display: inline-block;
+                vertical-align: middle;
+                margin-top: -5px;
+                margin-right: 5px;
+
+                content: '';
+
+                width: 20px;
+                height: 20px;
+
+                background-image: #{'svg-load(reload.svg, fill: #000)'};
+                background-position: center;
+                background-size:20px;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    &__dropdown-toggle {
+        position: relative;
+        display: inline-block;
+        vertical-align: baseline;
+
+        padding: 0 27px 0 10px;
+
+        line-height: 32px;
+        background: #fff;
+        border: 1px solid black;
+        border-radius: 3px;
+        cursor: pointer;
+
+        @media (max-width: 1023px) {
+            background-color: transparent;
+            border: 0;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            margin-top: -2px;
+
+            width: 0;
+            height: 0;
+
+            border-left: 6px solid transparent;
+            border-top: 5px solid black;
+            border-right: 6px solid transparent;
+        }
+
+        &[aria-expanded="true"] {
+            background: black;
+            color: white;
+
+            @media (max-width: 1023px) {
+                color: #000;
+                background-color: transparent;
+            }
+
+            &:after {
+                margin-top: -2px;
+                border-top: 0;
+                border-bottom: 5px solid white;
+
+                @media (max-width: 1023px) {
+                    border-bottom: 5px solid #000;
+                }
+            }
+        }
+    }
+    
+    &__dropdown-toggle-extra-text {
+        @media (min-width:768px) {
+            display: none;
+        }
     }
 
     &__dropdown {
@@ -107,30 +224,72 @@
         z-index: 1000;
         display: none;
         float: left;
-        margin: 2px 0 0;
-        font-size: 14px;
+        margin: 0;
+        font-size: 18px;
         text-align: left;
         list-style: none;
         background-color: #fff;
         background-clip: padding-box;
         border: 1px solid #ccc;
-        border-radius: 4px;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 
         &-item {
-            margin-bottom: 0.5em;
+            margin-bottom: 1.5em;
         }
+    }
+
+    &__flag-button {
+        margin-right: 7px;
+        font-size: 18px;
+    }
+
+    &__default-link {
+        font-size: 18px;
+        color: black !important;
+
+        &:before {
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: middle;
+
+            content: '';
+
+            width: 28px;
+            height: 18px;
+            background-color: transparent;
+            background-image: #{'svg-load(eye.svg, fill: #000)'};
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+        }
+    }
+
+    &__reset {
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+
+    &__close {
+        margin-bottom: 10px;
+        float: right;
+
+        @media (max-width: 1023px) {
+            float: none;
+        }
+    }
+
+    &__switch-default {
+        padding-top: 9px;
+        margin-right: 20px;
+        display: inline-block;
+        vertical-align: middle;
+
+        height: 35px;
+        margin-bottom: 10px;
     }
 
     &_show-dropdown {
         .accessibility-menu__dropdown {
             display: block;
         }
-        .accessibility-menu__switcher-btn_extra-menu:before {
-            margin-top: -14px;
-            border: 10px solid transparent;
-            border-bottom: 10px solid green;
-        }
-
     }
 }

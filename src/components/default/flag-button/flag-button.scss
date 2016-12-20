@@ -1,0 +1,63 @@
+.flag-button {
+    position: relative;
+    width: 31px;
+    height: 35px;
+
+    box-sizing: border-box;
+
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    &:hover {
+        border: 1px dashed #9f9f9f;
+    }
+
+    &:after {
+        display: none;
+        position: absolute;
+        bottom: -4px;
+        left: 50%;
+        margin-left: -4px;
+        content: '';
+
+        width: 7px;
+        height: 7px;
+
+        transform: rotate(45deg);
+
+        background: #fff;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+
+    &_active {
+        &:after {
+            display: block;
+        }
+    }
+
+    &_white {
+        background: #fff;
+        border: 1px solid #000;
+    }
+
+    &_black {
+        color: #fff;
+        background: #000;
+        border: 1px solid #000;
+
+        &:after {
+            background-color: #000;
+        }
+    }
+
+    &_blue {
+        background: #9dd1ff;
+        border: 1px solid #000;
+
+        &:after {
+            background-color: #9dd1ff;
+        }
+    }
+}

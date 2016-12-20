@@ -6,6 +6,7 @@
 
 import './components/utils/normalize';
 import './components/utils/reset';
+import './components/utils/helpers';
 
 // ==========================================================================
 // Default components
@@ -14,6 +15,7 @@ import './components/utils/reset';
 // Control panel
 import './components/default/accessibility-menu';
 import './components/default/adobe-control-panel';
+import './components/default/flag-button';
 
 
 // Grid systems
