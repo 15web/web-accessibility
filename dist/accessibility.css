@@ -461,12 +461,28 @@ table {
     .accessibility-menu__switcher_color {
       overflow: visible;
       border: 0; }
+    @media (max-width: 544px) {
+      .accessibility-menu__switcher_responsive {
+        border: 0; }
+        .accessibility-menu__switcher_responsive .accessibility-menu__switcher-btn {
+          margin-bottom: 5px;
+          display: block;
+          border: 1px solid black;
+          border-radius: 3px; } }
+  .accessibility-menu__switcher-label {
+    display: inline-block;
+    vertical-align: baseline;
+    margin-right: 4px; }
+    @media (max-width: 767px) {
+      .accessibility-menu__switcher-label {
+        margin-bottom: 5px; } }
   .accessibility-menu__switcher-btn {
     padding: 0 10px;
-    height: 35px;
+    min-height: 35px;
     background-color: #fff;
     cursor: pointer;
     font-size: 18px;
+    line-height: 1.3em;
     border: 0; }
     .accessibility-menu__switcher-btn:not(:last-child) {
       border-right: 1px solid black; }
