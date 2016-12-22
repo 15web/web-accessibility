@@ -1,3 +1,5 @@
+@import "../../config";
+
 // ==========================================================================
 // control-panel
 // ==========================================================================
@@ -19,11 +21,13 @@
 
         max-width: 1200px;
         margin: 0 auto;
-        padding: 10px 20px;
+        padding: 10px 20px 10px 20px;
         box-sizing: border-box;
     }
 
     &__header {
+        @include clearfix();
+
         @media (max-width: 1023px) {
             padding: 0 20px;
         }
@@ -64,6 +68,16 @@
         }
     }
 
+    &__settings {
+        float: right;
+
+        margin-top: 2px;
+
+        @media (max-width: 1023px) {
+            padding: 10px 20px 10px 16px;
+        }
+    }
+
     &__switcher {
         display: inline-block;
         vertical-align: middle;
@@ -75,7 +89,7 @@
         border-radius: 3px;
 
         &_img {
-            font-size: 15px;
+            font-size: 0
         }
 
         &_color {
@@ -102,7 +116,7 @@
         vertical-align: baseline;
         margin-right: 4px;
 
-        @media (max-width:767px) {
+        @media (max-width: 767px) {
             margin-bottom: 5px;
         }
     }
@@ -120,6 +134,13 @@
 
         &:not(:last-child) {
             border-right: 1px solid black;
+        }
+
+        &_img {
+            &.js-accessibility-menu-switcher-item-active {
+                background: black;
+                color: white;
+            }
         }
 
         &_img-off {
@@ -185,10 +206,12 @@
 
         padding: 0 27px 0 10px;
 
-        line-height: 32px;
         background: #fff;
         border: 1px solid black;
         border-radius: 3px;
+
+        line-height: 32px;
+
         cursor: pointer;
 
         @media (max-width: 1023px) {
@@ -239,7 +262,7 @@
     }
 
     &__dropdown {
-        padding: 10px 20px;
+        padding: 10px 0 10px 20px;
         position: absolute;
         top: 100%;
         left: 0;

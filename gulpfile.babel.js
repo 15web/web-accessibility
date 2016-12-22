@@ -59,7 +59,7 @@ gulp.task('docs:twig', () => {
 gulp.task('sp:twig', function () {
 
     gulp.src(SETTINGS.path.example.sp + '/twig/*.twig')
-        // .pipe(cached('html'))
+    // .pipe(cached('html'))
         .pipe(twig().on('error', console.log))
         .pipe(gulp.dest(SETTINGS.path.example.sp))
 
@@ -132,7 +132,7 @@ gulp.task("webpack", function (callback) {
             }, {
                 test: /\.(jpg|jpeg|gif|png|svg)$/,
                 exclude: /node_modules/,
-                loader:'url?limit=1024&name=images/[name]-[hash:6].[ext]'
+                loader: 'url?limit=1024&name=images/[name]-[hash:6].[ext]'
             }, {
                 test: /\.(woff|woff2|eot|ttf)$/,
                 exclude: /node_modules/,
@@ -154,7 +154,7 @@ gulp.task("webpack", function (callback) {
         if (err) throw new gutil.PluginError("webpack", err);
 
         gutil.log(stats.toString({
-            colors: true, 
+            colors: true,
             hash: true,
             chunks: false,
             children: false
@@ -172,7 +172,7 @@ gulp.task("webpack", function (callback) {
 // BUILD
 // ==========================================================================
 
-gulp.task('default', function() {
+gulp.task('default', function () {
 
     // Development
     if (DEBUG) {
@@ -197,11 +197,12 @@ gulp.task('default', function() {
 // BUILD DOCS
 // ==========================================================================
 
-gulp.task('docs', function() {
+gulp.task('docs', function () {
 
     browserSync.create().init({
         server: './',
         open: false,
+        notify: false,
         startPath: SETTINGS.path.docs + "/default.html"
     });
 
@@ -209,7 +210,7 @@ gulp.task('docs', function() {
 
     gulp.watch(SETTINGS.path.example.sp + '/twig/**/*.twig', ['sp:twig']);
     gulp.watch(SETTINGS.path.example.sp + '/assets/styles/**/*.scss', ['sp:sass']);
-    
+
     gulp.watch(SETTINGS.path.dist + '/**/*').on('change', browserSync.reload);
     //reload только для собранных файлов - css,html,js
     gulp.watch(SETTINGS.path.docs + '/**/*.js').on('change', browserSync.reload);

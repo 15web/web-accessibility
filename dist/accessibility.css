@@ -412,6 +412,88 @@ table {
 @media (max-width: 768px) {
   .mobile-hidden {
     display: none; } }
+* {
+  box-sizing: border-box; }
+  *:before, *:after {
+    box-sizing: border-box; }
+
+html {
+  font-size: 18px;
+  color: #000;
+  line-height: 1.25em;
+  font-family: Arial, sans-serif; }
+  html[data-fontsize="small"] {
+    font-size: 12.6px; }
+  html[data-fontsize="large"] {
+    font-size: 27px; }
+  html[data-fontsize="super"] {
+    font-size: 36px; }
+  html[data-kerning="small"] {
+    letter-spacing: -0.05em; }
+  html[data-kerning="large"] {
+    letter-spacing: 0.05em; }
+  html[data-images="hidden"] img {
+    visibility: hidden; }
+
+body {
+  background: white;
+  -webkit-transition: opacity 0.15s ease-in-out;
+  transition: opacity 0.15s ease-in-out; }
+  html[data-color="black"] body {
+    color: #fff;
+    background: #000; }
+  html[data-color="yellow"] body {
+    color: #000;
+    background: #fff999; }
+  html[data-color="blue"] body {
+    color: #000;
+    background-color: #c9f6fd; }
+
+a[href] {
+  color: #0000cc;
+  text-decoration: underline; }
+  a[href]:visited {
+    color: #660099; }
+  a[href]:hover, a[href]:focus, a[href]:active {
+    outline: 3px solid #ffa;
+    text-decoration: underline;
+    background: #ffa;
+    color: #BF1722; }
+
+a.disabled {
+  color: #333333;
+  cursor: not-allowed; }
+
+html[data-color="black"] a[href] {
+  color: #969691; }
+  html[data-color="black"] a[href]:visited {
+    color: #99FF66; }
+  html[data-color="black"] a[href]:hover, html[data-color="black"] a[href]:focus, html[data-color="black"] a[href]:active {
+    color: #bf1722;
+    background: #d8edff;
+    outline-color: #d8edff; }
+  html[data-color="black"] a[href].disabled {
+    color: #cbcbcb; }
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle; }
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+.hidden {
+  display: none; }
+
 .accessibility-menu {
   position: relative;
   display: block;
@@ -424,8 +506,13 @@ table {
   .accessibility-menu__wrapper {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 20px;
+    padding: 10px 20px 10px 20px;
     box-sizing: border-box; }
+  .accessibility-menu__header:before, .accessibility-menu__header:after {
+    content: " ";
+    display: table; }
+  .accessibility-menu__header:after {
+    clear: both; }
   @media (max-width: 1023px) {
     .accessibility-menu__header {
       padding: 0 20px; } }
@@ -449,6 +536,12 @@ table {
         display: none; } }
     .accessibility-menu__col:last-child {
       margin-right: 0; }
+  .accessibility-menu__settings {
+    float: right;
+    margin-top: 2px; }
+    @media (max-width: 1023px) {
+      .accessibility-menu__settings {
+        padding: 10px 20px 10px 16px; } }
   .accessibility-menu__switcher {
     display: inline-block;
     vertical-align: middle;
@@ -457,7 +550,7 @@ table {
     border: 1px solid black;
     border-radius: 3px; }
     .accessibility-menu__switcher_img {
-      font-size: 15px; }
+      font-size: 0; }
     .accessibility-menu__switcher_color {
       overflow: visible;
       border: 0; }
@@ -486,6 +579,9 @@ table {
     border: 0; }
     .accessibility-menu__switcher-btn:not(:last-child) {
       border-right: 1px solid black; }
+    .accessibility-menu__switcher-btn_img.js-accessibility-menu-switcher-item-active {
+      background: black;
+      color: white; }
     .accessibility-menu__switcher-btn_img-off {
       text-indent: -2px; }
     .accessibility-menu__switcher-btn_color-white {
@@ -525,10 +621,10 @@ table {
     display: inline-block;
     vertical-align: baseline;
     padding: 0 27px 0 10px;
-    line-height: 32px;
     background: #fff;
     border: 1px solid black;
     border-radius: 3px;
+    line-height: 32px;
     cursor: pointer; }
     @media (max-width: 1023px) {
       .accessibility-menu__dropdown-toggle {
@@ -563,7 +659,7 @@ table {
     .accessibility-menu__dropdown-toggle-extra-text {
       display: none; } }
   .accessibility-menu__dropdown {
-    padding: 10px 20px;
+    padding: 10px 0 10px 20px;
     position: absolute;
     top: 100%;
     left: 0;
@@ -902,7 +998,7 @@ video {
     background: #fff;
     border-right: 1px solid black;
     border-bottom: 1px solid black; }
-  .flag-button_active:after {
+  .flag-button.js-accessibility-menu-switcher-item-active:after {
     display: block; }
   .flag-button_white {
     background: #fff;
