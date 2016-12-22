@@ -659,7 +659,7 @@ video {
     .accessibility-menu__dropdown-toggle-extra-text {
       display: none; } }
   .accessibility-menu__dropdown {
-    padding: 10px 0 10px 20px;
+    padding: 10px 0;
     position: absolute;
     top: 100%;
     left: 0;
