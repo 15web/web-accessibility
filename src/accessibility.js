@@ -13,7 +13,6 @@ import './components/utils/helpers';
 // ==========================================================================
 
 // Control panel
-import './components/default/accessibility-menu';
 import './components/default/adobe-control-panel';
 import './components/default/flag-button';
 
