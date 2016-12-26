@@ -81,4 +81,8 @@
     .wcag-panel__dropdown-toggle-extra-text {
         display: inline;
     }
+    
+    .wcag-panel__mobile-hidden {
+        display: none;
+    }
 }
