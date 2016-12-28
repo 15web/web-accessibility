@@ -1,0 +1,42 @@
+.example {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 10px 20px 10px 20px;
+    box-sizing: border-box;
+}
+
+.example__title {
+    font-size: 3rem;
+    line-height: 4.5rem;
+}
+
+.example__text {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+html {
+    font-size: 16px;
+}
+
+html[data-fontsize="small"] {
+    font-size: 10px;
+}
+
+html[data-fontsize="large"] {
+    font-size: 24px;
+}
+
+html[data-image="off"] img {
+    visibility: hidden;
+}
+
+html[data-color="black"] body {
+    background: black;
+    color: white
+}
+
+html[data-color="blue"] body {
+    background: rgba(100,149,237,0.33);
+}
+

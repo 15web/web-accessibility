@@ -91,6 +91,6 @@ var WCAGPanel = (function () {
     return WCAGPanel;
 })();
 
-    new WCAGPanel();
+
 
 
