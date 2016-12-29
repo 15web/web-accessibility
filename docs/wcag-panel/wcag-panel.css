@@ -93,11 +93,6 @@
     border: 0;
 }
 
-.wcag-panel__switcher-btn:focus {
-    background: black;
-    color: #FFF;
-}
-
 .wcag-panel__switcher-btn:not(:last-child) {
     border-right: 1px solid black;
 }
@@ -106,6 +101,11 @@
 .wcag-panel__switcher-btn.active {
     background-color: black;
     color: white;
+}
+
+.wcag-panel__switcher-btn:focus {
+    color: black;
+    background: #e5e5e5;
 }
 
 .wcag-panel__switcher-btn_increase {
@@ -301,7 +301,7 @@
     cursor: pointer;
 }
 
-.flag-button:hover {
+.flag-button:hover, .flag-button:focus {
     border: 1px dashed #9f9f9f;
 }
 
