@@ -104,8 +104,15 @@
 }
 
 .wcag-panel__switcher-btn:focus {
-    color: black;
-    background: #e5e5e5;
+    color: white;
+    background: black;
+    box-shadow: inset 0 0 0 2px #ffa;
+    outline: 0;
+}
+
+.wcag-panel__switcher-btn.active:focus {
+    box-shadow: inset 0 0 0 2px #ffa;
+    outline: 0;
 }
 
 .wcag-panel__switcher-btn_increase {
@@ -121,8 +128,14 @@
     font-weight: bold;
 }
 
-.wcag-panel__switcher-btn_increase.wcag-panel__switcher-btn_active {
-    background-color: #fff;
+.wcag-panel__switcher-btn_increase.wcag-panel__switcher-btn_active,
+.wcag-panel__switcher-btn_increase:focus
+{
+    background-color: #000;
+    background-image: url("img/plus_white.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
 }
 
 .wcag-panel__switcher-btn_decrease {
@@ -138,8 +151,14 @@
     font-weight: bold;
 }
 
-.wcag-panel__switcher-btn_decrease.wcag-panel__switcher-btn_active {
-    background-color: #fff;
+.wcag-panel__switcher-btn_decrease.wcag-panel__switcher-btn_active,
+.wcag-panel__switcher-btn_decrease:focus
+{
+    background-color: #000;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-image: url("img/minus_white.svg");
 }
 
 .wcag-panel__switcher-btn_reset:before {
@@ -160,6 +179,13 @@
     background-repeat: no-repeat;
 }
 
+.wcag-panel__switcher-btn_reset:focus:before {
+    background-image: url("img/reload_white.svg");
+    background-position: center;
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+
 .wcag-panel__dropdown-toggle {
     position: relative;
     display: inline-block;
@@ -175,6 +201,19 @@
     font-size: 18px;
 
     cursor: pointer;
+}
+
+.wcag-panel__dropdown-toggle:focus {
+    box-shadow: inset 0 0 0 2px #ffa;
+    outline: 0;
+    background: #000;
+    color: #fff;
+}
+
+.wcag-panel__dropdown-toggle:focus:after {
+    border-left: 6px solid transparent;
+    border-top: 5px solid white;
+    border-right: 6px solid transparent;
 }
 
 .wcag-panel__dropdown-toggle:after {
