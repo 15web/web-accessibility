@@ -3438,18 +3438,18 @@ var Collapse = function () {
                 e.preventDefault();
                 var target = e.target;
                 var collapseDropdown = document.querySelector('#' + target.getAttribute('aria-controls'));
-                _this2.toggleDropdown(collapseDropdown);
+                _this2.toggleDropdown(collapseDropdown, item);
             });
         }
     }, {
         key: 'toggleDropdown',
-        value: function toggleDropdown(collapseDropdown) {
+        value: function toggleDropdown(collapseDropdown, trigger) {
             collapseDropdown.classList.toggle('collapse__panel_hidden');
-            if (collapseDropdown.getAttribute('aria-expanded') == 'false') {
-                collapseDropdown.setAttribute('aria-expanded', 'true');
+            if (trigger.getAttribute('aria-expanded') == 'false') {
+                trigger.setAttribute('aria-expanded', 'true');
                 collapseDropdown.focus();
             } else {
-                collapseDropdown.setAttribute('aria-expanded', 'false');
+                trigger.setAttribute('aria-expanded', 'false');
             }
         }
     }]);

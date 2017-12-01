@@ -637,21 +637,24 @@
     <div class="docs-example">
         <div class="docs-example__view">
 
-            <button class="button collapse__button" aria-controls="elemToCtrl" value="показать">
+            <button class="button collapse__button" aria-controls="elemToCtrl" aria-expanded="false" value="показать">
                 Collapse
             </button>
 
-            <div id="elemToCtrl" class="collapse__panel collapse__panel_hidden" aria-expanded="false">
+            <div id="elemToCtrl" class="collapse__panel collapse__panel_hidden">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos dolorem dolores enim et, facere magni qui quidem quod voluptatibus!
             </div>
 
         </div>
         <pre class="docs-example__code">
             <code class="language-markup convert">
-                <button class="button collapse-button" aria-controls="elemToControl" value="show">
+                <button class="button collapse-button"
+                        aria-controls="elemToControl"
+                        aria-expanded="false"
+                        value="show">
                     Collapse
                 </button>
-                <div id="elemToControl" class="collapse" tabindex="-1" aria-expanded="false">
+                <div id="elemToControl" class="collapse" tabindex="-1">
                     ...
                 </div>
             </code>
