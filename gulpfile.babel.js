@@ -22,6 +22,11 @@ import browserSync from 'browser-sync';
 
 const DEBUG = !process.argv.includes('--release');
 
+const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+
 const SETTINGS = {
     path: {
         docs: './docs',
@@ -59,7 +64,7 @@ gulp.task('docs:twig', () => {
 gulp.task('sp:twig', function () {
 
     gulp.src(SETTINGS.path.example.sp + '/twig/*.twig')
-        // .pipe(cached('html'))
+    // .pipe(cached('html'))
         .pipe(twig().on('error', console.log))
         .pipe(gulp.dest(SETTINGS.path.example.sp))
 
@@ -111,50 +116,68 @@ gulp.task("webpack", function (callback) {
             "accessibility": './src/accessibility'
         },
         output: {
-            path: './dist/',
+            path: path.resolve(__dirname, 'dist'),
             filename: "[name].js",
             library: '[name]'
         },
         watch: DEBUG,
         devtool: 'source-map',
         module: {
-            loaders: [{
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel',
-                query: {
-                    plugins: ["lodash"],
-                    presets: ['es2015']
+            rules: [
+                {
+                    test: /\.js$/,
+                    exclude: /(node_modules)/,
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            plugins: ["lodash"],
+                            presets: ['env', 'es2015', 'stage-1']
+                        }
+                    }
+                },
+                {
+                    test: /\.scss/,
+                    use: ExtractTextPlugin.extract({
+                        fallback: 'style-loader',
+                        use: [
+                            'css-loader',
+                            'sass-loader'
+                        ]
+                    })
+                },
+                {
+                    test: /\.(png|svg|jpg|gif)$/,
+                    use: [
+                        'file-loader?name=images/[hash].[ext]'
+                    ]
+                },
+                {
+                    test: /\.(woff|woff2|eot|ttf|otf)$/,
+                    use: [
+                        'file-loader?name=fonts/[hash].[ext]'
+                    ]
                 }
-            }, {
-                test: /\.scss/,
-                loader: ExtractTextPlugin.extract('style', 'css?sourceMap!postcss!sass')
-            }, {
-                test: /\.(jpg|jpeg|gif|png|svg)$/,
-                exclude: /node_modules/,
-                loader:'url?limit=1024&name=images/[name]-[hash:6].[ext]'
-            }, {
-                test: /\.(woff|woff2|eot|ttf)$/,
-                exclude: /node_modules/,
-                loader: 'url?limit=1024&name=fonts/[name].[ext]'
-            }]
+            ]
         },
-        plugins: [
+        plugins: [].concat(
+            new CleanWebpackPlugin(['dist']),
             new webpack.NoErrorsPlugin(),
-            new ExtractTextPlugin('accessibility.css')
-        ],
-        postcss: function () {
+            new ExtractTextPlugin("[name].css"),
+            // new UglifyJSPlugin(),
+            // new OptimizeCssAssetsPlugin()
+        ),
+/*        postcss: function () {
             return [
                 require('autoprefixer'),
                 require('postcss-inline-svg')
             ];
-        }
+        }*/
     }, function (err, stats) {
 
         if (err) throw new gutil.PluginError("webpack", err);
 
         gutil.log(stats.toString({
-            colors: true, 
+            colors: true,
             hash: true,
             chunks: false,
             children: false
@@ -172,7 +195,7 @@ gulp.task("webpack", function (callback) {
 // BUILD
 // ==========================================================================
 
-gulp.task('default', function() {
+gulp.task('default', function () {
 
     // Development
     if (DEBUG) {
@@ -197,11 +220,12 @@ gulp.task('default', function() {
 // BUILD DOCS
 // ==========================================================================
 
-gulp.task('docs', function() {
+gulp.task('docs', function () {
 
     browserSync.create().init({
         server: './',
         open: false,
+        notify: false,
         startPath: SETTINGS.path.docs + "/default.html"
     });
 
@@ -209,7 +233,7 @@ gulp.task('docs', function() {
 
     gulp.watch(SETTINGS.path.example.sp + '/twig/**/*.twig', ['sp:twig']);
     gulp.watch(SETTINGS.path.example.sp + '/assets/styles/**/*.scss', ['sp:sass']);
-    
+
     gulp.watch(SETTINGS.path.dist + '/**/*').on('change', browserSync.reload);
     //reload только для собранных файлов - css,html,js
     gulp.watch(SETTINGS.path.docs + '/**/*.js').on('change', browserSync.reload);

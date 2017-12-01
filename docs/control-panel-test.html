@@ -4,45 +4,48 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <link rel="stylesheet" type="text/css" href="../dist/accessibility.css" media="screen">
-
+    
     <link rel="stylesheet" type="text/css" href="assets/prism.css" media="screen">
     <link rel="stylesheet" type="text/css" href="assets/docs.css" media="screen">
 </head>
 
+
 <body>
+
 <div class="accessibility-menu " id="accessibility-menu">
 
     <div class="accessibility-menu__wrapper accessibility-menu__header">
         <div class="accessibility-menu__col">
-            Размер шрифта
-            <div class="accessibility-menu__switcher">
-                <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_increase " aria-label="увеличить размер шрифта"></button>
-                <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_decrease" aria-label="уменьшить размер шрифта"></button>
+            <div class="accessibility-menu__switcher-label">Размер шрифта:</div>
+            <div class="js-accessibility-menu-switcher accessibility-menu__switcher accessibility-menu__switcher_responsive">
+                <button class="js-accessibility-menu-switcher-item accessibility-menu__switcher-btn " aria-label="маленький размер шрифта">Маленький</button>
+                <button class="js-accessibility-menu-switcher-item accessibility-menu__switcher-btn " aria-label="средний размер шрифта">Средний</button>
+                <button class="js-accessibility-menu-switcher-item accessibility-menu__switcher-btn " aria-label="большой размер шрифта">Большой</button>
             </div>
 
         </div>
         <div class="accessibility-menu__col">
-            Изображения
-            <div class="accessibility-menu__switcher accessibility-menu__switcher_img">
-                <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_img-on" data-type="img" data-view="true" aria-label="показать изображения">Вкл</button>
-                <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_img-off" data-type="img" data-view="false" aria-label="скрыть изображения">Выкл</button>
+            <div class="accessibility-menu__switcher-label">Изображения:</div>
+            <div class="js-accessibility-menu-switcher accessibility-menu__switcher accessibility-menu__switcher_img">
+                <button class="js-accessibility-menu-switcher-item accessibility-menu__switcher-btn accessibility-menu__switcher-btn_img accessibility-menu__switcher-btn_img-on" data-type="img" data-view="true" aria-label="показать изображения">Вкл</button>
+                <button class="js-accessibility-menu-switcher-item accessibility-menu__switcher-btn accessibility-menu__switcher-btn_img accessibility-menu__switcher-btn_img-off" data-type="img" data-view="false" aria-label="скрыть изображения">Выкл</button>
             </div>
         </div>
         <div class="accessibility-menu__col accessibility-menu__col_color">
-            Цвет
-            <div class="accessibility-menu__switcher accessibility-menu__switcher_color">
-                <button class="accessibility-menu__flag-button flag-button flag-button_white flag-button_active" aria-label="Белый фон с черным шрифтом">Б</button>
-                <button class="accessibility-menu__flag-button flag-button flag-button_black" aria-label="Черный фон с белым шрифтом">Ч</button>
-                <button class="accessibility-menu__flag-button flag-button flag-button_blue" aria-label="Голубой цвет сайта с черным шрифтом">Г</button>
+            <div class="accessibility-menu__switcher-label">Цвет:</div>
+            <div class="js-accessibility-menu-switcher accessibility-menu__switcher accessibility-menu__switcher_color">
+                <button class="js-accessibility-menu-switcher-item accessibility-menu__flag-button flag-button flag-button_white flag-button_active" aria-label="Белый фон с черным шрифтом">Б</button>
+                <button class="js-accessibility-menu-switcher-item accessibility-menu__flag-button flag-button flag-button_black" aria-label="Черный фон с белым шрифтом">Ч</button>
+                <button class="js-accessibility-menu-switcher-item accessibility-menu__flag-button flag-button flag-button_blue" aria-label="Голубой цвет сайта с черным шрифтом">Г</button>
             </div>
         </div>
-        <div class="accessibility-menu__col">
+        <div class="accessibility-menu__settings">
 
-            <div class="accessibility-menu__dropdown-toggle" id="dropdownBtn">
+            <button class="accessibility-menu__dropdown-toggle" id="dropdownBtn">
                 Настройки <span class="accessibility-menu__dropdown-toggle-extra-text">отображения</span>
-            </div>
+            </button>
         </div>
     </div>
 
@@ -50,35 +53,35 @@
         <div class="accessibility-menu__wrapper">
 
             <div class="accessibility-menu__dropdown-item">
-                Кернинг: &nbsp;
-                <div class="accessibility-menu__switcher accessibility-menu__switcher_double">
-                    <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_increase" aria-label="увеличить расстояеие между буквами"></button>
-                    <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_decrease" aria-label="уменьшить расстояеие между буквами"></button>
+                <div class="accessibility-menu__switcher-label">Кернинг:</div>
+                <div class="js-accessibility-menu-switcher accessibility-menu__switcher accessibility-menu__switcher_double">
+                    <button class="js-accessibility-menu-switcher-item accessibility-menu__switcher-btn accessibility-menu__switcher-btn_increase" aria-label="увеличить расстояеие между буквами"></button>
+                    <button class="js-accessibility-menu-switcher-item accessibility-menu__switcher-btn accessibility-menu__switcher-btn_decrease" aria-label="уменьшить расстояеие между буквами"></button>
                 </div>
             </div>
 
             <div class="accessibility-menu__dropdown-item">
-                Размер шрифта: &nbsp;
-                <div class="accessibility-menu__switcher ">
-                    <button class="accessibility-menu__switcher-btn " aria-label="маленький размер шрифта">Маленький</button>
-                    <button class="accessibility-menu__switcher-btn " aria-label="средний размер шрифта">Средний</button>
-                    <button class="accessibility-menu__switcher-btn " aria-label="большой размер шрифта">Большой</button>
+                <div class="accessibility-menu__switcher-label">Размер шрифта:</div>
+                <div class="js-accessibility-menu-switcher accessibility-menu__switcher accessibility-menu__switcher_responsive">
+                    <button class="js-accessibility-menu-switcher-item accessibility-menu__switcher-btn " aria-label="маленький размер шрифта">Маленький</button>
+                    <button class="js-accessibility-menu-switcher-item accessibility-menu__switcher-btn " aria-label="средний размер шрифта">Средний</button>
+                    <button class="js-accessibility-menu-switcher-item accessibility-menu__switcher-btn " aria-label="большой размер шрифта">Большой</button>
                 </div>
             </div>
 
             <div class="accessibility-menu__dropdown-item">
-                Изображения: &nbsp;
-                <div class="accessibility-menu__switcher accessibility-menu__switcher_img">
-                    <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_img-on" data-type="img" data-view="true" aria-label="показать изображения">Вкл</button>
-                    <button class="accessibility-menu__switcher-btn accessibility-menu__switcher-btn_img-off" data-type="img" data-view="false" aria-label="скрыть изображения">Выкл</button>
+                <div class="accessibility-menu__switcher-label">Изображения:</div>
+                <div class="js-accessibility-menu-switcher accessibility-menu__switcher accessibility-menu__switcher_img">
+                    <button class="js-accessibility-menu-switcher-item accessibility-menu__switcher-btn accessibility-menu__switcher-btn_img accessibility-menu__switcher-btn_img-on" data-type="img" data-view="true" aria-label="показать изображения">Вкл</button>
+                    <button class="js-accessibility-menu-switcher-item accessibility-menu__switcher-btn accessibility-menu__switcher-btn_img  accessibility-menu__switcher-btn_img-off" data-type="img" data-view="false" aria-label="скрыть изображения">Выкл</button>
                 </div>
             </div>
             <div class="accessibility-menu__dropdown-item">
-                Цвет: &nbsp;
-                <div class="accessibility-menu__switcher accessibility-menu__switcher_color">
-                    <button class="accessibility-menu__flag-button flag-button flag-button_white flag-button_active" aria-label="Белый фон с черным шрифтом">Б</button>
-                    <button class="accessibility-menu__flag-button flag-button flag-button_black" aria-label="Черный фон с белым шрифтом">Ч</button>
-                    <button class="accessibility-menu__flag-button flag-button flag-button_blue" aria-label="Голубой цвет сайта с черным шрифтом">Г</button>
+                <div class="accessibility-menu__switcher-label">Цвет:</div>
+                <div class="js-accessibility-menu-switcher accessibility-menu__switcher accessibility-menu__switcher_color">
+                    <button class="js-accessibility-menu-switcher-item accessibility-menu__flag-button flag-button flag-button_white flag-button_active" aria-label="Белый фон с черным шрифтом">Б</button>
+                    <button class="js-accessibility-menu-switcher-item accessibility-menu__flag-button flag-button flag-button_black" aria-label="Черный фон с белым шрифтом">Ч</button>
+                    <button class="js-accessibility-menu-switcher-item accessibility-menu__flag-button flag-button flag-button_blue" aria-label="Голубой цвет сайта с черным шрифтом">Г</button>
                 </div>
             </div>
 
@@ -97,12 +100,15 @@
                 </div>
             </div>
         </div>
+
     </div>
 
 </div>
 
+
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
 <script src="../dist/accessibility.js"></script>
+
 
 <script src="assets/prism.js"></script>
 <script src="assets/docs.js"></script>

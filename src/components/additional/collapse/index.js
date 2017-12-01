@@ -17,20 +17,20 @@ class Collapse{
     handleClick(item) {
         item.addEventListener('click',(e)=> {
             e.preventDefault();
-            var target = e.target;
-            var collapseDropdown = document.querySelector('#' + target.getAttribute('aria-controls'));
-            this.toggleDropdown(collapseDropdown);
+            const target = e.target;
+            const collapseDropdown = document.querySelector('#' + target.getAttribute('aria-controls'));
+            this.toggleDropdown(collapseDropdown, item);
         });
     }
 
-    toggleDropdown(collapseDropdown) {
+    toggleDropdown(collapseDropdown, trigger) {
         collapseDropdown.classList.toggle('collapse__panel_hidden');
-        if (collapseDropdown.getAttribute('aria-expanded') == 'false') {
-            collapseDropdown.setAttribute('aria-expanded', 'true');
+        if (trigger.getAttribute('aria-expanded') == 'false') {
+            trigger.setAttribute('aria-expanded', 'true');
             collapseDropdown.focus();
         }
         else {
-            collapseDropdown.setAttribute('aria-expanded', 'false');
+            trigger.setAttribute('aria-expanded', 'false');
         }
     }
 }

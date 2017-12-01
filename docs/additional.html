@@ -12,7 +12,6 @@
     <link rel="stylesheet" type="text/css" href="assets/prism.css" media="screen">
     <link rel="stylesheet" type="text/css" href="assets/docs.css" media="screen">
 </head>
-
 <body class="container init">
 
 <header class="docs-header">
@@ -170,8 +169,7 @@
             </div>
         </li>
     </ol>
-</nav>
-</header>
+</nav></header>
 
 <main class="docs-main row">
     <div class="col-md-2 pull-left">
@@ -262,8 +260,7 @@
             </code>
         </pre>
     </div>
-</div>
-        
+</div>        
 
 <div id="media">
 
@@ -303,8 +300,7 @@
             </code>
         </pre>
     </div>
-</div>
-        
+</div>        
 
 
 <div id="pagination">
@@ -369,8 +365,7 @@
             </code>
         </pre>
     </div>
-</div>
-        
+</div>        
 
 
 
@@ -464,8 +459,7 @@
             </code>
         </pre>
     </div>
-</div>
-        
+</div>        
 
 
 
@@ -528,8 +522,7 @@
             </code>
         </pre>
     </div>
-</div>
-        
+</div>        
 
 <div id="breadCrumbs">
 
@@ -582,8 +575,7 @@
             </code>
         </pre>
     </div>
-</div>
-        
+</div>        
 
 <div id="progressBar">
 
@@ -628,8 +620,7 @@
             </code>
         </pre>
     </div>
-</div>
-        
+</div>        
 
 <div id="collapse">
 
@@ -646,28 +637,30 @@
     <div class="docs-example">
         <div class="docs-example__view">
 
-            <button class="button collapse__button" aria-controls="elemToCtrl" value="показать">
+            <button class="button collapse__button" aria-controls="elemToCtrl" aria-expanded="false" value="показать">
                 Collapse
             </button>
 
-            <div id="elemToCtrl" class="collapse__panel collapse__panel_hidden" aria-expanded="false">
+            <div id="elemToCtrl" class="collapse__panel collapse__panel_hidden">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos dolorem dolores enim et, facere magni qui quidem quod voluptatibus!
             </div>
 
         </div>
         <pre class="docs-example__code">
             <code class="language-markup convert">
-                <button class="button collapse-button" aria-controls="elemToControl" value="show">
+                <button class="button collapse-button"
+                        aria-controls="elemToControl"
+                        aria-expanded="false"
+                        value="show">
                     Collapse
                 </button>
-                <div id="elemToControl" class="collapse" tabindex="-1" aria-expanded="false">
+                <div id="elemToControl" class="collapse" tabindex="-1">
                     ...
                 </div>
             </code>
         </pre>
     </div>
-</div>
-        
+</div>        
 
 <div id="thumbnail">
 
@@ -724,8 +717,7 @@
             </code>
         </pre>
     </div>
-</div>
-        
+</div>        
 
 <div id="panels">
 
@@ -766,8 +758,7 @@
         </pre>
     </div>
 
-</div>
-        
+</div>        
 
 <div id="badge">
 
@@ -801,7 +792,6 @@
         </pre>
     </div>
 </div>
-
     </div>
 </main>
 
