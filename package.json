@@ -15,7 +15,6 @@
     "prod": "gulp --release"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.6",
     "babel-core": "^6.9.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-array-includes": "^2.0.3",
@@ -29,10 +28,6 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
     "gulp": "^3.9.1",
-    "gulp-cached": "^1.1.0",
-    "gulp-csscomb": "^3.0.7",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-twig": "^1.1.1",
     "gulp-uglify": "^3.0.0",
@@ -51,8 +46,5 @@
     "webpack-sources": "^1.1.0",
     "webpack-stream": "^4.0.0"
   },
-  "dependencies": {
-    "babel-plugin-lodash": "^3.2.9",
-    "lodash": "^4.16.3"
-  }
+  "dependencies": {}
 }
