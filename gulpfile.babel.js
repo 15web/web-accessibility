@@ -6,13 +6,15 @@
 
 import gulp from 'gulp';
 import gutil from 'gulp-util';
-import cached from 'gulp-cached';
+// import cached from 'gulp-cached';
 import twig from 'gulp-twig';
+import plumber from 'gulp-plumber';
+// import watch from 'gulp-watch';
 import sass from 'gulp-sass';
 import uglify from 'gulp-uglify';
-import rename from 'gulp-rename';
-import csscomb from 'gulp-csscomb';
-import cssnano from 'gulp-cssnano';
+// import rename from 'gulp-rename';
+// import csscomb from 'gulp-csscomb';
+// import cssnano from 'gulp-cssnano';
 
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
@@ -30,6 +32,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const SETTINGS = {
     path: {
         docs: './docs',
+        views: './views',
         example: {
             sp: './docs/examples/sp'
         },
@@ -38,62 +41,51 @@ const SETTINGS = {
     }
 };
 
-const AUTOPREFIXER_BROWSERS = [
-    'Android 2.3',
-    'Android >= 4',
-    'Chrome >= 39',
-    'Firefox >= 38',
-    'Explorer >= 7',
-    'iOS >= 7',
-    'Opera >= 12',
-    'Safari >= 5'
-];
-
 // ==========================================================================
 // Examples
 // ==========================================================================
 
-gulp.task('docs:twig', () => {
+/*gulp.task('docs:twig', () => {
 
-    gulp.src(SETTINGS.path.docs + '/twig/*.twig')
+    gulp.src(SETTINGS.path.docs + '/twig/!*.twig')
         .pipe(twig().on('error', console.log))
         .pipe(gulp.dest(SETTINGS.path.docs));
 
-});
+});*/
 
-gulp.task('sp:twig', function () {
+/*gulp.task('sp:twig', function () {
 
-    gulp.src(SETTINGS.path.example.sp + '/twig/*.twig')
+    gulp.src(SETTINGS.path.example.sp + '/twig/!*.twig')
     // .pipe(cached('html'))
         .pipe(twig().on('error', console.log))
         .pipe(gulp.dest(SETTINGS.path.example.sp))
 
-});
+});*/
 
-gulp.task("sp:sass", function () {
+/*gulp.task("sp:sass", function () {
     gulp.src(SETTINGS.path.example.sp + '/assets/styles/full.scss')
         .pipe(cached('sp'))
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest(SETTINGS.path.example.sp + '/assets/styles/css'));
-});
+});*/
 
 // ==========================================================================
 // Scripts
 // ==========================================================================
 
-gulp.task('scripts', function () {
+/*gulp.task('scripts', function () {
     return gulp.src(SETTINGS.path.dist + '/accessibility.js')
         .pipe(cached('scripts'))
         .pipe(uglify())
         .pipe(rename('accessibility.min.js'))
         .pipe(gulp.dest(SETTINGS.path.dist));
-});
+});*/
 
 // ==========================================================================
 // Styles
 // ==========================================================================
 
-gulp.task('styles', function () {
+/*gulp.task('styles', function () {
     return gulp.src(SETTINGS.path.dist + '/accessibility.css')
         .pipe(cached('styles'))
         .pipe(csscomb())
@@ -101,7 +93,7 @@ gulp.task('styles', function () {
         .pipe(cssnano())
         .pipe(rename('accessibility.min.css'))
         .pipe(gulp.dest(SETTINGS.path.dist));
-});
+});*/
 
 // ==========================================================================
 // Webpack
@@ -195,7 +187,7 @@ gulp.task("webpack", function (callback) {
 // BUILD
 // ==========================================================================
 
-gulp.task('default', function () {
+/*gulp.task('default', function () {
 
     // Development
     if (DEBUG) {
@@ -214,12 +206,12 @@ gulp.task('default', function () {
         );
     }
 
-});
+});*/
 
 // ==========================================================================
 // BUILD DOCS
 // ==========================================================================
-
+/*
 gulp.task('docs', function () {
 
     browserSync.create().init({
@@ -229,15 +221,44 @@ gulp.task('docs', function () {
         startPath: SETTINGS.path.docs + "/default.html"
     });
 
-    gulp.watch(SETTINGS.path.docs + '/twig/**/*.twig', ['docs:twig']);
+    gulp.watch(SETTINGS.path.docs + '/twig/!**!/!*.twig', ['docs:twig']);
 
-    gulp.watch(SETTINGS.path.example.sp + '/twig/**/*.twig', ['sp:twig']);
-    gulp.watch(SETTINGS.path.example.sp + '/assets/styles/**/*.scss', ['sp:sass']);
+    gulp.watch(SETTINGS.path.example.sp + '/twig/!**!/!*.twig', ['sp:twig']);
+    gulp.watch(SETTINGS.path.example.sp + '/assets/styles/!**!/!*.scss', ['sp:sass']);
 
-    gulp.watch(SETTINGS.path.dist + '/**/*').on('change', browserSync.reload);
+    gulp.watch(SETTINGS.path.dist + '/!**!/!*').on('change', browserSync.reload);
     //reload только для собранных файлов - css,html,js
-    gulp.watch(SETTINGS.path.docs + '/**/*.js').on('change', browserSync.reload);
-    gulp.watch(SETTINGS.path.docs + '/**/*.css').on('change', browserSync.reload);
-    gulp.watch(SETTINGS.path.docs + '/**/*.html').on('change', browserSync.reload);
+    gulp.watch(SETTINGS.path.docs + '/!**!/!*.js').on('change', browserSync.reload);
+    gulp.watch(SETTINGS.path.docs + '/!**!/!*.css').on('change', browserSync.reload);
+    gulp.watch(SETTINGS.path.docs + '/!**!/!*.html').on('change', browserSync.reload);
+
+});*/
+
+
+
+
+
+
+gulp.task('twig', () => {
+    gulp.src(SETTINGS.path.views + '/*.twig')
+        .pipe(twig().on('error', console.log))
+        .pipe(gulp.dest(SETTINGS.path.dist));
 
 });
+
+gulp.task('build', () => {
+    runSequence(
+        'twig',
+    );
+});
+
+gulp.task('watch', () => {
+
+    runSequence(
+        'build',
+    );
+
+    gulp.watch('views/**/*.twig', ['twig']);
+});
+
+
