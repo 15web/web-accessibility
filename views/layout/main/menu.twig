@@ -1,0 +1,31 @@
+<header data-wcag="alternative-background">
+    <div class="content-wrapper">
+    <h1 class="h1">
+        Web Accessibility
+    </h1>
+
+    {% set menu = [{
+        title: 'View on github',
+        link: '#1'
+    },{
+        title: 'Default components',
+        link: '#1'
+    },{
+        title: 'Additional components',
+        link: '#1'
+    },{
+        title: 'Example in action',
+        link: '#1'
+    }] %}
+
+    <nav>
+        <ul>
+            {% for item in menu %}
+                <li>
+                    <a href="{{ item.link }}">{{ item.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+    </div>
+</header>

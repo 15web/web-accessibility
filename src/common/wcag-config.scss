@@ -80,3 +80,8 @@ body {
         @include wcag(border-color, $linkBorderColorsWcag);
     }
 }
+
+/* Для блоков через атрибут можно указать альтернативный цвет текста */
+[data-wcag="alternative-background"] {
+    @include wcag(background-color, $secondBackgroundColorsWcag);
+}
