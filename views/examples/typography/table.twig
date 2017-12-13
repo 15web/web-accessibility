@@ -1,23 +1,26 @@
+{% macro row(columns) %}
+    <tr>
+        {% for col in columns %}
+            <td>{{ col }}</td>
+        {% endfor %}
+    </tr>
+{% endmacro %}
+
+{% import _self as typoView %}
+
 <table class="table">
-    <caption>Табличка такая</caption>
-    <tr>
-        <th scope="col">Имя</th>
-        <th scope="col">Фамилия</th>
-        <th scope="col">Город</th>
-    </tr>
-    <tr>
-        <td>Егор</td>
-        <td>Иван</td>
-        <td>Челядь</td>
-    </tr>
-    <tr>
-        <td>Супер</td>
-        <td>Боб</td>
-        <td>Марли</td>
-    </tr>
-    <tr>
-        <td>Курил</td>
-        <td>Апельсин</td>
-        <td>Еда</td>
-    </tr>
+    <caption>Таблица 1 - Список книг для чтения</caption>
+    <thead>
+        <tr>
+            <th>Автор</th>
+            <th>Наименование книги</th>
+            <th>Жанр</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{ typoView.row(['Фёдор Михайлович Достоевский', 'Преступление и наказание', 'Роман']) }}
+        {{ typoView.row(['Иван Александрович Гончаров', 'Обломов', 'Cоциально-психологический роман']) }}
+        {{ typoView.row(['Александр Сергеевич Пушкин', 'Капитанская дочка', 'Историческая повесть']) }}
+        {{ typoView.row(['Николай Васильевич Гоголь', 'Мёртвые души', 'Поэма / Роман-поэма']) }}
+    </tbody>
 </table>
