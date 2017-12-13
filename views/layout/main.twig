@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="/common.css">
     <link rel="stylesheet" href="/accessibility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/themes/prism.min.css">
 </head>
 <body>
 
@@ -21,5 +22,26 @@
 
         {% endblock %}
     </div>
+
+    <script>
+        var escape = {
+            '<': '&lt',
+            '>': '&gt'
+        }
+
+        var converts = document.querySelectorAll('.convert');
+        converts.forEach(function (convert) {
+            var html = convert.innerHTML;
+            html = html.replace(/  /g, '');
+            html = html.replace(/</g, '&lt');
+            html = html.replace(/>/g, '&gt');
+            convert.innerHTML = html;
+            console.log(html);
+        });
+    </script>
+
+    <script src="/site-components/prism/prism.source.js"></script>
+
+
 </body>
 </html>

@@ -1,0 +1,62 @@
+{% macro button(disabled) %}
+    <button class="button" {% if disabled %}disabled aria-disabled="true"{% endif %}>Кнопка {% if disabled %}в неактивном состоянии{% endif %}</button>
+{% endmacro %}
+
+{% macro link(disabled) %}
+    <a href="#some-link" class="button" {% if disabled %}disabled aria-disabled="true" tabindex="-1" {% endif %}>Ссылка в виде кнопки {% if disabled %}в неактивном состоянии{% endif %}</a>
+{% endmacro %}
+
+{% import _self as view %}
+
+<h2 class="h2">Кнопки</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi at cumque dignissimos, eaque iste placeat sed! Adipisci, amet fuga incidunt mollitia natus placeat sequi! Deleniti dicta illo quae voluptates voluptatum?</p>
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        {{ view.button() }}
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+            {{ view.button() }}
+        </code>
+    </pre>
+</div>
+
+<br>
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        {{ view.button(true) }}
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+            {{ view.button(true) }}
+        </code>
+    </pre>
+</div>
+
+<br>
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        {{ view.link() }}
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+            {{ view.link() }}
+        </code>
+    </pre>
+</div>
+
+<br>
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        {{ view.link(true) }}
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+            {{ view.link(true) }}
+        </code>
+    </pre>
+</div>

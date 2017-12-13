@@ -35,11 +35,14 @@ img,
 
 
 
-a:hover,
-[tabindex]:hover,
-button:not([disabled]):hover {
-    @include wcag(outline, $hoverOutlinesWcag);
-    text-decoration: none;
+a:not([disabled]):not([aria-disabled="true"]),
+[tabindex]:not([tabindex="-1"]),
+button:not([disabled]):not([aria-disabled="true"]) {
+    &:hover {
+        @include wcag(outline, $hoverOutlinesWcag);
+        text-decoration: none;
+        cursor: pointer;
+    }
 }
 
 /* При выключенных картинках */
@@ -84,4 +87,10 @@ body {
 /* Для блоков через атрибут можно указать альтернативный цвет текста */
 [data-wcag="alternative-background"] {
     @include wcag(background-color, $secondBackgroundColorsWcag);
+}
+
+[aria-disabled="true"],
+[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
