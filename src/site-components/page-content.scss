@@ -1,3 +1,16 @@
 .page-content {
     padding: 40px 0;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+
+    &__sidebar {
+        display: table-cell;
+        width: 200px;
+        padding-right: 40px;
+    }
+
+    &__content {
+        display: table-cell;
+    }
 }
