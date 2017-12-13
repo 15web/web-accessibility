@@ -239,7 +239,22 @@ gulp.task('docs', function () {
 
 
 
+gulp.task('sass', () => {
+    gulp.src(SETTINGS.path.src + '/**/*.scss')
+        .pipe(sass({
+            outputStyle: 'expanded'
+        }).on('error', sass.logError))
+        .pipe(gulp.dest(SETTINGS.path.dist))
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(SETTINGS.path.dist));
 
+    gulp.src(SETTINGS.path.src + '/**/*.scss')
+        .pipe(rename({suffix: '.source'}))
+        .pipe(gulp.dest(SETTINGS.path.dist));
+});
 
 gulp.task('twig', () => {
     gulp.src(SETTINGS.path.views + '/*.twig')
@@ -273,7 +288,8 @@ gulp.task('scripts', () => {
 gulp.task('build', () => {
     runSequence(
         'twig',
-        'scripts'
+        'scripts',
+        'sass'
     );
 });
 

@@ -1,0 +1,13 @@
+.button {
+    position: relative;
+
+    span {
+        position: relative;
+        width: 40px;
+    }
+
+    &__icon {
+        position: relative;
+        width: 40px;
+    }
+}
