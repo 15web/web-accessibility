@@ -1,3 +1,26 @@
+{% macro links(component, types) %}
+    <h3 class="h3">Ссылки для загрузок:</h3>
+    {% for type in types %}
+        <p>
+            <a href="/components/{{ component }}/{{ component }}.{{ type }}" target="_blank">
+                {% if type == 'css' %}
+                    Файл стилей
+                {% elseif type == 'min.css' %}
+                    Минифицированный файл стилей
+                {% elseif type == 'scss' %}
+                    Файл стилей оформленный в препроцессоре SASS
+                {% elseif type == 'js' %}
+                    Скрипт для компонента
+                {% else %}
+
+                {% endif %}
+                &ndash; {{ component }}.{{ type }}
+            </a>
+        </p>
+    {% endfor %}
+{% endmacro %}
+
+{% import _self as componentsView %}
 
 <div class="page-content__sidebar">
     <nav>

@@ -36,7 +36,6 @@ gulp.task('sass', () => {
         .pipe(gulp.dest(SETTINGS.path.dist));
 
     gulp.src(SETTINGS.path.src + '/**/*.scss')
-        .pipe(rename({suffix: '.source'}))
         .pipe(gulp.dest(SETTINGS.path.dist));
 });
 
