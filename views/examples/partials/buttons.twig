@@ -3,7 +3,7 @@
 {% endmacro %}
 
 {% macro link(disabled) %}
-    <a href="#some-link" class="button" {% if disabled %}disabled aria-disabled="true" tabindex="-1" {% endif %}>Ссылка в виде кнопки {% if disabled %}в неактивном состоянии{% endif %}</a>
+    <a href="#some-link" class="button" {% if disabled %}aria-disabled="true" tabindex="-1" {% endif %}>Ссылка в виде кнопки {% if disabled %}в неактивном состоянии{% endif %}</a>
 {% endmacro %}
 
 {% import _self as view %}
