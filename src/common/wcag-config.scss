@@ -1,0 +1,82 @@
+@import "mixins";
+@import "variables";
+
+/* Конфиги для font-size */
+@each $key, $value in (normal: 16px, big: 22px, large: 32px) {
+    html[data-fontsize="#{$key}"] {
+        font-size: $value;
+    }
+}
+
+/* Для всех элементов задаем цвет границ, чтобы не менять у каэдого элемента в частности */
+* {
+    @include wcag(border-color, $borderColorsWcag);
+}
+
+/* Internet Explorer может фокусировать любой блок, поэтому перечисляем только те блоки, которые должны быть в фокусе */
+a,
+input,
+select,
+textarea,
+button,
+img,
+[tabindex] {
+    &:focus,
+    &:target {
+        @include wcag(outline, $focusOutlinesWcag);
+        @include wcag(background-color, $focusBackgroundColorsWcag);
+        @include wcag(color, $focusTextColorsWcag);
+
+        svg {
+            @include wcag(fill, $focusTextColorsWcag);
+        }
+    }
+}
+
+
+
+a:hover,
+[tabindex]:hover,
+button:not([disabled]):hover {
+    @include wcag(outline, $hoverOutlinesWcag);
+    text-decoration: none;
+}
+
+/* При выключенных картинках */
+html[data-images="off"] {
+    img,
+    svg {
+        visibility: hidden;
+    }
+
+    *,
+    *:before,
+    *:after {
+        background-image: none;
+    }
+}
+
+/* При увеличенном кернинге */
+html[data-kerning="big"] {
+    letter-spacing: 0.1rem;
+
+    select,
+    input,
+    button,
+    textarea {
+        letter-spacing: inherit;
+    }
+
+}
+
+body {
+    @include wcag(background-color, $firstBackgroundColorsWcag);
+    @include wcag(color, $textColorsWcag);
+
+    a {
+        @include wcag(color, $linkColorsWcag);
+        border-bottom: 1px solid;
+        text-decoration: none;
+        @include wcag(border-color, $linkBorderColorsWcag);
+    }
+}

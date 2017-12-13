@@ -1,0 +1,901 @@
+<form class="wcag-panel" id="wcag-panel" name="wcagPanel">
+
+    <div class="wcag-panel__wrapper">
+        <div class="wcag-panel__row">
+            <div class="wcag-panel__hidden-control">
+                <a href="#main-content" id="anchor-link" class="wcag-panel__default-link" aria-label="Перейти к основному содержанию">Спуститься к содержанию</a>
+            </div>
+
+
+            <div>
+                {# При необходимости ссылки на обычную версию в панели, расскомментировать #}
+                {# <div class="wcag-panel__col wcag-panel__col_cont-link">
+                <a href="#" class="wcag-panel__default-link wcag-panel__default-link_blue" aria-label="Перейти на обычную версию сайта" style="font-size: 16px">Вернуться к обычному сайту</a>
+                </div> #}
+
+                <div class="wcag-panel__col">
+                    <div class="wcag-panel__switcher-label">Масштаб шрифта</div>
+                    <div class="wcag-panel__switcher">
+                        <input type="radio" checked name="fontsize" value="normal" id="fontsize-normal">
+                        <label class="wcag-panel__switcher-btn" aria-label="нормальный размер шрифта" for="fontsize-normal">
+                            100%
+                        </label>
+
+                        <input type="radio" name="fontsize" value="big" id="fontsize-big">
+                        <label class="wcag-panel__switcher-btn" aria-label="средний размер шрифта" for="fontsize-big">
+                            150%
+                        </label>
+
+                        <input type="radio" name="fontsize" value="large" id="fontsize-large">
+                        <label class="wcag-panel__switcher-btn" aria-label="большой размер шрифта" for="fontsize-large">
+                            200%
+                        </label>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col">
+                    <div class="wcag-panel__switcher-label">Цвет</div>
+
+                    <input type="radio" checked name="color" value="white" id="color-white">
+                    <label for="color-white" class="wcag-panel__flag-button flag-button flag-button_white" aria-label="белая цветовая схема">Б</label>
+
+                    <input type="radio" name="color" value="black" id="color-black">
+                    <label for="color-black" class="wcag-panel__flag-button flag-button flag-button_black" aria-label="черная цветовая схема">Ч</label>
+
+                    <input type="radio" name="color" value="blue" id="color-blue">
+                    <label for="color-blue" class="wcag-panel__flag-button flag-button flag-button_blue" aria-label="голубая цветовая схема">Г</label>
+
+                    <input type="radio" name="color" value="beige" id="color-beige">
+                    <label for="color-beige" class="wcag-panel__flag-button flag-button flag-button_beige" aria-label="бежевая цветовая схема">Б</label>
+
+                    <input type="radio" name="color" value="brown" id="color-brown">
+                    <label for="color-brown" class="wcag-panel__flag-button flag-button flag-button_brown" aria-label="коричневая цветовая схема">К</label>
+                </div>
+
+                <div class="wcag-panel__col">
+                    <div class="wcag-panel__switcher-label">Изображения</div>
+
+                    <div class="wcag-panel__switcher">
+                        <input type="radio" checked name="images" value="on" id="images-on">
+                        <label class="wcag-panel__switcher-btn" aria-label="Изображения включены" for="images-on">
+                            Вкл
+                        </label>
+
+                        <input type="radio" name="images" value="off" id="images-off">
+                        <label class="wcag-panel__switcher-btn" aria-label="Изображения отключены" for="images-off">
+                            Выкл
+                        </label>
+                    </div>
+
+                </div>
+                <div class="wcag-panel__settings">
+                    <button class="wcag-panel__dropdown-toggle"
+                            aria-label="Дополнительные настройки"
+                            id="wcagDropdownBtn">
+                        Настройки <span class="wcag-panel__dropdown-toggle-extra-text">отображения</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wcag-panel__dropdown" id="wcagDropdownMenu" tabindex="-1" aria-expanded="false">
+        <div class="wcag-panel__wrapper">
+
+            <div class="wcag-panel__row">
+                <div class="wcag-panel__col">
+                    <div class="wcag-panel__switcher-label">Интервал между буквами</div>
+                    <div class="wcag-panel__switcher wcag-panel__switcher_double">
+                        <input type="radio" name="kerning" value="normal" checked id="kerning-normal">
+                        <label class="wcag-panel__switcher-btn" aria-label="нормальный межбуквенный интервал" for="kerning-normal">
+                            Нормальный
+                        </label>
+
+                        <input type="radio" name="kerning" value="big" id="kerning-big">
+                        <label class="wcag-panel__switcher-btn" aria-label="увеличенный межбуквенный интервал" for="kerning-big">
+                            Увеличенный
+                        </label>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col">
+                    <div class="wcag-panel__switcher wcag-panel__reset">
+                        <button id="wcag-panel-restore-button" class="wcag-panel__switcher-btn_reset wcag-panel__switcher-btn" aria-label="Вернуть стандартные настройки">
+                            Сбросить настройки
+                        </button>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col wcag-panel__col_cont-link">
+                    <button class="wcag-panel__default-link" aria-label="закрыть панель" id="wcagDropdownBtnClose">Закрыть панель</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+
+<script>
+    /* ================================
+     *   Обработчик события изменения параметров панели ВДС
+     *  ================================ */
+    document.addEventListener('wcag:action', function (event) {
+
+        var config = event.detail.wcagState;
+        if (config) {
+            var html = document.documentElement;
+            config.forEach(function (key) {
+                html.setAttribute('data-'+key.name, key.value);
+            });
+        }
+
+
+    });
+
+    /*  ================================
+     *   Панель ВДС и полифил для кастомных событий
+     *  ================================ */
+
+    // Полифилл CustomEvent от Mozilla
+    (function () {
+
+        if ( typeof window.CustomEvent === "function" ) return false;
+
+        function CustomEvent ( event, params ) {
+            params = params || { bubbles: false, cancelable: false, detail: undefined };
+            var evt = document.createEvent( 'CustomEvent' );
+            evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+            return evt;
+        }
+
+        CustomEvent.prototype = window.Event.prototype;
+
+        window.CustomEvent = CustomEvent;
+    })();
+
+    var WCAGPanel = (function () {
+        // Polyfill for safari, ie 8/9
+        (function() {
+            // helpers
+            var regExp = function(name) {
+                return new RegExp('(^| )'+ name +'( |$)');
+            };
+            var forEach = function(list, fn, scope) {
+                for (var i = 0; i < list.length; i++) {
+                    fn.call(scope, list[i]);
+                }
+            };
+
+            // class list object with basic methods
+            function ClassList(element) {
+                this.element = element;
+            }
+
+            ClassList.prototype = {
+                add: function() {
+                    forEach(arguments, function(name) {
+                        if (!this.contains(name)) {
+                            this.element.className += ' '+ name;
+                        }
+                    }, this);
+                },
+                remove: function() {
+                    forEach(arguments, function(name) {
+                        this.element.className =
+                            this.element.className.replace(regExp(name), '');
+                    }, this);
+                },
+                toggle: function(name) {
+                    return this.contains(name) ? (this.remove(name), false) : (this.add(name), true);
+                },
+                contains: function(name) {
+                    return regExp(name).test(this.element.className);
+                },
+                // bonus..
+                replace: function(oldName, newName) {
+                    this.remove(oldName), this.add(newName);
+                }
+            };
+
+            // IE8/9, Safari
+            if (!('classList' in Element.prototype)) {
+                Object.defineProperty(Element.prototype, 'classList', {
+                    get: function() {
+                        return new ClassList(this);
+                    }
+                });
+            }
+
+            // replace() support for others
+            if (window.DOMTokenList && DOMTokenList.prototype.replace == null) {
+                DOMTokenList.prototype.replace = ClassList.prototype.replace;
+            }
+        })();
+
+        /**
+         * WCAGPanel
+         * Обрабатывает клик по кнопке "Настройки" и открывает дропдаун
+         * При клике генерирует событие wcag:action на элементе панели, в которое передает
+         * данные о том, какое было действие и с каким значением
+         * @constructor
+         */
+
+        var WCAGPanel = function () {
+            this.controlPanel = document.getElementById('wcag-panel');
+            this.dropdownBtn = document.getElementById('wcagDropdownBtn');
+            this.dropdownBtnClose = document.getElementById('wcagDropdownBtnClose');
+            this.dropdown = document.getElementById('wcagDropdownMenu');
+            // this.anchorLink = document.getElementById('anchor-link'); смотреть метод ниже
+            this.state = [];
+
+            this.event = new CustomEvent('wcag:action', {
+                bubbles: true,
+                detail: {}
+            });
+
+            this.init();
+        };
+
+        WCAGPanel.prototype.init = function () {
+            this.restoreConfigFromStorage();
+            this.handleDropdown();
+            this.handleChange();
+            this.handleNumberInputsChange();
+            this.handleResetForm();
+            // this.handleAnchorLinkClick(); смотреть метод ниже
+
+            this.controlPanel.addEventListener('submit', function (e) {
+                e.preventDefault();
+            });
+        };
+
+        WCAGPanel.prototype.getPanelState = function () {
+            var self = this;
+            this.state = [];
+
+            [].forEach.call(this.controlPanel.elements, function (element) {
+                if (element.type == 'radio' && element.checked) {
+                    self.state.push({
+                        name: element.name,
+                        value: element.value,
+                        type: element.type
+                    });
+                }
+
+                if (element.type == 'checkbox') {
+                    self.state.push({
+                        name: element.name,
+                        value: element.checked,
+                        type: element.type
+                    });
+                }
+
+                if (element.type == 'select-one') {
+                    self.state.push({
+                        name: element.name,
+                        value: element.value,
+                        type: element.type
+                    });
+                }
+
+                if (element.type == 'number') {
+                    self.state.push({
+                        name: element.name,
+                        value: element.value,
+                        type: element.type
+                    });
+                }
+
+            });
+
+            return this.state;
+        };
+
+        WCAGPanel.prototype.restorePanelState = function (state) {
+            var self = this;
+            this.state = state;
+            if (state) {
+                [].forEach.call(state, function (elementState) {
+                    //IE9+ radio buttons restore
+                    if (elementState.type === 'radio') {
+                        var radios = document.getElementsByName(elementState.name);
+                        [].forEach.call(radios, function (radio) {
+                            if (radio.value === elementState.value) {
+                                radio.checked = true;
+                            } else {
+                                radio.checked = false;
+                            }
+                        });
+                    }
+
+                    if (elementState.type === 'select-one' || elementState.type === 'number') {
+                        self.controlPanel[elementState.name].value = elementState.value;
+                    }
+
+                    if (elementState.type === 'checkbox') {
+                        self.controlPanel[elementState.name].checked = elementState.value;
+                    }
+                });
+            }
+
+        };
+
+        WCAGPanel.prototype.handleResetForm = function () {
+            var self = this;
+
+            document.getElementById('wcag-panel-restore-button').addEventListener('click', function () {
+                self.controlPanel.reset();
+                self.triggerEvent();
+            });
+        };
+
+        WCAGPanel.prototype.handleChange = function () {
+            var self = this;
+            this.controlPanel.addEventListener('change', function (e) {
+                self.triggerEvent();
+            });
+        };
+
+        WCAGPanel.prototype.handleNumberInputsChange = function () {
+            var self = this;
+            var numbers = this.controlPanel.querySelectorAll('input[type="number"]');
+
+            [].forEach.call(numbers, function (input) {
+                input.parentNode.addEventListener('click', function (e) {
+                    if (e.target.hasAttribute('data-wcag-action')) {
+                        var step = +input.step;
+                        if (e.target.getAttribute('data-wcag-action') === "lower") {
+                            if (input.min && (+input.value - step >= +input.min)) {
+                                input.value = +input.value - step;
+                                self.triggerEvent(input);
+                            }
+                        }
+
+                        if (e.target.getAttribute('data-wcag-action') === "higher") {
+                            if (input.max && (+input.value + step <= +input.max)) {
+                                input.value = +input.value + step;
+                                self.triggerEvent(input);
+                            }
+                        }
+                    }
+                });
+
+                input.addEventListener('change', function () {
+                    if (+input.value > +input.max) {
+                        input.value = input.max;
+                    }
+
+                    if (+input.value < +input.min) {
+                        input.value = input.min;
+                    }
+                })
+            })
+        };
+
+        WCAGPanel.prototype.triggerEvent = function (element) {
+            this.event.detail.wcagState = this.getPanelState();
+            this.storeConfigToStorage();
+            this.controlPanel.dispatchEvent(this.event);
+        };
+
+        WCAGPanel.prototype.storeConfigToStorage = function () {
+            window.localStorage.setItem('wcagState', JSON.stringify(this.state));
+        };
+
+        WCAGPanel.prototype.restoreConfigFromStorage = function () {
+            try {
+                var config = JSON.parse(window.localStorage.getItem('wcagState'));
+                this.restorePanelState(config);
+                this.triggerEvent();
+            } catch(e) {
+                console.log('Cannot get state from storage');
+            }
+        };
+
+        WCAGPanel.prototype.handleDropdown = function () {
+            this.setDefaultDropdown();
+            this.handleDropdownBtnClick();
+            this.handleDropdownCloseBtnClick();
+            this.handleOutsideDropdownClick();
+            this.handleOutsideDropdownKeydown();
+        };
+
+        WCAGPanel.prototype.handleOutsideDropdownClick = function () {
+            var self = this;
+            document.onclick = function (e) {
+                if (e.target != self.dropdownBtn && !self.isChildOf(e.target, self.controlPanel)) {
+                    self.closeDropdown();
+                }
+            }
+        };
+
+        // Закрытие дополнительного меню при выходе из него TABом и потере фокуса или при нажатии ESC.
+        WCAGPanel.prototype.handleOutsideDropdownKeydown = function () {
+            var self = this;
+            document.onkeyup = function (e) {
+                if (e.keyCode === 27) {
+                    self.closeDropdown();
+                } else if (e.keyCode === 9 && !self.isChildOf(e.target, self.controlPanel)) {
+                    self.closeDropdown();
+                }
+            };
+        };
+
+        WCAGPanel.prototype.handleDropdownBtnClick = function () {
+            var self = this;
+            this.dropdownBtnClose.addEventListener('click', function () {
+                self.closeDropdown();
+            });
+        };
+
+        WCAGPanel.prototype.handleDropdownCloseBtnClick = function () {
+            var self = this;
+            this.dropdownBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                if (self.dropdownBtn.getAttribute('aria-expanded') == 'false') {
+                    self.openDropdown();
+                }
+                else {
+                    self.closeDropdown();
+                }
+            });
+        };
+
+        WCAGPanel.prototype.openDropdown = function () {
+            this.dropdownBtn.setAttribute('aria-expanded', 'true');
+            this.controlPanel.classList.add('wcag-panel_show-dropdown');
+            this.dropdown.setAttribute('aria-hidden', 'false');
+            this.dropdown.setAttribute('aria-expanded', 'true');
+        };
+
+        WCAGPanel.prototype.closeDropdown = function () {
+            this.dropdownBtn.setAttribute('aria-expanded', 'false');
+            this.controlPanel.classList.remove('wcag-panel_show-dropdown');
+            this.dropdown.setAttribute('aria-hidden', 'true');
+            this.dropdown.setAttribute('aria-expanded', 'false');
+        };
+
+        WCAGPanel.prototype.setDefaultDropdown = function () {
+            this.dropdownBtn.setAttribute('aria-haspopup', 'true');
+            this.dropdownBtn.setAttribute('aria-expanded', 'false');
+            this.dropdown.setAttribute('aria-expanded', 'false');
+            this.dropdown.setAttribute('aria-hidden', 'true');
+        };
+
+        WCAGPanel.prototype.isChildOf = function (child,parent) {
+            if (child.parentNode === parent) {
+                return true;
+            } else if (child.parentNode === null) {
+                return false;
+            } else {
+                return this.isChildOf(child.parentNode, parent);
+            }
+        };
+
+
+        //@todo Доработать фокусировку первого элемента
+        // WCAGPanel.prototype.handleAnchorLinkClick = function () {
+        //     this.anchorLink.addEventListener('click', function () {
+        //
+        //     });
+        // };
+
+        return WCAGPanel;
+    })();
+
+    new WCAGPanel();
+</script>
+
+<style>
+    /*WCAG-PANEL*/
+
+    .wcag-panel {
+        position: relative;
+        display: block;
+        width: 100%;
+
+        font-size: 18px;
+        font-family: 'Arial', 'sans-serif';
+        line-height: 24px;
+
+        border-bottom: 1px solid rgba(107, 107, 107, 0.5);
+        background-color: #e8e8e8;
+
+        box-sizing: border-box;
+        z-index: 999;
+        letter-spacing: normal;
+        color: #000;
+    }
+
+    .wcag-panel * {
+        box-sizing: border-box;
+    }
+
+    .wcag-panel__wrapper {
+        margin: 0 auto;
+
+        max-width: 980px;
+        padding: 17px 0;
+        box-sizing: border-box;
+    }
+
+    .wcag-panel__wrapper:before, .wcag-panel__wrapper:after {
+        content: " ";
+        display: table;
+    }
+
+    .wcag-panel__wrapper:after {
+        clear: both;
+    }
+    .wcag-panel__row {
+        margin-bottom: 15px;
+        position: relative;
+    }
+
+    .wcag-panel__row:last-child {
+        margin: 0;
+    }
+
+    /* Скрытый контрол, который не показывается пользователю, пока не будет в фокусе */
+    .wcag-panel__hidden-control {
+        position: absolute;
+        right: 100%;
+        width: 150px;
+        bottom: 0;
+        padding-bottom: 8px;
+    }
+
+    .wcag-panel__hidden-control a:not(:focus) {
+        opacity: 0;
+    }
+
+    .wcag-panel__col {
+        display: inline-block;
+        vertical-align: bottom;
+        padding: 0 11px;
+    }
+
+    .wcag-panel__col:first-child {
+        padding-left: 0;
+    }
+
+    .wcag-panel__col:last-child {
+        border-right: 0;
+        margin-right: 0;
+    }
+
+    .wcag-panel__col_cont-link {
+        vertical-align: bottom;
+        padding-bottom: 8px;
+    }
+
+    .wcag-panel__settings {
+        float: right;
+        padding-top: 27px;
+    }
+
+    .wcag-panel__switcher {
+        display: inline-block;
+        vertical-align: middle;
+
+        font-size: 0;
+
+        overflow: hidden;
+        border: 1px solid black !important;
+        border-radius: 3px;
+    }
+
+    .wcag-panel__switcher-select {
+        height: 36px;
+        padding: 0 8px;
+        line-height: 25px;
+    }
+
+    .wcag-panel__switcher-select:focus {
+        color: white;
+        background: black;
+        box-shadow: inset 0 0 0 2px #ffa;
+        outline: 0;
+    }
+
+    .wcag-panel__switcher-label {
+        vertical-align: baseline;
+        margin-bottom: 3px;
+    }
+
+    .wcag-panel__switcher-btn {
+        padding: 0 10px;
+        height: 38px;
+        font-weight: normal;
+        margin-bottom: 0;
+
+        background-color: #fff;
+        cursor: pointer;
+
+        font-size: 18px;
+        line-height: 38px;
+        border: 0;
+        display: inline-block;
+        position: relative;
+    }
+
+    input[type="radio"]:checked + .wcag-panel__switcher-btn,
+    input[type="checkbox"]:checked + .wcag-panel__switcher-btn {
+        color: white;
+        background-color: black;
+    }
+
+    input[type="radio"]:focus + .wcag-panel__switcher-btn,
+    input[type="checkbox"]:focus + .wcag-panel__switcher-btn {
+        color: white;
+        background: black;
+        box-shadow: inset 0 0 0 2px #ffa;
+        outline: 0;
+    }
+
+    .wcag-panel input[type="radio"],
+    .wcag-panel input[type="checkbox"] {
+        position: absolute;
+        left: -9999px;
+    }
+
+    .wcag-panel__switcher-btn:not(:last-child) {
+        border-right: 1px solid black;
+    }
+
+    /* active */
+    .wcag-panel__switcher-btn.active {
+        background-color: black;
+        color: white;
+    }
+
+    .wcag-panel__switcher-btn:focus {
+        color: white;
+        background: black;
+        box-shadow: inset 0 0 0 2px #ffa;
+        outline: 0;
+    }
+
+    .wcag-panel__switcher-btn.active:focus {
+        box-shadow: inset 0 0 0 2px #ffa;
+        outline: 0;
+    }
+
+    .wcag-panel__switcher-btn_reset {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .wcag-panel__switcher-btn_reset:focus {
+        background: #000 !important;
+        color: #fff !important;
+    }
+
+    .wcag-panel__switcher-btn_toggle:before {
+        content: attr(data-disable-text);
+    }
+
+    input[type="checkbox"]:checked + .wcag-panel__switcher-btn_toggle:before {
+        content: attr(data-enable-text);
+    }
+
+    .wcag-panel__switcher-field {
+        position: absolute;
+        left: -9999px;
+    }
+
+    .wcag-panel__dropdown-toggle {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+
+        padding: 0 27px 0 10px;
+        height: 38px;
+
+        background: #fff;
+        border: 1px solid black !important;
+        border-radius: 3px;
+
+        line-height: 38px;
+        font-size: 18px;
+
+        cursor: pointer;
+    }
+
+    .wcag-panel__dropdown-toggle:focus {
+        box-shadow: inset 0 0 0 2px #ffa;
+        outline: none !important;
+        background: #000 !important;
+        color: #fff !important;
+    }
+
+    .wcag-panel__dropdown-toggle:focus:after {
+        border-left: 6px solid transparent;
+        border-top: 5px solid white;
+        border-right: 6px solid transparent;
+    }
+
+    .wcag-panel__dropdown-toggle:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        margin-top: -2px;
+
+        width: 0;
+        height: 0;
+
+        border-left: 6px solid transparent;
+        border-top: 5px solid black;
+        border-right: 6px solid transparent;
+    }
+
+    .wcag-panel__dropdown-toggle[aria-expanded="true"] {
+        background: black;
+        color: white;
+    }
+
+    .wcag-panel__dropdown-toggle[aria-expanded="true"]:after {
+        margin-top: -2px;
+        border-top: 0;
+        border-bottom: 5px solid white;
+    }
+
+    .wcag-panel__dropdown {
+        margin: 0;
+
+        display: none;
+
+        padding: 10px 0;
+        box-sizing: border-box;
+        width: 100%;
+
+        font-size: 18px;
+        text-align: left;
+        list-style: none;
+
+        background-color: #f3f3f3;
+        background-clip: padding-box;
+        border: 1px solid #ccc !important;
+        outline: none !important;
+
+        z-index: 1000;
+    }
+
+    .wcag-panel__dropdown:focus {
+        outline: none;
+        background-color: #f5f5f5 !important;
+    }
+
+    .wcag-panel__dropdown-item {
+        margin-bottom: 1.5em;
+    }
+
+    .wcag-panel__dropdown-item:last-child {
+        margin: 0;
+    }
+
+    .wcag-panel__dropdown-toggle-extra-text {
+        display: none;
+    }
+
+    .wcag-panel__flag-button {
+        margin-right: 7px;
+        font-size: 18px;
+        line-height: 38px;
+        text-align: center;
+        display: inline-block;
+    }
+
+    .wcag-panel__flag-button:last-child {
+        margin: 0;
+    }
+
+    .wcag-panel__default-link {
+        font-size: 18px;
+        line-height: 20px;
+        color: black !important; //Чтобы стили сайта не переопределяли этот
+    text-decoration: none !important;
+        background: transparent;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom-width: 1px;
+        border-color: #0000FF !important;
+        text-decoration: none;
+    }
+
+    .wcag-panel__default-link_blue {
+        color: #0000FF !important;
+    }
+
+    .wcag-panel__default-link:focus {
+        background: transparent !important;
+        outline-color: #0000ff !important;
+    }
+
+    .wcag-panel__switch-default {
+        padding-top: 9px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+
+        display: inline-block;
+        vertical-align: middle;
+
+        height: 35px;
+    }
+
+    .wcag-panel_show-dropdown .wcag-panel__dropdown {
+        display: block;
+    }
+
+
+    /*FLAG-BUTTON*/
+
+    .flag-button {
+        position: relative;
+
+        width: 31px;
+        height: 38px;
+        box-sizing: border-box;
+
+        border-radius: 3px;
+        cursor: pointer;
+
+        border: 1px solid #000 !important;
+    }
+
+    input:focus + .flag-button {
+        box-shadow: inset 0 0 0 2px #ffa;
+        background: black;
+        color: white;
+    }
+
+    .flag-button:before, .flag-button:after {
+        display: none;
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: 11px;
+
+        width: 8px;
+        height: 8px;
+
+        background: #fe0d0d;
+        border-radius: 50%;
+    }
+
+    .flag-button:after {
+        bottom: -3px;
+        top: auto;
+    }
+
+    input:checked + .flag-button:before, input:checked + .flag-button:after {
+        display: block;
+    }
+
+    .flag-button_white {
+        background: #fff;
+    }
+
+    .flag-button_black {
+        color: #fff;
+        background: #000;
+    }
+
+    .flag-button_blue {
+        background: #0000ff;
+        color: #ffff00;
+    }
+
+    .flag-button_beige {
+        background: #f7f3d6;
+        color: #4d4b43;
+    }
+
+    .flag-button_brown {
+        background: #3b2716;
+        color: #a9e44d;
+    }
+</style>
