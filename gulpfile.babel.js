@@ -5,6 +5,7 @@
 // ==========================================================================
 
 import gulp from 'gulp';
+import babel from 'gulp-babel';
 import gutil from 'gulp-util';
 // import cached from 'gulp-cached';
 import twig from 'gulp-twig';
@@ -12,7 +13,7 @@ import plumber from 'gulp-plumber';
 // import watch from 'gulp-watch';
 import sass from 'gulp-sass';
 import uglify from 'gulp-uglify';
-// import rename from 'gulp-rename';
+import rename from 'gulp-rename';
 // import csscomb from 'gulp-csscomb';
 // import cssnano from 'gulp-cssnano';
 
@@ -31,6 +32,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const SETTINGS = {
     path: {
+        src: './src',
         docs: './docs',
         views: './views',
         example: {
@@ -98,7 +100,7 @@ const SETTINGS = {
 // ==========================================================================
 // Webpack
 // ==========================================================================
-
+/*
 gulp.task("webpack", function (callback) {
 
     var firstBuildReady = true;
@@ -158,12 +160,12 @@ gulp.task("webpack", function (callback) {
             // new UglifyJSPlugin(),
             // new OptimizeCssAssetsPlugin()
         ),
-/*        postcss: function () {
+        postcss: function () {
             return [
                 require('autoprefixer'),
                 require('postcss-inline-svg')
             ];
-        }*/
+        }
     }, function (err, stats) {
 
         if (err) throw new gutil.PluginError("webpack", err);
@@ -181,7 +183,7 @@ gulp.task("webpack", function (callback) {
         }
 
     });
-});
+});*/
 
 // ==========================================================================
 // BUILD
@@ -246,9 +248,32 @@ gulp.task('twig', () => {
 
 });
 
+gulp.task('scripts', () => {
+
+    gulp.src(SETTINGS.path.src + '/**/*.js')
+        .pipe(babel({
+            presets: [["env" , {
+                "target": {
+                    "browsers": ["> % 1"]
+                }
+            }]]
+        }))
+        .pipe(gulp.dest(SETTINGS.path.dist))
+        .pipe(babel({
+            minified: true
+        }))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(SETTINGS.path.dist));
+
+    gulp.src(SETTINGS.path.src + '/**/*.js')
+        .pipe(rename({suffix: '.source'}))
+        .pipe(gulp.dest(SETTINGS.path.dist));
+});
+
 gulp.task('build', () => {
     runSequence(
         'twig',
+        'scripts'
     );
 });
 
