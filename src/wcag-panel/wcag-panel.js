@@ -43,7 +43,7 @@ WCAGPanel.prototype.init = function () {
 
     this.handleClick();
 
-    this.handleDropdownKeydown();
+    this.handleDropdownKeyup();
 
     this.handleChange();
 
@@ -185,7 +185,7 @@ WCAGPanel.prototype.handleChange = function () {
 /**
  * Обработчик нажатия ESC и ухода из панели с помощью TAB
  */
-WCAGPanel.prototype.handleDropdownKeydown = function () {
+WCAGPanel.prototype.handleDropdownKeyup = function () {
     var self = this;
 
     if (!this.dropdown) {
