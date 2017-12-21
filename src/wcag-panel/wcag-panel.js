@@ -52,7 +52,7 @@ WCAGPanel.prototype.init = function () {
 };
 
 /**
- * Получить состояние формы.
+ * Получаем состояние формы.
  * Проходимся по всем выбранным элементам группы и собираем из них значения для состояния формы.
  * @returns {Array}: [{name: 'fontsize', value: 'big'}, {name: 'color', value: 'black'}, ...]
  */
@@ -88,6 +88,37 @@ WCAGPanel.prototype.restorePanelState = function (state) {
                 element.checked = true;
             }
         });
+    }
+};
+
+/**
+ * Генерируем событие с состоянием формы
+ * @param element
+ */
+WCAGPanel.prototype.triggerEvent = function () {
+    this.state = this.getPanelState();
+    this.event.wcagState = this.state;
+    this.storeConfigToStorage(this.state);
+    this.controlPanel.dispatchEvent(this.event);
+};
+
+/**
+ * Сохраняем конфигурацию в localStorage браузера
+ */
+WCAGPanel.prototype.storeConfigToStorage = function (config) {
+    window.localStorage.setItem('wcagState', JSON.stringify(config));
+};
+
+/**
+ * Восстанавливаем состояние панели ВДС из localStorage
+ */
+WCAGPanel.prototype.restoreConfigFromStorage = function () {
+    try {
+        var config = JSON.parse(window.localStorage.getItem('wcagState'));
+        this.restorePanelState(config);
+        this.triggerEvent();
+    } catch(e) {
+        console.error('Cannot get state from storage');
     }
 };
 
@@ -143,26 +174,10 @@ WCAGPanel.prototype.handleNumberInputsChange = function () {
     })
 };
 
-WCAGPanel.prototype.triggerEvent = function (element) {
-    this.state = this.getPanelState();
-    this.event.wcagState = this.state;
-    this.storeConfigToStorage();
-    this.controlPanel.dispatchEvent(this.event);
-};
 
-WCAGPanel.prototype.storeConfigToStorage = function () {
-    window.localStorage.setItem('wcagState', JSON.stringify(this.state));
-};
 
-WCAGPanel.prototype.restoreConfigFromStorage = function () {
-    try {
-        var config = JSON.parse(window.localStorage.getItem('wcagState'));
-        this.restorePanelState(config);
-        this.triggerEvent();
-    } catch(e) {
-        console.log('Cannot get state from storage');
-    }
-};
+
+
 
 WCAGPanel.prototype.handleDropdown = function () {
     this.setDefaultDropdown();
