@@ -1,5 +1,14 @@
 {% extends './layout/main.twig' %}
 
 {% block content %}
-    {#{% include './examples/components.twig' %}#}
+
+    <div class="docs-example">
+        <div class="docs-example__view">
+            Код панели ВДС, которую вы видете на сайте
+        </div>
+        <pre class="docs-example__code">
+            <code class="language-html convert">
+{% include './partials/wcag-panel.twig' %}</code>
+        </pre>
+    </div>
 {% endblock %}

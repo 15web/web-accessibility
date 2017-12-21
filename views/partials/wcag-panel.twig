@@ -1,20 +1,15 @@
-<link rel="stylesheet" href="/components/wcag-panel/wcag-panel.css">
-
 <form class="wcag-panel" id="wcag-panel" name="wcagPanel">
 
+    <!-- Панель основных настроек -->
     <div class="wcag-panel__wrapper">
         <div class="wcag-panel__row">
+            <!-- Скрытая ссылка перехода к содержанию страницы, появляющаяся только при навигации с клавиатуры -->
             <div class="wcag-panel__hidden-control">
                 <a href="#main-content" id="anchor-link" class="wcag-panel__default-link" aria-label="Перейти к основному содержанию">Спуститься к содержанию</a>
             </div>
 
-
+            <!-- Основные настройки панели -->
             <div>
-                {# При необходимости ссылки на обычную версию в панели, расскомментировать #}
-                {# <div class="wcag-panel__col wcag-panel__col_cont-link">
-                <a href="#" class="wcag-panel__default-link wcag-panel__default-link_blue" aria-label="Перейти на обычную версию сайта" style="font-size: 16px">Вернуться к обычному сайту</a>
-                </div> #}
-
                 <div class="wcag-panel__col">
                     <div class="wcag-panel__switcher-label">Масштаб шрифта</div>
                     <div class="wcag-panel__switcher">
@@ -70,6 +65,7 @@
                     </div>
 
                 </div>
+
                 <div class="wcag-panel__settings">
                     <button class="wcag-panel__dropdown-toggle"
                             aria-label="Дополнительные настройки"
@@ -83,6 +79,7 @@
         </div>
     </div>
 
+    <!-- Выпадающая панель с дополнительными настройками -->
     <div class="wcag-panel__dropdown"
          id="wcagDropdownMenu"
          tabindex="-1"
@@ -92,6 +89,7 @@
         <div class="wcag-panel__wrapper">
 
             <div class="wcag-panel__row">
+
                 <div class="wcag-panel__col">
                     <div class="wcag-panel__switcher-label">Интервал между буквами</div>
                     <div class="wcag-panel__switcher wcag-panel__switcher_double">
@@ -120,8 +118,9 @@
                 <div class="wcag-panel__col wcag-panel__col_cont-link">
                     <button class="wcag-panel__default-link"
                             aria-label="закрыть панель"
-                            data-wcag-panel="dropdown-close"
-                    >Закрыть панель</button>
+                            data-wcag-panel="dropdown-close">
+                        Закрыть панель
+                    </button>
                 </div>
             </div>
         </div>
@@ -129,5 +128,3 @@
     </div>
 
 </form>
-
-<script src="/components/wcag-panel/wcag-panel.js"></script>

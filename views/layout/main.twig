@@ -13,7 +13,12 @@
 </head>
 <body>
 
+    {# Стили панели нужны вместе с панелью #}
+    <link rel="stylesheet" href="/components/wcag-panel/wcag-panel.css">
     {% include '../partials/wcag-panel.twig' %}
+    {# JS обработчик должен выполняться сразу после появления панели в DOM, чтобы успеть восстановить состояние до того,
+     как страница загрузится #}
+    <script src="/components/wcag-panel/wcag-panel.js"></script>
 
     {% include 'main/menu.twig' %}
 
@@ -32,7 +37,7 @@
         var converts = document.querySelectorAll('.convert');
         converts.forEach(function (convert) {
             var html = convert.innerHTML;
-            html = html.replace(/  /g, '');
+//            html = html.replace(/  /g, '');
             html = html.replace(/</g, '&lt');
             html = html.replace(/>/g, '&gt');
             convert.innerHTML = html;
