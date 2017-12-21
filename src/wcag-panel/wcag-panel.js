@@ -42,7 +42,7 @@ var WCAGPanel = function (panel) {
 WCAGPanel.prototype.init = function () {
     this.restoreConfigFromStorage();
 
-    this.handleResetForm();
+    this.handleClick();
 
     this.handleDropdown();
     this.handleChange();
@@ -124,13 +124,28 @@ WCAGPanel.prototype.restoreConfigFromStorage = function () {
     }
 };
 
-WCAGPanel.prototype.handleResetForm = function () {
+WCAGPanel.prototype.handleClick = function () {
     var self = this;
+    this.controlPanel.addEventListener('click', function (event) {
+        if (event.target.hasAttribute('data-wcag-panel')) {
+            var targetRole = event.target.getAttribute('data-wcag-panel');
 
-    this.resetBtn.addEventListener('click', function () {
-        self.controlPanel.reset();
-        self.triggerEvent();
-    });
+            switch (targetRole) {
+                case 'dropdown-open':
+                    console.log('dropdown-open');
+                    break;
+                case 'dropdown-close':
+                    console.log('dropdown-close');
+                    break;
+                case 'reset-config':
+                    self.controlPanel.reset();
+                    self.triggerEvent();
+                    break;
+                default:
+                    break;
+            }
+        }
+    })
 };
 
 WCAGPanel.prototype.handleChange = function () {
