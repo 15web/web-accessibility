@@ -256,8 +256,6 @@ input[type="checkbox"]:checked + .wcag-panel__switcher-btn_toggle:before {
 .wcag-panel__dropdown {
     margin: 0;
 
-    display: none;
-
     padding: 10px 0;
     box-sizing: border-box;
     width: 100%;
@@ -337,11 +335,6 @@ input[type="checkbox"]:checked + .wcag-panel__switcher-btn_toggle:before {
     height: 35px;
 }
 
-.wcag-panel_show-dropdown .wcag-panel__dropdown {
-    display: block;
-}
-
-
 /*FLAG-BUTTON*/
 
 .flag-button {
@@ -408,4 +401,8 @@ input:checked + .flag-button:before, input:checked + .flag-button:after {
 .flag-button_brown {
     background: #3b2716;
     color: #a9e44d;
+}
+
+[aria-hidden="true"] {
+    display: none !important;
 }

@@ -5,6 +5,9 @@ document.addEventListener('wcag:action', function (event) {
     var config = event.wcagState;
     if (config && config instanceof Object) {
         var html = document.documentElement;
+        /**
+         * Добавляем к html атрибуты из конфигурации
+         */
         config.forEach(function (key) {
             html.setAttribute('data-'+key.name, key.value);
         });
@@ -13,9 +16,8 @@ document.addEventListener('wcag:action', function (event) {
 });
 
 /*  ================================
- *   Панель ВДС и полифил для кастомных событий
+ *   Панель ВДС
  *  ================================ */
-
 /**
  * WCAGPanel
  * Обрабатывает клик по кнопке "Настройки" и открывает дропдаун
@@ -28,7 +30,6 @@ var WCAGPanel = function (panel) {
     this.controlPanel = panel;
     this.dropdownToggleBtn = panel.querySelector('[data-wcag-panel="dropdown-toggle"]');
     this.dropdown = panel.querySelector('[data-wcag-panel="dropdown"]');
-    // this.anchorLink = document.getElementById('anchor-link'); смотреть метод ниже
     this.state = [];
 
     this.event = document.createEvent('Event');
@@ -42,12 +43,12 @@ WCAGPanel.prototype.init = function () {
 
     this.handleClick();
 
-    this.handleDropdown();
-    this.handleChange();
-    // this.handleAnchorLinkClick(); смотреть метод ниже
+    this.handleDropdownKeydown();
 
-    this.controlPanel.addEventListener('submit', function (e) {
-        e.preventDefault();
+    this.handleChange();
+
+    this.controlPanel.addEventListener('submit', function (event) {
+        event.preventDefault();
     });
 };
 
@@ -122,24 +123,28 @@ WCAGPanel.prototype.restoreConfigFromStorage = function () {
     }
 };
 
+/**
+ * Обработка кликов по элементам панели
+ */
 WCAGPanel.prototype.handleClick = function () {
     var self = this;
+
     this.controlPanel.addEventListener('click', function (event) {
         if (event.target.hasAttribute('data-wcag-panel')) {
             var targetRole = event.target.getAttribute('data-wcag-panel');
 
             switch (targetRole) {
-                case 'dropdown-toggle':
+                case 'dropdown-toggle': // Клик по кнопке скрывающей/отображающей панель
                     if (event.target.getAttribute('aria-expanded') === 'false') {
                         self.openDropdown();
                     } else {
                         self.closeDropdown();
                     }
                     break;
-                case 'dropdown-close':
+                case 'dropdown-close': // Клик по кнопке "Закрыть панель"
                     self.closeDropdown();
                     break;
-                case 'reset-config':
+                case 'reset-config': // Клик по кнопке "Сбросить настройки"
                     self.controlPanel.reset();
                     self.triggerEvent();
                     break;
@@ -147,9 +152,29 @@ WCAGPanel.prototype.handleClick = function () {
                     break;
             }
         }
-    })
+    });
+
+    /**
+     * При клике вне панели, закрываем dropdown, если dropdown еще не закрыт
+     */
+    if (this.dropdown) {
+        document.addEventListener('click', function (event) {
+            if (self.isChildOf(event.target, self.controlPanel)) {
+                return;
+            }
+
+            if (self.dropdown.getAttribute('aria-hidden') === 'true') {
+                return;
+            }
+
+            self.closeDropdown();
+        });
+    }
 };
 
+/**
+ * Обрабатываем изменение элементов формы
+ */
 WCAGPanel.prototype.handleChange = function () {
     var self = this;
     this.controlPanel.addEventListener('change', function (e) {
@@ -157,31 +182,22 @@ WCAGPanel.prototype.handleChange = function () {
     });
 };
 
-
-WCAGPanel.prototype.handleDropdown = function () {
-    this.handleOutsideDropdownClick();
-    this.handleOutsideDropdownKeydown();
-};
-
-WCAGPanel.prototype.handleOutsideDropdownClick = function () {
+/**
+ * Обработчик нажатия ESC и ухода из панели с помощью TAB
+ */
+WCAGPanel.prototype.handleDropdownKeydown = function () {
     var self = this;
-    document.onclick = function (e) {
-        if (e.target != self.dropdownBtnOpen && !self.isChildOf(e.target, self.controlPanel)) {
+    document.addEventListener('keyup', function (event) {
+        /* Нажали ESC */
+        if (event.keyCode === 27) {
             self.closeDropdown();
         }
-    }
-};
 
-// Закрытие дополнительного меню при выходе из него TABом и потере фокуса или при нажатии ESC.
-WCAGPanel.prototype.handleOutsideDropdownKeydown = function () {
-    var self = this;
-    document.onkeyup = function (e) {
-        if (e.keyCode === 27) {
-            self.closeDropdown();
-        } else if (e.keyCode === 9 && !self.isChildOf(e.target, self.controlPanel)) {
+        /* Клавишей TAB вышли за пределы dropdown */
+        if (event.keyCode === 9 && !self.isChildOf(event.target, self.controlPanel) && self.dropdown.getAttribute('aria-hidden') !== 'true') {
             self.closeDropdown();
         }
-    };
+    });
 };
 
 WCAGPanel.prototype.openDropdown = function () {
@@ -189,7 +205,6 @@ WCAGPanel.prototype.openDropdown = function () {
         return;
     }
     this.dropdownToggleBtn.setAttribute('aria-expanded', 'true');
-    this.controlPanel.classList.add('wcag-panel_show-dropdown');
     this.dropdown.setAttribute('aria-hidden', 'false');
     this.dropdown.setAttribute('aria-expanded', 'true');
 };
@@ -199,12 +214,17 @@ WCAGPanel.prototype.closeDropdown = function () {
         return;
     }
     this.dropdownToggleBtn.setAttribute('aria-expanded', 'false');
-    this.controlPanel.classList.remove('wcag-panel_show-dropdown');
     this.dropdown.setAttribute('aria-hidden', 'true');
     this.dropdown.setAttribute('aria-expanded', 'false');
 };
 
-WCAGPanel.prototype.isChildOf = function (child,parent) {
+/**
+ * Проверяем, является ли child потомком для parent
+ * @param child
+ * @param parent
+ * @returns {boolean}
+ */
+WCAGPanel.prototype.isChildOf = function (child, parent) {
     if (child.parentNode === parent) {
         return true;
     } else if (child.parentNode === null) {
