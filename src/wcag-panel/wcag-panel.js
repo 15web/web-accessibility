@@ -28,6 +28,7 @@ var WCAGPanel = function (panel) {
     this.controlPanel = panel;
     this.dropdownBtnOpen = panel.querySelector('[data-wcag-panel="dropdown-open"]');
     this.dropdownBtnClose = panel.querySelector('[data-wcag-panel="dropdown-close"]');
+    this.resetBtn = panel.querySelector('[data-wcag-panel="reset"]');
     this.dropdown = panel.querySelector('[data-wcag-panel="dropdown"]');
     // this.anchorLink = document.getElementById('anchor-link'); смотреть метод ниже
     this.state = [];
@@ -40,9 +41,11 @@ var WCAGPanel = function (panel) {
 
 WCAGPanel.prototype.init = function () {
     this.restoreConfigFromStorage();
+
+    this.handleResetForm();
+
     this.handleDropdown();
     this.handleChange();
-    this.handleResetForm();
     // this.handleAnchorLinkClick(); смотреть метод ниже
 
     this.controlPanel.addEventListener('submit', function (e) {
@@ -124,7 +127,7 @@ WCAGPanel.prototype.restoreConfigFromStorage = function () {
 WCAGPanel.prototype.handleResetForm = function () {
     var self = this;
 
-    document.getElementById('wcag-panel-restore-button').addEventListener('click', function () {
+    this.resetBtn.addEventListener('click', function () {
         self.controlPanel.reset();
         self.triggerEvent();
     });
