@@ -187,6 +187,11 @@ WCAGPanel.prototype.handleChange = function () {
  */
 WCAGPanel.prototype.handleDropdownKeydown = function () {
     var self = this;
+
+    if (!this.dropdown) {
+        return;
+    }
+
     document.addEventListener('keyup', function (event) {
         /* Нажали ESC */
         if (event.keyCode === 27) {
