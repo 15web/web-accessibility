@@ -27,8 +27,6 @@ document.addEventListener('wcag:action', function (event) {
 var WCAGPanel = function (panel) {
     this.controlPanel = panel;
     this.dropdownBtnOpen = panel.querySelector('[data-wcag-panel="dropdown-open"]');
-    this.dropdownBtnClose = panel.querySelector('[data-wcag-panel="dropdown-close"]');
-    this.resetBtn = panel.querySelector('[data-wcag-panel="reset"]');
     this.dropdown = panel.querySelector('[data-wcag-panel="dropdown"]');
     // this.anchorLink = document.getElementById('anchor-link'); смотреть метод ниже
     this.state = [];
@@ -135,7 +133,7 @@ WCAGPanel.prototype.handleClick = function () {
                     console.log('dropdown-open');
                     break;
                 case 'dropdown-close':
-                    console.log('dropdown-close');
+                    self.closeDropdown();
                     break;
                 case 'reset-config':
                     self.controlPanel.reset();
@@ -157,7 +155,6 @@ WCAGPanel.prototype.handleChange = function () {
 
 
 WCAGPanel.prototype.handleDropdown = function () {
-    this.handleDropdownBtnClick();
     this.handleDropdownCloseBtnClick();
     this.handleOutsideDropdownClick();
     this.handleOutsideDropdownKeydown();
@@ -184,13 +181,6 @@ WCAGPanel.prototype.handleOutsideDropdownKeydown = function () {
     };
 };
 
-WCAGPanel.prototype.handleDropdownBtnClick = function () {
-    var self = this;
-    this.dropdownBtnClose.addEventListener('click', function () {
-        self.closeDropdown();
-    });
-};
-
 WCAGPanel.prototype.handleDropdownCloseBtnClick = function () {
     var self = this;
     this.dropdownBtnOpen.addEventListener('click', function (e) {
@@ -212,6 +202,9 @@ WCAGPanel.prototype.openDropdown = function () {
 };
 
 WCAGPanel.prototype.closeDropdown = function () {
+    if (!this.dropdown) {
+        return;
+    }
     this.dropdownBtnOpen.setAttribute('aria-expanded', 'false');
     this.controlPanel.classList.remove('wcag-panel_show-dropdown');
     this.dropdown.setAttribute('aria-hidden', 'true');
