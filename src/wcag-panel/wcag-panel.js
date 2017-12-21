@@ -2,15 +2,13 @@
  *   Обработчик события изменения параметров панели ВДС
  *  ================================ */
 document.addEventListener('wcag:action', function (event) {
-
-    var config = event.detail.wcagState;
-    if (config) {
+    var config = event.wcagState;
+    if (config && config instanceof Object) {
         var html = document.documentElement;
         config.forEach(function (key) {
             html.setAttribute('data-'+key.name, key.value);
         });
     }
-
 
 });
 
@@ -18,82 +16,7 @@ document.addEventListener('wcag:action', function (event) {
  *   Панель ВДС и полифил для кастомных событий
  *  ================================ */
 
-// Полифилл CustomEvent от Mozilla
-(function () {
-
-    if ( typeof window.CustomEvent === "function" ) return false;
-
-    function CustomEvent ( event, params ) {
-        params = params || { bubbles: false, cancelable: false, detail: undefined };
-        var evt = document.createEvent( 'CustomEvent' );
-        evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
-        return evt;
-    }
-
-    CustomEvent.prototype = window.Event.prototype;
-
-    window.CustomEvent = CustomEvent;
-})();
-
 var WCAGPanel = (function () {
-    // Polyfill for safari, ie 8/9
-    (function() {
-        // helpers
-        var regExp = function(name) {
-            return new RegExp('(^| )'+ name +'( |$)');
-        };
-        var forEach = function(list, fn, scope) {
-            for (var i = 0; i < list.length; i++) {
-                fn.call(scope, list[i]);
-            }
-        };
-
-        // class list object with basic methods
-        function ClassList(element) {
-            this.element = element;
-        }
-
-        ClassList.prototype = {
-            add: function() {
-                forEach(arguments, function(name) {
-                    if (!this.contains(name)) {
-                        this.element.className += ' '+ name;
-                    }
-                }, this);
-            },
-            remove: function() {
-                forEach(arguments, function(name) {
-                    this.element.className =
-                        this.element.className.replace(regExp(name), '');
-                }, this);
-            },
-            toggle: function(name) {
-                return this.contains(name) ? (this.remove(name), false) : (this.add(name), true);
-            },
-            contains: function(name) {
-                return regExp(name).test(this.element.className);
-            },
-            // bonus..
-            replace: function(oldName, newName) {
-                this.remove(oldName), this.add(newName);
-            }
-        };
-
-        // IE8/9, Safari
-        if (!('classList' in Element.prototype)) {
-            Object.defineProperty(Element.prototype, 'classList', {
-                get: function() {
-                    return new ClassList(this);
-                }
-            });
-        }
-
-        // replace() support for others
-        if (window.DOMTokenList && DOMTokenList.prototype.replace == null) {
-            DOMTokenList.prototype.replace = ClassList.prototype.replace;
-        }
-    })();
-
     /**
      * WCAGPanel
      * Обрабатывает клик по кнопке "Настройки" и открывает дропдаун
@@ -102,18 +25,16 @@ var WCAGPanel = (function () {
      * @constructor
      */
 
-    var WCAGPanel = function () {
-        this.controlPanel = document.getElementById('wcag-panel');
-        this.dropdownBtn = document.getElementById('wcagDropdownBtn');
-        this.dropdownBtnClose = document.getElementById('wcagDropdownBtnClose');
-        this.dropdown = document.getElementById('wcagDropdownMenu');
+    var WCAGPanel = function (panel) {
+        this.controlPanel = panel;
+        this.dropdownBtnOpen = panel.querySelector('[data-wcag-panel="dropdown-open"]');
+        this.dropdownBtnClose = panel.querySelector('[data-wcag-panel="dropdown-close"]');
+        this.dropdown = panel.querySelector('[data-wcag-panel="dropdown"]');
         // this.anchorLink = document.getElementById('anchor-link'); смотреть метод ниже
         this.state = [];
 
-        this.event = new CustomEvent('wcag:action', {
-            bubbles: true,
-            detail: {}
-        });
+        this.event = document.createEvent('Event');
+        this.event.initEvent('wcag:action', true, false);
 
         this.init();
     };
@@ -255,7 +176,7 @@ var WCAGPanel = (function () {
     };
 
     WCAGPanel.prototype.triggerEvent = function (element) {
-        this.event.detail.wcagState = this.getPanelState();
+        this.event.wcagState = this.getPanelState();
         this.storeConfigToStorage();
         this.controlPanel.dispatchEvent(this.event);
     };
@@ -285,7 +206,7 @@ var WCAGPanel = (function () {
     WCAGPanel.prototype.handleOutsideDropdownClick = function () {
         var self = this;
         document.onclick = function (e) {
-            if (e.target != self.dropdownBtn && !self.isChildOf(e.target, self.controlPanel)) {
+            if (e.target != self.dropdownBtnOpen && !self.isChildOf(e.target, self.controlPanel)) {
                 self.closeDropdown();
             }
         }
@@ -312,9 +233,9 @@ var WCAGPanel = (function () {
 
     WCAGPanel.prototype.handleDropdownCloseBtnClick = function () {
         var self = this;
-        this.dropdownBtn.addEventListener('click', function (e) {
+        this.dropdownBtnOpen.addEventListener('click', function (e) {
             e.preventDefault();
-            if (self.dropdownBtn.getAttribute('aria-expanded') == 'false') {
+            if (self.dropdownBtnOpen.getAttribute('aria-expanded') == 'false') {
                 self.openDropdown();
             }
             else {
@@ -324,22 +245,22 @@ var WCAGPanel = (function () {
     };
 
     WCAGPanel.prototype.openDropdown = function () {
-        this.dropdownBtn.setAttribute('aria-expanded', 'true');
+        this.dropdownBtnOpen.setAttribute('aria-expanded', 'true');
         this.controlPanel.classList.add('wcag-panel_show-dropdown');
         this.dropdown.setAttribute('aria-hidden', 'false');
         this.dropdown.setAttribute('aria-expanded', 'true');
     };
 
     WCAGPanel.prototype.closeDropdown = function () {
-        this.dropdownBtn.setAttribute('aria-expanded', 'false');
+        this.dropdownBtnOpen.setAttribute('aria-expanded', 'false');
         this.controlPanel.classList.remove('wcag-panel_show-dropdown');
         this.dropdown.setAttribute('aria-hidden', 'true');
         this.dropdown.setAttribute('aria-expanded', 'false');
     };
 
     WCAGPanel.prototype.setDefaultDropdown = function () {
-        this.dropdownBtn.setAttribute('aria-haspopup', 'true');
-        this.dropdownBtn.setAttribute('aria-expanded', 'false');
+        this.dropdownBtnOpen.setAttribute('aria-haspopup', 'true');
+        this.dropdownBtnOpen.setAttribute('aria-expanded', 'false');
         this.dropdown.setAttribute('aria-expanded', 'false');
         this.dropdown.setAttribute('aria-hidden', 'true');
     };
@@ -357,4 +278,7 @@ var WCAGPanel = (function () {
     return WCAGPanel;
 })();
 
-new WCAGPanel();
+var panel = document.getElementById('wcag-panel');
+if (panel) {
+    new WCAGPanel(panel);
+}
