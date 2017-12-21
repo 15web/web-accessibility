@@ -1,7 +1,18 @@
 {% extends './layout/main.twig' %}
 
 {% block content %}
+    {% import './examples/components.twig' as componentsView %}
 
+    <div class="typography">
+        <h2>Начать пользоваться</h2>
+        <p>Функционирующую панель управления вы можете увидеть вверху сайта.</p>
+        <p>При изменении настроек панели она меняет <code>data-*</code> атрибуты у тега <code>html</code>, в зависиомсти от выбранных значений панели.</p>
+        <p>Именем <code>data-*</code> атрибута становится имя выбранного элемента <code>input[type="radio"]</code> из соответствующей группы. Так, например, если выбран <code class="convert"><input type="radio" name="fontsize" value="very-large" checked="true"></code>, то для тега <code>html</code> добавится атрибут <code>data-fontsize="very-large"</code>.</p>
+        <p>Панель ВДС поддерживает браузеры, начиная с IE 9+</p>
+    </div>
+
+
+    {{ componentsView.links('wcag-panel', ['css', 'min.css', 'scss', 'js', 'min.js']) }}
     <div class="docs-example">
         <div class="docs-example__view">
             Код панели ВДС, которую вы видете на сайте
