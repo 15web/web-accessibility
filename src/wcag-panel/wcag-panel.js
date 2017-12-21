@@ -42,7 +42,6 @@ WCAGPanel.prototype.init = function () {
     this.restoreConfigFromStorage();
     this.handleDropdown();
     this.handleChange();
-    this.handleNumberInputsChange();
     this.handleResetForm();
     // this.handleAnchorLinkClick(); смотреть метод ниже
 
@@ -137,46 +136,6 @@ WCAGPanel.prototype.handleChange = function () {
         self.triggerEvent();
     });
 };
-
-WCAGPanel.prototype.handleNumberInputsChange = function () {
-    var self = this;
-    var numbers = this.controlPanel.querySelectorAll('input[type="number"]');
-
-    [].forEach.call(numbers, function (input) {
-        input.parentNode.addEventListener('click', function (e) {
-            if (e.target.hasAttribute('data-wcag-action')) {
-                var step = +input.step;
-                if (e.target.getAttribute('data-wcag-action') === "lower") {
-                    if (input.min && (+input.value - step >= +input.min)) {
-                        input.value = +input.value - step;
-                        self.triggerEvent(input);
-                    }
-                }
-
-                if (e.target.getAttribute('data-wcag-action') === "higher") {
-                    if (input.max && (+input.value + step <= +input.max)) {
-                        input.value = +input.value + step;
-                        self.triggerEvent(input);
-                    }
-                }
-            }
-        });
-
-        input.addEventListener('change', function () {
-            if (+input.value > +input.max) {
-                input.value = input.max;
-            }
-
-            if (+input.value < +input.min) {
-                input.value = input.min;
-            }
-        })
-    })
-};
-
-
-
-
 
 
 WCAGPanel.prototype.handleDropdown = function () {
