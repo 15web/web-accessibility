@@ -51,46 +51,24 @@ WCAGPanel.prototype.init = function () {
     });
 };
 
+/**
+ * Получить состояние формы.
+ * Проходимся по всем выбранным элементам группы и собираем из них значения для состояния формы.
+ * @returns {Array}: [{name: 'fontsize', value: 'big'}, {name: 'color', value: 'black'}, ...]
+ */
 WCAGPanel.prototype.getPanelState = function () {
-    var self = this;
-    this.state = [];
+    var state = [];
 
-    [].forEach.call(this.controlPanel.elements, function (element) {
-        if (element.type == 'radio' && element.checked) {
-            self.state.push({
-                name: element.name,
-                value: element.value,
-                type: element.type
-            });
-        }
+    var checkedElements = this.controlPanel.querySelectorAll('input:checked');
 
-        if (element.type == 'checkbox') {
-            self.state.push({
-                name: element.name,
-                value: element.checked,
-                type: element.type
-            });
-        }
-
-        if (element.type == 'select-one') {
-            self.state.push({
-                name: element.name,
-                value: element.value,
-                type: element.type
-            });
-        }
-
-        if (element.type == 'number') {
-            self.state.push({
-                name: element.name,
-                value: element.value,
-                type: element.type
-            });
-        }
-
+    [].forEach.call(checkedElements, function (element) {
+        state.push({
+            name: element.name,
+            value: element.value
+        });
     });
 
-    return this.state;
+    return state;
 };
 
 WCAGPanel.prototype.restorePanelState = function (state) {
