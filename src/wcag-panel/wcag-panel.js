@@ -71,33 +71,24 @@ WCAGPanel.prototype.getPanelState = function () {
     return state;
 };
 
+/**
+ * Восстанавливаем состояние формы до переданного state.
+ * Ищем управляющий элемент с именем и значением из elementState и делаем его выбранным.
+ * @param state
+ */
 WCAGPanel.prototype.restorePanelState = function (state) {
     var self = this;
-    this.state = state;
-    if (state) {
-        [].forEach.call(state, function (elementState) {
-            //IE9+ radio buttons restore
-            if (elementState.type === 'radio') {
-                var radios = document.getElementsByName(elementState.name);
-                [].forEach.call(radios, function (radio) {
-                    if (radio.value === elementState.value) {
-                        radio.checked = true;
-                    } else {
-                        radio.checked = false;
-                    }
-                });
-            }
 
-            if (elementState.type === 'select-one' || elementState.type === 'number') {
-                self.controlPanel[elementState.name].value = elementState.value;
-            }
+    if (state instanceof Array) {
 
-            if (elementState.type === 'checkbox') {
-                self.controlPanel[elementState.name].checked = elementState.value;
+        state.forEach(function (elementState) {
+            var element = self.controlPanel.querySelector('[name="'+ elementState.name +'"][value="'+ elementState.value +'"]');
+
+            if (element) {
+                element.checked = true;
             }
         });
     }
-
 };
 
 WCAGPanel.prototype.handleResetForm = function () {
@@ -153,7 +144,8 @@ WCAGPanel.prototype.handleNumberInputsChange = function () {
 };
 
 WCAGPanel.prototype.triggerEvent = function (element) {
-    this.event.wcagState = this.getPanelState();
+    this.state = this.getPanelState();
+    this.event.wcagState = this.state;
     this.storeConfigToStorage();
     this.controlPanel.dispatchEvent(this.event);
 };
