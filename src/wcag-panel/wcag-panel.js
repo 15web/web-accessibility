@@ -74,7 +74,7 @@ WCAGPanel.prototype.getPanelState = function () {
 /**
  * Восстанавливаем состояние формы до переданного state.
  * Ищем управляющий элемент с именем и значением из elementState и делаем его выбранным.
- * @param state
+ * @param state {Array}: [{name: 'fontsize', value: 'big'}, {name: 'color', value: 'black'}, ...]
  */
 WCAGPanel.prototype.restorePanelState = function (state) {
     var self = this;
