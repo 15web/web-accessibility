@@ -73,6 +73,8 @@
                 <div class="wcag-panel__settings">
                     <button class="wcag-panel__dropdown-toggle"
                             aria-label="Дополнительные настройки"
+                            aria-haspopup="true"
+                            aria-expanded="false"
                             data-wcag-panel="dropdown-open">
                         Настройки <span class="wcag-panel__dropdown-toggle-extra-text">отображения</span>
                     </button>
@@ -81,7 +83,12 @@
         </div>
     </div>
 
-    <div class="wcag-panel__dropdown" id="wcagDropdownMenu" tabindex="-1" aria-expanded="false" data-wcag-panel="dropdown">
+    <div class="wcag-panel__dropdown"
+         id="wcagDropdownMenu"
+         tabindex="-1"
+         aria-expanded="false"
+         aria-hidden="true"
+         data-wcag-panel="dropdown">
         <div class="wcag-panel__wrapper">
 
             <div class="wcag-panel__row">

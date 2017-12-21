@@ -157,7 +157,6 @@ WCAGPanel.prototype.handleChange = function () {
 
 
 WCAGPanel.prototype.handleDropdown = function () {
-    this.setDefaultDropdown();
     this.handleDropdownBtnClick();
     this.handleDropdownCloseBtnClick();
     this.handleOutsideDropdownClick();
@@ -217,13 +216,6 @@ WCAGPanel.prototype.closeDropdown = function () {
     this.controlPanel.classList.remove('wcag-panel_show-dropdown');
     this.dropdown.setAttribute('aria-hidden', 'true');
     this.dropdown.setAttribute('aria-expanded', 'false');
-};
-
-WCAGPanel.prototype.setDefaultDropdown = function () {
-    this.dropdownBtnOpen.setAttribute('aria-haspopup', 'true');
-    this.dropdownBtnOpen.setAttribute('aria-expanded', 'false');
-    this.dropdown.setAttribute('aria-expanded', 'false');
-    this.dropdown.setAttribute('aria-hidden', 'true');
 };
 
 WCAGPanel.prototype.isChildOf = function (child,parent) {
