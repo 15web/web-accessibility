@@ -1,10 +1,11 @@
+/* Важный стиль не только для панели, но и для проекта в целом */
+[aria-hidden="true"] {
+    display: none !important;
+}
 
 /*WCAG-PANEL*/
-
 .wcag-panel {
     position: relative;
-    display: block;
-    width: 100%;
 
     font-size: 18px;
     font-family: 'Arial', 'sans-serif';
@@ -17,392 +18,271 @@
     z-index: 999;
     letter-spacing: normal;
     color: #000;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    &__wrapper {
+        margin: 0 auto;
+        max-width: 980px;
+        padding: 17px 0;
+    }
+
+    /* Строки с отступом между собой, на случай, если их будет несколько */
+    &__row {
+        position: relative;
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+
+    /* Скрытый блок с ссылкой, которая отображается только если сфокусировать элемент с клавиатуры */
+    &__hidden-control {
+        position: absolute;
+        right: 100%;
+        width: 150px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        a:not(:focus) {
+            opacity: 0;
+        }
+    }
+
+    /* Колонки с управляющими элементами */
+    &__col {
+        display: inline-block;
+        vertical-align: bottom;
+        padding: 0 11px;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+        &_cont-link {
+            vertical-align: bottom;
+            padding-bottom: 8px;
+        }
+    }
+
+    /* Колонка с настройками */
+    &__settings {
+        float: right;
+        margin-top: 27px;
+    }
+
+    /* Элемент-контейнер переключаетелей */
+    &__switcher {
+        font-size: 0;
+        overflow: hidden;
+        border: 1px solid black !important;
+        border-radius: 3px;
+    }
+
+    &__switcher-label {
+        vertical-align: baseline;
+        margin-bottom: 3px;
+    }
+
+    &__switcher-btn {
+        padding: 0 10px;
+        height: 38px;
+        font-weight: normal;
+        margin-bottom: 0;
+
+        background-color: #fff;
+        cursor: pointer;
+
+        font-size: 18px;
+        line-height: 38px;
+        border: 0;
+        display: inline-block;
+        position: relative;
+
+        &:not(:last-child) {
+            border-right: 1px solid black;
+        }
+
+        &:focus {
+            background: #000 !important;
+            color: #fff !important;
+            box-shadow: inset 0 0 0 2px #ffa;
+        }
+    }
+
+    /* Кнопка переключения выпадающего меню */
+    &__dropdown-toggle {
+        position: relative;
+        padding: 0 27px 0 10px;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            margin-top: -2px;
+
+            width: 0;
+            height: 0;
+
+            border-left: 6px solid transparent;
+            border-top: 5px solid black;
+            border-right: 6px solid transparent;
+        }
+
+        &:focus:after {
+            border-top-color: white;
+        }
+
+        &[aria-expanded="true"] {
+            background: black;
+            color: white;
+        }
+
+        &[aria-expanded="true"]:after {
+            border-top: 0;
+            border-bottom: 5px solid white;
+        }
+    }
+
+    &__dropdown {
+        margin: 0;
+
+        padding: 10px 0;
+        box-sizing: border-box;
+        width: 100%;
+
+        font-size: 18px;
+        text-align: left;
+        list-style: none;
+
+        background-color: #f3f3f3;
+        background-clip: padding-box;
+        border: 1px solid #ccc !important;
+        outline: none !important;
+
+        z-index: 1000;
+    }
+
+    &__flag-button {
+        font-size: 18px;
+        line-height: 38px;
+        text-align: center;
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 7px;
+        }
+    }
+
+    /* Ссылки в шапке сайта. Для них используем !important, чтобы стили сайта не влияли на отображение */
+    &__default-link {
+        font-size: 18px;
+        line-height: 20px;
+        color: black !important; //Чтобы стили сайта не переопределяли этот
+        text-decoration: none !important;
+        background: transparent;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom-width: 1px;
+        border-color: #0000FF !important;
+        text-decoration: none;
+
+        &:focus {
+            background: transparent !important;
+            outline-color: #0000ff !important;
+        }
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        /* "Скрываем" их таким образом, а не {display: none} чтобы focus с клавиатуры работал */
+        position: absolute;
+        left: -99999px;
+
+        &:checked + .wcag-panel__switcher-btn {
+            color: white;
+            background-color: black;
+        }
+
+        &:focus + .wcag-panel__switcher-btn {
+            color: white;
+            background: black;
+            box-shadow: inset 0 0 0 2px #ffa;
+            outline: 0;
+        }
+    }
 }
 
-.wcag-panel * {
-    box-sizing: border-box;
-}
-
-.wcag-panel__wrapper {
-    margin: 0 auto;
-
-    max-width: 980px;
-    padding: 17px 0;
-    box-sizing: border-box;
-}
-
-.wcag-panel__wrapper:before, .wcag-panel__wrapper:after {
-    content: " ";
-    display: table;
-}
-
-.wcag-panel__wrapper:after {
-    clear: both;
-}
-.wcag-panel__row {
-    margin-bottom: 15px;
-    position: relative;
-}
-
-.wcag-panel__row:last-child {
-    margin: 0;
-}
-
-/* Скрытый контрол, который не показывается пользователю, пока не будет в фокусе */
-.wcag-panel__hidden-control {
-    position: absolute;
-    right: 100%;
-    width: 150px;
-    bottom: 0;
-    padding-bottom: 8px;
-}
-
-.wcag-panel__hidden-control a:not(:focus) {
-    opacity: 0;
-}
-
-.wcag-panel__col {
-    display: inline-block;
-    vertical-align: bottom;
-    padding: 0 11px;
-}
-
-.wcag-panel__col:first-child {
-    padding-left: 0;
-}
-
-.wcag-panel__col:last-child {
-    border-right: 0;
-    margin-right: 0;
-}
-
-.wcag-panel__col_cont-link {
-    vertical-align: bottom;
-    padding-bottom: 8px;
-}
-
-.wcag-panel__settings {
-    float: right;
-    padding-top: 27px;
-}
-
-.wcag-panel__switcher {
-    display: inline-block;
-    vertical-align: middle;
-
-    font-size: 0;
-
-    overflow: hidden;
-    border: 1px solid black !important;
-    border-radius: 3px;
-}
-
-.wcag-panel__switcher-select {
-    height: 36px;
-    padding: 0 8px;
-    line-height: 25px;
-}
-
-.wcag-panel__switcher-select:focus {
-    color: white;
-    background: black;
-    box-shadow: inset 0 0 0 2px #ffa;
-    outline: 0;
-}
-
-.wcag-panel__switcher-label {
-    vertical-align: baseline;
-    margin-bottom: 3px;
-}
-
-.wcag-panel__switcher-btn {
-    padding: 0 10px;
-    height: 38px;
-    font-weight: normal;
-    margin-bottom: 0;
-
-    background-color: #fff;
-    cursor: pointer;
-
-    font-size: 18px;
-    line-height: 38px;
-    border: 0;
-    display: inline-block;
-    position: relative;
-}
-
-input[type="radio"]:checked + .wcag-panel__switcher-btn,
-input[type="checkbox"]:checked + .wcag-panel__switcher-btn {
-    color: white;
-    background-color: black;
-}
-
-input[type="radio"]:focus + .wcag-panel__switcher-btn,
-input[type="checkbox"]:focus + .wcag-panel__switcher-btn {
-    color: white;
-    background: black;
-    box-shadow: inset 0 0 0 2px #ffa;
-    outline: 0;
-}
-
-.wcag-panel input[type="radio"],
-.wcag-panel input[type="checkbox"] {
-    position: absolute;
-    left: -9999px;
-}
-
-.wcag-panel__switcher-btn:not(:last-child) {
-    border-right: 1px solid black;
-}
-
-/* active */
-.wcag-panel__switcher-btn.active {
-    background-color: black;
-    color: white;
-}
-
-.wcag-panel__switcher-btn:focus {
-    color: white;
-    background: black;
-    box-shadow: inset 0 0 0 2px #ffa;
-    outline: 0;
-}
-
-.wcag-panel__switcher-btn.active:focus {
-    box-shadow: inset 0 0 0 2px #ffa;
-    outline: 0;
-}
-
-.wcag-panel__switcher-btn_reset {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.wcag-panel__switcher-btn_reset:focus {
-    background: #000 !important;
-    color: #fff !important;
-}
-
-.wcag-panel__switcher-btn_toggle:before {
-    content: attr(data-disable-text);
-}
-
-input[type="checkbox"]:checked + .wcag-panel__switcher-btn_toggle:before {
-    content: attr(data-enable-text);
-}
-
-.wcag-panel__switcher-field {
-    position: absolute;
-    left: -9999px;
-}
-
-.wcag-panel__dropdown-toggle {
-    position: relative;
-    display: inline-block;
-    vertical-align: top;
-
-    padding: 0 27px 0 10px;
-    height: 38px;
-
-    background: #fff;
-    border: 1px solid black !important;
-    border-radius: 3px;
-
-    line-height: 38px;
-    font-size: 18px;
-
-    cursor: pointer;
-}
-
-.wcag-panel__dropdown-toggle:focus {
-    box-shadow: inset 0 0 0 2px #ffa;
-    outline: none !important;
-    background: #000 !important;
-    color: #fff !important;
-}
-
-.wcag-panel__dropdown-toggle:focus:after {
-    border-left: 6px solid transparent;
-    border-top: 5px solid white;
-    border-right: 6px solid transparent;
-}
-
-.wcag-panel__dropdown-toggle:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    margin-top: -2px;
-
-    width: 0;
-    height: 0;
-
-    border-left: 6px solid transparent;
-    border-top: 5px solid black;
-    border-right: 6px solid transparent;
-}
-
-.wcag-panel__dropdown-toggle[aria-expanded="true"] {
-    background: black;
-    color: white;
-}
-
-.wcag-panel__dropdown-toggle[aria-expanded="true"]:after {
-    margin-top: -2px;
-    border-top: 0;
-    border-bottom: 5px solid white;
-}
-
-.wcag-panel__dropdown {
-    margin: 0;
-
-    padding: 10px 0;
-    box-sizing: border-box;
-    width: 100%;
-
-    font-size: 18px;
-    text-align: left;
-    list-style: none;
-
-    background-color: #f3f3f3;
-    background-clip: padding-box;
-    border: 1px solid #ccc !important;
-    outline: none !important;
-
-    z-index: 1000;
-}
-
-.wcag-panel__dropdown:focus {
-    outline: none;
-    background-color: #f5f5f5 !important;
-}
-
-.wcag-panel__dropdown-item {
-    margin-bottom: 1.5em;
-}
-
-.wcag-panel__dropdown-item:last-child {
-    margin: 0;
-}
-
-.wcag-panel__dropdown-toggle-extra-text {
-    display: none;
-}
-
-.wcag-panel__flag-button {
-    margin-right: 7px;
-    font-size: 18px;
-    line-height: 38px;
-    text-align: center;
-    display: inline-block;
-}
-
-.wcag-panel__flag-button:last-child {
-    margin: 0;
-}
-
-.wcag-panel__default-link {
-    font-size: 18px;
-    line-height: 20px;
-    color: black !important; //Чтобы стили сайта не переопределяли этот
-    text-decoration: none !important;
-    background: transparent;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom-width: 1px;
-    border-color: #0000FF !important;
-    text-decoration: none;
-}
-
-.wcag-panel__default-link_blue {
-    color: #0000FF !important;
-}
-
-.wcag-panel__default-link:focus {
-    background: transparent !important;
-    outline-color: #0000ff !important;
-}
-
-.wcag-panel__switch-default {
-    padding-top: 9px;
-    margin-right: 20px;
-    margin-bottom: 10px;
-
-    display: inline-block;
-    vertical-align: middle;
-
-    height: 35px;
-}
 
 /*FLAG-BUTTON*/
 
 .flag-button {
     position: relative;
-
     width: 31px;
     height: 38px;
-    box-sizing: border-box;
-
     border-radius: 3px;
     cursor: pointer;
-
     border: 1px solid #000 !important;
-}
 
-input:focus + .flag-button {
-    box-shadow: inset 0 0 0 2px #ffa;
-    background: black;
-    color: white;
-}
+    input:focus + & {
+        box-shadow: inset 0 0 0 2px #ffa;
+        background: black;
+        color: white;
+    }
 
-.flag-button:before, .flag-button:after {
-    display: none;
-    content: '';
-    position: absolute;
-    top: -3px;
-    left: 11px;
+    /* Красные точки на выбранных кнопках */
+    &:before,
+    &:after {
+        display: none;
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: 11px;
 
-    width: 8px;
-    height: 8px;
+        width: 8px;
+        height: 8px;
 
-    background: #fe0d0d;
-    border-radius: 50%;
-}
+        background: #fe0d0d;
+        border-radius: 50%;
 
-.flag-button:after {
-    bottom: -3px;
-    top: auto;
-}
+        input:checked + & {
+            display: block;
+        }
+    }
 
-input:checked + .flag-button:before, input:checked + .flag-button:after {
-    display: block;
-}
+    &:after {
+        bottom: -3px;
+        top: auto;
+    }
 
-.flag-button_white {
-    background: #fff;
-}
+    &_white {
+        background: #fff;
+    }
 
-.flag-button_black {
-    color: #fff;
-    background: #000;
-}
+    &_black {
+        color: #fff;
+        background: #000;
+    }
 
-.flag-button_blue {
-    background: #0000ff;
-    color: #ffff00;
-}
+    &_blue {
+        background: #0000ff;
+        color: #ffff00;
+    }
 
-.flag-button_beige {
-    background: #f7f3d6;
-    color: #4d4b43;
-}
+    &_beige {
+        background: #f7f3d6;
+        color: #4d4b43;
+    }
 
-.flag-button_brown {
-    background: #3b2716;
-    color: #a9e44d;
-}
-
-[aria-hidden="true"] {
-    display: none !important;
+    &_brown {
+        background: #3b2716;
+        color: #a9e44d;
+    }
 }

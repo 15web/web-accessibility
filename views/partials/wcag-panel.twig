@@ -11,7 +11,7 @@
             <!-- Основные настройки панели -->
             <div>
                 <div class="wcag-panel__col">
-                    <div class="wcag-panel__switcher-label">Масштаб шрифта</div>
+                    <label class="wcag-panel__switcher-label">Масштаб шрифта</label>
                     <div class="wcag-panel__switcher">
                         <input type="radio" checked name="fontsize" value="normal" id="fontsize-normal">
                         <label class="wcag-panel__switcher-btn" aria-label="нормальный размер шрифта" for="fontsize-normal">
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="wcag-panel__col">
-                    <div class="wcag-panel__switcher-label">Цвет</div>
+                    <label class="wcag-panel__switcher-label">Цвет</label>
 
                     <input type="radio" checked name="color" value="white" id="color-white">
                     <label for="color-white" class="wcag-panel__flag-button flag-button flag-button_white" aria-label="белая цветовая схема">Б</label>
@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="wcag-panel__col">
-                    <div class="wcag-panel__switcher-label">Изображения</div>
+                    <label class="wcag-panel__switcher-label">Изображения</label>
 
                     <div class="wcag-panel__switcher">
                         <input type="radio" checked name="images" value="on" id="images-on">
@@ -66,13 +66,13 @@
 
                 </div>
 
-                <div class="wcag-panel__settings">
-                    <button class="wcag-panel__dropdown-toggle"
+                <div class="wcag-panel__settings wcag-panel__switcher">
+                    <button class="wcag-panel__dropdown-toggle wcag-panel__switcher-btn"
                             aria-label="Дополнительные настройки"
                             aria-haspopup="true"
                             aria-expanded="false"
                             data-wcag-panel="dropdown-toggle">
-                        Настройки <span class="wcag-panel__dropdown-toggle-extra-text">отображения</span>
+                        Настройки
                     </button>
                 </div>
             </div>
@@ -82,7 +82,6 @@
     <!-- Выпадающая панель с дополнительными настройками -->
     <div class="wcag-panel__dropdown"
          id="wcagDropdownMenu"
-         tabindex="-1"
          aria-expanded="false"
          aria-hidden="true"
          data-wcag-panel="dropdown">
@@ -91,7 +90,7 @@
             <div class="wcag-panel__row">
 
                 <div class="wcag-panel__col">
-                    <div class="wcag-panel__switcher-label">Интервал между буквами</div>
+                    <label class="wcag-panel__switcher-label">Интервал между буквами</label>
                     <div class="wcag-panel__switcher wcag-panel__switcher_double">
                         <input type="radio" name="kerning" value="normal" checked id="kerning-normal">
                         <label class="wcag-panel__switcher-btn" aria-label="нормальный межбуквенный интервал" for="kerning-normal">
@@ -107,7 +106,7 @@
 
                 <div class="wcag-panel__col">
                     <div class="wcag-panel__switcher wcag-panel__reset">
-                        <button class="wcag-panel__switcher-btn wcag-panel__switcher-btn_reset"
+                        <button class="wcag-panel__switcher-btn"
                                 aria-label="Вернуть стандартные настройки"
                                 data-wcag-panel="reset-config">
                             Сбросить настройки
