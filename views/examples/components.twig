@@ -1,8 +1,14 @@
-{% macro links(component, types) %}
-    <h3 class="h3">Ссылки для загрузок:</h3>
+{% macro links(component, types, path, title) %}
+    {% set path = path|default('/components/') %}
+
+    {% if title != '' %}
+        <h3 class="h3">Ссылки для загрузок:</h3>
+    {% endif %}
+
     {% for type in types %}
         <p>
-            <a href="/components/{{ component }}/{{ component }}.{{ type }}" target="_blank">
+            {# /components/button/button.css #}
+            <a href="{{ path }}{{ path == '/components/' ? component : '' }}/{{ component }}.{{ type }}" target="_blank">
                 {% if type == 'css' %}
                     Файл стилей
                 {% elseif type == 'min.css' %}

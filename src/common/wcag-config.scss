@@ -2,13 +2,13 @@
 @import "variables";
 
 /* Конфиги для font-size */
-@each $key, $value in (normal: 16px, big: 22px, large: 32px) {
+@each $key, $value in (normal: 1rem, big: 1.5rem, large: 2rem) {
     html[data-fontsize="#{$key}"] {
         font-size: $value;
     }
 }
 
-/* Для всех элементов задаем цвет границ, чтобы не менять у каэдого элемента в частности */
+/* Для всех элементов задаем цвет границ, чтобы не менять у каждого элемента в частности */
 * {
     @include wcag(border-color, $borderColorsWcag);
 }
@@ -33,8 +33,7 @@ img,
     }
 }
 
-
-
+/* Для всех интерактивных и активных элементов добавляем стили hover */
 a:not([disabled]):not([aria-disabled="true"]),
 [tabindex]:not([tabindex="-1"]),
 button:not([disabled]):not([aria-disabled="true"]) {
@@ -55,7 +54,7 @@ html[data-images="off"] {
     *,
     *:before,
     *:after {
-        background-image: none;
+        background-image: none !important; /* !important на случай inline стилей в верстке */
     }
 }
 
@@ -75,6 +74,7 @@ html[data-kerning="big"] {
 body {
     @include wcag(background-color, $firstBackgroundColorsWcag);
     @include wcag(color, $textColorsWcag);
+    line-height: $defaultLineHeight;
 
     a {
         @include wcag(color, $linkColorsWcag);
