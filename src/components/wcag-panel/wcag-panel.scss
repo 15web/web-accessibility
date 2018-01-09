@@ -87,6 +87,7 @@
     &__switcher-label {
         vertical-align: baseline;
         margin-bottom: 3px;
+        display: inline-block;
     }
 
     &__switcher-btn {
@@ -119,6 +120,8 @@
     &__dropdown-toggle {
         position: relative;
         padding: 0 27px 0 10px;
+        height: 36px;
+        line-height: 36px;
 
         &:after {
             content: '';
