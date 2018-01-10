@@ -1,0 +1,12 @@
+// ==========================================================================
+// Alert
+// ==========================================================================
+@import "../../common/mixins";
+@import "../../common/variables";
+
+.alert {
+    padding: 15px;
+
+    @include wcag(background-color, $invertBackgroundColorsWcag);
+    @include wcag(color, $textInvertColorsWcag);
+}

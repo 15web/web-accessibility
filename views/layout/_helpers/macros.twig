@@ -63,3 +63,18 @@ items в формате
     </ul>
 </nav>
 {% endmacro %}
+
+
+{# Разметка и текст разметки для примера #}
+{% macro html(markup) %}
+<div class="docs-example">
+    <div class="docs-example__view">
+        {{ markup }}
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+{{ markup }}
+        </code>
+    </pre>
+</div>
+{% endmacro %}
