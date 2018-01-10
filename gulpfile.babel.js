@@ -9,6 +9,7 @@ import babel from 'gulp-babel';
 import twig from 'gulp-twig';
 import sass from 'gulp-sass';
 import rename from 'gulp-rename';
+import concat from 'gulp-concat';
 
 import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
@@ -70,6 +71,8 @@ gulp.task('scripts', () => {
             minified: true
         }))
         .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(SETTINGS.path.dist))
+        .pipe(concat('bundle.js'))
         .pipe(gulp.dest(SETTINGS.path.dist));
 
     /**

@@ -20,7 +20,7 @@
     {% include '../partials/wcag-panel.twig' %}
     {# JS обработчик должен выполняться сразу после появления панели в DOM, чтобы успеть восстановить состояние до того,
      как страница загрузится #}
-    <script src="/components/wcag-panel/wcag-panel.js"></script>
+    {#<script src="/components/wcag-panel/wcag-panel.js"></script>#}
 
     {% include 'main/menu.twig' with {activeLink: block('menu_link')} %}
 
