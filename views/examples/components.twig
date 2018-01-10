@@ -1,5 +1,8 @@
 {# Используемые компоненты #}
 {% set components = [{
+    link: '#collapse',
+    title: 'Раскрывающийся список'
+},{
     link: '#buttons',
     title: 'Кнопки'
 },{
@@ -24,7 +27,7 @@
     {# item.link|slice(1) убирает # в начале ссылки #}
     {% for item in components %}
         <div id="{{ item.link|slice(1) }}" style="margin-bottom: 100px">
-            {% include './partials/'~item.link|slice(1)~'.twig' %}
+            {% include './partials/'~item.link|slice(1)~'.twig' with {title: item.title}%}
         </div>
     {% endfor %}
 </div>

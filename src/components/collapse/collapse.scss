@@ -3,15 +3,13 @@
 // ==========================================================================
 
 .collapse {
-    &__panel {
+    &__content {
         margin-top: 10px;
-        
-        &_hidden {
-            display: none;
-        }
     }
+}
 
-    &__button {
-
+[data-role="collapse"] {
+    [aria-expanded=false] {
+        display: none;
     }
 }

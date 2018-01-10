@@ -1,0 +1,33 @@
+{% macro collapse() %}
+<div class="collapse" data-role="collapse">
+    <button class="button" aria-controls="elemToControl">
+        Кликните, чтобы отобразить скрытый контент
+    </button>
+    <div id="elemToControl" class="collapse__content" aria-expanded="false">
+        Скрытый контент
+    </div>
+</div>
+{% endmacro %}
+
+{% import _self as View %}
+
+<h2>{{ title }}</h2>
+<p>Для того, чтобы пользователь мог услышать изменение, используется атрибут aria-expanded равный true для раскрытого элемента и false для закрытого.</p>
+<p>Скрипт автоматически изменяет атрибут скрытого контента.</p>
+<p>У элемента, который будет раскрывать контент, нужно указать атрибут aria-controls со значением id скрытого контента.</p>
+<p>У контента нужно указать соответствующий aria-controls идентификатор.</p>
+<p>Атрибут data-role="collapse" обязателен. По нему JavaScript определяет, что это раскрывающийся список.</p>
+<p>При желании вы можете убрать классы collapse и collapse__content с элементов и оформить компонент по своему усмотрению.</p>
+
+{{ macros.download_lnks('collapse', ['css', 'min.css', 'scss', 'js', 'min.js'], null, 'Ссылки для загрузок') }}
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        {{ View.collapse() }}
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+{{ View.collapse() }}
+        </code>
+    </pre>
+</div>
