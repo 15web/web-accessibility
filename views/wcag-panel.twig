@@ -3,7 +3,6 @@
 {% block title %}Панель ВДС{% endblock %}
 
 {% block content %}
-    {% import './examples/components.twig' as componentsView %}
 
     <div class="typography">
         <h2>Начать пользоваться</h2>
@@ -15,8 +14,8 @@
         <p>Панель ВДС поддерживает браузеры, начиная с IE 9+</p>
     </div>
 
+    {{ macros.download_lnks('wcag-panel', ['css', 'min.css', 'scss', 'js', 'min.js'], null, 'Ссылки для загрузок') }}
 
-    {{ componentsView.links('wcag-panel', ['css', 'min.css', 'scss', 'js', 'min.js']) }}
     <div class="docs-example">
         <div class="docs-example__view">
             HTML разметка панели ВДС, которую вы видете на сайте

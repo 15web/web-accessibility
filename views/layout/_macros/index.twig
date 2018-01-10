@@ -1,0 +1,31 @@
+{# Список ссылок для загрузки файлов #}
+{% macro download_lnks(component, types, path, title) %}
+    {% set path = path|default('/components/' ~ component) %}
+
+    {% if title %}
+        <h4 class="h3">{{ title }}</h4>
+    {% endif %}
+
+    {% for type in types %}
+        <p>
+            {# например, /components/button/button.css #}
+            {% if type == 'css' %}
+                Файл стилей
+            {% elseif type == 'min.css' %}
+                Минифицированный файл стилей
+            {% elseif type == 'scss' %}
+                Файл стилей оформленный в препроцессоре SASS
+            {% elseif type == 'js' %}
+                Скрипт для компонента
+            {% elseif type == 'min.js' %}
+                Минифицированный скрипт для компонента
+            {% else %}
+
+            {% endif %}
+            &ndash;
+            <a href="{{ path }}/{{ component }}.{{ type }}" target="_blank">
+                 {{ component }}.{{ type }}
+            </a>
+        </p>
+    {% endfor %}
+{% endmacro %}

@@ -3,9 +3,6 @@
 {% block title %}Конфигурация панели ВДС{% endblock %}
 
 {% block content %}
-
-    {% import './examples/components.twig' as componentsView %}
-
     <h2>Конфигурация настроек панели ВДС для сайта</h2>
 
     <h3>Масштаб шрифта</h3>
@@ -46,8 +43,8 @@
 
     <br>
     <h3>Файлы для загрузок стилей конфигурации:</h3>
-    {{ componentsView.links('wcag-config', ['css', 'min.css', 'scss'], '/common', '') }}
-    {{ componentsView.links('mixins', ['scss'], '/common', '') }}
-    {{ componentsView.links('variables', ['scss'], '/common', '') }}
+    {{ macros.download_lnks('wcag-config', ['css', 'min.css', 'scss'], '/common') }}
+    {{ macros.download_lnks('mixins', ['scss'], '/common') }}
+    {{ macros.download_lnks('variables', ['scss'], '/common') }}
 
 {% endblock %}

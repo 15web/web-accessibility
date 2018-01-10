@@ -13,6 +13,8 @@
 </head>
 <body>
 
+    {% import './_macros/index.twig' as macros %}
+
     {# Стили панели нужны вместе с панелью #}
     <link rel="stylesheet" href="/components/wcag-panel/wcag-panel.css">
     {% include '../partials/wcag-panel.twig' %}
