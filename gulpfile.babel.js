@@ -24,6 +24,9 @@ const SETTINGS = {
 };
 
 gulp.task('sass', () => {
+    /**
+     * Собираем файлы из исходников в обычном и минифицированном варианте
+     */
     gulp.src(SETTINGS.path.src + '/**/*.scss')
         .pipe(sass({
             outputStyle: 'expanded'
@@ -35,6 +38,9 @@ gulp.task('sass', () => {
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(SETTINGS.path.dist));
 
+    /**
+     * Копируем исходники в dist, чтобы дать возможность скачать их
+     */
     gulp.src(SETTINGS.path.src + '/**/*.scss')
         .pipe(gulp.dest(SETTINGS.path.dist));
 });
@@ -48,6 +54,9 @@ gulp.task('twig', () => {
 
 gulp.task('scripts', () => {
 
+    /**
+     * Собираем файлы из исходников в обычном и минифицированном варианте
+     */
     gulp.src(SETTINGS.path.src + '/**/*.js')
         .pipe(babel({
             presets: [["env" , {
@@ -63,6 +72,9 @@ gulp.task('scripts', () => {
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(SETTINGS.path.dist));
 
+    /**
+     * Копируем исходники в dist, чтобы дать возможность скачать их
+     */
     gulp.src(SETTINGS.path.src + '/**/*.js')
         .pipe(rename({suffix: '.source'}))
         .pipe(gulp.dest(SETTINGS.path.dist));
