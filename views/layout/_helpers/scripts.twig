@@ -1,0 +1,19 @@
+{# Преобразует html теги в текст #}
+<script>
+    var escape = {
+        '<': '&lt',
+        '>': '&gt'
+    }
+
+    var converts = document.querySelectorAll('.convert');
+    converts.forEach(function (convert) {
+        var html = convert.innerHTML;
+//            html = html.replace(/  /g, '');
+        html = html.replace(/</g, '&lt');
+        html = html.replace(/>/g, '&gt');
+        convert.innerHTML = html;
+        console.log(html);
+    });
+</script>
+
+<script src="/site-components/prism/prism.source.js"></script>

@@ -1,0 +1,33 @@
+// ==========================================================================
+// Nav
+// ==========================================================================
+.nav {
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        display: inline-block;
+        margin: 0 10px 10px 0;
+
+        .nav_vertical & {
+            display: block;
+            margin: 0 0 10px 0;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        padding: 5px 10px;
+        font-weight: bold;
+        border: 1px solid;
+        border-radius: 4px;
+    }
+
+
+    &__item_active > .nav__link {
+        background: #ffa;
+        color: #bf1722;
+    }
+}

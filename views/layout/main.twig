@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    {% import './_macros/index.twig' as macros %}
+    {% import './_helpers/macros.twig' as macros %}
 
     {# Стили панели нужны вместе с панелью #}
     <link rel="stylesheet" href="/components/wcag-panel/wcag-panel.css">
@@ -22,7 +22,7 @@
      как страница загрузится #}
     <script src="/components/wcag-panel/wcag-panel.js"></script>
 
-    {% include 'main/menu.twig' %}
+    {% include 'main/menu.twig' with {activeLink: block('menu_link')} %}
 
     <div class="content-wrapper page-content">
         {% block content %}
@@ -30,25 +30,7 @@
         {% endblock %}
     </div>
 
-    <script>
-        var escape = {
-            '<': '&lt',
-            '>': '&gt'
-        }
-
-        var converts = document.querySelectorAll('.convert');
-        converts.forEach(function (convert) {
-            var html = convert.innerHTML;
-//            html = html.replace(/  /g, '');
-            html = html.replace(/</g, '&lt');
-            html = html.replace(/>/g, '&gt');
-            convert.innerHTML = html;
-            console.log(html);
-        });
-    </script>
-
-    <script src="/site-components/prism/prism.source.js"></script>
-
+    {% include './_helpers/scripts.twig' %}
 
 </body>
 </html>

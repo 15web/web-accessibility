@@ -18,11 +18,12 @@
         link: 'examples'
     }] %}
 
-    <nav>
+    <nav class="nav">
         <ul>
             {% for item in menu %}
-                <li>
-                    <a href="{{ item.link }}.html">{{ item.title }}</a>
+                {% set itemClass = item.link == activeLink ? 'nav__item_active' : '' %}
+                <li class="nav__item {{ itemClass }}">
+                    <a href="{{ item.link }}.html" class="nav__link">{{ item.title }}</a>
                 </li>
             {% endfor %}
         </ul>
