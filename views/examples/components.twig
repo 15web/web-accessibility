@@ -23,7 +23,7 @@
 
     {# item.link|slice(1) убирает # в начале ссылки #}
     {% for item in components %}
-        <div id="{{ item.link|slice(1) }}">
+        <div id="{{ item.link|slice(1) }}" style="margin-bottom: 100px">
             {% include './partials/'~item.link|slice(1)~'.twig' %}
         </div>
     {% endfor %}

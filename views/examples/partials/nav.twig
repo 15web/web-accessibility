@@ -1,0 +1,49 @@
+<h2 class="h2">Навигация</h2>
+
+{{ macros.download_lnks('nav', ['css', 'min.css', 'scss'], null, 'Ссылки для загрузок') }}
+
+{% set exampleItems = [{
+        link: '#link-path-1',
+        title: 'Элемент 1'
+    },{
+        link: '#link-path-2',
+        title: 'Элемент 2'
+    },{
+        link: '#link-path-3',
+        title: 'Активный элемент 3'
+    }] %}
+
+{% set navOptions = {
+    items: exampleItems,
+    activeLink: '#link-path-3'
+} %}
+
+{% set verticalNavOptions = {
+    items: exampleItems,
+    activeLink: '#link-path-3',
+    isVertical: 'true'
+} %}
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        <p>Горизонтальное меню</p>
+        {{ macros.nav(navOptions) }}
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+{{ macros.nav(navOptions) }}
+        </code>
+    </pre>
+</div>
+<br>
+<div class="docs-example">
+    <div class="docs-example__view">
+        <p>Вертикальное меню строится путем добавления класса <code>nav_vertical</code> к блоку <code>nav</code></p>
+        {{ macros.nav(verticalNavOptions) }}
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+{{ macros.nav(verticalNavOptions) }}
+        </code>
+    </pre>
+</div>
