@@ -29,3 +29,39 @@
         </p>
     {% endfor %}
 {% endmacro %}
+
+
+
+{# Навигация.
+options = {
+    items: [], -
+    activeLink: '',
+    isVertical: false
+}
+
+items в формате
+[{
+    title: 'Панель ВДС',
+    link: 'wcag-panel'
+},{
+    title: 'Базовые компоненты',
+    link: 'index'
+},{
+    title: 'Конфигурация',
+    link: 'wcag-config'
+},{
+    title: 'Пример контентной страницы',
+    link: 'examples'
+}] #}
+{% macro nav(options) %}
+<nav class="nav {{ options.isVertical ? 'nav_vertical' : '' }}">
+    <ul>
+        {% for item in options.items %}
+            {% set itemClass = item.link == options.activeLink ? 'nav__item_active' : '' %}
+            <li class="nav__item {{ itemClass }}">
+                <a href="{{ item.link }}" class="nav__link">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endmacro %}

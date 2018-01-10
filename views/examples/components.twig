@@ -1,14 +1,30 @@
+{# Используемые компоненты #}
+{% set components = [{
+    link: '#buttons',
+    title: 'Кнопки'
+},{
+    link: '#nav',
+    title: 'Навигация'
+}] %}
+
+{# Options для построения навигации по компонентам #}
+{% set navOptions = {
+    items: components,
+    isVertical: 'true'
+} %}
+
 <div class="page-content__sidebar">
-    <nav>
-        <ul>
-            <li><a href="#buttons">Кнопки</a></li>
-        </ul>
-    </nav>
+    {{ macros.nav(navOptions) }}
 </div>
+
+
 <div class="page-content__content">
     <h1 class="h1">Компоненты</h1>
 
-    <div id="buttons">
-        {% include './partials/buttons.twig' %}
-    </div>
+    {# item.link|slice(1) убирает # в начале ссылки #}
+    {% for item in components %}
+        <div id="{{ item.link|slice(1) }}">
+            {% include './partials/'~item.link|slice(1)~'.twig' %}
+        </div>
+    {% endfor %}
 </div>
