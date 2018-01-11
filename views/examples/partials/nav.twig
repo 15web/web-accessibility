@@ -20,6 +20,10 @@
     isVertical: 'true'
 } %}
 
+<p>Для корневого элемента навигации нужно указать атрибут <code>role="navigation"</code>.</p>
+<p>Чтобы использовать навигацию в&nbsp;вертикальном режиме, к&nbsp;корневому элементу нужно добавить класс <code>nav_vertical</code>.</p>
+<p>Активный (текущий выбранный пункт) дополняется классом <code>nav__item_active</code>.</p>
+
 {{ macros.download_links('nav', ['css', 'min.css', 'scss'], null, 'Ссылки для загрузок') }}
 
 {{ macros.html(macros.nav(navOptions)) }}

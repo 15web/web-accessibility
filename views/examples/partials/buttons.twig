@@ -8,6 +8,9 @@
 
 {% import _self as view %}
 
+<p>Атрибут <code>aria-disabled</code> для тега <code class="convert"><button></button></code> не&nbsp;является обязательным, так как имеет место быть базовый атрибут <code>disabled</code>, но&nbsp;мы&nbsp;все&nbsp;же рекомендуем указывать его для совместимости с&nbsp;экранными читалками.</p>
+<p>Вы&nbsp;можете стилизовать ссылку как кнопку, но&nbsp;в&nbsp;этом случае для <code>disabled</code> состояния атрибут <code>aria-disabled</code> является обязательным.</p>
+
 {{ macros.download_links('button', ['css', 'min.css', 'scss'], null, 'Ссылки для загрузок') }}
 
 {{ macros.html(view.button()) }}
