@@ -9,9 +9,8 @@
 </div>
 {% endmacro %}
 
-{% import _self as View %}
+{% import _self as view %}
 
-<h2>{{ title }}</h2>
 <p>Для того, чтобы пользователь мог услышать изменение, используется атрибут aria-expanded равный true для раскрытого элемента и false для закрытого.</p>
 <p>Скрипт автоматически изменяет атрибут скрытого контента.</p>
 <p>У элемента, который будет раскрывать контент, нужно указать атрибут aria-controls со значением id скрытого контента.</p>
@@ -21,13 +20,4 @@
 
 {{ macros.download_lnks('collapse', ['css', 'min.css', 'scss', 'js', 'min.js'], null, 'Ссылки для загрузок') }}
 
-<div class="docs-example">
-    <div class="docs-example__view">
-        {{ View.collapse() }}
-    </div>
-    <pre class="docs-example__code">
-        <code class="language-html convert">
-{{ View.collapse() }}
-        </code>
-    </pre>
-</div>
+{{ macros.html(view.collapse()) }}

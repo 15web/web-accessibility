@@ -8,56 +8,12 @@
 
 {% import _self as view %}
 
-<h2 class="h2">Кнопки</h2>
-
 {{ macros.download_lnks('button', ['css', 'min.css', 'scss'], null, 'Ссылки для загрузок') }}
 
-<div class="docs-example">
-    <div class="docs-example__view">
-        {{ view.button() }}
-    </div>
-    <pre class="docs-example__code">
-        <code class="language-html convert">
-{{ view.button() }}
-        </code>
-    </pre>
-</div>
-
+{{ macros.html(view.button()) }}
 <br>
-
-<div class="docs-example">
-    <div class="docs-example__view">
-        {{ view.button(true) }}
-    </div>
-    <pre class="docs-example__code">
-        <code class="language-html convert">
-{{ view.button(true) }}
-        </code>
-    </pre>
-</div>
-
+{{ macros.html(view.button(true)) }}
 <br>
-
-<div class="docs-example">
-    <div class="docs-example__view">
-        {{ view.link() }}
-    </div>
-    <pre class="docs-example__code">
-        <code class="language-html convert">
-{{ view.link() }}
-        </code>
-    </pre>
-</div>
-
+{{ macros.html(view.link()) }}
 <br>
-
-<div class="docs-example">
-    <div class="docs-example__view">
-        {{ view.link(true) }}
-    </div>
-    <pre class="docs-example__code">
-        <code class="language-html convert">
-{{ view.link(true) }}
-        </code>
-    </pre>
-</div>
+{{ macros.html(view.link(true)) }}
