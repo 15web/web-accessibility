@@ -26,14 +26,23 @@
 } %}
 
 <div class="page-content__sidebar">
-    <div data-role="fixed-sidebar">
+    <div data-role="fixed-sidebar" style="max-width: 230px">
         {{ macros.nav(navOptions) }}
     </div>
 </div>
 
 
 <div class="page-content__content">
-    <h1 class="h1">Компоненты</h1>
+    <h1 class="h1">Как начать пользоваться?</h1>
+    <ol>
+        <li>Выберите нужный вам компонент из&nbsp;навигации слева.</li>
+        <li>Прочитайте текстовое описание компонента.</li>
+        <li>Ознакомьтесь с&nbsp;его интерактивной демонстраницей.</li>
+        <li>Для каждого компонента представлена его верстка, файлы стилей (исходники в&nbsp;SASS, скомпилированный CSS и&nbsp;минифицированный CSS), а&nbsp;также JavaScript обработчики, если они есть у&nbsp;компонента (исходный ES6+ файл source.js для использования в&nbsp;ваших сборках, готовый к&nbsp;production внедрению файл .js и&nbsp;его минифицированная версия min.js)</li>
+    </ol>
+    <p><b>Важно</b></p>
+    <p>Визуальное отображение представленных компонент завязано на&nbsp;<a href="wcag-config.html">предоставленую нами конфигурацию панели</a>, но&nbsp;вы&nbsp;все равно можете использовать их&nbsp;в&nbsp;своих проектах, адаптировав CSS под ваши нужды.</p>
+    <hr>
 
     {# item.link|slice(1) убирает # в начале ссылки #}
     {% for item in components %}
