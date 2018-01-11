@@ -18,6 +18,7 @@ class Tabs {
          *  При клике мышью делаем вкладку активной
          */
         this.tabsRoot.addEventListener('click', (event) => {
+            if (!this.tabsRoot.contains(event.target) || event.target === this.tabsRoot) return;
             this.setTabActive(event.target);
         });
 
