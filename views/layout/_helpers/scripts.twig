@@ -18,3 +18,24 @@
 <script src="/bundle.js"></script>
 
 <script src="/site-components/prism/prism.source.js"></script>
+
+<script>
+    function FixedSidebar(sidebar) {
+        var sidebar = sidebar;
+        var offsetTop = sidebar.offsetTop;
+        var topPadding = 40;
+
+        window.addEventListener('scroll', function () {
+            setPosition(window.scrollY || window.pageYOffset || 0);
+        });
+
+        function setPosition(scroll) {
+            var isFixed = scroll + topPadding >= offsetTop;
+            sidebar.style.position = isFixed ? 'fixed' : '';
+            sidebar.style.top = isFixed ? topPadding+'px' : '';
+        }
+    }
+
+    var fixedSidebar = document.querySelector('[data-role="fixed-sidebar"]');
+    if (fixedSidebar) new FixedSidebar(fixedSidebar);
+</script>
