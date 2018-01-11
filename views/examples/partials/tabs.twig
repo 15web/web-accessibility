@@ -4,7 +4,7 @@
 
     <ul role="tablist" class="tabs__list tabs-list">{% for i in 1..4 %}
         <li class="tabs-list__item" id="tab{{ i }}"
-            aria-controls="panel1" aria-selected="{{ activeIndex == i ? 'true' : 'false' }}" role="tab"
+            aria-controls="panel{{ i }}" aria-selected="{{ activeIndex == i ? 'true' : 'false' }}" role="tab"
             tabindex="0">
             Вкладка {{ i }}
         </li>{% endfor %}
