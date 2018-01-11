@@ -1,0 +1,23 @@
+{# Форматирование в мкросе нужно соблюдать, чтобы в пример пошла корректная верстка #}
+{% macro tabs(activeIndex) %}
+<div class="tabs" data-role="tabs">
+
+    <ul role="tablist" class="tabs__list tabs-list">{% for i in 1..4 %}
+        <li class="tabs-list__item" id="tab{{ i }}"
+            aria-controls="panel1" aria-selected="{{ activeIndex == i ? 'true' : 'false' }}" role="tab"
+            tabindex="0">
+            Вкладка {{ i }}
+        </li>{% endfor %}
+    </ul>
+    {% for i in 1..4 %}
+    <div id="panel{{ i }}" aria-labelledby="tab{{ i }}" role="tabpanel"
+         class="tabs__inner" aria-hidden="{{ activeIndex != i ? 'true' : 'false' }}">
+        <div>Контент вкладки {{ i }}</div>
+    </div>{% endfor %}
+
+</div>
+{% endmacro %}
+
+{% import _self as view %}
+
+{{ macros.html(view.tabs(3)) }}

@@ -9,12 +9,17 @@
  Далее для всех указанных цветовых схем генерируются правила.
  В $values не обязательно указывать все цветовые схемы, но white - обязательна
  */
-@mixin wcag($property, $values) {
+@mixin wcag($property, $values, $important: false) {
     #{$property}: map-get($values, white);
 
     @each $colorScheme, $value in $values {
         html[data-color="#{$colorScheme}"] & {
-            #{$property}: $value
+            @if $important == true {
+                #{$property}: $value !important;
+            } @else {
+                #{$property}: $value
+            }
+
         }
     }
 }
@@ -29,4 +34,10 @@
 
 @mixin setFontSize($fontSize) {
     font-size: #{$fontSize/$defaultFontSize}rem;
+}
+
+/* Стили для активного элемента (навигация, табы) */
+@mixin activeElement() {
+    background: #ffa;
+    color: #bf1722;
 }

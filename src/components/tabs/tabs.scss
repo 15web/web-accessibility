@@ -1,0 +1,41 @@
+// ==========================================================================
+// Tabs
+// ==========================================================================
+@import '../../common/mixins';
+@import '../../common/variables';
+
+.tabs {
+    > [role="tablist"] {
+        margin: 0;
+        padding: 0;
+
+        > [role="tab"] {
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid;
+            border-bottom: none;
+
+            &[aria-selected="true"] {
+                padding-top: 13px;
+                border-bottom: 1px solid;
+                margin-bottom: -1px;
+                @include wcag(border-bottom-color, $firstBackgroundColorsWcag);
+                @include activeElement();
+            }
+
+            &[aria-selected="false"] {
+                @include wcag(background-color, $secondBackgroundColorsWcag);
+            }
+
+        }
+    }
+
+    > [role="tabpanel"] {
+        padding: 20px;
+        border: 1px solid;
+
+        &[aria-hidden="true"] {
+            display: none !important;
+        }
+    }
+}

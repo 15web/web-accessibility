@@ -23,12 +23,13 @@ img,
 [tabindex] {
     &:focus,
     &:target {
-        @include wcag(outline, $focusOutlinesWcag);
-        @include wcag(background-color, $focusBackgroundColorsWcag);
-        @include wcag(color, $focusTextColorsWcag);
+        /* Focus стили будут important */
+        @include wcag(outline, $focusOutlinesWcag, true);
+        @include wcag(background-color, $focusBackgroundColorsWcag, true);
+        @include wcag(color, $focusTextColorsWcag, true);
 
         svg {
-            @include wcag(fill, $focusTextColorsWcag);
+            @include wcag(fill, $focusTextColorsWcag, true);
         }
     }
 }
