@@ -55,7 +55,7 @@ items в формате
 }] #}
 {# Такого форматирования нужно придерживаться, чтобы при формировании демо кода с помощью макроса у нас не было лишних переносов строк #}
 {% macro nav(options) %}
-<nav class="nav{{ options.isVertical ? ' nav_vertical' : '' }}">
+<nav class="nav{{ options.isVertical ? ' nav_vertical' : '' }}" role="navigation">
     <ul>{% for item in options.items %}{% set itemClass = item.link == options.activeLink ? ' nav__item_active' : '' %}
         <li class="nav__item{{ itemClass }}">
             <a href="{{ item.link }}" class="nav__link">{{ item.title }}</a>
