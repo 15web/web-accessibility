@@ -1,5 +1,5 @@
 {# Список ссылок для загрузки файлов #}
-{% macro download_lnks(component, types, path, title) %}
+{% macro download_links(component, types, path, title) %}
     {% set path = path|default('/components/' ~ component) %}
 
     {% if title %}
@@ -19,6 +19,8 @@
                 Скрипт для компонента
             {% elseif type == 'min.js' %}
                 Минифицированный скрипт для компонента
+            {% elseif type == 'source.js' %}
+                Исходный скрипт для компонента
             {% else %}
 
             {% endif %}
