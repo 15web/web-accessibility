@@ -1,0 +1,82 @@
+{# Список ссылок для загрузки файлов #}
+{% macro download_links(component, types, path, title) %}
+    {% set path = path|default('/components/' ~ component) %}
+
+    {% if title %}
+        <h4 class="h3">{{ title }}</h4>
+    {% endif %}
+
+    {% for type in types %}
+        <p>
+            {# например, /components/button/button.css #}
+            {% if type == 'css' %}
+                Файл стилей
+            {% elseif type == 'min.css' %}
+                Минифицированный файл стилей
+            {% elseif type == 'scss' %}
+                Файл стилей оформленный в препроцессоре SASS
+            {% elseif type == 'js' %}
+                Скрипт для компонента
+            {% elseif type == 'min.js' %}
+                Минифицированный скрипт для компонента
+            {% elseif type == 'source.js' %}
+                Исходный скрипт для компонента
+            {% else %}
+
+            {% endif %}
+            &ndash;
+            <a href="{{ path }}/{{ component }}.{{ type }}" target="_blank">
+                 {{ component }}.{{ type }}
+            </a>
+        </p>
+    {% endfor %}
+{% endmacro %}
+
+
+
+{# Навигация.
+options = {
+    items: [], -
+    activeLink: '',
+    isVertical: false
+}
+
+items в формате
+[{
+    title: 'Панель ВДС',
+    link: 'wcag-panel'
+},{
+    title: 'Базовые компоненты',
+    link: 'index'
+},{
+    title: 'Конфигурация',
+    link: 'wcag-config'
+},{
+    title: 'Пример контентной страницы',
+    link: 'examples'
+}] #}
+{# Такого форматирования нужно придерживаться, чтобы при формировании демо кода с помощью макроса у нас не было лишних переносов строк #}
+{% macro nav(options) %}
+<nav class="nav{{ options.isVertical ? ' nav_vertical' : '' }}" role="navigation">
+    <ul>{% for item in options.items %}{% set itemClass = item.link == options.activeLink ? ' nav__item_active' : '' %}
+        <li class="nav__item{{ itemClass }}">
+            <a href="{{ item.link }}" class="nav__link">{{ item.title }}</a>
+        </li>{% endfor %}
+    </ul>
+</nav>
+{% endmacro %}
+
+
+{# Разметка и текст разметки для примера #}
+{% macro html(markup) %}
+<div class="docs-example">
+    <div class="docs-example__view">
+        {{ markup }}
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+{{ markup }}
+        </code>
+    </pre>
+</div>
+{% endmacro %}

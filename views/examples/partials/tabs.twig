@@ -1,0 +1,31 @@
+{# Форматирование в мкросе нужно соблюдать, чтобы в пример пошла корректная верстка #}
+{% macro tabs(activeIndex) %}
+<div class="tabs" data-role="tabs">
+
+    <ul role="tablist">{% for i in 1..4 %}
+        <li id="tab{{ i }}"
+            aria-controls="panel{{ i }}" aria-selected="{{ activeIndex == i ? 'true' : 'false' }}" role="tab"
+            tabindex="0">
+            Вкладка {{ i }}
+        </li>{% endfor %}
+    </ul>
+    {% for i in 1..4 %}
+    <div id="panel{{ i }}" aria-labelledby="tab{{ i }}" role="tabpanel" aria-hidden="{{ activeIndex != i ? 'true' : 'false' }}">
+        <div>Контент вкладки {{ i }}</div>
+    </div>{% endfor %}
+
+</div>
+{% endmacro %}
+
+{% import _self as view %}
+
+<p>Необходимо для списка вкладок, элементов вкладок и&nbsp;содержимого вкладок расставить соответствующие роли <code>role="tablist", role="tab", role="tabpabel"</code>.</p>
+<p>Для вкладок расставить <code>aria-selected</code> атрибуты со&nbsp;значением true у&nbsp;активной вкладки и&nbsp;значнием false у&nbsp;остальных вкладок. Атрибут <code>aria-selected</code> подсказывает браузеру и&nbsp;экранным читалкам, выбрана вкладка или нет.</p>
+<p>Для вкладок расставить <code>aria-controls</code> атрибуты со&nbsp;значением атрибута <code>id</code> панели содержимого вкладки. Атрибут <code>aria-controls</code> показывает взимосвязь между вкладкой и&nbsp;ее&nbsp;содержимым.</p>
+<p>Для панелей содержимого вкладок установить значение атрибута <code>aria-hidden</code> в&nbsp;true/false в&nbsp;зависимости от&nbsp;того, скрытый&nbsp;ли контент сейчас или нет.</p>
+<p>Атрибут <code>aria-labelledby</code> у&nbsp;панелей с&nbsp;содерждимым вкладок озаглавливает эту панель текстом соответствующей вкладки.</p>
+<p>Навигация по&nbsp;владкам возможна с&nbsp;помощью клика по&nbsp;нужной вкладке, нажатием клавиши &laquo;Enter&raquo; по&nbsp;текущей вкладке в&nbsp;фокусе, нажатие стрелок &laquo;Влево&raquo;/&laquo;Вправо&raquo; на&nbsp;клавиатуре, когда любой элемент вкладок в&nbsp;фокусе.</p>
+
+{{ macros.download_links('tabs', ['css', 'min.css', 'scss', 'js', 'min.js', 'source.js'], null, 'Ссылки для загрузок') }}
+
+{{ macros.html(view.tabs(3)) }}

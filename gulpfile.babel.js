@@ -5,239 +5,117 @@
 // ==========================================================================
 
 import gulp from 'gulp';
-import gutil from 'gulp-util';
-import cached from 'gulp-cached';
+import babel from 'gulp-babel';
 import twig from 'gulp-twig';
 import sass from 'gulp-sass';
-import uglify from 'gulp-uglify';
 import rename from 'gulp-rename';
-import csscomb from 'gulp-csscomb';
-import cssnano from 'gulp-cssnano';
-
-import webpack from 'webpack';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import concat from 'gulp-concat';
+import stripCssComments from 'gulp-strip-css-comments';
+import cssimport from 'gulp-cssimport';
 
 import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
 
-const DEBUG = !process.argv.includes('--release');
-
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const SETTINGS = {
     path: {
-        docs: './docs',
-        example: {
-            sp: './docs/examples/sp'
-        },
-        default: './src',
+        src: './src',
+        views: './views',
         dist: './dist'
     }
 };
 
-const AUTOPREFIXER_BROWSERS = [
-    'Android 2.3',
-    'Android >= 4',
-    'Chrome >= 39',
-    'Firefox >= 38',
-    'Explorer >= 7',
-    'iOS >= 7',
-    'Opera >= 12',
-    'Safari >= 5'
-];
-
-// ==========================================================================
-// Examples
-// ==========================================================================
-
-gulp.task('docs:twig', () => {
-
-    gulp.src(SETTINGS.path.docs + '/twig/*.twig')
-        .pipe(twig().on('error', console.log))
-        .pipe(gulp.dest(SETTINGS.path.docs));
-
-});
-
-gulp.task('sp:twig', function () {
-
-    gulp.src(SETTINGS.path.example.sp + '/twig/*.twig')
-    // .pipe(cached('html'))
-        .pipe(twig().on('error', console.log))
-        .pipe(gulp.dest(SETTINGS.path.example.sp))
-
-});
-
-gulp.task("sp:sass", function () {
-    gulp.src(SETTINGS.path.example.sp + '/assets/styles/full.scss')
-        .pipe(cached('sp'))
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest(SETTINGS.path.example.sp + '/assets/styles/css'));
-});
-
-// ==========================================================================
-// Scripts
-// ==========================================================================
-
-gulp.task('scripts', function () {
-    return gulp.src(SETTINGS.path.dist + '/accessibility.js')
-        .pipe(cached('scripts'))
-        .pipe(uglify())
-        .pipe(rename('accessibility.min.js'))
-        .pipe(gulp.dest(SETTINGS.path.dist));
-});
-
-// ==========================================================================
-// Styles
-// ==========================================================================
-
-gulp.task('styles', function () {
-    return gulp.src(SETTINGS.path.dist + '/accessibility.css')
-        .pipe(cached('styles'))
-        .pipe(csscomb())
+gulp.task('sass', () => {
+    /**
+     * Собираем файлы из исходников в обычном и минифицированном варианте
+     */
+    gulp.src(SETTINGS.path.src + '/**/*.scss')
+        .pipe(sass({
+            outputStyle: 'expanded'
+        }).on('error', sass.logError))
+        .pipe(stripCssComments())
         .pipe(gulp.dest(SETTINGS.path.dist))
-        .pipe(cssnano())
-        .pipe(rename('accessibility.min.css'))
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(SETTINGS.path.dist));
+
+    /**
+     * Копируем исходники в dist, чтобы дать возможность скачать их.
+     * Предварительно загружаем в исходники все импорты, чтобы человек не шел за ними непонятно куда
+     */
+    gulp.src(SETTINGS.path.src + '/**/*.scss')
+        .pipe(cssimport())
         .pipe(gulp.dest(SETTINGS.path.dist));
 });
 
-// ==========================================================================
-// Webpack
-// ==========================================================================
+gulp.task('twig', () => {
+    gulp.src(SETTINGS.path.views + '/*.twig')
+        .pipe(twig().on('error', console.log))
+        .pipe(gulp.dest(SETTINGS.path.dist));
 
-gulp.task("webpack", function (callback) {
+});
 
-    var firstBuildReady = true;
+gulp.task('scripts', () => {
 
-    webpack({
-        entry: {
-            "accessibility": './src/accessibility'
-        },
-        output: {
-            path: path.resolve(__dirname, 'dist'),
-            filename: "[name].js",
-            library: '[name]'
-        },
-        watch: DEBUG,
-        devtool: 'source-map',
-        module: {
-            rules: [
-                {
-                    test: /\.js$/,
-                    exclude: /(node_modules)/,
-                    use: {
-                        loader: 'babel-loader',
-                        options: {
-                            plugins: ["lodash"],
-                            presets: ['env', 'es2015', 'stage-1']
-                        }
-                    }
-                },
-                {
-                    test: /\.scss/,
-                    use: ExtractTextPlugin.extract({
-                        fallback: 'style-loader',
-                        use: [
-                            'css-loader',
-                            'sass-loader'
-                        ]
-                    })
-                },
-                {
-                    test: /\.(png|svg|jpg|gif)$/,
-                    use: [
-                        'file-loader?name=images/[hash].[ext]'
-                    ]
-                },
-                {
-                    test: /\.(woff|woff2|eot|ttf|otf)$/,
-                    use: [
-                        'file-loader?name=fonts/[hash].[ext]'
-                    ]
+    /**
+     * Собираем файлы из исходников в обычном и минифицированном варианте
+     */
+    gulp.src(SETTINGS.path.src + '/**/*.js')
+        .pipe(babel({
+            comments: false,
+            presets: [["env" , {
+                "target": {
+                    "browsers": ["> % 1"]
                 }
-            ]
-        },
-        plugins: [].concat(
-            new CleanWebpackPlugin(['dist']),
-            new webpack.NoErrorsPlugin(),
-            new ExtractTextPlugin("[name].css"),
-            // new UglifyJSPlugin(),
-            // new OptimizeCssAssetsPlugin()
-        ),
-/*        postcss: function () {
-            return [
-                require('autoprefixer'),
-                require('postcss-inline-svg')
-            ];
-        }*/
-    }, function (err, stats) {
+            }]]
+        }))
+        .pipe(gulp.dest(SETTINGS.path.dist))
+        .pipe(babel({
+            minified: true
+        }))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(SETTINGS.path.dist))
+        .pipe(concat('accessibility.min.js'))
+        .pipe(gulp.dest(SETTINGS.path.dist));
 
-        if (err) throw new gutil.PluginError("webpack", err);
-
-        gutil.log(stats.toString({
-            colors: true,
-            hash: true,
-            chunks: false,
-            children: false
-        }));
-
-        if (firstBuildReady) {
-            callback();
-            firstBuildReady = false;
-        }
-
-    });
+    /**
+     * Копируем исходники в dist, чтобы дать возможность скачать их
+     */
+    gulp.src(SETTINGS.path.src + '/**/*.js')
+        .pipe(rename({suffix: '.source'}))
+        .pipe(gulp.dest(SETTINGS.path.dist));
 });
 
-// ==========================================================================
-// BUILD
-// ==========================================================================
+gulp.task('images', () => {
 
-gulp.task('default', function () {
-
-    // Development
-    if (DEBUG) {
-        runSequence(
-            'webpack',
-            'docs'
-        );
-    }
-
-    // Production
-    if (!DEBUG) {
-        runSequence(
-            'webpack',
-            'styles',
-            'scripts'
-        );
-    }
-
+    /**
+     * Собираем файлы из исходников в обычном и минифицированном варианте
+     */
+    gulp.src(SETTINGS.path.src + '/images/**/*.*')
+        .pipe(gulp.dest(SETTINGS.path.dist + '/images/'));
 });
 
-// ==========================================================================
-// BUILD DOCS
-// ==========================================================================
-
-gulp.task('docs', function () {
-
-    browserSync.create().init({
-        server: './',
-        open: false,
-        notify: false,
-        startPath: SETTINGS.path.docs + "/default.html"
-    });
-
-    gulp.watch(SETTINGS.path.docs + '/twig/**/*.twig', ['docs:twig']);
-
-    gulp.watch(SETTINGS.path.example.sp + '/twig/**/*.twig', ['sp:twig']);
-    gulp.watch(SETTINGS.path.example.sp + '/assets/styles/**/*.scss', ['sp:sass']);
-
-    gulp.watch(SETTINGS.path.dist + '/**/*').on('change', browserSync.reload);
-    //reload только для собранных файлов - css,html,js
-    gulp.watch(SETTINGS.path.docs + '/**/*.js').on('change', browserSync.reload);
-    gulp.watch(SETTINGS.path.docs + '/**/*.css').on('change', browserSync.reload);
-    gulp.watch(SETTINGS.path.docs + '/**/*.html').on('change', browserSync.reload);
-
+gulp.task('build', () => {
+    runSequence(
+        'twig',
+        'scripts',
+        'sass',
+        'images'
+    );
 });
+
+gulp.task('watch', () => {
+
+    runSequence(
+        'build',
+    );
+
+    gulp.watch(SETTINGS.path.views + '/**/*.twig', ['twig']);
+    gulp.watch(SETTINGS.path.src + '/**/*.scss', ['sass']);
+    gulp.watch(SETTINGS.path.src + '/**/*.js', ['scripts']);
+});
+
+

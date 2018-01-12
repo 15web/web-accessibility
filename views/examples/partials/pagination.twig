@@ -1,0 +1,37 @@
+{% macro pagination() %}
+<ul class="nav" role="navigation" aria-label="Ссылки на другие страницы">
+    <li class="nav__item" rel="prev">
+        <a href="#link" class="nav__link" aria-label="Предыдущая страница номер 2">Назад</a>
+    </li>
+    <li class="nav__item">
+        <a href="#link" class="nav__link" aria-label="Первая страница">1</a>
+    </li>
+    <li class="nav__item">
+        <a href="#link" class="nav__link" aria-label="Вторая страница">2</a>
+    </li>
+    <li class="nav__item nav__item_active" class="current">
+        <a href="#link" class="nav__link" aria-label="Третья страница">3</a>
+    </li>
+    <li class="nav__item">
+        <a href="#link" class="nav__link" aria-label="Четвертая страница">4</a>
+    </li>
+    <li class="nav__item">
+        <a href="#link" class="nav__link" aria-label="Страница номер 8">...</a>
+    </li>
+    <li class="nav__item">
+        <a href="#link" class="nav__link" aria-label="Последняя страница номер 24">24</a>
+    </li>
+    <li class="nav__item" rel="next">
+        <a href="#link" class="nav__link" aria-label="Следующая страница номер 4">Вперед</a>
+    </li>
+</ul>
+{% endmacro %}
+
+{% import _self as view %}
+
+<p>Поскольку пагинация является в&nbsp;какой-то мере навигацией, то&nbsp;ей&nbsp;указывается соответствующая роль <code>role="navigation"</code>.</p>
+<p>Пагинация в&nbsp;настоящем примере заимствует стили навигации.</p>
+<p>Поскольку для экранных читалок короткий текст ссылок не&nbsp;информативен, им&nbsp;указывается текстовое информативное описание в&nbsp;атрибуте <code>aria-label</code>.</p>
+<p>Кнопкам &laquo;Назад&raquo; и&nbsp;&laquo;Вперед&raquo; указываются соответствующие атрибуты <code>rel=”prev”, rel=”next”</code>.</p>
+
+{{ macros.html(view.pagination()) }}

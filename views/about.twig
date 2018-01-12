@@ -1,0 +1,30 @@
+{% extends './layout/main.twig' %}
+
+{% block title %}О проекте{% endblock %}
+
+{% block menu_link %}about{% endblock %}
+
+{% block main_title %}О проекте{% endblock %}
+
+{% block content %}
+    <section>
+        <h2>Описание проекта</h2>
+        <p>Проект популяризирует доступность Web для людей с ограниченными возможностями.</p>
+        <p>Вашему вниманию предлагается: </p>
+        <ul>
+            <li>Панель управления настройками сайта.</li>
+            <li>Готовая конфигурация стилей с проработанными контрастными цветовыми схемами, hover и focus эффектами и т.п.</li>
+            <li>Набор основных графических компонент проработанных в соответствии с требованиями доступности WCAG 2.0.</li>
+        </ul>
+    </section>
+
+    <br>
+    <br>
+
+    <p>Исходный код распространяется по <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank">лицензии MIT</a>.</p>
+    <br>
+    <p>Для кроссбраузерного тестирования мы используем <a href="https://www.browserstack.com/" target="_blank">BrowserStack</a>.</p>
+    <p><img src="images/browserstack_logo.png" alt=""></p>
+    <br>
+    <p>Copyright &copy; <a href="http://www.15web.ru" target="_blank">Студия 15</a>, 2016 - 2018 гг.</p>
+{% endblock %}

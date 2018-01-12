@@ -1,0 +1,19 @@
+@import "../../../src/common/mixins.scss";
+@import "../../../src/common/variables.scss";
+
+.button {
+    padding: 15px;
+    display: inline-block;
+
+    font-weight: bold;
+
+    border: none;
+    text-decoration: none;
+
+    text-align: center;
+    font-size: inherit;
+
+    @include wcag(color, $textInvertColorsWcag);
+    @include wcag(background-color, $invertBackgroundColorsWcag);
+
+}

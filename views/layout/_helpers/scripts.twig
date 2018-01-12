@@ -1,0 +1,41 @@
+{# Преобразует html теги в текст #}
+<script>
+    var escape = {
+        '<': '&lt',
+        '>': '&gt'
+    }
+
+    var converts = document.querySelectorAll('.convert');
+    converts.forEach(function (convert) {
+        var html = convert.innerHTML;
+//            html = html.replace(/  /g, '');
+        html = html.replace(/</g, '&lt');
+        html = html.replace(/>/g, '&gt');
+        convert.innerHTML = html;
+    });
+</script>
+
+<script src="/accessibility.min.js"></script>
+
+<script src="/site-components/prism/prism.source.js"></script>
+
+<script>
+    function FixedSidebar(sidebar) {
+        var sidebar = sidebar;
+        var offsetTop = sidebar.offsetTop;
+        var topPadding = 40;
+
+        window.addEventListener('scroll', function () {
+            setPosition(window.scrollY || window.pageYOffset || 0);
+        });
+
+        function setPosition(scroll) {
+            var isFixed = scroll + topPadding >= offsetTop;
+            sidebar.style.position = isFixed ? 'fixed' : '';
+            sidebar.style.top = isFixed ? topPadding+'px' : '';
+        }
+    }
+
+    var fixedSidebar = document.querySelector('[data-role="fixed-sidebar"]');
+    if (fixedSidebar) new FixedSidebar(fixedSidebar);
+</script>
