@@ -1,0 +1,14 @@
+{% macro alert() %}
+<div class="alert" role="alert">
+    Сообщение
+</div>
+{% endmacro %}
+
+{% import _self as view %}
+
+<p>Уведомление представляет собой контрастную с&nbsp;фоном сайта панель с&nbsp;сообщением.</p>
+<p>Чтобы уведомление, как только появится на&nbsp;странице, было вне очереди озвучено экранной читалкой, оно должно содержать атрибут <code>role=”alert”</code>.</p>
+
+{{ macros.download_links('alert', ['css', 'min.css', 'scss'], null, 'Ссылки для загрузок') }}
+
+{{ macros.html(view.alert()) }}

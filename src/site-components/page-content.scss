@@ -1,0 +1,17 @@
+.page-content {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+
+    &__sidebar {
+        display: table-cell;
+        width: 230px;
+        padding-right: 40px;
+    }
+
+    &__content {
+        display: table-cell;
+    }
+}

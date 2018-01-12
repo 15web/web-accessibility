@@ -1,0 +1,97 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+/* Конфиги для font-size */
+@each $key, $value in (normal: 1rem, big: 1.5rem, large: 2rem) {
+    html[data-fontsize="#{$key}"] {
+        font-size: $value;
+    }
+}
+
+/* Для всех элементов задаем цвет границ, чтобы не менять у каждого элемента в частности */
+* {
+    @include wcag(border-color, $borderColorsWcag);
+}
+
+/* Internet Explorer может фокусировать любой блок, поэтому перечисляем только те блоки, которые должны быть в фокусе */
+a,
+input,
+select,
+textarea,
+button,
+img,
+[tabindex] {
+    &:focus,
+    &:target {
+        /* Focus стили будут important */
+        @include wcag(outline, $focusOutlinesWcag, true);
+        @include wcag(background-color, $focusBackgroundColorsWcag, true);
+        @include wcag(color, $focusTextColorsWcag, true);
+
+        svg {
+            @include wcag(fill, $focusTextColorsWcag, true);
+        }
+    }
+}
+
+/* Для всех интерактивных и активных элементов добавляем стили hover */
+a:not([disabled]):not([aria-disabled="true"]),
+[tabindex]:not([tabindex="-1"]),
+button:not([disabled]):not([aria-disabled="true"]) {
+    &:hover {
+        @include wcag(outline, $hoverOutlinesWcag);
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+/* При выключенных картинках */
+html[data-images="off"] {
+    img,
+    svg {
+        visibility: hidden;
+    }
+
+    *,
+    *:before,
+    *:after {
+        background-image: none !important; /* !important на случай inline стилей в верстке */
+    }
+}
+
+/* При увеличенном кернинге */
+html[data-kerning="big"] {
+    letter-spacing: 0.1rem;
+
+    select,
+    input,
+    button,
+    textarea {
+        letter-spacing: inherit;
+    }
+
+}
+
+body {
+    @include wcag(background-color, $firstBackgroundColorsWcag);
+    @include wcag(color, $textColorsWcag);
+    line-height: $defaultLineHeight;
+
+    a {
+        @include wcag(color, $linkColorsWcag);
+        border-bottom: 1px solid;
+        text-decoration: none;
+        @include wcag(border-color, $linkBorderColorsWcag);
+    }
+}
+
+/* Для блоков через атрибут можно указать альтернативный цвет текста */
+[data-wcag="alternative-background"] {
+    @include wcag(background-color, $secondBackgroundColorsWcag);
+}
+
+[aria-disabled="true"],
+[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

@@ -1,0 +1,132 @@
+<form class="wcag-panel" id="wcag-panel" name="wcagPanel">
+
+    <!-- Панель основных настроек -->
+    <div class="wcag-panel__wrapper">
+        <div class="wcag-panel__row">
+            <!-- Скрытая ссылка перехода к содержанию страницы, появляющаяся только при навигации с клавиатуры -->
+            <div class="wcag-panel__hidden-control">
+                <a href="#main-content" id="anchor-link" class="wcag-panel__default-link" aria-label="Перейти к основному содержанию">Спуститься к содержанию</a>
+            </div>
+
+            <!-- Основные настройки панели -->
+            <div>
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Масштаб шрифта</label>
+                    <div class="wcag-panel__switcher">
+                        <input type="radio" checked name="fontsize" value="normal" id="fontsize-normal">
+                        <label class="wcag-panel__switcher-btn" aria-label="нормальный размер шрифта" for="fontsize-normal">
+                            100%
+                        </label>
+
+                        <input type="radio" name="fontsize" value="big" id="fontsize-big">
+                        <label class="wcag-panel__switcher-btn" aria-label="средний размер шрифта" for="fontsize-big">
+                            150%
+                        </label>
+
+                        <input type="radio" name="fontsize" value="large" id="fontsize-large">
+                        <label class="wcag-panel__switcher-btn" aria-label="большой размер шрифта" for="fontsize-large">
+                            200%
+                        </label>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Цвет</label>
+
+                    <div>
+                        <input type="radio" checked name="color" value="white" id="color-white">
+                        <label for="color-white" class="wcag-panel__flag-button flag-button flag-button_white" aria-label="белая цветовая схема">Б</label>
+
+                        <input type="radio" name="color" value="black" id="color-black">
+                        <label for="color-black" class="wcag-panel__flag-button flag-button flag-button_black" aria-label="черная цветовая схема">Ч</label>
+
+                        <input type="radio" name="color" value="blue" id="color-blue">
+                        <label for="color-blue" class="wcag-panel__flag-button flag-button flag-button_blue" aria-label="голубая цветовая схема">Г</label>
+
+                        <input type="radio" name="color" value="beige" id="color-beige">
+                        <label for="color-beige" class="wcag-panel__flag-button flag-button flag-button_beige" aria-label="бежевая цветовая схема">Б</label>
+
+                        <input type="radio" name="color" value="brown" id="color-brown">
+                        <label for="color-brown" class="wcag-panel__flag-button flag-button flag-button_brown" aria-label="коричневая цветовая схема">К</label>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Изображения</label>
+
+                    <div class="wcag-panel__switcher">
+                        <input type="radio" checked name="images" value="on" id="images-on">
+                        <label class="wcag-panel__switcher-btn" aria-label="Изображения включены" for="images-on">
+                            Вкл
+                        </label>
+
+                        <input type="radio" name="images" value="off" id="images-off">
+                        <label class="wcag-panel__switcher-btn" aria-label="Изображения отключены" for="images-off">
+                            Выкл
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="wcag-panel__settings wcag-panel__switcher">
+                    <button class="wcag-panel__dropdown-toggle wcag-panel__switcher-btn"
+                            aria-label="Дополнительные настройки"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            data-wcag-panel="dropdown-toggle">
+                        Настройки
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Выпадающая панель с дополнительными настройками -->
+    <div class="wcag-panel__dropdown"
+         id="wcagDropdownMenu"
+         aria-expanded="false"
+         aria-hidden="true"
+         data-wcag-panel="dropdown">
+        <div class="wcag-panel__wrapper">
+
+            <div class="wcag-panel__row">
+
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Интервал между буквами</label>
+                    <div class="wcag-panel__switcher wcag-panel__switcher_double">
+                        <input type="radio" name="kerning" value="normal" checked id="kerning-normal">
+                        <label class="wcag-panel__switcher-btn" aria-label="нормальный межбуквенный интервал" for="kerning-normal">
+                            Нормальный
+                        </label>
+
+                        <input type="radio" name="kerning" value="big" id="kerning-big">
+                        <label class="wcag-panel__switcher-btn" aria-label="увеличенный межбуквенный интервал" for="kerning-big">
+                            Увеличенный
+                        </label>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col">
+                    <div class="wcag-panel__switcher wcag-panel__reset">
+                        <button class="wcag-panel__switcher-btn"
+                                aria-label="Вернуть стандартные настройки"
+                                data-wcag-panel="reset-config">
+                            Сбросить настройки
+                        </button>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col wcag-panel__col_cont-link">
+                    <button class="wcag-panel__default-link"
+                            aria-label="закрыть панель"
+                            data-wcag-panel="dropdown-close">
+                        Закрыть панель
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+<!-- Рекомендуем в этом месте вызывать скрипт панели ВДС, не дожидаясь полной загрузки DOM -->

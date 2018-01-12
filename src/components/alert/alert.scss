@@ -1,0 +1,12 @@
+// ==========================================================================
+// Alert
+// ==========================================================================
+@import "../../common/mixins.scss";
+@import "../../common/variables.scss";
+
+.alert {
+    padding: 15px;
+
+    @include wcag(background-color, $invertBackgroundColorsWcag);
+    @include wcag(color, $textInvertColorsWcag);
+}
