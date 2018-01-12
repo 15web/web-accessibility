@@ -4,8 +4,45 @@
 
 {% block menu_link %}index{% endblock %}
 
-{% block main_title %}Готовые базовые компоненты интерфейса{% endblock %}
+{% block main_title %}Getting started{% endblock %}
 
 {% block content %}
-    {% include './examples/components.twig' %}
+    <h2 class="h2">Как начать пользоваться?</h2>
+
+    <ol>
+        <li>Скачать файлы стилей и JS обработчиков <code>accessibility.css, accessibility.min.js</code>.</li>
+        <li>Подключить стили в <code>head</code>.
+            <pre class="">
+                <code class="language-html convert">
+    &lt;head&gt;
+        <!-- -->
+        &lt;link rel="stylesheet" href="path/to/accessibility.css"&gt;
+        <!-- -->
+    &lt;/head&gt;
+                </code>
+            </pre>
+        </li>
+        <li>Подключить js перед закрытием тега <code>body</code>.
+            <pre class="">
+                <code class="language-html convert">
+            <!-- -->
+            &lt;script src="path/to/accessibility.min.js"&gt;&lt;/script&gt;
+            <!-- -->
+        &lt;/body&gt;
+    &lt;/html&gt;
+                </code>
+            </pre>
+        </li>
+        <li>Добавить на сайт верстку <a href="wcag-panel.html">панели ВДС</a>.</li>
+        <li>Добавить на сайт верстку необходимых <a href="components.html">UI компонентов</a>.</li>
+        <li>Готово.</li>
+    </ol>
+
+    <p>Если вы хотите использовать только какой-то определнный компонент, панель или конфигурацию цветовых схем, то на соответствующих страниах вы найдете необходимые инструкции, примеры верстки и файлы JavaScript/CSS</p>
+
+
+    <h2 class="h2">Файлы для загрузки:</h2>
+    <p><a href="accessibility.css" target="_blank">accessibility.css</a></p>
+    <p><a href="accessibility.min.js" target="_blank">accessibility.min.js</a></p>
 {% endblock %}
+

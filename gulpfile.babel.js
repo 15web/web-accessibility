@@ -78,7 +78,7 @@ gulp.task('scripts', () => {
         }))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(SETTINGS.path.dist))
-        .pipe(concat('bundle.js'))
+        .pipe(concat('accessibility.min.js'))
         .pipe(gulp.dest(SETTINGS.path.dist));
 
     /**

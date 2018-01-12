@@ -15,12 +15,7 @@
 
     {% import './_helpers/macros.twig' as macros %}
 
-    {# Стили панели нужны вместе с панелью #}
-    <link rel="stylesheet" href="/components/wcag-panel/wcag-panel.css">
     {% include '../partials/wcag-panel.twig' %}
-    {# JS обработчик должен выполняться сразу после появления панели в DOM, чтобы успеть восстановить состояние до того,
-     как страница загрузится #}
-    {#<script src="/components/wcag-panel/wcag-panel.js"></script>#}
 
     <header class="header" data-wcag="alternative-background">
         <div class="content-wrapper">
