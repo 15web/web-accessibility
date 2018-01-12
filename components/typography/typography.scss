@@ -1,0 +1,199 @@
+// ==========================================================================
+// Heading
+// ==========================================================================
+
+.h1, .typography h1,
+.h2, .typography h2,
+.h3, .typography h3,
+.h4, .typography h4,
+.h5, .typography h5,
+.h6, .typography h6 {
+    font-weight: bold;
+
+    small, .small {
+        line-height: 1;
+        font-weight: normal;
+    }
+}
+
+.h1, .typography h1 {
+    font-size: 2em;
+    line-height: 1.1;
+}
+
+.h2, .typography h2 {
+    font-size: 1.6em;
+    line-height: 1.1;
+}
+
+.h3, .typography h3 {
+    font-size: 1.33em;
+    line-height: 1.1;
+}
+
+.h4, .typography h4 {
+    font-size: 1em;
+    line-height: 1.1;
+}
+
+.h5, .typography h5 {
+    font-size: 0.8em;
+    line-height: 1.1;
+}
+
+.h6, .typography h6 {
+    font-size: 0.6em;
+    line-height: 1.1;
+}
+
+// ==========================================================================
+// Tables
+// ==========================================================================
+
+table, .typography table {
+    line-height: 1.375em;
+    border-collapse: collapse;
+
+    th {
+        padding: 6px;
+        color: #fff;
+
+        background-color: #000;
+        border: 1px solid #fff;
+    }
+
+    td {
+        padding: 6px;
+        border: 1px solid #000;
+    }
+
+    // Theme black
+
+    html[data-color="black"] & {
+
+        th {
+            color: #000;
+
+            background-color: #fff;
+            border: 1px solid #000;
+        }
+
+        td {
+            border: 1px solid #fff;
+        }
+
+    }
+}
+
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+.typography {
+    overflow: auto;
+
+    h1, h2, h3, h4, h5, h6 {
+        margin: 1.25em 0 1em;
+    }
+
+    p {
+        line-height: 1.3em;
+        margin-bottom: 1em;
+    }
+
+    q {
+        display: block;
+        padding: 10px 20px;
+        margin: 0 0 20px;
+
+        font-size: 1em;
+
+        border-left: 5px solid #000;
+    }
+
+    ul, ol {
+        margin-bottom: 1.25em;
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        ul, ol {
+            margin: 0.5em 0 0.75em 20px;
+        }
+    }
+
+    ul > li {
+        list-style: disc inside;
+    }
+
+    ol > li {
+        list-style: decimal inside;
+    }
+
+    // Theme black
+
+    html[data-color="black"] & {
+
+        h4 {
+            color: #fff;
+        }
+
+        q {
+            border-left: 5px solid #000;
+        }
+
+    }
+}
+
+em {
+    font-style: italic;
+}
+
+strong, b {
+    font-weight: bold;
+}
+
+small, .small {
+    font-size: 0.8em;
+}
+
+// ==========================================================================
+// Alignment
+// ==========================================================================
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}
+
+// ==========================================================================
+// Transformation
+// ==========================================================================
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}

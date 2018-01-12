@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.alert {
+  padding: 15px;
+  background-color: #555;
+  color: #fff;
+}
+
+html[data-color="white"] .alert {
+  background-color: #555;
+}
+
+html[data-color="black"] .alert {
+  background-color: #ccc;
+}
+
+html[data-color="blue"] .alert {
+  background-color: #cc0;
+}
+
+html[data-color="beige"] .alert {
+  background-color: #444;
+}
+
+html[data-color="brown"] .alert {
+  background-color: #aad469;
+}
+
+html[data-color="white"] .alert {
+  color: #fff;
+}
+
+html[data-color="black"] .alert {
+  color: #1d1d1d;
+}
+
+html[data-color="blue"] .alert {
+  color: #06066b;
+}
+
+html[data-color="beige"] .alert {
+  color: #f7f3d6;
+}
+
+html[data-color="brown"] .alert {
+  color: #352518;
+}

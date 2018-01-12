@@ -1,0 +1,7 @@
+.collapse__content {
+  margin-top: 10px;
+}
+
+[data-role="collapse"] [aria-expanded=false] {
+  display: none;
+}

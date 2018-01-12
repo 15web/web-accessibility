@@ -1,0 +1,971 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Базовые компоненты</title>
+
+    <link rel="stylesheet" href="/common.css">
+    <link rel="stylesheet" href="/accessibility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/themes/prism.min.css">
+</head>
+<body>
+
+    
+    <form class="wcag-panel" id="wcag-panel" name="wcagPanel">
+
+    <!-- Панель основных настроек -->
+    <div class="wcag-panel__wrapper">
+        <div class="wcag-panel__row">
+            <!-- Скрытая ссылка перехода к содержанию страницы, появляющаяся только при навигации с клавиатуры -->
+            <div class="wcag-panel__hidden-control">
+                <a href="#main-content" id="anchor-link" class="wcag-panel__default-link" aria-label="Перейти к основному содержанию">Спуститься к содержанию</a>
+            </div>
+
+            <!-- Основные настройки панели -->
+            <div>
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Масштаб шрифта</label>
+                    <div class="wcag-panel__switcher">
+                        <input type="radio" checked name="fontsize" value="normal" id="fontsize-normal">
+                        <label class="wcag-panel__switcher-btn" aria-label="нормальный размер шрифта" for="fontsize-normal">
+                            100%
+                        </label>
+
+                        <input type="radio" name="fontsize" value="big" id="fontsize-big">
+                        <label class="wcag-panel__switcher-btn" aria-label="средний размер шрифта" for="fontsize-big">
+                            150%
+                        </label>
+
+                        <input type="radio" name="fontsize" value="large" id="fontsize-large">
+                        <label class="wcag-panel__switcher-btn" aria-label="большой размер шрифта" for="fontsize-large">
+                            200%
+                        </label>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Цвет</label>
+
+                    <div>
+                        <input type="radio" checked name="color" value="white" id="color-white">
+                        <label for="color-white" class="wcag-panel__flag-button flag-button flag-button_white" aria-label="белая цветовая схема">Б</label>
+
+                        <input type="radio" name="color" value="black" id="color-black">
+                        <label for="color-black" class="wcag-panel__flag-button flag-button flag-button_black" aria-label="черная цветовая схема">Ч</label>
+
+                        <input type="radio" name="color" value="blue" id="color-blue">
+                        <label for="color-blue" class="wcag-panel__flag-button flag-button flag-button_blue" aria-label="голубая цветовая схема">Г</label>
+
+                        <input type="radio" name="color" value="beige" id="color-beige">
+                        <label for="color-beige" class="wcag-panel__flag-button flag-button flag-button_beige" aria-label="бежевая цветовая схема">Б</label>
+
+                        <input type="radio" name="color" value="brown" id="color-brown">
+                        <label for="color-brown" class="wcag-panel__flag-button flag-button flag-button_brown" aria-label="коричневая цветовая схема">К</label>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Изображения</label>
+
+                    <div class="wcag-panel__switcher">
+                        <input type="radio" checked name="images" value="on" id="images-on">
+                        <label class="wcag-panel__switcher-btn" aria-label="Изображения включены" for="images-on">
+                            Вкл
+                        </label>
+
+                        <input type="radio" name="images" value="off" id="images-off">
+                        <label class="wcag-panel__switcher-btn" aria-label="Изображения отключены" for="images-off">
+                            Выкл
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="wcag-panel__settings wcag-panel__switcher">
+                    <button class="wcag-panel__dropdown-toggle wcag-panel__switcher-btn"
+                            aria-label="Дополнительные настройки"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            data-wcag-panel="dropdown-toggle">
+                        Настройки
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Выпадающая панель с дополнительными настройками -->
+    <div class="wcag-panel__dropdown"
+         id="wcagDropdownMenu"
+         aria-expanded="false"
+         aria-hidden="true"
+         data-wcag-panel="dropdown">
+        <div class="wcag-panel__wrapper">
+
+            <div class="wcag-panel__row">
+
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Интервал между буквами</label>
+                    <div class="wcag-panel__switcher wcag-panel__switcher_double">
+                        <input type="radio" name="kerning" value="normal" checked id="kerning-normal">
+                        <label class="wcag-panel__switcher-btn" aria-label="нормальный межбуквенный интервал" for="kerning-normal">
+                            Нормальный
+                        </label>
+
+                        <input type="radio" name="kerning" value="big" id="kerning-big">
+                        <label class="wcag-panel__switcher-btn" aria-label="увеличенный межбуквенный интервал" for="kerning-big">
+                            Увеличенный
+                        </label>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col">
+                    <div class="wcag-panel__switcher wcag-panel__reset">
+                        <button class="wcag-panel__switcher-btn"
+                                aria-label="Вернуть стандартные настройки"
+                                data-wcag-panel="reset-config">
+                            Сбросить настройки
+                        </button>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col wcag-panel__col_cont-link">
+                    <button class="wcag-panel__default-link"
+                            aria-label="закрыть панель"
+                            data-wcag-panel="dropdown-close">
+                        Закрыть панель
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+<!-- Рекомендуем в этом месте вызывать скрипт панели ВДС, не дожидаясь полной загрузки DOM -->
+    <header class="header" data-wcag="alternative-background">
+        <div class="content-wrapper">
+            <h1 class="h1">
+                Готовые базовые компоненты интерфейса            </h1>
+
+            
+
+
+<nav class="nav" role="navigation">
+    <ul>
+        <li class="nav__item">
+            <a href="index.html" class="nav__link">Getting Started</a>
+        </li>
+        <li class="nav__item">
+            <a href="wcag-panel.html" class="nav__link">Панель ВДС</a>
+        </li>
+        <li class="nav__item nav__item_active">
+            <a href="components.html" class="nav__link">UI компоненты</a>
+        </li>
+        <li class="nav__item">
+            <a href="wcag-config.html" class="nav__link">Конфигурация</a>
+        </li>
+        <li class="nav__item">
+            <a href="about.html" class="nav__link">О проекте</a>
+        </li>
+    </ul>
+</nav>
+        </div>
+    </header>
+
+
+    <div class="content-wrapper page-content">
+            
+
+
+
+<div class="page-content__sidebar">
+    <div data-role="fixed-sidebar" style="max-width: 230px">
+        
+<nav class="nav nav_vertical" role="navigation">
+    <ul>
+        <li class="nav__item">
+            <a href="#tabs" class="nav__link">Вкладки</a>
+        </li>
+        <li class="nav__item">
+            <a href="#nav" class="nav__link">Навигация</a>
+        </li>
+        <li class="nav__item">
+            <a href="#pagination" class="nav__link">Пагинация</a>
+        </li>
+        <li class="nav__item">
+            <a href="#alert" class="nav__link">Уведомление</a>
+        </li>
+        <li class="nav__item">
+            <a href="#collapse" class="nav__link">Раскрывающийся список</a>
+        </li>
+        <li class="nav__item">
+            <a href="#buttons" class="nav__link">Кнопки</a>
+        </li>
+    </ul>
+</nav>
+
+    </div>
+</div>
+
+
+<div class="page-content__content">
+    <h2 class="h2">Как начать пользоваться?</h2>
+    <ol>
+        <li>Выберите нужный вам компонент из&nbsp;навигации слева.</li>
+        <li>Прочитайте текстовое описание компонента.</li>
+        <li>Ознакомьтесь с&nbsp;его интерактивной демонстраницей.</li>
+        <li>Для каждого компонента представлена его верстка, файлы стилей (исходники в&nbsp;SASS, скомпилированный CSS и&nbsp;минифицированный CSS), а&nbsp;также JavaScript обработчики, если они есть у&nbsp;компонента (исходный ES6+ файл source.js для использования в&nbsp;ваших сборках, готовый к&nbsp;production внедрению файл .js и&nbsp;его минифицированная версия min.js)</li>
+    </ol>
+    <p>Атрибуты <code>data-role</code> в&nbsp;верстке компонент являются кастомными и&nbsp;служат для указания JavaScript на&nbsp;компонент.</p>
+    <p><b>Важно</b></p>
+    <p>Визуальное отображение представленных компонент завязано на&nbsp;<a href="wcag-config.html">предоставленую нами конфигурацию панели</a>, но&nbsp;вы&nbsp;все равно можете использовать их&nbsp;в&nbsp;своих проектах, адаптировав CSS под ваши нужды.</p>
+    <hr>
+
+    
+            <div id="tabs" style="margin-bottom: 100px">
+
+            <h2 class="h2">Вкладки</h2>
+
+            
+
+
+
+
+<p>Необходимо для списка вкладок, элементов вкладок и&nbsp;содержимого вкладок расставить соответствующие роли <code>role="tablist", role="tab", role="tabpabel"</code>.</p>
+<p>Для вкладок расставить <code>aria-selected</code> атрибуты со&nbsp;значением true у&nbsp;активной вкладки и&nbsp;значнием false у&nbsp;остальных вкладок. Атрибут <code>aria-selected</code> подсказывает браузеру и&nbsp;экранным читалкам, выбрана вкладка или нет.</p>
+<p>Для вкладок расставить <code>aria-controls</code> атрибуты со&nbsp;значением атрибута <code>id</code> панели содержимого вкладки. Атрибут <code>aria-controls</code> показывает взимосвязь между вкладкой и&nbsp;ее&nbsp;содержимым.</p>
+<p>Для панелей содержимого вкладок установить значение атрибута <code>aria-hidden</code> в&nbsp;true/false в&nbsp;зависимости от&nbsp;того, скрытый&nbsp;ли контент сейчас или нет.</p>
+<p>Атрибут <code>aria-labelledby</code> у&nbsp;панелей с&nbsp;содерждимым вкладок озаглавливает эту панель текстом соответствующей вкладки.</p>
+<p>Навигация по&nbsp;владкам возможна с&nbsp;помощью клика по&nbsp;нужной вкладке, нажатием клавиши &laquo;Enter&raquo; по&nbsp;текущей вкладке в&nbsp;фокусе, нажатие стрелок &laquo;Влево&raquo;/&laquo;Вправо&raquo; на&nbsp;клавиатуре, когда любой элемент вкладок в&nbsp;фокусе.</p>
+
+
+    
+
+    
+        <h4 class="h3">Ссылки для загрузок</h4>
+    
+
+    
+        <p>
+            
+            
+                Файл стилей
+            
+            &ndash;
+            <a href="/components/tabs/tabs.css" target="_blank">
+                 tabs.css
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Минифицированный файл стилей
+            
+            &ndash;
+            <a href="/components/tabs/tabs.min.css" target="_blank">
+                 tabs.min.css
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Файл стилей оформленный в препроцессоре SASS
+            
+            &ndash;
+            <a href="/components/tabs/tabs.scss" target="_blank">
+                 tabs.scss
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Скрипт для компонента
+            
+            &ndash;
+            <a href="/components/tabs/tabs.js" target="_blank">
+                 tabs.js
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Минифицированный скрипт для компонента
+            
+            &ndash;
+            <a href="/components/tabs/tabs.min.js" target="_blank">
+                 tabs.min.js
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Исходный скрипт для компонента
+            
+            &ndash;
+            <a href="/components/tabs/tabs.source.js" target="_blank">
+                 tabs.source.js
+            </a>
+        </p>
+    
+
+
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        
+<div class="tabs" data-role="tabs">
+
+    <ul role="tablist">
+        <li id="tab1"
+            aria-controls="panel1" aria-selected="false" role="tab"
+            tabindex="0">
+            Вкладка 1
+        </li>
+        <li id="tab2"
+            aria-controls="panel2" aria-selected="false" role="tab"
+            tabindex="0">
+            Вкладка 2
+        </li>
+        <li id="tab3"
+            aria-controls="panel3" aria-selected="true" role="tab"
+            tabindex="0">
+            Вкладка 3
+        </li>
+        <li id="tab4"
+            aria-controls="panel4" aria-selected="false" role="tab"
+            tabindex="0">
+            Вкладка 4
+        </li>
+    </ul>
+    
+    <div id="panel1" aria-labelledby="tab1" role="tabpanel" aria-hidden="true">
+        <div>Контент вкладки 1</div>
+    </div>
+    <div id="panel2" aria-labelledby="tab2" role="tabpanel" aria-hidden="true">
+        <div>Контент вкладки 2</div>
+    </div>
+    <div id="panel3" aria-labelledby="tab3" role="tabpanel" aria-hidden="false">
+        <div>Контент вкладки 3</div>
+    </div>
+    <div id="panel4" aria-labelledby="tab4" role="tabpanel" aria-hidden="true">
+        <div>Контент вкладки 4</div>
+    </div>
+
+</div>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+
+<div class="tabs" data-role="tabs">
+
+    <ul role="tablist">
+        <li id="tab1"
+            aria-controls="panel1" aria-selected="false" role="tab"
+            tabindex="0">
+            Вкладка 1
+        </li>
+        <li id="tab2"
+            aria-controls="panel2" aria-selected="false" role="tab"
+            tabindex="0">
+            Вкладка 2
+        </li>
+        <li id="tab3"
+            aria-controls="panel3" aria-selected="true" role="tab"
+            tabindex="0">
+            Вкладка 3
+        </li>
+        <li id="tab4"
+            aria-controls="panel4" aria-selected="false" role="tab"
+            tabindex="0">
+            Вкладка 4
+        </li>
+    </ul>
+    
+    <div id="panel1" aria-labelledby="tab1" role="tabpanel" aria-hidden="true">
+        <div>Контент вкладки 1</div>
+    </div>
+    <div id="panel2" aria-labelledby="tab2" role="tabpanel" aria-hidden="true">
+        <div>Контент вкладки 2</div>
+    </div>
+    <div id="panel3" aria-labelledby="tab3" role="tabpanel" aria-hidden="false">
+        <div>Контент вкладки 3</div>
+    </div>
+    <div id="panel4" aria-labelledby="tab4" role="tabpanel" aria-hidden="true">
+        <div>Контент вкладки 4</div>
+    </div>
+
+</div>
+
+        </code>
+    </pre>
+</div>
+        </div>
+            <div id="nav" style="margin-bottom: 100px">
+
+            <h2 class="h2">Навигация</h2>
+
+            
+
+
+
+
+
+<p>Для корневого элемента навигации нужно указать атрибут <code>role="navigation"</code>.</p>
+<p>Чтобы использовать навигацию в&nbsp;вертикальном режиме, к&nbsp;корневому элементу нужно добавить класс <code>nav_vertical</code>.</p>
+<p>Активный (текущий выбранный пункт) дополняется классом <code>nav__item_active</code>.</p>
+
+
+    
+
+    
+        <h4 class="h3">Ссылки для загрузок</h4>
+    
+
+    
+        <p>
+            
+            
+                Файл стилей
+            
+            &ndash;
+            <a href="/components/nav/nav.css" target="_blank">
+                 nav.css
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Минифицированный файл стилей
+            
+            &ndash;
+            <a href="/components/nav/nav.min.css" target="_blank">
+                 nav.min.css
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Файл стилей оформленный в препроцессоре SASS
+            
+            &ndash;
+            <a href="/components/nav/nav.scss" target="_blank">
+                 nav.scss
+            </a>
+        </p>
+    
+
+
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        
+<nav class="nav" role="navigation">
+    <ul>
+        <li class="nav__item">
+            <a href="#link-path-1" class="nav__link">Элемент 1</a>
+        </li>
+        <li class="nav__item">
+            <a href="#link-path-2" class="nav__link">Элемент 2</a>
+        </li>
+        <li class="nav__item nav__item_active">
+            <a href="#link-path-3" class="nav__link">Активный элемент 3</a>
+        </li>
+    </ul>
+</nav>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+
+<nav class="nav" role="navigation">
+    <ul>
+        <li class="nav__item">
+            <a href="#link-path-1" class="nav__link">Элемент 1</a>
+        </li>
+        <li class="nav__item">
+            <a href="#link-path-2" class="nav__link">Элемент 2</a>
+        </li>
+        <li class="nav__item nav__item_active">
+            <a href="#link-path-3" class="nav__link">Активный элемент 3</a>
+        </li>
+    </ul>
+</nav>
+
+        </code>
+    </pre>
+</div>
+
+<br>
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        
+<nav class="nav nav_vertical" role="navigation">
+    <ul>
+        <li class="nav__item">
+            <a href="#link-path-1" class="nav__link">Элемент 1</a>
+        </li>
+        <li class="nav__item">
+            <a href="#link-path-2" class="nav__link">Элемент 2</a>
+        </li>
+        <li class="nav__item nav__item_active">
+            <a href="#link-path-3" class="nav__link">Активный элемент 3</a>
+        </li>
+    </ul>
+</nav>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+
+<nav class="nav nav_vertical" role="navigation">
+    <ul>
+        <li class="nav__item">
+            <a href="#link-path-1" class="nav__link">Элемент 1</a>
+        </li>
+        <li class="nav__item">
+            <a href="#link-path-2" class="nav__link">Элемент 2</a>
+        </li>
+        <li class="nav__item nav__item_active">
+            <a href="#link-path-3" class="nav__link">Активный элемент 3</a>
+        </li>
+    </ul>
+</nav>
+
+        </code>
+    </pre>
+</div>
+
+        </div>
+            <div id="pagination" style="margin-bottom: 100px">
+
+            <h2 class="h2">Пагинация</h2>
+
+            
+
+
+
+<p>Поскольку пагинация является в&nbsp;какой-то мере навигацией, то&nbsp;ей&nbsp;указывается соответствующая роль <code>role="navigation"</code>.</p>
+<p>Пагинация в&nbsp;настоящем примере заимствует стили навигации.</p>
+<p>Поскольку для экранных читалок короткий текст ссылок не&nbsp;информативен, им&nbsp;указывается текстовое информативное описание в&nbsp;атрибуте <code>aria-label</code>.</p>
+<p>Кнопкам &laquo;Назад&raquo; и&nbsp;&laquo;Вперед&raquo; указываются соответствующие атрибуты <code>rel=”prev”, rel=”next”</code>.</p>
+
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        
+<ul class="nav" role="navigation" aria-label="Ссылки на другие страницы">
+    <li class="nav__item" rel="prev">
+        <a href="#link" class="nav__link" aria-label="Предыдущая страница номер 2">Назад</a>
+    </li>
+    <li class="nav__item">
+        <a href="#link" class="nav__link" aria-label="Первая страница">1</a>
+    </li>
+    <li class="nav__item">
+        <a href="#link" class="nav__link" aria-label="Вторая страница">2</a>
+    </li>
+    <li class="nav__item nav__item_active" class="current">
+        <a href="#link" class="nav__link" aria-label="Третья страница">3</a>
+    </li>
+    <li class="nav__item">
+        <a href="#link" class="nav__link" aria-label="Четвертая страница">4</a>
+    </li>
+    <li class="nav__item">
+        <a href="#link" class="nav__link" aria-label="Страница номер 8">...</a>
+    </li>
+    <li class="nav__item">
+        <a href="#link" class="nav__link" aria-label="Последняя страница номер 24">24</a>
+    </li>
+    <li class="nav__item" rel="next">
+        <a href="#link" class="nav__link" aria-label="Следующая страница номер 4">Вперед</a>
+    </li>
+</ul>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+
+<ul class="nav" role="navigation" aria-label="Ссылки на другие страницы">
+    <li class="nav__item" rel="prev">
+        <a href="#link" class="nav__link" aria-label="Предыдущая страница номер 2">Назад</a>
+    </li>
+    <li class="nav__item">
+        <a href="#link" class="nav__link" aria-label="Первая страница">1</a>
+    </li>
+    <li class="nav__item">
+        <a href="#link" class="nav__link" aria-label="Вторая страница">2</a>
+    </li>
+    <li class="nav__item nav__item_active" class="current">
+        <a href="#link" class="nav__link" aria-label="Третья страница">3</a>
+    </li>
+    <li class="nav__item">
+        <a href="#link" class="nav__link" aria-label="Четвертая страница">4</a>
+    </li>
+    <li class="nav__item">
+        <a href="#link" class="nav__link" aria-label="Страница номер 8">...</a>
+    </li>
+    <li class="nav__item">
+        <a href="#link" class="nav__link" aria-label="Последняя страница номер 24">24</a>
+    </li>
+    <li class="nav__item" rel="next">
+        <a href="#link" class="nav__link" aria-label="Следующая страница номер 4">Вперед</a>
+    </li>
+</ul>
+
+        </code>
+    </pre>
+</div>
+        </div>
+            <div id="alert" style="margin-bottom: 100px">
+
+            <h2 class="h2">Уведомление</h2>
+
+            
+
+
+
+<p>Уведомление представляет собой контрастную с&nbsp;фоном сайта панель с&nbsp;сообщением.</p>
+<p>Чтобы уведомление, как только появится на&nbsp;странице, было вне очереди озвучено экранной читалкой, оно должно содержать атрибут <code>role=”alert”</code>.</p>
+
+
+    
+
+    
+        <h4 class="h3">Ссылки для загрузок</h4>
+    
+
+    
+        <p>
+            
+            
+                Файл стилей
+            
+            &ndash;
+            <a href="/components/alert/alert.css" target="_blank">
+                 alert.css
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Минифицированный файл стилей
+            
+            &ndash;
+            <a href="/components/alert/alert.min.css" target="_blank">
+                 alert.min.css
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Файл стилей оформленный в препроцессоре SASS
+            
+            &ndash;
+            <a href="/components/alert/alert.scss" target="_blank">
+                 alert.scss
+            </a>
+        </p>
+    
+
+
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        
+<div class="alert" role="alert">
+    Сообщение
+</div>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+
+<div class="alert" role="alert">
+    Сообщение
+</div>
+
+        </code>
+    </pre>
+</div>
+
+        </div>
+            <div id="collapse" style="margin-bottom: 100px">
+
+            <h2 class="h2">Раскрывающийся список</h2>
+
+            
+
+
+
+<p>Для того, чтобы пользователь с&nbsp;помощью экранных читалок мог &laquo;услышать&raquo; изменение состояния скрытого контента, используется атрибут <code>aria-expanded</code> равный true для раскрытого состояния и&nbsp;false для закрытого.</p>
+<p>У&nbsp;контента нужно указать уникальный <code>id</code>.</p>
+<p>У&nbsp;элемента, который будет раскрывать контент, нужно указать атрибут <code>aria-controls</code> равный значению <code>id</code> скрываемого контента.</p>
+<p>Атрибут data-role=&quot;collapse&quot; обязателен. По&nbsp;нему JavaScript определяет, что это раскрывающийся список.</p>
+
+
+    
+
+    
+        <h4 class="h3">Ссылки для загрузок</h4>
+    
+
+    
+        <p>
+            
+            
+                Файл стилей
+            
+            &ndash;
+            <a href="/components/collapse/collapse.css" target="_blank">
+                 collapse.css
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Минифицированный файл стилей
+            
+            &ndash;
+            <a href="/components/collapse/collapse.min.css" target="_blank">
+                 collapse.min.css
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Файл стилей оформленный в препроцессоре SASS
+            
+            &ndash;
+            <a href="/components/collapse/collapse.scss" target="_blank">
+                 collapse.scss
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Скрипт для компонента
+            
+            &ndash;
+            <a href="/components/collapse/collapse.js" target="_blank">
+                 collapse.js
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Минифицированный скрипт для компонента
+            
+            &ndash;
+            <a href="/components/collapse/collapse.min.js" target="_blank">
+                 collapse.min.js
+            </a>
+        </p>
+    
+
+
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        
+<div class="collapse" data-role="collapse">
+    <button class="button" aria-controls="elemToControl">
+        Кликните, чтобы отобразить скрытый контент
+    </button>
+    <div id="elemToControl" class="collapse__content" aria-expanded="false">
+        Скрытый контент
+    </div>
+</div>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+
+<div class="collapse" data-role="collapse">
+    <button class="button" aria-controls="elemToControl">
+        Кликните, чтобы отобразить скрытый контент
+    </button>
+    <div id="elemToControl" class="collapse__content" aria-expanded="false">
+        Скрытый контент
+    </div>
+</div>
+
+        </code>
+    </pre>
+</div>
+        </div>
+            <div id="buttons" style="margin-bottom: 100px">
+
+            <h2 class="h2">Кнопки</h2>
+
+            
+
+
+<p>Атрибут <code>aria-disabled</code> для тега <code class="convert"><button></button></code> не&nbsp;является обязательным, так как имеет место быть базовый атрибут <code>disabled</code>, но&nbsp;мы&nbsp;все&nbsp;же рекомендуем указывать его для совместимости с&nbsp;экранными читалками.</p>
+<p>Вы&nbsp;можете стилизовать ссылку как кнопку, но&nbsp;в&nbsp;этом случае для <code>disabled</code> состояния атрибут <code>aria-disabled</code> является обязательным.</p>
+
+
+    
+
+    
+        <h4 class="h3">Ссылки для загрузок</h4>
+    
+
+    
+        <p>
+            
+            
+                Файл стилей
+            
+            &ndash;
+            <a href="/components/button/button.css" target="_blank">
+                 button.css
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Минифицированный файл стилей
+            
+            &ndash;
+            <a href="/components/button/button.min.css" target="_blank">
+                 button.min.css
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Файл стилей оформленный в препроцессоре SASS
+            
+            &ndash;
+            <a href="/components/button/button.scss" target="_blank">
+                 button.scss
+            </a>
+        </p>
+    
+
+
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        <button class="button" >Кнопка</button>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+<button class="button" >Кнопка</button>
+
+        </code>
+    </pre>
+</div>
+
+<br>
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        <button class="button" disabled aria-disabled="true">Кнопка в неактивном состоянии</button>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+<button class="button" disabled aria-disabled="true">Кнопка в неактивном состоянии</button>
+
+        </code>
+    </pre>
+</div>
+
+<br>
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        <a href="#some-link" class="button" >Ссылка в виде кнопки</a>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+<a href="#some-link" class="button" >Ссылка в виде кнопки</a>
+
+        </code>
+    </pre>
+</div>
+
+<br>
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        <a href="#some-link" class="button" aria-disabled="true" tabindex="-1" >Ссылка в виде кнопки в неактивном состоянии</a>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+<a href="#some-link" class="button" aria-disabled="true" tabindex="-1" >Ссылка в виде кнопки в неактивном состоянии</a>
+
+        </code>
+    </pre>
+</div>
+        </div>
+    </div>
+    </div>
+
+    
+<script>
+    var escape = {
+        '<': '&lt',
+        '>': '&gt'
+    }
+
+    var converts = document.querySelectorAll('.convert');
+    converts.forEach(function (convert) {
+        var html = convert.innerHTML;
+//            html = html.replace(/  /g, '');
+        html = html.replace(/</g, '&lt');
+        html = html.replace(/>/g, '&gt');
+        convert.innerHTML = html;
+    });
+</script>
+
+<script src="/accessibility.min.js"></script>
+
+<script src="/site-components/prism/prism.source.js"></script>
+
+<script>
+    function FixedSidebar(sidebar) {
+        var sidebar = sidebar;
+        var offsetTop = sidebar.offsetTop;
+        var topPadding = 40;
+
+        window.addEventListener('scroll', function () {
+            setPosition(window.scrollY || window.pageYOffset || 0);
+        });
+
+        function setPosition(scroll) {
+            var isFixed = scroll + topPadding >= offsetTop;
+            sidebar.style.position = isFixed ? 'fixed' : '';
+            sidebar.style.top = isFixed ? topPadding+'px' : '';
+        }
+    }
+
+    var fixedSidebar = document.querySelector('[data-role="fixed-sidebar"]');
+    if (fixedSidebar) new FixedSidebar(fixedSidebar);
+</script>
+</body>
+</html>

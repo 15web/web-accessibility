@@ -1,0 +1,1288 @@
+/* Переменные со значениями для разных цветовых схем */
+
+/* Границы блоков */
+$borderColorsWcag: (white: #aaa, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* "основной" фон */
+$firstBackgroundColorsWcag: (white: #fff, black: #1d1d1d, blue: #06066b, beige: #f7f3d6, brown: #352518);
+
+/* "Дополнительный" фон, чтобы выделять блоки на фоне основного */
+$secondBackgroundColorsWcag: (white: #f5f5f5, black: #000, blue: #0c0c4e, beige: #fbf2af, brown: #2b1d11);
+
+/* Ссылки */
+$linkColorsWcag: (white: #222, black: #fff, blue: #ff0, beige: #111, brown: #9bff00);
+$linkInverseColorsWcag: $secondBackgroundColorsWcag;
+
+/* Текст */
+$textColorsWcag: (white: #555, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* Подчеркивания ссылок */
+$linkBorderColorsWcag: (white: #0000ff, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* Инвертированный текст */
+$textInvertColorsWcag: $firstBackgroundColorsWcag;
+
+/* Инвертированный фон */
+$invertBackgroundColorsWcag: $textColorsWcag;
+
+/* Фон, цвет текста и outline границы элементов в фокусе */
+$focusBackgroundColorsWcag: (white: #fff02a, black: #fff02a, blue: #fff02a, beige: #fff02a, brown: #fff02a);
+$focusTextColorsWcag: (white: #111, black: #111, blue: #111, beige: #111, brown: #111);
+$focusOutlinesWcag: (white: 2px solid #0000ff, black: 2px solid #ccc, blue: 2px solid #cc0, beige: 2px solid #444, brown: 2px solid #aad469);
+
+/* Фон и цвет текста элементов при наведении */
+$hoverBackgroundColorsWcag: $focusBackgroundColorsWcag;
+$hoverTextColorsWcag: $focusTextColorsWcag;
+$hoverOutlinesWcag: $focusOutlinesWcag;
+
+
+$defaultFontSize: 16;
+$defaultLineHeight: 1.25;
+
+$transparentPixel: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
+
+/**
+ Миксин для назначения свойству различных значений для разных цветовых схем.
+ Входные аргументы:
+    $property - имя свойства
+    $values - Значения свойства в виде асоциативного массива вида (white: ..., black: ..., blue: ..., beige: ..., brown: ...)
+ По-умаолчанию значение свойства указывается как значения для white цветовой схемы.
+ Далее для всех указанных цветовых схем генерируются правила.
+ В $values не обязательно указывать все цветовые схемы, но white - обязательна
+ */
+@mixin wcag($property, $values, $important: false) {
+    #{$property}: map-get($values, white);
+
+    @each $colorScheme, $value in $values {
+        html[data-color="#{$colorScheme}"] & {
+            @if $important == true {
+                #{$property}: $value !important;
+            } @else {
+                #{$property}: $value
+            }
+
+        }
+    }
+}
+/*
+	Установить размер шрифта относительно базового.
+ 	$fontSize - Желаемое значение шрифта в px по-умолчанию.
+ 	$defaultFontSize - Базовый размер шрифта в px, относительно которого будет выполняться преобразование
+ 	В результате значение установится как относительное в rem, так, чтобы в пересчете на px получилось $fontSize.
+ 	Например для $fontSize = 20 (пикселей) и $defaultFontSize = 16 (пикселей) размер шрифта будет 1.25rem,
+ 	что в пересчете соответствует 20px.
+ */
+
+@mixin setFontSize($fontSize) {
+    font-size: #{$fontSize/$defaultFontSize}rem;
+}
+
+/* Стили для активного элемента (навигация, табы) */
+@mixin activeElement() {
+    background: #ffa;
+    color: #bf1722;
+}
+/* Переменные со значениями для разных цветовых схем */
+
+/* Границы блоков */
+$borderColorsWcag: (white: #aaa, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* "основной" фон */
+$firstBackgroundColorsWcag: (white: #fff, black: #1d1d1d, blue: #06066b, beige: #f7f3d6, brown: #352518);
+
+/* "Дополнительный" фон, чтобы выделять блоки на фоне основного */
+$secondBackgroundColorsWcag: (white: #f5f5f5, black: #000, blue: #0c0c4e, beige: #fbf2af, brown: #2b1d11);
+
+/* Ссылки */
+$linkColorsWcag: (white: #222, black: #fff, blue: #ff0, beige: #111, brown: #9bff00);
+$linkInverseColorsWcag: $secondBackgroundColorsWcag;
+
+/* Текст */
+$textColorsWcag: (white: #555, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* Подчеркивания ссылок */
+$linkBorderColorsWcag: (white: #0000ff, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* Инвертированный текст */
+$textInvertColorsWcag: $firstBackgroundColorsWcag;
+
+/* Инвертированный фон */
+$invertBackgroundColorsWcag: $textColorsWcag;
+
+/* Фон, цвет текста и outline границы элементов в фокусе */
+$focusBackgroundColorsWcag: (white: #fff02a, black: #fff02a, blue: #fff02a, beige: #fff02a, brown: #fff02a);
+$focusTextColorsWcag: (white: #111, black: #111, blue: #111, beige: #111, brown: #111);
+$focusOutlinesWcag: (white: 2px solid #0000ff, black: 2px solid #ccc, blue: 2px solid #cc0, beige: 2px solid #444, brown: 2px solid #aad469);
+
+/* Фон и цвет текста элементов при наведении */
+$hoverBackgroundColorsWcag: $focusBackgroundColorsWcag;
+$hoverTextColorsWcag: $focusTextColorsWcag;
+$hoverOutlinesWcag: $focusOutlinesWcag;
+
+
+$defaultFontSize: 16;
+$defaultLineHeight: 1.25;
+
+$transparentPixel: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
+
+/* Конфиги для font-size */
+@each $key, $value in (normal: 1rem, big: 1.5rem, large: 2rem) {
+    html[data-fontsize="#{$key}"] {
+        font-size: $value;
+    }
+}
+
+/* Для всех элементов задаем цвет границ, чтобы не менять у каждого элемента в частности */
+* {
+    @include wcag(border-color, $borderColorsWcag);
+}
+
+/* Internet Explorer может фокусировать любой блок, поэтому перечисляем только те блоки, которые должны быть в фокусе */
+a,
+input,
+select,
+textarea,
+button,
+img,
+[tabindex] {
+    &:focus,
+    &:target {
+        /* Focus стили будут important */
+        @include wcag(outline, $focusOutlinesWcag, true);
+        @include wcag(background-color, $focusBackgroundColorsWcag, true);
+        @include wcag(color, $focusTextColorsWcag, true);
+
+        svg {
+            @include wcag(fill, $focusTextColorsWcag, true);
+        }
+    }
+}
+
+/* Для всех интерактивных и активных элементов добавляем стили hover */
+a:not([disabled]):not([aria-disabled="true"]),
+[tabindex]:not([tabindex="-1"]),
+button:not([disabled]):not([aria-disabled="true"]) {
+    &:hover {
+        @include wcag(outline, $hoverOutlinesWcag);
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+/* При выключенных картинках */
+html[data-images="off"] {
+    img,
+    svg {
+        visibility: hidden;
+    }
+
+    *,
+    *:before,
+    *:after {
+        background-image: none !important; /* !important на случай inline стилей в верстке */
+    }
+}
+
+/* При увеличенном кернинге */
+html[data-kerning="big"] {
+    letter-spacing: 0.1rem;
+
+    select,
+    input,
+    button,
+    textarea {
+        letter-spacing: inherit;
+    }
+
+}
+
+body {
+    @include wcag(background-color, $firstBackgroundColorsWcag);
+    @include wcag(color, $textColorsWcag);
+    line-height: $defaultLineHeight;
+
+    a {
+        @include wcag(color, $linkColorsWcag);
+        border-bottom: 1px solid;
+        text-decoration: none;
+        @include wcag(border-color, $linkBorderColorsWcag);
+    }
+}
+
+/* Для блоков через атрибут можно указать альтернативный цвет текста */
+[data-wcag="alternative-background"] {
+    @include wcag(background-color, $secondBackgroundColorsWcag);
+}
+
+[aria-disabled="true"],
+[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+// ==========================================================================
+// Heading
+// ==========================================================================
+
+.h1, .typography h1,
+.h2, .typography h2,
+.h3, .typography h3,
+.h4, .typography h4,
+.h5, .typography h5,
+.h6, .typography h6 {
+    font-weight: bold;
+
+    small, .small {
+        line-height: 1;
+        font-weight: normal;
+    }
+}
+
+.h1, .typography h1 {
+    font-size: 2em;
+    line-height: 1.1;
+}
+
+.h2, .typography h2 {
+    font-size: 1.6em;
+    line-height: 1.1;
+}
+
+.h3, .typography h3 {
+    font-size: 1.33em;
+    line-height: 1.1;
+}
+
+.h4, .typography h4 {
+    font-size: 1em;
+    line-height: 1.1;
+}
+
+.h5, .typography h5 {
+    font-size: 0.8em;
+    line-height: 1.1;
+}
+
+.h6, .typography h6 {
+    font-size: 0.6em;
+    line-height: 1.1;
+}
+
+// ==========================================================================
+// Tables
+// ==========================================================================
+
+table, .typography table {
+    line-height: 1.375em;
+    border-collapse: collapse;
+
+    th {
+        padding: 6px;
+        color: #fff;
+
+        background-color: #000;
+        border: 1px solid #fff;
+    }
+
+    td {
+        padding: 6px;
+        border: 1px solid #000;
+    }
+
+    // Theme black
+
+    html[data-color="black"] & {
+
+        th {
+            color: #000;
+
+            background-color: #fff;
+            border: 1px solid #000;
+        }
+
+        td {
+            border: 1px solid #fff;
+        }
+
+    }
+}
+
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+.typography {
+    overflow: auto;
+
+    h1, h2, h3, h4, h5, h6 {
+        margin: 1.25em 0 1em;
+    }
+
+    p {
+        line-height: 1.3em;
+        margin-bottom: 1em;
+    }
+
+    q {
+        display: block;
+        padding: 10px 20px;
+        margin: 0 0 20px;
+
+        font-size: 1em;
+
+        border-left: 5px solid #000;
+    }
+
+    ul, ol {
+        margin-bottom: 1.25em;
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        ul, ol {
+            margin: 0.5em 0 0.75em 20px;
+        }
+    }
+
+    ul > li {
+        list-style: disc inside;
+    }
+
+    ol > li {
+        list-style: decimal inside;
+    }
+
+    // Theme black
+
+    html[data-color="black"] & {
+
+        h4 {
+            color: #fff;
+        }
+
+        q {
+            border-left: 5px solid #000;
+        }
+
+    }
+}
+
+em {
+    font-style: italic;
+}
+
+strong, b {
+    font-weight: bold;
+}
+
+small, .small {
+    font-size: 0.8em;
+}
+
+// ==========================================================================
+// Alignment
+// ==========================================================================
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}
+
+// ==========================================================================
+// Transformation
+// ==========================================================================
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+/* Переменные со значениями для разных цветовых схем */
+
+/* Границы блоков */
+$borderColorsWcag: (white: #aaa, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* "основной" фон */
+$firstBackgroundColorsWcag: (white: #fff, black: #1d1d1d, blue: #06066b, beige: #f7f3d6, brown: #352518);
+
+/* "Дополнительный" фон, чтобы выделять блоки на фоне основного */
+$secondBackgroundColorsWcag: (white: #f5f5f5, black: #000, blue: #0c0c4e, beige: #fbf2af, brown: #2b1d11);
+
+/* Ссылки */
+$linkColorsWcag: (white: #222, black: #fff, blue: #ff0, beige: #111, brown: #9bff00);
+$linkInverseColorsWcag: $secondBackgroundColorsWcag;
+
+/* Текст */
+$textColorsWcag: (white: #555, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* Подчеркивания ссылок */
+$linkBorderColorsWcag: (white: #0000ff, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* Инвертированный текст */
+$textInvertColorsWcag: $firstBackgroundColorsWcag;
+
+/* Инвертированный фон */
+$invertBackgroundColorsWcag: $textColorsWcag;
+
+/* Фон, цвет текста и outline границы элементов в фокусе */
+$focusBackgroundColorsWcag: (white: #fff02a, black: #fff02a, blue: #fff02a, beige: #fff02a, brown: #fff02a);
+$focusTextColorsWcag: (white: #111, black: #111, blue: #111, beige: #111, brown: #111);
+$focusOutlinesWcag: (white: 2px solid #0000ff, black: 2px solid #ccc, blue: 2px solid #cc0, beige: 2px solid #444, brown: 2px solid #aad469);
+
+/* Фон и цвет текста элементов при наведении */
+$hoverBackgroundColorsWcag: $focusBackgroundColorsWcag;
+$hoverTextColorsWcag: $focusTextColorsWcag;
+$hoverOutlinesWcag: $focusOutlinesWcag;
+
+
+$defaultFontSize: 16;
+$defaultLineHeight: 1.25;
+
+$transparentPixel: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
+
+/**
+ Миксин для назначения свойству различных значений для разных цветовых схем.
+ Входные аргументы:
+    $property - имя свойства
+    $values - Значения свойства в виде асоциативного массива вида (white: ..., black: ..., blue: ..., beige: ..., brown: ...)
+ По-умаолчанию значение свойства указывается как значения для white цветовой схемы.
+ Далее для всех указанных цветовых схем генерируются правила.
+ В $values не обязательно указывать все цветовые схемы, но white - обязательна
+ */
+@mixin wcag($property, $values, $important: false) {
+    #{$property}: map-get($values, white);
+
+    @each $colorScheme, $value in $values {
+        html[data-color="#{$colorScheme}"] & {
+            @if $important == true {
+                #{$property}: $value !important;
+            } @else {
+                #{$property}: $value
+            }
+
+        }
+    }
+}
+/*
+	Установить размер шрифта относительно базового.
+ 	$fontSize - Желаемое значение шрифта в px по-умолчанию.
+ 	$defaultFontSize - Базовый размер шрифта в px, относительно которого будет выполняться преобразование
+ 	В результате значение установится как относительное в rem, так, чтобы в пересчете на px получилось $fontSize.
+ 	Например для $fontSize = 20 (пикселей) и $defaultFontSize = 16 (пикселей) размер шрифта будет 1.25rem,
+ 	что в пересчете соответствует 20px.
+ */
+
+@mixin setFontSize($fontSize) {
+    font-size: #{$fontSize/$defaultFontSize}rem;
+}
+
+/* Стили для активного элемента (навигация, табы) */
+@mixin activeElement() {
+    background: #ffa;
+    color: #bf1722;
+}
+/* Переменные со значениями для разных цветовых схем */
+
+/* Границы блоков */
+$borderColorsWcag: (white: #aaa, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* "основной" фон */
+$firstBackgroundColorsWcag: (white: #fff, black: #1d1d1d, blue: #06066b, beige: #f7f3d6, brown: #352518);
+
+/* "Дополнительный" фон, чтобы выделять блоки на фоне основного */
+$secondBackgroundColorsWcag: (white: #f5f5f5, black: #000, blue: #0c0c4e, beige: #fbf2af, brown: #2b1d11);
+
+/* Ссылки */
+$linkColorsWcag: (white: #222, black: #fff, blue: #ff0, beige: #111, brown: #9bff00);
+$linkInverseColorsWcag: $secondBackgroundColorsWcag;
+
+/* Текст */
+$textColorsWcag: (white: #555, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* Подчеркивания ссылок */
+$linkBorderColorsWcag: (white: #0000ff, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* Инвертированный текст */
+$textInvertColorsWcag: $firstBackgroundColorsWcag;
+
+/* Инвертированный фон */
+$invertBackgroundColorsWcag: $textColorsWcag;
+
+/* Фон, цвет текста и outline границы элементов в фокусе */
+$focusBackgroundColorsWcag: (white: #fff02a, black: #fff02a, blue: #fff02a, beige: #fff02a, brown: #fff02a);
+$focusTextColorsWcag: (white: #111, black: #111, blue: #111, beige: #111, brown: #111);
+$focusOutlinesWcag: (white: 2px solid #0000ff, black: 2px solid #ccc, blue: 2px solid #cc0, beige: 2px solid #444, brown: 2px solid #aad469);
+
+/* Фон и цвет текста элементов при наведении */
+$hoverBackgroundColorsWcag: $focusBackgroundColorsWcag;
+$hoverTextColorsWcag: $focusTextColorsWcag;
+$hoverOutlinesWcag: $focusOutlinesWcag;
+
+
+$defaultFontSize: 16;
+$defaultLineHeight: 1.25;
+
+$transparentPixel: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
+
+.button {
+    padding: 15px;
+    display: inline-block;
+
+    font-weight: bold;
+
+    border: none;
+    text-decoration: none;
+
+    text-align: center;
+    font-size: inherit;
+
+    @include wcag(color, $textInvertColorsWcag);
+    @include wcag(background-color, $invertBackgroundColorsWcag);
+
+}
+// ==========================================================================
+// Nav
+// ==========================================================================
+/* Переменные со значениями для разных цветовых схем */
+
+/* Границы блоков */
+$borderColorsWcag: (white: #aaa, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* "основной" фон */
+$firstBackgroundColorsWcag: (white: #fff, black: #1d1d1d, blue: #06066b, beige: #f7f3d6, brown: #352518);
+
+/* "Дополнительный" фон, чтобы выделять блоки на фоне основного */
+$secondBackgroundColorsWcag: (white: #f5f5f5, black: #000, blue: #0c0c4e, beige: #fbf2af, brown: #2b1d11);
+
+/* Ссылки */
+$linkColorsWcag: (white: #222, black: #fff, blue: #ff0, beige: #111, brown: #9bff00);
+$linkInverseColorsWcag: $secondBackgroundColorsWcag;
+
+/* Текст */
+$textColorsWcag: (white: #555, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* Подчеркивания ссылок */
+$linkBorderColorsWcag: (white: #0000ff, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* Инвертированный текст */
+$textInvertColorsWcag: $firstBackgroundColorsWcag;
+
+/* Инвертированный фон */
+$invertBackgroundColorsWcag: $textColorsWcag;
+
+/* Фон, цвет текста и outline границы элементов в фокусе */
+$focusBackgroundColorsWcag: (white: #fff02a, black: #fff02a, blue: #fff02a, beige: #fff02a, brown: #fff02a);
+$focusTextColorsWcag: (white: #111, black: #111, blue: #111, beige: #111, brown: #111);
+$focusOutlinesWcag: (white: 2px solid #0000ff, black: 2px solid #ccc, blue: 2px solid #cc0, beige: 2px solid #444, brown: 2px solid #aad469);
+
+/* Фон и цвет текста элементов при наведении */
+$hoverBackgroundColorsWcag: $focusBackgroundColorsWcag;
+$hoverTextColorsWcag: $focusTextColorsWcag;
+$hoverOutlinesWcag: $focusOutlinesWcag;
+
+
+$defaultFontSize: 16;
+$defaultLineHeight: 1.25;
+
+$transparentPixel: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
+
+/**
+ Миксин для назначения свойству различных значений для разных цветовых схем.
+ Входные аргументы:
+    $property - имя свойства
+    $values - Значения свойства в виде асоциативного массива вида (white: ..., black: ..., blue: ..., beige: ..., brown: ...)
+ По-умаолчанию значение свойства указывается как значения для white цветовой схемы.
+ Далее для всех указанных цветовых схем генерируются правила.
+ В $values не обязательно указывать все цветовые схемы, но white - обязательна
+ */
+@mixin wcag($property, $values, $important: false) {
+    #{$property}: map-get($values, white);
+
+    @each $colorScheme, $value in $values {
+        html[data-color="#{$colorScheme}"] & {
+            @if $important == true {
+                #{$property}: $value !important;
+            } @else {
+                #{$property}: $value
+            }
+
+        }
+    }
+}
+/*
+	Установить размер шрифта относительно базового.
+ 	$fontSize - Желаемое значение шрифта в px по-умолчанию.
+ 	$defaultFontSize - Базовый размер шрифта в px, относительно которого будет выполняться преобразование
+ 	В результате значение установится как относительное в rem, так, чтобы в пересчете на px получилось $fontSize.
+ 	Например для $fontSize = 20 (пикселей) и $defaultFontSize = 16 (пикселей) размер шрифта будет 1.25rem,
+ 	что в пересчете соответствует 20px.
+ */
+
+@mixin setFontSize($fontSize) {
+    font-size: #{$fontSize/$defaultFontSize}rem;
+}
+
+/* Стили для активного элемента (навигация, табы) */
+@mixin activeElement() {
+    background: #ffa;
+    color: #bf1722;
+}
+
+.nav {
+    ul,
+    & {
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        display: inline-block;
+        margin: 0 10px 10px 0;
+
+        .nav_vertical & {
+            display: block;
+            margin: 0 0 10px 0;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        padding: 5px 10px;
+        font-weight: bold;
+        border: 1px solid;
+        border-radius: 4px;
+    }
+
+
+    &__item_active > .nav__link {
+        @include activeElement();
+    }
+}
+// ==========================================================================
+// Collapse
+// ==========================================================================
+
+.collapse {
+    &__content {
+        margin-top: 10px;
+    }
+}
+
+[data-role="collapse"] {
+    [aria-expanded=false] {
+        display: none;
+    }
+}
+// ==========================================================================
+// Alert
+// ==========================================================================
+/* Переменные со значениями для разных цветовых схем */
+
+/* Границы блоков */
+$borderColorsWcag: (white: #aaa, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* "основной" фон */
+$firstBackgroundColorsWcag: (white: #fff, black: #1d1d1d, blue: #06066b, beige: #f7f3d6, brown: #352518);
+
+/* "Дополнительный" фон, чтобы выделять блоки на фоне основного */
+$secondBackgroundColorsWcag: (white: #f5f5f5, black: #000, blue: #0c0c4e, beige: #fbf2af, brown: #2b1d11);
+
+/* Ссылки */
+$linkColorsWcag: (white: #222, black: #fff, blue: #ff0, beige: #111, brown: #9bff00);
+$linkInverseColorsWcag: $secondBackgroundColorsWcag;
+
+/* Текст */
+$textColorsWcag: (white: #555, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* Подчеркивания ссылок */
+$linkBorderColorsWcag: (white: #0000ff, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* Инвертированный текст */
+$textInvertColorsWcag: $firstBackgroundColorsWcag;
+
+/* Инвертированный фон */
+$invertBackgroundColorsWcag: $textColorsWcag;
+
+/* Фон, цвет текста и outline границы элементов в фокусе */
+$focusBackgroundColorsWcag: (white: #fff02a, black: #fff02a, blue: #fff02a, beige: #fff02a, brown: #fff02a);
+$focusTextColorsWcag: (white: #111, black: #111, blue: #111, beige: #111, brown: #111);
+$focusOutlinesWcag: (white: 2px solid #0000ff, black: 2px solid #ccc, blue: 2px solid #cc0, beige: 2px solid #444, brown: 2px solid #aad469);
+
+/* Фон и цвет текста элементов при наведении */
+$hoverBackgroundColorsWcag: $focusBackgroundColorsWcag;
+$hoverTextColorsWcag: $focusTextColorsWcag;
+$hoverOutlinesWcag: $focusOutlinesWcag;
+
+
+$defaultFontSize: 16;
+$defaultLineHeight: 1.25;
+
+$transparentPixel: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
+
+/**
+ Миксин для назначения свойству различных значений для разных цветовых схем.
+ Входные аргументы:
+    $property - имя свойства
+    $values - Значения свойства в виде асоциативного массива вида (white: ..., black: ..., blue: ..., beige: ..., brown: ...)
+ По-умаолчанию значение свойства указывается как значения для white цветовой схемы.
+ Далее для всех указанных цветовых схем генерируются правила.
+ В $values не обязательно указывать все цветовые схемы, но white - обязательна
+ */
+@mixin wcag($property, $values, $important: false) {
+    #{$property}: map-get($values, white);
+
+    @each $colorScheme, $value in $values {
+        html[data-color="#{$colorScheme}"] & {
+            @if $important == true {
+                #{$property}: $value !important;
+            } @else {
+                #{$property}: $value
+            }
+
+        }
+    }
+}
+/*
+	Установить размер шрифта относительно базового.
+ 	$fontSize - Желаемое значение шрифта в px по-умолчанию.
+ 	$defaultFontSize - Базовый размер шрифта в px, относительно которого будет выполняться преобразование
+ 	В результате значение установится как относительное в rem, так, чтобы в пересчете на px получилось $fontSize.
+ 	Например для $fontSize = 20 (пикселей) и $defaultFontSize = 16 (пикселей) размер шрифта будет 1.25rem,
+ 	что в пересчете соответствует 20px.
+ */
+
+@mixin setFontSize($fontSize) {
+    font-size: #{$fontSize/$defaultFontSize}rem;
+}
+
+/* Стили для активного элемента (навигация, табы) */
+@mixin activeElement() {
+    background: #ffa;
+    color: #bf1722;
+}
+/* Переменные со значениями для разных цветовых схем */
+
+/* Границы блоков */
+$borderColorsWcag: (white: #aaa, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* "основной" фон */
+$firstBackgroundColorsWcag: (white: #fff, black: #1d1d1d, blue: #06066b, beige: #f7f3d6, brown: #352518);
+
+/* "Дополнительный" фон, чтобы выделять блоки на фоне основного */
+$secondBackgroundColorsWcag: (white: #f5f5f5, black: #000, blue: #0c0c4e, beige: #fbf2af, brown: #2b1d11);
+
+/* Ссылки */
+$linkColorsWcag: (white: #222, black: #fff, blue: #ff0, beige: #111, brown: #9bff00);
+$linkInverseColorsWcag: $secondBackgroundColorsWcag;
+
+/* Текст */
+$textColorsWcag: (white: #555, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* Подчеркивания ссылок */
+$linkBorderColorsWcag: (white: #0000ff, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* Инвертированный текст */
+$textInvertColorsWcag: $firstBackgroundColorsWcag;
+
+/* Инвертированный фон */
+$invertBackgroundColorsWcag: $textColorsWcag;
+
+/* Фон, цвет текста и outline границы элементов в фокусе */
+$focusBackgroundColorsWcag: (white: #fff02a, black: #fff02a, blue: #fff02a, beige: #fff02a, brown: #fff02a);
+$focusTextColorsWcag: (white: #111, black: #111, blue: #111, beige: #111, brown: #111);
+$focusOutlinesWcag: (white: 2px solid #0000ff, black: 2px solid #ccc, blue: 2px solid #cc0, beige: 2px solid #444, brown: 2px solid #aad469);
+
+/* Фон и цвет текста элементов при наведении */
+$hoverBackgroundColorsWcag: $focusBackgroundColorsWcag;
+$hoverTextColorsWcag: $focusTextColorsWcag;
+$hoverOutlinesWcag: $focusOutlinesWcag;
+
+
+$defaultFontSize: 16;
+$defaultLineHeight: 1.25;
+
+$transparentPixel: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
+
+.alert {
+    padding: 15px;
+
+    @include wcag(background-color, $invertBackgroundColorsWcag);
+    @include wcag(color, $textInvertColorsWcag);
+}
+// ==========================================================================
+// Tabs
+// ==========================================================================
+/* Переменные со значениями для разных цветовых схем */
+
+/* Границы блоков */
+$borderColorsWcag: (white: #aaa, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* "основной" фон */
+$firstBackgroundColorsWcag: (white: #fff, black: #1d1d1d, blue: #06066b, beige: #f7f3d6, brown: #352518);
+
+/* "Дополнительный" фон, чтобы выделять блоки на фоне основного */
+$secondBackgroundColorsWcag: (white: #f5f5f5, black: #000, blue: #0c0c4e, beige: #fbf2af, brown: #2b1d11);
+
+/* Ссылки */
+$linkColorsWcag: (white: #222, black: #fff, blue: #ff0, beige: #111, brown: #9bff00);
+$linkInverseColorsWcag: $secondBackgroundColorsWcag;
+
+/* Текст */
+$textColorsWcag: (white: #555, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* Подчеркивания ссылок */
+$linkBorderColorsWcag: (white: #0000ff, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* Инвертированный текст */
+$textInvertColorsWcag: $firstBackgroundColorsWcag;
+
+/* Инвертированный фон */
+$invertBackgroundColorsWcag: $textColorsWcag;
+
+/* Фон, цвет текста и outline границы элементов в фокусе */
+$focusBackgroundColorsWcag: (white: #fff02a, black: #fff02a, blue: #fff02a, beige: #fff02a, brown: #fff02a);
+$focusTextColorsWcag: (white: #111, black: #111, blue: #111, beige: #111, brown: #111);
+$focusOutlinesWcag: (white: 2px solid #0000ff, black: 2px solid #ccc, blue: 2px solid #cc0, beige: 2px solid #444, brown: 2px solid #aad469);
+
+/* Фон и цвет текста элементов при наведении */
+$hoverBackgroundColorsWcag: $focusBackgroundColorsWcag;
+$hoverTextColorsWcag: $focusTextColorsWcag;
+$hoverOutlinesWcag: $focusOutlinesWcag;
+
+
+$defaultFontSize: 16;
+$defaultLineHeight: 1.25;
+
+$transparentPixel: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
+
+/**
+ Миксин для назначения свойству различных значений для разных цветовых схем.
+ Входные аргументы:
+    $property - имя свойства
+    $values - Значения свойства в виде асоциативного массива вида (white: ..., black: ..., blue: ..., beige: ..., brown: ...)
+ По-умаолчанию значение свойства указывается как значения для white цветовой схемы.
+ Далее для всех указанных цветовых схем генерируются правила.
+ В $values не обязательно указывать все цветовые схемы, но white - обязательна
+ */
+@mixin wcag($property, $values, $important: false) {
+    #{$property}: map-get($values, white);
+
+    @each $colorScheme, $value in $values {
+        html[data-color="#{$colorScheme}"] & {
+            @if $important == true {
+                #{$property}: $value !important;
+            } @else {
+                #{$property}: $value
+            }
+
+        }
+    }
+}
+/*
+	Установить размер шрифта относительно базового.
+ 	$fontSize - Желаемое значение шрифта в px по-умолчанию.
+ 	$defaultFontSize - Базовый размер шрифта в px, относительно которого будет выполняться преобразование
+ 	В результате значение установится как относительное в rem, так, чтобы в пересчете на px получилось $fontSize.
+ 	Например для $fontSize = 20 (пикселей) и $defaultFontSize = 16 (пикселей) размер шрифта будет 1.25rem,
+ 	что в пересчете соответствует 20px.
+ */
+
+@mixin setFontSize($fontSize) {
+    font-size: #{$fontSize/$defaultFontSize}rem;
+}
+
+/* Стили для активного элемента (навигация, табы) */
+@mixin activeElement() {
+    background: #ffa;
+    color: #bf1722;
+}
+/* Переменные со значениями для разных цветовых схем */
+
+/* Границы блоков */
+$borderColorsWcag: (white: #aaa, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* "основной" фон */
+$firstBackgroundColorsWcag: (white: #fff, black: #1d1d1d, blue: #06066b, beige: #f7f3d6, brown: #352518);
+
+/* "Дополнительный" фон, чтобы выделять блоки на фоне основного */
+$secondBackgroundColorsWcag: (white: #f5f5f5, black: #000, blue: #0c0c4e, beige: #fbf2af, brown: #2b1d11);
+
+/* Ссылки */
+$linkColorsWcag: (white: #222, black: #fff, blue: #ff0, beige: #111, brown: #9bff00);
+$linkInverseColorsWcag: $secondBackgroundColorsWcag;
+
+/* Текст */
+$textColorsWcag: (white: #555, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* Подчеркивания ссылок */
+$linkBorderColorsWcag: (white: #0000ff, black: #ccc, blue: #cc0, beige: #444, brown: #aad469);
+
+/* Инвертированный текст */
+$textInvertColorsWcag: $firstBackgroundColorsWcag;
+
+/* Инвертированный фон */
+$invertBackgroundColorsWcag: $textColorsWcag;
+
+/* Фон, цвет текста и outline границы элементов в фокусе */
+$focusBackgroundColorsWcag: (white: #fff02a, black: #fff02a, blue: #fff02a, beige: #fff02a, brown: #fff02a);
+$focusTextColorsWcag: (white: #111, black: #111, blue: #111, beige: #111, brown: #111);
+$focusOutlinesWcag: (white: 2px solid #0000ff, black: 2px solid #ccc, blue: 2px solid #cc0, beige: 2px solid #444, brown: 2px solid #aad469);
+
+/* Фон и цвет текста элементов при наведении */
+$hoverBackgroundColorsWcag: $focusBackgroundColorsWcag;
+$hoverTextColorsWcag: $focusTextColorsWcag;
+$hoverOutlinesWcag: $focusOutlinesWcag;
+
+
+$defaultFontSize: 16;
+$defaultLineHeight: 1.25;
+
+$transparentPixel: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
+
+.tabs {
+    > [role="tablist"] {
+        margin: 0;
+        padding: 0;
+
+        > [role="tab"] {
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid;
+            border-bottom: none;
+
+            &[aria-selected="true"] {
+                padding-top: 13px;
+                border-bottom: 1px solid;
+                margin-bottom: -1px;
+                @include wcag(border-bottom-color, $firstBackgroundColorsWcag);
+                @include activeElement();
+            }
+
+            &[aria-selected="false"] {
+                @include wcag(background-color, $secondBackgroundColorsWcag);
+            }
+
+        }
+    }
+
+    > [role="tabpanel"] {
+        padding: 20px;
+        border: 1px solid;
+
+        &[aria-hidden="true"] {
+            display: none !important;
+        }
+    }
+}
+/* Важный стиль не только для панели, но и для проекта в целом */
+[aria-hidden="true"] {
+    display: none !important;
+}
+
+/*WCAG-PANEL*/
+.wcag-panel {
+    position: relative;
+
+    font-size: 18px;
+    font-family: 'Arial', 'sans-serif';
+    line-height: 24px;
+
+    border-bottom: 1px solid rgba(107, 107, 107, 0.5);
+    background-color: #e8e8e8;
+
+    box-sizing: border-box;
+    z-index: 999;
+    letter-spacing: normal;
+    color: #000;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    &__wrapper {
+        margin: 0 auto;
+        max-width: 980px;
+        padding: 17px 0;
+    }
+
+    /* Строки с отступом между собой, на случай, если их будет несколько */
+    &__row {
+        position: relative;
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+
+    /* Скрытый блок с ссылкой, которая отображается только если сфокусировать элемент с клавиатуры */
+    &__hidden-control {
+        position: absolute;
+        right: 100%;
+        width: 150px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        a:not(:focus) {
+            opacity: 0;
+        }
+    }
+
+    /* Колонки с управляющими элементами */
+    &__col {
+        display: inline-block;
+        vertical-align: bottom;
+        padding: 0 11px;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+        &_cont-link {
+            vertical-align: bottom;
+            padding-bottom: 8px;
+        }
+    }
+
+    /* Колонка с настройками */
+    &__settings {
+        float: right;
+        margin-top: 27px;
+    }
+
+    /* Элемент-контейнер переключаетелей */
+    &__switcher {
+        font-size: 0;
+        overflow: hidden;
+        border: 1px solid black !important;
+        border-radius: 3px;
+    }
+
+    &__switcher-label {
+        vertical-align: baseline;
+        margin-bottom: 3px;
+        display: inline-block;
+    }
+
+    &__switcher-btn {
+        padding: 0 10px;
+        height: 38px;
+        font-weight: normal;
+        margin-bottom: 0;
+
+        background-color: #fff;
+        cursor: pointer;
+
+        font-size: 18px;
+        line-height: 38px;
+        border: 0;
+        display: inline-block;
+        position: relative;
+
+        &:not(:last-child) {
+            border-right: 1px solid black;
+        }
+
+        &:focus {
+            background: #000 !important;
+            color: #fff !important;
+            box-shadow: inset 0 0 0 2px #ffa;
+        }
+    }
+
+    /* Кнопка переключения выпадающего меню */
+    &__dropdown-toggle {
+        position: relative;
+        padding: 0 27px 0 10px;
+        height: 36px;
+        line-height: 36px;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            margin-top: -2px;
+
+            width: 0;
+            height: 0;
+
+            border-left: 6px solid transparent;
+            border-top: 5px solid black;
+            border-right: 6px solid transparent;
+        }
+
+        &:focus:after {
+            border-top-color: white;
+        }
+
+        &[aria-expanded="true"] {
+            background: black;
+            color: white;
+        }
+
+        &[aria-expanded="true"]:after {
+            border-top: 0;
+            border-bottom: 5px solid white;
+        }
+    }
+
+    &__dropdown {
+        margin: 0;
+
+        padding: 10px 0;
+        box-sizing: border-box;
+        width: 100%;
+
+        font-size: 18px;
+        text-align: left;
+        list-style: none;
+
+        background-color: #f3f3f3;
+        background-clip: padding-box;
+        border: 1px solid #ccc !important;
+        outline: none !important;
+
+        z-index: 1000;
+    }
+
+    &__flag-button {
+        font-size: 18px;
+        line-height: 38px;
+        text-align: center;
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 7px;
+        }
+    }
+
+    /* Ссылки в шапке сайта. Для них используем !important, чтобы стили сайта не влияли на отображение */
+    &__default-link {
+        font-size: 18px;
+        line-height: 20px;
+        color: black !important; //Чтобы стили сайта не переопределяли этот
+        text-decoration: none !important;
+        background: transparent;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom-width: 1px;
+        border-color: #0000FF !important;
+
+        &:focus {
+            background: transparent !important;
+            outline-color: #0000ff !important;
+        }
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        /* "Скрываем" их таким образом, а не {display: none} чтобы focus с клавиатуры работал */
+        position: absolute;
+        left: -99999px;
+
+        &:checked + .wcag-panel__switcher-btn {
+            color: white;
+            background-color: black;
+        }
+
+        &:focus + .wcag-panel__switcher-btn {
+            color: white;
+            background: black;
+            box-shadow: inset 0 0 0 2px #ffa;
+            outline: 0;
+        }
+    }
+}
+
+
+/*FLAG-BUTTON*/
+
+.flag-button {
+    position: relative;
+    width: 31px;
+    height: 38px;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1px solid #000 !important;
+
+    input:focus + & {
+        box-shadow: inset 0 0 0 2px #ffa;
+        background: black;
+        color: white;
+    }
+
+    /* Красные точки на выбранных кнопках */
+    &:before,
+    &:after {
+        display: none;
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: 11px;
+
+        width: 8px;
+        height: 8px;
+
+        background: #fe0d0d;
+        border-radius: 50%;
+
+        input:checked + & {
+            display: block;
+        }
+    }
+
+    &:after {
+        bottom: -3px;
+        top: auto;
+    }
+
+    &_white {
+        background: #fff;
+    }
+
+    &_black {
+        color: #fff;
+        background: #000;
+    }
+
+    &_blue {
+        background: #0000ff;
+        color: #ffff00;
+    }
+
+    &_beige {
+        background: #f7f3d6;
+        color: #4d4b43;
+    }
+
+    &_brown {
+        background: #3b2716;
+        color: #a9e44d;
+    }
+}

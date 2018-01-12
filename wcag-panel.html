@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Панель ВДС</title>
+
+    <link rel="stylesheet" href="/common.css">
+    <link rel="stylesheet" href="/accessibility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/themes/prism.min.css">
+</head>
+<body>
+
+    
+    <form class="wcag-panel" id="wcag-panel" name="wcagPanel">
+
+    <!-- Панель основных настроек -->
+    <div class="wcag-panel__wrapper">
+        <div class="wcag-panel__row">
+            <!-- Скрытая ссылка перехода к содержанию страницы, появляющаяся только при навигации с клавиатуры -->
+            <div class="wcag-panel__hidden-control">
+                <a href="#main-content" id="anchor-link" class="wcag-panel__default-link" aria-label="Перейти к основному содержанию">Спуститься к содержанию</a>
+            </div>
+
+            <!-- Основные настройки панели -->
+            <div>
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Масштаб шрифта</label>
+                    <div class="wcag-panel__switcher">
+                        <input type="radio" checked name="fontsize" value="normal" id="fontsize-normal">
+                        <label class="wcag-panel__switcher-btn" aria-label="нормальный размер шрифта" for="fontsize-normal">
+                            100%
+                        </label>
+
+                        <input type="radio" name="fontsize" value="big" id="fontsize-big">
+                        <label class="wcag-panel__switcher-btn" aria-label="средний размер шрифта" for="fontsize-big">
+                            150%
+                        </label>
+
+                        <input type="radio" name="fontsize" value="large" id="fontsize-large">
+                        <label class="wcag-panel__switcher-btn" aria-label="большой размер шрифта" for="fontsize-large">
+                            200%
+                        </label>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Цвет</label>
+
+                    <div>
+                        <input type="radio" checked name="color" value="white" id="color-white">
+                        <label for="color-white" class="wcag-panel__flag-button flag-button flag-button_white" aria-label="белая цветовая схема">Б</label>
+
+                        <input type="radio" name="color" value="black" id="color-black">
+                        <label for="color-black" class="wcag-panel__flag-button flag-button flag-button_black" aria-label="черная цветовая схема">Ч</label>
+
+                        <input type="radio" name="color" value="blue" id="color-blue">
+                        <label for="color-blue" class="wcag-panel__flag-button flag-button flag-button_blue" aria-label="голубая цветовая схема">Г</label>
+
+                        <input type="radio" name="color" value="beige" id="color-beige">
+                        <label for="color-beige" class="wcag-panel__flag-button flag-button flag-button_beige" aria-label="бежевая цветовая схема">Б</label>
+
+                        <input type="radio" name="color" value="brown" id="color-brown">
+                        <label for="color-brown" class="wcag-panel__flag-button flag-button flag-button_brown" aria-label="коричневая цветовая схема">К</label>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Изображения</label>
+
+                    <div class="wcag-panel__switcher">
+                        <input type="radio" checked name="images" value="on" id="images-on">
+                        <label class="wcag-panel__switcher-btn" aria-label="Изображения включены" for="images-on">
+                            Вкл
+                        </label>
+
+                        <input type="radio" name="images" value="off" id="images-off">
+                        <label class="wcag-panel__switcher-btn" aria-label="Изображения отключены" for="images-off">
+                            Выкл
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="wcag-panel__settings wcag-panel__switcher">
+                    <button class="wcag-panel__dropdown-toggle wcag-panel__switcher-btn"
+                            aria-label="Дополнительные настройки"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            data-wcag-panel="dropdown-toggle">
+                        Настройки
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Выпадающая панель с дополнительными настройками -->
+    <div class="wcag-panel__dropdown"
+         id="wcagDropdownMenu"
+         aria-expanded="false"
+         aria-hidden="true"
+         data-wcag-panel="dropdown">
+        <div class="wcag-panel__wrapper">
+
+            <div class="wcag-panel__row">
+
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Интервал между буквами</label>
+                    <div class="wcag-panel__switcher wcag-panel__switcher_double">
+                        <input type="radio" name="kerning" value="normal" checked id="kerning-normal">
+                        <label class="wcag-panel__switcher-btn" aria-label="нормальный межбуквенный интервал" for="kerning-normal">
+                            Нормальный
+                        </label>
+
+                        <input type="radio" name="kerning" value="big" id="kerning-big">
+                        <label class="wcag-panel__switcher-btn" aria-label="увеличенный межбуквенный интервал" for="kerning-big">
+                            Увеличенный
+                        </label>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col">
+                    <div class="wcag-panel__switcher wcag-panel__reset">
+                        <button class="wcag-panel__switcher-btn"
+                                aria-label="Вернуть стандартные настройки"
+                                data-wcag-panel="reset-config">
+                            Сбросить настройки
+                        </button>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col wcag-panel__col_cont-link">
+                    <button class="wcag-panel__default-link"
+                            aria-label="закрыть панель"
+                            data-wcag-panel="dropdown-close">
+                        Закрыть панель
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+<!-- Рекомендуем в этом месте вызывать скрипт панели ВДС, не дожидаясь полной загрузки DOM -->
+    <header class="header" data-wcag="alternative-background">
+        <div class="content-wrapper">
+            <h1 class="h1">
+                Панель с настройками версии сайта для слабовидящих (ВДС)            </h1>
+
+            
+
+
+<nav class="nav" role="navigation">
+    <ul>
+        <li class="nav__item">
+            <a href="index.html" class="nav__link">Getting Started</a>
+        </li>
+        <li class="nav__item nav__item_active">
+            <a href="wcag-panel.html" class="nav__link">Панель ВДС</a>
+        </li>
+        <li class="nav__item">
+            <a href="components.html" class="nav__link">UI компоненты</a>
+        </li>
+        <li class="nav__item">
+            <a href="wcag-config.html" class="nav__link">Конфигурация</a>
+        </li>
+        <li class="nav__item">
+            <a href="about.html" class="nav__link">О проекте</a>
+        </li>
+    </ul>
+</nav>
+        </div>
+    </header>
+
+
+    <div class="content-wrapper page-content">
+        
+    <div class="typography">
+        <h2>Как начать пользоваться?</h2>
+        <ol>
+            <li>Ознакомиться с&nbsp;функционирующей панелью на&nbsp;данной странице.</li>
+            <li>Прочитать описание работы панели ниже.</li>
+            <li>Ознакомиться с&nbsp;версткой панели. По&nbsp;желанию можно изменить формулировки или состав и&nbsp;порядок управляющих элементов.</li>
+            <li>Добавить в&nbsp;свой проект готовые к&nbsp;релизу файлы <code>css, js</code> (или их&nbsp;минифицированные варианты), либо включить файлы <code>.scss, source.js</code> в&nbsp;свою сборку frontend.</li>
+        </ol>
+
+        <h3>Что делает панель ВДС?</h3>
+        <p>При изменении настроек панели она меняет <code>data-*</code> атрибуты у&nbsp;тега <code>html</code> в&nbsp;зависимости от&nbsp;выбранных значений управляющих элементов панели.</p>
+        <p>Именем <code>data-*</code> атрибута становится имя выбранного управляющего элемента <code>input[type="radio"]</code> из&nbsp;соответствующей группы. Так, например, если выбран <code class="convert"><input type="radio" name="fontsize" value="very-large" checked="true"></code>, то&nbsp;для тега <code>html</code> добавится атрибут <code>data-fontsize="very-large"</code>.</p>
+        <p><b>Обратите внимание</b>, что панель сама по&nbsp;себе только сохраняет и&nbsp;восстанавливает конфигурацию и&nbsp;выставляет ее&nbsp;в&nbsp;виде <code>data-*</code> атрибутов тега <code>html</code>, но&nbsp;никак не&nbsp;оказывыает прямого влияния на&nbsp;визульное отображение страницы. Для реализации ответной реакции интерфейса на&nbsp;изменение конфигурации, вы&nbsp;можете поспользоваться <a href="wcag-config.html">предоставляемой нами конфигурацией</a>, или&nbsp;же написать свое поведение интерфейса для своего проекта.</p>
+        <p>Выбранное состояние панель сохраняет в <code>localStorage</code> (локальное хранилище) вашего браузера и&nbsp;восстанавливает его сразу&nbsp;же, как новая страница загружается. Мы&nbsp;рекомендуем включить выполнение JavaScript панели ВДС сразу&nbsp;же после верстки панели, не&nbsp;дожидаясь окончательной загрузки <code>DOM</code>, чтобы в&nbsp;момент загрузки DOM и&nbsp;выполнения других скриптов панель уже восстановила свое состояние и&nbsp;пользователь сразу видел страницу в&nbsp;той конфигурации, которая у&nbsp;него выбрана в&nbsp;панели.</p>
+        <p>Панель ВДС поддерживает браузеры, начиная с&nbsp;IE&nbsp;9+</p>
+    </div>
+
+    
+    
+
+    
+        <h4 class="h3">Ссылки для загрузок</h4>
+    
+
+    
+        <p>
+            
+            
+                Файл стилей
+            
+            &ndash;
+            <a href="/components/wcag-panel/wcag-panel.css" target="_blank">
+                 wcag-panel.css
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Минифицированный файл стилей
+            
+            &ndash;
+            <a href="/components/wcag-panel/wcag-panel.min.css" target="_blank">
+                 wcag-panel.min.css
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Файл стилей оформленный в препроцессоре SASS
+            
+            &ndash;
+            <a href="/components/wcag-panel/wcag-panel.scss" target="_blank">
+                 wcag-panel.scss
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Скрипт для компонента
+            
+            &ndash;
+            <a href="/components/wcag-panel/wcag-panel.js" target="_blank">
+                 wcag-panel.js
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Минифицированный скрипт для компонента
+            
+            &ndash;
+            <a href="/components/wcag-panel/wcag-panel.min.js" target="_blank">
+                 wcag-panel.min.js
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Исходный скрипт для компонента
+            
+            &ndash;
+            <a href="/components/wcag-panel/wcag-panel.source.js" target="_blank">
+                 wcag-panel.source.js
+            </a>
+        </p>
+    
+
+
+    <div class="docs-example">
+        <div class="docs-example__view">
+            HTML разметка панели ВДС, которую вы видите на сайте
+        </div>
+        
+        
+        <pre class="docs-example__code">
+            <code class="language-html convert">
+<form class="wcag-panel" id="wcag-panel" name="wcagPanel">
+
+    <!-- Панель основных настроек -->
+    <div class="wcag-panel__wrapper">
+        <div class="wcag-panel__row">
+            <!-- Скрытая ссылка перехода к содержанию страницы, появляющаяся только при навигации с клавиатуры -->
+            <div class="wcag-panel__hidden-control">
+                <a href="#main-content" id="anchor-link" class="wcag-panel__default-link" aria-label="Перейти к основному содержанию">Спуститься к содержанию</a>
+            </div>
+
+            <!-- Основные настройки панели -->
+            <div>
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Масштаб шрифта</label>
+                    <div class="wcag-panel__switcher">
+                        <input type="radio" checked name="fontsize" value="normal" id="fontsize-normal">
+                        <label class="wcag-panel__switcher-btn" aria-label="нормальный размер шрифта" for="fontsize-normal">
+                            100%
+                        </label>
+
+                        <input type="radio" name="fontsize" value="big" id="fontsize-big">
+                        <label class="wcag-panel__switcher-btn" aria-label="средний размер шрифта" for="fontsize-big">
+                            150%
+                        </label>
+
+                        <input type="radio" name="fontsize" value="large" id="fontsize-large">
+                        <label class="wcag-panel__switcher-btn" aria-label="большой размер шрифта" for="fontsize-large">
+                            200%
+                        </label>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Цвет</label>
+
+                    <div>
+                        <input type="radio" checked name="color" value="white" id="color-white">
+                        <label for="color-white" class="wcag-panel__flag-button flag-button flag-button_white" aria-label="белая цветовая схема">Б</label>
+
+                        <input type="radio" name="color" value="black" id="color-black">
+                        <label for="color-black" class="wcag-panel__flag-button flag-button flag-button_black" aria-label="черная цветовая схема">Ч</label>
+
+                        <input type="radio" name="color" value="blue" id="color-blue">
+                        <label for="color-blue" class="wcag-panel__flag-button flag-button flag-button_blue" aria-label="голубая цветовая схема">Г</label>
+
+                        <input type="radio" name="color" value="beige" id="color-beige">
+                        <label for="color-beige" class="wcag-panel__flag-button flag-button flag-button_beige" aria-label="бежевая цветовая схема">Б</label>
+
+                        <input type="radio" name="color" value="brown" id="color-brown">
+                        <label for="color-brown" class="wcag-panel__flag-button flag-button flag-button_brown" aria-label="коричневая цветовая схема">К</label>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Изображения</label>
+
+                    <div class="wcag-panel__switcher">
+                        <input type="radio" checked name="images" value="on" id="images-on">
+                        <label class="wcag-panel__switcher-btn" aria-label="Изображения включены" for="images-on">
+                            Вкл
+                        </label>
+
+                        <input type="radio" name="images" value="off" id="images-off">
+                        <label class="wcag-panel__switcher-btn" aria-label="Изображения отключены" for="images-off">
+                            Выкл
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="wcag-panel__settings wcag-panel__switcher">
+                    <button class="wcag-panel__dropdown-toggle wcag-panel__switcher-btn"
+                            aria-label="Дополнительные настройки"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            data-wcag-panel="dropdown-toggle">
+                        Настройки
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Выпадающая панель с дополнительными настройками -->
+    <div class="wcag-panel__dropdown"
+         id="wcagDropdownMenu"
+         aria-expanded="false"
+         aria-hidden="true"
+         data-wcag-panel="dropdown">
+        <div class="wcag-panel__wrapper">
+
+            <div class="wcag-panel__row">
+
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Интервал между буквами</label>
+                    <div class="wcag-panel__switcher wcag-panel__switcher_double">
+                        <input type="radio" name="kerning" value="normal" checked id="kerning-normal">
+                        <label class="wcag-panel__switcher-btn" aria-label="нормальный межбуквенный интервал" for="kerning-normal">
+                            Нормальный
+                        </label>
+
+                        <input type="radio" name="kerning" value="big" id="kerning-big">
+                        <label class="wcag-panel__switcher-btn" aria-label="увеличенный межбуквенный интервал" for="kerning-big">
+                            Увеличенный
+                        </label>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col">
+                    <div class="wcag-panel__switcher wcag-panel__reset">
+                        <button class="wcag-panel__switcher-btn"
+                                aria-label="Вернуть стандартные настройки"
+                                data-wcag-panel="reset-config">
+                            Сбросить настройки
+                        </button>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col wcag-panel__col_cont-link">
+                    <button class="wcag-panel__default-link"
+                            aria-label="закрыть панель"
+                            data-wcag-panel="dropdown-close">
+                        Закрыть панель
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+<!-- Рекомендуем в этом месте вызывать скрипт панели ВДС, не дожидаясь полной загрузки DOM --></code>
+        </pre>
+    </div>
+    </div>
+
+    
+<script>
+    var escape = {
+        '<': '&lt',
+        '>': '&gt'
+    }
+
+    var converts = document.querySelectorAll('.convert');
+    converts.forEach(function (convert) {
+        var html = convert.innerHTML;
+//            html = html.replace(/  /g, '');
+        html = html.replace(/</g, '&lt');
+        html = html.replace(/>/g, '&gt');
+        convert.innerHTML = html;
+    });
+</script>
+
+<script src="/accessibility.min.js"></script>
+
+<script src="/site-components/prism/prism.source.js"></script>
+
+<script>
+    function FixedSidebar(sidebar) {
+        var sidebar = sidebar;
+        var offsetTop = sidebar.offsetTop;
+        var topPadding = 40;
+
+        window.addEventListener('scroll', function () {
+            setPosition(window.scrollY || window.pageYOffset || 0);
+        });
+
+        function setPosition(scroll) {
+            var isFixed = scroll + topPadding >= offsetTop;
+            sidebar.style.position = isFixed ? 'fixed' : '';
+            sidebar.style.top = isFixed ? topPadding+'px' : '';
+        }
+    }
+
+    var fixedSidebar = document.querySelector('[data-role="fixed-sidebar"]');
+    if (fixedSidebar) new FixedSidebar(fixedSidebar);
+</script>
+</body>
+</html>
