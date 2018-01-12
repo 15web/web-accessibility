@@ -5,9 +5,15 @@ Interface Components Library, designed by accessibility standards. Create a vers
 **Attention!**
 The stable version of the library under development.
 
+## [**View demo**](http://15web.github.io/web-accessibility/index.html)
+
+Read the documentation for information on the framework contents, templates and examples, and more.
+
 ## Getting started
 
-[Download the latest release.](https://github.com/15web/web-accessibility/archive/master.zip)
+[Download the latest release.](https://github.com/15web/web-accessibility/archive/master.zip)   
+
+Add files from `dist` catalog to your project:
 
 ```
 <link rel="stylesheet" href="accessibility.min.css">
@@ -17,36 +23,23 @@ The stable version of the library under development.
 <script src="accessibility.min.js"></script>
 ```
 
-Read the documentation for information on the framework contents, templates and examples, and more.
-
-___
 
 
-[**Default components**](http://15web.github.io/web-accessibility/docs/default.html) &nbsp;&nbsp;&nbsp; [**Additional components**](http://15web.github.io/web-accessibility/docs/additional.html) &nbsp;&nbsp;&nbsp; [**Template example**](http://15web.github.io/web-accessibility/docs/examples/sp/)
 
-___
+
+
 
 ## What's included
 
 ```
 dist/
 ├── accessibility.css
-├── accessibility.min.css
-├── accessibility.js
 └── accessibility.min.js
 ```
 
-## Last updates v0.0.1
+## Last updates v1.0.0
 
 * MVP published on GitHub.
-
-## Upcoming updates
-
-* Component design.
-* Screen readers testing.
-* Cross browser testing.
-* Code refactoring.
-* ...
 
 ## For Russia
 
@@ -55,9 +48,9 @@ dist/
 
 ## Copyright and license
 
-Copyright © 2016 [Studio 15](http://15web.ru)
+Copyright © [Studio 15](http://15web.ru), 2016 - 2018.   
 Code released under [the MIT license](https://github.com/twbs/bootstrap/blob/master/LICENSE).
 
 We use [BrowserStack](https://www.browserstack.com/) for cross browser testing.
 
-![BrowserStack](https://github.com/15web/web-accessibility/raw/master/browserstack_logo.png)
+![BrowserStack](http://15web.github.io/web-accessibility/images/browserstack_logo.png)
