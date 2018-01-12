@@ -1,35 +1,23 @@
-<header class="header" data-wcag="alternative-background">
-    <div class="content-wrapper">
-    <h1 class="h1">
-        Web Accessibility
-    </h1>
+{% set menu = [{
+title: 'Панель ВДС',
+link: 'wcag-panel.html'
+},{
+title: 'UI компоненты',
+link: 'index.html'
+},{
+title: 'Конфигурация',
+link: 'wcag-config.html'
+},{
+title: 'Пример контентной страницы',
+link: 'examples.html'
+},{
+title: 'О проекте',
+link: 'about.html'
+}] %}
 
-    {% set menu = [{
-        title: 'Панель ВДС',
-        link: 'wcag-panel'
-    },{
-        title: 'Базовые компоненты',
-        link: 'index'
-    },{
-        title: 'Конфигурация',
-        link: 'wcag-config'
-    },{
-        title: 'Пример контентной страницы',
-        link: 'examples'
-    },{
-        title: 'О проекте',
-        link: 'about'
-    }] %}
+{% set options = {
+    items: menu,
+    activeLink: activeLink ~ '.html'
+} %}
 
-    <nav class="nav">
-        <ul>
-            {% for item in menu %}
-                {% set itemClass = item.link == activeLink ? 'nav__item_active' : '' %}
-                <li class="nav__item {{ itemClass }}">
-                    <a href="{{ item.link }}.html" class="nav__link">{{ item.title }}</a>
-                </li>
-            {% endfor %}
-        </ul>
-    </nav>
-    </div>
-</header>
+{{ macros.nav(options) }}

@@ -22,7 +22,16 @@
      как страница загрузится #}
     {#<script src="/components/wcag-panel/wcag-panel.js"></script>#}
 
-    {% include 'main/menu.twig' with {activeLink: block('menu_link')} %}
+    <header class="header" data-wcag="alternative-background">
+        <div class="content-wrapper">
+            <h1 class="h1">
+                {% block main_title %}{% endblock %}
+            </h1>
+
+            {% include 'main/menu.twig' with {activeLink: block('menu_link')} %}
+        </div>
+    </header>
+
 
     <div class="content-wrapper page-content">
         {% block content %}
