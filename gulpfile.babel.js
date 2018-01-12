@@ -65,6 +65,7 @@ gulp.task('scripts', () => {
      */
     gulp.src(SETTINGS.path.src + '/**/*.js')
         .pipe(babel({
+            comments: false,
             presets: [["env" , {
                 "target": {
                     "browsers": ["> % 1"]
