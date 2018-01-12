@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}Web Accessibility{% endblock %}</title>
 
-    <link rel="stylesheet" href="/common.css">
-    <link rel="stylesheet" href="/accessibility.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="accessibility.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/themes/prism.min.css">
 </head>
 <body>
@@ -24,6 +24,8 @@
             </h1>
 
             {% include 'main/menu.twig' with {activeLink: block('menu_link')} %}
+
+            <p style="text-align: right">Посмотреть на <a href="https://github.com/15web/web-accessibility" target="_blank">github</a>.</p>
         </div>
     </header>
 

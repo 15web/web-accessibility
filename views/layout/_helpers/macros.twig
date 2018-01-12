@@ -1,6 +1,6 @@
 {# Список ссылок для загрузки файлов #}
 {% macro download_links(component, types, path, title) %}
-    {% set path = path|default('/components/' ~ component) %}
+    {% set path = path|default('components/' ~ component) %}
 
     {% if title %}
         <h4 class="h3">{{ title }}</h4>
