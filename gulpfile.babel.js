@@ -83,11 +83,21 @@ gulp.task('scripts', () => {
         .pipe(gulp.dest(SETTINGS.path.dist));
 });
 
+gulp.task('images', () => {
+
+    /**
+     * Собираем файлы из исходников в обычном и минифицированном варианте
+     */
+    gulp.src(SETTINGS.path.src + '/images/**/*.*')
+        .pipe(gulp.dest(SETTINGS.path.dist + '/images/'));
+});
+
 gulp.task('build', () => {
     runSequence(
         'twig',
         'scripts',
-        'sass'
+        'sass',
+        'images'
     );
 });
 
