@@ -1,5 +1,5 @@
-@import "mixins";
-@import "variables";
+@import "mixins.scss";
+@import "variables.scss";
 
 /* Конфиги для font-size */
 @each $key, $value in (normal: 1rem, big: 1.5rem, large: 2rem) {

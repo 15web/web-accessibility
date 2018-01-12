@@ -10,6 +10,8 @@ import twig from 'gulp-twig';
 import sass from 'gulp-sass';
 import rename from 'gulp-rename';
 import concat from 'gulp-concat';
+import stripCssComments from 'gulp-strip-css-comments';
+import cssimport from 'gulp-cssimport';
 
 import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
@@ -32,6 +34,7 @@ gulp.task('sass', () => {
         .pipe(sass({
             outputStyle: 'expanded'
         }).on('error', sass.logError))
+        .pipe(stripCssComments())
         .pipe(gulp.dest(SETTINGS.path.dist))
         .pipe(sass({
             outputStyle: 'compressed'
@@ -40,9 +43,11 @@ gulp.task('sass', () => {
         .pipe(gulp.dest(SETTINGS.path.dist));
 
     /**
-     * Копируем исходники в dist, чтобы дать возможность скачать их
+     * Копируем исходники в dist, чтобы дать возможность скачать их.
+     * Предварительно загружаем в исходники все импорты, чтобы человек не шел за ними непонятно куда
      */
     gulp.src(SETTINGS.path.src + '/**/*.scss')
+        .pipe(cssimport())
         .pipe(gulp.dest(SETTINGS.path.dist));
 });
 

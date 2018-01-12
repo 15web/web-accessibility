@@ -1,8 +1,8 @@
 // ==========================================================================
 // Tabs
 // ==========================================================================
-@import '../../common/mixins';
-@import '../../common/variables';
+@import '../../common/mixins.scss';
+@import '../../common/variables.scss';
 
 .tabs {
     > [role="tablist"] {
