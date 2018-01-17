@@ -1,4 +1,6 @@
 @import "../../common/wcag-config.scss";
+@import "../../common/mixins.scss";
+@import "../../common/variables.scss";
 
 .menu {
     display: flex;
@@ -10,18 +12,39 @@
     }
 
     > li {
-        margin-right: -1px;
+        margin-right: 10px;
+        position: relative;
         > a,
         > span {
             display: inline-block;
             padding: 10px;
             border: 1px solid;
+            @include wcag(background-color, $secondBackgroundColorsWcag);
+            border-radius: 4px;
+
             &[aria-current="page"] {
                 @include activeElement();
             }
 
             &[aria-expanded="false"] + ul {
                 display: none;
+            }
+        }
+    }
+
+    > li > ul {
+        position: absolute;
+        min-width: 100%;
+        padding: 20px;
+        @include wcag(background-color, $secondBackgroundColorsWcag);
+        border: 1px solid;
+        box-sizing: border-box;
+        border-radius: 4px;
+        z-index: 2;
+
+        > li {
+            &:not(:last-child) {
+                margin-bottom: 0.5rem;
             }
         }
     }

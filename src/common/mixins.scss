@@ -38,6 +38,6 @@
 
 /* Стили для активного элемента (навигация, табы) */
 @mixin activeElement() {
-    background: #ffa;
-    color: #bf1722;
+    background: #ffa !important;
+    color: #bf1722 !important;
 }

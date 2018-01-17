@@ -1,7 +1,15 @@
 class Menu {
-    constructor(menu) {
+    constructor(menu, options) {
         this.menu = menu;
         this.popupLinks = this.menu.querySelectorAll('[aria-haspopup="true"]');
+
+        this.config = {
+            /* Запретить hover эффекты? */
+            disableHover: options && options.disableHover || false,
+            /* Сколько ждать, преждем чем скрыть меню в событии mouseleave */
+            hideTimeout: options && options.hideTimeout || 0,
+        };
+
         if (!this.popupLinks.length) {
             return;
         }
@@ -22,19 +30,37 @@ class Menu {
         });
 
         [].forEach.call(this.popupLinks, link => {
-            // На hover открываем меню
-            link.parentElement.addEventListener('mouseenter', event => {
-                this.openSubmenu(link);
-            });
 
-            // На unhover закрываем
-            link.parentElement.addEventListener('mouseleave', event => {
-                this.closeSubmenu(link);
-            });
+            /**
+             * Если hover эффекты разрешены, то пользуемся ими.
+             * Если запрещены, то раскрываем меню по клику
+             */
+            if (!this.config.disableHover) {
+                let hideMenuTimer;
+                // На hover открываем меню
+                link.parentElement.addEventListener('mouseenter', event => {
+                    this.openSubmenu(link);
+                    clearTimeout(hideMenuTimer);
+                });
 
-            link.addEventListener('click', event => {
-                this.toggleSubmenu(link);
-            });
+                // На unhover закрываем
+                link.parentElement.addEventListener('mouseleave', event => {
+                    hideMenuTimer = setTimeout(() => {
+                        this.closeSubmenu(link);
+                    }, this.config.hideTimeout)
+                });
+
+                /**
+                 * Отрабатываем "клик" touch устройствами
+                 */
+                link.addEventListener('touchend', event => {
+                    this.toggleSubmenu(link);
+                });
+            } else {
+                link.addEventListener('click', event => {
+                    this.toggleSubmenu(link);
+                });
+            }
 
             link.addEventListener('keydown', event => {
                 // Нажали Enter и это не ссылка
@@ -64,7 +90,7 @@ class Menu {
         });
 
         /**
-         * Клик вне пункта меню закрывает его.
+         * Клик вне пункта меню всегда закрывает его.
          */
         document.addEventListener('click', event => {
             [].forEach.call(this.popupLinks, link => {
@@ -98,4 +124,7 @@ class Menu {
 
 const menus = document.querySelectorAll('[data-role="menu"]');
 
-[].forEach.call(menus, menu => new Menu(menu));
+[].forEach.call(menus, menu => new Menu(menu, {
+    disableHover: menu.hasAttribute('data-disable-hover'),
+    hideTimeout: menu.hasAttribute('data-hide-timeout') ? 300 : 0
+}));
