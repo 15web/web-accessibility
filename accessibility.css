@@ -895,15 +895,15 @@ html[data-color="brown"] .button {
 }
 
 .nav__item_active > .nav__link {
-  background: #ffa;
-  color: #bf1722;
+  background: #ffa !important;
+  color: #bf1722 !important;
 }
 
 .collapse__content {
   margin-top: 10px;
 }
 
-[data-role="collapse"] [aria-expanded=false] {
+[data-role="collapse"] [hidden] {
   display: none;
 }
 
@@ -1020,8 +1020,8 @@ html[data-color="brown"] .alert {
   border-bottom: 1px solid;
   margin-bottom: -1px;
   border-bottom-color: #fff;
-  background: #ffa;
-  color: #bf1722;
+  background: #ffa !important;
+  color: #bf1722 !important;
 }
 
 html[data-color="white"] .tabs > [role="tablist"] > [role="tab"][aria-selected="true"] {
@@ -1353,4 +1353,124 @@ input:checked + .flag-button:before, input:checked + .flag-button:after {
 .flag-button_brown {
   background: #3b2716;
   color: #a9e44d;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu {
+  display: flex;
+}
+
+.menu, .menu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.menu > li {
+  margin-right: 10px;
+  position: relative;
+}
+
+.menu > li > a,
+.menu > li > span {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+html[data-color="white"] .menu > li > a, html[data-color="white"]
+.menu > li > span {
+  background-color: #f5f5f5;
+}
+
+html[data-color="black"] .menu > li > a, html[data-color="black"]
+.menu > li > span {
+  background-color: #000;
+}
+
+html[data-color="blue"] .menu > li > a, html[data-color="blue"]
+.menu > li > span {
+  background-color: #0c0c4e;
+}
+
+html[data-color="beige"] .menu > li > a, html[data-color="beige"]
+.menu > li > span {
+  background-color: #fbf2af;
+}
+
+html[data-color="brown"] .menu > li > a, html[data-color="brown"]
+.menu > li > span {
+  background-color: #2b1d11;
+}
+
+.menu > li > a[aria-current="page"],
+.menu > li > span[aria-current="page"] {
+  background: #ffa !important;
+  color: #bf1722 !important;
+}
+
+.menu > li > a[aria-expanded="false"] + ul,
+.menu > li > span[aria-expanded="false"] + ul {
+  display: none;
+}
+
+.menu > li > ul {
+  position: absolute;
+  min-width: 100%;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid;
+  box-sizing: border-box;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+html[data-color="white"] .menu > li > ul {
+  background-color: #f5f5f5;
+}
+
+html[data-color="black"] .menu > li > ul {
+  background-color: #000;
+}
+
+html[data-color="blue"] .menu > li > ul {
+  background-color: #0c0c4e;
+}
+
+html[data-color="beige"] .menu > li > ul {
+  background-color: #fbf2af;
+}
+
+html[data-color="brown"] .menu > li > ul {
+  background-color: #2b1d11;
+}
+
+.menu > li > ul > li:not(:last-child) {
+  margin-bottom: 0.5rem;
 }
