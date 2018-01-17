@@ -22,7 +22,7 @@
 <script>
     function FixedSidebar(sidebar) {
         var sidebar = sidebar;
-        var offsetTop = sidebar.getBoundingClientRect().top;
+        var offsetTop = sidebar.getBoundingClientRect().top + (window.scrollY || window.pageYOffset || 0);
         var topPadding = 40;
 
         window.addEventListener('scroll', function () {
