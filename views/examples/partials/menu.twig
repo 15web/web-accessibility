@@ -1,0 +1,44 @@
+{% set menu = [{
+    title: 'Ссылка 1',
+    link: '#link-1'
+},{
+    title: 'Ссылка 2',
+    link: '#link-2'
+},{
+    title: 'Пункт с выпадающим меню',
+    subitems: [{
+        title: 'Подменю 1',
+        link: 'index.html#1'
+        },{
+        title: 'Подменю 2',
+        link: 'index.html#2'
+        },{
+        title: 'Подменю 3',
+        link: 'index.html#3'
+    }]
+},{
+    title: 'Ссылка с выпадающим меню',
+    link: '#link-4',
+    subitems: [{
+        title: 'Подменю 1',
+        link: 'index.html#1'
+        },{
+        title: 'Подменю 2',
+        link: 'index.html#2'
+        },{
+        title: 'Подменю 3',
+        link: 'index.html#3'
+    }]
+},{
+    title: 'Ссылка 5',
+    link: '#link-5',
+}] %}
+
+{% set options = {
+    items: menu,
+    activeLink: '#link-4'
+} %}
+
+{{ macros.download_links('menu', ['css', 'min.css', 'scss', 'js', 'min.js'], null, 'Ссылки для загрузок') }}
+
+{{ macros.html(macros.mainMenu(options)) }}

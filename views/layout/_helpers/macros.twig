@@ -80,3 +80,18 @@ items в формате
     </pre>
 </div>
 {% endmacro %}
+
+
+{% macro mainMenu(options) %}
+<nav role="navigation">
+    <ul class="menu" role="menubar" data-role="menu">{% for item in options.items %}{% set isActive = options.activeLink == item.link %}
+        <li>{% if item.link %}
+            <a href="{{ item.link }}" {{ isActive ? 'aria-current="page"' : '' }} {{ item.subitems ? 'aria-haspopup="true" aria-expanded="false"' : '' }} role="menuitem">{{ item.title }}{{ item.subitems ? ' +' : '' }}</a>{% else %}
+            <span {{ item.subitems ? 'aria-haspopup="true" aria-expanded="false"' : '' }} role="menuitem" tabindex="0">{{ item.title }}{{ item.subitems ? ' +' : '' }}</span>{% endif %}{% if item.subitems %}
+            <ul role="menu">{% for subitem in item.subitems %}
+                <li><a href="{{ subitem.link }}" role="menuitem">{{ subitem.title }}</a></li>{% endfor %}
+            </ul>{% endif %}
+        </li>{% endfor %}
+    </ul>
+</nav>
+{% endmacro %}
