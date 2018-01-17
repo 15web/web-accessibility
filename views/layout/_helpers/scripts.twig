@@ -6,7 +6,7 @@
     }
 
     var converts = document.querySelectorAll('.convert');
-    converts.forEach(function (convert) {
+    [].forEach.call(converts, function (convert) {
         var html = convert.innerHTML;
 //            html = html.replace(/  /g, '');
         html = html.replace(/</g, '&lt');
@@ -22,7 +22,7 @@
 <script>
     function FixedSidebar(sidebar) {
         var sidebar = sidebar;
-        var offsetTop = sidebar.offsetTop;
+        var offsetTop = sidebar.getBoundingClientRect().top + (window.scrollY || window.pageYOffset || 0);
         var topPadding = 40;
 
         window.addEventListener('scroll', function () {

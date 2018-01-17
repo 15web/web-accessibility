@@ -1,21 +1,25 @@
-{% macro collapse() %}
+{% macro collapse(isOpen) %}
 <div class="collapse" data-role="collapse">
-    <button class="button" aria-controls="elemToControl">
-        Кликните, чтобы отобразить скрытый контент
+    <button class="button" aria-controls="elemToControl" aria-expanded="{{ isOpen ? 'true' : 'false' }}">
+        Скрыть/раскрыть контент ({{ isOpen ? 'Раскрыт' : 'Скрыт' }} по-умолчанию)
     </button>
-    <div id="elemToControl" class="collapse__content" aria-expanded="false">
-        Скрытый контент
+    <div id="elemToControl" class="collapse__content" {{ isOpen ? ' ' : 'hidden'}}>
+        {{ isOpen ? 'Раскрытый' : 'Скрытый' }} по-умолчанию контент
     </div>
 </div>
 {% endmacro %}
 
 {% import _self as view %}
 
-<p>Для того, чтобы пользователь с&nbsp;помощью экранных читалок мог &laquo;услышать&raquo; изменение состояния скрытого контента, используется атрибут <code>aria-expanded</code> равный true для раскрытого состояния и&nbsp;false для закрытого.</p>
+<p>Для того, чтобы пользователь с&nbsp;помощью экранных читалок мог &laquo;услышать&raquo; изменение состояния скрытого контента, используется атрибут <code>aria-expanded</code> равный true для раскрытого состояния контента и&nbsp;false для закрытого.</p>
+<p>Атрибут <code>aria-expanded</code> указывает, что сам элемент или его контент, id которого указан в <code>aria-controls</code>, раскрыт или скрыт.</p>
 <p>У&nbsp;контента нужно указать уникальный <code>id</code>.</p>
 <p>У&nbsp;элемента, который будет раскрывать контент, нужно указать атрибут <code>aria-controls</code> равный значению <code>id</code> скрываемого контента.</p>
-<p>Атрибут data-role=&quot;collapse&quot; обязателен. По&nbsp;нему JavaScript определяет, что это раскрывающийся список.</p>
+<p>Для раскрытого по-умолчанию контента установите атрибут <code>aria-expanded="true"</code> и уберите <code>hidden</code> утрибут у контента.</p>
+<p>Атрибут data-role=&quot;collapse&quot; является кастомным и обязателен. По&nbsp;нему JavaScript определяет, что это раскрывающийся список и навешивает обработчики.</p>
 
 {{ macros.download_links('collapse', ['css', 'min.css', 'scss', 'js', 'min.js'], null, 'Ссылки для загрузок') }}
 
 {{ macros.html(view.collapse()) }}
+<br>
+{{ macros.html(view.collapse(true)) }}
