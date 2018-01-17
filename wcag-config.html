@@ -154,22 +154,22 @@
             
 
 
-<nav class="nav" role="navigation">
-    <ul>
-        <li class="nav__item">
-            <a href="index.html" class="nav__link">Getting Started</a>
+<nav role="navigation">
+    <ul class="menu" role="menubar" data-role="menu"  >
+        <li>
+            <a href="index.html"   role="menuitem">Getting Started</a>
         </li>
-        <li class="nav__item">
-            <a href="wcag-panel.html" class="nav__link">Панель ВДС</a>
+        <li>
+            <a href="wcag-panel.html"   role="menuitem">Панель ВДС</a>
         </li>
-        <li class="nav__item">
-            <a href="components.html" class="nav__link">UI компоненты</a>
+        <li>
+            <a href="components.html"   role="menuitem">UI компоненты</a>
         </li>
-        <li class="nav__item nav__item_active">
-            <a href="wcag-config.html" class="nav__link">Конфигурация</a>
+        <li>
+            <a href="wcag-config.html" aria-current="page"  role="menuitem">Конфигурация</a>
         </li>
-        <li class="nav__item">
-            <a href="about.html" class="nav__link">О проекте</a>
+        <li>
+            <a href="about.html"   role="menuitem">О проекте</a>
         </li>
     </ul>
 </nav>
@@ -305,7 +305,7 @@
     }
 
     var converts = document.querySelectorAll('.convert');
-    converts.forEach(function (convert) {
+    [].forEach.call(converts, function (convert) {
         var html = convert.innerHTML;
 //            html = html.replace(/  /g, '');
         html = html.replace(/</g, '&lt');
@@ -321,7 +321,7 @@
 <script>
     function FixedSidebar(sidebar) {
         var sidebar = sidebar;
-        var offsetTop = sidebar.offsetTop;
+        var offsetTop = sidebar.getBoundingClientRect().top + (window.scrollY || window.pageYOffset || 0);
         var topPadding = 40;
 
         window.addEventListener('scroll', function () {

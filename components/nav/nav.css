@@ -37,6 +37,6 @@
 }
 
 .nav__item_active > .nav__link {
-  background: #ffa;
-  color: #bf1722;
+  background: #ffa !important;
+  color: #bf1722 !important;
 }

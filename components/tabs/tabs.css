@@ -41,8 +41,8 @@
   border-bottom: 1px solid;
   margin-bottom: -1px;
   border-bottom-color: #fff;
-  background: #ffa;
-  color: #bf1722;
+  background: #ffa !important;
+  color: #bf1722 !important;
 }
 
 html[data-color="white"] .tabs > [role="tablist"] > [role="tab"][aria-selected="true"] {

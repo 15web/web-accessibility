@@ -1,1 +1,1 @@
-.collapse__content{margin-top:10px}[data-role="collapse"] [aria-expanded=false]{display:none}
+.collapse__content{margin-top:10px}[data-role="collapse"] [hidden]{display:none}

@@ -9,7 +9,7 @@
 }
 
 [data-role="collapse"] {
-    [aria-expanded=false] {
+    [hidden] {
         display: none;
     }
 }

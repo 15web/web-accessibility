@@ -33,10 +33,12 @@ var Collapse = function () {
     }, {
         key: 'toggleDropdown',
         value: function toggleDropdown() {
-            if (this.content.getAttribute('aria-expanded') === 'false') {
-                this.content.setAttribute('aria-expanded', 'true');
+            if (this.trigger.getAttribute('aria-expanded') === 'false') {
+                this.trigger.setAttribute('aria-expanded', 'true');
+                this.content.removeAttribute('hidden');
             } else {
-                this.content.setAttribute('aria-expanded', 'false');
+                this.trigger.setAttribute('aria-expanded', 'false');
+                this.content.setAttribute('hidden', 'true');
             }
         }
     }]);
