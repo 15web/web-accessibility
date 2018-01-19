@@ -190,6 +190,9 @@
 <nav class="nav nav_vertical" role="navigation">
     <ul>
         <li class="nav__item">
+            <a href="#accordions" class="nav__link">Аккордеоны</a>
+        </li>
+        <li class="nav__item">
             <a href="#menu" class="nav__link">Меню сайта</a>
         </li>
         <li class="nav__item">
@@ -205,7 +208,7 @@
             <a href="#alert" class="nav__link">Уведомление</a>
         </li>
         <li class="nav__item">
-            <a href="#collapse" class="nav__link">Раскрывающийся список</a>
+            <a href="#collapse" class="nav__link">Скрытый контент</a>
         </li>
         <li class="nav__item">
             <a href="#buttons" class="nav__link">Кнопки</a>
@@ -231,6 +234,236 @@
     <hr>
 
     
+            <div id="accordions" style="margin-bottom: 100px">
+
+            <h2 class="h2">Аккордеоны</h2>
+
+            
+
+
+
+
+
+
+
+
+
+
+
+<p>Аккордеон представляет собой неупорядоченный список, где у каждого элемента есть триггер и контент.</p>
+<p>Триггер является кнопкой и имеет следующие атрибуты:</p>
+<ul>
+    <li><code>aria-expanded</code> со значениями <code>true/false</code> для указания экранным чтецам на то, раскрыт контент или нет.</li>
+    <li><code>aria-controls</code> - id элемента, который контролируется триггером.</li>
+    <li><code>data-trigger</code> - собственный атрибут для однозначной идентификации триггера средствами JavaScript.</li>
+</ul>
+<p>У блока контента обязательным атрибутом является <code>id</code> и <code>aria-hidden="true"</code> для скрытого по-умолчанию состояния.</p>
+<p>Если вам нужно по-умолчанию раскрыть определнный элемент, уберите у контента атрибут <code>aria-hidden</code>, а триггеру выставите значение атрибута <code>aria-expanded="true"</code>.</p>
+
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        
+<ul class="accordion" data-role="accordion" >
+    <li class="accordion__item">
+        <button class="accordion__trigger" data-trigger aria-expanded="false" aria-controls="accordion-content-1" data-wcag="alternative-background">
+            Преступление и наказание
+        </button>
+        <div class="accordion__content" id="accordion-content-1" aria-hidden="true">
+            На улице жара стояла страшная, к тому же духота, толкотня, всюду известка, леса, кирпич, пыль и та особенная летняя вонь, столь известная каждому петербуржцу, не имеющему возможности нанять дачу, — всё это разом неприятно потрясло и без того уже расстроенные нервы юноши. Нестерпимая же вонь из распивочных, которых в этой части города особенное множество, и пьяные, поминутно попадавшиеся, несмотря на буднее время, довершили отвратительный и грустный колорит картины. Чувство глубочайшего омерзения мелькнуло на миг в тонких чертах молодого человека. Кстати, он был замечательно хорош собою, с прекрасными темными глазами, темно-рус, ростом выше среднего, тонок и строен. Но скоро он впал как бы в глубокую задумчивость, даже, вернее сказать, как бы в какое-то забытье, и пошел, уже не замечая окружающего, да и не желая его замечать. Изредка только бормотал он что-то про себя, от своей привычки к монологам, в которой он сейчас сам себе признался. В эту же минуту он и сам сознавал, что мысли его порою мешаются и что он очень слаб: второй день как уж он почти совсем ничего не ел.
+        </div>
+    </li>
+    <li class="accordion__item">
+        <button class="accordion__trigger" data-trigger aria-expanded="false" aria-controls="accordion-content-2" data-wcag="alternative-background">
+            Обломов
+        </button>
+        <div class="accordion__content" id="accordion-content-2" aria-hidden="true">
+            Но у него недоставало характера явно признать учение добра и уважения к невинности. Тихонько он упивался ее ароматом, но явно иногда приставал к хору циников, трепетавших даже подозрения в целомудрии или уважении к нему, и к буйному хору их прибавлял и свое легкомысленное слово.
+        </div>
+    </li>
+    <li class="accordion__item">
+        <button class="accordion__trigger" data-trigger aria-expanded="false" aria-controls="accordion-content-3" data-wcag="alternative-background">
+            Воскресенье
+        </button>
+        <div class="accordion__content" id="accordion-content-3" aria-hidden="true">
+            Напившись кофею, Нехлюдов пошел в кабинет, чтобы справиться в повестке, в котором часу надо быть в суде, и написать ответ княжне. В кабинет надо было пройти через мастерскую. В мастерской стоял мольберт с перевернутой начатой картиной и развешаны были этюды. Вид этой картины, над которой он бился два года, и этюдов, и всей мастерской напомнили ему испытанное с особенной силой в последнее время чувство бессилия идти дальше в живописи. Он объяснял это чувство слишком тонко развитым эстетическим чувством, но все-таки сознание это было очень неприятно.
+        </div>
+    </li>
+    <li class="accordion__item">
+        <button class="accordion__trigger" data-trigger aria-expanded="false" aria-controls="accordion-content-4" data-wcag="alternative-background">
+            Отцы и дети
+        </button>
+        <div class="accordion__content" id="accordion-content-4" aria-hidden="true">
+            Стук рессорного экипажа, тот стук, который так особенно заметен в деревенской глуши, внезапно поразил его слух. Ближе, ближе катились легкие колеса; вот уже послышалось фырканье лошадей... Василий Иванович вскочил и бросился к окошку. На двор его домика, запряженная четверней, въезжала двуместная карета. Не отдавая себе отчета, что бы это могло значить, в порыве какой-то бессмысленной радости, он выбежал на крыльцо... Ливрейный лакей отворял дверцы кареты; дама под черным вуалем, в черной мантилье, выходила из нее... 
+        </div>
+    </li>
+</ul>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+
+<ul class="accordion" data-role="accordion" >
+    <li class="accordion__item">
+        <button class="accordion__trigger" data-trigger aria-expanded="false" aria-controls="accordion-content-1" data-wcag="alternative-background">
+            Преступление и наказание
+        </button>
+        <div class="accordion__content" id="accordion-content-1" aria-hidden="true">
+            На улице жара стояла страшная, к тому же духота, толкотня, всюду известка, леса, кирпич, пыль и та особенная летняя вонь, столь известная каждому петербуржцу, не имеющему возможности нанять дачу, — всё это разом неприятно потрясло и без того уже расстроенные нервы юноши. Нестерпимая же вонь из распивочных, которых в этой части города особенное множество, и пьяные, поминутно попадавшиеся, несмотря на буднее время, довершили отвратительный и грустный колорит картины. Чувство глубочайшего омерзения мелькнуло на миг в тонких чертах молодого человека. Кстати, он был замечательно хорош собою, с прекрасными темными глазами, темно-рус, ростом выше среднего, тонок и строен. Но скоро он впал как бы в глубокую задумчивость, даже, вернее сказать, как бы в какое-то забытье, и пошел, уже не замечая окружающего, да и не желая его замечать. Изредка только бормотал он что-то про себя, от своей привычки к монологам, в которой он сейчас сам себе признался. В эту же минуту он и сам сознавал, что мысли его порою мешаются и что он очень слаб: второй день как уж он почти совсем ничего не ел.
+        </div>
+    </li>
+    <li class="accordion__item">
+        <button class="accordion__trigger" data-trigger aria-expanded="false" aria-controls="accordion-content-2" data-wcag="alternative-background">
+            Обломов
+        </button>
+        <div class="accordion__content" id="accordion-content-2" aria-hidden="true">
+            Но у него недоставало характера явно признать учение добра и уважения к невинности. Тихонько он упивался ее ароматом, но явно иногда приставал к хору циников, трепетавших даже подозрения в целомудрии или уважении к нему, и к буйному хору их прибавлял и свое легкомысленное слово.
+        </div>
+    </li>
+    <li class="accordion__item">
+        <button class="accordion__trigger" data-trigger aria-expanded="false" aria-controls="accordion-content-3" data-wcag="alternative-background">
+            Воскресенье
+        </button>
+        <div class="accordion__content" id="accordion-content-3" aria-hidden="true">
+            Напившись кофею, Нехлюдов пошел в кабинет, чтобы справиться в повестке, в котором часу надо быть в суде, и написать ответ княжне. В кабинет надо было пройти через мастерскую. В мастерской стоял мольберт с перевернутой начатой картиной и развешаны были этюды. Вид этой картины, над которой он бился два года, и этюдов, и всей мастерской напомнили ему испытанное с особенной силой в последнее время чувство бессилия идти дальше в живописи. Он объяснял это чувство слишком тонко развитым эстетическим чувством, но все-таки сознание это было очень неприятно.
+        </div>
+    </li>
+    <li class="accordion__item">
+        <button class="accordion__trigger" data-trigger aria-expanded="false" aria-controls="accordion-content-4" data-wcag="alternative-background">
+            Отцы и дети
+        </button>
+        <div class="accordion__content" id="accordion-content-4" aria-hidden="true">
+            Стук рессорного экипажа, тот стук, который так особенно заметен в деревенской глуши, внезапно поразил его слух. Ближе, ближе катились легкие колеса; вот уже послышалось фырканье лошадей... Василий Иванович вскочил и бросился к окошку. На двор его домика, запряженная четверней, въезжала двуместная карета. Не отдавая себе отчета, что бы это могло значить, в порыве какой-то бессмысленной радости, он выбежал на крыльцо... Ливрейный лакей отворял дверцы кареты; дама под черным вуалем, в черной мантилье, выходила из нее... 
+        </div>
+    </li>
+</ul>
+
+        </code>
+    </pre>
+</div>
+
+
+<br>
+<p>Если при создании аккордеона указать параметр <code>multiple: true</code>, то можно раскрывать более одно элемента.</p>
+<pre>
+    <code class="language-javascript">
+const accordions = document.querySelectorAll('[data-role="accordion"]');
+[].forEach.call(accordions, (item) => new Accordion(item, {multiple: true}));
+    </code>
+</pre>
+<p>Пример:</p>
+
+<ul class="accordion" data-role="accordion" data-multiple>
+    <li class="accordion__item">
+        <button class="accordion__trigger" data-trigger aria-expanded="false" aria-controls="accordion-content-1" data-wcag="alternative-background">
+            Преступление и наказание
+        </button>
+        <div class="accordion__content" id="accordion-content-1" aria-hidden="true">
+            На улице жара стояла страшная, к тому же духота, толкотня, всюду известка, леса, кирпич, пыль и та особенная летняя вонь, столь известная каждому петербуржцу, не имеющему возможности нанять дачу, — всё это разом неприятно потрясло и без того уже расстроенные нервы юноши. Нестерпимая же вонь из распивочных, которых в этой части города особенное множество, и пьяные, поминутно попадавшиеся, несмотря на буднее время, довершили отвратительный и грустный колорит картины. Чувство глубочайшего омерзения мелькнуло на миг в тонких чертах молодого человека. Кстати, он был замечательно хорош собою, с прекрасными темными глазами, темно-рус, ростом выше среднего, тонок и строен. Но скоро он впал как бы в глубокую задумчивость, даже, вернее сказать, как бы в какое-то забытье, и пошел, уже не замечая окружающего, да и не желая его замечать. Изредка только бормотал он что-то про себя, от своей привычки к монологам, в которой он сейчас сам себе признался. В эту же минуту он и сам сознавал, что мысли его порою мешаются и что он очень слаб: второй день как уж он почти совсем ничего не ел.
+        </div>
+    </li>
+    <li class="accordion__item">
+        <button class="accordion__trigger" data-trigger aria-expanded="false" aria-controls="accordion-content-2" data-wcag="alternative-background">
+            Обломов
+        </button>
+        <div class="accordion__content" id="accordion-content-2" aria-hidden="true">
+            Но у него недоставало характера явно признать учение добра и уважения к невинности. Тихонько он упивался ее ароматом, но явно иногда приставал к хору циников, трепетавших даже подозрения в целомудрии или уважении к нему, и к буйному хору их прибавлял и свое легкомысленное слово.
+        </div>
+    </li>
+    <li class="accordion__item">
+        <button class="accordion__trigger" data-trigger aria-expanded="false" aria-controls="accordion-content-3" data-wcag="alternative-background">
+            Воскресенье
+        </button>
+        <div class="accordion__content" id="accordion-content-3" aria-hidden="true">
+            Напившись кофею, Нехлюдов пошел в кабинет, чтобы справиться в повестке, в котором часу надо быть в суде, и написать ответ княжне. В кабинет надо было пройти через мастерскую. В мастерской стоял мольберт с перевернутой начатой картиной и развешаны были этюды. Вид этой картины, над которой он бился два года, и этюдов, и всей мастерской напомнили ему испытанное с особенной силой в последнее время чувство бессилия идти дальше в живописи. Он объяснял это чувство слишком тонко развитым эстетическим чувством, но все-таки сознание это было очень неприятно.
+        </div>
+    </li>
+    <li class="accordion__item">
+        <button class="accordion__trigger" data-trigger aria-expanded="false" aria-controls="accordion-content-4" data-wcag="alternative-background">
+            Отцы и дети
+        </button>
+        <div class="accordion__content" id="accordion-content-4" aria-hidden="true">
+            Стук рессорного экипажа, тот стук, который так особенно заметен в деревенской глуши, внезапно поразил его слух. Ближе, ближе катились легкие колеса; вот уже послышалось фырканье лошадей... Василий Иванович вскочил и бросился к окошку. На двор его домика, запряженная четверней, въезжала двуместная карета. Не отдавая себе отчета, что бы это могло значить, в порыве какой-то бессмысленной радости, он выбежал на крыльцо... Ливрейный лакей отворял дверцы кареты; дама под черным вуалем, в черной мантилье, выходила из нее... 
+        </div>
+    </li>
+</ul>
+
+
+
+    
+
+    
+        <h4 class="h3">Ссылки для загрузок</h4>
+    
+
+    
+        <p>
+            
+            
+                Файл стилей
+            
+            &ndash;
+            <a href="components/accordion/accordion.css" target="_blank">
+                 accordion.css
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Минифицированный файл стилей
+            
+            &ndash;
+            <a href="components/accordion/accordion.min.css" target="_blank">
+                 accordion.min.css
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Файл стилей оформленный в препроцессоре SASS
+            
+            &ndash;
+            <a href="components/accordion/accordion.scss" target="_blank">
+                 accordion.scss
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Скрипт для компонента
+            
+            &ndash;
+            <a href="components/accordion/accordion.js" target="_blank">
+                 accordion.js
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Минифицированный скрипт для компонента
+            
+            &ndash;
+            <a href="components/accordion/accordion.min.js" target="_blank">
+                 accordion.min.js
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Исходный скрипт для компонента
+            
+            &ndash;
+            <a href="components/accordion/accordion.source.js" target="_blank">
+                 accordion.source.js
+            </a>
+        </p>
+    
+        </div>
             <div id="menu" style="margin-bottom: 100px">
 
             <h2 class="h2">Меню сайта</h2>
@@ -971,7 +1204,7 @@
         </div>
             <div id="collapse" style="margin-bottom: 100px">
 
-            <h2 class="h2">Раскрывающийся список</h2>
+            <h2 class="h2">Скрытый контент</h2>
 
             
 
