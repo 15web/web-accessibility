@@ -1,0 +1,40 @@
+{% macro crumbs(items) %}
+<nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <ol>{% for item in items %}
+        <li>{% if item.link %}
+            <a href="{{ item.link }}">{{ item.title }}</a>{% else %}
+            {{ item.title }}{% endif %}
+        </li>{% endfor %}
+    </ol>
+</nav>
+{% endmacro %}
+
+{% import _self as view %}
+
+{% set subitems = [
+{ title: 'sub 1', link: '#sub1' },
+{ title: 'sub 2', link: '#sub2' },
+{ title: 'sub 3', link: '#sub3' },
+] %}
+
+{% set items = [{
+    title: 'Главная',
+    link: '#link-to-main'
+},{
+    title: 'О департаменте',
+    link: '#link-to-part-1',
+    items: subitems
+},{
+    title: 'Государственная служба',
+    link: '#link-to-part-2'
+},{
+    title: 'Текущая страница'
+}] %}
+
+<p>Озаглавьте тег <code class="convert">&lt;nav&gt;</code>, добавив ему атрибут <code>aria-label</code>.</p>
+<p>Используйте упорядоченный список, так как порядок ссылок в данном случае очень важен.</p>
+<p>Для текущей страницы используйте ссылку с атрибутом <code>aria-current="page"</code>, либо используйте просто текст. Это позволит пользователям, использующим экранные чтецы, корретно разделять текущую страницу и ссылки на другие разделы сайта.</p>
+
+{{ macros.html(view.crumbs(items))}}
+
+{{ macros.download_links('breadcrumbs', ['css', 'min.css', 'scss'], null, 'Ссылки для загрузок') }}
