@@ -190,6 +190,9 @@
 <nav class="nav nav_vertical" role="navigation">
     <ul>
         <li class="nav__item">
+            <a href="#breadcrumbs" class="nav__link">Хлебные крошки</a>
+        </li>
+        <li class="nav__item">
             <a href="#accordions" class="nav__link">Аккордеоны</a>
         </li>
         <li class="nav__item">
@@ -234,6 +237,158 @@
     <hr>
 
     
+            <div id="breadcrumbs" style="margin-bottom: 100px">
+
+            <h2 class="h2">Хлебные крошки</h2>
+
+            
+
+
+
+
+
+
+
+<p>Озаглавьте тег <code class="convert">&lt;nav&gt;</code>, добавив ему атрибут <code>aria-label</code>.</p>
+<p>Используйте упорядоченный список, так как порядок ссылок в данном случае очень важен.</p>
+<p>Для текущей страницы используйте ссылку с атрибутом <code>aria-current="page"</code>, либо используйте просто текст. Это позволит пользователям, использующим экранные чтецы, корретно разделять текущую страницу и ссылки на другие разделы сайта.</p>
+
+<p><b>Информация для вложенного списка в хлебных крошках:</b></p>
+<p>Для ссылки с выпадающим списком добавьте атрибуты <code>aria-haspopup="true", aria-expanded="false", aria-controls="{dropdown-id}"</code>.</p>
+<p>Для выпадающего списка добавьте атрибуты <code>id="{dropdown-id}", aria-hidden="true"</code>.</p>
+<p>В конце текста ссылки добавьте элемент <code class="convert"><span></span></code>, который будет отображать декоративную стрелку и участвовать в переключении меню на сенсорных экранах.</p>
+<p>Чтобы переключить отображение выпадающего списка для ссылки в фокусе, нажмите клавишу <code>стрелка вниз</code> или <code>пробел</code>.</p>
+<p>Меню автоматически появляется и скрывается при <code>hover</code> эффектах мыши.</p>
+<p>Для сенсорных экранов переключение отображения выпадающего списка происходит при клике на декоративную стрелку или фокусировке ссылки.</p>
+<p>Клик вне пункта хлебных крошек или покидание фокуса закрывает текущий выпадающий список.</p>
+<p>Если вместо ссылки в хлебных крошках нужно указать просто текст, содержащий выпадающий список, то используйте для этого тег <code class="convert"><span></span></code>, добавив к нему атрибут <code>tabindex="0"</code>, чтобы тег был достижим с клавиатуры.</p>
+<p>Атрибут <code>data-wcag="alternative-background"</code> служит для декоративного выделения выпадающего списка альтернативным фоном.</p>
+
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        
+<nav class="breadcrumbs" aria-label="Хлебные крошки" data-role="breadcrumbs">
+    <ol>
+        <li>
+            <a href="#link-to-main"  class="breadcrumbs__link">
+                Главная
+            </a>
+        </li>
+        <li>
+            <a href="#link-to-part-2" aria-haspopup="true" aria-expanded="false" aria-controls="breadcumbs-dd-2" class="breadcrumbs__link">
+                Ссылка с подменю<span></span>
+            </a>
+            <ul id="breadcumbs-dd-2" aria-hidden="true" class="breadcrumbs__dropdown" data-wcag="alternative-background">
+                <li><a href="#sub1">Подпункт 1</a></li>
+                <li><a href="#sub2">Подпункт 2</a></li>
+                <li><a href="#sub3">Подпункт 3</a></li>
+            </ul>
+        </li>
+        <li>
+            <span aria-haspopup="true" aria-expanded="false" aria-controls="breadcumbs-dd-3" class="breadcrumbs__link" tabindex="0">
+                Текст с подменю<span></span>
+            </span>
+            <ul id="breadcumbs-dd-3" aria-hidden="true" class="breadcrumbs__dropdown" data-wcag="alternative-background">
+                <li><a href="#sub1">Подпункт 1</a></li>
+                <li><a href="#sub2">Подпункт 2</a></li>
+                <li><a href="#sub3">Подпункт 3</a></li>
+            </ul>
+        </li>
+        <li>
+            <span  class="breadcrumbs__link" >
+                Текущая страница
+            </span>
+        </li>
+    </ol>
+</nav>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+
+<nav class="breadcrumbs" aria-label="Хлебные крошки" data-role="breadcrumbs">
+    <ol>
+        <li>
+            <a href="#link-to-main"  class="breadcrumbs__link">
+                Главная
+            </a>
+        </li>
+        <li>
+            <a href="#link-to-part-2" aria-haspopup="true" aria-expanded="false" aria-controls="breadcumbs-dd-2" class="breadcrumbs__link">
+                Ссылка с подменю<span></span>
+            </a>
+            <ul id="breadcumbs-dd-2" aria-hidden="true" class="breadcrumbs__dropdown" data-wcag="alternative-background">
+                <li><a href="#sub1">Подпункт 1</a></li>
+                <li><a href="#sub2">Подпункт 2</a></li>
+                <li><a href="#sub3">Подпункт 3</a></li>
+            </ul>
+        </li>
+        <li>
+            <span aria-haspopup="true" aria-expanded="false" aria-controls="breadcumbs-dd-3" class="breadcrumbs__link" tabindex="0">
+                Текст с подменю<span></span>
+            </span>
+            <ul id="breadcumbs-dd-3" aria-hidden="true" class="breadcrumbs__dropdown" data-wcag="alternative-background">
+                <li><a href="#sub1">Подпункт 1</a></li>
+                <li><a href="#sub2">Подпункт 2</a></li>
+                <li><a href="#sub3">Подпункт 3</a></li>
+            </ul>
+        </li>
+        <li>
+            <span  class="breadcrumbs__link" >
+                Текущая страница
+            </span>
+        </li>
+    </ol>
+</nav>
+
+        </code>
+    </pre>
+</div>
+
+
+
+    
+
+    
+        <h4 class="h3">Ссылки для загрузок</h4>
+    
+
+    
+        <p>
+            
+            
+                Файл стилей
+            
+            &ndash;
+            <a href="components/breadcrumbs/breadcrumbs.css" target="_blank">
+                 breadcrumbs.css
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Минифицированный файл стилей
+            
+            &ndash;
+            <a href="components/breadcrumbs/breadcrumbs.min.css" target="_blank">
+                 breadcrumbs.min.css
+            </a>
+        </p>
+    
+        <p>
+            
+            
+                Файл стилей оформленный в препроцессоре SASS
+            
+            &ndash;
+            <a href="components/breadcrumbs/breadcrumbs.scss" target="_blank">
+                 breadcrumbs.scss
+            </a>
+        </p>
+    
+        </div>
             <div id="accordions" style="margin-bottom: 100px">
 
             <h2 class="h2">Аккордеоны</h2>
