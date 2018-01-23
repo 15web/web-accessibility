@@ -1,9 +1,16 @@
 {% macro crumbs(items) %}
-<nav class="breadcrumbs" aria-label="Хлебные крошки">
+<nav class="breadcrumbs" aria-label="Хлебные крошки" data-role="breadcrumbs">
     <ol>{% for item in items %}
-        <li>{% if item.link %}
-            <a href="{{ item.link }}">{{ item.title }}</a>{% else %}
-            {{ item.title }}{% endif %}
+        <li>{% set attributes = item.items ? 'aria-haspopup="true" aria-expanded="false" aria-controls="breadcumbs-dd-'~loop.index~'"' : '' %}{% if item.link %}
+            <a href="{{ item.link }}" {{ attributes }} class="breadcrumbs__link">
+                {{ item.title }}{% if item.items %}<span></span>{% endif %}
+            </a>{% else %}
+            <span {{ attributes }} class="breadcrumbs__link" {{ item.items ? 'tabindex="0"' : ''}}>
+                {{ item.title }}{% if item.items %}<span></span>{% endif %}
+            </span>{% endif %}{% if item.items %}
+            <ul id="breadcumbs-dd-{{ loop.index }}" aria-hidden="true" class="breadcrumbs__dropdown" data-wcag="alternative-background">{% for subitem in item.items %}
+                <li><a href="{{ subitem.link }}">{{ subitem.title }}</a></li>{% endfor %}
+            </ul>{% endif %}
         </li>{% endfor %}
     </ol>
 </nav>
@@ -12,28 +19,39 @@
 {% import _self as view %}
 
 {% set subitems = [
-{ title: 'sub 1', link: '#sub1' },
-{ title: 'sub 2', link: '#sub2' },
-{ title: 'sub 3', link: '#sub3' },
+{ title: 'Подпункт 1', link: '#sub1' },
+{ title: 'Подпункт 2', link: '#sub2' },
+{ title: 'Подпункт 3', link: '#sub3' },
 ] %}
 
 {% set items = [{
     title: 'Главная',
     link: '#link-to-main'
 },{
-    title: 'О департаменте',
-    link: '#link-to-part-1',
+    title: 'Ссылка с подменю',
+    link: '#link-to-part-2',
     items: subitems
 },{
-    title: 'Государственная служба',
-    link: '#link-to-part-2'
+    title: 'Текст с подменю',
+    items: subitems
 },{
-    title: 'Текущая страница'
+title: 'Текущая страница',
 }] %}
 
 <p>Озаглавьте тег <code class="convert">&lt;nav&gt;</code>, добавив ему атрибут <code>aria-label</code>.</p>
 <p>Используйте упорядоченный список, так как порядок ссылок в данном случае очень важен.</p>
 <p>Для текущей страницы используйте ссылку с атрибутом <code>aria-current="page"</code>, либо используйте просто текст. Это позволит пользователям, использующим экранные чтецы, корретно разделять текущую страницу и ссылки на другие разделы сайта.</p>
+
+<p><b>Информация для вложенного списка в хлебных крошках:</b></p>
+<p>Для ссылки с выпадающим списком добавьте атрибуты <code>aria-haspopup="true", aria-expanded="false", aria-controls="{dropdown-id}"</code>.</p>
+<p>Для выпадающего списка добавьте атрибуты <code>id="{dropdown-id}", aria-hidden="true"</code>.</p>
+<p>В конце текста ссылки добавьте элемент <code class="convert"><span></span></code>, который будет отображать декоративную стрелку и участвовать в переключении меню на сенсорных экранах.</p>
+<p>Чтобы переключить отображение выпадающего списка для ссылки в фокусе, нажмите клавишу <code>стрелка вниз</code> или <code>пробел</code>.</p>
+<p>Меню автоматически появляется и скрывается при <code>hover</code> эффектах мыши.</p>
+<p>Для сенсорных экранов переключение отображения выпадающего списка происходит при клике на декоративную стрелку или фокусировке ссылки.</p>
+<p>Клик вне пункта хлебных крошек или покидание фокуса закрывает текущий выпадающий список.</p>
+<p>Если вместо ссылки в хлебных крошках нужно указать просто текст, содержащий выпадающий список, то используйте для этого тег <code class="convert"><span></span></code>, добавив к нему атрибут <code>tabindex="0"</code>, чтобы тег был достижим с клавиатуры.</p>
+<p>Атрибут <code>data-wcag="alternative-background"</code> служит для декоративного выделения выпадающего списка альтернативным фоном.</p>
 
 {{ macros.html(view.crumbs(items))}}
 
