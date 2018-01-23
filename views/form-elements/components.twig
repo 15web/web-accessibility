@@ -1,0 +1,53 @@
+{% macro testForm(content) %}
+    <form action="/" onsubmit="alert('Форма отправлена'); this.reset(); return false;" class="form">
+        {{ content }}
+        <div style="margin-top: 1em">
+            <button class="button">Отправить</button>
+        </div>
+    </form>
+{% endmacro %}
+
+{% import _self as parent %}
+
+
+{# Используемые компоненты #}
+{% set components = [{
+    link: '#labels',
+    title: 'Метки полей'
+},{
+    link: '#errors',
+    title: 'Ошибки ввода'
+},{
+    link: '#input',
+    title: 'Поля для ввода'
+},{
+    link: '#required',
+    title: 'Обязательные поля'
+}] %}
+
+{# Options для построения навигации по компонентам #}
+{% set navOptions = {
+    items: components,
+    isVertical: 'true'
+} %}
+
+<div class="page-content__sidebar">
+    <div data-role="fixed-sidebar" style="max-width: 230px">
+        {{ macros.nav(navOptions) }}
+    </div>
+</div>
+
+
+<div class="page-content__content">
+    <h2 class="h2">Поля формы</h2>
+
+    {# item.link|slice(1) убирает # в начале ссылки #}
+    {% for item in components %}
+        <div id="{{ item.link|slice(1) }}" style="margin-bottom: 100px">
+
+            <h2 class="h2">{{ item.title }}</h2>
+
+            {% include './partials/'~item.link|slice(1)~'.twig' with {title: item.title}%}
+        </div>
+    {% endfor %}
+</div>

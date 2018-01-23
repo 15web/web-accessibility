@@ -1,0 +1,23 @@
+{% macro labelFor(id, label) %}
+<label for="{{ id }}">{{ label }}</label>
+<input type="text" id="{{ id }}" name="name">
+{% endmacro %}
+{% macro labelWrap(label) %}
+<label>
+    {{ label }}
+    <br>
+    <input type="text" name="name">
+</label>
+{% endmacro %}
+
+{% import _self as view %}
+
+<p>Все поля формы должны иметь заголовок.</p>
+<p>Связать поля и заголовки можно несколькими способами:</p>
+
+<form onsubmit="return false;" class="form">
+    <p>Через атрибут <code>for</code> у метки и <code>id</code> у поля.</p>
+    {{ macros.html(view.labelFor('name', 'Ваше имя')) }}
+    <p>Вложив поле непосредственно внутрь метки.</p>
+    {{ macros.html(view.labelWrap('Ваше имя')) }}
+</form>

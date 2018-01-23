@@ -1,0 +1,23 @@
+{% macro textRequired(value, placeholder, isStrict) %}
+    <input type="text" value="{{ value }}" placeholder="{{ placeholder }}" {{ isStrict ? 'required' : 'aria-required="true"' }}>
+{% endmacro %}
+
+{#
++ text/email/search/number
+range
+checkbox
+radio
+range
+password
+submit/reset/button
+color
+date
+#}
+
+{% import _self as view %}
+
+
+<p>Поле формы строго обязательное.</p>
+{{ macros.html(parent.testForm(view.textRequired('', 'Ваш любимый напиток?', 'true'))) }}
+<p>Поле формы с атрибутом <code>aria-required="true"</code> не прерывает отправку формы, но экранный чтец сообщает пользователю, что поле обязательно.</p>
+{{ macros.html(parent.testForm(view.textRequired('', 'Ваш любимый напиток?'))) }}
