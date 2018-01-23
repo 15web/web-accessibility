@@ -1,0 +1,92 @@
+.breadcrumbs {
+    &,
+    > ol {
+        padding: 0;
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    > ol {
+        list-style: none;
+    }
+
+    > ol > li {
+        display: inline;
+        position: relative;
+
+        &:not(:last-child) {
+            &:after {
+                content: '/';
+                margin: 0 0.5em;
+            }
+        }
+    }
+
+    &__link {
+        white-space: nowrap;
+        &[aria-haspopup="true"] {
+            position: relative;
+
+            span {
+                $triangleWidth: 0.5em;
+                content: '';
+                border-left: $triangleWidth solid transparent;
+                border-right: $triangleWidth solid transparent;
+                border-top: $triangleWidth solid;
+                //position: absolute;
+                //right: -1.5em;
+                //top: 50%;
+                //transform: translateY(-50%);
+                vertical-align: middle;
+                display: inline-block;
+                margin-left: 0.5em;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 1.5em;
+                    height: 1.5em;
+                    top: -1em;
+                    left: -0.75em;
+                }
+            }
+        }
+    }
+
+    &__dropdown {
+        margin: 0.75em 0 0;
+        padding: 20px;
+        transform: translateY(0);
+        list-style: none;
+        opacity: 1;
+        transition: all 0.25s;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        border: 1px solid;
+        border-radius: 4px;
+        z-index: 2;
+
+        &[aria-hidden="true"] {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(1em);
+        }
+
+        &:after {
+            $triangleWidth: 0.5em;
+            content: '';
+            border-left: $triangleWidth solid transparent;
+            border-right: $triangleWidth solid transparent;
+            border-bottom: $triangleWidth solid;
+            position: absolute;
+            top: -$triangleWidth;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        > li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+}
