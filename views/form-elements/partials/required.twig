@@ -1,23 +1,23 @@
-{% macro textRequired(value, placeholder, isStrict) %}
-    <input type="text" value="{{ value }}" placeholder="{{ placeholder }}" {{ isStrict ? 'required' : 'aria-required="true"' }}>
+{% macro textRequired(label, placeholder, isStrict) %}
+    <label>
+        {{ label }}
+        <br>
+        <input type="text" value="{{ value }}" placeholder="{{ placeholder }}" {{ isStrict ? 'required' : 'aria-required="true"' }}>
+    </label>
 {% endmacro %}
-
-{#
-+ text/email/search/number
-range
-checkbox
-radio
-range
-password
-submit/reset/button
-color
-date
-#}
 
 {% import _self as view %}
 
 
-<p>Поле формы строго обязательное.</p>
-{{ macros.html(parent.testForm(view.textRequired('', 'Ваш любимый напиток?', 'true'))) }}
-<p>Поле формы с атрибутом <code>aria-required="true"</code> не прерывает отправку формы, но экранный чтец сообщает пользователю, что поле обязательно.</p>
-{{ macros.html(parent.testForm(view.textRequired('', 'Ваш любимый напиток?'))) }}
+<p>Атрибут <code>required</code> у поля предотвращает отправку формы, пока поле не будет заполнено.</p>
+{{ macros.html(parent.testForm(view.textRequired('Ваш любимый напиток?', 'Например: Кофе', 'true'))) }}
+<p>Если необходимо лишь сообщить незрячему пользователю об обязательности поля и не запрещать при этом отправку формы, то укажите для поля атрибут <code>aria-required="true"</code>. Экранные чтецы в этом случае озвучает незрячему пользователю, что поле является обязательным.</p>
+{{ macros.html(parent.testForm(view.textRequired('Ваш любимый напиток?', 'Например: Кофе'))) }}
+<p>Так же добавляйте к метке поля пояснение, что поле обязательно для заполнения. Например:</p>
+
+<form onsubmit="return false" class="form">
+<p><b>1.</b> Пропишите сообщение в самой метке.</p>
+{{ macros.html(view.textRequired('Ваш любимый напиток? (Обязательное поле)', 'Например: Кофе')) }}
+<p><b>2.</b> Пропишите сообщение в визуально скрытом элементе. При этом не забудьте обозначить обязательность поля для зрячих пользователей. Если вы хотите для визуального отображения использовать символ <code>*</code>, то используйте его вместе с поясняющим текстом, сделав текст скрытым визуально, а символ <code>*</code> невидимым для экранных чтецов, добавив к нему атрибут <code>aria-hidden="true"</code>.</p>
+{{ macros.html(view.textRequired('Ваш любимый напиток?<sup aria-hidden="true">*</sup><span class="visually-hidden">(Обязательное поле)</span>', 'Например: Кофе')) }}
+</form>
