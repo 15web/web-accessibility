@@ -1,16 +1,6 @@
 .form {
-    input[type="text"],
-    input[type="search"],
-    input[type="number"],
-    input[type="email"] {
-        border-width: 1px;
-        border-style: solid;
-        line-height: 2;
-        padding: 5px 15px;
-        text-overflow: ellipsis;
-    }
-
-    input {
+    input,
+    textarea {
         border-color: inherit;
         font-size: 1em;
         background: none;
@@ -18,10 +8,21 @@
         width: 100%;
         max-width: 80ch;
         box-sizing: border-box;
+        font-family: inherit;
+        border-width: 1px;
+        border-style: solid;
+        line-height: 2;
+        padding: 5px 15px;
+        text-overflow: ellipsis;
 
         &[disabled] {
             border-style: dotted;
         }
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        width: auto;
     }
 
     label {
