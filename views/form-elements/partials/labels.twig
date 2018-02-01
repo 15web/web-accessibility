@@ -1,0 +1,66 @@
+{% macro labelFor(id, label) %}
+<label for="{{ id }}">{{ label }}</label>
+<input type="text" id="{{ id }}" name="name">
+{% endmacro %}
+
+{% macro labelWrap(label) %}
+<label>
+    {{ label }}
+    <br>
+    <input type="text" name="name">
+</label>
+{% endmacro %}
+
+{% macro labelTitle(label, placeholder) %}
+<input type="text" name="name" aria-label="{{ label }}" placeholder="{{ placeholder }}">
+{% endmacro %}
+
+{% macro labelHidden(id, label, placeholder) %}
+<label for="{{ id }}" class="visually-hidden">{{ label }}</label>
+<input type="text" name="name" id="{{ id }}" placeholder="{{ placeholder }}">
+{% endmacro %}
+
+{% macro search() %}{% set id = "label-search-button" %}
+<input type="search" name="query" aria-labelledby="{{ id }}" placeholder="Например: зеленый кофе">
+<button class="button" id="{{ id }}">Искать</button>
+{% endmacro %}
+
+{% import _self as view %}
+
+<p>Все поля формы должны иметь свою метку.</p>
+<p>Связать поля и метки можно несколькими способами:</p>
+
+<form onsubmit="return false;" class="form">
+    <p><b>1.</b> Через атрибут <code>for</code> у метки и <code>id</code> у поля.</p>
+    {{ macros.html(view.labelFor('name', 'Ваше имя')) }}
+    <p><b>2.</b> Вложив поле непосредственно внутрь метки.</p>
+    {{ macros.html(view.labelWrap('Ваше имя')) }}
+    <p><b>3.</b> Добавив к полю атрибут <code>aria-label</code> со значением метки.</p>
+
+    {{ macros.html(view.labelTitle('Введите ваше имя', 'Ваше имя')) }}
+    <p><b>4.</b> Указав полю в атрибуте <code>aria-labelledby</code> id элемента, который будет являться заголовком. В этом случае заголовком может быть любой тег с текстовым контентом, например:</p>
+    {{ macros.html(view.search()) }}
+
+    <p><b>5.</b> Связав метку и поле любым доступным способом, вы можете её визуально скрыть:</p>
+    {{ macros.html(view.labelHidden('input-with-hidden-label', 'Ваш любимый напиток?', 'Ваш любимый напиток?')) }}
+
+    <p><b>Обратите внимание</b>, что в случаях <b>3</b> и <b>5</b> у вас нет визуального представления метки для зрячих пользователей. Убедитесь, что назначение поля
+        понятно пользователю: используйте <code>placeholder</code>, поясняющий текст перед полем или иную визуальную дополнительную информацию, как, например, кнопка поиска из пункта <b>4</b>.
+    </p>
+    <p><b>Будьте осторожны</b> и не используйте для визуального скрытия CSS правила <code>display: none</code> и <code>visibility: hidden</code>, так как в этом случае экранные чтецы будут игнорировать элементы с этими правилами. Для визуально скрытия может использоваться, как пример, следующий CSS класс:</p>
+    <pre>
+        <code class="language-css">
+.visually-hidden {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+        </code>
+    </pre>
+</form>
