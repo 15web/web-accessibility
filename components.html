@@ -154,7 +154,7 @@
             
 
 
-<nav role="navigation">
+<nav role="navigation" aria-label="Навигация">
     <ul class="menu" role="menubar" data-role="menu"  >
         <li>
             <a href="index.html"   role="menuitem">Getting Started</a>
@@ -164,6 +164,9 @@
         </li>
         <li>
             <a href="components.html" aria-current="page"  role="menuitem">UI компоненты</a>
+        </li>
+        <li>
+            <a href="form-elements.html"   role="menuitem">Элементы формы</a>
         </li>
         <li>
             <a href="wcag-config.html"   role="menuitem">Конфигурация</a>
@@ -651,7 +654,7 @@ const accordions = document.querySelectorAll('[data-role="accordion"]');
 <div class="docs-example">
     <div class="docs-example__view">
         
-<nav role="navigation">
+<nav role="navigation" aria-label="Навигация">
     <ul class="menu" role="menubar" data-role="menu"  >
         <li>
             <a href="#link-1"   role="menuitem">Ссылка 1</a>
@@ -685,7 +688,7 @@ const accordions = document.querySelectorAll('[data-role="accordion"]');
     <pre class="docs-example__code">
         <code class="language-html convert">
 
-<nav role="navigation">
+<nav role="navigation" aria-label="Навигация">
     <ul class="menu" role="menubar" data-role="menu"  >
         <li>
             <a href="#link-1"   role="menuitem">Ссылка 1</a>
@@ -731,7 +734,7 @@ const accordions = document.querySelectorAll('[data-role="accordion"]');
 </pre>
 <p>Пример ниже демонстрирует фунционирование меню с такой настройкой:</p>
 
-<nav role="navigation">
+<nav role="navigation" aria-label="Навигация">
     <ul class="menu" role="menubar" data-role="menu" data-disable-hover="true" >
         <li>
             <a href="#link-1"   role="menuitem">Ссылка 1</a>
@@ -774,7 +777,7 @@ const accordions = document.querySelectorAll('[data-role="accordion"]');
 </pre>
 <p>Например, <code>hideTimeout: 300</code> заставит меню закрываться только спустя 300 милисекунд. В некоторых интерфейсах это существенно облегчит работу пользователям с нарушением опорно-двигательного аппарата. Пример:</p>
 
-<nav role="navigation">
+<nav role="navigation" aria-label="Навигация">
     <ul class="menu" role="menubar" data-role="menu"  data-hide-timeout="300">
         <li>
             <a href="#link-1"   role="menuitem">Ссылка 1</a>

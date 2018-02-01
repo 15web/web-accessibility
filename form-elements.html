@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Элементы форм</title>
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="accessibility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/themes/prism.min.css">
+</head>
+<body>
+
+    
+    <form class="wcag-panel" id="wcag-panel" name="wcagPanel">
+
+    <!-- Панель основных настроек -->
+    <div class="wcag-panel__wrapper">
+        <div class="wcag-panel__row">
+            <!-- Скрытая ссылка перехода к содержанию страницы, появляющаяся только при навигации с клавиатуры -->
+            <div class="wcag-panel__hidden-control">
+                <a href="#main-content" id="anchor-link" class="wcag-panel__default-link" aria-label="Перейти к основному содержанию">Спуститься к содержанию</a>
+            </div>
+
+            <!-- Основные настройки панели -->
+            <div>
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Масштаб шрифта</label>
+                    <div class="wcag-panel__switcher">
+                        <input type="radio" checked name="fontsize" value="normal" id="fontsize-normal">
+                        <label class="wcag-panel__switcher-btn" aria-label="нормальный размер шрифта" for="fontsize-normal">
+                            100%
+                        </label>
+
+                        <input type="radio" name="fontsize" value="big" id="fontsize-big">
+                        <label class="wcag-panel__switcher-btn" aria-label="средний размер шрифта" for="fontsize-big">
+                            150%
+                        </label>
+
+                        <input type="radio" name="fontsize" value="large" id="fontsize-large">
+                        <label class="wcag-panel__switcher-btn" aria-label="большой размер шрифта" for="fontsize-large">
+                            200%
+                        </label>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Цвет</label>
+
+                    <div>
+                        <input type="radio" checked name="color" value="white" id="color-white">
+                        <label for="color-white" class="wcag-panel__flag-button flag-button flag-button_white" aria-label="белая цветовая схема">Б</label>
+
+                        <input type="radio" name="color" value="black" id="color-black">
+                        <label for="color-black" class="wcag-panel__flag-button flag-button flag-button_black" aria-label="черная цветовая схема">Ч</label>
+
+                        <input type="radio" name="color" value="blue" id="color-blue">
+                        <label for="color-blue" class="wcag-panel__flag-button flag-button flag-button_blue" aria-label="голубая цветовая схема">Г</label>
+
+                        <input type="radio" name="color" value="beige" id="color-beige">
+                        <label for="color-beige" class="wcag-panel__flag-button flag-button flag-button_beige" aria-label="бежевая цветовая схема">Б</label>
+
+                        <input type="radio" name="color" value="brown" id="color-brown">
+                        <label for="color-brown" class="wcag-panel__flag-button flag-button flag-button_brown" aria-label="коричневая цветовая схема">К</label>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Изображения</label>
+
+                    <div class="wcag-panel__switcher">
+                        <input type="radio" checked name="images" value="on" id="images-on">
+                        <label class="wcag-panel__switcher-btn" aria-label="Изображения включены" for="images-on">
+                            Вкл
+                        </label>
+
+                        <input type="radio" name="images" value="off" id="images-off">
+                        <label class="wcag-panel__switcher-btn" aria-label="Изображения отключены" for="images-off">
+                            Выкл
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="wcag-panel__settings wcag-panel__switcher">
+                    <button class="wcag-panel__dropdown-toggle wcag-panel__switcher-btn"
+                            aria-label="Дополнительные настройки"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            data-wcag-panel="dropdown-toggle">
+                        Настройки
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Выпадающая панель с дополнительными настройками -->
+    <div class="wcag-panel__dropdown"
+         id="wcagDropdownMenu"
+         aria-expanded="false"
+         aria-hidden="true"
+         data-wcag-panel="dropdown">
+        <div class="wcag-panel__wrapper">
+
+            <div class="wcag-panel__row">
+
+                <div class="wcag-panel__col">
+                    <label class="wcag-panel__switcher-label">Интервал между буквами</label>
+                    <div class="wcag-panel__switcher wcag-panel__switcher_double">
+                        <input type="radio" name="kerning" value="normal" checked id="kerning-normal">
+                        <label class="wcag-panel__switcher-btn" aria-label="нормальный межбуквенный интервал" for="kerning-normal">
+                            Нормальный
+                        </label>
+
+                        <input type="radio" name="kerning" value="big" id="kerning-big">
+                        <label class="wcag-panel__switcher-btn" aria-label="увеличенный межбуквенный интервал" for="kerning-big">
+                            Увеличенный
+                        </label>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col">
+                    <div class="wcag-panel__switcher wcag-panel__reset">
+                        <button class="wcag-panel__switcher-btn"
+                                aria-label="Вернуть стандартные настройки"
+                                data-wcag-panel="reset-config">
+                            Сбросить настройки
+                        </button>
+                    </div>
+                </div>
+
+                <div class="wcag-panel__col wcag-panel__col_cont-link">
+                    <button class="wcag-panel__default-link"
+                            aria-label="закрыть панель"
+                            data-wcag-panel="dropdown-close">
+                        Закрыть панель
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+<!-- Рекомендуем в этом месте вызывать скрипт панели ВДС, не дожидаясь полной загрузки DOM -->
+    <header class="header" data-wcag="alternative-background">
+        <div class="content-wrapper">
+            <h1 class="h1">
+                Элементы форм            </h1>
+
+            
+
+
+<nav role="navigation" aria-label="Навигация">
+    <ul class="menu" role="menubar" data-role="menu"  >
+        <li>
+            <a href="index.html"   role="menuitem">Getting Started</a>
+        </li>
+        <li>
+            <a href="wcag-panel.html"   role="menuitem">Панель ВДС</a>
+        </li>
+        <li>
+            <a href="components.html"   role="menuitem">UI компоненты</a>
+        </li>
+        <li>
+            <a href="form-elements.html" aria-current="page"  role="menuitem">Элементы формы</a>
+        </li>
+        <li>
+            <a href="wcag-config.html"   role="menuitem">Конфигурация</a>
+        </li>
+        <li>
+            <a href="about.html"   role="menuitem">О проекте</a>
+        </li>
+    </ul>
+</nav>
+
+            <p style="text-align: right">Посмотреть на <a href="https://github.com/15web/web-accessibility" target="_blank">github</a>.</p>
+        </div>
+    </header>
+
+
+    <div class="content-wrapper page-content">
+            
+
+
+
+
+
+
+
+<div class="page-content__sidebar">
+    <div data-role="fixed-sidebar" style="max-width: 230px">
+        
+<nav class="nav nav_vertical" role="navigation">
+    <ul>
+        <li class="nav__item">
+            <a href="#input" class="nav__link">Поля для ввода</a>
+        </li>
+        <li class="nav__item">
+            <a href="#check" class="nav__link">Чекбоксы и радиокнопки</a>
+        </li>
+        <li class="nav__item">
+            <a href="#labels" class="nav__link">Метки полей</a>
+        </li>
+        <li class="nav__item">
+            <a href="#required" class="nav__link">Обязательные поля</a>
+        </li>
+        <li class="nav__item">
+            <a href="#errors" class="nav__link">Ошибки валидации</a>
+        </li>
+    </ul>
+</nav>
+
+    </div>
+</div>
+
+
+<div class="page-content__content">
+    <h2 class="h2">Поля формы</h2>
+
+    <p>Чтобы стили применялись к элементам формы, у нее нужно указать <code>class="form"</code>.</p>
+    <p>Так же мы рекомендуем озаглавливать форму и указывать через атрибут <code>aria-labelledby</code> идентификатор заголовка формы. В таком случае пользователи, использующие экранные чтецы, смогут бытро идентифицировать назначение формы.</p>
+    
+<div class="docs-example">
+    <div class="docs-example__view">
+            <form action="url/to/action" class="form" aria-labelledby="feedback-form-title">
+        <h2 id="feedback-form-title">Форма обратной связи.</h2>
+
+        <!-- Содержимое формы -->
+    </form>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+    <form action="url/to/action" class="form" aria-labelledby="feedback-form-title">
+        <h2 id="feedback-form-title">Форма обратной связи.</h2>
+
+        <!-- Содержимое формы -->
+    </form>
+
+        </code>
+    </pre>
+</div>
+
+
+    
+            <div id="input" style="margin-bottom: 100px">
+
+            <h2 class="h2">Поля для ввода</h2>
+
+            
+
+
+
+
+
+
+
+
+
+<form action="/" onsubmit="return false;" class="form">
+    <p>Поля для ввода текста, электронной почты, чисел и поиска имеют одинаковые стили отображения и одинаковое <code>disabled</code> состояние.</p>
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        
+    <input type="text" value="Иван" placeholder="Введите ваше имя">
+    <br><br>
+    <input type="email" value="" placeholder="Введите адрес электронной почты">
+    <br><br>
+    <input type="search" placeholder="Введите строку для поиска">
+    <br><br>
+    <input type="number" placeholder="Сколько вам полных лет?">
+    <br><br>
+    <input type="text" placeholder="Ваш любимый напиток?" disabled>
+    <br><br>
+    <textarea rows="4"></textarea>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+
+    <input type="text" value="Иван" placeholder="Введите ваше имя">
+    <br><br>
+    <input type="email" value="" placeholder="Введите адрес электронной почты">
+    <br><br>
+    <input type="search" placeholder="Введите строку для поиска">
+    <br><br>
+    <input type="number" placeholder="Сколько вам полных лет?">
+    <br><br>
+    <input type="text" placeholder="Ваш любимый напиток?" disabled>
+    <br><br>
+    <textarea rows="4"></textarea>
+
+        </code>
+    </pre>
+</div>
+
+</form>
+        </div>
+            <div id="check" style="margin-bottom: 100px">
+
+            <h2 class="h2">Чекбоксы и радиокнопки</h2>
+
+            
+
+
+
+
+
+<form action="/" onsubmit="return false;" class="form">
+    <p>Объединяйте связанные по назначению поля в группы.</p>
+    
+<div class="docs-example">
+    <div class="docs-example__view">
+        
+    <fieldset class="form-group">
+        <legend>Укажите ваш пол</legend>
+        <label>
+            <input type="radio" name="gender" value="male"> Мужской
+        </label>
+
+        <label>
+            <input type="radio" name="gender" value="female"> Женский
+        </label>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <legend>На какие категории новостей вы хотели бы подписаться?</legend>
+        <label>
+            <input type="checkbox" name="mail" value="best-weekly"> Лучшие статьи за неделю
+        </label>
+
+        <label>
+            <input type="checkbox" name="mail" value="lessons"> Уроки
+        </label>
+
+        <label>
+            <input type="checkbox" name="mail" value="reviews"> Обзоры новой техники
+        </label>
+    </fieldset>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+
+    <fieldset class="form-group">
+        <legend>Укажите ваш пол</legend>
+        <label>
+            <input type="radio" name="gender" value="male"> Мужской
+        </label>
+
+        <label>
+            <input type="radio" name="gender" value="female"> Женский
+        </label>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <legend>На какие категории новостей вы хотели бы подписаться?</legend>
+        <label>
+            <input type="checkbox" name="mail" value="best-weekly"> Лучшие статьи за неделю
+        </label>
+
+        <label>
+            <input type="checkbox" name="mail" value="lessons"> Уроки
+        </label>
+
+        <label>
+            <input type="checkbox" name="mail" value="reviews"> Обзоры новой техники
+        </label>
+    </fieldset>
+
+        </code>
+    </pre>
+</div>
+
+</form>
+        </div>
+            <div id="labels" style="margin-bottom: 100px">
+
+            <h2 class="h2">Метки полей</h2>
+
+            
+
+
+
+
+
+
+
+
+
+
+
+<p>Все поля формы должны иметь свою метку.</p>
+<p>Связать поля и метки можно несколькими способами:</p>
+
+<form onsubmit="return false;" class="form">
+    <p><b>1.</b> Через атрибут <code>for</code> у метки и <code>id</code> у поля.</p>
+    
+<div class="docs-example">
+    <div class="docs-example__view">
+        
+<label for="name">Ваше имя</label>
+<input type="text" id="name" name="name">
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+
+<label for="name">Ваше имя</label>
+<input type="text" id="name" name="name">
+
+        </code>
+    </pre>
+</div>
+
+    <p><b>2.</b> Вложив поле непосредственно внутрь метки.</p>
+    
+<div class="docs-example">
+    <div class="docs-example__view">
+        
+<label>
+    Ваше имя
+    <br>
+    <input type="text" name="name">
+</label>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+
+<label>
+    Ваше имя
+    <br>
+    <input type="text" name="name">
+</label>
+
+        </code>
+    </pre>
+</div>
+
+    <p><b>3.</b> Добавив к полю атрибут <code>aria-label</code> со значением метки.</p>
+
+    
+<div class="docs-example">
+    <div class="docs-example__view">
+        
+<input type="text" name="name" aria-label="Введите ваше имя" placeholder="Ваше имя">
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+
+<input type="text" name="name" aria-label="Введите ваше имя" placeholder="Ваше имя">
+
+        </code>
+    </pre>
+</div>
+
+    <p><b>4.</b> Указав полю в атрибуте <code>aria-labelledby</code> id элемента, который будет являться заголовком. В этом случае заголовком может быть любой тег с текстовым контентом, например:</p>
+    
+<div class="docs-example">
+    <div class="docs-example__view">
+        
+<input type="search" name="query" aria-labelledby="label-search-button" placeholder="Например: зеленый кофе">
+<button class="button" id="label-search-button">Искать</button>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+
+<input type="search" name="query" aria-labelledby="label-search-button" placeholder="Например: зеленый кофе">
+<button class="button" id="label-search-button">Искать</button>
+
+        </code>
+    </pre>
+</div>
+
+
+    <p><b>5.</b> Связав метку и поле любым доступным способом, вы можете её визуально скрыть:</p>
+    
+<div class="docs-example">
+    <div class="docs-example__view">
+        
+<label for="input-with-hidden-label" class="visually-hidden">Ваш любимый напиток?</label>
+<input type="text" name="name" id="input-with-hidden-label" placeholder="Ваш любимый напиток?">
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+
+<label for="input-with-hidden-label" class="visually-hidden">Ваш любимый напиток?</label>
+<input type="text" name="name" id="input-with-hidden-label" placeholder="Ваш любимый напиток?">
+
+        </code>
+    </pre>
+</div>
+
+
+    <p><b>Обратите внимание</b>, что в случаях <b>3</b> и <b>5</b> у вас нет визуального представления метки для зрячих пользователей. Убедитесь, что назначение поля
+        понятно пользователю: используйте <code>placeholder</code>, поясняющий текст перед полем или иную визуальную дополнительную информацию, как, например, кнопка поиска из пункта <b>4</b>.
+    </p>
+    <p><b>Будьте осторожны</b> и не используйте для визуального скрытия CSS правила <code>display: none</code> и <code>visibility: hidden</code>, так как в этом случае экранные чтецы будут игнорировать элементы с этими правилами. Для визуально скрытия может использоваться, как пример, следующий CSS класс:</p>
+    <pre>
+        <code class="language-css">
+.visually-hidden {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+        </code>
+    </pre>
+</form>
+        </div>
+            <div id="required" style="margin-bottom: 100px">
+
+            <h2 class="h2">Обязательные поля</h2>
+
+            
+
+
+
+
+<p>Атрибут <code>required</code> у поля предотвращает отправку формы, пока поле не будет заполнено.</p>
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        <form action="/" onsubmit="alert('Форма отправлена'); this.reset(); return false;" class="form">
+    
+    <label>
+        Ваш любимый напиток?
+        <br>
+        <input type="text" value="" placeholder="Например: Кофе" required>
+    </label>
+
+    <div style="margin-top: 1em">
+        <button class="button">Отправить</button>
+    </div>
+</form>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+<form action="/" onsubmit="alert('Форма отправлена'); this.reset(); return false;" class="form">
+    
+    <label>
+        Ваш любимый напиток?
+        <br>
+        <input type="text" value="" placeholder="Например: Кофе" required>
+    </label>
+
+    <div style="margin-top: 1em">
+        <button class="button">Отправить</button>
+    </div>
+</form>
+
+        </code>
+    </pre>
+</div>
+
+<p>Если необходимо лишь сообщить незрячему пользователю об обязательности поля и не запрещать при этом отправку формы (например, при backend валидации), то укажите для поля атрибут <code>aria-required="true"</code>. Экранные чтецы в этом случае озвучает незрячему пользователю, что поле является обязательным.</p>
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        <form action="/" onsubmit="alert('Форма отправлена'); this.reset(); return false;" class="form">
+    
+    <label>
+        Ваш любимый напиток?
+        <br>
+        <input type="text" value="" placeholder="Например: Кофе" aria-required="true">
+    </label>
+
+    <div style="margin-top: 1em">
+        <button class="button">Отправить</button>
+    </div>
+</form>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+<form action="/" onsubmit="alert('Форма отправлена'); this.reset(); return false;" class="form">
+    
+    <label>
+        Ваш любимый напиток?
+        <br>
+        <input type="text" value="" placeholder="Например: Кофе" aria-required="true">
+    </label>
+
+    <div style="margin-top: 1em">
+        <button class="button">Отправить</button>
+    </div>
+</form>
+
+        </code>
+    </pre>
+</div>
+
+<p>Так же добавляйте к метке поля пояснение, что поле обязательно для заполнения. Например:</p>
+
+<form onsubmit="return false" class="form">
+<p><b>1.</b> Пропишите сообщение в самой метке.</p>
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        
+    <label>
+        Ваш любимый напиток? (Обязательное поле)
+        <br>
+        <input type="text" value="" placeholder="Например: Кофе" aria-required="true">
+    </label>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+
+    <label>
+        Ваш любимый напиток? (Обязательное поле)
+        <br>
+        <input type="text" value="" placeholder="Например: Кофе" aria-required="true">
+    </label>
+
+        </code>
+    </pre>
+</div>
+
+<p><b>2.</b> Пропишите сообщение в визуально скрытом элементе. При этом не забудьте обозначить обязательность поля для зрячих пользователей. Если вы хотите для визуального отображения использовать символ <code>*</code>, то используйте его вместе с поясняющим текстом, сделав текст скрытым визуально, а символ <code>*</code> невидимым для экранных чтецов, добавив к нему атрибут <code>aria-hidden="true"</code>.</p>
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        
+    <label>
+        Ваш любимый напиток?<sup aria-hidden="true">*</sup><span class="visually-hidden">(Обязательное поле)</span>
+        <br>
+        <input type="text" value="" placeholder="Например: Кофе" aria-required="true">
+    </label>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+
+    <label>
+        Ваш любимый напиток?<sup aria-hidden="true">*</sup><span class="visually-hidden">(Обязательное поле)</span>
+        <br>
+        <input type="text" value="" placeholder="Например: Кофе" aria-required="true">
+    </label>
+
+        </code>
+    </pre>
+</div>
+
+</form>        </div>
+            <div id="errors" style="margin-bottom: 100px">
+
+            <h2 class="h2">Ошибки валидации</h2>
+
+            
+
+
+
+
+
+<p>В настоящем разделе мы рассмотрим лишь принципы сообщения пользователям о наличии ошибок в формах. Практическая реализация, как правило, под каждую форму будет уникальна.</p>
+
+<p>Общие положения:</p>
+<ul>
+    <li>Никогда не полагайтесь на цветовое выделение поля как выделение ошибки. Например, пользователи с некоторыми формами дальтонизма не смогут отличить красное поле от обычного или валидного.</li>
+    <li>Всегда дополняйте визуальное выделение не валидного поля сообщением об ошибке. Из сообщения должно быть понятно не только наличие ошибки, но и дальнейшие действия пользователя для ее предотвращения. Напрмер:
+        <ul>
+            <li><em>Плохо:</em> Цена введена неверно.</li>
+            <li><em>Хорошо:</em> Поле "Цена" должно содержать только числовые символы.</li>
+        </ul>
+        <ul>
+            <li><em>Плохо:</em> "Текст обращения" слишком короткое.</li>
+            <li><em>Хорошо:</em> Поле "Текст обращения" должно содержать не менее 100 символов текста.</li>
+        </ul>
+    </li>
+    <li>Выводите сообщение об ошибках несколькими способами: одним сообщением на странице и/или сообщением у каждого поля. Примеры рассмотрим ниже.</li>
+</ul>
+
+<h3>Вывод общего сообщения на странице</h3>
+<p>Если вы отправляете форму через <code>ajax</code>, то нужно создать блок с атрибутом <code>role="alert"</code> и поместить в него все сообщения. После этого блок нужно добавить на страницу на видное место, чтобы зрячие пользователи его заметили. Как только блок с <code>role="alert"</code> появится на странице, экранные чтецы озвучат его содержимое и незрячие пользователи тоже узнают об ошибках.</p>
+<p>Дополнительно для полей, имеющих ошибки, поставьте атрибут <code>aria-invalid="true"</code> &ndash; электронные чтецы в данном случае дополнительно озвучат, что поле не валидно.</p>
+<p><b>Важно.</b> Если вывод сообщения об ошибке происходит с перезагрузкой страницы, то измените <code>title</code> страницы и/или заголовок <code>h1</code> на сообщение о присутствии ошибок на странице.</p>
+<form class="form" onsubmit="return false;">
+
+<div class="docs-example">
+    <div class="docs-example__view">
+        
+    <div class="form-group">
+        <div class="alert" role="alert">
+            <h3 style="margin-top: 0">В форме приуствуют ошибки:</h3>
+            <p>Поле "Возраст" обязательно для заполнения.</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name-no-errors">Ваше имя</label>
+        <input id="name-no-errors" type="text" name="name-no-errors" value="">
+    </div>
+    <div class="form-group">
+        <label for="age">Возраст (обязательно для заполнения)</label>
+        <input id="age" type="number" name="age" aria-invalid="true" aria-required="true">
+    </div>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+
+    <div class="form-group">
+        <div class="alert" role="alert">
+            <h3 style="margin-top: 0">В форме приуствуют ошибки:</h3>
+            <p>Поле "Возраст" обязательно для заполнения.</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name-no-errors">Ваше имя</label>
+        <input id="name-no-errors" type="text" name="name-no-errors" value="">
+    </div>
+    <div class="form-group">
+        <label for="age">Возраст (обязательно для заполнения)</label>
+        <input id="age" type="number" name="age" aria-invalid="true" aria-required="true">
+    </div>
+
+        </code>
+    </pre>
+</div>
+
+</form>
+
+<h3>Вывод сообщения об ошибке непосредственно для поля</h3>
+<p>Добавьте не валидному полю атрибут <code>aria-invalid="true"</code>.</p>
+<p>Добавьте рядом с полем текст сообщения об ошибке.</p>
+<p>Свяжите сообщение об ошибке и поле через общее значение атрибутов <code>id, aria-labelledby</code>.</p>
+<p>Экранные чтецы в данном случае при работе с полем не только зачитают, что оно неверно заполнено, но и озвучат сообщение об ошибке, чтобы пользователь понял свои дальнейшие действия.</p>
+<form class="form" onsubmit="return false;">
+    
+<div class="docs-example">
+    <div class="docs-example__view">
+        
+<div class="form-group">
+    <label for="field-no-errors">Поле без ошибки</label>
+    <input id="field-no-errors" type="text" name="field-no-errors">
+</div>
+<div class="form-group">
+    <label for="field">Поле с ошибкой</label>
+    <input id="field" type="text" name="field" aria-labelledby="form-field-error" aria-invalid="true">
+    <p id="form-field-error">Поле обязательно для заполнения.</p>
+</div>
+
+    </div>
+    <pre class="docs-example__code">
+        <code class="language-html convert">
+
+<div class="form-group">
+    <label for="field-no-errors">Поле без ошибки</label>
+    <input id="field-no-errors" type="text" name="field-no-errors">
+</div>
+<div class="form-group">
+    <label for="field">Поле с ошибкой</label>
+    <input id="field" type="text" name="field" aria-labelledby="form-field-error" aria-invalid="true">
+    <p id="form-field-error">Поле обязательно для заполнения.</p>
+</div>
+
+        </code>
+    </pre>
+</div>
+
+</form>
+
+<h3>Рекомендации</h3>
+<p>Мы рекомендуем использовать оба подхода, то есть сообщать пользователяем в блоке с <code>role="alert"</code> о наличии ошибок и дополнительно указывать ошибки для каждого отдельно взятого поля. Таким образом форма будет максимально доступна не только пользователям с нарушениям зрения, но и рядовым пользователям сайта.</p>        </div>
+    </div>
+    </div>
+
+    
+<script>
+    var escape = {
+        '<': '&lt',
+        '>': '&gt'
+    }
+
+    var converts = document.querySelectorAll('.convert');
+    [].forEach.call(converts, function (convert) {
+        var html = convert.innerHTML;
+//            html = html.replace(/  /g, '');
+        html = html.replace(/</g, '&lt');
+        html = html.replace(/>/g, '&gt');
+        convert.innerHTML = html;
+    });
+</script>
+
+<script src="accessibility.min.js"></script>
+
+<script src="site-components/prism/prism.source.js"></script>
+
+<script>
+    function FixedSidebar(sidebar) {
+        var sidebar = sidebar;
+        var offsetTop = sidebar.getBoundingClientRect().top + (window.scrollY || window.pageYOffset || 0);
+        var topPadding = 40;
+
+        window.addEventListener('scroll', function () {
+            setPosition(window.scrollY || window.pageYOffset || 0);
+        });
+
+        function setPosition(scroll) {
+            var isFixed = scroll + topPadding >= offsetTop;
+            sidebar.style.position = isFixed ? 'fixed' : '';
+            sidebar.style.top = isFixed ? topPadding+'px' : '';
+        }
+    }
+
+    var fixedSidebar = document.querySelector('[data-role="fixed-sidebar"]');
+    if (fixedSidebar) new FixedSidebar(fixedSidebar);
+</script>
+</body>
+</html>

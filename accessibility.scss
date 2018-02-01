@@ -1623,3 +1623,46 @@ $transparentPixel: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAA
         }
     }
 }
+.form {
+    input,
+    textarea {
+        border-color: inherit;
+        font-size: 1em;
+        background: none;
+        color: inherit;
+        width: 100%;
+        max-width: 80ch;
+        box-sizing: border-box;
+        font-family: inherit;
+        border-width: 1px;
+        border-style: solid;
+        line-height: 2;
+        padding: 5px 15px;
+        text-overflow: ellipsis;
+
+        &[disabled] {
+            border-style: dotted;
+        }
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        width: auto;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 0.2em;
+    }
+
+    .form-group {
+        &:not(:last-child) {
+            margin-bottom: 1em;
+        }
+
+        p {
+            margin: 0.2em 0 0;
+            font-size: 0.9em;
+        }
+    }
+}

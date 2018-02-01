@@ -1627,3 +1627,44 @@ html[data-color="brown"] .menu > li > ul {
 .breadcrumbs__dropdown > li:not(:last-child) {
   margin-bottom: 10px;
 }
+
+.form input,
+.form textarea {
+  border-color: inherit;
+  font-size: 1em;
+  background: none;
+  color: inherit;
+  width: 100%;
+  max-width: 80ch;
+  box-sizing: border-box;
+  font-family: inherit;
+  border-width: 1px;
+  border-style: solid;
+  line-height: 2;
+  padding: 5px 15px;
+  text-overflow: ellipsis;
+}
+
+.form input[disabled],
+.form textarea[disabled] {
+  border-style: dotted;
+}
+
+.form input[type="radio"],
+.form input[type="checkbox"] {
+  width: auto;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 0.2em;
+}
+
+.form .form-group:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.form .form-group p {
+  margin: 0.2em 0 0;
+  font-size: 0.9em;
+}
