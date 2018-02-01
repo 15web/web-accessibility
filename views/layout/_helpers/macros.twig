@@ -83,7 +83,7 @@ items в формате
 
 
 {% macro mainMenu(options) %}
-<nav role="navigation">
+<nav role="navigation" aria-label="Навигация">
     <ul class="menu" role="menubar" data-role="menu" {{ options.disableHover ? 'data-disable-hover="true"' : '' }} {{ options.hideTimeout ? 'data-hide-timeout="300"' : '' }}>{% for item in options.items %}{% set isActive = options.activeLink == item.link %}
         <li>{% if item.link %}
             <a href="{{ item.link }}" {{ isActive ? 'aria-current="page"' : '' }} {{ item.subitems ? 'aria-haspopup="true" aria-expanded="false"' : '' }} role="menuitem">{{ item.title }}{{ item.subitems ? ' +' : '' }}</a>{% else %}

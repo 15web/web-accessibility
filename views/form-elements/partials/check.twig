@@ -1,0 +1,36 @@
+
+
+{% macro check() %}
+    <fieldset class="form-group">
+        <legend>Укажите ваш пол</legend>
+        <label>
+            <input type="radio" name="gender" value="male"> Мужской
+        </label>
+
+        <label>
+            <input type="radio" name="gender" value="female"> Женский
+        </label>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <legend>На какие категории новостей вы хотели бы подписаться?</legend>
+        <label>
+            <input type="checkbox" name="mail" value="best-weekly"> Лучшие статьи за неделю
+        </label>
+
+        <label>
+            <input type="checkbox" name="mail" value="lessons"> Уроки
+        </label>
+
+        <label>
+            <input type="checkbox" name="mail" value="reviews"> Обзоры новой техники
+        </label>
+    </fieldset>
+{% endmacro %}
+
+{% import _self as view %}
+
+<form action="/" onsubmit="return false;" class="form">
+    <p>Объединяйте связанные по назначению поля в группы.</p>
+    {{ macros.html(view.check()) }}
+</form>
